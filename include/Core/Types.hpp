@@ -13,3 +13,10 @@ using s64 = std::int64_t;
 
 struct vec2f { float x, y; };
 struct vec3f { float x, y, z; };
+
+using string16 = char[16];
+using string32 = char[32];
+using string64 = char[64];
+
+using wchar = char16_t;
+using wstring16 = wchar[16];
