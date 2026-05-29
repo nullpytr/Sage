@@ -113,6 +113,6 @@ private:
         return reinterpret_cast<T*>(&m_data[0] + offset);
     }
 
-    std::vector<u8> m_data;
+    std::vector<byte> m_data;
     std::unordered_map<Hash, u32> m_offsets;
 };
