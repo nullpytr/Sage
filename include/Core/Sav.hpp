@@ -12,9 +12,9 @@
 class Sav
 {
 public:
-    explicit Sav(std::string const& path)
+    explicit Sav(std::string const& path) : m_data({ read_all_bytes(path) })
     {
-        read_all_bytes(path, m_data);
+        // read_all_bytes(path, m_data);
         populate_offsets(m_offsets);
     };
 
