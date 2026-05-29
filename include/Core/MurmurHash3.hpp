@@ -3,17 +3,21 @@
 #include <cstdint>
 #include <string_view>
 
-/* See: https://github.com/AntonJohansson/StaticMurmur/blob/master/StaticMurmur.hpp */
+using mmh32 = uint32_t; // murmurhash32
+using mmh64 = uint64_t; // murmurhash64
+
+/* Compile-time implementation of MurmurHash3.
+ * See: https://github.com/AntonJohansson/StaticMurmur/blob/master/StaticMurmur.hpp */
 class murmurhash3 /* only x86_32 */
 {
 public:
-    static constexpr uint32_t hash(std::string_view const& s, uint32_t const seed = 0)
+    static consteval mmh32 hash(std::string_view const& s, uint32_t const seed = 0)
     {
         return MurmurHash3_x86_32(s.data(), s.size(), seed);
     }
 
 private:
-    static constexpr uint32_t MurmurHash3_x86_32(char const* key, uint32_t const len, const uint32_t seed)
+    static consteval uint32_t MurmurHash3_x86_32(char const* key, uint32_t const len, const uint32_t seed)
     {
         const unsigned nblocks = len / 4;
 
@@ -55,7 +59,7 @@ private:
         return h1;
     }
 
-    static constexpr uint32_t get_block(char const* p, uint32_t const i)
+    static consteval uint32_t get_block(char const* p, uint32_t const i)
     {
         const uint32_t block =
             static_cast<uint32_t>(p[0 + i * 4]) << 0 |
@@ -65,12 +69,12 @@ private:
         return block;
     }
 
-    static constexpr uint32_t rotl32(uint32_t const x, int8_t const r)
+    static consteval uint32_t rotl32(uint32_t const x, int8_t const r)
     {
         return (x << r) | (x >> (32 - r));
     }
 
-    static constexpr uint32_t fmix32(uint32_t h)
+    static consteval uint32_t fmix32(uint32_t h)
     {
         h ^= h >> 16;
         h *= 0x85ebca6b;
