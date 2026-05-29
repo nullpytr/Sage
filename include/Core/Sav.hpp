@@ -46,31 +46,11 @@ public:
         return value_at<T>(m_offsets.at(hash));
     }
 
-    /* Set value by hash (uses cached offset) */
-    template <typename T>
-    void set(Hash const hash, T const& v)
-    {
-        set<T>(m_offsets.at(hash), v);
-    }
-
     /* Get array by hash (uses cached offset) */
     template <typename T>
     std::span<T> array(Hash const hash)
     {
         return array<T>(m_offsets.at(hash));
-    }
-
-    /* Get a view to a string by hash (uses cached offset) */
-    std::string_view string(Hash const hash)
-    {
-        return string(m_offsets.at(hash));
-    }
-
-    /* Test a value by hash (uses cached offset) */
-    template <typename T>
-    bool test(Hash const hash, T const& v)
-    {
-        return test<T>(m_offsets.at(hash), v);
     }
 
     /* Get reference to value at any offset */
@@ -87,13 +67,6 @@ public:
         return reinterpret_cast<T*>(&m_data[0] + offset);
     }
 
-    /* Set value at any offset */
-    template <typename T>
-    void set(u32 const offset, T const& v)
-    {
-        get<T>(offset) = v;
-    }
-
     /* Get array at any offset */
     template <typename T>
     std::span<T> array(u32 const offset)
@@ -101,19 +74,6 @@ public:
         auto const size = value_at<u32>(offset);
         T* data = ptr<T>(offset + sizeof(u32));
         return {data, size};
-    }
-
-    /* Get a view to a string at any offset */
-    std::string_view string(u32 const offset)
-    {
-        return { ptr<char>(offset) };
-    }
-
-    /* Test a value at any offset */
-    template <typename T>
-    bool test(u32 const offset, T const& v)
-    {
-        return { v == get<T>(offset) };
     }
 
 private:
