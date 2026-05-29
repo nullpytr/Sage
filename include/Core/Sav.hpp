@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <span>
 #include <string>
 #include <vector>
@@ -12,11 +13,23 @@
 class Sav
 {
 public:
-    explicit Sav(std::string const& path) : m_data({ read_all_bytes(path) })
+    /*
+     * Open/Export of Sav blob
+     */
+    explicit Sav(std::string const& path) : m_data { read_all_bytes(path) }
     {
-        // read_all_bytes(path, m_data);
-        populate_offsets(m_offsets);
-    };
+        // Load entire hash table once
+        for (u32 offset = 0x000028; offset < m_data.size(); offset += sizeof(mmh32) + sizeof(u32))
+        {
+            auto hash = get<Hash>(offset);
+            m_offsets[hash] = offset + sizeof(mmh32);
+
+            /* Hashtable ends at MetaData.SaveTypeHash
+             * See: https://github.com/marcrobledo/savegame-editors/blob/b65dc1ecf655ba4f5f8bb74d4a7d402fc375fbf1/zelda-totk/zelda-totk.variables.js#L757
+             */
+            if (hash == Hash::MetaData_SaveTypeHash) break;
+        }
+    }
 
     void dump(std::string const& path) const
     {
@@ -99,28 +112,6 @@ private:
     {
         return reinterpret_cast<T*>(&m_data[0] + offset);
     }
-
-    void populate_offsets(std::unordered_map<Hash, u32>& out)
-    {
-        for (u32 offset = 0x00; offset < m_data.size(); offset += 0x08)
-        {
-            auto hash = get<Hash>(offset);
-            u32 value_offset = offset + sizeof(u32);
-
-            if (!Hashes.contains(hash)) continue;
-
-            auto const type = Hashes.at(hash);
-            if (type == HashType::Reference) // value at offset is a reference (pointer)
-                value_offset = get<u32>(value_offset);
-
-            out[hash] = value_offset;
-
-            /* Hashtable ends at MetaData.SaveTypeHash
-             * See: https://github.com/marcrobledo/savegame-editors/blob/b65dc1ecf655ba4f5f8bb74d4a7d402fc375fbf1/zelda-totk/zelda-totk.variables.js#L757
-             */
-            if (hash == Hash::MetaData_SaveTypeHash) break;
-        }
-    };
 
     std::vector<u8> m_data;
     std::unordered_map<Hash, u32> m_offsets;

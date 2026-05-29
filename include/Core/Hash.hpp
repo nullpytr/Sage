@@ -12,7 +12,7 @@
  * https://raw.githubusercontent.com/McSpazzy/totk-gamedata/refs/heads/master/GameDataList.Product.110.json
  * https://raw.githubusercontent.com/MrCheeze/totk-tools/refs/heads/master/gamedata_hashes.txt
 */
-enum class Hash : u32
+enum class Hash : mmh32
 {
     /* progress.sav */
     MetaData_SaveTypeHash = 0xa3db7114, // unknown
