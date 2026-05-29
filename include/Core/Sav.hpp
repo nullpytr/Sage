@@ -21,7 +21,7 @@ public:
         // Load entire hash table once
         for (u32 offset = 0x000028; offset < m_data.size(); offset += sizeof(mmh32) + sizeof(u32))
         {
-            auto hash = get<Hash>(offset);
+            auto hash = value_at<Hash>(offset);
             m_offsets[hash] = offset + sizeof(mmh32);
 
             /* Hashtable ends at MetaData.SaveTypeHash
@@ -44,7 +44,7 @@ public:
     template <typename T>
     T& get(Hash const hash)
     {
-        return get<T>(m_offsets.at(hash));
+        return value_at<T>(m_offsets.at(hash));
     }
 
     /* Set value by hash (uses cached offset) */
@@ -76,14 +76,14 @@ public:
 
     /* Get reference to value at any offset */
     template <typename T>
-    T& get(u32 const offset)
+    T& value_at(u32 const offset)
     {
-        return *get_address<T>(offset);
+        return *ptr<T>(offset);
     }
 
     /* Get pointer to value at any offset */
     template <typename T>
-    T* get_address(u32 const offset)
+    T* ptr(u32 const offset)
     {
         return reinterpret_cast<T*>(&m_data[0] + offset);
     }
@@ -99,15 +99,15 @@ public:
     template <typename T>
     std::span<T> array(u32 const offset)
     {
-        auto const size = get<u32>(offset);
-        T* data = get_address<T>(offset + sizeof(u32));
+        auto const size = value_at<u32>(offset);
+        T* data = ptr<T>(offset + sizeof(u32));
         return {data, size};
     }
 
     /* Get a view to a string at any offset */
     std::string_view string(u32 const offset)
     {
-        return { get_address<char>(offset) };
+        return { ptr<char>(offset) };
     }
 
     /* Test a value at any offset */
