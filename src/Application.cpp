@@ -13,12 +13,13 @@ int main(int const argc, char const* argv[]) {
     /* progress.sav */
     Sav progress_sav { "test/progress.sav" };
 
+    // TODO
     /* Query location */
-    auto [x, y, z] = progress_sav.get<vec3f>(Hash::PlayerStatus_SavePos);
+    auto [x, y, z] = progress_sav.get(Promise<vec3f*>{(mmh32)Hash::PlayerStatus_SavePos});
     std::cout << "Location: " << x << ", " << y << ", " << z << std::endl;
 
     /* Set heart container count */
-    auto& hearts = progress_sav.get<u32>(Hash::PlayerStatus_MaxLife);
+    auto& hearts = progress_sav.get(Promise<u32>{(mmh32)Hash::PlayerStatus_MaxLife});
     hearts = 40 * 4; // directly writes to sav object's memory
 
     std::cout
@@ -27,7 +28,7 @@ int main(int const argc, char const* argv[]) {
         << std::endl;
 
     /* Set rupee amount */
-    auto& rupees = progress_sav.get<u32>(Hash::PlayerStatus_CurrentRupee); // get as reference
+    auto& rupees = progress_sav.get(Promise<u32>{(mmh32)Hash::PlayerStatus_CurrentRupee}); // get as reference
     rupees = 99'999;
 
     std::cout
@@ -36,7 +37,7 @@ int main(int const argc, char const* argv[]) {
         << std::endl;
 
     /* Set weapon capacity */
-    auto& weapon_capacity = progress_sav.array<u32>(Hash::Pouch_Weapon_ValidNum)[0];
+    auto& weapon_capacity = progress_sav.get(Promise<u32[]>{(mmh32)Hash::Pouch_Weapon_ValidNum})[0];
     weapon_capacity = 20;
 
     std::cout
@@ -64,11 +65,11 @@ int main(int const argc, char const* argv[]) {
     /* Query map area, it is found 48 bytes
      * after Metadata.SaveTypeHash
      */
-    std::string_view const map_area = &caption_sav.get<char>(Hash::CaptionData_SaveTypeHash) + 48;
+    std::string_view const map_area = &caption_sav.get(Promise<char>{(mmh32)Hash::CaptionData_SaveTypeHash}) + 48;
     std::cout << map_area; // MapArea_TamulPlateau
 
     /* Export save thumbnail (menu preview image) */
-    std::span<u8 const> image = caption_sav.array<u8>(Hash::CaptionData_ScreenShot);
+    std::span<u8 const> image = caption_sav.get(Promise<u8[]>{(mmh32)Hash::CaptionData_ScreenShot});
 
     write_all_bytes("test/preview.jpg", image);
     /**/
