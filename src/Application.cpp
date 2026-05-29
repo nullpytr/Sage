@@ -2,7 +2,7 @@
 #include "Core/Sav.hpp"
 #include "Core/Enum.hpp"
 #include "Core/Hash.hpp"
-#include "Core/HashArray.hpp"
+// #include "Core/HashArray.hpp"
 #include "Filesystem.hpp"
 
 int main(int const argc, char const* argv[]) {
@@ -11,7 +11,7 @@ int main(int const argc, char const* argv[]) {
 
     /* Sample usage for `Sav.hpp` */
     /* progress.sav */
-    Sav progress_sav { "progress.sav" };
+    Sav progress_sav { "test/progress.sav" };
 
     /* Query location */
     auto [x, y, z] = progress_sav.get<vec3f>(Hash::PlayerStatus_SavePos);
@@ -44,21 +44,22 @@ int main(int const argc, char const* argv[]) {
         << weapon_capacity
         << std::endl;
 
+    // TODO
     /* Query cleared shrine count */
-    auto query_shrines = [&sav = progress_sav]() {
-        return sav.test(HashArray::DungeonState, Enum::DungeonState::Clear);
-    };
-    std::cout << "Shrines cleared: " << query_shrines(); // 50
+    // auto query_shrines = [&sav = progress_sav]() {
+    //     return sav.test(HashArray::DungeonState, Enum::DungeonState::Clear);
+    // };
+    // std::cout << "Shrines cleared: " << query_shrines(); // 50
+    //
+    // /* Set all shrines as cleared */
+    // progress_sav.set(HashArray::DungeonState, Enum::DungeonState::Clear);
+    // std::cout << " -> " << query_shrines() << std::endl; // 152
 
-    /* Set all shrines as cleared */
-    progress_sav.set(HashArray::DungeonState, Enum::DungeonState::Clear);
-    std::cout << " -> " << query_shrines() << std::endl; // 152
-
-    progress_sav.dump("export.sav");
+    progress_sav.dump("test/export.sav");
     /**/
 
     /* caption.sav */
-    Sav caption_sav { "caption.sav" };
+    Sav caption_sav { "test/caption.sav" };
 
     /* Query map area, it is found 48 bytes
      * after Metadata.SaveTypeHash
@@ -69,6 +70,6 @@ int main(int const argc, char const* argv[]) {
     /* Export save thumbnail (menu preview image) */
     std::span<u8 const> image = caption_sav.array<u8>(Hash::CaptionData_ScreenShot);
 
-    write_all_bytes("preview.jpg", image);
+    write_all_bytes("test/preview.jpg", image);
     /**/
 }
