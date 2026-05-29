@@ -81,6 +81,13 @@ public:
         return *get_address<T>(offset);
     }
 
+    /* Get pointer to value at any offset */
+    template <typename T>
+    T* get_address(u32 const offset)
+    {
+        return reinterpret_cast<T*>(&m_data[0] + offset);
+    }
+
     /* Set value at any offset */
     template <typename T>
     void set(u32 const offset, T const& v)
@@ -111,12 +118,6 @@ public:
     }
 
 private:
-    template <typename T>
-    T* get_address(u32 const offset)
-    {
-        return reinterpret_cast<T*>(&m_data[0] + offset);
-    }
-
     std::vector<byte> m_data;
     std::unordered_map<Hash, u32> m_offsets;
 };
