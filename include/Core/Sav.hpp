@@ -36,6 +36,10 @@ public:
         write_all_bytes(path, m_data);
     }
 
+
+    /* Raw data ptr; do whatever */
+    [[nodiscard]] byte const* data_ptr() const { return &m_data[0]; }
+
     /* Get reference to value by hash (uses cached offset) */
     template <typename T>
     T& get(Hash const hash)
