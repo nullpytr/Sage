@@ -3,9 +3,10 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <iterator>
 
 /* See: https://gist.github.com/matthewjberger/0b6760de2ed41436a19235cfbe1b2d31 */
-inline void read_all_bytes(std::string const& path, std::vector<unsigned char>& out)
+inline std::vector<unsigned char> read_all_bytes(std::string const& path)
 {
     std::ifstream file { path, std::ios::binary | std::ios::ate };
     file >> std::noskipws;
@@ -13,6 +14,7 @@ inline void read_all_bytes(std::string const& path, std::vector<unsigned char>& 
     auto const file_size = file.tellg();
     file.seekg(0, std::ios::beg);
 
+    std::vector<unsigned char> out;
     out.reserve(file_size);
 
     std::copy(
@@ -20,6 +22,8 @@ inline void read_all_bytes(std::string const& path, std::vector<unsigned char>& 
         std::istream_iterator<unsigned char>(),
         std::back_inserter(out)
     );
+
+    return out;
 }
 
 inline void write_all_bytes(const std::string& path, unsigned char const* data, unsigned int const size) {
