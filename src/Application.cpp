@@ -10,21 +10,23 @@ int main(int const argc, char const* argv[]) {
 
     /* Sample usage for `Sav.hpp` */
     /* progress.sav */
+    std::println("/* progress.sav */");
     Sav progress_sav { "test/progress.sav" };
 
     auto data = progress_sav.get<GameData::GameData>();
+
+    // read any value from struct
     std::println("Playtime: {} seconds", data.Playtime);
 
-    // get reference to any value
-    auto& pony_points = data.HorseInnMemberPoint;
-    std::println("Pony Points: {}", pony_points);
-    pony_points = 69; // write directly to any ref
-    std::println("Pony Points: {}", pony_points);
+    std::print("Pony Points: {}", data.HorseInnMemberPoint);
+    data.HorseInnMemberPoint = 69; // write directly to any ref in struct
+    std::println(" -> {}", data.HorseInnMemberPoint);
 
     // cstrings can be (optionally) upgraded to string views
     string const current_banc = data.Sequence_CurrentBanc;
 
     std::println("Current Banc: {}", current_banc);
+
 
     /* Query location */
     auto [x, y, z] = data.PlayerStatus.SavePos; // get copy
@@ -32,21 +34,22 @@ int main(int const argc, char const* argv[]) {
 
     /* Set heart container count */
     auto& hearts = data.PlayerStatus.MaxLife; // get as reference
-    hearts = 40 * 4; // directly writes to sav object's memory
 
-    std::println("Heart containers set to {}", hearts / 4);
+    std::print("Heart containers: {}", hearts / 4);
+    hearts = 40 * 4; // directly writes to sav object's memory
+    std::println(" -> {}", hearts / 4);
 
     /* Set rupee amount */
     auto& rupees = data.PlayerStatus.CurrentRupee; // another ref
+    std::print("Rupees: {}", rupees);
     rupees = 99'999;
-
-    std::println("Rupees set to {}", rupees);
+    std::println(" -> {}", rupees);
 
     /* Set weapon capacity */
     auto& weapon_capacity = data.Pouch.Weapon.ValidNum[0];
+    std::print("Weapon capacity: {}", weapon_capacity);
     weapon_capacity = 20;
-
-    std::println("Weapon capacity set to {}", weapon_capacity);
+    std::println("-> {}", weapon_capacity);
 
     // TODO
     /* Query cleared shrine count */
@@ -60,18 +63,28 @@ int main(int const argc, char const* argv[]) {
     // std::println(" -> {}", query_shrines()); // 152
 
     progress_sav.dump("test/export.sav");
-    /**/
+    
+    std::println("Exported modified save to 'test/export.sav'");
+    std::println("/* -- */");
+    /* -- */
 
     /* caption.sav */
+    std::println("\n/* caption.sav */");
     Sav caption_sav { "test/caption.sav" };
 
     /* Query location */
     auto caption_data = caption_sav.get<GameData::CaptionData::Data>();
-    string const& loc = caption_data.LocationName;
-    std::println("Location: {}", loc); // example: MapArea_EastHateru
+    std::println(
+        "Location: {}",
+        string {caption_data.LocationName /* string64 - should be wrapped in string_view */}
+    );
 
     /* Export save thumbnail (menu preview image) */
-    array<byte> image = caption_data.ScreenShot;
-    write_all_bytes("test/preview.jpg", image);
-    /**/
+    write_all_bytes(
+        "test/preview.jpg",
+        caption_data.ScreenShot // array<byte>
+    );
+    std::println("Exported save thumbnail to 'test/preview.jpg'");
+    std::println("/* -- */");
+    /* -- */
 }

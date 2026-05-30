@@ -10,81 +10,93 @@ At this stage, no user interface has been implemented;
 but the `Sav.hpp` header can be included and used like a library as such:
 ```c++
     /* progress.sav */
+    std::println("/* progress.sav */");
     Sav progress_sav { "test/progress.sav" };
 
     auto data = progress_sav.get<GameData::GameData>();
-    std::cout << data.Playtime << std::endl; // read any value
 
-    // get reference to any value
-    auto& pony_points = data.HorseInnMemberPoint;
-    std::cout << pony_points << std::endl;
-    pony_points = 69; // write directly to any ref
-    std::cout << pony_points << std::endl;
+    // read any value from struct
+    std::println("Playtime: {} seconds", data.Playtime);
+
+    std::print("Pony Points: {}", data.HorseInnMemberPoint);
+    data.HorseInnMemberPoint = 69; // write directly to any ref in struct
+    std::println(" -> {}", data.HorseInnMemberPoint);
 
     // cstrings can be (optionally) upgraded to string views
     string const current_banc = data.Sequence_CurrentBanc;
 
-    std::cout << current_banc << std::endl;
+    std::println("Current Banc: {}", current_banc);
+
 
     /* Query location */
     auto [x, y, z] = data.PlayerStatus.SavePos; // get copy
-    std::cout << "Location: " << x << ", " << y << ", " << z << std::endl;
+    std::println("Location: {}, {}, {}", x, y, z);
 
     /* Set heart container count */
     auto& hearts = data.PlayerStatus.MaxLife; // get as reference
-    hearts = 40 * 4; // directly writes to sav object's memory
 
-    std::cout
-        << "Hearts set to "
-        << hearts / 4
-        << std::endl;
+    std::print("Heart containers: {}", hearts / 4);
+    hearts = 40 * 4; // directly writes to sav object's memory
+    std::println(" -> {}", hearts / 4);
 
     /* Set rupee amount */
     auto& rupees = data.PlayerStatus.CurrentRupee; // another ref
+    std::print("Rupees: {}", rupees);
     rupees = 99'999;
-
-    std::cout
-        << "Rupees set to "
-        << rupees
-        << std::endl;
+    std::println(" -> {}", rupees);
 
     /* Set weapon capacity */
     auto& weapon_capacity = data.Pouch.Weapon.ValidNum[0];
+    std::print("Weapon capacity: {}", weapon_capacity);
     weapon_capacity = 20;
-
-    std::cout
-        << "Weapon capacity set to "
-        << weapon_capacity
-        << std::endl;
-
-    // TODO
-    /* Query cleared shrine count */
-    // auto query_shrines = [&sav = progress_sav]() {
-    //     return sav.test(HashArray::DungeonState, Enum::DungeonState::Clear);
-    // };
-    // std::cout << "Shrines cleared: " << query_shrines(); // 50
-    //
-    // /* Set all shrines as cleared */
-    // progress_sav.set(HashArray::DungeonState, Enum::DungeonState::Clear);
-    // std::cout << " -> " << query_shrines() << std::endl; // 152
+    std::println("-> {}", weapon_capacity);
 
     progress_sav.dump("test/export.sav");
-    /**/
+    
+    std::println("Exported modified save to 'test/export.sav'");
+    std::println("/* -- */");
+    /* -- */
 
     /* caption.sav */
+    std::println("\n/* caption.sav */");
     Sav caption_sav { "test/caption.sav" };
 
     /* Query location */
     auto caption_data = caption_sav.get<GameData::CaptionData::Data>();
-    string const& loc = caption_data.LocationName;
-    std::cout << loc << std::endl; // example: MapArea_EastHateru
+    std::println(
+        "Location: {}",
+        string {caption_data.LocationName /* string64 - should be wrapped in string_view */}
+    );
 
     /* Export save thumbnail (menu preview image) */
-    array<byte> image = caption_data.ScreenShot;
-    write_all_bytes("test/preview.jpg", image);
+    write_all_bytes(
+        "test/preview.jpg",
+        caption_data.ScreenShot // array<byte>
+    );
+    std::println("Exported save thumbnail to 'test/preview.jpg'");
+    std::println("/* -- */");
 ```
 
-The modified number of heart containers and amount of rupees will reflect in-game:
+should output:
+```c++
+/* progress.sav */
+Playtime: 193449 seconds
+Pony Points: 26 -> 69
+Current Banc: MainField
+Location: -255.73038, 616.5528, -1062.7076
+Heart containers: 40 -> 40
+Rupees: 986836 -> 99999
+Weapon capacity: 20-> 20
+Exported modified save to 'test/export.sav'
+/* -- */
+
+/* caption.sav */
+Location: MapArea_TamulPlateau
+Exported save thumbnail to 'test/preview.jpg'
+/* -- */
+```
+
+The modifications (ex. number of heart containers and amount of rupees) will reflect in-game:
 ![sample-image](https://github.com/priyamkalra0/Sage/releases/download/sample-image/sample.png)
 
 ## Dependencies
