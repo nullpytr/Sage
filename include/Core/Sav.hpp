@@ -4,11 +4,11 @@
 #include <vector>
 #include <unordered_map>
 
-#include "Hash.hpp"
 #include "Filesystem.hpp"
 #include "Core/Types.hpp"
 #include "Core/MurmurHash3.hpp"
 #include "Core/Promise.hpp"
+#include "GameData/GameData.hpp"
 
 class Sav
 {
@@ -27,7 +27,7 @@ public:
             /* Hashtable ends at MetaData.SaveTypeHash
              * See: https://github.com/marcrobledo/savegame-editors/blob/b65dc1ecf655ba4f5f8bb74d4a7d402fc375fbf1/zelda-totk/zelda-totk.variables.js#L757
              */
-            if (hash == (mmh32)Hash::MetaData_SaveTypeHash) break;
+            if (hash == GameData::Hash::MetaData::SaveTypeHash) break;
         }
     }
 
@@ -36,9 +36,31 @@ public:
         write_all_bytes(path, m_data);
     }
 
-    /* Raw data ptr; do whatever */
     [[nodiscard]] byte const* data_ptr() const { return &m_data[0]; }
-    
+
+    /* -- */
+
+    /*
+     * High-level access: using GameData structures
+     * See include/GameData/GameData.hpp
+     */
+    template<typename S>
+    S get() // explicitly specify struct S: get<S>() (preferred)
+    {
+        return S { *this };
+    }
+
+    template<typename S>
+    S get(S const&) // infer struct from const&; param not used
+    {
+        return S { *this };
+    }
+    /* -- */
+
+    /*
+     * Mid-level access: using Promises
+     * See include/Core/Promise.hpp
+     */
     /* Get a reference to any promised value of type T */
     template <typename T>
     T& get(Promise<T> const promise)
@@ -78,20 +100,22 @@ public:
 
     /* -- */
 
-    /* Get reference to value at any offset */
+    /* Get reference to value of type T at given offset */
     template <typename T>
     T& value_at(u32 const offset)
     {
         return *ptr<T>(offset);
     }
 
-    /* Get pointer to value at any offset */
+    /* Get pointer to value of type T at given offset */
     template <typename T>
     T* ptr(u32 const offset)
     {
-        return reinterpret_cast<T*>(&m_data[0] + offset);
+        return reinterpret_cast<T*>(
+            &m_data[0]
+            + offset
+        );
     }
-
 private:
     std::vector<byte> m_data;
     std::unordered_map<mmh32, u32> m_offsets;
