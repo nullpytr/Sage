@@ -10,14 +10,28 @@ At this stage, no user interface has been implemented;
 but the `Sav.hpp` header can be included and used like a library as such:
 ```c++
     /* progress.sav */
-    Sav progress_sav { "progress.sav" };
+    Sav progress_sav { "test/progress.sav" };
+
+    auto data = progress_sav.get<GameData::GameData>();
+    std::cout << data.Playtime << std::endl; // read any value
+
+    // get reference to any value
+    auto& pony_points = data.HorseInnMemberPoint;
+    std::cout << pony_points << std::endl;
+    pony_points = 69; // write directly to any ref
+    std::cout << pony_points << std::endl;
+
+    // cstrings can be (optionally) upgraded to string views
+    string const current_banc = data.Sequence_CurrentBanc;
+
+    std::cout << current_banc << std::endl;
 
     /* Query location */
-    auto [x, y, z] = progress_sav.get<vec3f>(Hash::PlayerStatus_SavePos);
+    auto [x, y, z] = data.PlayerStatus.SavePos; // get copy
     std::cout << "Location: " << x << ", " << y << ", " << z << std::endl;
 
     /* Set heart container count */
-    auto& hearts = progress_sav.get<u32>(Hash::PlayerStatus_MaxLife);
+    auto& hearts = data.PlayerStatus.MaxLife; // get as reference
     hearts = 40 * 4; // directly writes to sav object's memory
 
     std::cout
@@ -26,7 +40,7 @@ but the `Sav.hpp` header can be included and used like a library as such:
         << std::endl;
 
     /* Set rupee amount */
-    auto& rupees = progress_sav.get<u32>(Hash::PlayerStatus_CurrentRupee); // get as reference
+    auto& rupees = data.PlayerStatus.CurrentRupee; // another ref
     rupees = 99'999;
 
     std::cout
@@ -35,7 +49,7 @@ but the `Sav.hpp` header can be included and used like a library as such:
         << std::endl;
 
     /* Set weapon capacity */
-    auto& weapon_capacity = progress_sav.array<u32>(Hash::Pouch_Weapon_ValidNum)[0];
+    auto& weapon_capacity = data.Pouch.Weapon.ValidNum[0];
     weapon_capacity = 20;
 
     std::cout
@@ -43,33 +57,31 @@ but the `Sav.hpp` header can be included and used like a library as such:
         << weapon_capacity
         << std::endl;
 
+    // TODO
     /* Query cleared shrine count */
-    auto query_shrines = [&sav = progress_sav]() {
-        return sav.test(HashArray::DungeonState, Enum::DungeonState::Clear);
-    };
-    std::cout << "Shrines cleared: " << query_shrines(); // 50
+    // auto query_shrines = [&sav = progress_sav]() {
+    //     return sav.test(HashArray::DungeonState, Enum::DungeonState::Clear);
+    // };
+    // std::cout << "Shrines cleared: " << query_shrines(); // 50
+    //
+    // /* Set all shrines as cleared */
+    // progress_sav.set(HashArray::DungeonState, Enum::DungeonState::Clear);
+    // std::cout << " -> " << query_shrines() << std::endl; // 152
 
-    /* Set all shrines as cleared */
-    progress_sav.set(HashArray::DungeonState, Enum::DungeonState::Clear);
-    std::cout << " -> " << query_shrines() << std::endl; // 152
-
-    progress_sav.dump("progress.sav");
+    progress_sav.dump("test/export.sav");
     /**/
 
     /* caption.sav */
-    Sav caption_sav { "caption.sav" };
+    Sav caption_sav { "test/caption.sav" };
 
-    /* Query map area, it is found 48 bytes
-     * after Metadata.SaveTypeHash
-     */
-    std::string_view const map_area = &caption_sav.get<char>(Hash::CaptionData_SaveTypeHash) + 48;
-    std::cout << map_area; // MapArea_TamulPlateau
-    
+    /* Query location */
+    auto caption_data = caption_sav.get<GameData::CaptionData::Data>();
+    string const& loc = caption_data.LocationName;
+    std::cout << loc << std::endl; // example: MapArea_EastHateru
+
     /* Export save thumbnail (menu preview image) */
-    std::span<u8 const> image = caption_sav.array<u8>(Hash::CaptionData_ScreenShot);
-
-    write_all_bytes("preview.jpg", image);
-    /**/
+    array<byte> image = caption_data.ScreenShot;
+    write_all_bytes("test/preview.jpg", image);
 ```
 
 The modified number of heart containers and amount of rupees will reflect in-game:
