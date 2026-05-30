@@ -1,6 +1,6 @@
 #pragma once
-#include "MurmurHash3.hpp"
-#include "Types.hpp"
+#include "Core/MurmurHash3.hpp"
+#include "Core/Types.hpp"
 
 namespace Enum
 {
