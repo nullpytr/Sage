@@ -12,6 +12,8 @@
 #include "GameData/MapData/MapData.hpp"
 #include "GameData/PlusMenu.hpp"
 
+#include "GameData/DungeonState.hpp"
+
 /*
  * Murmur3 hashes for the interesting game data in the .sav files
  * See:
@@ -29,21 +31,26 @@ namespace GameData
         OwnedHorseList OwnedHorseList;
         MapData::Data MapData;
         PlusMenu PlusMenu;
-        
+
+        DungeonState DungeonState;
+
         u32& Playtime;
         u32& HorseInnMemberPoint;
         string64& Sequence_CurrentBanc;
 
         template <typename Sav>
         explicit GameData(Sav& s)
-            :   PlayerStatus        { s },
-                Pouch               { s },
-                OwnedHorseList      { s },
-                MapData             { s },
-                PlusMenu            { s },
-                Playtime            { s.get(Promise::Playtime) },
-                HorseInnMemberPoint { s.get(Promise::HorseInnMemberPoint) },
-                Sequence_CurrentBanc{ s.get(Promise::Sequence_CurrentBanc) }
+            :   PlayerStatus         { s },
+                Pouch                { s },
+                OwnedHorseList       { s },
+                MapData              { s },
+                PlusMenu             { s },
+
+                DungeonState { s },
+
+                Playtime             { s.get(Promise::Playtime) },
+                HorseInnMemberPoint  { s.get(Promise::HorseInnMemberPoint) },
+                Sequence_CurrentBanc { s.get(Promise::Sequence_CurrentBanc) }
             {}
 
         struct Promise {

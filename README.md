@@ -49,7 +49,15 @@ but the `Sav.hpp` header can be included and used like a library as such:
     auto& weapon_capacity = data.Pouch.Weapon.ValidNum[0];
     std::print("Weapon capacity: {}", weapon_capacity);
     weapon_capacity = 20;
-    std::println("-> {}", weapon_capacity);
+    std::println(" -> {}", weapon_capacity);
+
+    /* Query cleared shrine count */
+    auto& dungeon = data.DungeonState.Dungeon;
+    std::print("Shrines cleared: {}", dungeon.test(Enum::DungeonState::Clear)); // 50
+
+    /* Set all shrines as cleared */
+    for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = Enum::DungeonState::Clear;
+    std::println(" -> {}", dungeon.test(Enum::DungeonState::Clear)); // 152
 
     progress_sav.dump("test/export.sav");
     
@@ -86,7 +94,8 @@ Current Banc: MainField
 Location: -255.73038, 616.5528, -1062.7076
 Heart containers: 40 -> 40
 Rupees: 986836 -> 99999
-Weapon capacity: 20-> 20
+Weapon capacity: 20 -> 20
+Shrines cleared: 51 -> 152
 Exported modified save to 'test/export.sav'
 /* -- */
 

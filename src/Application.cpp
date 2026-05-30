@@ -49,18 +49,15 @@ int main(int const argc, char const* argv[]) {
     auto& weapon_capacity = data.Pouch.Weapon.ValidNum[0];
     std::print("Weapon capacity: {}", weapon_capacity);
     weapon_capacity = 20;
-    std::println("-> {}", weapon_capacity);
+    std::println(" -> {}", weapon_capacity);
 
-    // TODO
     /* Query cleared shrine count */
-    // auto query_shrines = [&sav = progress_sav]() {
-    //     return sav.test(HashArray::DungeonState, Enum::DungeonState::Clear);
-    // };
-    // std::println("Shrines cleared: {}", query_shrines()); // 50
-    //
-    // /* Set all shrines as cleared */
-    // progress_sav.set(HashArray::DungeonState, Enum::DungeonState::Clear);
-    // std::println(" -> {}", query_shrines()); // 152
+    auto& dungeon = data.DungeonState.Dungeon;
+    std::print("Shrines cleared: {}", dungeon.test(Enum::DungeonState::Clear)); // 50
+
+    /* Set all shrines as cleared */
+    for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = Enum::DungeonState::Clear;
+    std::println(" -> {}", dungeon.test(Enum::DungeonState::Clear)); // 152
 
     progress_sav.dump("test/export.sav");
     
