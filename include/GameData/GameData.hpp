@@ -5,6 +5,12 @@
 #include "Core/MurmurHash3.hpp"
 
 #include "GameData/MetaData.hpp"
+#include "GameData/CaptionData/CaptionData.hpp"
+#include "GameData/PlayerStatus.hpp"
+#include "GameData/OwnedHorseList.hpp"
+#include "GameData/Pouch/Pouch.hpp"
+#include "GameData/MapData/MapData.hpp"
+#include "GameData/PlusMenu.hpp"
 
 /*
  * Murmur3 hashes for the interesting game data in the .sav files
@@ -18,13 +24,24 @@ namespace GameData
 {
     struct GameData
     {
+        PlayerStatus PlayerStatus;
+        Pouch::Data Pouch;
+        OwnedHorseList OwnedHorseList;
+        MapData::Data MapData;
+        PlusMenu PlusMenu;
+        
         u32& Playtime;
         u32& HorseInnMemberPoint;
         string64& Sequence_CurrentBanc;
 
         template <typename Sav>
         explicit GameData(Sav& s)
-            :   Playtime            { s.get(Promise::Playtime) },
+            :   PlayerStatus        { s },
+                Pouch               { s },
+                OwnedHorseList      { s },
+                MapData             { s },
+                PlusMenu            { s },
+                Playtime            { s.get(Promise::Playtime) },
                 HorseInnMemberPoint { s.get(Promise::HorseInnMemberPoint) },
                 Sequence_CurrentBanc{ s.get(Promise::Sequence_CurrentBanc) }
             {}
