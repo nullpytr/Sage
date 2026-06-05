@@ -6,21 +6,19 @@
 
 #include "GameData/Pouch/KeyItem/Content.hpp"
 
-// FIXME
-
 namespace GameData::Pouch::KeyItem {
     struct KeyItem {
+        array<bool> IsValid;
         Content Content;
-        // array<bool> IsEnableShortcut;
 
         template <typename Sav>
         explicit KeyItem(Sav& s)
-            : Content          { s }//,
-              // IsEnableShortcut { s.get(Promise::IsEnableShortcut) }
+            : IsValid { s.get(Promise::IsValid) },
+              Content { s }
         {}
 
         struct Promise {
-            // static constexpr ::Promise<typeof(IsEnableShortcut)> IsEnableShortcut { murmurhash3::hash("Pouch.KeyItem.IsEnableShortcut") };
+            static constexpr ::Promise<typeof(IsValid)> IsValid { murmurhash3::hash("Pouch.KeyItem.IsValid") };
         };
     };
 
