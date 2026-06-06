@@ -29,34 +29,100 @@ namespace Enum
         Buy = murmurhash3::hash("Buy")
     };
 
-    template <typename EnumWrapperStruct, size_t N>
-    struct View : EnumWrapperStruct /* injects values enum into view's namespace */
+    template <typename EnumWrapperStruct>
+    struct Scalar : EnumWrapperStruct /* injects values enum into scalar's namespace */
     {
         /* type aliases */
         using value_type = EnumWrapperStruct::Value;
-        using array_type = std::array<::Promise<View::value_type>, N>;
-        static constexpr size_t size = N;
 
-        /* View type for accessing saved Enum entries;
-         * just like array<T>, string and T&
-         */
+        /* View type for accessing single Enum entry;
+         * analogous to T& */
 
         template <typename Sav>
-        explicit View(Sav& s, View::array_type const& promises)
+        explicit Scalar(Sav& s, Promise<value_type> const& promise)
+            : m_entry { s.get(promise) }
+        {}
+
+        /* Get entry */
+        value_type const& get() const { return m_entry; }
+        value_type& get() { return m_entry; }
+
+        value_type const& operator()() const { return get(); }
+        value_type& operator()()             { return get(); }
+
+        /* Assignment and conversion */
+        Scalar& operator=(value_type const& v) { m_entry = v; return *this; }
+        operator value_type() const { return get(); }
+
+        bool operator==(value_type const& v) const { return m_entry == v; }
+
+    private:
+        value_type& m_entry;
+    };
+
+    template <typename EnumWrapperStruct>
+    struct Array : EnumWrapperStruct /* injects values enum into array's namespace */
+    {
+        /* type aliases */
+        using value_type = EnumWrapperStruct::Value;
+
+        /* View type for accessing continuous collection of Enum entries;
+         * analogous to array<T> */
+
+        template <typename Sav>
+        explicit Array(Sav& s, Promise<value_type[]> const& promise)
+            : m_span { s.get(promise) }
+        {}
+
+        /* Get entry at given index */
+        value_type const& get(size_t const idx) const { return m_span[idx]; }
+        value_type& get(size_t const idx) { return  m_span[idx]; }
+
+        value_type const& operator[](size_t const idx) const { return get(idx); }
+        value_type& operator[](size_t const idx)             { return get(idx); }
+
+        [[nodiscard]] size_t size() const { return m_span.size(); }
+
+        /* Test value on all entries */
+        size_t test(value_type const& v) const
+        {
+            size_t ctr = 0;
+            for (auto const& item : m_span)
+                ctr += (item == v);
+
+            return ctr;
+        }
+
+    private:
+        ::array<value_type> m_span;
+    };
+
+    template <typename EnumWrapperStruct, size_t N>
+    struct Collection : EnumWrapperStruct /* injects values enum into view's namespace */
+    {
+        /* type aliases */
+        using value_type = EnumWrapperStruct::Value;
+        using array_type = std::array<Promise<value_type>, N>;
+
+        /* View type for accessing non-continuous collection of Enum entries */
+        static constexpr size_t size = N;
+
+        template <typename Sav>
+        explicit Collection(Sav& s, array_type const& promises)
         {
             for (s32 idx = 0; auto const& p: promises)
                 m_entries[idx++] = &s.get(p); // store pointers to each entry
         }
 
         /* Get entry at given index */
-        View::value_type const& get(size_t const idx) const { return *m_entries[idx]; }
-        View::value_type& get(size_t const idx) { return  *m_entries[idx]; }
+        value_type const& get(size_t const idx) const { return *m_entries[idx]; }
+        value_type& get(size_t const idx) { return  *m_entries[idx]; }
 
-        View::value_type const& operator[](size_t const idx) const { return get(idx); }
-        View::value_type& operator[](size_t const idx)             { return get(idx); }
+        value_type const& operator[](size_t const idx) const { return get(idx); }
+        value_type& operator[](size_t const idx)             { return get(idx); }
 
         /* Test value on all entries */
-        size_t test(View::value_type const& v) const
+        size_t test(value_type const& v) const
         {
             size_t ctr = 0;
             for (size_t idx = 0; idx < size; ++idx)
@@ -66,7 +132,7 @@ namespace Enum
         }
 
     private:
-        std::array<View::value_type*, N> m_entries;
+        std::array<value_type*, N> m_entries;
     };
 
     /* consteval promise-array (hash-array replacement) generator for Enums */
