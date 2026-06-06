@@ -53,11 +53,11 @@ but the `Sav.hpp` header can be included and used like a library as such:
 
     /* Query cleared shrine count */
     auto& dungeon = data.DungeonState.Dungeon;
-    std::print("Shrines cleared: {}", dungeon.test(Enum::DungeonState::Clear)); // 50
+    std::print("Shrines cleared: {}", dungeon.test(dungeon.Clear)); // 50
 
     /* Set all shrines as cleared */
-    for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = Enum::DungeonState::Clear;
-    std::println(" -> {}", dungeon.test(Enum::DungeonState::Clear)); // 152
+    for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = dungeon.Clear;
+    std::println(" -> {}", dungeon.test(dungeon.Clear)); // 152
 
     progress_sav.dump("test/export.sav");
     
@@ -83,6 +83,7 @@ but the `Sav.hpp` header can be included and used like a library as such:
     );
     std::println("Exported save thumbnail to 'test/preview.jpg'");
     std::println("/* -- */");
+    /* -- */
 ```
 
 should output:
