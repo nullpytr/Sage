@@ -53,11 +53,11 @@ int main(int const argc, char const* argv[]) {
 
     /* Query cleared shrine count */
     auto& dungeon = data.DungeonState.Dungeon;
-    std::print("Shrines cleared: {}", dungeon.test(Enum::DungeonState::Clear)); // 50
+    std::print("Shrines cleared: {}", dungeon.test(dungeon.Clear)); // 50
 
     /* Set all shrines as cleared */
-    for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = Enum::DungeonState::Clear;
-    std::println(" -> {}", dungeon.test(Enum::DungeonState::Clear)); // 152
+    for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = dungeon.Clear;
+    std::println(" -> {}", dungeon.test(dungeon.Clear)); // 152
 
     progress_sav.dump("test/export.sav");
     

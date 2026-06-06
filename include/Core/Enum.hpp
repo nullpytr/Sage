@@ -5,17 +5,10 @@
 
 namespace Enum
 {
-    /* Various enum values used in progress.sav
+    /* Various enum values used in progress.sav;
      * See: https://github.com/marcrobledo/savegame-editors/blob/b65dc1ecf655ba4f5f8bb74d4a7d402fc375fbf1/zelda-totk/zelda-totk.hashes.csv#L5
+     * TODO: definition of these enum values as enum classes here is deprecated; they should be moved to the corresponding headers in include/GameData/
      */
-    enum class DungeonState : u32
-    {
-        Hidden = murmurhash3::hash("Hidden"),
-        Appear = murmurhash3::hash("Appear"),
-        Open = murmurhash3::hash("Open"),
-        Enter = murmurhash3::hash("Enter"),
-        Clear = murmurhash3::hash("Clear")
-    };
 
     enum class CheckpointState : u32 // ArrivalPointState_Checkpoint
     {
@@ -36,15 +29,17 @@ namespace Enum
         Buy = murmurhash3::hash("Buy")
     };
 
-    template <typename EnumValueType, size_t N>
-    struct View
+    template <typename EnumWrapperStruct, size_t N>
+    struct View : EnumWrapperStruct /* injects values enum into view's namespace */
     {
-        /* View type for accessing saved Enum entries;
-         * just like array<T>, string and T& */
-
-        using value_type = EnumValueType;
-        using array_type = std::array<::Promise<EnumValueType>, N>;
+        /* type aliases */
+        using value_type = EnumWrapperStruct::Value;
+        using array_type = std::array<::Promise<View::value_type>, N>;
         static constexpr size_t size = N;
+
+        /* View type for accessing saved Enum entries;
+         * just like array<T>, string and T&
+         */
 
         template <typename Sav>
         explicit View(Sav& s, View::array_type const& promises)
@@ -54,14 +49,14 @@ namespace Enum
         }
 
         /* Get entry at given index */
-        EnumValueType const& get(size_t const idx) const { return *m_entries[idx]; }
-        EnumValueType& get(size_t const idx) { return  *m_entries[idx]; }
+        View::value_type const& get(size_t const idx) const { return *m_entries[idx]; }
+        View::value_type& get(size_t const idx) { return  *m_entries[idx]; }
 
-        EnumValueType const& operator[](size_t const idx) const { return get(idx); }
-        EnumValueType& operator[](size_t const idx)             { return get(idx); }
+        View::value_type const& operator[](size_t const idx) const { return get(idx); }
+        View::value_type& operator[](size_t const idx)             { return get(idx); }
 
         /* Test value on all entries */
-        size_t test(EnumValueType const& v) const
+        size_t test(View::value_type const& v) const
         {
             size_t ctr = 0;
             for (size_t idx = 0; idx < size; ++idx)
@@ -71,7 +66,7 @@ namespace Enum
         }
 
     private:
-        std::array<EnumValueType*, N> m_entries;
+        std::array<View::value_type*, N> m_entries;
     };
 
     /* consteval promise-array (hash-array replacement) generator for Enums */
