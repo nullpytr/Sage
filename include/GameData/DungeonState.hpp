@@ -19,7 +19,7 @@ namespace Enum {
 
 namespace GameData {
     struct DungeonState {
-        Enum::View<Enum::DungeonState::Dungeon, 152> Dungeon;
+        Enum::Collection<Enum::DungeonState::Dungeon, 152> Dungeon;
 
         template <typename Sav>
         explicit DungeonState(Sav& s)
