@@ -1,6 +1,6 @@
 #include <print>
 #include "Core/Sav.hpp"
-#include "Core/Enum.hpp"
+#include "Core/Enum/Enum.hpp"
 #include "GameData/GameData.hpp"
 #include "Filesystem.hpp"
 
@@ -58,6 +58,20 @@ int main(int const argc, char const* argv[]) {
     /* Set all shrines as cleared */
     for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = dungeon.Clear;
     std::println(" -> {}", dungeon.test(dungeon.Clear)); // 152
+
+
+    /* Query & edit inventory */
+    auto& weapons = data.Pouch.Weapon.Content;
+    for (auto idx = 0; *weapons.Name[idx]; ++idx)
+    {
+        string const& name = weapons.Name[idx];
+        auto& durability = weapons.Life[idx];
+
+        std::print("Durability of {}: {}", name, durability);
+        durability = std::numeric_limits<typeof(durability)>::max();
+        std::println(" -> {}", durability);
+    }
+
 
     progress_sav.dump("test/export.sav");
     

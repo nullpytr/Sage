@@ -1,6 +1,6 @@
 # Sage
 
-Simple tool for parsing and patching savegame files for TLoZ: Tears of the Kingdom.
+Header-only library for no-copy, inplace inspection and editing of TLoZ: Tears of the Kingdom savegames.
 
 ## Credits
 This tool is based on [this](https://www.marcrobledo.com/savegame-editors/zelda-totk) amazing savegame editor by [Marc Robeldo](https://www.marcrobledo.com/) and extensive game data gathered by [MrCheeze](https://github.com/MrCheeze/totk-tools) and [McSpazzy](https://github.com/McSpazzy/totk-gamedata).
@@ -9,7 +9,6 @@ This tool is based on [this](https://www.marcrobledo.com/savegame-editors/zelda-
 At this stage, no user interface has been implemented;  
 but the `Sav.hpp` header can be included and used like a library as such:
 ```c++
-    /* progress.sav */
     std::println("/* progress.sav */");
     Sav progress_sav { "test/progress.sav" };
 
@@ -59,6 +58,20 @@ but the `Sav.hpp` header can be included and used like a library as such:
     for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = dungeon.Clear;
     std::println(" -> {}", dungeon.test(dungeon.Clear)); // 152
 
+
+    /* Query & edit inventory */
+    auto& weapons = data.Pouch.Weapon.Content;
+    for (auto idx = 0; *weapons.Name[idx]; ++idx)
+    {
+        string const& name = weapons.Name[idx];
+        auto& durability = weapons.Life[idx];
+
+        std::print("Durability of {}: {}", name, durability);
+        durability = std::numeric_limits<typeof(durability)>::max();
+        std::println(" -> {}", durability);
+    }
+
+
     progress_sav.dump("test/export.sav");
     
     std::println("Exported modified save to 'test/export.sav'");
@@ -94,9 +107,21 @@ Pony Points: 26 -> 69
 Current Banc: MainField
 Location: -255.73038, 616.5528, -1062.7076
 Heart containers: 40 -> 40
-Rupees: 986836 -> 99999
+Rupees: 8836 -> 99999
 Weapon capacity: 20 -> 20
 Shrines cleared: 51 -> 152
+Durability of Weapon_Sword_070: 8 -> 2147483647
+Durability of Weapon_Sword_052: 56 -> 2147483647
+Durability of Weapon_Sword_166: 2 -> 2147483647
+Durability of Weapon_Sword_124: 1 -> 2147483647
+Durability of Weapon_Sword_024: 35 -> 2147483647
+...
+Durability of Weapon_Lsword_174: 28 -> 2147483647
+Durability of Weapon_Spear_166: 7 -> 2147483647
+Durability of Weapon_Spear_024: 50 -> 2147483647
+Durability of Weapon_Spear_124: 38 -> 2147483647
+Durability of Weapon_Lsword_114: 18 -> 2147483647
+Durability of Weapon_Lsword_114: 24 -> 2147483647
 Exported modified save to 'test/export.sav'
 /* -- */
 
