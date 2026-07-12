@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core/Types.hpp"
-#include "Core/Enum.hpp"
+#include "Core/Enum/Enum.hpp"
 
 namespace Enum {
     struct DungeonState {
