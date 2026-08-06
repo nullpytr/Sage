@@ -7,5 +7,6 @@ int main(int const argc, char const* argv[]) {
     Sav progress_sav { "other/progress.sav" };
 
     auto const& data = progress_sav.get<GameData>();
+    auto const& names = data.OwnedHorseList.Name;
     /* -- */
 }

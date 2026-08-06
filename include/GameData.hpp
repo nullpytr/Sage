@@ -7,8 +7,6 @@ Black = murmurhash3::hash("Black"),
 Blue = murmurhash3::hash("Blue"),
 };
 };
-using EyeColor_t = Enum::Array<EyeColor>;
-EyeColor_t EyeColor;
 struct Pattern {
 enum value_type : mmh32 {
 _00 = murmurhash3::hash("_00"),
@@ -20,14 +18,13 @@ _05 = murmurhash3::hash("_05"),
 _06 = murmurhash3::hash("_06"),
 };
 };
-using Pattern_t = Enum::Array<Pattern>;
-Pattern_t Pattern;
 struct NoseColor{
+struct Data {
 array<u32> Blue;
 array<u32> Green;
 array<u32> Red;
 template <typename Sav>
-explicit NoseColor(Sav& s) : 
+explicit Data(Sav& s) : 
 Blue { s.get(Promise::Blue) },
 Green { s.get(Promise::Green) },
 Red { s.get(Promise::Red) }
@@ -38,14 +35,14 @@ static constexpr ::Promise<typeof(Green)> Green { murmurhash3::hash("OwnedHorseL
 static constexpr ::Promise<typeof(Red)> Red { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red") };
 };
 };
-using NoseColor_t = NoseColor;
-NoseColor_t NoseColor;
+};
 struct PrimaryColor{
+struct Data {
 array<u32> Blue;
 array<u32> Green;
 array<u32> Red;
 template <typename Sav>
-explicit PrimaryColor(Sav& s) : 
+explicit Data(Sav& s) : 
 Blue { s.get(Promise::Blue) },
 Green { s.get(Promise::Green) },
 Red { s.get(Promise::Red) }
@@ -56,14 +53,14 @@ static constexpr ::Promise<typeof(Green)> Green { murmurhash3::hash("OwnedHorseL
 static constexpr ::Promise<typeof(Red)> Red { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red") };
 };
 };
-using PrimaryColor_t = PrimaryColor;
-PrimaryColor_t PrimaryColor;
+};
 struct SecondaryColor{
+struct Data {
 array<u32> Blue;
 array<u32> Green;
 array<u32> Red;
 template <typename Sav>
-explicit SecondaryColor(Sav& s) : 
+explicit Data(Sav& s) : 
 Blue { s.get(Promise::Blue) },
 Green { s.get(Promise::Green) },
 Red { s.get(Promise::Red) }
@@ -74,10 +71,15 @@ static constexpr ::Promise<typeof(Green)> Green { murmurhash3::hash("OwnedHorseL
 static constexpr ::Promise<typeof(Red)> Red { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red") };
 };
 };
-using SecondaryColor_t = SecondaryColor;
-SecondaryColor_t SecondaryColor;
+};
+struct Data {
+EyeColor EyeColor;
+Pattern Pattern;
+NoseColor::Data NoseColor;
+PrimaryColor::Data PrimaryColor;
+SecondaryColor::Data SecondaryColor;
 template <typename Sav>
-explicit Body(Sav& s) : 
+explicit Data(Sav& s) : 
 EyeColor { s.get(Promise::EyeColor) },
 Pattern { s.get(Promise::Pattern) },
 NoseColor { s },
@@ -89,8 +91,7 @@ static constexpr ::Promise<typeof(EyeColor)> EyeColor { murmurhash3::hash("Owned
 static constexpr ::Promise<typeof(Pattern)> Pattern { murmurhash3::hash("OwnedHorseList.Body.Pattern") };
 };
 };
-using Body_t = Body;
-Body_t Body;
+};
 struct Mane {
 enum value_type : mmh32 {
 None = murmurhash3::hash("None"),
@@ -112,8 +113,6 @@ Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"),
 Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"),
 };
 };
-using Mane_t = Enum::Array<Mane>;
-Mane_t Mane;
 struct Rein {
 enum value_type : mmh32 {
 None = murmurhash3::hash("None"),
@@ -128,8 +127,6 @@ GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"),
 GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"),
 };
 };
-using Rein_t = Enum::Array<Rein>;
-Rein_t Rein;
 struct Saddle {
 enum value_type : mmh32 {
 None = murmurhash3::hash("None"),
@@ -145,8 +142,60 @@ GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"),
 GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"),
 };
 };
-using Saddle_t = Enum::Array<Saddle>;
-Saddle_t Saddle;
+struct Hair{
+struct PrimaryColor{
+struct Data {
+array<u32> Blue;
+array<u32> Green;
+array<u32> Red;
+template <typename Sav>
+explicit Data(Sav& s) : 
+Blue { s.get(Promise::Blue) },
+Green { s.get(Promise::Green) },
+Red { s.get(Promise::Red) }
+{ }
+struct Promise {
+static constexpr ::Promise<typeof(Blue)> Blue { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue") };
+static constexpr ::Promise<typeof(Green)> Green { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green") };
+static constexpr ::Promise<typeof(Red)> Red { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red") };
+};
+};
+};
+struct SecondaryColor{
+struct Data {
+array<u32> Blue;
+array<u32> Green;
+array<u32> Red;
+template <typename Sav>
+explicit Data(Sav& s) : 
+Blue { s.get(Promise::Blue) },
+Green { s.get(Promise::Green) },
+Red { s.get(Promise::Red) }
+{ }
+struct Promise {
+static constexpr ::Promise<typeof(Blue)> Blue { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue") };
+static constexpr ::Promise<typeof(Green)> Green { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green") };
+static constexpr ::Promise<typeof(Red)> Red { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red") };
+};
+};
+};
+struct Data {
+PrimaryColor::Data PrimaryColor;
+SecondaryColor::Data SecondaryColor;
+template <typename Sav>
+explicit Data(Sav& s) : 
+PrimaryColor { s },
+SecondaryColor { s }
+{ }
+struct Promise {
+};
+};
+};
+struct Data {
+Body::Data Body;
+Mane Mane;
+Rein Rein;
+Saddle Saddle;
 array<wstring16> Name;
 array<u64> UidHash;
 array<string64> ActorName;
@@ -160,55 +209,9 @@ array<s32> Speed;
 array<s32> Toughness;
 array<float> Familiarity;
 array<bool> IsFamiliarityChecked;
-struct Hair{
-struct PrimaryColor{
-array<u32> Blue;
-array<u32> Green;
-array<u32> Red;
+Hair::Data Hair;
 template <typename Sav>
-explicit PrimaryColor(Sav& s) : 
-Blue { s.get(Promise::Blue) },
-Green { s.get(Promise::Green) },
-Red { s.get(Promise::Red) }
-{ }
-struct Promise {
-static constexpr ::Promise<typeof(Blue)> Blue { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue") };
-static constexpr ::Promise<typeof(Green)> Green { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green") };
-static constexpr ::Promise<typeof(Red)> Red { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red") };
-};
-};
-using PrimaryColor_t = PrimaryColor;
-PrimaryColor_t PrimaryColor;
-struct SecondaryColor{
-array<u32> Blue;
-array<u32> Green;
-array<u32> Red;
-template <typename Sav>
-explicit SecondaryColor(Sav& s) : 
-Blue { s.get(Promise::Blue) },
-Green { s.get(Promise::Green) },
-Red { s.get(Promise::Red) }
-{ }
-struct Promise {
-static constexpr ::Promise<typeof(Blue)> Blue { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue") };
-static constexpr ::Promise<typeof(Green)> Green { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green") };
-static constexpr ::Promise<typeof(Red)> Red { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red") };
-};
-};
-using SecondaryColor_t = SecondaryColor;
-SecondaryColor_t SecondaryColor;
-template <typename Sav>
-explicit Hair(Sav& s) : 
-PrimaryColor { s },
-SecondaryColor { s }
-{ }
-struct Promise {
-};
-};
-using Hair_t = Hair;
-Hair_t Hair;
-template <typename Sav>
-explicit OwnedHorseList(Sav& s) : 
+explicit Data(Sav& s) : 
 Body { s },
 Mane { s.get(Promise::Mane) },
 Rein { s.get(Promise::Rein) },
@@ -247,13 +250,14 @@ static constexpr ::Promise<typeof(Familiarity)> Familiarity { murmurhash3::hash(
 static constexpr ::Promise<typeof(IsFamiliarityChecked)> IsFamiliarityChecked { murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked") };
 };
 };
-using OwnedHorseList_t = OwnedHorseList;
-OwnedHorseList_t OwnedHorseList;
+};
+struct Data {
+OwnedHorseList::Data OwnedHorseList;
 template <typename Sav>
-explicit GameData(Sav& s) : 
+explicit Data(Sav& s) : 
 OwnedHorseList { s }
 { }
 struct Promise {
 };
 };
-using GameData_t = GameData;
+};

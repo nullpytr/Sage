@@ -60,6 +60,6 @@ class EnumWrapperStructure(GameDataType):
         write(self.value_type.emit())
         write("};")
 
-        write(f"using {self.value_type.name}_t = {self.value_type.typename};")
+        # write(f"using {self.value_type.name}_t = {self.value_type.typename};")
 
         return "\n".join(buff)

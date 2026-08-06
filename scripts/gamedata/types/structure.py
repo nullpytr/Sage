@@ -25,22 +25,24 @@ class Structure(GameDataType):
         # write("#include \"Core/MurmurHash3.hpp\"")
 
         write(f"struct {self.name}" + "{") # struct open
-
         for child_name, child_val in self.children.items(): # children
+            if isinstance(child_val, Member): continue
             print(f"[gd/struct/emit]: processing child {child_name}")
             write(child_val.emit())
 
-            # structs & enums do not emit their member declarations (only definition)
-            # so we'll do it here
-            if isinstance(child_val, Structure):
-                write(f"{child_name}_t {child_name};") 
+        write("struct Data {") # impl open
+        for child_name, child_val in self.children.items(): # children
+            if isinstance(child_val, Member): 
+                write(child_val.emit())
+            elif isinstance(child_val, Structure):
+                write(f"{child_name}::Data {child_name};") 
             elif isinstance(child_val, EnumWrapperStructure):
-                write(f"{child_name}_t {child_name};")
+                write(f"{child_name} {child_name};")
             elif isinstance(child_val, Enum):
                 assert False, f"[gd/struct/emit]: node {self.name} has unexpected child of type {child_name}"
 
         write("template <typename Sav>")
-        write(f"explicit {self.name}(Sav& s) : ")
+        write(f"explicit Data(Sav& s) : ")
         
         for child_name, child_val in self.children.items(): # member inits
             if isinstance(child_val, Structure):
@@ -57,8 +59,9 @@ class Structure(GameDataType):
             assert isinstance(child_val, (Member, Enum))
             write(f"static constexpr ::Promise<typeof({child_name})> {child_name}" + " { murmurhash3::hash(\"" + child_val.hash_text_string + "\") };")
         write("};") # promise close
-        
+
+        write("};") # impl close
         write("};") # struct close
-        write(f"using {self.name}_t = {self.name};")
+        # write(f"using {self.name}_t = {self.name};")
 
         return "\n".join(buff)

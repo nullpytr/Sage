@@ -47,9 +47,9 @@ public:
      * See include/GameData/GameData.hpp
      */
     template<typename S>
-    S get() // explicitly specify struct S: get<S>() (preferred)
+    S::Data get() // explicitly specify struct S: get<S>() (preferred)
     {
-        return S { *this };
+        return (typename S::Data) { *this };
     }
 
     template<typename S>
