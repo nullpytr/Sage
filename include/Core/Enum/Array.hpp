@@ -6,17 +6,16 @@
 namespace Enum
 {
     template <typename EnumWrapperStruct>
-    struct Array : EnumWrapperStruct /* injects values enum into array's namespace */
+    struct Array : EnumWrapperStruct /* injects values enum into view's namespace */
     {
         /* type aliases */
-        using value_type = EnumWrapperStruct::Value;
+        using value_type = EnumWrapperStruct::value_type;
 
         /* View type for accessing continuous collection of Enum entries;
          * analogous to array<T> */
 
-        template <typename Sav>
-        explicit Array(Sav& s, Promise<value_type[]> const& promise)
-            : m_span { s.get(promise) }
+        Array(array<value_type> const& span)
+            : m_span { span }
         {}
 
         /* Get entry at given index */

@@ -98,6 +98,22 @@ public:
         return get(Promise<array<T>>{promise.hash});
     }
 
+    // Get view types over raw enum types
+    template <typename ESW> // EnumStructWrapper
+    Enum::Scalar<ESW> get(Promise<Enum::Scalar<ESW>> const promise)
+    {
+        return { get(Promise<typename ESW::value_type>{promise.hash}) };
+    }
+
+    template <typename ESW>
+    Enum::Array<ESW> get(Promise<Enum::Array<ESW>> const promise)
+    {
+        return { get(Promise<array<typename ESW::value_type>>{promise.hash}) };
+    }
+
+    // TODO template <typename ESW>
+    // Enum::Collection<ESW> get
+
     /* -- */
 
     /* Get reference to value of type T at given offset */

@@ -14,9 +14,8 @@ namespace Enum
         /* View type for accessing single Enum entry;
          * analogous to T& */
 
-        template <typename Sav>
-        explicit Scalar(Sav& s, Promise<value_type> const& promise)
-            : m_entry { s.get(promise) }
+        Scalar(value_type& v)
+            : m_entry { v }
         {}
 
         /* Get entry */
