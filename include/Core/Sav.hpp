@@ -43,19 +43,13 @@ public:
     /* -- */
 
     /*
-     * High-level access: using GameData structures
+     * High-level access: using GameData structures (recommended)
      * See include/GameData/GameData.hpp
      */
     template<typename S>
-    S::Data get() // explicitly specify struct S: get<S>() (preferred)
+    S::data get()
     {
         return (typename S::Data) { *this };
-    }
-
-    template<typename S>
-    S get(S const&) // infer struct from const&; param not used
-    {
-        return S { *this };
     }
     /* -- */
 
@@ -118,6 +112,7 @@ public:
 
     /* -- */
 
+    /* Low-level access */
     /* Get reference to value of type T at given offset */
     template <typename T>
     T& value_at(u32 const offset)
