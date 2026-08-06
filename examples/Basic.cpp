@@ -6,7 +6,13 @@ int main(int const argc, char const* argv[]) {
     std::println("/* progress.sav */");
     Sav progress_sav { "other/progress.sav" };
 
-    auto const& data = progress_sav.get<GameData>();
-    auto const& names = data.OwnedHorseList.Name;
+    // Pathway A -- Parse entire save in one go and use model instances
+    auto const& data_a = progress_sav.get<GameData>();
+    auto const& body_a = data_a.OwnedHorseList.Body;
+    auto const& names_a = data_a.OwnedHorseList.Name;
+
+    // Pathway B -- Parse and use only what you want using model types
+    auto const& body_b = progress_sav.get<GameData::OwnedHorseList::Body>();
+    auto const& names_b = progress_sav.get<GameData::OwnedHorseList::Name>();
     /* -- */
 }

@@ -58,6 +58,7 @@ class EnumWrapperStructure(GameDataType):
 
         write(f"struct {self.name}" + " {")
         write(self.value_type.emit())
+        write(f"static constexpr ::Promise<{self.name}> metadata" + "{ murmurhash3::hash(\"" + self.value_type.hash_text_string + "\") };")
         write("};")
 
         # write(f"using {self.value_type.name}_t = {self.value_type.typename};")

@@ -47,9 +47,18 @@ public:
      * See include/GameData/GameData.hpp
      */
     template<typename S>
-    S::data get()
+    requires std::derived_from<S, GameDataStructure>
+    S::value_type get()
     {
-        return (typename S::Data) { *this };
+        return (typename S::value_type) { *this };
+    }
+
+    template<typename  M>
+    requires std::derived_from<M, GameDataMember>
+    typeof(M::value) get()
+    {
+        auto const& wrapper = M { *this };
+        return wrapper.value;
     }
     /* -- */
 

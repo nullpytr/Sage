@@ -1,5 +1,14 @@
 #pragma once
 
+/* GameData types
+ * These types are used in Sage's GameData model,
+ * Specifically for constraining template substitution
+ * in Sage's Sav::get<[S|M]> API
+ */
+struct GameDataType {};
+struct GameDataStructure : GameDataType {};
+struct GameDataMember : GameDataType {};
+
 /*
  * These are the underlying types used in Nintendo's blobs;
  * They can be used to directly read binary data from the files.
