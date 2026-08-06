@@ -5,4 +5,4 @@ class GameDataType():
     typename: str = "..."
 
     def emit(self) -> str:
-        return "NOT_IMPL"
+        raise NotImplementedError
