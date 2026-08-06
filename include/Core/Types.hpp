@@ -8,6 +8,7 @@
 struct GameDataType {};
 struct GameDataStructure : GameDataType {};
 struct GameDataMember : GameDataType {};
+struct GameDataEnum : GameDataType {};
 
 /*
  * These are the underlying types used in Nintendo's blobs;

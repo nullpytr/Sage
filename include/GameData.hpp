@@ -1,15 +1,16 @@
 struct GameData : GameDataStructure {
 struct OwnedHorseList : GameDataStructure {
 struct Body : GameDataStructure {
-struct EyeColor {
-enum value_type : mmh32 {
+struct EyeColor : GameDataEnum {
+enum enum_type : mmh32 {
 Black = murmurhash3::hash("Black"),
 Blue = murmurhash3::hash("Blue"),
 };
-static constexpr ::Promise<EyeColor> metadata{ murmurhash3::hash("OwnedHorseList.Body.EyeColor") };
+using value_type = Enum::Array<EyeColor>;
+static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Body.EyeColor") };
 };
-struct Pattern {
-enum value_type : mmh32 {
+struct Pattern : GameDataEnum {
+enum enum_type : mmh32 {
 _00 = murmurhash3::hash("_00"),
 _01 = murmurhash3::hash("_01"),
 _02 = murmurhash3::hash("_02"),
@@ -18,7 +19,8 @@ _04 = murmurhash3::hash("_04"),
 _05 = murmurhash3::hash("_05"),
 _06 = murmurhash3::hash("_06"),
 };
-static constexpr ::Promise<Pattern> metadata{ murmurhash3::hash("OwnedHorseList.Body.Pattern") };
+using value_type = Enum::Array<Pattern>;
+static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Body.Pattern") };
 };
 struct NoseColor : GameDataStructure {
 struct Blue : GameDataMember {
@@ -141,8 +143,8 @@ Red { s.get(Red::metadata) }
 };
 };
 struct value_type {
-EyeColor EyeColor;
-Pattern Pattern;
+EyeColor::value_type EyeColor;
+Pattern::value_type Pattern;
 NoseColor::value_type NoseColor;
 PrimaryColor::value_type PrimaryColor;
 SecondaryColor::value_type SecondaryColor;
@@ -156,8 +158,8 @@ SecondaryColor { s }
 { }
 };
 };
-struct Mane {
-enum value_type : mmh32 {
+struct Mane : GameDataEnum {
+enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 Horse_Link_Mane = murmurhash3::hash("Horse_Link_Mane"),
 Horse_Link_Mane_01 = murmurhash3::hash("Horse_Link_Mane_01"),
@@ -176,10 +178,11 @@ Horse_Link_Mane_11 = murmurhash3::hash("Horse_Link_Mane_11"),
 Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"),
 Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"),
 };
-static constexpr ::Promise<Mane> metadata{ murmurhash3::hash("OwnedHorseList.Mane") };
+using value_type = Enum::Array<Mane>;
+static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Mane") };
 };
-struct Rein {
-enum value_type : mmh32 {
+struct Rein : GameDataEnum {
+enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 GameRomHorseReins_00 = murmurhash3::hash("GameRomHorseReins_00"),
 GameRomHorseReins_01 = murmurhash3::hash("GameRomHorseReins_01"),
@@ -191,10 +194,11 @@ GameRomHorseReins_06 = murmurhash3::hash("GameRomHorseReins_06"),
 GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"),
 GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"),
 };
-static constexpr ::Promise<Rein> metadata{ murmurhash3::hash("OwnedHorseList.Rein") };
+using value_type = Enum::Array<Rein>;
+static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Rein") };
 };
-struct Saddle {
-enum value_type : mmh32 {
+struct Saddle : GameDataEnum {
+enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 GameRomHorseSaddle_00 = murmurhash3::hash("GameRomHorseSaddle_00"),
 GameRomHorseSaddle_01 = murmurhash3::hash("GameRomHorseSaddle_01"),
@@ -207,7 +211,8 @@ GameRomHorseSaddle_00L = murmurhash3::hash("GameRomHorseSaddle_00L"),
 GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"),
 GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"),
 };
-static constexpr ::Promise<Saddle> metadata{ murmurhash3::hash("OwnedHorseList.Saddle") };
+using value_type = Enum::Array<Saddle>;
+static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Saddle") };
 };
 struct Name : GameDataMember {
 using value_type = array<wstring16>;
@@ -419,9 +424,9 @@ SecondaryColor { s }
 };
 struct value_type {
 Body::value_type Body;
-Mane Mane;
-Rein Rein;
-Saddle Saddle;
+Mane::value_type Mane;
+Rein::value_type Rein;
+Saddle::value_type Saddle;
 Name::value_type Name;
 UidHash::value_type UidHash;
 ActorName::value_type ActorName;

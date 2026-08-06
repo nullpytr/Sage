@@ -9,7 +9,7 @@ namespace Enum
     struct Array : EnumWrapperStruct /* injects values enum into view's namespace */
     {
         /* type aliases */
-        using value_type = EnumWrapperStruct::value_type;
+        using value_type = EnumWrapperStruct::enum_type;
 
         /* View type for accessing continuous collection of Enum entries;
          * analogous to array<T> */

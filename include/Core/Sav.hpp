@@ -55,10 +55,17 @@ public:
 
     template<typename  M>
     requires std::derived_from<M, GameDataMember>
-    typeof(M::value) get()
+    M::value_type get()
     {
-        auto const& wrapper = M { *this };
+        auto wrapper = M { *this };
         return wrapper.value;
+    }
+
+    template<typename  E>
+    requires std::derived_from<E, GameDataEnum>
+    E::value_type get()
+    {
+        return get(E::metadata);
     }
     /* -- */
 
@@ -113,7 +120,7 @@ public:
     template <typename ESW>
     Enum::Array<ESW> get(Promise<Enum::Array<ESW>> const promise)
     {
-        return { get(Promise<array<typename ESW::value_type>>{promise.hash}) };
+        return { get(Promise<array<typename ESW::enum_type>>{promise.hash}) };
     }
 
     // TODO template <typename ESW>

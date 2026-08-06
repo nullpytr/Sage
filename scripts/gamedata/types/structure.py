@@ -32,14 +32,10 @@ class Structure(GameDataType):
 
         write("struct value_type {") # impl open
         for child_name, child_val in self.children.items(): # child decls
-            if isinstance(child_val, Member): 
-                write(f"{child_val.name}::value_type {child_val.name};")
-            elif isinstance(child_val, Structure):
-                write(f"{child_name}::value_type {child_name};") 
-            elif isinstance(child_val, EnumWrapperStructure):
-                write(f"{child_name} {child_name};")
-            elif isinstance(child_val, Enum):
+            if isinstance(child_val, Enum):
                 assert False, f"[gd/struct/emit]: node {self.name} has unexpected child of type {child_name}"
+                
+            write(f"{child_name}::value_type {child_name};") 
 
         write("template <typename Sav>")
         write(f"explicit value_type(Sav& s) : ")

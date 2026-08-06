@@ -27,7 +27,7 @@ class Enum[EWSName: str](GameDataType):
         buff: list[str] = []
         write = buff.append
 
-        write("enum value_type : mmh32 {")
+        write("enum enum_type : mmh32 {")
         for key in self.keys:
             if key[0].isdigit(): key = f"_{key}"
             write(f"{key} = murmurhash3::hash(\"{key}\"),")
@@ -43,22 +43,26 @@ class EnumArray[EWSName: str](Enum[EWSName]):
 
 class EnumWrapperStructure(GameDataType):
     name: str
-    value_type: Enum
+    enum_type: Enum
 
-    def __init__(self, name: str, value_type: Enum) -> None:
+    def __init__(self, name: str, enum_type: Enum) -> None:
         self.name = name
-        self.value_type = value_type
+        self.enum_type = enum_type
+        self.typename = enum_type.typename
 
     def __repr__(self) -> str:
-        return repr(self.value_type)
+        return repr(self.enum_type)
 
     def emit(self) -> str:
         buff: list[str] = []
         write = buff.append
 
-        write(f"struct {self.name}" + " {")
-        write(self.value_type.emit())
-        write(f"static constexpr ::Promise<{self.name}> metadata" + "{ murmurhash3::hash(\"" + self.value_type.hash_text_string + "\") };")
+        write(f"struct {self.name} : GameDataEnum" + " {")
+        write(self.enum_type.emit())
+
+        write(f"using value_type = {self.typename};")
+
+        write(f"static constexpr ::Promise<value_type> metadata" + "{ murmurhash3::hash(\"" + self.enum_type.hash_text_string + "\") };")
         write("};")
 
         # write(f"using {self.value_type.name}_t = {self.value_type.typename};")

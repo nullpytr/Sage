@@ -6,5 +6,5 @@ template <typename T>
 struct Promise
 {
     mmh32 hash;
-    using Type = T;
+    using value_type = T;
 };
