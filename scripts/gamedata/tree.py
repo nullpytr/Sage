@@ -80,4 +80,4 @@ def resolve_incomplete_enum_member(parent_node: Tree, enum_id: str, enum_kind: s
         keys=tuple(enum_values.hash_hexadecimal.split(",")) # HACK: EnumValues members place keys csv in the hash_hexdacimal field
     )
 
-    parent_node.children[enum_id] = EnumWrapperStructure(enum_id, value_type)
+    parent_node.children[enum_id] = MemberWrapperStructure(value_type)

@@ -1,15 +1,16 @@
 struct GameData : GameDataStructure {
 struct OwnedHorseList : GameDataStructure {
 struct Body : GameDataStructure {
-struct EyeColor : GameDataEnum {
+struct EyeColor : GameDataMember {
+using value_type = Enum::Array<EyeColor>;
 enum enum_type : mmh32 {
 Black = murmurhash3::hash("Black"),
 Blue = murmurhash3::hash("Blue"),
 };
-using value_type = Enum::Array<EyeColor>;
-static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Body.EyeColor") };
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.EyeColor") };
 };
-struct Pattern : GameDataEnum {
+struct Pattern : GameDataMember {
+using value_type = Enum::Array<Pattern>;
 enum enum_type : mmh32 {
 _00 = murmurhash3::hash("_00"),
 _01 = murmurhash3::hash("_01"),
@@ -19,36 +20,23 @@ _04 = murmurhash3::hash("_04"),
 _05 = murmurhash3::hash("_05"),
 _06 = murmurhash3::hash("_06"),
 };
-using value_type = Enum::Array<Pattern>;
-static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Body.Pattern") };
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.Pattern") };
 };
 struct NoseColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Blue(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue") };
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Green(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green") };
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Red(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red") };
 };
 struct value_type {
 Blue::value_type Blue;
@@ -65,30 +53,18 @@ Red { s.get(Red::metadata) }
 struct PrimaryColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Blue(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue") };
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Green(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green") };
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Red(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red") };
 };
 struct value_type {
 Blue::value_type Blue;
@@ -105,30 +81,18 @@ Red { s.get(Red::metadata) }
 struct SecondaryColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Blue(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue") };
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Green(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green") };
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Red(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red") };
 };
 struct value_type {
 Blue::value_type Blue;
@@ -158,7 +122,8 @@ SecondaryColor { s }
 { }
 };
 };
-struct Mane : GameDataEnum {
+struct Mane : GameDataMember {
+using value_type = Enum::Array<Mane>;
 enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 Horse_Link_Mane = murmurhash3::hash("Horse_Link_Mane"),
@@ -178,10 +143,10 @@ Horse_Link_Mane_11 = murmurhash3::hash("Horse_Link_Mane_11"),
 Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"),
 Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"),
 };
-using value_type = Enum::Array<Mane>;
-static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Mane") };
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Mane") };
 };
-struct Rein : GameDataEnum {
+struct Rein : GameDataMember {
+using value_type = Enum::Array<Rein>;
 enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 GameRomHorseReins_00 = murmurhash3::hash("GameRomHorseReins_00"),
@@ -194,10 +159,10 @@ GameRomHorseReins_06 = murmurhash3::hash("GameRomHorseReins_06"),
 GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"),
 GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"),
 };
-using value_type = Enum::Array<Rein>;
-static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Rein") };
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Rein") };
 };
-struct Saddle : GameDataEnum {
+struct Saddle : GameDataMember {
+using value_type = Enum::Array<Saddle>;
 enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 GameRomHorseSaddle_00 = murmurhash3::hash("GameRomHorseSaddle_00"),
@@ -211,154 +176,89 @@ GameRomHorseSaddle_00L = murmurhash3::hash("GameRomHorseSaddle_00L"),
 GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"),
 GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"),
 };
-using value_type = Enum::Array<Saddle>;
-static constexpr ::Promise<value_type> metadata{ murmurhash3::hash("OwnedHorseList.Saddle") };
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Saddle") };
 };
 struct Name : GameDataMember {
 using value_type = array<wstring16>;
-value_type value;
-template <typename Sav>
-explicit Name(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Name") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Name") };
 };
 struct UidHash : GameDataMember {
 using value_type = array<u64>;
-value_type value;
-template <typename Sav>
-explicit UidHash(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.UidHash") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.UidHash") };
 };
 struct ActorName : GameDataMember {
 using value_type = array<string64>;
-value_type value;
-template <typename Sav>
-explicit ActorName(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ActorName") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ActorName") };
 };
 struct ChargeNum : GameDataMember {
 using value_type = array<s32>;
-value_type value;
-template <typename Sav>
-explicit ChargeNum(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ChargeNum") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ChargeNum") };
 };
 struct ColorType : GameDataMember {
 using value_type = array<s32>;
-value_type value;
-template <typename Sav>
-explicit ColorType(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ColorType") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ColorType") };
 };
 struct FootType : GameDataMember {
 using value_type = array<s32>;
-value_type value;
-template <typename Sav>
-explicit FootType(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.FootType") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.FootType") };
 };
 struct HorsePower : GameDataMember {
 using value_type = array<s32>;
-value_type value;
-template <typename Sav>
-explicit HorsePower(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.HorsePower") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.HorsePower") };
 };
 struct HorseType : GameDataMember {
 using value_type = array<s32>;
-value_type value;
-template <typename Sav>
-explicit HorseType(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.HorseType") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.HorseType") };
 };
 struct RoomID : GameDataMember {
 using value_type = array<s32>;
-value_type value;
-template <typename Sav>
-explicit RoomID(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.RoomID") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.RoomID") };
 };
 struct Speed : GameDataMember {
 using value_type = array<s32>;
-value_type value;
-template <typename Sav>
-explicit Speed(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Speed") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Speed") };
 };
 struct Toughness : GameDataMember {
 using value_type = array<s32>;
-value_type value;
-template <typename Sav>
-explicit Toughness(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Toughness") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Toughness") };
 };
 struct Familiarity : GameDataMember {
 using value_type = array<float>;
-value_type value;
-template <typename Sav>
-explicit Familiarity(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Familiarity") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Familiarity") };
 };
 struct IsFamiliarityChecked : GameDataMember {
 using value_type = array<bool>;
-value_type value;
-template <typename Sav>
-explicit IsFamiliarityChecked(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked") };
 };
 struct Hair : GameDataStructure {
 struct PrimaryColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Blue(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue") };
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Green(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green") };
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Red(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red") };
 };
 struct value_type {
 Blue::value_type Blue;
@@ -375,30 +275,18 @@ Red { s.get(Red::metadata) }
 struct SecondaryColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Blue(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue") };
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Green(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green") };
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
-value_type value;
-template <typename Sav>
-explicit Red(Sav& s) : 
-value { s.get(metadata) }
-{ }
-static constexpr ::Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red") };
+
+static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red") };
 };
 struct value_type {
 Blue::value_type Blue;

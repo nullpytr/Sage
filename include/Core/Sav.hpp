@@ -57,15 +57,7 @@ public:
     requires std::derived_from<M, GameDataMember>
     M::value_type get()
     {
-        auto wrapper = M { *this };
-        return wrapper.value;
-    }
-
-    template<typename  E>
-    requires std::derived_from<E, GameDataEnum>
-    E::value_type get()
-    {
-        return get(E::metadata);
+        return get(M::metadata);
     }
     /* -- */
 

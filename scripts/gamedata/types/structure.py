@@ -1,6 +1,6 @@
 from .base import GameDataType
-from .member import Member, MemberWrapperStructure
-from .enum import Enum, EnumWrapperStructure
+from .member import *
+from .enum import *
 
 class Structure(GameDataType):
     name: str
@@ -27,14 +27,15 @@ class Structure(GameDataType):
         write(f"struct {self.name} : GameDataStructure" + " {") # struct open
         for child_name, child_val in self.children.items(): # child defs
             print(f"[gd/struct/emit]: processing child {child_name}")
-            if isinstance(child_val, Member): write(MemberWrapperStructure(child_val).emit())
-            else: write(child_val.emit())
+            if isinstance(child_val, (Structure, MemberWrapperStructure)): write(child_val.emit())
+            elif isinstance(child_val, Member): write(MemberWrapperStructure(child_val).emit())
+            else: assert False, f"[gd/struct/emit]: node {self.name} has unexpected child of type {child_name}"
 
         write("struct value_type {") # impl open
         for child_name, child_val in self.children.items(): # child decls
-            if isinstance(child_val, Enum):
-                assert False, f"[gd/struct/emit]: node {self.name} has unexpected child of type {child_name}"
-                
+            # if isinstance(child_val, Enum):
+            #     assert False, f"[gd/struct/emit]: node {self.name} has unexpected child of type {child_val.typename} {child_name}"
+
             write(f"{child_name}::value_type {child_name};") 
 
         write("template <typename Sav>")
