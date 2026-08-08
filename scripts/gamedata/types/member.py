@@ -44,8 +44,9 @@ class MemberWrapperStructure(Member):
         # write("value { s.get(metadata) }")
         # write("{ }")
 
-        # promise
-        write("static constexpr Promise<value_type> metadata { murmurhash3::hash(\"" + self.hash_text_string + "\") };")
+        # promise conversion operator
+        write("constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash(\"" + self.hash_text_string + "\") }; }")
+
         write("};")
 
         return "\n".join(buff)

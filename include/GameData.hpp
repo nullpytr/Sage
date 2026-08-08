@@ -7,7 +7,7 @@ enum enum_type : mmh32 {
 Black = murmurhash3::hash("Black"),
 Blue = murmurhash3::hash("Blue"),
 };
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.EyeColor") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.EyeColor") }; }
 };
 struct Pattern : GameDataMember {
 using value_type = Enum::Array<Pattern>;
@@ -20,23 +20,23 @@ _04 = murmurhash3::hash("_04"),
 _05 = murmurhash3::hash("_05"),
 _06 = murmurhash3::hash("_06"),
 };
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.Pattern") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.Pattern") }; }
 };
 struct NoseColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue") }; }
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green") }; }
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red") }; }
 };
 struct value_type {
 Blue::value_type Blue;
@@ -44,9 +44,9 @@ Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
 value_type(Sav& s) : 
-Blue { s.get(Blue::metadata) },
-Green { s.get(Green::metadata) },
-Red { s.get(Red::metadata) }
+Blue { s.get((Promise<Blue::value_type>)(struct Blue){ }) },
+Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
+Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
 };
@@ -54,17 +54,17 @@ struct PrimaryColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue") }; }
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green") }; }
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red") }; }
 };
 struct value_type {
 Blue::value_type Blue;
@@ -72,9 +72,9 @@ Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
 value_type(Sav& s) : 
-Blue { s.get(Blue::metadata) },
-Green { s.get(Green::metadata) },
-Red { s.get(Red::metadata) }
+Blue { s.get((Promise<Blue::value_type>)(struct Blue){ }) },
+Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
+Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
 };
@@ -82,17 +82,17 @@ struct SecondaryColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue") }; }
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green") }; }
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red") }; }
 };
 struct value_type {
 Blue::value_type Blue;
@@ -100,9 +100,9 @@ Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
 value_type(Sav& s) : 
-Blue { s.get(Blue::metadata) },
-Green { s.get(Green::metadata) },
-Red { s.get(Red::metadata) }
+Blue { s.get((Promise<Blue::value_type>)(struct Blue){ }) },
+Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
+Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
 };
@@ -114,8 +114,8 @@ PrimaryColor::value_type PrimaryColor;
 SecondaryColor::value_type SecondaryColor;
 template <typename Sav>
 value_type(Sav& s) : 
-EyeColor { s.get(EyeColor::metadata) },
-Pattern { s.get(Pattern::metadata) },
+EyeColor { s.get((Promise<EyeColor::value_type>)(struct EyeColor){ }) },
+Pattern { s.get((Promise<Pattern::value_type>)(struct Pattern){ }) },
 NoseColor { s },
 PrimaryColor { s },
 SecondaryColor { s }
@@ -143,7 +143,7 @@ Horse_Link_Mane_11 = murmurhash3::hash("Horse_Link_Mane_11"),
 Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"),
 Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"),
 };
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Mane") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Mane") }; }
 };
 struct Rein : GameDataMember {
 using value_type = Enum::Array<Rein>;
@@ -159,7 +159,7 @@ GameRomHorseReins_06 = murmurhash3::hash("GameRomHorseReins_06"),
 GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"),
 GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"),
 };
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Rein") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Rein") }; }
 };
 struct Saddle : GameDataMember {
 using value_type = Enum::Array<Saddle>;
@@ -176,89 +176,89 @@ GameRomHorseSaddle_00L = murmurhash3::hash("GameRomHorseSaddle_00L"),
 GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"),
 GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"),
 };
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Saddle") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Saddle") }; }
 };
 struct Name : GameDataMember {
 using value_type = array<wstring16>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Name") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Name") }; }
 };
 struct UidHash : GameDataMember {
 using value_type = array<u64>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.UidHash") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.UidHash") }; }
 };
 struct ActorName : GameDataMember {
 using value_type = array<string64>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ActorName") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.ActorName") }; }
 };
 struct ChargeNum : GameDataMember {
 using value_type = array<s32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ChargeNum") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.ChargeNum") }; }
 };
 struct ColorType : GameDataMember {
 using value_type = array<s32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.ColorType") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.ColorType") }; }
 };
 struct FootType : GameDataMember {
 using value_type = array<s32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.FootType") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.FootType") }; }
 };
 struct HorsePower : GameDataMember {
 using value_type = array<s32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.HorsePower") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.HorsePower") }; }
 };
 struct HorseType : GameDataMember {
 using value_type = array<s32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.HorseType") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.HorseType") }; }
 };
 struct RoomID : GameDataMember {
 using value_type = array<s32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.RoomID") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.RoomID") }; }
 };
 struct Speed : GameDataMember {
 using value_type = array<s32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Speed") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Speed") }; }
 };
 struct Toughness : GameDataMember {
 using value_type = array<s32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Toughness") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Toughness") }; }
 };
 struct Familiarity : GameDataMember {
 using value_type = array<float>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Familiarity") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Familiarity") }; }
 };
 struct IsFamiliarityChecked : GameDataMember {
 using value_type = array<bool>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked") }; }
 };
 struct Hair : GameDataStructure {
 struct PrimaryColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue") }; }
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green") }; }
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red") }; }
 };
 struct value_type {
 Blue::value_type Blue;
@@ -266,9 +266,9 @@ Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
 value_type(Sav& s) : 
-Blue { s.get(Blue::metadata) },
-Green { s.get(Green::metadata) },
-Red { s.get(Red::metadata) }
+Blue { s.get((Promise<Blue::value_type>)(struct Blue){ }) },
+Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
+Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
 };
@@ -276,17 +276,17 @@ struct SecondaryColor : GameDataStructure {
 struct Blue : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue") }; }
 };
 struct Green : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green") }; }
 };
 struct Red : GameDataMember {
 using value_type = array<u32>;
 
-static constexpr Promise<value_type> metadata { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red") };
+constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red") }; }
 };
 struct value_type {
 Blue::value_type Blue;
@@ -294,9 +294,9 @@ Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
 value_type(Sav& s) : 
-Blue { s.get(Blue::metadata) },
-Green { s.get(Green::metadata) },
-Red { s.get(Red::metadata) }
+Blue { s.get((Promise<Blue::value_type>)(struct Blue){ }) },
+Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
+Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
 };
@@ -332,22 +332,22 @@ Hair::value_type Hair;
 template <typename Sav>
 value_type(Sav& s) : 
 Body { s },
-Mane { s.get(Mane::metadata) },
-Rein { s.get(Rein::metadata) },
-Saddle { s.get(Saddle::metadata) },
-Name { s.get(Name::metadata) },
-UidHash { s.get(UidHash::metadata) },
-ActorName { s.get(ActorName::metadata) },
-ChargeNum { s.get(ChargeNum::metadata) },
-ColorType { s.get(ColorType::metadata) },
-FootType { s.get(FootType::metadata) },
-HorsePower { s.get(HorsePower::metadata) },
-HorseType { s.get(HorseType::metadata) },
-RoomID { s.get(RoomID::metadata) },
-Speed { s.get(Speed::metadata) },
-Toughness { s.get(Toughness::metadata) },
-Familiarity { s.get(Familiarity::metadata) },
-IsFamiliarityChecked { s.get(IsFamiliarityChecked::metadata) },
+Mane { s.get((Promise<Mane::value_type>)(struct Mane){ }) },
+Rein { s.get((Promise<Rein::value_type>)(struct Rein){ }) },
+Saddle { s.get((Promise<Saddle::value_type>)(struct Saddle){ }) },
+Name { s.get((Promise<Name::value_type>)(struct Name){ }) },
+UidHash { s.get((Promise<UidHash::value_type>)(struct UidHash){ }) },
+ActorName { s.get((Promise<ActorName::value_type>)(struct ActorName){ }) },
+ChargeNum { s.get((Promise<ChargeNum::value_type>)(struct ChargeNum){ }) },
+ColorType { s.get((Promise<ColorType::value_type>)(struct ColorType){ }) },
+FootType { s.get((Promise<FootType::value_type>)(struct FootType){ }) },
+HorsePower { s.get((Promise<HorsePower::value_type>)(struct HorsePower){ }) },
+HorseType { s.get((Promise<HorseType::value_type>)(struct HorseType){ }) },
+RoomID { s.get((Promise<RoomID::value_type>)(struct RoomID){ }) },
+Speed { s.get((Promise<Speed::value_type>)(struct Speed){ }) },
+Toughness { s.get((Promise<Toughness::value_type>)(struct Toughness){ }) },
+Familiarity { s.get((Promise<Familiarity::value_type>)(struct Familiarity){ }) },
+IsFamiliarityChecked { s.get((Promise<IsFamiliarityChecked::value_type>)(struct IsFamiliarityChecked){ }) },
 Hair { s }
 { }
 };

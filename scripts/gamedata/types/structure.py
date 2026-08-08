@@ -45,7 +45,7 @@ class Structure(GameDataType):
             if isinstance(child_val, Structure):
                 write(f"{child_name}" + " { s },")
             else:
-                write(f"{child_name}" + " { " + f"s.get({child_name}::metadata)" + " },")
+                write(f"{child_name}" + " { " + f"s.get((Promise<{child_name}::value_type>)(struct {child_name})" + "{ }) },")
         buff[-1] = buff[-1][:-1] # strip last comma
         write("{ }")
 
