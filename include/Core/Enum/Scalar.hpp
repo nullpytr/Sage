@@ -5,11 +5,12 @@
 
 namespace Enum
 {
-    template <typename EnumWrapperStruct>
-    struct Scalar : EnumWrapperStruct /* injects values enum into scalar's namespace */
+    template <typename E>
+    struct Scalar : E /* injects values enum into scalar's namespace */
     {
         /* type aliases */
-        using value_type = EnumWrapperStruct::Value;
+        using enum_type = E::enum_type;
+        using value_type = enum_type;
 
         /* View type for accessing single Enum entry;
          * analogous to T& */
