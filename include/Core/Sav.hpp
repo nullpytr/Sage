@@ -57,7 +57,7 @@ public:
     requires std::derived_from<M, GameDataMember>
     T get()
     {
-        return get(M::metadata);
+        return get((Promise<T>)M{});
     }
     /* -- */
 
