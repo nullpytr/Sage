@@ -39,7 +39,7 @@ class Structure(GameDataType):
             write(f"{child_name}::value_type {child_name};") 
 
         write("template <typename Sav>")
-        write(f"explicit value_type(Sav& s) : ")
+        write(f"value_type(Sav& s) : ")
         
         for child_name, child_val in self.children.items(): # member inits
             if isinstance(child_val, Structure):
