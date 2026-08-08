@@ -43,7 +43,7 @@ Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 Blue { s.get(Blue::metadata) },
 Green { s.get(Green::metadata) },
 Red { s.get(Red::metadata) }
@@ -71,7 +71,7 @@ Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 Blue { s.get(Blue::metadata) },
 Green { s.get(Green::metadata) },
 Red { s.get(Red::metadata) }
@@ -99,7 +99,7 @@ Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 Blue { s.get(Blue::metadata) },
 Green { s.get(Green::metadata) },
 Red { s.get(Red::metadata) }
@@ -113,7 +113,7 @@ NoseColor::value_type NoseColor;
 PrimaryColor::value_type PrimaryColor;
 SecondaryColor::value_type SecondaryColor;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 EyeColor { s.get(EyeColor::metadata) },
 Pattern { s.get(Pattern::metadata) },
 NoseColor { s },
@@ -265,7 +265,7 @@ Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 Blue { s.get(Blue::metadata) },
 Green { s.get(Green::metadata) },
 Red { s.get(Red::metadata) }
@@ -293,7 +293,7 @@ Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 Blue { s.get(Blue::metadata) },
 Green { s.get(Green::metadata) },
 Red { s.get(Red::metadata) }
@@ -304,7 +304,7 @@ struct value_type {
 PrimaryColor::value_type PrimaryColor;
 SecondaryColor::value_type SecondaryColor;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 PrimaryColor { s },
 SecondaryColor { s }
 { }
@@ -330,7 +330,7 @@ Familiarity::value_type Familiarity;
 IsFamiliarityChecked::value_type IsFamiliarityChecked;
 Hair::value_type Hair;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 Body { s },
 Mane { s.get(Mane::metadata) },
 Rein { s.get(Rein::metadata) },
@@ -355,7 +355,7 @@ Hair { s }
 struct value_type {
 OwnedHorseList::value_type OwnedHorseList;
 template <typename Sav>
-explicit value_type(Sav& s) : 
+value_type(Sav& s) : 
 OwnedHorseList { s }
 { }
 };

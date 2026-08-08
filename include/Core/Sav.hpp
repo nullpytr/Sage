@@ -46,16 +46,16 @@ public:
      * High-level access: using GameData structures (recommended)
      * See include/GameData/GameData.hpp
      */
-    template<typename S>
+    template<typename S, typename T = S::value_type>
     requires std::derived_from<S, GameDataStructure>
-    S::value_type get()
+    T get()
     {
-        return (typename S::value_type) { *this };
+        return { *this };
     }
 
-    template<typename  M>
+    template<typename  M, typename T = M::value_type>
     requires std::derived_from<M, GameDataMember>
-    M::value_type get()
+    T get()
     {
         return get(M::metadata);
     }
@@ -79,7 +79,7 @@ public:
     T& get(Promise<T*> const promise)
     {
         return value_at<T>(
-            get(Promise<u32>{promise.hash}) // offset
+            get(Promise<u32>{ promise.hash }) // offset
         );
     }
 
@@ -99,24 +99,24 @@ public:
     template <typename T>
     array<T> get(Promise<T[]> const promise)
     {
-        return get(Promise<array<T>>{promise.hash});
+        return get(Promise<array<T>>{ promise.hash });
     }
 
-    // Get view types over raw enum types
-    template <typename ESW> // EnumStructWrapper
-    Enum::Scalar<ESW> get(Promise<Enum::Scalar<ESW>> const promise)
+    /* Get sage-style custom enum-view to a promised enum of type T */
+    template <typename E, typename T = E::value_type>
+    Enum::Scalar<E> get(Promise<Enum::Scalar<E>> const promise)
     {
-        return { get(Promise<typename ESW::value_type>{promise.hash}) };
+        return { get(Promise<T>{ promise.hash }) };
     }
 
-    template <typename ESW>
-    Enum::Array<ESW> get(Promise<Enum::Array<ESW>> const promise)
+    template <typename E, typename T = E::value_type>
+    Enum::Array<E> get(Promise<Enum::Array<E>> const promise)
     {
-        return { get(Promise<array<typename ESW::enum_type>>{promise.hash}) };
+        return { get(Promise<T>{ promise.hash }) };
     }
-
-    // TODO template <typename ESW>
-    // Enum::Collection<ESW> get
+    
+    // TODO template <typename E>
+    // Enum::Collection<E> get
 
     /* -- */
 
