@@ -15,38 +15,3 @@ class Member(GameDataType):
 
     def emit(self) -> str:
         return "" # v3.1: emit is for type definitions only; decls emitted by owner (parent)
-
-class MemberWrapperStructure(Member):
-    basename: str = "GameDataMember"
-
-    def __init__(self, member: Member) -> None:
-        super().__init__(
-            name=member.name, 
-            hash_text_string=member.hash_text_string, 
-            hash_hexadecimal=member.hash_hexadecimal
-        )
-        self.typename = member.typename
-        self.member = member
-
-    def emit(self) -> str:
-        buff: list[str] = []
-        write = buff.append
-
-        write(f"struct {self.name} : {self.basename}" + " {") # wrapper open
-        write(f"using value_type = {self.typename};")
-
-        write(self.member.emit())
-
-        # write("value_type value;")
-
-        # write("template <typename Sav>")
-        # write(f"explicit {self.name}(Sav& s) : ")
-        # write("value { s.get(metadata) }")
-        # write("{ }")
-
-        # promise conversion operator
-        write("constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash(\"" + self.hash_text_string + "\") }; }")
-
-        write("};")
-
-        return "\n".join(buff)

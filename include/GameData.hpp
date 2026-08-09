@@ -1,15 +1,15 @@
-struct GameData : GameDataStructure {
-struct OwnedHorseList : GameDataStructure {
-struct Body : GameDataStructure {
-struct EyeColor : GameDataMember {
+struct GameData : Data::Structure {
+struct OwnedHorseList : Data::Structure {
+struct Body : Data::Structure {
+struct EyeColor : Data::Member {
 using value_type = Enum::Array<EyeColor>;
 enum enum_type : mmh32 {
 Black = murmurhash3::hash("Black"),
 Blue = murmurhash3::hash("Blue"),
 };
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.EyeColor") }; }
-};
-struct Pattern : GameDataMember {
+}; /* GameDataMember close */
+struct Pattern : Data::Member {
 using value_type = Enum::Array<Pattern>;
 enum enum_type : mmh32 {
 _00 = murmurhash3::hash("_00"),
@@ -21,23 +21,20 @@ _05 = murmurhash3::hash("_05"),
 _06 = murmurhash3::hash("_06"),
 };
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.Pattern") }; }
-};
-struct NoseColor : GameDataStructure {
-struct Blue : GameDataMember {
+}; /* GameDataMember close */
+struct NoseColor : Data::Structure {
+struct Blue : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue") }; }
-};
-struct Green : GameDataMember {
+}; /* GameDataMember close */
+struct Green : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green") }; }
-};
-struct Red : GameDataMember {
+}; /* GameDataMember close */
+struct Red : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red") }; }
-};
+}; /* GameDataMember close */
 struct value_type {
 Blue::value_type Blue;
 Green::value_type Green;
@@ -49,23 +46,20 @@ Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
 Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
-};
-struct PrimaryColor : GameDataStructure {
-struct Blue : GameDataMember {
+}; /* GameDataStructure close */
+struct PrimaryColor : Data::Structure {
+struct Blue : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue") }; }
-};
-struct Green : GameDataMember {
+}; /* GameDataMember close */
+struct Green : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green") }; }
-};
-struct Red : GameDataMember {
+}; /* GameDataMember close */
+struct Red : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red") }; }
-};
+}; /* GameDataMember close */
 struct value_type {
 Blue::value_type Blue;
 Green::value_type Green;
@@ -77,23 +71,20 @@ Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
 Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
-};
-struct SecondaryColor : GameDataStructure {
-struct Blue : GameDataMember {
+}; /* GameDataStructure close */
+struct SecondaryColor : Data::Structure {
+struct Blue : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue") }; }
-};
-struct Green : GameDataMember {
+}; /* GameDataMember close */
+struct Green : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green") }; }
-};
-struct Red : GameDataMember {
+}; /* GameDataMember close */
+struct Red : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red") }; }
-};
+}; /* GameDataMember close */
 struct value_type {
 Blue::value_type Blue;
 Green::value_type Green;
@@ -105,7 +96,7 @@ Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
 Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
-};
+}; /* GameDataStructure close */
 struct value_type {
 EyeColor::value_type EyeColor;
 Pattern::value_type Pattern;
@@ -121,8 +112,8 @@ PrimaryColor { s },
 SecondaryColor { s }
 { }
 };
-};
-struct Mane : GameDataMember {
+}; /* GameDataStructure close */
+struct Mane : Data::Member {
 using value_type = Enum::Array<Mane>;
 enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
@@ -144,8 +135,8 @@ Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"),
 Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"),
 };
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Mane") }; }
-};
-struct Rein : GameDataMember {
+}; /* GameDataMember close */
+struct Rein : Data::Member {
 using value_type = Enum::Array<Rein>;
 enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
@@ -160,8 +151,8 @@ GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"),
 GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"),
 };
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Rein") }; }
-};
-struct Saddle : GameDataMember {
+}; /* GameDataMember close */
+struct Saddle : Data::Member {
 using value_type = Enum::Array<Saddle>;
 enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
@@ -177,89 +168,73 @@ GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"),
 GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"),
 };
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Saddle") }; }
-};
-struct Name : GameDataMember {
+}; /* GameDataMember close */
+struct Name : Data::Member {
 using value_type = array<wstring16>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Name") }; }
-};
-struct UidHash : GameDataMember {
+}; /* GameDataMember close */
+struct UidHash : Data::Member {
 using value_type = array<u64>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.UidHash") }; }
-};
-struct ActorName : GameDataMember {
+}; /* GameDataMember close */
+struct ActorName : Data::Member {
 using value_type = array<string64>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.ActorName") }; }
-};
-struct ChargeNum : GameDataMember {
+}; /* GameDataMember close */
+struct ChargeNum : Data::Member {
 using value_type = array<s32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.ChargeNum") }; }
-};
-struct ColorType : GameDataMember {
+}; /* GameDataMember close */
+struct ColorType : Data::Member {
 using value_type = array<s32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.ColorType") }; }
-};
-struct FootType : GameDataMember {
+}; /* GameDataMember close */
+struct FootType : Data::Member {
 using value_type = array<s32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.FootType") }; }
-};
-struct HorsePower : GameDataMember {
+}; /* GameDataMember close */
+struct HorsePower : Data::Member {
 using value_type = array<s32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.HorsePower") }; }
-};
-struct HorseType : GameDataMember {
+}; /* GameDataMember close */
+struct HorseType : Data::Member {
 using value_type = array<s32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.HorseType") }; }
-};
-struct RoomID : GameDataMember {
+}; /* GameDataMember close */
+struct RoomID : Data::Member {
 using value_type = array<s32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.RoomID") }; }
-};
-struct Speed : GameDataMember {
+}; /* GameDataMember close */
+struct Speed : Data::Member {
 using value_type = array<s32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Speed") }; }
-};
-struct Toughness : GameDataMember {
+}; /* GameDataMember close */
+struct Toughness : Data::Member {
 using value_type = array<s32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Toughness") }; }
-};
-struct Familiarity : GameDataMember {
+}; /* GameDataMember close */
+struct Familiarity : Data::Member {
 using value_type = array<float>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Familiarity") }; }
-};
-struct IsFamiliarityChecked : GameDataMember {
+}; /* GameDataMember close */
+struct IsFamiliarityChecked : Data::Member {
 using value_type = array<bool>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked") }; }
-};
-struct Hair : GameDataStructure {
-struct PrimaryColor : GameDataStructure {
-struct Blue : GameDataMember {
+}; /* GameDataMember close */
+struct Hair : Data::Structure {
+struct PrimaryColor : Data::Structure {
+struct Blue : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue") }; }
-};
-struct Green : GameDataMember {
+}; /* GameDataMember close */
+struct Green : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green") }; }
-};
-struct Red : GameDataMember {
+}; /* GameDataMember close */
+struct Red : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red") }; }
-};
+}; /* GameDataMember close */
 struct value_type {
 Blue::value_type Blue;
 Green::value_type Green;
@@ -271,23 +246,20 @@ Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
 Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
-};
-struct SecondaryColor : GameDataStructure {
-struct Blue : GameDataMember {
+}; /* GameDataStructure close */
+struct SecondaryColor : Data::Structure {
+struct Blue : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue") }; }
-};
-struct Green : GameDataMember {
+}; /* GameDataMember close */
+struct Green : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green") }; }
-};
-struct Red : GameDataMember {
+}; /* GameDataMember close */
+struct Red : Data::Member {
 using value_type = array<u32>;
-
 constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red") }; }
-};
+}; /* GameDataMember close */
 struct value_type {
 Blue::value_type Blue;
 Green::value_type Green;
@@ -299,7 +271,7 @@ Green { s.get((Promise<Green::value_type>)(struct Green){ }) },
 Red { s.get((Promise<Red::value_type>)(struct Red){ }) }
 { }
 };
-};
+}; /* GameDataStructure close */
 struct value_type {
 PrimaryColor::value_type PrimaryColor;
 SecondaryColor::value_type SecondaryColor;
@@ -309,7 +281,7 @@ PrimaryColor { s },
 SecondaryColor { s }
 { }
 };
-};
+}; /* GameDataStructure close */
 struct value_type {
 Body::value_type Body;
 Mane::value_type Mane;
@@ -351,7 +323,7 @@ IsFamiliarityChecked { s.get((Promise<IsFamiliarityChecked::value_type>)(struct 
 Hair { s }
 { }
 };
-};
+}; /* GameDataStructure close */
 struct value_type {
 OwnedHorseList::value_type OwnedHorseList;
 template <typename Sav>
@@ -359,4 +331,4 @@ value_type(Sav& s) :
 OwnedHorseList { s }
 { }
 };
-};
+}; /* GameDataStructure close */

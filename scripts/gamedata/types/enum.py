@@ -1,4 +1,4 @@
-from .member import Member, MemberWrapperStructure
+from .member import Member
 
 class Enum[EWSName: str](Member):
     typename = "Enum::...<...>"
@@ -23,18 +23,6 @@ class Enum[EWSName: str](Member):
             (cls,), 
             {"typename": f"{cls.typename.format(ews=ews_name)}"}
         )
-
-    def emit(self) -> str:
-        buff: list[str] = []
-        write = buff.append
-
-        write("enum enum_type : mmh32 {")
-        for key in self.keys:
-            if key[0].isdigit(): key = f"_{key}"
-            write(f"{key} = murmurhash3::hash(\"{key}\"),")
-        write("};")
-
-        return "\n".join(buff)
 
 class EnumScalar[EWSName: str](Enum[EWSName]):
     typename = "Enum::Scalar<{ews}>"
