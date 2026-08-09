@@ -12,6 +12,3 @@ class Member(GameDataType):
 
     def __repr__(self) -> str:
         return f"'({self.typename}, {self.name}, {self.hash_text_string}, {self.hash_hexadecimal})'"
-
-    def emit(self) -> str:
-        return "" # v3.1: emit is for type definitions only; decls emitted by owner (parent)
