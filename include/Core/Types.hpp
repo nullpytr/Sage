@@ -2,18 +2,23 @@
 
 /* GameData types
  * These types are used in Sage's GameData model,
- * Specifically for constraining template substitution
+ * for constraining template substitution
  * in Sage's Sav::get<[S|M]> API
  */
-struct GameDataType {};
-struct GameDataStructure : GameDataType {};
-struct GameDataMember : GameDataType {};
-struct GameDataEnum : GameDataType {};
+namespace Data
+{
+    struct Type {};
+    struct Structure : Type {};
+    struct Member : Type {};
 
-/*
- * These are the underlying types used in Nintendo's blobs;
- * They can be used to directly read binary data from the files.
- */
+    /* A view specialization is a Data::Structure wrapper
+     * that can be injected with a save's data
+     * by constructing it with a Sav&
+     */
+    template <typename X>
+    struct View;
+}
+
 #include <cstdint>
 using u8 = std::uint8_t;
 using u16 = std::uint16_t;
@@ -38,6 +43,8 @@ using wstring32 = wchar[32];
 using wstring64 = wchar[64];
 
 using byte = unsigned char;
+
+struct rgb { u32& r; u32& g; u32& b; };
 
 /*
  * STL types

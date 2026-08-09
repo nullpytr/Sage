@@ -46,15 +46,15 @@ public:
      * High-level access: using GameData structures (recommended)
      * See include/GameData/GameData.hpp
      */
-    template<typename S, typename T = S::value_type>
-    requires std::derived_from<S, GameDataStructure>
+    template<typename S, typename T = Data::View<S>>
+    requires std::derived_from<S, Data::Structure>
     T get()
     {
         return { *this };
     }
 
     template<typename  M, typename T = M::value_type>
-    requires std::derived_from<M, GameDataMember>
+    requires std::derived_from<M, Data::Member>
     T get()
     {
         return get((Promise<T>)M{});
