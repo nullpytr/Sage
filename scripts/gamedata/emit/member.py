@@ -17,7 +17,7 @@ class MemberDefEmitter(MemberEmitter):
         write(f"using value_type = {self.member.typename};")
 
         # promise implicit conversion
-        write("constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash(\"" + self.member.hash_text_string + "\") }; }")
+        write("constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash(\"" + self.member.hash_text_string + "\") }; }")
 
         write("}; /* Data::Member " + self.member.path + " close */") # def close
 
@@ -25,4 +25,4 @@ class MemberDefEmitter(MemberEmitter):
 
 class MemberDeclEmitter(MemberEmitter):
     def emit(self) -> str:
-        return f"{self.member.path}::value_type {self.member.name};"
+        return f"S::{self.member.name}::value_type {self.member.name};"

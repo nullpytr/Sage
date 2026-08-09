@@ -6,15 +6,26 @@ proj_root = Path(__file__).parents[1]
 gamedata_file = proj_root / "data" / "gamedata-basic.csv" # in
 gamedata_header_file = proj_root / "include" / "GameData.hpp" # out
 
-gamedata = tree.make_tree(open(gamedata_file, "r"))
+gamedata = tree.Tree(name="GameData", path="GameData", children={})
+tree.parse_csv(open(gamedata_file, "r"), gamedata)
+
 gamedata_dict = json.loads(
     repr(gamedata).replace("'", '"')
 )
 print(json.dumps(gamedata_dict, indent=1))
 
-gamedata_header = emit.structure.StructureDefEmitter(gamedata)
+defs = emit.structure.StructureDefEmitter(gamedata)
+decls = emit.structure.StructureDeclEmitter(gamedata)
 
-open(gamedata_header_file, "w").write(gamedata_header.emit())
+gamedata_header: list[str] = []
+write = gamedata_header.append
+
+write(defs.emit())
+write("namespace Data {")
+write(decls.emit())
+write("}")
+
+open(gamedata_header_file, "w").write("\n".join(gamedata_header))
 
 print("Project root:", proj_root)
 print("Gamedata file:", gamedata_file)

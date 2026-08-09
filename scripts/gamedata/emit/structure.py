@@ -19,20 +19,20 @@ class StructureDeclEmitter(StructureEmitter):
         
         write("template <>")
         write(f"struct View<{self.structure.path}>" + " {") # decl open
+        write(f"using S = {self.structure.path};")
         for child_path, child_val in self.structure.children.items(): # member decls
             if isinstance(child_val, Structure): write(f"View<{child_val.path}> {child_val.name};") # tie-in out of line decl
             elif isinstance(child_val, enum.Enum): write(enum.EnumDeclEmitter(child_val).emit())
             elif isinstance(child_val, member.Member): write(member.MemberDeclEmitter(child_val).emit())
             else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
-        write("template <typename Sav>")
         write("View(Sav& s) : ") # ctor open
                 
         for child_path, child_val in self.structure.children.items(): # member inits
             if isinstance(child_val, Structure):
                 write(f"{child_val.name}" + " { s },")
             else:
-                write(f"{child_val.name}" + " { " + f"s.get((Promise<{child_val.path}::value_type>)({child_val.path})" + "{ }) },")
+                write(f"{child_val.name}" + " { " + f"s.get<S::{child_val.name}>()" + " },")
 
         buff[-1] = buff[-1][:-1] # strip last comma
         write("{ }") # ctor close
