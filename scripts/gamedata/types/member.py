@@ -1,12 +1,12 @@
 from .base import GameDataType
 
 class Member(GameDataType):
-    name: str
     hash_text_string: str
     hash_hexadecimal: str
 
-    def __init__(self, name: str, hash_text_string: str, hash_hexadecimal: str) -> None:
+    def __init__(self, name: str, path: str, hash_text_string: str, hash_hexadecimal: str) -> None:
         self.name = name
+        self.path = path
         self.hash_text_string = hash_text_string
         self.hash_hexadecimal = hash_hexadecimal
 

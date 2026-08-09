@@ -3,11 +3,11 @@ from .member import *
 from .enum import *
 
 class Structure(GameDataType):
-    name: str
     children: dict[str, GameDataType]
 
-    def __init__(self, name: str, children: dict[str, GameDataType]) -> None:
+    def __init__(self, name: str, path: str, children: dict[str, GameDataType]) -> None:
         self.name = name
+        self.path = path
         self.children = children
 
     def __repr__(self) -> str:

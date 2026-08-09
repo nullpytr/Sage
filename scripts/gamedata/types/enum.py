@@ -2,13 +2,12 @@ from .member import Member
 
 class Enum[EWSName: str](Member):
     typename = "Enum::...<...>"
-    
-    name: str
-    hash_text_string: str
+
     keys: tuple[str, ...]
 
-    def __init__(self, name: str, hash_text_string: str, keys: tuple[str, ...]) -> None:
+    def __init__(self, name: str, path: str, hash_text_string: str, keys: tuple[str, ...]) -> None:
         self.name = name
+        self.path = path
         self.hash_hexadecimal = '...' # FIXME
         self.hash_text_string = hash_text_string
         self.keys = keys  
