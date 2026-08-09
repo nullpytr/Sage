@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Core/Types.hpp"
-#include "Core/Promise.hpp"
 
 namespace Enum
 {
