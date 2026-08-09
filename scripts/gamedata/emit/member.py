@@ -13,16 +13,16 @@ class MemberDefEmitter(MemberEmitter):
         buff: list[str] = []
         write = buff.append
 
-        write(f"struct {self.member.name} : Data::Member" + " {") # wrapper open
+        write(f"struct {self.member.name} : Data::Member" + " {") # def open
         write(f"using value_type = {self.member.typename};")
 
         # promise implicit conversion
         write("constexpr operator Promise<value_type>() noexcept { return { murmurhash3::hash(\"" + self.member.hash_text_string + "\") }; }")
 
-        write("}; /* GameDataMember close */")
+        write("}; /* Data::Member " + self.member.path + " close */") # def close
 
         return "\n".join(buff)
 
 class MemberDeclEmitter(MemberEmitter):
     def emit(self) -> str:
-        raise NotImplementedError # TODO
+        return f"{self.member.path}::value_type {self.member.name};"

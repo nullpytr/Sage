@@ -29,5 +29,4 @@ class EnumDefEmitter(EnumEmitter, member.MemberDefEmitter):
         return "\n".join(buff)
 
 class EnumDeclEmitter(EnumEmitter, member.MemberDeclEmitter):
-    def emit(self) -> str:
-        raise NotImplementedError # TODO
+    pass
