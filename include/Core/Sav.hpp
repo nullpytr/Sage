@@ -104,19 +104,20 @@ public:
 
     /* Get sage-style custom enum-view to a promised enum of type T */
     template <typename E, typename C = E::value_type, typename T = C::value_type>
-    Enum::Scalar<E> get(Promise<Enum::Scalar<E>> const promise)
+    C get(Promise<Enum::Container<E>> const promise)
     {
         return { get(Promise<T>{ promise.hash }) };
     }
 
-    template <typename E, typename C = E::value_type, typename T = C::value_type>
-    Enum::Array<E> get(Promise<Enum::Array<E>> const promise)
-    {
-        return { get(Promise<T>{ promise.hash }) };
-    }
-    
+    template <typename E>
+    Enum::Scalar<E> get(Promise<Enum::Scalar<E>> const promise) { return get(Promise<Enum::Container<E>>{ promise.hash }); }
+
+    template <typename E>
+    Enum::Array<E> get(Promise<Enum::Array<E>> const promise) { return get(Promise<Enum::Container<E>>{ promise.hash }); }
+
+
     // TODO template <typename E>
-    // Enum::Collection<E> get
+    // Enum::Collection<E> get(Hash<Enum::Collection<E>> const hash) { return get(Hash<Enum::Container<E>>{ hash }); }
 
     /* -- */
 

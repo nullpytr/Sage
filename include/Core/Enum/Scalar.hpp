@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Core/Types.hpp"
+#include "Core/Enum/Container.hpp"
 
 namespace Enum
 {
     template <typename E>
-    struct Scalar : E /* injects values enum into scalar's namespace */
+    struct Scalar : Container<E>
     {
         /* type aliases */
         using enum_type = E::enum_type;

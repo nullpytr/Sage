@@ -3,6 +3,7 @@
 #include "Core/MurmurHash3.hpp"
 #include "Core/Types.hpp"
 
+#include "Core/Enum/Container.hpp"
 #include "Core/Enum/Scalar.hpp"
 #include "Core/Enum/Array.hpp"
 #include "Core/Enum/Collection.hpp"
