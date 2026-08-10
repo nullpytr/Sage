@@ -14,7 +14,7 @@ namespace Enum
         /* View type for accessing single Enum entry;
          * analogous to T& */
 
-        Scalar(value_type& v)
+        explicit Scalar(value_type& v)
             : m_entry { v }
         {}
 

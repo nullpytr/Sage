@@ -15,7 +15,7 @@ namespace Enum
         /* View type for accessing continuous collection of Enum entries;
          * analogous to array<T> */
 
-        Array(value_type const& span)
+        explicit Array(value_type const& span)
             : m_span { span }
         {}
 
