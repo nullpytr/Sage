@@ -73,4 +73,6 @@ namespace Data
          * -- we throw a hard error for undefined specializations. */
         static_assert(false, "no hashtable entry found");
     };
+
+    struct Enum : Member {};
 }
