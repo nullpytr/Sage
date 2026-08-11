@@ -7,7 +7,6 @@ enum enum_type : mmh32 {
 Black = murmurhash3::hash("Black"),
 Blue = murmurhash3::hash("Blue"),
 };
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.EyeColor") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::EyeColor close */
 struct Pattern : Data::Member {
 using value_type = Enum::Array<Pattern>;
@@ -20,48 +19,38 @@ _04 = murmurhash3::hash("_04"),
 _05 = murmurhash3::hash("_05"),
 _06 = murmurhash3::hash("_06"),
 };
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.Pattern") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::Pattern close */
 struct NoseColor : Data::Structure {
 struct Blue : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Blue close */
 struct Green : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Green close */
 struct Red : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Body::NoseColor close */
 struct PrimaryColor : Data::Structure {
 struct Blue : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Blue close */
 struct Green : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Green close */
 struct Red : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Body::PrimaryColor close */
 struct SecondaryColor : Data::Structure {
 struct Blue : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Blue close */
 struct Green : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Green close */
 struct Red : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red") }; }
 }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Body::SecondaryColor close */
 }; /* Data::Structure GameData::OwnedHorseList::Body close */
@@ -86,7 +75,6 @@ Horse_Link_Mane_11 = murmurhash3::hash("Horse_Link_Mane_11"),
 Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"),
 Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"),
 };
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Mane") }; }
 }; /* Data::Member GameData::OwnedHorseList::Mane close */
 struct Rein : Data::Member {
 using value_type = Enum::Array<Rein>;
@@ -102,7 +90,6 @@ GameRomHorseReins_06 = murmurhash3::hash("GameRomHorseReins_06"),
 GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"),
 GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"),
 };
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Rein") }; }
 }; /* Data::Member GameData::OwnedHorseList::Rein close */
 struct Saddle : Data::Member {
 using value_type = Enum::Array<Saddle>;
@@ -119,87 +106,67 @@ GameRomHorseSaddle_00L = murmurhash3::hash("GameRomHorseSaddle_00L"),
 GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"),
 GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"),
 };
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Saddle") }; }
 }; /* Data::Member GameData::OwnedHorseList::Saddle close */
 struct Name : Data::Member {
 using value_type = array<wstring16>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Name") }; }
 }; /* Data::Member GameData::OwnedHorseList::Name close */
 struct UidHash : Data::Member {
 using value_type = array<u64>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.UidHash") }; }
 }; /* Data::Member GameData::OwnedHorseList::UidHash close */
 struct ActorName : Data::Member {
 using value_type = array<string64>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.ActorName") }; }
 }; /* Data::Member GameData::OwnedHorseList::ActorName close */
 struct ChargeNum : Data::Member {
 using value_type = array<s32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.ChargeNum") }; }
 }; /* Data::Member GameData::OwnedHorseList::ChargeNum close */
 struct ColorType : Data::Member {
 using value_type = array<s32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.ColorType") }; }
 }; /* Data::Member GameData::OwnedHorseList::ColorType close */
 struct FootType : Data::Member {
 using value_type = array<s32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.FootType") }; }
 }; /* Data::Member GameData::OwnedHorseList::FootType close */
 struct HorsePower : Data::Member {
 using value_type = array<s32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.HorsePower") }; }
 }; /* Data::Member GameData::OwnedHorseList::HorsePower close */
 struct HorseType : Data::Member {
 using value_type = array<s32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.HorseType") }; }
 }; /* Data::Member GameData::OwnedHorseList::HorseType close */
 struct RoomID : Data::Member {
 using value_type = array<s32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.RoomID") }; }
 }; /* Data::Member GameData::OwnedHorseList::RoomID close */
 struct Speed : Data::Member {
 using value_type = array<s32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Speed") }; }
 }; /* Data::Member GameData::OwnedHorseList::Speed close */
 struct Toughness : Data::Member {
 using value_type = array<s32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Toughness") }; }
 }; /* Data::Member GameData::OwnedHorseList::Toughness close */
 struct Familiarity : Data::Member {
 using value_type = array<float>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Familiarity") }; }
 }; /* Data::Member GameData::OwnedHorseList::Familiarity close */
 struct IsFamiliarityChecked : Data::Member {
 using value_type = array<bool>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked") }; }
 }; /* Data::Member GameData::OwnedHorseList::IsFamiliarityChecked close */
 struct Hair : Data::Structure {
 struct PrimaryColor : Data::Structure {
 struct Blue : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue") }; }
 }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Blue close */
 struct Green : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green") }; }
 }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Green close */
 struct Red : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red") }; }
 }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Hair::PrimaryColor close */
 struct SecondaryColor : Data::Structure {
 struct Blue : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue") }; }
 }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Blue close */
 struct Green : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green") }; }
 }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Green close */
 struct Red : Data::Member {
 using value_type = array<u32>;
-constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red") }; }
 }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Hair::SecondaryColor close */
 }; /* Data::Structure GameData::OwnedHorseList::Hair close */
@@ -209,9 +176,12 @@ namespace Data {
 template <>
 struct View<GameData::OwnedHorseList::Body::NoseColor> {
 using S = GameData::OwnedHorseList::Body::NoseColor;
-S::Blue::value_type Blue;
-S::Green::value_type Green;
-S::Red::value_type Red;
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Green> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Red> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red");
 View(Sav& s) : 
 Blue { s.get<S::Blue>() },
 Green { s.get<S::Green>() },
@@ -221,9 +191,12 @@ Red { s.get<S::Red>() }
 template <>
 struct View<GameData::OwnedHorseList::Body::PrimaryColor> {
 using S = GameData::OwnedHorseList::Body::PrimaryColor;
-S::Blue::value_type Blue;
-S::Green::value_type Green;
-S::Red::value_type Red;
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Green> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Red> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red");
 View(Sav& s) : 
 Blue { s.get<S::Blue>() },
 Green { s.get<S::Green>() },
@@ -233,9 +206,12 @@ Red { s.get<S::Red>() }
 template <>
 struct View<GameData::OwnedHorseList::Body::SecondaryColor> {
 using S = GameData::OwnedHorseList::Body::SecondaryColor;
-S::Blue::value_type Blue;
-S::Green::value_type Green;
-S::Red::value_type Red;
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Green> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Red> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red");
 View(Sav& s) : 
 Blue { s.get<S::Blue>() },
 Green { s.get<S::Green>() },
@@ -245,8 +221,10 @@ Red { s.get<S::Red>() }
 template <>
 struct View<GameData::OwnedHorseList::Body> {
 using S = GameData::OwnedHorseList::Body;
-S::EyeColor::value_type EyeColor;
-S::Pattern::value_type Pattern;
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::EyeColor> = murmurhash3::hash("OwnedHorseList.Body.EyeColor");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::Pattern> = murmurhash3::hash("OwnedHorseList.Body.Pattern");
 View<GameData::OwnedHorseList::Body::NoseColor> NoseColor;
 View<GameData::OwnedHorseList::Body::PrimaryColor> PrimaryColor;
 View<GameData::OwnedHorseList::Body::SecondaryColor> SecondaryColor;
@@ -261,9 +239,12 @@ SecondaryColor { s }
 template <>
 struct View<GameData::OwnedHorseList::Hair::PrimaryColor> {
 using S = GameData::OwnedHorseList::Hair::PrimaryColor;
-S::Blue::value_type Blue;
-S::Green::value_type Green;
-S::Red::value_type Red;
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red");
 View(Sav& s) : 
 Blue { s.get<S::Blue>() },
 Green { s.get<S::Green>() },
@@ -273,9 +254,12 @@ Red { s.get<S::Red>() }
 template <>
 struct View<GameData::OwnedHorseList::Hair::SecondaryColor> {
 using S = GameData::OwnedHorseList::Hair::SecondaryColor;
-S::Blue::value_type Blue;
-S::Green::value_type Green;
-S::Red::value_type Red;
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red");
 View(Sav& s) : 
 Blue { s.get<S::Blue>() },
 Green { s.get<S::Green>() },
@@ -296,22 +280,38 @@ template <>
 struct View<GameData::OwnedHorseList> {
 using S = GameData::OwnedHorseList;
 View<GameData::OwnedHorseList::Body> Body;
-S::Mane::value_type Mane;
-S::Rein::value_type Rein;
-S::Saddle::value_type Saddle;
-S::Name::value_type Name;
-S::UidHash::value_type UidHash;
-S::ActorName::value_type ActorName;
-S::ChargeNum::value_type ChargeNum;
-S::ColorType::value_type ColorType;
-S::FootType::value_type FootType;
-S::HorsePower::value_type HorsePower;
-S::HorseType::value_type HorseType;
-S::RoomID::value_type RoomID;
-S::Speed::value_type Speed;
-S::Toughness::value_type Toughness;
-S::Familiarity::value_type Familiarity;
-S::IsFamiliarityChecked::value_type IsFamiliarityChecked;
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Mane> = murmurhash3::hash("OwnedHorseList.Mane");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Rein> = murmurhash3::hash("OwnedHorseList.Rein");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Saddle> = murmurhash3::hash("OwnedHorseList.Saddle");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Name> = murmurhash3::hash("OwnedHorseList.Name");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::UidHash> = murmurhash3::hash("OwnedHorseList.UidHash");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::ActorName> = murmurhash3::hash("OwnedHorseList.ActorName");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::ChargeNum> = murmurhash3::hash("OwnedHorseList.ChargeNum");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::ColorType> = murmurhash3::hash("OwnedHorseList.ColorType");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::FootType> = murmurhash3::hash("OwnedHorseList.FootType");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::HorsePower> = murmurhash3::hash("OwnedHorseList.HorsePower");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::HorseType> = murmurhash3::hash("OwnedHorseList.HorseType");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::RoomID> = murmurhash3::hash("OwnedHorseList.RoomID");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Speed> = murmurhash3::hash("OwnedHorseList.Speed");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Toughness> = murmurhash3::hash("OwnedHorseList.Toughness");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Familiarity> = murmurhash3::hash("OwnedHorseList.Familiarity");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::IsFamiliarityChecked> = murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked");
 View<GameData::OwnedHorseList::Hair> Hair;
 View(Sav& s) : 
 Body { s },

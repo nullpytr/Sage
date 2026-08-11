@@ -15,14 +15,16 @@ class MemberDefEmitter(MemberEmitter):
 
         write(f"struct {self.member.name} : Data::Member" + " {") # def open
         write(f"using value_type = {self.member.typename};")
-
-        # promise implicit conversion
-        write("constexpr operator Promise<value_type>() const noexcept { return { murmurhash3::hash(\"" + self.member.hash_text_string + "\") }; }")
-
         write("}; /* Data::Member " + self.member.path + " close */") # def close
 
         return "\n".join(buff)
 
 class MemberDeclEmitter(MemberEmitter):
     def emit(self) -> str:
-        return f"S::{self.member.name}::value_type {self.member.name};"
+        buff: list[str] = []
+        write = buff.append
+        
+        write("template <>")
+        write(f"mmh32 constexpr Hashtable<{self.member.path}> = murmurhash3::hash(\"{self.member.hash_text_string}\");")
+
+        return "\n".join(buff)
