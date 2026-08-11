@@ -13,8 +13,8 @@ class MemberDefEmitter(MemberEmitter):
         buff: list[str] = []
         write = buff.append
 
-        write(f"struct {self.member.name} : Data::Member" + " {") # def open
-        write(f"using value_type = {self.member.typename};")
+        write(f"struct {self.member.name} : {self.member.basename}" + " {") # def open
+        write(f"using value_type = ::{self.member.typename};")
         write("}; /* Data::Member " + self.member.path + " close */") # def close
 
         return " ".join(buff)

@@ -1,6 +1,8 @@
 from .base import GameDataType
 
 class Member(GameDataType):
+    basename = "Data::Member"
+    
     hash_text_string: str
     hash_hexadecimal: str
 

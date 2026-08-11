@@ -5,12 +5,12 @@
 struct GameData : Data::Structure {
 struct OwnedHorseList : Data::Structure {
 struct Body : Data::Structure {
-struct EyeColor : Data::Member { using value_type = Enum::Array<EyeColor>; enum enum_type : mmh32 {
+struct EyeColor : Data::Enum { using value_type = ::Enum::Array<EyeColor>; enum enum_type : mmh32 {
 Black = murmurhash3::hash("Black"),
 Blue = murmurhash3::hash("Blue"),
 };
 }; /* Data::Member GameData::OwnedHorseList::Body::EyeColor close */
-struct Pattern : Data::Member { using value_type = Enum::Array<Pattern>; enum enum_type : mmh32 {
+struct Pattern : Data::Enum { using value_type = ::Enum::Array<Pattern>; enum enum_type : mmh32 {
 _00 = murmurhash3::hash("_00"),
 _01 = murmurhash3::hash("_01"),
 _02 = murmurhash3::hash("_02"),
@@ -21,22 +21,22 @@ _06 = murmurhash3::hash("_06"),
 };
 }; /* Data::Member GameData::OwnedHorseList::Body::Pattern close */
 struct NoseColor : Data::Structure {
-struct Blue : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Blue close */
-struct Green : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Green close */
-struct Red : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Red close */
+struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Blue close */
+struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Green close */
+struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Body::NoseColor close */
 struct PrimaryColor : Data::Structure {
-struct Blue : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Blue close */
-struct Green : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Green close */
-struct Red : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Red close */
+struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Blue close */
+struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Green close */
+struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Body::PrimaryColor close */
 struct SecondaryColor : Data::Structure {
-struct Blue : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Blue close */
-struct Green : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Green close */
-struct Red : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Red close */
+struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Blue close */
+struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Green close */
+struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Body::SecondaryColor close */
 }; /* Data::Structure GameData::OwnedHorseList::Body close */
-struct Mane : Data::Member { using value_type = Enum::Array<Mane>; enum enum_type : mmh32 {
+struct Mane : Data::Enum { using value_type = ::Enum::Array<Mane>; enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 Horse_Link_Mane = murmurhash3::hash("Horse_Link_Mane"),
 Horse_Link_Mane_01 = murmurhash3::hash("Horse_Link_Mane_01"),
@@ -56,7 +56,7 @@ Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"),
 Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"),
 };
 }; /* Data::Member GameData::OwnedHorseList::Mane close */
-struct Rein : Data::Member { using value_type = Enum::Array<Rein>; enum enum_type : mmh32 {
+struct Rein : Data::Enum { using value_type = ::Enum::Array<Rein>; enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 GameRomHorseReins_00 = murmurhash3::hash("GameRomHorseReins_00"),
 GameRomHorseReins_01 = murmurhash3::hash("GameRomHorseReins_01"),
@@ -69,7 +69,7 @@ GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"),
 GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"),
 };
 }; /* Data::Member GameData::OwnedHorseList::Rein close */
-struct Saddle : Data::Member { using value_type = Enum::Array<Saddle>; enum enum_type : mmh32 {
+struct Saddle : Data::Enum { using value_type = ::Enum::Array<Saddle>; enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 GameRomHorseSaddle_00 = murmurhash3::hash("GameRomHorseSaddle_00"),
 GameRomHorseSaddle_01 = murmurhash3::hash("GameRomHorseSaddle_01"),
@@ -83,29 +83,29 @@ GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"),
 GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"),
 };
 }; /* Data::Member GameData::OwnedHorseList::Saddle close */
-struct Name : Data::Member { using value_type = array<wstring16>; }; /* Data::Member GameData::OwnedHorseList::Name close */
-struct UidHash : Data::Member { using value_type = array<u64>; }; /* Data::Member GameData::OwnedHorseList::UidHash close */
-struct ActorName : Data::Member { using value_type = array<string64>; }; /* Data::Member GameData::OwnedHorseList::ActorName close */
-struct ChargeNum : Data::Member { using value_type = array<s32>; }; /* Data::Member GameData::OwnedHorseList::ChargeNum close */
-struct ColorType : Data::Member { using value_type = array<s32>; }; /* Data::Member GameData::OwnedHorseList::ColorType close */
-struct FootType : Data::Member { using value_type = array<s32>; }; /* Data::Member GameData::OwnedHorseList::FootType close */
-struct HorsePower : Data::Member { using value_type = array<s32>; }; /* Data::Member GameData::OwnedHorseList::HorsePower close */
-struct HorseType : Data::Member { using value_type = array<s32>; }; /* Data::Member GameData::OwnedHorseList::HorseType close */
-struct RoomID : Data::Member { using value_type = array<s32>; }; /* Data::Member GameData::OwnedHorseList::RoomID close */
-struct Speed : Data::Member { using value_type = array<s32>; }; /* Data::Member GameData::OwnedHorseList::Speed close */
-struct Toughness : Data::Member { using value_type = array<s32>; }; /* Data::Member GameData::OwnedHorseList::Toughness close */
-struct Familiarity : Data::Member { using value_type = array<float>; }; /* Data::Member GameData::OwnedHorseList::Familiarity close */
-struct IsFamiliarityChecked : Data::Member { using value_type = array<bool>; }; /* Data::Member GameData::OwnedHorseList::IsFamiliarityChecked close */
+struct Name : Data::Member { using value_type = ::array<wstring16>; }; /* Data::Member GameData::OwnedHorseList::Name close */
+struct UidHash : Data::Member { using value_type = ::array<u64>; }; /* Data::Member GameData::OwnedHorseList::UidHash close */
+struct ActorName : Data::Member { using value_type = ::array<string64>; }; /* Data::Member GameData::OwnedHorseList::ActorName close */
+struct ChargeNum : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::ChargeNum close */
+struct ColorType : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::ColorType close */
+struct FootType : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::FootType close */
+struct HorsePower : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::HorsePower close */
+struct HorseType : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::HorseType close */
+struct RoomID : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::RoomID close */
+struct Speed : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::Speed close */
+struct Toughness : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::Toughness close */
+struct Familiarity : Data::Member { using value_type = ::array<float>; }; /* Data::Member GameData::OwnedHorseList::Familiarity close */
+struct IsFamiliarityChecked : Data::Member { using value_type = ::array<bool>; }; /* Data::Member GameData::OwnedHorseList::IsFamiliarityChecked close */
 struct Hair : Data::Structure {
 struct PrimaryColor : Data::Structure {
-struct Blue : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Blue close */
-struct Green : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Green close */
-struct Red : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Red close */
+struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Blue close */
+struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Green close */
+struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Hair::PrimaryColor close */
 struct SecondaryColor : Data::Structure {
-struct Blue : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Blue close */
-struct Green : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Green close */
-struct Red : Data::Member { using value_type = array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Red close */
+struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Blue close */
+struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Green close */
+struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Red close */
 }; /* Data::Structure GameData::OwnedHorseList::Hair::SecondaryColor close */
 }; /* Data::Structure GameData::OwnedHorseList::Hair close */
 }; /* Data::Structure GameData::OwnedHorseList close */

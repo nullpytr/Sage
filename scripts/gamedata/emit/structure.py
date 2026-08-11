@@ -45,7 +45,7 @@ class StructureDefEmitter(StructureEmitter):
         buff: list[str] = []
         write = buff.append
 
-        write(f"struct {self.structure.name} : Data::Structure" + " {") # def open
+        write(f"struct {self.structure.name} : {self.structure.basename}" + " {") # def open
         for child_path, child_val in self.structure.children.items(): # child defs
             print(f"[gd/struct/emit/def]: processing child {child_path}")
             if isinstance(child_val, Structure): write(StructureDefEmitter(child_val).emit())
