@@ -57,10 +57,10 @@ def parse_data_record(
     path = f"{curr_node.path}::{id}"
 
     if raw_typename.startswith("Enum"):
-        enum_values = curr_node.children.get(path)
-        assert isinstance(enum_values, Member), \
-            f"[gd/tree/resolve_incomplete_enum_member]: invalid EnumValues member type: {enum_values} found for {path}"
-        curr_node.children[path] = resolve_incomplete_enum_member(enum_values, raw_typename)
+        incomplete_t = curr_node.children.get(path)
+        assert isinstance(incomplete_t, Member), \
+            f"[gd/tree/resolve_incomplete_enum_member]: invalid EnumValues member type: {incomplete_t} found for {path}"
+        curr_node.children[path] = resolve_incomplete_enum_member(incomplete_t, raw_typename)
         return
 
     curr_node.children[path] = \
@@ -71,12 +71,11 @@ def parse_data_record(
             hash_hexadecimal=hash_hexadecimal
         )
 
-def resolve_incomplete_enum_member(enum_values: Member, enum_kind: str) -> Enum:
-    enum_name = enum_values.name
-    complete_t = EnumArray[enum_name] if enum_kind == "EnumArray" else EnumScalar[enum_name]
+def resolve_incomplete_enum_member(incomplete_t: Member, enum_kind: str) -> Enum:
+    complete_t = EnumArray[incomplete_t.name] if enum_kind == "EnumArray" else EnumScalar[incomplete_t.name]
     return complete_t(
-        name=enum_name,
-        path=enum_values.path,
-        hash_text_string=enum_values.hash_text_string,
-        keys=tuple(enum_values.hash_hexadecimal.split(",")) # HACK: EnumValues members place keys csv in the hash_hexdacimal field
+        name=incomplete_t.name,
+        path=incomplete_t.path,
+        hash_text_string=incomplete_t.hash_text_string,
+        keys=tuple(incomplete_t.hash_hexadecimal.split(",")) # HACK: EnumValues members place keys csv in the hash_hexdacimal field
     )
