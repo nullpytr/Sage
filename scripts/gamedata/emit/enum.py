@@ -10,11 +10,13 @@ class EnumEmitter(member.MemberEmitter):
 
 class EnumDefEmitter(EnumEmitter, member.MemberDefEmitter):
     def emit(self) -> str:
-        return \
-            super() \
-            .emit() \
-            .replace("constexpr", self._emit_enum() + "\nconstexpr")
-            # inject enum definition
+        member_closer = "}; /* Data::Member " + self.member.path + " close */"
+
+        return (
+            super().emit().removesuffix(member_closer)
+            + self._emit_enum() # inject enum def at the end before close
+            + f"\n{member_closer}"
+        )
     
     def _emit_enum(self) -> str:
         buff: list[str] = []
