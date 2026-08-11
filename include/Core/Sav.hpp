@@ -8,7 +8,9 @@
 #include "Core/Types.hpp"
 #include "Core/MurmurHash3.hpp"
 #include "Core/Promise.hpp"
-#include "GameData/GameData.hpp"
+#include "Core/Enum.hpp"
+
+#define METADATA_SAVE_TYPE_HASH 0xa3db7114
 
 class Sav
 {
@@ -27,7 +29,7 @@ public:
             /* Hashtable ends at MetaData.SaveTypeHash
              * See: https://github.com/marcrobledo/savegame-editors/blob/b65dc1ecf655ba4f5f8bb74d4a7d402fc375fbf1/zelda-totk/zelda-totk.variables.js#L757
              */
-            if (hash == GameData::Hash::MetaData::SaveTypeHash) break;
+            if (hash == METADATA_SAVE_TYPE_HASH) break;
         }
     }
 
