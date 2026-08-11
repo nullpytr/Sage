@@ -174,14 +174,21 @@ using value_type = array<u32>;
 }; /* Data::Structure GameData close */
 namespace Data {
 template <>
-struct View<GameData::OwnedHorseList::Body::NoseColor> {
-using S = GameData::OwnedHorseList::Body::NoseColor;
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::EyeColor> = murmurhash3::hash("OwnedHorseList.Body.EyeColor");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::Pattern> = murmurhash3::hash("OwnedHorseList.Body.Pattern");
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue");
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Green> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green");
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Red> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red");
+template <>
+struct View<GameData::OwnedHorseList::Body::NoseColor> {
+using S = GameData::OwnedHorseList::Body::NoseColor;
+S::Blue::value_type Blue;
+S::Green::value_type Green;
+S::Red::value_type Red;
 View(Sav& s) : 
 Blue { s.get<S::Blue>() },
 Green { s.get<S::Green>() },
@@ -189,14 +196,17 @@ Red { s.get<S::Red>() }
 { }
 }; /* Data::View GameData::OwnedHorseList::Body::NoseColor close */
 template <>
-struct View<GameData::OwnedHorseList::Body::PrimaryColor> {
-using S = GameData::OwnedHorseList::Body::PrimaryColor;
-template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue");
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Green> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green");
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Red> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red");
+template <>
+struct View<GameData::OwnedHorseList::Body::PrimaryColor> {
+using S = GameData::OwnedHorseList::Body::PrimaryColor;
+S::Blue::value_type Blue;
+S::Green::value_type Green;
+S::Red::value_type Red;
 View(Sav& s) : 
 Blue { s.get<S::Blue>() },
 Green { s.get<S::Green>() },
@@ -204,14 +214,17 @@ Red { s.get<S::Red>() }
 { }
 }; /* Data::View GameData::OwnedHorseList::Body::PrimaryColor close */
 template <>
-struct View<GameData::OwnedHorseList::Body::SecondaryColor> {
-using S = GameData::OwnedHorseList::Body::SecondaryColor;
-template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue");
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Green> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green");
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Red> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red");
+template <>
+struct View<GameData::OwnedHorseList::Body::SecondaryColor> {
+using S = GameData::OwnedHorseList::Body::SecondaryColor;
+S::Blue::value_type Blue;
+S::Green::value_type Green;
+S::Red::value_type Red;
 View(Sav& s) : 
 Blue { s.get<S::Blue>() },
 Green { s.get<S::Green>() },
@@ -221,13 +234,11 @@ Red { s.get<S::Red>() }
 template <>
 struct View<GameData::OwnedHorseList::Body> {
 using S = GameData::OwnedHorseList::Body;
-template <>
-mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::EyeColor> = murmurhash3::hash("OwnedHorseList.Body.EyeColor");
-template <>
-mmh32 constexpr Hashtable<GameData::OwnedHorseList::Body::Pattern> = murmurhash3::hash("OwnedHorseList.Body.Pattern");
-View<GameData::OwnedHorseList::Body::NoseColor> NoseColor;
-View<GameData::OwnedHorseList::Body::PrimaryColor> PrimaryColor;
-View<GameData::OwnedHorseList::Body::SecondaryColor> SecondaryColor;
+S::EyeColor::value_type EyeColor;
+S::Pattern::value_type Pattern;
+View<S::NoseColor> NoseColor;
+View<S::PrimaryColor> PrimaryColor;
+View<S::SecondaryColor> SecondaryColor;
 View(Sav& s) : 
 EyeColor { s.get<S::EyeColor>() },
 Pattern { s.get<S::Pattern>() },
@@ -236,50 +247,6 @@ PrimaryColor { s },
 SecondaryColor { s }
 { }
 }; /* Data::View GameData::OwnedHorseList::Body close */
-template <>
-struct View<GameData::OwnedHorseList::Hair::PrimaryColor> {
-using S = GameData::OwnedHorseList::Hair::PrimaryColor;
-template <>
-mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue");
-template <>
-mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green");
-template <>
-mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red");
-View(Sav& s) : 
-Blue { s.get<S::Blue>() },
-Green { s.get<S::Green>() },
-Red { s.get<S::Red>() }
-{ }
-}; /* Data::View GameData::OwnedHorseList::Hair::PrimaryColor close */
-template <>
-struct View<GameData::OwnedHorseList::Hair::SecondaryColor> {
-using S = GameData::OwnedHorseList::Hair::SecondaryColor;
-template <>
-mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue");
-template <>
-mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green");
-template <>
-mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red");
-View(Sav& s) : 
-Blue { s.get<S::Blue>() },
-Green { s.get<S::Green>() },
-Red { s.get<S::Red>() }
-{ }
-}; /* Data::View GameData::OwnedHorseList::Hair::SecondaryColor close */
-template <>
-struct View<GameData::OwnedHorseList::Hair> {
-using S = GameData::OwnedHorseList::Hair;
-View<GameData::OwnedHorseList::Hair::PrimaryColor> PrimaryColor;
-View<GameData::OwnedHorseList::Hair::SecondaryColor> SecondaryColor;
-View(Sav& s) : 
-PrimaryColor { s },
-SecondaryColor { s }
-{ }
-}; /* Data::View GameData::OwnedHorseList::Hair close */
-template <>
-struct View<GameData::OwnedHorseList> {
-using S = GameData::OwnedHorseList;
-View<GameData::OwnedHorseList::Body> Body;
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Mane> = murmurhash3::hash("OwnedHorseList.Mane");
 template <>
@@ -312,7 +279,73 @@ template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::Familiarity> = murmurhash3::hash("OwnedHorseList.Familiarity");
 template <>
 mmh32 constexpr Hashtable<GameData::OwnedHorseList::IsFamiliarityChecked> = murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked");
-View<GameData::OwnedHorseList::Hair> Hair;
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red");
+template <>
+struct View<GameData::OwnedHorseList::Hair::PrimaryColor> {
+using S = GameData::OwnedHorseList::Hair::PrimaryColor;
+S::Blue::value_type Blue;
+S::Green::value_type Green;
+S::Red::value_type Red;
+View(Sav& s) : 
+Blue { s.get<S::Blue>() },
+Green { s.get<S::Green>() },
+Red { s.get<S::Red>() }
+{ }
+}; /* Data::View GameData::OwnedHorseList::Hair::PrimaryColor close */
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green");
+template <>
+mmh32 constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red");
+template <>
+struct View<GameData::OwnedHorseList::Hair::SecondaryColor> {
+using S = GameData::OwnedHorseList::Hair::SecondaryColor;
+S::Blue::value_type Blue;
+S::Green::value_type Green;
+S::Red::value_type Red;
+View(Sav& s) : 
+Blue { s.get<S::Blue>() },
+Green { s.get<S::Green>() },
+Red { s.get<S::Red>() }
+{ }
+}; /* Data::View GameData::OwnedHorseList::Hair::SecondaryColor close */
+template <>
+struct View<GameData::OwnedHorseList::Hair> {
+using S = GameData::OwnedHorseList::Hair;
+View<S::PrimaryColor> PrimaryColor;
+View<S::SecondaryColor> SecondaryColor;
+View(Sav& s) : 
+PrimaryColor { s },
+SecondaryColor { s }
+{ }
+}; /* Data::View GameData::OwnedHorseList::Hair close */
+template <>
+struct View<GameData::OwnedHorseList> {
+using S = GameData::OwnedHorseList;
+View<S::Body> Body;
+S::Mane::value_type Mane;
+S::Rein::value_type Rein;
+S::Saddle::value_type Saddle;
+S::Name::value_type Name;
+S::UidHash::value_type UidHash;
+S::ActorName::value_type ActorName;
+S::ChargeNum::value_type ChargeNum;
+S::ColorType::value_type ColorType;
+S::FootType::value_type FootType;
+S::HorsePower::value_type HorsePower;
+S::HorseType::value_type HorseType;
+S::RoomID::value_type RoomID;
+S::Speed::value_type Speed;
+S::Toughness::value_type Toughness;
+S::Familiarity::value_type Familiarity;
+S::IsFamiliarityChecked::value_type IsFamiliarityChecked;
+View<S::Hair> Hair;
 View(Sav& s) : 
 Body { s },
 Mane { s.get<S::Mane>() },
@@ -337,7 +370,7 @@ Hair { s }
 template <>
 struct View<GameData> {
 using S = GameData;
-View<GameData::OwnedHorseList> OwnedHorseList;
+View<S::OwnedHorseList> OwnedHorseList;
 View(Sav& s) : 
 OwnedHorseList { s }
 { }

@@ -13,26 +13,26 @@ class StructureDeclEmitter(StructureEmitter):
         buff: list[str] = []
         write = buff.append
         
-        for child_path, child_val in self.structure.children.items(): # out-of-line child struct decls (gd v4.x)
+        for child_path, child_val in self.structure.children.items(): # out-of-line child decls (gd v4.x)
             print(f"[gd/struct/emit/decl]: processing child {child_path}")
             if isinstance(child_val, Structure): write(StructureDeclEmitter(child_val).emit())
-        
+            elif isinstance(child_val, member.Member): write(member.MemberDeclEmitter(child_val).emit())
+            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
+
         write("template <>")
         write(f"struct View<{self.structure.path}>" + " {") # decl open
         write(f"using S = {self.structure.path};")
         for child_path, child_val in self.structure.children.items(): # member decls
-            if isinstance(child_val, Structure): write(f"View<{child_val.path}> {child_val.name};") # tie-in out of line decl
-            elif isinstance(child_val, enum.Enum): write(enum.EnumDeclEmitter(child_val).emit())
-            elif isinstance(child_val, member.Member): write(member.MemberDeclEmitter(child_val).emit())
+            if isinstance(child_val, Structure): write(f"View<S::{child_val.name}> {child_val.name};")
+            elif isinstance(child_val, member.Member): write(f"S::{child_val.name}::value_type {child_val.name};")
             else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
         write("View(Sav& s) : ") # ctor open
                 
         for child_path, child_val in self.structure.children.items(): # member inits
-            if isinstance(child_val, Structure):
-                write(f"{child_val.name}" + " { s },")
-            else:
-                write(f"{child_val.name}" + " { " + f"s.get<S::{child_val.name}>()" + " },")
+            if isinstance(child_val, Structure):  write(f"{child_val.name}" + " { s },")
+            elif isinstance(child_val, member.Member): write(f"{child_val.name}" + " { " + f"s.get<S::{child_val.name}>()" + " },")
+            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
         buff[-1] = buff[-1][:-1] # strip last comma
         write("{ }") # ctor close
