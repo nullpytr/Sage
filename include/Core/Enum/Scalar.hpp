@@ -22,8 +22,8 @@ namespace Enum
         value_type const& get() const { return m_entry; }
         value_type& get() { return m_entry; }
 
-        value_type const& operator()() const { return get(); }
-        value_type& operator()()             { return get(); }
+        value_type const& operator*() const { return get(); }
+        value_type& operator*()             { return get(); }
 
         /* Assignment and conversion */
         Scalar& operator=(value_type const& v) { m_entry = v; return *this; }
