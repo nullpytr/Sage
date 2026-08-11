@@ -4,10 +4,8 @@
 #include <vector>
 #include <unordered_map>
 
-#include "Filesystem.hpp"
+#include "External/Filesystem.hpp"
 #include "Core/Types.hpp"
-#include "Core/MurmurHash3.hpp"
-#include "Core/Promise.hpp"
 #include "Core/Enum.hpp"
 
 #define METADATA_SAVE_TYPE_HASH 0xa3db7114
@@ -15,16 +13,14 @@
 class Sav
 {
 public:
-    /*
-     * Open/Export of Sav blob
-     */
+    /* [Open | Export] of Sav blob */
     explicit Sav(std::string const& path) : m_data { read_all_bytes(path) }
     {
         // Load entire hash table once
-        for (u32 offset = 0x000028; offset < m_data.size(); offset += sizeof(mmh32) + sizeof(u32))
+        for (u32 offset = 0x000028; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
         {
-            auto hash = value_at<mmh32>(offset);
-            m_offsets[hash] = offset + sizeof(mmh32);
+            auto hash = value_at<hash_t>(offset);
+            m_offsets[hash] = offset + sizeof(hash_t);
 
             /* Hashtable ends at MetaData.SaveTypeHash
              * See: https://github.com/marcrobledo/savegame-editors/blob/b65dc1ecf655ba4f5f8bb74d4a7d402fc375fbf1/zelda-totk/zelda-totk.variables.js#L757
@@ -39,85 +35,6 @@ public:
     }
 
     [[nodiscard]] byte const* data_ptr() const { return &m_data[0]; }
-
-    /* -- */
-
-    /*
-     * High-level access: using GameData structures (recommended)
-     * See include/GameData/GameData.hpp
-     */
-    template<typename S, typename T = Data::View<S>>
-    requires std::derived_from<S, Data::Structure>
-    T get()
-    {
-        return { *this };
-    }
-
-    template<typename  M, typename T = M::value_type>
-    requires std::derived_from<M, Data::Member>
-    T get()
-    {
-        return get((Promise<T>)M{});
-    }
-    /* -- */
-
-    /*
-     * Mid-level access: using Promises
-     * See include/Core/Promise.hpp
-     */
-    /* Get a reference to any promised value of type T */
-    template <typename T>
-    T& get(Promise<T> const promise)
-    {
-        return value_at<T>(
-            m_offsets.at(promise.hash)
-        );
-    }
-
-    // Get a reference to underlying value of a promised pointer of type T
-    template <typename T>
-    T& get(Promise<T*> const promise)
-    {
-        return value_at<T>(
-            get(Promise<u32>{ promise.hash }) // offset
-        );
-    }
-
-    // Get C++20 style array-view to a promised array of type T (preferred)
-    template <typename T>
-    array<T> get(Promise<array<T>> const promise)
-    {
-        // u32& size = get(Promise<u32*>{promise.hash}); // resolve pointer to size
-        // T* data = reinterpret_cast<T*>(&size + 1); // array starts after size
-        u32 const offset = value_at<u32>(m_offsets.at(promise.hash));
-        u32 const size = value_at<u32>(offset);
-        T* data = ptr<T>(offset + sizeof(u32));
-
-        return { data, size };
-    }
-
-    template <typename T>
-    array<T> get(Promise<T[]> const promise)
-    {
-        return get(Promise<array<T>>{ promise.hash });
-    }
-
-    /* Get sage-style custom enum-view to a promised enum of type T */
-    template <typename E, typename C = E::value_type, typename T = C::value_type>
-    C get(Promise<Enum::Container<E>> const promise)
-    {
-        return { get(Promise<T>{ promise.hash }) };
-    }
-
-    template <typename E>
-    Enum::Scalar<E> get(Promise<Enum::Scalar<E>> const promise) { return get(Promise<Enum::Container<E>>{ promise.hash }); }
-
-    template <typename E>
-    Enum::Array<E> get(Promise<Enum::Array<E>> const promise) { return get(Promise<Enum::Container<E>>{ promise.hash }); }
-
-
-    // TODO template <typename E>
-    // Enum::Collection<E> get(Hash<Enum::Collection<E>> const hash) { return get(Hash<Enum::Container<E>>{ hash }); }
 
     /* -- */
 
@@ -138,7 +55,74 @@ public:
             + offset
         );
     }
-private:
+    /* -- */
+
+    /* High-level access: using GameData types (recommended)
+     * Powered by the private getter machinery below and the
+     * auto generated header include/GameData.hpp
+     */
+    template<typename S, typename V = Data::View<S>>
+    requires std::derived_from<S, Data::Structure>
+    V get()
+    {
+        return V { *this }; // uses get<M>() to construct members under the hood
+    }
+
+    template<typename  M, typename T = M::value_type>
+    requires std::derived_from<M, Data::Member>
+    T get()
+    {
+        return Getter<T>::get(*this, Data::Hashtable<M>);
+    }
+
+private: /* Specializations for different data types */
+    template <typename T>
+    struct Getter;
+
+    template <typename T>
+    struct Getter<T&> {
+        static T& get(Sav& self, hash_t const hash) {
+            return self.value_at<T>(
+                self.m_offsets.at(hash)
+            );
+        }
+    };
+
+    template <typename T>
+    struct Getter<T*> {
+        static T* get(Sav& self, hash_t const hash) {
+            u32 const value_offset = Getter<u32&>::get(self, hash); // hash gives offest of actual value
+            return self.ptr<T>(value_offset);
+        }
+    };
+
+    template <typename T>
+    struct Getter<array<T>> {
+        static array<T> get(Sav& self, hash_t const hash) {
+            u32* size_ptr = Getter<u32*>::get(self, hash);
+            T* data = reinterpret_cast<T*>(size_ptr + 1); // data starts right after size
+            return array { data, *size_ptr };
+        }
+    };
+
+    template <typename E>
+    struct Getter<Enum::Container<E>>
+    {
+        using C = E::value_type; // actual container sub-type (like Scalar, Array)
+        using T = C::value_type; // underlying type needed to construct the container
+        static C get(Sav& self, hash_t hash)
+        {
+            return C { Getter<T>::get(self, hash) };
+        }
+    };
+
+    template <typename E>
+    struct Getter<Enum::Scalar<E>> : Getter<Enum::Container<E>> {};
+
+    template <typename E>
+    struct Getter<Enum::Array<E>> : Getter<Enum::Container<E>> {};
+
+private: /* Members */
     std::vector<byte> m_data;
-    std::unordered_map<mmh32, u32> m_offsets;
+    std::unordered_map<hash_t, u32> m_offsets;
 };
