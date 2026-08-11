@@ -19,19 +19,17 @@ class StructureDeclEmitter(StructureEmitter):
             elif isinstance(child_val, member.Member): write(member.MemberDeclEmitter(child_val).emit())
             else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
-        write("template <>")
-        write(f"struct View<{self.structure.path}>" + " {") # decl open
-        write(f"using S = {self.structure.path};")
+        write(f"template <> struct View<{self.structure.path}> : {self.structure.path}" + " {") # decl open
         for child_path, child_val in self.structure.children.items(): # member decls
-            if isinstance(child_val, Structure): write(f"View<S::{child_val.name}> {child_val.name};")
-            elif isinstance(child_val, member.Member): write(f"S::{child_val.name}::value_type {child_val.name};")
+            if isinstance(child_val, Structure): write(f"View<{child_val.name}> {child_val.name};")
+            elif isinstance(child_val, member.Member): write(f"{child_val.name}::value_type {child_val.name};")
             else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
         write("View(Sav& s) : ") # ctor open
                 
         for child_path, child_val in self.structure.children.items(): # member inits
             if isinstance(child_val, Structure):  write(f"{child_val.name}" + " { s },")
-            elif isinstance(child_val, member.Member): write(f"{child_val.name}" + " { " + f"s.get<S::{child_val.name}>()" + " },")
+            elif isinstance(child_val, member.Member): write(f"{child_val.name}" + " { " + f"s.get<struct {child_val.name}>()" + " },")
             else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
         buff[-1] = buff[-1][:-1] # strip last comma

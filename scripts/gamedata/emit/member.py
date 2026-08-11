@@ -17,7 +17,7 @@ class MemberDefEmitter(MemberEmitter):
         write(f"using value_type = {self.member.typename};")
         write("}; /* Data::Member " + self.member.path + " close */") # def close
 
-        return "\n".join(buff)
+        return " ".join(buff)
 
 class MemberDeclEmitter(MemberEmitter):
     def emit(self) -> str:
@@ -25,6 +25,6 @@ class MemberDeclEmitter(MemberEmitter):
         write = buff.append
         
         write("template <>")
-        write(f"mmh32 constexpr Hashtable<{self.member.path}> = murmurhash3::hash(\"{self.member.hash_text_string}\");")
+        write(f"hash_t constexpr Hashtable<{self.member.path}> = murmurhash3::hash(\"{self.member.hash_text_string}\");")
 
-        return "\n".join(buff)
+        return " ".join(buff)
