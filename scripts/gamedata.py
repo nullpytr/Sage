@@ -20,6 +20,11 @@ decls = emit.structure.StructureDeclEmitter(gamedata)
 gamedata_header: list[str] = []
 write = gamedata_header.append
 
+write("#pragma once")
+write("#include \"Core/Types.hpp\"")
+write("#include \"Core/Enum.hpp\"")
+write("#include \"Core/Sav.hpp\"")
+
 write(defs.emit())
 write("namespace Data {")
 write(decls.emit())

@@ -1,3 +1,7 @@
+#pragma once
+#include "Core/Types.hpp"
+#include "Core/Enum.hpp"
+#include "Core/Types.hpp"
 struct GameData : Data::Structure {
 struct OwnedHorseList : Data::Structure {
 struct Body : Data::Structure {
