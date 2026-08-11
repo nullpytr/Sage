@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(
         main
-        examples/Example.cpp
+        examples/Basic.cpp
 )
 
 target_include_directories(main PUBLIC include)
