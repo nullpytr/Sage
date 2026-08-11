@@ -1,0 +1,19 @@
+from .base import GameDataType
+from .structure import Structure
+from .member import Member
+from .primitive import *
+from .array import *
+from .enum import *
+
+def resolve_member_type(raw_typename: str) -> type[Member]:
+    assert raw_typename in MEMBER_TYPES, \
+        f"[gd/types/member_type]: could not resolve concrete type for {raw_typename}"
+    
+    return MEMBER_TYPES[raw_typename]
+
+MEMBER_TYPES = { # All member sub-types
+    k: v for k, v 
+    in locals().items() 
+    if isinstance(v, type) 
+    and issubclass(v, Member)
+}

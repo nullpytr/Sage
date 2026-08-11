@@ -3,6 +3,5 @@
 .vscode/
 .idea/
 
-*.sav
-test/
-res/
+__pycache__/
+other/
