@@ -4,7 +4,7 @@
 #include <string_view>
 
 using mmh32 = uint32_t; // murmurhash32
-using mmh64 = uint64_t; // murmurhash64
+using mmh64 = uint64_t; // murmurhash64 (unused)
 
 /* Compile-time implementation of MurmurHash3.
  * See: https://github.com/AntonJohansson/StaticMurmur/blob/master/StaticMurmur.hpp */
