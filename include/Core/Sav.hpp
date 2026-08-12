@@ -17,6 +17,7 @@ public:
     explicit Sav(std::string const& path) : m_data { read_all_bytes(path) }
     {
         // Load entire hash table once
+        m_offsets.reserve(31000); // approximate size of the hashtable
         for (u32 offset = 0x000028; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
         {
             auto hash = value_at<hash_t>(offset);
