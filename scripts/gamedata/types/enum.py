@@ -4,17 +4,17 @@ class Enum[EnumName: str](Member):
     basename = "Tag::Enum"
     typename = "Enum::...<...>"
 
-    keys: tuple[str, ...]
+    values: tuple[str, ...]
 
     def __init__(self, name: str, path: str, hash_text_string: str, keys: tuple[str, ...]) -> None:
         self.name = name
         self.path = path
         self.hash_hexadecimal = '...' # FIXME
         self.hash_text_string = hash_text_string
-        self.keys = keys  
+        self.values = keys  
 
     def __repr__(self) -> str:
-        repr_keys_unquoted = repr(self.keys).replace("'", "")
+        repr_keys_unquoted = repr(self.values).replace("'", "")
         return f"'({self.basename}) {self.typename}{repr_keys_unquoted}'"
 
     def __class_getitem__(cls, enum_name: EnumName):

@@ -5,7 +5,7 @@
 
 struct GameData::OwnedHorseList::Body : Tag::Structure {
 	struct EyeColor : Tag::Enum { using value_type = ::Enum::Array<EyeColor>; enum enum_type : mmh32 { Black = murmurhash3::hash("Black"), Blue = murmurhash3::hash("Blue"), }; };
-	struct Pattern : Tag::Enum { using value_type = ::Enum::Array<Pattern>; enum enum_type : mmh32 { _00 = murmurhash3::hash("_00"), _01 = murmurhash3::hash("_01"), _02 = murmurhash3::hash("_02"), _03 = murmurhash3::hash("_03"), _04 = murmurhash3::hash("_04"), _05 = murmurhash3::hash("_05"), _06 = murmurhash3::hash("_06"), }; };
+	struct Pattern : Tag::Enum { using value_type = ::Enum::Array<Pattern>; enum enum_type : mmh32 { _00 = murmurhash3::hash("00"), _01 = murmurhash3::hash("01"), _02 = murmurhash3::hash("02"), _03 = murmurhash3::hash("03"), _04 = murmurhash3::hash("04"), _05 = murmurhash3::hash("05"), _06 = murmurhash3::hash("06"), }; };
 	struct NoseColor;
 	struct PrimaryColor;
 	struct SecondaryColor;

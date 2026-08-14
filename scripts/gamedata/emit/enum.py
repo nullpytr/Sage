@@ -16,9 +16,9 @@ class EnumEmitter():
         write = buffer.append
 
         write("enum enum_type : mmh32 {")
-        for key in enum.keys:
-            if key[0].isdigit(): key = f"_{key}"
-            write(f"{key} = murmurhash3::hash(\"{key}\"),")
+        for value in enum.values:
+            key = f"_{value}" if value[0].isdigit() else value
+            write(f"{key} = murmurhash3::hash(\"{value}\"),")
         write("};")
 
         return delim.join(buffer)
