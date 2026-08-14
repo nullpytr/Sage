@@ -14,7 +14,7 @@ gamedata_dict = json.loads(
 )
 print(json.dumps(gamedata_dict, indent=1))
 
-emitter = emit.structure.StructureEmitter(gamedata)
+emitter = emit.structure.StructureEmitter
 
 gamedata_header: list[str] = []
 write = gamedata_header.append
@@ -24,7 +24,7 @@ write("#include \"Core/Types.hpp\"")
 write("#include \"Core/Enum.hpp\"")
 write("#include \"Core/Sav.hpp\"")
 
-write(emitter.emit())
+write(emitter.emit(gamedata))
 
 open(gamedata_header_file, "w").write("\n".join(gamedata_header))
 

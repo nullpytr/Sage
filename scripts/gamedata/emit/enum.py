@@ -1,30 +1,26 @@
 from . import member
 from .. import types
+
 Enum = types.Enum
 
-class EnumEmitter(member.MemberEmitter):
-    @property 
-    def enum(self) -> Enum:
-        assert isinstance(self.member, Enum)
-        return self.member
-    
-    def emit(self) -> str:
-        closing_brace = "};"
-
+class EnumEmitter():
+    @staticmethod
+    def emit(enum: Enum) -> str:
         return (
-            super().emit()
-            # inject enum def at the end before close
-            .replace(closing_brace, f"{self._emit_enum()} {closing_brace}")
+            member.MemberEmitter
+            .emit(enum) \
+            .replace("};", EnumEmitter._enum_def(enum) + " };")
         )
-    
-    def _emit_enum(self) -> str:
-        buff: list[str] = []
-        write = buff.append
+
+    @staticmethod
+    def _enum_def(enum: Enum) -> str:
+        buffer: list[str] = []
+        write = buffer.append
 
         write("enum enum_type : mmh32 {")
-        for key in self.enum.keys:
+        for key in enum.keys:
             if key[0].isdigit(): key = f"_{key}"
             write(f"{key} = murmurhash3::hash(\"{key}\"),")
         write("};")
 
-        return " ".join(buff)
+        return " ".join(buffer)
