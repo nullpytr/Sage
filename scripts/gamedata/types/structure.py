@@ -1,6 +1,4 @@
 from .base import GameDataType
-from .member import *
-from .enum import *
 
 class Structure(GameDataType):
     basename = "Tag::Structure"
