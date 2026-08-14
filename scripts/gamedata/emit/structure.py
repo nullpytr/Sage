@@ -19,13 +19,13 @@ class StructureDeclEmitter(StructureEmitter):
             elif isinstance(child_val, member.Member): write(member.MemberDeclEmitter(child_val).emit())
             else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
-        write(f"template <> struct View<{self.structure.path}> : {self.structure.path}" + " {") # decl open
+        write(f"template <> struct Structure<{self.structure.path}> : {self.structure.path}" + " {") # decl open
         for child_path, child_val in self.structure.children.items(): # member decls
-            if isinstance(child_val, Structure): write(f"View<{child_val.name}> {child_val.name};")
+            if isinstance(child_val, Structure): write(f"Structure<{child_val.name}> {child_val.name};")
             elif isinstance(child_val, member.Member): write(f"{child_val.name}::value_type {child_val.name};")
             else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
-        write("View(Sav& s) : ") # ctor open
+        write("Structure(Sav& s) : ") # ctor open
                 
         for child_path, child_val in self.structure.children.items(): # member inits
             if isinstance(child_val, Structure):  write(f"{child_val.name}" + " { s },")
@@ -36,7 +36,7 @@ class StructureDeclEmitter(StructureEmitter):
         write("{ }") # ctor close
 
         
-        write("}; /* Data::View " + self.structure.path + " close */") # def close
+        write("}; /* Data::Structure " + self.structure.path + " close */") # def close
 
         return "\n".join(buff)
 
@@ -53,6 +53,6 @@ class StructureDefEmitter(StructureEmitter):
             elif isinstance(child_val, member.Member): write(member.MemberDefEmitter(child_val).emit())
             else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type {child_val.typename} {child_path}"
 
-        write("}; /* Data::Structure " + self.structure.path + " close */") # def close
+        write("}; /* Tag::Structure " + self.structure.path + " close */") # def close
 
         return "\n".join(buff)

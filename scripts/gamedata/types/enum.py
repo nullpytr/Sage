@@ -1,7 +1,7 @@
 from .member import Member
 
 class Enum[EnumName: str](Member):
-    basename = "Data::Enum"
+    basename = "Tag::Enum"
     typename = "Enum::...<...>"
 
     keys: tuple[str, ...]

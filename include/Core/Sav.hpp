@@ -62,15 +62,15 @@ public:
      * Powered by the private getter machinery below and the
      * auto generated header include/GameData.hpp
      */
-    template<typename S, typename V = Data::View<S>>
-    requires std::derived_from<S, Data::Structure>
-    V get()
+    template<typename S, typename D = Data::Structure<S>>
+    requires std::derived_from<S, Tag::Structure>
+    D get()
     {
-        return V { *this }; // uses get<M>() to construct members under the hood
+        return D { *this }; // uses get<M>() to construct members under the hood
     }
 
     template<typename  M, typename T = M::value_type>
-    requires std::derived_from<M, Data::Member>
+    requires std::derived_from<M, Tag::Member>
     T get()
     {
         return Getter<T>::get(*this, Data::Hashtable<M>);

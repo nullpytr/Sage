@@ -1,7 +1,7 @@
 from .base import GameDataType
 
 class Member(GameDataType):
-    basename = "Data::Member"
+    basename = "Tag::Member"
     
     hash_text_string: str
     hash_hexadecimal: str

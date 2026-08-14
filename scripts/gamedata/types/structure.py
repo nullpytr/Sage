@@ -3,7 +3,7 @@ from .member import *
 from .enum import *
 
 class Structure(GameDataType):
-    basename = "Data::Structure"
+    basename = "Tag::Structure"
     
     children: dict[str, GameDataType]
 

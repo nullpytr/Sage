@@ -15,7 +15,7 @@ class MemberDefEmitter(MemberEmitter):
 
         write(f"struct {self.member.name} : {self.member.basename}" + " {") # def open
         write(f"using value_type = ::{self.member.typename};")
-        write("}; /* Data::Member " + self.member.path + " close */") # def close
+        write("}; /* Tag::Member " + self.member.path + " close */") # def close
 
         return " ".join(buff)
 

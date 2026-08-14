@@ -2,15 +2,15 @@
 #include "Core/Types.hpp"
 #include "Core/Enum.hpp"
 #include "Core/Sav.hpp"
-struct GameData : Data::Structure {
-struct OwnedHorseList : Data::Structure {
-struct Body : Data::Structure {
-struct EyeColor : Data::Enum { using value_type = ::Enum::Array<EyeColor>; enum enum_type : mmh32 {
+struct GameData : Tag::Structure {
+struct OwnedHorseList : Tag::Structure {
+struct Body : Tag::Structure {
+struct EyeColor : Tag::Enum { using value_type = ::Enum::Array<EyeColor>; enum enum_type : mmh32 {
 Black = murmurhash3::hash("Black"),
 Blue = murmurhash3::hash("Blue"),
 };
-}; /* Data::Member GameData::OwnedHorseList::Body::EyeColor close */
-struct Pattern : Data::Enum { using value_type = ::Enum::Array<Pattern>; enum enum_type : mmh32 {
+}; /* Tag::Member GameData::OwnedHorseList::Body::EyeColor close */
+struct Pattern : Tag::Enum { using value_type = ::Enum::Array<Pattern>; enum enum_type : mmh32 {
 _00 = murmurhash3::hash("_00"),
 _01 = murmurhash3::hash("_01"),
 _02 = murmurhash3::hash("_02"),
@@ -19,24 +19,24 @@ _04 = murmurhash3::hash("_04"),
 _05 = murmurhash3::hash("_05"),
 _06 = murmurhash3::hash("_06"),
 };
-}; /* Data::Member GameData::OwnedHorseList::Body::Pattern close */
-struct NoseColor : Data::Structure {
-struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Blue close */
-struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Green close */
-struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::NoseColor::Red close */
-}; /* Data::Structure GameData::OwnedHorseList::Body::NoseColor close */
-struct PrimaryColor : Data::Structure {
-struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Blue close */
-struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Green close */
-struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::PrimaryColor::Red close */
-}; /* Data::Structure GameData::OwnedHorseList::Body::PrimaryColor close */
-struct SecondaryColor : Data::Structure {
-struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Blue close */
-struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Green close */
-struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Body::SecondaryColor::Red close */
-}; /* Data::Structure GameData::OwnedHorseList::Body::SecondaryColor close */
-}; /* Data::Structure GameData::OwnedHorseList::Body close */
-struct Mane : Data::Enum { using value_type = ::Enum::Array<Mane>; enum enum_type : mmh32 {
+}; /* Tag::Member GameData::OwnedHorseList::Body::Pattern close */
+struct NoseColor : Tag::Structure {
+struct Blue : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::NoseColor::Blue close */
+struct Green : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::NoseColor::Green close */
+struct Red : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::NoseColor::Red close */
+}; /* Tag::Structure GameData::OwnedHorseList::Body::NoseColor close */
+struct PrimaryColor : Tag::Structure {
+struct Blue : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::PrimaryColor::Blue close */
+struct Green : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::PrimaryColor::Green close */
+struct Red : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::PrimaryColor::Red close */
+}; /* Tag::Structure GameData::OwnedHorseList::Body::PrimaryColor close */
+struct SecondaryColor : Tag::Structure {
+struct Blue : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::SecondaryColor::Blue close */
+struct Green : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::SecondaryColor::Green close */
+struct Red : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Body::SecondaryColor::Red close */
+}; /* Tag::Structure GameData::OwnedHorseList::Body::SecondaryColor close */
+}; /* Tag::Structure GameData::OwnedHorseList::Body close */
+struct Mane : Tag::Enum { using value_type = ::Enum::Array<Mane>; enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 Horse_Link_Mane = murmurhash3::hash("Horse_Link_Mane"),
 Horse_Link_Mane_01 = murmurhash3::hash("Horse_Link_Mane_01"),
@@ -55,8 +55,8 @@ Horse_Link_Mane_11 = murmurhash3::hash("Horse_Link_Mane_11"),
 Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"),
 Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"),
 };
-}; /* Data::Member GameData::OwnedHorseList::Mane close */
-struct Rein : Data::Enum { using value_type = ::Enum::Array<Rein>; enum enum_type : mmh32 {
+}; /* Tag::Member GameData::OwnedHorseList::Mane close */
+struct Rein : Tag::Enum { using value_type = ::Enum::Array<Rein>; enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 GameRomHorseReins_00 = murmurhash3::hash("GameRomHorseReins_00"),
 GameRomHorseReins_01 = murmurhash3::hash("GameRomHorseReins_01"),
@@ -68,8 +68,8 @@ GameRomHorseReins_06 = murmurhash3::hash("GameRomHorseReins_06"),
 GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"),
 GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"),
 };
-}; /* Data::Member GameData::OwnedHorseList::Rein close */
-struct Saddle : Data::Enum { using value_type = ::Enum::Array<Saddle>; enum enum_type : mmh32 {
+}; /* Tag::Member GameData::OwnedHorseList::Rein close */
+struct Saddle : Tag::Enum { using value_type = ::Enum::Array<Saddle>; enum enum_type : mmh32 {
 None = murmurhash3::hash("None"),
 GameRomHorseSaddle_00 = murmurhash3::hash("GameRomHorseSaddle_00"),
 GameRomHorseSaddle_01 = murmurhash3::hash("GameRomHorseSaddle_01"),
@@ -82,90 +82,90 @@ GameRomHorseSaddle_00L = murmurhash3::hash("GameRomHorseSaddle_00L"),
 GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"),
 GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"),
 };
-}; /* Data::Member GameData::OwnedHorseList::Saddle close */
-struct Name : Data::Member { using value_type = ::array<wstring16>; }; /* Data::Member GameData::OwnedHorseList::Name close */
-struct UidHash : Data::Member { using value_type = ::array<u64>; }; /* Data::Member GameData::OwnedHorseList::UidHash close */
-struct ActorName : Data::Member { using value_type = ::array<string64>; }; /* Data::Member GameData::OwnedHorseList::ActorName close */
-struct ChargeNum : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::ChargeNum close */
-struct ColorType : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::ColorType close */
-struct FootType : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::FootType close */
-struct HorsePower : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::HorsePower close */
-struct HorseType : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::HorseType close */
-struct RoomID : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::RoomID close */
-struct Speed : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::Speed close */
-struct Toughness : Data::Member { using value_type = ::array<s32>; }; /* Data::Member GameData::OwnedHorseList::Toughness close */
-struct Familiarity : Data::Member { using value_type = ::array<float>; }; /* Data::Member GameData::OwnedHorseList::Familiarity close */
-struct IsFamiliarityChecked : Data::Member { using value_type = ::array<bool>; }; /* Data::Member GameData::OwnedHorseList::IsFamiliarityChecked close */
-struct Hair : Data::Structure {
-struct PrimaryColor : Data::Structure {
-struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Blue close */
-struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Green close */
-struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::PrimaryColor::Red close */
-}; /* Data::Structure GameData::OwnedHorseList::Hair::PrimaryColor close */
-struct SecondaryColor : Data::Structure {
-struct Blue : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Blue close */
-struct Green : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Green close */
-struct Red : Data::Member { using value_type = ::array<u32>; }; /* Data::Member GameData::OwnedHorseList::Hair::SecondaryColor::Red close */
-}; /* Data::Structure GameData::OwnedHorseList::Hair::SecondaryColor close */
-}; /* Data::Structure GameData::OwnedHorseList::Hair close */
-}; /* Data::Structure GameData::OwnedHorseList close */
-}; /* Data::Structure GameData close */
+}; /* Tag::Member GameData::OwnedHorseList::Saddle close */
+struct Name : Tag::Member { using value_type = ::array<wstring16>; }; /* Tag::Member GameData::OwnedHorseList::Name close */
+struct UidHash : Tag::Member { using value_type = ::array<u64>; }; /* Tag::Member GameData::OwnedHorseList::UidHash close */
+struct ActorName : Tag::Member { using value_type = ::array<string64>; }; /* Tag::Member GameData::OwnedHorseList::ActorName close */
+struct ChargeNum : Tag::Member { using value_type = ::array<s32>; }; /* Tag::Member GameData::OwnedHorseList::ChargeNum close */
+struct ColorType : Tag::Member { using value_type = ::array<s32>; }; /* Tag::Member GameData::OwnedHorseList::ColorType close */
+struct FootType : Tag::Member { using value_type = ::array<s32>; }; /* Tag::Member GameData::OwnedHorseList::FootType close */
+struct HorsePower : Tag::Member { using value_type = ::array<s32>; }; /* Tag::Member GameData::OwnedHorseList::HorsePower close */
+struct HorseType : Tag::Member { using value_type = ::array<s32>; }; /* Tag::Member GameData::OwnedHorseList::HorseType close */
+struct RoomID : Tag::Member { using value_type = ::array<s32>; }; /* Tag::Member GameData::OwnedHorseList::RoomID close */
+struct Speed : Tag::Member { using value_type = ::array<s32>; }; /* Tag::Member GameData::OwnedHorseList::Speed close */
+struct Toughness : Tag::Member { using value_type = ::array<s32>; }; /* Tag::Member GameData::OwnedHorseList::Toughness close */
+struct Familiarity : Tag::Member { using value_type = ::array<float>; }; /* Tag::Member GameData::OwnedHorseList::Familiarity close */
+struct IsFamiliarityChecked : Tag::Member { using value_type = ::array<bool>; }; /* Tag::Member GameData::OwnedHorseList::IsFamiliarityChecked close */
+struct Hair : Tag::Structure {
+struct PrimaryColor : Tag::Structure {
+struct Blue : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Hair::PrimaryColor::Blue close */
+struct Green : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Hair::PrimaryColor::Green close */
+struct Red : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Hair::PrimaryColor::Red close */
+}; /* Tag::Structure GameData::OwnedHorseList::Hair::PrimaryColor close */
+struct SecondaryColor : Tag::Structure {
+struct Blue : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Hair::SecondaryColor::Blue close */
+struct Green : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Hair::SecondaryColor::Green close */
+struct Red : Tag::Member { using value_type = ::array<u32>; }; /* Tag::Member GameData::OwnedHorseList::Hair::SecondaryColor::Red close */
+}; /* Tag::Structure GameData::OwnedHorseList::Hair::SecondaryColor close */
+}; /* Tag::Structure GameData::OwnedHorseList::Hair close */
+}; /* Tag::Structure GameData::OwnedHorseList close */
+}; /* Tag::Structure GameData close */
 namespace Data {
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::EyeColor> = murmurhash3::hash("OwnedHorseList.Body.EyeColor");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::Pattern> = murmurhash3::hash("OwnedHorseList.Body.Pattern");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Blue");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Green> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Green");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::NoseColor::Red> = murmurhash3::hash("OwnedHorseList.Body.NoseColor.Red");
-template <> struct View<GameData::OwnedHorseList::Body::NoseColor> : GameData::OwnedHorseList::Body::NoseColor {
+template <> struct Structure<GameData::OwnedHorseList::Body::NoseColor> : GameData::OwnedHorseList::Body::NoseColor {
 Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
-View(Sav& s) : 
+Structure(Sav& s) : 
 Blue { s.get<struct Blue>() },
 Green { s.get<struct Green>() },
 Red { s.get<struct Red>() }
 { }
-}; /* Data::View GameData::OwnedHorseList::Body::NoseColor close */
+}; /* Data::Structure GameData::OwnedHorseList::Body::NoseColor close */
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Blue");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Green> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Green");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::PrimaryColor::Red> = murmurhash3::hash("OwnedHorseList.Body.PrimaryColor.Red");
-template <> struct View<GameData::OwnedHorseList::Body::PrimaryColor> : GameData::OwnedHorseList::Body::PrimaryColor {
+template <> struct Structure<GameData::OwnedHorseList::Body::PrimaryColor> : GameData::OwnedHorseList::Body::PrimaryColor {
 Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
-View(Sav& s) : 
+Structure(Sav& s) : 
 Blue { s.get<struct Blue>() },
 Green { s.get<struct Green>() },
 Red { s.get<struct Red>() }
 { }
-}; /* Data::View GameData::OwnedHorseList::Body::PrimaryColor close */
+}; /* Data::Structure GameData::OwnedHorseList::Body::PrimaryColor close */
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Blue");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Green> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Green");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Red> = murmurhash3::hash("OwnedHorseList.Body.SecondaryColor.Red");
-template <> struct View<GameData::OwnedHorseList::Body::SecondaryColor> : GameData::OwnedHorseList::Body::SecondaryColor {
+template <> struct Structure<GameData::OwnedHorseList::Body::SecondaryColor> : GameData::OwnedHorseList::Body::SecondaryColor {
 Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
-View(Sav& s) : 
+Structure(Sav& s) : 
 Blue { s.get<struct Blue>() },
 Green { s.get<struct Green>() },
 Red { s.get<struct Red>() }
 { }
-}; /* Data::View GameData::OwnedHorseList::Body::SecondaryColor close */
-template <> struct View<GameData::OwnedHorseList::Body> : GameData::OwnedHorseList::Body {
+}; /* Data::Structure GameData::OwnedHorseList::Body::SecondaryColor close */
+template <> struct Structure<GameData::OwnedHorseList::Body> : GameData::OwnedHorseList::Body {
 EyeColor::value_type EyeColor;
 Pattern::value_type Pattern;
-View<NoseColor> NoseColor;
-View<PrimaryColor> PrimaryColor;
-View<SecondaryColor> SecondaryColor;
-View(Sav& s) : 
+Structure<NoseColor> NoseColor;
+Structure<PrimaryColor> PrimaryColor;
+Structure<SecondaryColor> SecondaryColor;
+Structure(Sav& s) : 
 EyeColor { s.get<struct EyeColor>() },
 Pattern { s.get<struct Pattern>() },
 NoseColor { s },
 PrimaryColor { s },
 SecondaryColor { s }
 { }
-}; /* Data::View GameData::OwnedHorseList::Body close */
+}; /* Data::Structure GameData::OwnedHorseList::Body close */
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Mane> = murmurhash3::hash("OwnedHorseList.Mane");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Rein> = murmurhash3::hash("OwnedHorseList.Rein");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Saddle> = murmurhash3::hash("OwnedHorseList.Saddle");
@@ -185,39 +185,39 @@ template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::IsFamiliarityCh
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Blue");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Green");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Hair::PrimaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.PrimaryColor.Red");
-template <> struct View<GameData::OwnedHorseList::Hair::PrimaryColor> : GameData::OwnedHorseList::Hair::PrimaryColor {
+template <> struct Structure<GameData::OwnedHorseList::Hair::PrimaryColor> : GameData::OwnedHorseList::Hair::PrimaryColor {
 Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
-View(Sav& s) : 
+Structure(Sav& s) : 
 Blue { s.get<struct Blue>() },
 Green { s.get<struct Green>() },
 Red { s.get<struct Red>() }
 { }
-}; /* Data::View GameData::OwnedHorseList::Hair::PrimaryColor close */
+}; /* Data::Structure GameData::OwnedHorseList::Hair::PrimaryColor close */
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green");
 template <> hash_t constexpr Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red");
-template <> struct View<GameData::OwnedHorseList::Hair::SecondaryColor> : GameData::OwnedHorseList::Hair::SecondaryColor {
+template <> struct Structure<GameData::OwnedHorseList::Hair::SecondaryColor> : GameData::OwnedHorseList::Hair::SecondaryColor {
 Blue::value_type Blue;
 Green::value_type Green;
 Red::value_type Red;
-View(Sav& s) : 
+Structure(Sav& s) : 
 Blue { s.get<struct Blue>() },
 Green { s.get<struct Green>() },
 Red { s.get<struct Red>() }
 { }
-}; /* Data::View GameData::OwnedHorseList::Hair::SecondaryColor close */
-template <> struct View<GameData::OwnedHorseList::Hair> : GameData::OwnedHorseList::Hair {
-View<PrimaryColor> PrimaryColor;
-View<SecondaryColor> SecondaryColor;
-View(Sav& s) : 
+}; /* Data::Structure GameData::OwnedHorseList::Hair::SecondaryColor close */
+template <> struct Structure<GameData::OwnedHorseList::Hair> : GameData::OwnedHorseList::Hair {
+Structure<PrimaryColor> PrimaryColor;
+Structure<SecondaryColor> SecondaryColor;
+Structure(Sav& s) : 
 PrimaryColor { s },
 SecondaryColor { s }
 { }
-}; /* Data::View GameData::OwnedHorseList::Hair close */
-template <> struct View<GameData::OwnedHorseList> : GameData::OwnedHorseList {
-View<Body> Body;
+}; /* Data::Structure GameData::OwnedHorseList::Hair close */
+template <> struct Structure<GameData::OwnedHorseList> : GameData::OwnedHorseList {
+Structure<Body> Body;
 Mane::value_type Mane;
 Rein::value_type Rein;
 Saddle::value_type Saddle;
@@ -234,8 +234,8 @@ Speed::value_type Speed;
 Toughness::value_type Toughness;
 Familiarity::value_type Familiarity;
 IsFamiliarityChecked::value_type IsFamiliarityChecked;
-View<Hair> Hair;
-View(Sav& s) : 
+Structure<Hair> Hair;
+Structure(Sav& s) : 
 Body { s },
 Mane { s.get<struct Mane>() },
 Rein { s.get<struct Rein>() },
@@ -255,11 +255,11 @@ Familiarity { s.get<struct Familiarity>() },
 IsFamiliarityChecked { s.get<struct IsFamiliarityChecked>() },
 Hair { s }
 { }
-}; /* Data::View GameData::OwnedHorseList close */
-template <> struct View<GameData> : GameData {
-View<OwnedHorseList> OwnedHorseList;
-View(Sav& s) : 
+}; /* Data::Structure GameData::OwnedHorseList close */
+template <> struct Structure<GameData> : GameData {
+Structure<OwnedHorseList> OwnedHorseList;
+Structure(Sav& s) : 
 OwnedHorseList { s }
 { }
-}; /* Data::View GameData close */
+}; /* Data::Structure GameData close */
 }
