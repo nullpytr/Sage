@@ -41,32 +41,30 @@ def parse_data_record(
 
     identifiers = hash_text_string.split(".")
     for curr_id in identifiers[:-1]: # Ensure all parent structs exist
-        next_path = f"{curr_node.path}::{curr_id}"
-        if next_path not in curr_node.children:
-            curr_node.children[next_path] = Structure(
+        if curr_id not in curr_node.children:
+            curr_node.children[curr_id] = Structure(
                 name=curr_id,
-                path=next_path,
+                path=f"{curr_node.path}::{curr_id}",
                 children={}
             )
 
-        next_node = curr_node.children[next_path]
+        next_node = curr_node.children[curr_id]
         assert isinstance(next_node, Structure)
         curr_node = next_node
 
     id = identifiers[-1] # Create member at leaf node
-    path = f"{curr_node.path}::{id}"
 
     if raw_typename.startswith("Enum"):
-        incomplete_t = curr_node.children.get(path)
+        incomplete_t = curr_node.children.get(id)
         assert isinstance(incomplete_t, Member), \
             f"[gd/tree/resolve_incomplete_enum_member]: invalid EnumValues member type: {incomplete_t} found for {path}"
-        curr_node.children[path] = resolve_incomplete_enum_member(incomplete_t, raw_typename)
+        curr_node.children[id] = resolve_incomplete_enum_member(incomplete_t, raw_typename)
         return
 
-    curr_node.children[path] = \
+    curr_node.children[id] = \
         resolve_member_type(raw_typename)(
             name=id,
-            path=path,
+            path=f"{curr_node.path}::{id}",
             hash_text_string=hash_text_string,
             hash_hexadecimal=hash_hexadecimal
         )
