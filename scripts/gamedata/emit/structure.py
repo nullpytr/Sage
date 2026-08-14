@@ -8,50 +8,60 @@ Structure = types.Structure
 class StructureEmitter():
     @staticmethod
     def emit(struct: Structure, delim: str = "\n", include_dir: Path | str | None = None) -> str:
+        depth = 0
         buffer: list[str] = []
-        write = buffer.append
+        write = lambda s: buffer.append("\t" * depth + s)
 
         if include_dir: # emit header files
             write("#pragma once")
             write("#include \"Core/Types.hpp\"")
             write("#include \"Core/Enum.hpp\"")
             write("#include \"Core/Sav.hpp\"")
+            write("")
 
         write(f"struct {struct.path} : {struct.basename}" + " {") # tag open
 
+        depth += 1
         for child in struct.children.values(): # child tags
             print(f"[gd/struct/emit/def]: processing {child.path}")
             if isinstance(child, Structure): write(f"struct {child.name};") # forward ref (declared out of line -- gd v5.x)
             elif isinstance(child, enum.Enum): write(enum.EnumEmitter.emit(child))
             elif isinstance(child, member.Member): write(member.MemberEmitter.emit(child))
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type {child.typename} {child.path}"
+        depth -= 1
 
         write("}; /* Tag::Structure " + struct.path + " close */" + delim) # tag close
 
+        _old_len = len(buffer)
         for child in struct.children.values(): # out of line child struct tags (gd v5.x)
             if not isinstance(child, Structure): continue
             substruct = StructureEmitter.emit(child, delim, include_dir)
             if include_dir: write(f"#include \"{struct.name}/{child.name}.hpp\"")
             else: write(substruct)
+        if _old_len != len(buffer): write("")
 
         write(f"template <> struct Data::Structure<{struct.path}> : {struct.path}" + " {") # data open
 
+        depth += 1
         for child in struct.children.values(): # member decls
             if isinstance(child, Structure): write(f"Structure<{child.name}> {child.name};")
             elif isinstance(child, member.Member): write(f"{child.name}::value_type {child.name};")
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
 
+        write("")
         write("Structure(Sav& s) : ") # ctor open
 
+        depth += 1
         for child in struct.children.values(): # member inits
             if isinstance(child, Structure):  write(f"{child.name}" + " { s },")
             elif isinstance(child, member.Member): write(f"{child.name}" + " { " + f"s.get<struct {child.name}>()" + " },")
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
-    
+        depth -= 1
 
         buffer[-1] = buffer[-1].removesuffix(",") # strip last comma
         write("{ }") # ctor close
 
+        depth -= 1
         write("}; /* Data::Structure " + struct.path + " close */" + delim) # data close
 
         for child in struct.children.values(): # member hashtable defs
