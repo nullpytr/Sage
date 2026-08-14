@@ -15,7 +15,7 @@ class Enum[EnumName: str](Member):
 
     def __repr__(self) -> str:
         repr_keys_unquoted = repr(self.keys).replace("'", "")
-        return f"'Enum({self.name}, value_type {self.typename} : {repr_keys_unquoted})'"
+        return f"'({self.basename}) {self.typename}{repr_keys_unquoted}'"
 
     def __class_getitem__(cls, enum_name: EnumName):
         return type(

@@ -13,4 +13,4 @@ class Structure(GameDataType):
         self.children = children
 
     def __repr__(self) -> str:
-        return str(self.children | {"__GAMEDATA_STRUCT_NAME__": self.name})
+        return str(self.children | {f"__{self.basename.upper().replace('::', '_')}_CLOSE__": self.name})

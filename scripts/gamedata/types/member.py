@@ -13,4 +13,4 @@ class Member(GameDataType):
         self.hash_hexadecimal = hash_hexadecimal
 
     def __repr__(self) -> str:
-        return f"'({self.typename}, {self.name}, {self.hash_text_string}, {self.hash_hexadecimal})'"
+        return f"'({self.basename}) {self.typename}({self.name}, {self.hash_text_string}, {self.hash_hexadecimal})'"
