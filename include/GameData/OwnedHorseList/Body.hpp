@@ -1,0 +1,35 @@
+#pragma once
+#include "Core/Types.hpp"
+#include "Core/Enum.hpp"
+#include "Core/Sav.hpp"
+
+struct GameData::OwnedHorseList::Body : Tag::Structure {
+	struct EyeColor : Tag::Enum { using value_type = ::Enum::Array<EyeColor>; enum enum_type : mmh32 { Black = murmurhash3::hash("Black"), Blue = murmurhash3::hash("Blue"), }; };
+	struct Pattern : Tag::Enum { using value_type = ::Enum::Array<Pattern>; enum enum_type : mmh32 { _00 = murmurhash3::hash("_00"), _01 = murmurhash3::hash("_01"), _02 = murmurhash3::hash("_02"), _03 = murmurhash3::hash("_03"), _04 = murmurhash3::hash("_04"), _05 = murmurhash3::hash("_05"), _06 = murmurhash3::hash("_06"), }; };
+	struct NoseColor;
+	struct PrimaryColor;
+	struct SecondaryColor;
+};/* Tag::Structure GameData::OwnedHorseList::Body close */
+
+#include "Body/NoseColor.hpp"
+#include "Body/PrimaryColor.hpp"
+#include "Body/SecondaryColor.hpp"
+
+template <> struct Data::Structure<GameData::OwnedHorseList::Body> : GameData::OwnedHorseList::Body {
+	EyeColor::value_type EyeColor;
+	Pattern::value_type Pattern;
+	Structure<NoseColor> NoseColor;
+	Structure<PrimaryColor> PrimaryColor;
+	Structure<SecondaryColor> SecondaryColor;
+	
+	explicit Structure(Sav& s) : 
+		EyeColor { s.get<struct EyeColor>() },
+		Pattern { s.get<struct Pattern>() },
+		NoseColor { s },
+		PrimaryColor { s },
+		SecondaryColor { s }
+	{ }
+};/* Data::Structure GameData::OwnedHorseList::Body close */
+
+template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::EyeColor> = murmurhash3::hash("OwnedHorseList.Body.EyeColor");
+template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::Pattern> = murmurhash3::hash("OwnedHorseList.Body.Pattern");
