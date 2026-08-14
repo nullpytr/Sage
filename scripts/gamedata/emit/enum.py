@@ -6,11 +6,9 @@ Enum = types.Enum
 class EnumEmitter():
     @staticmethod
     def emit(enum: Enum, delim: str = " ") -> str:
-        return (
-            member.MemberEmitter
-            .emit(enum) \
-            .replace("};", EnumEmitter._enum_def(enum) + " };")
-        )
+        buffer = member.MemberEmitter.emit(enum, delim="!").split("!")
+        buffer.insert(-1, EnumEmitter._enum_def(enum, delim))
+        return delim.join(buffer)
 
     @staticmethod
     def _enum_def(enum: Enum, delim: str = " ") -> str:
