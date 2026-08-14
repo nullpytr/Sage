@@ -8,7 +8,7 @@ class MemberEmitter():
         buffer: list[str] = []
         write = buffer.append
 
-        write(f"struct {member.name} : {member.basename}" + " {") # def open
+        write(f"struct {member.name} : {member.basename}" " {") # def open
         write(f"using value_type = ::{member.typename};")
         write("};") # def close
 

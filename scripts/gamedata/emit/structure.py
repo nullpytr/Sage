@@ -19,7 +19,7 @@ class StructureEmitter():
             write("#include \"Core/Sav.hpp\"")
             write("")
 
-        write(f"struct {struct.path} : {struct.basename}" + " {") # tag open
+        write(f"struct {struct.path} : {struct.basename}" " {") # tag open
 
         depth += 1
         for child in struct.children.values(): # child tags
@@ -30,7 +30,7 @@ class StructureEmitter():
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type {child.typename} {child.path}"
         depth -= 1
 
-        write("}; /* Tag::Structure " + struct.path + " close */" + delim) # tag close
+        write("};" f"/* Tag::Structure {struct.path} close */{delim}") # tag close
 
         _old_len = len(buffer)
         for child in struct.children.values(): # out of line child struct tags (gd v5.x)
@@ -40,7 +40,7 @@ class StructureEmitter():
             else: write(substruct)
         if _old_len != len(buffer): write("")
 
-        write(f"template <> struct Data::Structure<{struct.path}> : {struct.path}" + " {") # data open
+        write(f"template <> struct Data::Structure<{struct.path}> : {struct.path}" " {") # data open
 
         depth += 1
         for child in struct.children.values(): # member decls
@@ -53,8 +53,8 @@ class StructureEmitter():
 
         depth += 1
         for child in struct.children.values(): # member inits
-            if isinstance(child, Structure):  write(f"{child.name}" + " { s },")
-            elif isinstance(child, member.Member): write(f"{child.name}" + " { " + f"s.get<struct {child.name}>()" + " },")
+            if isinstance(child, Structure):  write(f"{child.name}" " { s },")
+            elif isinstance(child, member.Member): write(f"{child.name}" " { " f"s.get<struct {child.name}>()" " },")
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
         depth -= 1
 
@@ -62,7 +62,7 @@ class StructureEmitter():
         write("{ }") # ctor close
 
         depth -= 1
-        write("}; /* Data::Structure " + struct.path + " close */" + delim) # data close
+        write("};" f"/* Data::Structure {struct.path} close */{delim}") # data close
 
         for child in struct.children.values(): # member hashtable defs
             if not isinstance(child, member.Member): continue
