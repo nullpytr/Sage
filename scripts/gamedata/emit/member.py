@@ -4,7 +4,7 @@ Member = types.Member
 
 class MemberEmitter():
     @staticmethod
-    def emit(member: Member) -> str:
+    def emit(member: Member, delim: str = " ") -> str:
         buffer: list[str] = []
         write = buffer.append
 
@@ -12,4 +12,4 @@ class MemberEmitter():
         write(f"using value_type = ::{member.typename};")
         write("};") # def close
 
-        return " ".join(buffer)
+        return delim.join(buffer)

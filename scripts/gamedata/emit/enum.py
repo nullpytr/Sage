@@ -5,7 +5,7 @@ Enum = types.Enum
 
 class EnumEmitter():
     @staticmethod
-    def emit(enum: Enum) -> str:
+    def emit(enum: Enum, delim: str = " ") -> str:
         return (
             member.MemberEmitter
             .emit(enum) \
@@ -13,7 +13,7 @@ class EnumEmitter():
         )
 
     @staticmethod
-    def _enum_def(enum: Enum) -> str:
+    def _enum_def(enum: Enum, delim: str = " ") -> str:
         buffer: list[str] = []
         write = buffer.append
 
@@ -23,4 +23,4 @@ class EnumEmitter():
             write(f"{key} = murmurhash3::hash(\"{key}\"),")
         write("};")
 
-        return " ".join(buffer)
+        return delim.join(buffer)

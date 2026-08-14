@@ -5,7 +5,7 @@ Structure = types.Structure
 
 class StructureEmitter():
     @staticmethod
-    def emit(struct: Structure) -> str:
+    def emit(struct: Structure, delim: str = "\n") -> str:
         buffer: list[str] = []
         write = buffer.append
 
@@ -18,7 +18,7 @@ class StructureEmitter():
             elif isinstance(child, member.Member): write(member.MemberEmitter.emit(child))
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type {child.typename} {child.path}"
 
-        write("}; /* Tag::Structure " + struct.path + " close */\n") # tag close
+        write("}; /* Tag::Structure " + struct.path + " close */" + delim) # tag close
 
         for child in struct.children.values(): # out of line child struct tags (gd v5.x)
             if isinstance(child, Structure): write(StructureEmitter.emit(child))
@@ -41,10 +41,10 @@ class StructureEmitter():
         buffer[-1] = buffer[-1].removesuffix(",") # strip last comma
         write("{ }") # ctor close
 
-        write("}; /* Data::Structure " + struct.path + " close */\n") # data close
+        write("}; /* Data::Structure " + struct.path + " close */" + delim) # data close
 
         for child in struct.children.values(): # member hashtable defs
             if not isinstance(child, member.Member): continue
             write(f"template <> hash_t constexpr Data::Hashtable<{child.path}> = murmurhash3::hash(\"{child.hash_text_string}\");")
 
-        return "\n".join(buffer)
+        return delim.join(buffer)
