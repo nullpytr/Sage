@@ -1,5 +1,6 @@
 from . import base, member, enum
 from .. import types
+
 Structure = types.Structure
 
 class StructureEmitter(base.GameDataEmitter):
@@ -8,51 +9,46 @@ class StructureEmitter(base.GameDataEmitter):
     def __init__(self, structure: Structure) -> None:
         self.structure = structure
 
-class StructureDeclEmitter(StructureEmitter):
     def emit(self) -> str:
-        buff: list[str] = []
-        write = buff.append
-        
-        for child_path, child_val in self.structure.children.items(): # out-of-line child decls (gd v4.x)
-            print(f"[gd/struct/emit/decl]: processing child {child_path}")
-            if isinstance(child_val, Structure): write(StructureDeclEmitter(child_val).emit())
-            elif isinstance(child_val, member.Member): write(member.MemberDeclEmitter(child_val).emit())
-            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
+        buffer: list[str] = []
+        write = buffer.append
 
-        write(f"template <> struct Structure<{self.structure.path}> : {self.structure.path}" + " {") # decl open
-        for child_path, child_val in self.structure.children.items(): # member decls
-            if isinstance(child_val, Structure): write(f"Structure<{child_val.name}> {child_val.name};")
-            elif isinstance(child_val, member.Member): write(f"{child_val.name}::value_type {child_val.name};")
-            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
+        write(f"struct {self.structure.path} : {self.structure.basename}" + " {") # tag open
+
+        for child in self.structure.children.values(): # child tags
+            print(f"[gd/struct/emit/def]: processing {child.path}")
+            if isinstance(child, Structure): write(f"struct {child.name};") # forward ref (declared out of line -- gd v5.x)
+            elif isinstance(child, enum.Enum): write(enum.EnumEmitter(child).emit())
+            elif isinstance(child, member.Member): write(member.MemberEmitter(child).emit())
+            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type {child.typename} {child.path}"
+
+        write("}; /* Tag::Structure " + self.structure.path + " close */\n") # tag close
+
+        for child in self.structure.children.values(): # out of line child struct tags (gd v5.x)
+            if isinstance(child, Structure): write(StructureEmitter(child).emit())
+
+        write(f"template <> struct Data::Structure<{self.structure.path}> : {self.structure.path}" + " {") # data open
+
+        for child in self.structure.children.values(): # member decls
+            if isinstance(child, Structure): write(f"Structure<{child.name}> {child.name};")
+            elif isinstance(child, member.Member): write(f"{child.name}::value_type {child.name};")
+            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
 
         write("Structure(Sav& s) : ") # ctor open
-                
-        for child_path, child_val in self.structure.children.items(): # member inits
-            if isinstance(child_val, Structure):  write(f"{child_val.name}" + " { s },")
-            elif isinstance(child_val, member.Member): write(f"{child_val.name}" + " { " + f"s.get<struct {child_val.name}>()" + " },")
-            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child_val)}, {child_val.typename}) {child_path}"
 
-        buff[-1] = buff[-1][:-1] # strip last comma
+        for child in self.structure.children.values(): # member inits
+            if isinstance(child, Structure):  write(f"{child.name}" + " { s },")
+            elif isinstance(child, member.Member): write(f"{child.name}" + " { " + f"s.get<struct {child.name}>()" + " },")
+            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
+    
+
+        buffer[-1] = buffer[-1].removesuffix(",") # strip last comma
         write("{ }") # ctor close
 
-        
-        write("}; /* Data::Structure " + self.structure.path + " close */") # def close
+        write("}; /* Data::Structure " + self.structure.path + " close */\n") # data close
 
-        return "\n".join(buff)
+        for child in self.structure.children.values(): # member hashtable defs
+            if not isinstance(child, member.Member): continue
+            write(f"template <> hash_t constexpr Data::Hashtable<{child.path}> = murmurhash3::hash(\"{child.hash_text_string}\");")
 
-class StructureDefEmitter(StructureEmitter):
-    def emit(self) -> str:
-        buff: list[str] = []
-        write = buff.append
-
-        write(f"struct {self.structure.name} : {self.structure.basename}" + " {") # def open
-        for child_path, child_val in self.structure.children.items(): # child defs
-            print(f"[gd/struct/emit/def]: processing child {child_path}")
-            if isinstance(child_val, Structure): write(StructureDefEmitter(child_val).emit())
-            elif isinstance(child_val, enum.Enum): write(enum.EnumDefEmitter(child_val).emit())
-            elif isinstance(child_val, member.Member): write(member.MemberDefEmitter(child_val).emit())
-            else: assert False, f"[gd/struct/emit]: node {self.structure.name} has unexpected child of type {child_val.typename} {child_path}"
-
-        write("}; /* Tag::Structure " + self.structure.path + " close */") # def close
-
-        return "\n".join(buff)
+        return "\n".join(buffer)

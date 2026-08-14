@@ -3,19 +3,18 @@ from .. import types
 Enum = types.Enum
 
 class EnumEmitter(member.MemberEmitter):
-    @property
+    @property 
     def enum(self) -> Enum:
         assert isinstance(self.member, Enum)
         return self.member
-
-class EnumDefEmitter(EnumEmitter, member.MemberDefEmitter):
+    
     def emit(self) -> str:
-        closing_brace = "}; /*"
+        closing_brace = "};"
 
         return (
             super().emit()
             # inject enum def at the end before close
-            .replace(closing_brace, f"{self._emit_enum()}\n{closing_brace}")
+            .replace(closing_brace, f"{self._emit_enum()} {closing_brace}")
         )
     
     def _emit_enum(self) -> str:
@@ -28,7 +27,4 @@ class EnumDefEmitter(EnumEmitter, member.MemberDefEmitter):
             write(f"{key} = murmurhash3::hash(\"{key}\"),")
         write("};")
 
-        return "\n".join(buff)
-
-class EnumDeclEmitter(EnumEmitter, member.MemberDeclEmitter):
-    pass
+        return " ".join(buff)

@@ -14,8 +14,7 @@ gamedata_dict = json.loads(
 )
 print(json.dumps(gamedata_dict, indent=1))
 
-defs = emit.structure.StructureDefEmitter(gamedata)
-decls = emit.structure.StructureDeclEmitter(gamedata)
+emitter = emit.structure.StructureEmitter(gamedata)
 
 gamedata_header: list[str] = []
 write = gamedata_header.append
@@ -25,10 +24,7 @@ write("#include \"Core/Types.hpp\"")
 write("#include \"Core/Enum.hpp\"")
 write("#include \"Core/Sav.hpp\"")
 
-write(defs.emit())
-write("namespace Data {")
-write(decls.emit())
-write("}")
+write(emitter.emit())
 
 open(gamedata_header_file, "w").write("\n".join(gamedata_header))
 
