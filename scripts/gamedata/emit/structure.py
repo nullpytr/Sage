@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from . import member, enum
 from .. import types
 
@@ -5,9 +7,15 @@ Structure = types.Structure
 
 class StructureEmitter():
     @staticmethod
-    def emit(struct: Structure, delim: str = "\n") -> str:
+    def emit(struct: Structure, delim: str = "\n", include_dir: Path | str | None = None) -> str:
         buffer: list[str] = []
         write = buffer.append
+
+        if include_dir: # emit header files
+            write("#pragma once")
+            write("#include \"Core/Types.hpp\"")
+            write("#include \"Core/Enum.hpp\"")
+            write("#include \"Core/Sav.hpp\"")
 
         write(f"struct {struct.path} : {struct.basename}" + " {") # tag open
 
@@ -21,7 +29,10 @@ class StructureEmitter():
         write("}; /* Tag::Structure " + struct.path + " close */" + delim) # tag close
 
         for child in struct.children.values(): # out of line child struct tags (gd v5.x)
-            if isinstance(child, Structure): write(StructureEmitter.emit(child))
+            if not isinstance(child, Structure): continue
+            substruct = StructureEmitter.emit(child, delim, include_dir)
+            if include_dir: write(f"#include \"{struct.name}/{child.name}.hpp\"")
+            else: write(substruct)
 
         write(f"template <> struct Data::Structure<{struct.path}> : {struct.path}" + " {") # data open
 
@@ -47,4 +58,12 @@ class StructureEmitter():
             if not isinstance(child, member.Member): continue
             write(f"template <> hash_t constexpr Data::Hashtable<{child.path}> = murmurhash3::hash(\"{child.hash_text_string}\");")
 
-        return delim.join(buffer)
+        string = delim.join(buffer)
+        if include_dir: 
+            relpath = struct.path.replace("::", "/") + ".hpp"
+            header_file = Path(include_dir).absolute() / relpath
+            header_file.parent.mkdir(exist_ok=True, parents=True)
+            header_file.write_text(string)
+
+        return string
+            
