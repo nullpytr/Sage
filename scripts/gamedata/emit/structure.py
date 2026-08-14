@@ -49,7 +49,7 @@ class StructureEmitter():
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
 
         write("")
-        write("Structure(Sav& s) : ") # ctor open
+        write("explicit Structure(Sav& s) : ") # ctor open
 
         depth += 1
         for child in struct.children.values(): # member inits
