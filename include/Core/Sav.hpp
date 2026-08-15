@@ -73,7 +73,13 @@ public:
     requires std::derived_from<M, Tag::Member>
     T get()
     {
-        return Getter<T>::get(*this, Data::Hashtable<M>);
+        return get<T>(Data::Hashtable<M>);
+    }
+
+    template <typename T>
+    T get(hash_t const hash)
+    {
+       return Getter<T>::get(*this, hash);
     }
 
 private: /* Specializations for different data types */
