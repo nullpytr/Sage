@@ -15,14 +15,16 @@ using s64 = std::int64_t;
 struct vec2f { float x, y; };
 struct vec3f { float x, y, z; };
 
-using string16 = char[16];
-using string32 = char[32];
-using string64 = char[64];
+#include "External/String.hpp"
+using string16 = string<16>;
+using string32 = string<32>;
+using string64 = string<64>;
 
 using wchar = char16_t;
-using wstring16 = wchar[16];
-using wstring32 = wchar[32];
-using wstring64 = wchar[64];
+template <size_t N> using wstring = u16string<N>;
+using wstring16 = wstring<16>;
+using wstring32 = wstring<32>;
+using wstring64 = wstring<64>;
 
 using byte = unsigned char;
 
@@ -37,9 +39,6 @@ using hash_t = mmh32;
 #include <span>
 template<typename T>
 using array = std::span<T>;
-
-#include <string_view>
-using string = std::string_view;
 
 /* GameData Tags
  * These types are used in Sage's GameData model,
