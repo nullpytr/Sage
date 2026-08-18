@@ -15,3 +15,13 @@ struct Adapter<string<N>>
     /*--*/
     char m_data[N];
 };
+
+template <typename T>
+struct Adapter<span<T>>
+{
+    operator span<T>() { return { static_cast<T*>(m_data), m_size }; }
+
+    /*--*/
+    u32 m_size; // nintendo's layout is inverted
+    T m_data[];
+};

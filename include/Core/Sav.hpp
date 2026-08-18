@@ -104,15 +104,6 @@ private: /* Specializations for different data types */
         }
     };
 
-    template <typename T>
-    struct Getter<array<T>> {
-        static array<T> get(Sav& self, hash_t const hash) {
-            u32* size_ptr = Getter<u32*>::get(self, hash);
-            T* data = reinterpret_cast<T*>(size_ptr + 1); // data starts right after size
-            return array { data, *size_ptr };
-        }
-    };
-
     template <typename E>
     struct Getter<Enum::Container<E>>
     {
