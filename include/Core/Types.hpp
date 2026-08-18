@@ -71,7 +71,8 @@ namespace Data
          * can fall back to this non-specialised template (because this is not an impl)
          * -- we throw a hard error for undefined specializations. */
         static_assert(false, "no hashtable entry found");
-    };
+        return 0;
+    }();
 
     template <typename M>
     using Member = M::type;
