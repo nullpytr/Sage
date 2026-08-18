@@ -6,6 +6,7 @@
 
 #include "External/Filesystem.hpp"
 #include "Core/Types.hpp"
+#include "Core/Adapter.hpp"
 #include "Core/Enum.hpp"
 
 #define METADATA_SAVE_TYPE_HASH 0xa3db7114
@@ -69,18 +70,18 @@ public:
         return D { *this }; // uses get<M>() to construct members under the hood
     }
 
-    template<typename  M, typename T = M::value_type>
+    template<typename  M, typename T = Data::Member<M>, typename A = M::adapter>
     requires std::derived_from<M, Tag::Member>
     T get()
     {
-        return get<T>(Data::Hashtable<M>);
+        return get<T, A>(Data::Hashtable<M>);
     }
-
-    template <typename T>
+    template <typename T, typename A = T>
     T get(hash_t const hash)
     {
-       return Getter<T>::get(*this, hash);
+        return Getter<A>::get(*this, hash);
     }
+
 
 private: /* Specializations for different data types */
     template <typename T>
@@ -115,7 +116,7 @@ private: /* Specializations for different data types */
     template <typename E>
     struct Getter<Enum::Container<E>>
     {
-        using C = E::value_type; // actual container sub-type (like Scalar, Array)
+        using C = E::type; // actual container sub-type (like Scalar, Array)
         using T = C::value_type; // underlying type needed to construct the container
         static C get(Sav& self, hash_t hash)
         {
