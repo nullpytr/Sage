@@ -32,13 +32,9 @@ using byte = unsigned char;
 #include "External/MurmurHash3.hpp"
 using hash_t = mmh32;
 
-/* STL types
- * Sage automatically upgrades
- * C style arrays into array-view (std::span)
- * while C strings can be implicitly upgraded in user code */
+/* STL types */
 #include <span>
-template<typename T>
-using array = std::span<T>;
+using std::span;
 
 /* GameData Tags
  * These types are used in Sage's GameData model,
