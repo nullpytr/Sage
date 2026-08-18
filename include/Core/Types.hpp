@@ -72,4 +72,10 @@ namespace Data
          * -- we throw a hard error for undefined specializations. */
         static_assert(false, "no hashtable entry found");
     };
+
+    template <typename M>
+    using Member = M::type;
+
+    template <typename E>
+    using Enum = E::type;
 }
