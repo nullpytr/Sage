@@ -98,9 +98,9 @@ private: /* Specializations for different data types */
 
     template <typename T>
     struct Getter<T*> {
-        static T* get(Sav& self, hash_t const hash) {
+        static T& get(Sav& self, hash_t const hash) {
             u32 const value_offset = Getter<u32&>::get(self, hash); // hash gives offest of actual value
-            return self.ptr<T>(value_offset);
+            return *self.ptr<T>(value_offset);
         }
     };
 
