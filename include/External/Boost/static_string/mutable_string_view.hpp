@@ -379,77 +379,7 @@ BOOST_STATIC_STRING_GCC_NESTED_CLASS_WORKAROUND
   };
 };
 
-// Optimization for when the size is 0
-template<typename CharT, typename Traits>
-class static_string_base<0, CharT, Traits>
-{
-  using derived_type = basic_static_string<0, CharT, Traits>;
-  friend derived_type;
 
-  using size_type = std::size_t;
-  using value_type = typename Traits::char_type;
-  using pointer = value_type*;
-
-BOOST_STATIC_STRING_GCC_NESTED_CLASS_WORKAROUND
-
-  struct size
-  {
-    class basic_static_string
-    {
-      friend derived_type;
-
-      BOOST_STATIC_STRING_CPP11_CONSTEXPR
-      size_type
-      size_impl() const noexcept
-      {
-        return 0;
-      }
-
-      BOOST_STATIC_STRING_CPP11_CONSTEXPR
-      size_type
-      size_impl(std::size_t) const noexcept
-      {
-        return 0;
-      }
-    };
-  };
-
-  struct data
-  {
-    class basic_static_string
-    {
-      friend derived_type;
-
-      BOOST_STATIC_STRING_CPP11_CONSTEXPR
-      pointer
-      data_impl() const noexcept
-      {
-        return const_cast<pointer>(&data);
-      }
-
-    public:
-      static constexpr value_type data{};
-    };
-  };
-};
-
-// This is only needed in C++14 and lower.
-// see http://eel.is/c++draft/depr.static.constexpr
-#ifndef BOOST_STATIC_STRING_CPP17
-#if 0
-template<typename CharT, typename Traits>
-constexpr
-const
-typename static_string_base<0, CharT, Traits>::value_type
-static_string_base<0, CharT, Traits>::
-null_;
-#endif
-
-template<typename CharT, typename Traits>
-constexpr
-typename static_string_base<0, CharT, Traits>::value_type
-static_string_base<0, CharT, Traits>::data::basic_static_string::data;
-#endif
 
 
 template<typename CharT, typename Traits>
