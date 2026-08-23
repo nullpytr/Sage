@@ -958,7 +958,7 @@ public:
   basic_static_string&
   assign(const basic_static_string& s) noexcept
   {
-    if (data() == s.data())
+    if (this == &s)
       return *this;
     return assign_unchecked(s.data(), s.size());
   }
@@ -6035,13 +6035,6 @@ void
 basic_static_string<N, CharT, Traits>::
 swap(basic_static_string& s) noexcept
 {
-  if (size() > s.max_size())
-  detail::throw_exception<std::length_error>(
-    "size() > s.max_size()");
-  if (s.size() > max_size())
-    detail::throw_exception<std::length_error>(
-      "s.size() > max_size()");
-
   auto curr_data = data();
   auto curr_size = size();
 
