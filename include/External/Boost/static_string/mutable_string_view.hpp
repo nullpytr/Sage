@@ -6102,12 +6102,21 @@ void
 basic_static_string<N, CharT, Traits>::
 swap(basic_static_string& s) noexcept
 {
-  const auto curr_size = size();
-  basic_static_string tmp(s);
+  if (size() > s.max_size())
+  detail::throw_exception<std::length_error>(
+    "size() > s.max_size()");
+  if (s.size() > max_size())
+    detail::throw_exception<std::length_error>(
+      "s.size() > max_size()");
+
+  auto curr_data = data();
+  auto curr_size = size();
+
+  data() = s.data();
+  this->size_impl(s.size());
+
+  s.data() = curr_data;
   s.size_impl(curr_size);
-  traits_type::copy(&s.data()[0], data(), curr_size + 1);
-  this->size_impl(tmp.size());
-  traits_type::copy(data(), tmp.data(), size() + 1);
 }
 
 template<std::size_t N, typename CharT, typename Traits>
@@ -6117,16 +6126,21 @@ void
 basic_static_string<N, CharT, Traits>::
 swap(basic_static_string<M, CharT, Traits>& s)
 {
-  const auto curr_size = size();
-  if (curr_size > s.max_size())
+  if (size() > s.max_size())
     detail::throw_exception<std::length_error>(
-      "curr_size > s.max_size()");
+      "size() > s.max_size()");
   if (s.size() > max_size())
     detail::throw_exception<std::length_error>(
       "s.size() > max_size()");
-  basic_static_string tmp(s);
-  s.assign_unchecked(data(), curr_size);
-  assign_unchecked(tmp.data(), tmp.size());
+
+  auto curr_data = data();
+  auto curr_size = size();
+
+  data() = s.data();
+  this->size_impl(s.size());
+
+  s.data() = curr_data;
+  s.size_impl(curr_size);
 }
 
 template<std::size_t N, typename CharT, typename Traits>

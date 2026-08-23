@@ -6,7 +6,7 @@
 #include "boost/static_string/config.hpp"
 #endif
 
-#include "boost/static_string/static_string.hpp"
+#include "boost/static_string/mutable_string_view.hpp"
 #endif
 
 template<std::size_t N, typename CharT = char, typename Traits = std::char_traits<CharT>>
