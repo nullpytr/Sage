@@ -360,7 +360,7 @@ BOOST_STATIC_STRING_GCC_NESTED_CLASS_WORKAROUND
       friend derived_type;
 
       BOOST_STATIC_STRING_CPP14_CONSTEXPR
-      pointer
+      pointer&
       data_impl() noexcept
       {
         return data;
@@ -374,7 +374,7 @@ BOOST_STATIC_STRING_GCC_NESTED_CLASS_WORKAROUND
       }
 
     public:
-      value_type data[N + 1]{};
+      pointer data = nullptr; // value_type data[N + 1]{}; // DEF_DATA_BUFFER
     };
   };
 };
@@ -1225,10 +1225,11 @@ public:
       Construct with the first `count` characters of `s`, including nulls.
     */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string(
+  basic_static_string( // DEF_CTOR_CONST_PTR
     const_pointer s,
     size_type count)
   {
+    data() = const_cast<pointer>(s); // borrow
     assign(s, count);
   }
 
@@ -2054,7 +2055,7 @@ public:
       is never never a null pointer value.
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  pointer
+  pointer&
   data() noexcept
   {
     return this->data_impl();
@@ -5653,7 +5654,7 @@ private:
   basic_static_string&
   term() noexcept
   {
-    term_impl(std::integral_constant<bool, N != 0>());
+    term_impl(std::integral_constant<bool, N != 0>()); // DEF_TERM
     return *this;
   }
 
@@ -6665,7 +6666,7 @@ template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
 basic_static_string<N, CharT, Traits>::
-assign(
+assign( // DEF_ASSIGN_CONST_PTR
   const_pointer s,
   size_type count) ->
     basic_static_string&
