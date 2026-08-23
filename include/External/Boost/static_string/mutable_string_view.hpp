@@ -732,7 +732,10 @@ public:
       @throw std::length_error `s.size() > max_size()`.
   */
   basic_static_string&
-  operator=(const basic_static_string& s) = default;
+  operator=(const basic_static_string& s) noexcept
+  {
+    return assign(s);
+  }
 
   /** Assign to the string.
 
