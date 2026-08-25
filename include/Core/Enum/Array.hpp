@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core/Types.hpp"
+#include "Core/adapter.hpp"
 #include "Core/Enum/Container.hpp"
 
 namespace Enum
@@ -10,36 +11,26 @@ namespace Enum
     {
         /* type aliases */
         using enum_type = E::enum_type;
-        using value_type = array<enum_type>;
+        using type = span<enum_type>;
 
-        /* View type for accessing continuous collection of Enum entries;
-         * analogous to array<T> */
+        type const& get() const { return m_value; } // getters
+        type& get() { return m_value; }
 
-        explicit Array(value_type const& span)
-            : m_span { span }
-        {}
+        type const& operator*() const { return get(); }
+        type& operator*()             { return get(); }
 
-        /* Get entry at given index */
-        enum_type const& get(size_t const idx) const { return m_span[idx]; }
-        enum_type& get(size_t const idx) { return  m_span[idx]; }
+        enum_type const& get(size_t const idx) const { return m_value[idx]; } // idx getters
+        enum_type& get(size_t const idx) { return  m_value[idx]; }
 
         enum_type const& operator[](size_t const idx) const { return get(idx); }
         enum_type& operator[](size_t const idx)             { return get(idx); }
 
-        [[nodiscard]] size_t size() const { return m_span.size(); }
-        [[nodiscard]] bool empty() const { return m_span.empty(); }
+        [[nodiscard]] size_t size() const { return m_value.size(); } // convenience
+        [[nodiscard]] bool empty() const { return m_value.empty(); }
 
-        /* Test value on all entries */
-        size_t test(enum_type const& v) const
-        {
-            size_t ctr = 0;
-            for (auto const& item : m_span)
-                ctr += (item == v);
+        explicit Array(type v) : m_value(v) {}
 
-            return ctr;
-        }
-
-    private:
-        value_type m_span;
+        /*--*/
+        type m_value;
     };
 }

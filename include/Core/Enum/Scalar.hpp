@@ -7,31 +7,28 @@ namespace Enum
     template <typename E>
     struct Scalar : Container<E>
     {
-        /* type aliases */
-        using enum_type = E::enum_type;
-        using value_type = enum_type;
-
         /* View type for accessing single Enum entry;
          * analogous to T& */
 
-        explicit Scalar(value_type& v)
-            : m_entry { v }
-        {}
+        /* type aliases */
+        using enum_type = E::enum_type;
+        using type = enum_type&;
 
-        /* Get entry */
-        value_type const& get() const { return m_entry; }
-        value_type& get() { return m_entry; }
+        enum_type const& get() const { return m_value; } // getters
+        enum_type& get() { return m_value; }
 
-        value_type const& operator*() const { return get(); }
-        value_type& operator*()             { return get(); }
+        enum_type const& operator*() const { return get(); }
+        enum_type& operator*()             { return get(); }
 
-        /* Assignment and conversion */
-        Scalar& operator=(value_type const& v) { m_entry = v; return *this; }
-        operator value_type() const { return get(); }
+        operator enum_type() const { return get(); } // implicit
 
-        bool operator==(value_type const& v) const { return m_entry == v; }
+        Scalar& operator=(enum_type const& v) { m_value = v; return *this; } // assignment
 
-    private:
-        value_type& m_entry;
+        bool operator==(enum_type const& v) const { return m_value == v; } // comparison
+
+        explicit Scalar(type v) : m_value(v) {}
+
+        /*--*/
+        type m_value;
     };
 }
