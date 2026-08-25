@@ -21,7 +21,9 @@ using string32 = string<32>;
 using string64 = string<64>;
 
 using wchar = char16_t;
-template <size_t N> using wstring = u16string<N>;
+template <size_t N>
+using wstring = u16string<N>;
+
 using wstring16 = wstring<16>;
 using wstring32 = wstring<32>;
 using wstring64 = wstring<64>;
@@ -35,6 +37,10 @@ using hash_t = mmh32;
 /* STL types */
 #include <span>
 using std::span;
+
+#include <string_view>
+using std::string_view;
+using wstring_view = std::u16string_view;
 
 /* GameData Tags
  * These types are used in Sage's GameData model,
