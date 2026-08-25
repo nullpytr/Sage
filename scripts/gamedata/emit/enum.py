@@ -15,7 +15,7 @@ class EnumEmitter():
         buffer: list[str] = []
         write = buffer.append
 
-        write("enum enum_type : mmh32 {")
+        write("enum enum_type : hash_t {")
         for value in enum.values:
             key = f"_{value}" if value[0].isdigit() else value
             write(f"{key} = murmurhash3::hash(\"{value}\"),")
