@@ -13,6 +13,9 @@ class MemberEmitter():
         # TODO: bake this into python's type system instead of forcing it here
         if isinstance(member, (types.Array, types.String)):
             raw_type = f"adapter<{raw_type}>"
+            if return_type.startswith(("span<string", "span<wstring")): # FIXME
+                return_type = return_type.replace("span<", "span<adapter<") + ">"
+                raw_type = f"adapter<{return_type}>"
 
         if isinstance(member, types.MemberPointer): raw_type += "*"
         else: raw_type += "&"
