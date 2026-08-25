@@ -10,7 +10,7 @@ struct adapter;
 template <size_t N, typename CharT, typename Traits>
 struct adapter<basic_string<N, CharT, Traits>>
 {
-    operator basic_string<N, CharT>() { return { m_data, Traits::length(m_data) }; }
+    operator basic_string<N, CharT, Traits>() { return { m_data, Traits::length(m_data) }; }
 
     /*--*/
     CharT m_data[N + 1];
