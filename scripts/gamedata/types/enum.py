@@ -6,12 +6,12 @@ class Enum[EnumName: str](Member):
 
     values: tuple[str, ...]
 
-    def __init__(self, name: str, path: str, hash_text_string: str, keys: tuple[str, ...]) -> None:
+    def __init__(self, name: str, path: str, hash_text_string: str, hash_hexadecimal: str, values: tuple[str, ...] = ()) -> None:
         self.name = name
         self.path = path
-        self.hash_hexadecimal = '...' # FIXME
         self.hash_text_string = hash_text_string
-        self.values = keys  
+        self.hash_hexadecimal = hash_hexadecimal
+        self.values = values  
 
     def __repr__(self) -> str:
         repr_keys_unquoted = repr(self.values).replace("'", "")
