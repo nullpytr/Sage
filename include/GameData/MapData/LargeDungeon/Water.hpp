@@ -1,0 +1,23 @@
+#pragma once
+#include "Core/Types.hpp"
+#include "Core/Enum.hpp"
+#include "Core/Sav.hpp"
+
+struct GameData::MapData::LargeDungeon::Water : Tag::Structure {
+	struct IsGetMap : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct IsOpen;
+};/* Tag::Structure GameData::MapData::LargeDungeon::Water close */
+
+#include "Water/IsOpen.hpp"
+
+template <> struct Data::Structure<GameData::MapData::LargeDungeon::Water> : GameData::MapData::LargeDungeon::Water {
+	IsGetMap::type IsGetMap;
+	Structure<IsOpen> IsOpen;
+	
+	explicit Structure(Sav& s) : 
+		IsGetMap { s.get<struct IsGetMap>() },
+		IsOpen { s }
+	{ }
+};/* Data::Structure GameData::MapData::LargeDungeon::Water close */
+
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Water::IsGetMap> = murmurhash3::hash("MapData.LargeDungeon.Water.IsGetMap");
