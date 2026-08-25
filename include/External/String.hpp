@@ -1,11 +1,3 @@
-//
-// Copyright (c) 2020 Krystian Stasiowski (sdkrystian at gmail dot com)
-//
-// Distributed under the Boost Software License, Version 1.0. (See accompanying
-// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
-//
-// Official repository: https://github.com/boostorg/static_string
-//
 #define BOOST_STATIC_STRING_STANDALONE
 
 #ifndef BOOST_STATIC_STRING_HPP
@@ -14,20 +6,23 @@
 #include "boost/static_string/config.hpp"
 #endif
 
-#define BOOST_STATIC_STRING_HPP
-#include "boost/static_string/static_string.hpp"
+#include "boost/static_string/mutable_string_view.hpp"
 #endif
 
-template <size_t N>
-using string = boost::static_string<N>;
+template<std::size_t N, typename CharT = char, typename Traits = std::char_traits<CharT>>
+using basic_string = boost::static_strings::basic_static_string<N, CharT, Traits>;
 
 template <size_t N>
-using u16string = boost::static_u16string<N>;
+using string = basic_string<N - 1, char>;
 
-template <std::size_t N>
-struct std::formatter<string<N>> : std::formatter<std::string> {
-    auto format(const ::string<N>& a, std::format_context& ctx) const {
-        return std::formatter<std::string>::format(
-            std::string{ a.begin(), a.end() }, ctx);
+template <size_t N>
+using u16string = basic_string<N - 1, char16_t>;
+
+#include <format>
+template <size_t N>
+struct std::formatter<::basic_string<N, char>> : std::formatter<std::string_view>
+{
+    auto format(const ::basic_string<N, char>& s, std::format_context& ctx) const {
+        return std::formatter<std::string_view>::format(std::string_view{ s }, ctx);
     }
 };

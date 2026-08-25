@@ -5,19 +5,19 @@
 /* Datatype layout adapter for converting
  * incompatible Nintendo types into C++ view types */
 template <typename I>
-struct Adapter;
+struct adapter;
 
-template <size_t N>
-struct Adapter<string<N>>
+template <size_t N, typename CharT, typename Traits>
+struct adapter<basic_string<N, CharT, Traits>>
 {
-    operator string<N>() { return { m_data, N }; }
+    operator basic_string<N, CharT>() { return { m_data, Traits::length(m_data) }; }
 
     /*--*/
-    char m_data[N];
+    CharT m_data[N + 1];
 };
 
 template <typename T>
-struct Adapter<span<T>>
+struct adapter<span<T>>
 {
     operator span<T>() { return { static_cast<T*>(m_data), m_size }; }
 
