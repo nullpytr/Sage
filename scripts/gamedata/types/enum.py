@@ -2,7 +2,7 @@ from .member import Member
 
 class Enum[EnumName: str](Member):
     basename = "Tag::Enum"
-    typename = "Enum::...<...>"
+    typename = "::Enum::...<...>"
 
     values: tuple[str, ...]
 
@@ -25,7 +25,7 @@ class Enum[EnumName: str](Member):
         )
 
 class EnumScalar[EnumName: str](Enum[EnumName]):
-    typename = "Enum::Scalar<{enum_name}>"
+    typename = "::Enum::Scalar<{enum_name}>"
 
 class EnumArray[EnumName: str](Enum[EnumName]):
-    typename = "Enum::Array<{enum_name}>"
+    typename = "::Enum::Array<{enum_name}>"
