@@ -2,7 +2,7 @@ from .member import Member
 from .primitive import *
 
 class Array[T: Member](Member):
-    typename: str = "array<{t}>"
+    typename: str = "span<{t}>"
 
     def __class_getitem__(cls, t: type[T]):
         return type(
