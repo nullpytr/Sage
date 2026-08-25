@@ -105,13 +105,13 @@ private: /* Specializations for different data types */
     };
 
     template <typename E>
-    struct Getter<Enum::Container<E>>
+    struct Getter<Enum::Container<E>> // FIXME
     {
         using C = E::type; // actual container sub-type (like Scalar, Array)
-        using T = C::value_type; // underlying type needed to construct the container
+        using T = C::type; // underlying type needed to construct the container (like T&, span<T>)
         static C get(Sav& self, hash_t hash)
         {
-            return C { Getter<T>::get(self, hash) };
+            return C { (T)Getter<adapter<T>&>::get(self, hash) };
         }
     };
 

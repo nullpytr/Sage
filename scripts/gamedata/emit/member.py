@@ -17,7 +17,8 @@ class MemberEmitter():
                 return_type = return_type.replace("span<", "span<adapter<") + ">"
 
         if isinstance(member, types.MemberPointer): raw_type += "*"
-        else: raw_type += "&"
+        elif not isinstance(member, types.Enum): # FIXME
+            raw_type += "&"
 
         if isinstance(member, types.Primitive):
             return_type += "&"
