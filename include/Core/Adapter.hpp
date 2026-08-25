@@ -11,7 +11,8 @@ template <size_t N, typename CharT, typename Traits>
 struct adapter<basic_string<N, CharT, Traits>>
 {
     operator basic_string<N, CharT, Traits>() { return { m_data, Traits::length(m_data) }; }
-
+    basic_string<N, CharT, Traits> operator*() { return *this; }
+    
     /*--*/
     CharT m_data[N + 1];
 };
@@ -20,6 +21,7 @@ template <typename T>
 struct adapter<span<T>>
 {
     operator span<T>() { return { static_cast<T*>(m_data), m_size }; }
+    span<T> operator*() { return *this; }
 
     /*--*/
     u32 m_size; // nintendo's layout is inverted
