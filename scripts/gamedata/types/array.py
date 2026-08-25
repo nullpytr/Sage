@@ -1,7 +1,7 @@
-from .member import Member
+from .member import MemberView
 from .primitive import *
 
-class Array[T: Member](Member):
+class Array[T: Member](MemberView):
     typename: str = "span<{t}>"
 
     def __class_getitem__(cls, t: type[T]):
