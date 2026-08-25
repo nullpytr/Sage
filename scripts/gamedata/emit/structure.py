@@ -45,7 +45,7 @@ class StructureEmitter():
         depth += 1
         for child in struct.children.values(): # member decls
             if isinstance(child, Structure): write(f"Structure<{child.name}> {child.name};")
-            elif isinstance(child, member.Member): write(f"{child.name}::value_type {child.name};")
+            elif isinstance(child, member.Member): write(f"{child.name}::type {child.name};")
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
 
         write("")
@@ -66,7 +66,11 @@ class StructureEmitter():
 
         for child in struct.children.values(): # member hashtable defs
             if not isinstance(child, member.Member): continue
-            write(f"template <> hash_t constexpr Data::Hashtable<{child.path}> = murmurhash3::hash(\"{child.hash_text_string}\");")
+            child_hash = f"murmurhash3::hash(\"{child.hash_text_string}\")"
+            if child.hash_text_string == "Playtime":
+                child_hash = f"0x{child.hash_hexadecimal}" # unknown hash text for playtime field
+
+            write(f"template <> hash_t constexpr Data::Hashtable<{child.path}> = {child_hash};")
 
         string = delim.join(buffer)
         if include_dir: 
