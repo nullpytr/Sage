@@ -14,3 +14,6 @@ class Member(GameDataType):
 
     def __repr__(self) -> str:
         return f"'({self.basename}) {self.typename}({self.name}, {self.hash_text_string}, {self.hash_hexadecimal})'"
+
+class MemberView(Member):
+    pass # view types over members are returned by value
