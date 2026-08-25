@@ -10,20 +10,20 @@ struct adapter;
 template <size_t N, typename CharT, typename Traits>
 struct adapter<basic_string<N, CharT, Traits>>
 {
-    operator basic_string<N, CharT, Traits>() { return { m_data, Traits::length(m_data) }; }
+    operator basic_string<N, CharT, Traits>() { return { buffer, Traits::length(buffer) }; }
     basic_string<N, CharT, Traits> operator*() { return *this; }
-    
+
     /*--*/
-    CharT m_data[N + 1];
+    CharT buffer[N + 1];
 };
 
 template <typename T>
 struct adapter<span<T>>
 {
-    operator span<T>() { return { static_cast<T*>(m_data), m_size }; }
+    operator span<T>() { return { data, size }; }
     span<T> operator*() { return *this; }
 
     /*--*/
-    u32 m_size; // nintendo's layout is inverted
-    T m_data[];
+    u32 size; // blob's layout is inverted
+    T data[];
 };
