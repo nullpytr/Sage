@@ -1,3 +1,6 @@
+/* mutable_string_view.hpp */
+// This is modified version of https://github.com/boostorg/static_string/blob/develop/include/boost/static_string/static_string.hpp
+// Patched to replace the inline character buffer with a pointer to an external buffer (experimental)
 //
 // Copyright (c) 2016-2019 Vinnie Falco (vinnie dot falco at gmail dot com)
 // Copyright (c) 2019-2020 Krystian Stasiowski (sdkrystian at gmail dot com)
