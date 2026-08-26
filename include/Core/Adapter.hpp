@@ -4,8 +4,15 @@
 
 /* Datatype layout adapter for converting
  * incompatible Nintendo types into C++ view types */
-template <typename I>
-struct adapter;
+template <typename T>
+struct adapter
+{
+    operator T&()               { return value; }
+    operator T const&() const   { return value; }
+
+    /*--*/
+    T value; // default passthrough
+};
 
 template <size_t N, typename CharT, typename Traits>
 struct adapter<basic_string<N, CharT, Traits>>
