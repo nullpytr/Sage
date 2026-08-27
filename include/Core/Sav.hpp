@@ -21,7 +21,7 @@ public:
         m_offsets.reserve(31000); // approximate size of the hashtable
         for (u32 offset = 0x000028; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
         {
-            auto hash = value_at<hash_t>(offset);
+            auto hash = ref<hash_t>(offset);
             m_offsets[hash] = offset + sizeof(hash_t);
 
             /* Hashtable ends at MetaData.SaveTypeHash
@@ -43,7 +43,7 @@ public:
     /* Low-level access */
     /* Get reference to value of type T at given offset */
     template <typename T>
-    T& value_at(u32 const offset)
+    T& ref(u32 const offset)
     {
         return *ptr<T>(offset);
     }
@@ -91,7 +91,7 @@ private: /* Specializations for different data types */
     template <typename T>
     struct Getter<T&> {
         static T& get(Sav& self, hash_t const hash) {
-            return self.value_at<T>(
+            return self.ref<T>(
                 self.m_offsets.at(hash)
             );
         }
