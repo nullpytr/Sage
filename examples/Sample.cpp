@@ -26,13 +26,13 @@ int main(int const argc, char const* argv[]) {
 
     auto data = save.get<GameData>();
 
-    std::println("Playtime: {} seconds", data.Playtime); // read any value from struct
-    std::print("Pony Points: {}", data.HorseInnMemberPoint);
+    std::println("[playtime] {} seconds", data.Playtime); // read any value from struct
+    std::print("[pony points] {}", data.HorseInnMemberPoint);
     data.HorseInnMemberPoint = 69; // write directly to any ref in struct
     std::println(" -> {}", data.HorseInnMemberPoint);
 
     std::println(
-        "Player {} maxed out stats",
+        "[status] player {} maxed out stats",
         is_player_stats_max(data.PlayerStatus) ? "has" : "does not have"
     );
 
@@ -42,32 +42,31 @@ int main(int const argc, char const* argv[]) {
     /* Top-level strings */
 
     std::println(
-        "Player {} in region MainField",
+        "[banc] player {} in region MainField",
         is_player_in_mainfield(data.Sequence_CurrentBanc) ? "is" : "is not"
     );
 
-    std::print("Current Banc: {}", data.Sequence_CurrentBanc); // read
-    data.Sequence_CurrentBanc = "HelloWorld"; // directly writes to sav object's memory
-    std::print(" -> {}", data.Sequence_CurrentBanc);
+    data.Sequence_CurrentBanc = "TestField"; // directly writes to sav object's memory
+    std::print("[banc] region set to {}", data.Sequence_CurrentBanc);
 
-    require(data.Sequence_CurrentBanc == "HelloWorld");
+    require(data.Sequence_CurrentBanc == "TestField");
     require(save.get<GameData::Sequence_CurrentBanc>() == data.Sequence_CurrentBanc);
 
     string_view current_banc_sv = save.get<GameData::Sequence_CurrentBanc>(); // get immutable sv
     std::println(" ({})", current_banc_sv);
 
-    require(current_banc_sv == "HelloWorld");
+    require(current_banc_sv == "TestField");
     require(data.Sequence_CurrentBanc == current_banc_sv);
     require(save.get<GameData::Sequence_CurrentBanc>() == current_banc_sv);
 
     /* Query location */
     auto [x, y, z] = data.PlayerStatus.SavePos; // get copies
-    std::println("Location: {}, {}, {}", x, y, z);
+    std::println("[location] {}, {}, {}", x, y, z);
 
     /* Set heart container count */
     auto& hearts = data.PlayerStatus.MaxLife; // get as reference
 
-    std::print("Heart containers: {}", hearts / 4);
+    std::print("[hearts] {}", hearts / 4);
     hearts = 40 * 4; // directly writes to sav object's memory
     std::println(" -> {}", data.PlayerStatus.MaxLife / 4);
 
@@ -76,7 +75,7 @@ int main(int const argc, char const* argv[]) {
 
     /* Set rupee amount */
     auto& rupees = data.PlayerStatus.CurrentRupee; // another reference
-    std::print("Rupees: {}", rupees);
+    std::print("[rupees] {}", rupees);
     rupees = 99'999;
     std::println(" -> {}", data.PlayerStatus.CurrentRupee);
 
@@ -85,16 +84,16 @@ int main(int const argc, char const* argv[]) {
 
     /* Set weapon capacity */
     auto& weapon_capacity = data.Pouch.Weapon.ValidNum[0];
-    std::print("Weapon capacity: {}", weapon_capacity);
+    std::print("[weapon/capacity] {}", weapon_capacity);
     weapon_capacity = 20;
     std::println(" -> {}", weapon_capacity);
 
     /* Enums */
     auto& power = data.PlayerStatus.CurrentSpecialPower;
-    if (is_ability_amiibo(power)) std::println("Current player ability: Amiibo");
+    if (is_ability_amiibo(power)) std::println("[ability] player is currently using ability Amiibo");
     else {
         power = power.Amiibo;
-        std::println("Current player ability set to Amiibo");
+        std::println("[ability] player ability set to Amiibo");
 
         require(save.get<GameData::PlayerStatus::CurrentSpecialPower>() == power.Amiibo);
     }
@@ -103,7 +102,7 @@ int main(int const argc, char const* argv[]) {
     auto& saddle_array = data.OwnedHorseList.Saddle;
     auto first_saddle = saddle_array[0];
     std::println(
-        "First horse {} wearing saddle GameRomHorseSaddle_00",
+        "[horses] First horse {} wearing saddle GameRomHorseSaddle_00",
         first_saddle == first_saddle.GameRomHorseSaddle_00 ? "is" : "is not"
    );
 
@@ -114,8 +113,8 @@ int main(int const argc, char const* argv[]) {
     );
     auto const pos = itr - saddle_array.begin();
 
-    if (pos < saddle_array.size()) std::println("GameRomHorseSaddle_00 found at position {} of array", pos);
-    else std::println("GameRomHorseSaddle_00 not found in array");
+    if (pos < saddle_array.size()) std::println("[horses/saddle] GameRomHorseSaddle_00 found at position {} of array", pos);
+    else std::println("[horses/saddle] GameRomHorseSaddle_00 not found in array");
 
     /* String arrays
      * strings inside arrays need to be adapted explicitly
@@ -128,11 +127,11 @@ int main(int const argc, char const* argv[]) {
     for (auto name : updated_names)
         require(name == u"my horse");
 
-    std::println("All horses renamed to 'my horse'");
+    std::println("[horses/names] all horses renamed to 'my horse'");
 
     save.dump("other/export.sav");
 
-    std::println("Exported modified save to 'other/export.sav'");
+    std::println("[export] modified save written to 'other/export.sav'");
     std::println("/* -- */");
     /* -- */
 }
