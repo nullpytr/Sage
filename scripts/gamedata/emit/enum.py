@@ -28,7 +28,7 @@ class EnumEmitter():
         inline_buffer: list[str] = []
         write_inline = inline_buffer.append
 
-        write_inline("struct values_t {")
+        write_inline("using values_t = struct {")
         write_inline(f"enum underlying_enum_t : {types.Hash}" " {")
 
         for value in enum.values:
