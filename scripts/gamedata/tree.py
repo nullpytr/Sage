@@ -76,7 +76,7 @@ def parse_data_record(
         )
 
 def resolve_incomplete_enum_member(values: tuple[str, ...], incomplete_t: Enum) -> Enum:
-    complete_t = EnumArray[incomplete_t.name] if isinstance(incomplete_t, EnumArray) else EnumScalar[incomplete_t.name]
+    complete_t = EnumArray if isinstance(incomplete_t, EnumArray) else Enum
     return complete_t(
         name=incomplete_t.name,
         path=incomplete_t.path,
