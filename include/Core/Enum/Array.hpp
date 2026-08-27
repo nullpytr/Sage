@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core/Types.hpp"
-#include "Core/adapter.hpp"
+#include "Core/Layout.hpp"
 #include "Core/Enum/Container.hpp"
 
 namespace Enum

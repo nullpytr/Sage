@@ -6,7 +6,7 @@
 
 #include "External/Filesystem.hpp"
 #include "Core/Types.hpp"
-#include "Core/Adapter.hpp"
+#include "Core/Layout.hpp"
 #include "Core/Enum.hpp"
 
 #define METADATA_SAVE_TYPE_HASH 0xa3db7114
@@ -70,7 +70,7 @@ public:
         return D { *this }; // uses get<M>() to construct members under the hood
     }
 
-    template<typename  M, typename T = Data::Member<M>, typename A = M::adapter>
+    template<typename  M, typename T = Data::Member<M>, typename A = M::layout>
     requires std::derived_from<M, Tag::Member>
     T get()
     {
@@ -111,7 +111,7 @@ private: /* Specializations for different data types */
         using T = C::type; // underlying type needed to construct the container (like T&, span<T>)
         static C get(Sav& self, hash_t hash)
         {
-            return C { (T)Getter<adapter<T>&>::get(self, hash) };
+            return C { (T)Getter<layout<T>&>::get(self, hash) };
         }
     };
 

@@ -5,7 +5,7 @@
 /* Datatype layout adapter for converting
  * incompatible Nintendo types into C++ view types */
 template <typename T>
-struct adapter
+struct layout
 {
     using to_type = T;
 
@@ -16,7 +16,7 @@ struct adapter
 };
 
 template <size_t N, typename CharT, typename Traits>
-struct adapter<basic_string<N, CharT, Traits>>
+struct layout<basic_string<N, CharT, Traits>>
 {
     using to_type = basic_string<N, CharT, Traits>;
 
@@ -27,7 +27,7 @@ struct adapter<basic_string<N, CharT, Traits>>
 };
 
 template <typename T>
-struct adapter<span<T>>
+struct layout<span<T>>
 {
     using to_type = span<T>;
 
@@ -38,5 +38,5 @@ struct adapter<span<T>>
     T data[];
 };
 
-// Explicit adapt, adapt(A) replaces A::operator*
-inline auto adapt = []<typename T> (adapter<T>& x) -> T { return x; /* implicit conversion */ };
+// Explicitly adapt layout
+inline auto adapt = []<typename T> (layout<T>& x) -> T { return x; /* implicit conversion */ };
