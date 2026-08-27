@@ -86,13 +86,13 @@ public:
 
     /* Low-level access */
     /* Get pointer to value of type T at given offset */
-    template <typename T>
+    template <typename T, size_t E = sizeof(T) - 1>
     T* ptr(offset_t const offset)
     {
-        return reinterpret_cast<T*>(
-            &m_data[0]
-            + offset
-        );
+        auto& start = m_data.at(offset); // vector::at() will ensure start is in bounds
+        m_data.at(offset + E); // also ensure that end is in bounds
+
+        return std::bit_cast<T*>(&start);
     }
 
     /* Get reference to value of type T at given offset */
