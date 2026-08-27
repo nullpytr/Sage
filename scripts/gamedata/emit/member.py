@@ -12,7 +12,7 @@ class MemberEmitter():
 
         # TODO: bake this into python's type system instead of forcing it here
         if isinstance(member, (types.Array, types.String)):
-            raw_type = f"adapter<type>" # type is aliased to raw_type (see below)
+            raw_type = f"layout<type>" # type is aliased to return_type (see below)
             if return_type.startswith(("span<string", "span<wstring")): # FIXME
                 return_type = return_type.replace("span<", "span<adapter<") + ">"
 
@@ -25,7 +25,7 @@ class MemberEmitter():
 
         write(f"struct {member.name} : {member.basename}" " {") # def open
         write(f"using type = {return_type};")
-        write(f"using adapter = {raw_type};")
+        write(f"using layout = {raw_type};")
         write("};") # def close
 
         return delim.join(buffer)
