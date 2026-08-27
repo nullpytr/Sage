@@ -3,7 +3,21 @@
 #include "Core/Sav.hpp"
 #include "GameData.hpp"
 
-void require(bool condition) { if (!condition) std::exit(1); }
+static void require(bool const condition) { if (!condition) std::exit(1); }
+
+static bool is_player_stats_max(Data::Structure<GameData::PlayerStatus> const& status)
+{
+    return status.MaxLife == 160
+        && status.MaxStamina == 3000
+        && status.MaxEnergy == 48000;
+}
+
+static bool is_ability_amiibo(Data::Enum<GameData::PlayerStatus::CurrentSpecialPower> const& ability)
+{
+    return ability == ability.Amiibo;
+}
+
+static auto is_player_in_mainfield = [](Data::Member<GameData::Sequence_CurrentBanc> const& banc) { return banc == "MainField"; };
 
 int main(int const argc, char const* argv[]) {
     /* progress.sav */
@@ -17,10 +31,21 @@ int main(int const argc, char const* argv[]) {
     data.HorseInnMemberPoint = 69; // write directly to any ref in struct
     std::println(" -> {}", data.HorseInnMemberPoint);
 
+    std::println(
+        "Player {} maxed out stats",
+        is_player_stats_max(data.PlayerStatus) ? "has" : "does not have"
+    );
+
     require(data.HorseInnMemberPoint == 69);
     require(save.get<GameData::HorseInnMemberPoint>() == data.HorseInnMemberPoint);
 
     /* Top-level strings */
+
+    std::println(
+        "Player {} in region MainField",
+        is_player_in_mainfield(data.Sequence_CurrentBanc) ? "is" : "is not"
+    );
+
     std::print("Current Banc: {}", data.Sequence_CurrentBanc); // read
     data.Sequence_CurrentBanc = "HelloWorld"; // directly writes to sav object's memory
     std::print(" -> {}", data.Sequence_CurrentBanc);
@@ -66,10 +91,10 @@ int main(int const argc, char const* argv[]) {
 
     /* Enums */
     auto& power = data.PlayerStatus.CurrentSpecialPower;
-    if (power == power.Amiibo) std::println("Selected player ability: Amiibo");
+    if (is_ability_amiibo(power)) std::println("Current player ability: Amiibo");
     else {
         power = power.Amiibo;
-        std::println("Selected player ability set to Amiibo");
+        std::println("Current player ability set to Amiibo");
 
         require(save.get<GameData::PlayerStatus::CurrentSpecialPower>() == power.Amiibo);
     }
