@@ -45,7 +45,7 @@ class StructureEmitter():
         depth += 1
         for child in struct.children.values(): # member decls
             if isinstance(child, Structure): write(f"Structure<{child.name}> {child.name};")
-            elif isinstance(child, member.Member): write(f"{child.name}::type {child.name};")
+            elif isinstance(child, member.Member): write(f"Data::Member<{child.name}> {child.name};")
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
 
         write("")
