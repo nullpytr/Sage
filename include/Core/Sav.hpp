@@ -45,11 +45,11 @@ public:
     /* High-level access: using GameData types (recommended)
      * Powered by the lower level access methods and the
      * auto generated header include/GameData.hpp */
-    template<typename S, typename D = Data::Structure<S>>
+    template<typename S, typename I = Data::Structure<S>, typename O = I>
     requires std::derived_from<S, Tag::Structure>
-    D get()
+    O get()
     {
-        return D { *this }; // uses get<M>() to construct members under the hood
+        return O { *this }; // uses get<M>() to construct members under the hood
     }
 
     template<typename  M, typename P = M::type, typename I = std::remove_pointer_t<P>, typename L = Layout<I>, typename O = L::to_type>
