@@ -1,5 +1,5 @@
 class _Hash: 
-    typename = "mmh32"
+    typename = "hash_t"
 
     def __repr__(self) -> str:
         return self.typename
