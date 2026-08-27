@@ -12,7 +12,7 @@ struct layout
     operator to_type() { return value; }
 
     /*--*/
-    T value; // default passthrough
+    std::remove_cvref_t<T> value; // default passthrough
 };
 
 template <size_t N, typename CharT, typename Traits>
