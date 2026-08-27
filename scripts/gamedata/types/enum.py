@@ -1,9 +1,9 @@
 from .member import Member
 from .array import Array
 
-class Enum(Member):
+class Enum[EnumName: str](Member):
     basename = "Tag::Enum"
-    typename = "enum_t<values_t>"
+    typename = "enum_t<{enum_name}>"
 
     values: tuple[str, ...]
 
@@ -18,5 +18,12 @@ class Enum(Member):
         repr_keys_unquoted = repr(self.values).replace("'", "")
         return f"'({self.basename}) {self.typename}{repr_keys_unquoted}'"
 
-class EnumArray(Array[Enum], Enum):
-    pass
+    def __class_getitem__(cls, enum_name: EnumName):
+        return type(
+            f"Enum[{enum_name}]", 
+            (cls,), 
+            {"typename": f"{cls.typename.format(enum_name=enum_name)}"}
+        )
+
+class EnumArray[EnumName: str](Enum[EnumName], Array[Enum[EnumName]]):
+    typename = Array.typename.format(t=Enum.typename)
