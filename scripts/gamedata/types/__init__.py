@@ -4,6 +4,7 @@ from .member import *
 from .primitive import *
 from .array import *
 from .enum import *
+from .hash import *
 
 def resolve_member_type(raw_typename: str) -> type[Member]:
     assert raw_typename in MEMBER_TYPES, \
