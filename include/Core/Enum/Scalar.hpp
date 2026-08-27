@@ -26,7 +26,7 @@ namespace Enum
 
         bool operator==(enum_type const& v) const { return m_value == v; } // comparison
 
-        explicit Scalar(type v) : m_value(v) {}
+        Scalar(type v) : m_value(v) {}
 
         /*--*/
         type m_value;

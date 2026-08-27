@@ -28,7 +28,7 @@ namespace Enum
         [[nodiscard]] size_t size() const { return m_value.size(); } // convenience
         [[nodiscard]] bool empty() const { return m_value.empty(); }
 
-        explicit Array(type v) : m_value(v) {}
+        Array(type v) : m_value(v) {}
 
         /*--*/
         type m_value;
