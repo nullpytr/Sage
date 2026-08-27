@@ -74,36 +74,24 @@ public:
     requires std::derived_from<M, Tag::Member>
     T get()
     {
-        using A = std::conditional_t<std::is_pointer_v<P>, L*, L&>;
-        return get<T, A>(Data::Hashtable<M>);
+        hash_t const& hash = Data::Hashtable<M>;
+
+        if constexpr (std::is_pointer_v<P>) {
+            /* resolve indirection automatically
+             * so the user does not have to */
+            u32 const offset = get<u32>(hash);
+            return ref<L>(offset);
+        }
+
+        return get<T>(hash); // default
     }
-    template <typename T, typename A = T>
+
+    template <typename T, typename L = Layout<T>>
     T get(hash_t const hash)
     {
-        return Getter<A>::get(*this, hash);
+        u32 const& offset = m_offsets.at(hash);
+        return ref<L>(offset);
     }
-
-
-private: /* Specializations for different data types */
-    template <typename T>
-    struct Getter;
-
-    template <typename T>
-    struct Getter<T&> {
-        static T& get(Sav& self, hash_t const hash) {
-            return self.ref<T>(
-                self.m_offsets.at(hash)
-            );
-        }
-    };
-
-    template <typename T>
-    struct Getter<T*> {
-        static T& get(Sav& self, hash_t const hash) {
-            u32 const value_offset = Getter<u32&>::get(self, hash); // hash gives offest of actual value
-            return *self.ptr<T>(value_offset);
-        }
-    };
 
 private: /* Members */
     std::vector<byte> m_data;
