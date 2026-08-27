@@ -30,6 +30,9 @@ using wstring64 = wstring<64>;
 
 using byte = unsigned char;
 
+#include "Core/Enum.hpp"
+template <typename V> using enum_t = Enum<V>; // enum_t because enum is a reserved keyword
+
 /* MurmurHash3: Nintendo uses the 32 bit version in it's blobs */
 #include "External/MurmurHash3.hpp"
 using hash_t = mmh32;
