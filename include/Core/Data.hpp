@@ -27,6 +27,6 @@ namespace Data
     template <typename M, typename P = M::type, typename I = std::remove_pointer_t<P>, typename L = Layout<I>, typename O = L::to_type>
     using Member = O;
 
-    template <typename E>
-    using Enum = Member<E>;
+    template <typename E, typename O = Member<E>>
+    using Enum = O;
 }
