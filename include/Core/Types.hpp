@@ -76,9 +76,9 @@ namespace Data
         return 0;
     }();
 
-    template <typename M>
-    using Member = M::type;
+    template <typename M, typename T = M::type>
+    using Member = std::remove_pointer_t<T>;
 
     template <typename E>
-    using Enum = E::type;
+    using Enum = Member<E>;
 }
