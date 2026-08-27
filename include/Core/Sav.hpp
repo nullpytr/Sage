@@ -11,6 +11,8 @@
 
 #define METADATA_SAVE_TYPE_HASH 0xa3db7114
 
+inline constexpr struct {} from_hash;
+
 class Sav
 {
 public:
@@ -59,6 +61,23 @@ public:
     }
     /* -- */
 
+    /* Mid-level access */
+    /* Get reference to value of type T from hash */
+    template <decltype(from_hash), typename T>
+    T& ref(hash_t const hash)
+    {
+        return *ptr<from_hash, T>(hash);
+    }
+
+    /* Get pointer to value of type T from hash */
+    template <decltype(from_hash), typename T>
+    T* ptr(hash_t const hash)
+    {
+        u32 const offset = m_offsets.at(hash);
+        return ptr<T>(offset);
+    }
+
+
     /* High-level access: using GameData types (recommended)
      * Powered by the private getter machinery below and the
      * auto generated header include/GameData.hpp
@@ -79,18 +98,11 @@ public:
         if constexpr (std::is_pointer_v<P>) {
             /* resolve indirection automatically
              * so the user does not have to */
-            u32 const offset = get<u32>(hash);
+            u32 const offset = ref<from_hash, u32>(hash);
             return ref<L>(offset);
         }
 
-        return get<T>(hash); // default
-    }
-
-    template <typename T, typename L = Layout<T>>
-    T get(hash_t const hash)
-    {
-        u32 const& offset = m_offsets.at(hash);
-        return ref<L>(offset);
+        return ref<from_hash, L>(hash); // default
     }
 
 private: /* Members */
