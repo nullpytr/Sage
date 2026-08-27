@@ -22,6 +22,5 @@ class EnumEmitter():
             write(f"{key} = murmurhash3::hash(\"{value}\"),")
         write("};")
         write("};")
-        write(f"using underlying_enum_t = values_t::underlying_enum_t;")
 
         return delim.join(buffer)
