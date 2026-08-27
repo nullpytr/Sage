@@ -48,6 +48,11 @@ using std::span;
 using std::string_view;
 using wstring_view = std::u16string_view;
 
+/* Range */
+#include <ranges>
+template <typename T, typename Fn>
+using range = std::ranges::transform_view<span<T>, Fn>;
+
 /* GameData Tags
  * These types are used in Sage's GameData model,
  * for constraining template substitution

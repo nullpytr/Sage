@@ -11,7 +11,7 @@ class MemberEmitter():
         return_type = member.typename
 
         if isinstance(member, types.Array) and member.element_t.has_trait(Member.Trait.View):
-            return_type = return_type.replace("span<", "range<") # lazy layout adapter for view member elements
+            return_type = return_type.replace("span<", "adaptive_range<") # lazy layout adapter for view member elements
 
         if member.has_trait(Member.Trait.Pointer): return_type += "*"
         elif not member.has_trait(Member.Trait.View): return_type += "&" # non-view members are returned by ref

@@ -5,7 +5,7 @@
 /* Datatype layout adapter for converting
  * incompatible Nintendo types into C++ view types */
 template <typename T>
-struct layout
+struct Layout
 {
     using to_type = T;
 
@@ -15,13 +15,14 @@ struct layout
     std::remove_cvref_t<T> value; // default passthrough
 };
 
-template <typename X> using Layout = layout<X>; // uppercase alias
+// lowercase alias, used when treating layout<X> itself as a type
+template <typename X> using layout = Layout<X>;
 
 // Explicitly adapt layout
 inline auto adapt = []<typename T> (layout<T>& x) -> T { return x; /* implicit conversion */ };
 
 template <size_t N, typename CharT, typename Traits>
-struct layout<basic_string<N, CharT, Traits>>
+struct Layout<basic_string<N, CharT, Traits>>
 {
     using to_type = basic_string<N, CharT, Traits>;
 
@@ -32,7 +33,7 @@ struct layout<basic_string<N, CharT, Traits>>
 };
 
 template <typename T>
-struct layout<span<T>>
+struct Layout<span<T>>
 {
     using to_type = span<T>;
 
@@ -43,14 +44,13 @@ struct layout<span<T>>
     T data[];
 };
 
-#include <ranges>
 template <typename T>
-using range = std::ranges::transform_view<span<layout<T>>, decltype(adapt)>;
+using adaptive_range = range<layout<T>, decltype(adapt)>;
 
 template <typename T>
-struct layout<range<T>>
+struct Layout<adaptive_range<T>>
 { /* same as span<T> layout adapter, but also lazily adapts member elements */
-    using to_type = range<T>;
+    using to_type = adaptive_range<T>;
 
     operator to_type() {
         return span<layout<T>> { data, size }
