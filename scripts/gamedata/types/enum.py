@@ -1,7 +1,7 @@
 from .member import Member
 from .array import Array
 
-class Enum(Member, Member.Trait.View):
+class Enum(Member):
     basename = "Tag::Enum"
     typename = "enum_t<values_t>"
 

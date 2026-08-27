@@ -31,7 +31,7 @@ using wstring64 = wstring<64>;
 using byte = unsigned char;
 
 #include "Core/Enum.hpp"
-template <typename V> using enum_t = Enum<V>; // enum_t because enum is a reserved keyword
+using ::enum_t; // enum_t because enum is a reserved keyword
 
 /* MurmurHash3: Nintendo uses the 32 bit version in it's blobs */
 #include "External/MurmurHash3.hpp"
@@ -58,4 +58,7 @@ namespace Tag
     struct Structure : Type {};
     struct Member : Type {};
     struct Enum : Member {};
+
+    template <typename X>
+    struct Series;
 }

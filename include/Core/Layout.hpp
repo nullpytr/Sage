@@ -61,14 +61,3 @@ struct layout<range<T>>
     u32 size;
     layout<T> data[];
 };
-
-template <typename V>
-struct layout<Enum<V>>
-{
-    using to_type = Enum<V>;
-
-    operator to_type() { return { value }; }
-
-    /*--*/
-    to_type::underlying_enum_t value;
-};

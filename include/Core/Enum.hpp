@@ -1,7 +1,7 @@
 #pragma once
 
 template <typename V>
-struct Enum : V // V (values_t) brings all the enum values into scope of this view type
+struct enum_t : V // V (values_t) brings all the enum values into scope of this blob type
 {
     using typename V::underlying_enum_t;
 
@@ -13,12 +13,10 @@ struct Enum : V // V (values_t) brings all the enum values into scope of this vi
 
     operator underlying_enum_t() const { return get(); } // implicit conversion
 
-    Enum& operator=(underlying_enum_t const& v) { value = v; return *this; } // assignment
+    enum_t& operator=(underlying_enum_t const& v) { value = v; return *this; } // assignment
 
     bool operator==(underlying_enum_t const& v) const { return value == v; } // comparison
 
-    Enum(underlying_enum_t& v) : value(v) {}
-
     /*--*/
-    underlying_enum_t& value;
+    underlying_enum_t value;
 };
