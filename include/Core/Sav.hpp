@@ -43,7 +43,7 @@ public:
     /* -- */
 
     /* High-level access: using GameData types (recommended)
-     * Powered by the private getter machinery below and the
+     * Powered by the lower level access methods and the
      * auto generated header include/GameData.hpp */
     template<typename S, typename D = Data::Structure<S>>
     requires std::derived_from<S, Tag::Structure>
