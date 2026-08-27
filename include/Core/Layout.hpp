@@ -16,6 +16,8 @@ struct layout
     std::remove_cvref_t<T> value; // default passthrough
 };
 
+template <typename X> using Layout = layout<X>; // uppercase alias
+
 // Explicitly adapt layout
 inline auto adapt = []<typename T> (layout<T>& x) -> T { return x; /* implicit conversion */ };
 
