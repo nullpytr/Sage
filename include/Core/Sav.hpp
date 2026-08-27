@@ -104,23 +104,6 @@ private: /* Specializations for different data types */
         }
     };
 
-    template <typename E>
-    struct Getter<Enum::Container<E>> // FIXME
-    {
-        using C = E::type; // actual container sub-type (like Scalar, Array)
-        using T = C::type; // underlying type needed to construct the container (like T&, span<T>)
-        static C get(Sav& self, hash_t hash)
-        {
-            return C { (T)Getter<layout<T>&>::get(self, hash) };
-        }
-    };
-
-    template <typename E>
-    struct Getter<Enum::Scalar<E>> : Getter<Enum::Container<E>> {};
-
-    template <typename E>
-    struct Getter<Enum::Array<E>> : Getter<Enum::Container<E>> {};
-
 private: /* Members */
     std::vector<byte> m_data;
     std::unordered_map<hash_t, u32> m_offsets;

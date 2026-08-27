@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core/Types.hpp"
+#include "Core/Enum.hpp"
 
 /* Datatype layout adapter for converting
  * incompatible Nintendo types into C++ view types */
@@ -14,6 +15,9 @@ struct layout
     /*--*/
     std::remove_cvref_t<T> value; // default passthrough
 };
+
+// Explicitly adapt layout
+inline auto adapt = []<typename T> (layout<T>& x) -> T { return x; /* implicit conversion */ };
 
 template <size_t N, typename CharT, typename Traits>
 struct layout<basic_string<N, CharT, Traits>>
@@ -38,5 +42,24 @@ struct layout<span<T>>
     T data[];
 };
 
-// Explicitly adapt layout
-inline auto adapt = []<typename T> (layout<T>& x) -> T { return x; /* implicit conversion */ };
+template <typename E>
+struct layout<Enum::Scalar<E>>
+{
+    using to_type = Enum::Scalar<E>;
+
+    operator to_type() { return { value }; }
+
+    /*--*/
+    E::enum_type value;
+};
+
+template <typename E>
+struct layout<Enum::Array<E>>
+{
+    using to_type = Enum::Array<E>;
+
+    operator to_type() { return { adapt(array) }; }
+
+    /*--*/
+    layout<span<typename E::enum_type>> array;
+};
