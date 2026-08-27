@@ -42,46 +42,9 @@ public:
 
     /* -- */
 
-    /* Low-level access */
-    /* Get reference to value of type T at given offset */
-    template <typename T>
-    T& ref(u32 const offset)
-    {
-        return *ptr<T>(offset);
-    }
-
-    /* Get pointer to value of type T at given offset */
-    template <typename T>
-    T* ptr(u32 const offset)
-    {
-        return reinterpret_cast<T*>(
-            &m_data[0]
-            + offset
-        );
-    }
-    /* -- */
-
-    /* Mid-level access */
-    /* Get reference to value of type T from hash */
-    template <decltype(from_hash), typename T>
-    T& ref(hash_t const hash)
-    {
-        return *ptr<from_hash, T>(hash);
-    }
-
-    /* Get pointer to value of type T from hash */
-    template <decltype(from_hash), typename T>
-    T* ptr(hash_t const hash)
-    {
-        u32 const offset = m_offsets.at(hash);
-        return ptr<T>(offset);
-    }
-
-
     /* High-level access: using GameData types (recommended)
      * Powered by the private getter machinery below and the
-     * auto generated header include/GameData.hpp
-     */
+     * auto generated header include/GameData.hpp */
     template<typename S, typename D = Data::Structure<S>>
     requires std::derived_from<S, Tag::Structure>
     D get()
@@ -104,6 +67,41 @@ public:
 
         return ref<from_hash, L>(hash); // default
     }
+
+    /* Mid-level access */
+    /* Get pointer to value of type T from hash */
+    template <decltype(from_hash), typename T>
+    T* ptr(hash_t const hash)
+    {
+        u32 const offset = m_offsets.at(hash);
+        return ptr<T>(offset);
+    }
+
+    /* Get reference to value of type T from hash */
+    template <decltype(from_hash), typename T>
+    T& ref(hash_t const hash)
+    {
+        return *ptr<from_hash, T>(hash);
+    }
+
+    /* Low-level access */
+    /* Get pointer to value of type T at given offset */
+    template <typename T>
+    T* ptr(u32 const offset)
+    {
+        return reinterpret_cast<T*>(
+            &m_data[0]
+            + offset
+        );
+    }
+
+    /* Get reference to value of type T at given offset */
+    template <typename T>
+    T& ref(u32 const offset)
+    {
+        return *ptr<T>(offset);
+    }
+    /* -- */
 
 private: /* Members */
     std::vector<byte> m_data;
