@@ -4,15 +4,15 @@
 #include "Core/Sav.hpp"
 
 struct GameData::MapData::IconData::WarpMarkerData : Tag::Structure {
-	struct Index : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct Pos : Tag::Member { using type = span<vec3f>; using adapter = adapter<type>*; };
-	struct Rot : Tag::Member { using type = span<vec3f>; using adapter = adapter<type>*; };
+	struct Index : Tag::Member { using type = span<s32>*; };
+	struct Pos : Tag::Member { using type = span<vec3f>*; };
+	struct Rot : Tag::Member { using type = span<vec3f>*; };
 };/* Tag::Structure GameData::MapData::IconData::WarpMarkerData close */
 
 template <> struct Data::Structure<GameData::MapData::IconData::WarpMarkerData> : GameData::MapData::IconData::WarpMarkerData {
-	Index::type Index;
-	Pos::type Pos;
-	Rot::type Rot;
+	Data::Member<Index> Index;
+	Data::Member<Pos> Pos;
+	Data::Member<Rot> Rot;
 	
 	explicit Structure(Sav& s) : 
 		Index { s.get<struct Index>() },

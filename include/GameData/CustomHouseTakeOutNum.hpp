@@ -4,45 +4,45 @@
 #include "Core/Sav.hpp"
 
 struct GameData::CustomHouseTakeOutNum : Tag::Structure {
-	struct TypeA : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeB : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeC : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeD : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeE : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeF : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeG : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeH : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeI : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeJ : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeK : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeL : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeM : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeN : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeO : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeP : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeQ : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct TypeR : Tag::Member { using type = s32&; using adapter = s32&; };
+	struct TypeA : Tag::Member { using type = s32&; };
+	struct TypeB : Tag::Member { using type = s32&; };
+	struct TypeC : Tag::Member { using type = s32&; };
+	struct TypeD : Tag::Member { using type = s32&; };
+	struct TypeE : Tag::Member { using type = s32&; };
+	struct TypeF : Tag::Member { using type = s32&; };
+	struct TypeG : Tag::Member { using type = s32&; };
+	struct TypeH : Tag::Member { using type = s32&; };
+	struct TypeI : Tag::Member { using type = s32&; };
+	struct TypeJ : Tag::Member { using type = s32&; };
+	struct TypeK : Tag::Member { using type = s32&; };
+	struct TypeL : Tag::Member { using type = s32&; };
+	struct TypeM : Tag::Member { using type = s32&; };
+	struct TypeN : Tag::Member { using type = s32&; };
+	struct TypeO : Tag::Member { using type = s32&; };
+	struct TypeP : Tag::Member { using type = s32&; };
+	struct TypeQ : Tag::Member { using type = s32&; };
+	struct TypeR : Tag::Member { using type = s32&; };
 };/* Tag::Structure GameData::CustomHouseTakeOutNum close */
 
 template <> struct Data::Structure<GameData::CustomHouseTakeOutNum> : GameData::CustomHouseTakeOutNum {
-	TypeA::type TypeA;
-	TypeB::type TypeB;
-	TypeC::type TypeC;
-	TypeD::type TypeD;
-	TypeE::type TypeE;
-	TypeF::type TypeF;
-	TypeG::type TypeG;
-	TypeH::type TypeH;
-	TypeI::type TypeI;
-	TypeJ::type TypeJ;
-	TypeK::type TypeK;
-	TypeL::type TypeL;
-	TypeM::type TypeM;
-	TypeN::type TypeN;
-	TypeO::type TypeO;
-	TypeP::type TypeP;
-	TypeQ::type TypeQ;
-	TypeR::type TypeR;
+	Data::Member<TypeA> TypeA;
+	Data::Member<TypeB> TypeB;
+	Data::Member<TypeC> TypeC;
+	Data::Member<TypeD> TypeD;
+	Data::Member<TypeE> TypeE;
+	Data::Member<TypeF> TypeF;
+	Data::Member<TypeG> TypeG;
+	Data::Member<TypeH> TypeH;
+	Data::Member<TypeI> TypeI;
+	Data::Member<TypeJ> TypeJ;
+	Data::Member<TypeK> TypeK;
+	Data::Member<TypeL> TypeL;
+	Data::Member<TypeM> TypeM;
+	Data::Member<TypeN> TypeN;
+	Data::Member<TypeO> TypeO;
+	Data::Member<TypeP> TypeP;
+	Data::Member<TypeQ> TypeQ;
+	Data::Member<TypeR> TypeR;
 	
 	explicit Structure(Sav& s) : 
 		TypeA { s.get<struct TypeA>() },

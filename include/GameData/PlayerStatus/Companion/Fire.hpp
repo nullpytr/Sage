@@ -4,35 +4,35 @@
 #include "Core/Sav.hpp"
 
 struct GameData::PlayerStatus::Companion::Fire : Tag::Structure {
-	struct IsFollowMode : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsGet : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsGoThroughAirWall : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsGoThroughAirWallPrepare : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsLeaveFollower : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsPlayedSoulSageFirstAppearanceEvent : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsSageDynamicGenerate : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsSummon : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct JoiningCondition : Tag::Enum { using type = ::Enum::Scalar<JoiningCondition>; using adapter = ::Enum::Scalar<JoiningCondition>; enum enum_type : hash_t { Joining = murmurhash3::hash("Joining"), BreakawayNotice = murmurhash3::hash("BreakawayNotice"), Breakaway = murmurhash3::hash("Breakaway"), }; };
-	struct RemainingEnergy : Tag::Member { using type = float&; using adapter = float&; };
+	struct IsFollowMode : Tag::Member { using type = bool&; };
+	struct IsGet : Tag::Member { using type = bool&; };
+	struct IsGoThroughAirWall : Tag::Member { using type = bool&; };
+	struct IsGoThroughAirWallPrepare : Tag::Member { using type = bool&; };
+	struct IsLeaveFollower : Tag::Member { using type = bool&; };
+	struct IsPlayedSoulSageFirstAppearanceEvent : Tag::Member { using type = bool&; };
+	struct IsSageDynamicGenerate : Tag::Member { using type = bool&; };
+	struct IsSummon : Tag::Member { using type = bool&; };
+	struct JoiningCondition : Tag::Enum { using type = ::Enum::Scalar<JoiningCondition>; enum enum_type : hash_t { Joining = murmurhash3::hash("Joining"), BreakawayNotice = murmurhash3::hash("BreakawayNotice"), Breakaway = murmurhash3::hash("Breakaway"), }; };
+	struct RemainingEnergy : Tag::Member { using type = float&; };
 	struct ForUI;
-	struct CurrentPos : Tag::Member { using type = vec3f; using adapter = vec3f*; };
+	struct CurrentPos : Tag::Member { using type = vec3f*; };
 };/* Tag::Structure GameData::PlayerStatus::Companion::Fire close */
 
 #include "Fire/ForUI.hpp"
 
 template <> struct Data::Structure<GameData::PlayerStatus::Companion::Fire> : GameData::PlayerStatus::Companion::Fire {
-	IsFollowMode::type IsFollowMode;
-	IsGet::type IsGet;
-	IsGoThroughAirWall::type IsGoThroughAirWall;
-	IsGoThroughAirWallPrepare::type IsGoThroughAirWallPrepare;
-	IsLeaveFollower::type IsLeaveFollower;
-	IsPlayedSoulSageFirstAppearanceEvent::type IsPlayedSoulSageFirstAppearanceEvent;
-	IsSageDynamicGenerate::type IsSageDynamicGenerate;
-	IsSummon::type IsSummon;
-	JoiningCondition::type JoiningCondition;
-	RemainingEnergy::type RemainingEnergy;
+	Data::Member<IsFollowMode> IsFollowMode;
+	Data::Member<IsGet> IsGet;
+	Data::Member<IsGoThroughAirWall> IsGoThroughAirWall;
+	Data::Member<IsGoThroughAirWallPrepare> IsGoThroughAirWallPrepare;
+	Data::Member<IsLeaveFollower> IsLeaveFollower;
+	Data::Member<IsPlayedSoulSageFirstAppearanceEvent> IsPlayedSoulSageFirstAppearanceEvent;
+	Data::Member<IsSageDynamicGenerate> IsSageDynamicGenerate;
+	Data::Member<IsSummon> IsSummon;
+	Data::Member<JoiningCondition> JoiningCondition;
+	Data::Member<RemainingEnergy> RemainingEnergy;
 	Structure<ForUI> ForUI;
-	CurrentPos::type CurrentPos;
+	Data::Member<CurrentPos> CurrentPos;
 	
 	explicit Structure(Sav& s) : 
 		IsFollowMode { s.get<struct IsFollowMode>() },

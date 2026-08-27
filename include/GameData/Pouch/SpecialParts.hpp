@@ -4,17 +4,17 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::SpecialParts : Tag::Structure {
-	struct IsValid : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
+	struct IsValid : Tag::Member { using type = span<bool>*; };
 	struct Content;
-	struct EquipIndex : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
+	struct EquipIndex : Tag::Member { using type = span<s32>*; };
 };/* Tag::Structure GameData::Pouch::SpecialParts close */
 
 #include "SpecialParts/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::SpecialParts> : GameData::Pouch::SpecialParts {
-	IsValid::type IsValid;
+	Data::Member<IsValid> IsValid;
 	Structure<Content> Content;
-	EquipIndex::type EquipIndex;
+	Data::Member<EquipIndex> EquipIndex;
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },

@@ -4,25 +4,25 @@
 #include "Core/Sav.hpp"
 
 struct GameData::MapData::LargeDungeon::Wind::IsOpen : Tag::Structure {
-	struct Group002 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Group003 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Group004 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Group005 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Group006 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Group007 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Group008 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Group009 : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct Group002 : Tag::Member { using type = bool&; };
+	struct Group003 : Tag::Member { using type = bool&; };
+	struct Group004 : Tag::Member { using type = bool&; };
+	struct Group005 : Tag::Member { using type = bool&; };
+	struct Group006 : Tag::Member { using type = bool&; };
+	struct Group007 : Tag::Member { using type = bool&; };
+	struct Group008 : Tag::Member { using type = bool&; };
+	struct Group009 : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::MapData::LargeDungeon::Wind::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind::IsOpen> : GameData::MapData::LargeDungeon::Wind::IsOpen {
-	Group002::type Group002;
-	Group003::type Group003;
-	Group004::type Group004;
-	Group005::type Group005;
-	Group006::type Group006;
-	Group007::type Group007;
-	Group008::type Group008;
-	Group009::type Group009;
+	Data::Member<Group002> Group002;
+	Data::Member<Group003> Group003;
+	Data::Member<Group004> Group004;
+	Data::Member<Group005> Group005;
+	Data::Member<Group006> Group006;
+	Data::Member<Group007> Group007;
+	Data::Member<Group008> Group008;
+	Data::Member<Group009> Group009;
 	
 	explicit Structure(Sav& s) : 
 		Group002 { s.get<struct Group002>() },

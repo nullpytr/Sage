@@ -4,19 +4,19 @@
 #include "Core/Sav.hpp"
 
 struct GameData::LightBallBud : Tag::Structure {
-	struct IsValid : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
-	struct Size : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
-	struct Pos : Tag::Member { using type = span<u64>; using adapter = adapter<type>*; };
-	struct CreatedTime : Tag::Member { using type = span<u32>; using adapter = adapter<type>*; };
-	struct Nrm : Tag::Member { using type = span<u32>; using adapter = adapter<type>*; };
+	struct IsValid : Tag::Member { using type = span<bool>*; };
+	struct Size : Tag::Member { using type = span<bool>*; };
+	struct Pos : Tag::Member { using type = span<u64>*; };
+	struct CreatedTime : Tag::Member { using type = span<u32>*; };
+	struct Nrm : Tag::Member { using type = span<u32>*; };
 };/* Tag::Structure GameData::LightBallBud close */
 
 template <> struct Data::Structure<GameData::LightBallBud> : GameData::LightBallBud {
-	IsValid::type IsValid;
-	Size::type Size;
-	Pos::type Pos;
-	CreatedTime::type CreatedTime;
-	Nrm::type Nrm;
+	Data::Member<IsValid> IsValid;
+	Data::Member<Size> Size;
+	Data::Member<Pos> Pos;
+	Data::Member<CreatedTime> CreatedTime;
+	Data::Member<Nrm> Nrm;
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },

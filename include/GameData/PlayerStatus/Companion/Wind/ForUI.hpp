@@ -4,13 +4,13 @@
 #include "Core/Sav.hpp"
 
 struct GameData::PlayerStatus::Companion::Wind::ForUI : Tag::Structure {
-	struct RemainingMinute : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct RemainingSecond : Tag::Member { using type = s32&; using adapter = s32&; };
+	struct RemainingMinute : Tag::Member { using type = s32&; };
+	struct RemainingSecond : Tag::Member { using type = s32&; };
 };/* Tag::Structure GameData::PlayerStatus::Companion::Wind::ForUI close */
 
 template <> struct Data::Structure<GameData::PlayerStatus::Companion::Wind::ForUI> : GameData::PlayerStatus::Companion::Wind::ForUI {
-	RemainingMinute::type RemainingMinute;
-	RemainingSecond::type RemainingSecond;
+	Data::Member<RemainingMinute> RemainingMinute;
+	Data::Member<RemainingSecond> RemainingSecond;
 	
 	explicit Structure(Sav& s) : 
 		RemainingMinute { s.get<struct RemainingMinute>() },

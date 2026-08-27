@@ -4,17 +4,17 @@
 #include "Core/Sav.hpp"
 
 struct GameData::AlbumData::Photograph : Tag::Structure {
-	struct FigureHash : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct Index : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct ActorName : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
-	struct Location : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
+	struct FigureHash : Tag::Member { using type = span<s32>*; };
+	struct Index : Tag::Member { using type = span<s32>*; };
+	struct ActorName : Tag::Member { using type = span<layout<string64>>*; };
+	struct Location : Tag::Member { using type = span<layout<string64>>*; };
 };/* Tag::Structure GameData::AlbumData::Photograph close */
 
 template <> struct Data::Structure<GameData::AlbumData::Photograph> : GameData::AlbumData::Photograph {
-	FigureHash::type FigureHash;
-	Index::type Index;
-	ActorName::type ActorName;
-	Location::type Location;
+	Data::Member<FigureHash> FigureHash;
+	Data::Member<Index> Index;
+	Data::Member<ActorName> ActorName;
+	Data::Member<Location> Location;
 	
 	explicit Structure(Sav& s) : 
 		FigureHash { s.get<struct FigureHash>() },

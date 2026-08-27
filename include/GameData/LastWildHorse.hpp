@@ -5,20 +5,20 @@
 
 struct GameData::LastWildHorse : Tag::Structure {
 	struct Body;
-	struct Mane : Tag::Enum { using type = ::Enum::Scalar<Mane>; using adapter = ::Enum::Scalar<Mane>; enum enum_type : hash_t { None = murmurhash3::hash("None"), Horse_Link_Mane = murmurhash3::hash("Horse_Link_Mane"), Horse_Link_Mane_01 = murmurhash3::hash("Horse_Link_Mane_01"), Horse_Link_Mane_02 = murmurhash3::hash("Horse_Link_Mane_02"), Horse_Link_Mane_03 = murmurhash3::hash("Horse_Link_Mane_03"), Horse_Link_Mane_04 = murmurhash3::hash("Horse_Link_Mane_04"), Horse_Link_Mane_05 = murmurhash3::hash("Horse_Link_Mane_05"), Horse_Link_Mane_06 = murmurhash3::hash("Horse_Link_Mane_06"), Horse_Link_Mane_07 = murmurhash3::hash("Horse_Link_Mane_07"), Horse_Link_Mane_08 = murmurhash3::hash("Horse_Link_Mane_08"), Horse_Link_Mane_09 = murmurhash3::hash("Horse_Link_Mane_09"), Horse_Link_Mane_00L = murmurhash3::hash("Horse_Link_Mane_00L"), Horse_Link_Mane_00S = murmurhash3::hash("Horse_Link_Mane_00S"), Horse_Link_Mane_10 = murmurhash3::hash("Horse_Link_Mane_10"), Horse_Link_Mane_11 = murmurhash3::hash("Horse_Link_Mane_11"), Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"), Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"), }; };
-	struct Rein : Tag::Enum { using type = ::Enum::Scalar<Rein>; using adapter = ::Enum::Scalar<Rein>; enum enum_type : hash_t { None = murmurhash3::hash("None"), GameRomHorseReins_00 = murmurhash3::hash("GameRomHorseReins_00"), GameRomHorseReins_01 = murmurhash3::hash("GameRomHorseReins_01"), GameRomHorseReins_02 = murmurhash3::hash("GameRomHorseReins_02"), GameRomHorseReins_03 = murmurhash3::hash("GameRomHorseReins_03"), GameRomHorseReins_04 = murmurhash3::hash("GameRomHorseReins_04"), GameRomHorseReins_05 = murmurhash3::hash("GameRomHorseReins_05"), GameRomHorseReins_06 = murmurhash3::hash("GameRomHorseReins_06"), GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"), GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"), }; };
-	struct Saddle : Tag::Enum { using type = ::Enum::Scalar<Saddle>; using adapter = ::Enum::Scalar<Saddle>; enum enum_type : hash_t { None = murmurhash3::hash("None"), GameRomHorseSaddle_00 = murmurhash3::hash("GameRomHorseSaddle_00"), GameRomHorseSaddle_01 = murmurhash3::hash("GameRomHorseSaddle_01"), GameRomHorseSaddle_02 = murmurhash3::hash("GameRomHorseSaddle_02"), GameRomHorseSaddle_03 = murmurhash3::hash("GameRomHorseSaddle_03"), GameRomHorseSaddle_04 = murmurhash3::hash("GameRomHorseSaddle_04"), GameRomHorseSaddle_05 = murmurhash3::hash("GameRomHorseSaddle_05"), GameRomHorseSaddle_06 = murmurhash3::hash("GameRomHorseSaddle_06"), GameRomHorseSaddle_00L = murmurhash3::hash("GameRomHorseSaddle_00L"), GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"), GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"), }; };
-	struct Familiarity : Tag::Member { using type = float&; using adapter = float&; };
-	struct ChargeNum : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct ColorType : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct FootType : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct HorsePower : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct HorseType : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct Speed : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct Toughness : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct ActorName : Tag::Member { using type = string64; using adapter = adapter<type>*; };
+	struct Mane : Tag::Enum { using type = ::Enum::Scalar<Mane>; enum enum_type : hash_t { None = murmurhash3::hash("None"), Horse_Link_Mane = murmurhash3::hash("Horse_Link_Mane"), Horse_Link_Mane_01 = murmurhash3::hash("Horse_Link_Mane_01"), Horse_Link_Mane_02 = murmurhash3::hash("Horse_Link_Mane_02"), Horse_Link_Mane_03 = murmurhash3::hash("Horse_Link_Mane_03"), Horse_Link_Mane_04 = murmurhash3::hash("Horse_Link_Mane_04"), Horse_Link_Mane_05 = murmurhash3::hash("Horse_Link_Mane_05"), Horse_Link_Mane_06 = murmurhash3::hash("Horse_Link_Mane_06"), Horse_Link_Mane_07 = murmurhash3::hash("Horse_Link_Mane_07"), Horse_Link_Mane_08 = murmurhash3::hash("Horse_Link_Mane_08"), Horse_Link_Mane_09 = murmurhash3::hash("Horse_Link_Mane_09"), Horse_Link_Mane_00L = murmurhash3::hash("Horse_Link_Mane_00L"), Horse_Link_Mane_00S = murmurhash3::hash("Horse_Link_Mane_00S"), Horse_Link_Mane_10 = murmurhash3::hash("Horse_Link_Mane_10"), Horse_Link_Mane_11 = murmurhash3::hash("Horse_Link_Mane_11"), Horse_Link_Mane_12 = murmurhash3::hash("Horse_Link_Mane_12"), Horse_Link_Mane_01L = murmurhash3::hash("Horse_Link_Mane_01L"), }; };
+	struct Rein : Tag::Enum { using type = ::Enum::Scalar<Rein>; enum enum_type : hash_t { None = murmurhash3::hash("None"), GameRomHorseReins_00 = murmurhash3::hash("GameRomHorseReins_00"), GameRomHorseReins_01 = murmurhash3::hash("GameRomHorseReins_01"), GameRomHorseReins_02 = murmurhash3::hash("GameRomHorseReins_02"), GameRomHorseReins_03 = murmurhash3::hash("GameRomHorseReins_03"), GameRomHorseReins_04 = murmurhash3::hash("GameRomHorseReins_04"), GameRomHorseReins_05 = murmurhash3::hash("GameRomHorseReins_05"), GameRomHorseReins_06 = murmurhash3::hash("GameRomHorseReins_06"), GameRomHorseReins_00L = murmurhash3::hash("GameRomHorseReins_00L"), GameRomHorseReins_00S = murmurhash3::hash("GameRomHorseReins_00S"), }; };
+	struct Saddle : Tag::Enum { using type = ::Enum::Scalar<Saddle>; enum enum_type : hash_t { None = murmurhash3::hash("None"), GameRomHorseSaddle_00 = murmurhash3::hash("GameRomHorseSaddle_00"), GameRomHorseSaddle_01 = murmurhash3::hash("GameRomHorseSaddle_01"), GameRomHorseSaddle_02 = murmurhash3::hash("GameRomHorseSaddle_02"), GameRomHorseSaddle_03 = murmurhash3::hash("GameRomHorseSaddle_03"), GameRomHorseSaddle_04 = murmurhash3::hash("GameRomHorseSaddle_04"), GameRomHorseSaddle_05 = murmurhash3::hash("GameRomHorseSaddle_05"), GameRomHorseSaddle_06 = murmurhash3::hash("GameRomHorseSaddle_06"), GameRomHorseSaddle_00L = murmurhash3::hash("GameRomHorseSaddle_00L"), GameRomHorseSaddle_00S = murmurhash3::hash("GameRomHorseSaddle_00S"), GameRomHorseSaddle_07 = murmurhash3::hash("GameRomHorseSaddle_07"), }; };
+	struct Familiarity : Tag::Member { using type = float&; };
+	struct ChargeNum : Tag::Member { using type = s32&; };
+	struct ColorType : Tag::Member { using type = s32&; };
+	struct FootType : Tag::Member { using type = s32&; };
+	struct HorsePower : Tag::Member { using type = s32&; };
+	struct HorseType : Tag::Member { using type = s32&; };
+	struct Speed : Tag::Member { using type = s32&; };
+	struct Toughness : Tag::Member { using type = s32&; };
+	struct ActorName : Tag::Member { using type = string64*; };
 	struct Hair;
-	struct UidHash : Tag::Member { using type = u64&; using adapter = u64&; };
+	struct UidHash : Tag::Member { using type = u64&; };
 };/* Tag::Structure GameData::LastWildHorse close */
 
 #include "LastWildHorse/Body.hpp"
@@ -26,20 +26,20 @@ struct GameData::LastWildHorse : Tag::Structure {
 
 template <> struct Data::Structure<GameData::LastWildHorse> : GameData::LastWildHorse {
 	Structure<Body> Body;
-	Mane::type Mane;
-	Rein::type Rein;
-	Saddle::type Saddle;
-	Familiarity::type Familiarity;
-	ChargeNum::type ChargeNum;
-	ColorType::type ColorType;
-	FootType::type FootType;
-	HorsePower::type HorsePower;
-	HorseType::type HorseType;
-	Speed::type Speed;
-	Toughness::type Toughness;
-	ActorName::type ActorName;
+	Data::Member<Mane> Mane;
+	Data::Member<Rein> Rein;
+	Data::Member<Saddle> Saddle;
+	Data::Member<Familiarity> Familiarity;
+	Data::Member<ChargeNum> ChargeNum;
+	Data::Member<ColorType> ColorType;
+	Data::Member<FootType> FootType;
+	Data::Member<HorsePower> HorsePower;
+	Data::Member<HorseType> HorseType;
+	Data::Member<Speed> Speed;
+	Data::Member<Toughness> Toughness;
+	Data::Member<ActorName> ActorName;
 	Structure<Hair> Hair;
-	UidHash::type UidHash;
+	Data::Member<UidHash> UidHash;
 	
 	explicit Structure(Sav& s) : 
 		Body { s },

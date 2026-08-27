@@ -4,11 +4,11 @@
 #include "Core/Sav.hpp"
 
 struct GameData::MapData::LargeDungeon::Fire::IsOpen : Tag::Structure {
-	struct Group000 : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct Group000 : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::MapData::LargeDungeon::Fire::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Fire::IsOpen> : GameData::MapData::LargeDungeon::Fire::IsOpen {
-	Group000::type Group000;
+	Data::Member<Group000> Group000;
 	
 	explicit Structure(Sav& s) : 
 		Group000 { s.get<struct Group000>() }

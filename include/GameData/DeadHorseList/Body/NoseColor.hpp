@@ -4,15 +4,15 @@
 #include "Core/Sav.hpp"
 
 struct GameData::DeadHorseList::Body::NoseColor : Tag::Structure {
-	struct Blue : Tag::Member { using type = span<u32>; using adapter = adapter<type>*; };
-	struct Green : Tag::Member { using type = span<u32>; using adapter = adapter<type>*; };
-	struct Red : Tag::Member { using type = span<u32>; using adapter = adapter<type>*; };
+	struct Blue : Tag::Member { using type = span<u32>*; };
+	struct Green : Tag::Member { using type = span<u32>*; };
+	struct Red : Tag::Member { using type = span<u32>*; };
 };/* Tag::Structure GameData::DeadHorseList::Body::NoseColor close */
 
 template <> struct Data::Structure<GameData::DeadHorseList::Body::NoseColor> : GameData::DeadHorseList::Body::NoseColor {
-	Blue::type Blue;
-	Green::type Green;
-	Red::type Red;
+	Data::Member<Blue> Blue;
+	Data::Member<Green> Green;
+	Data::Member<Red> Red;
 	
 	explicit Structure(Sav& s) : 
 		Blue { s.get<struct Blue>() },

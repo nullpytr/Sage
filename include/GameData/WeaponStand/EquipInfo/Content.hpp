@@ -6,10 +6,10 @@
 struct GameData::WeaponStand::EquipInfo::Content : Tag::Structure {
 	struct Effect;
 	struct Combined;
-	struct ExtraLife : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct Life : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct RecordExtraLife : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct Name : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
+	struct ExtraLife : Tag::Member { using type = span<s32>*; };
+	struct Life : Tag::Member { using type = span<s32>*; };
+	struct RecordExtraLife : Tag::Member { using type = span<s32>*; };
+	struct Name : Tag::Member { using type = span<layout<string64>>*; };
 };/* Tag::Structure GameData::WeaponStand::EquipInfo::Content close */
 
 #include "Content/Effect.hpp"
@@ -18,10 +18,10 @@ struct GameData::WeaponStand::EquipInfo::Content : Tag::Structure {
 template <> struct Data::Structure<GameData::WeaponStand::EquipInfo::Content> : GameData::WeaponStand::EquipInfo::Content {
 	Structure<Effect> Effect;
 	Structure<Combined> Combined;
-	ExtraLife::type ExtraLife;
-	Life::type Life;
-	RecordExtraLife::type RecordExtraLife;
-	Name::type Name;
+	Data::Member<ExtraLife> ExtraLife;
+	Data::Member<Life> Life;
+	Data::Member<RecordExtraLife> RecordExtraLife;
+	Data::Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Effect { s },

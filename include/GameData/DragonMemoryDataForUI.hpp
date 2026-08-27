@@ -4,13 +4,13 @@
 #include "Core/Sav.hpp"
 
 struct GameData::DragonMemoryDataForUI : Tag::Structure {
-	struct IsNeedIcon : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsOpenList : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct IsNeedIcon : Tag::Member { using type = bool&; };
+	struct IsOpenList : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::DragonMemoryDataForUI close */
 
 template <> struct Data::Structure<GameData::DragonMemoryDataForUI> : GameData::DragonMemoryDataForUI {
-	IsNeedIcon::type IsNeedIcon;
-	IsOpenList::type IsOpenList;
+	Data::Member<IsNeedIcon> IsNeedIcon;
+	Data::Member<IsOpenList> IsOpenList;
 	
 	explicit Structure(Sav& s) : 
 		IsNeedIcon { s.get<struct IsNeedIcon>() },

@@ -4,27 +4,27 @@
 #include "Core/Sav.hpp"
 
 struct GameData::ActionGuide_IsNew : Tag::Structure {
-	struct Backflip : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct ChargrAttack : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct JumpSlash : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct JustGuard : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct ShieldSurfing : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct SideJump : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct ThrowMaterial : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct UseAmiibo : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct UseCameraPointer : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct Backflip : Tag::Member { using type = bool&; };
+	struct ChargrAttack : Tag::Member { using type = bool&; };
+	struct JumpSlash : Tag::Member { using type = bool&; };
+	struct JustGuard : Tag::Member { using type = bool&; };
+	struct ShieldSurfing : Tag::Member { using type = bool&; };
+	struct SideJump : Tag::Member { using type = bool&; };
+	struct ThrowMaterial : Tag::Member { using type = bool&; };
+	struct UseAmiibo : Tag::Member { using type = bool&; };
+	struct UseCameraPointer : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::ActionGuide_IsNew close */
 
 template <> struct Data::Structure<GameData::ActionGuide_IsNew> : GameData::ActionGuide_IsNew {
-	Backflip::type Backflip;
-	ChargrAttack::type ChargrAttack;
-	JumpSlash::type JumpSlash;
-	JustGuard::type JustGuard;
-	ShieldSurfing::type ShieldSurfing;
-	SideJump::type SideJump;
-	ThrowMaterial::type ThrowMaterial;
-	UseAmiibo::type UseAmiibo;
-	UseCameraPointer::type UseCameraPointer;
+	Data::Member<Backflip> Backflip;
+	Data::Member<ChargrAttack> ChargrAttack;
+	Data::Member<JumpSlash> JumpSlash;
+	Data::Member<JustGuard> JustGuard;
+	Data::Member<ShieldSurfing> ShieldSurfing;
+	Data::Member<SideJump> SideJump;
+	Data::Member<ThrowMaterial> ThrowMaterial;
+	Data::Member<UseAmiibo> UseAmiibo;
+	Data::Member<UseCameraPointer> UseCameraPointer;
 	
 	explicit Structure(Sav& s) : 
 		Backflip { s.get<struct Backflip>() },

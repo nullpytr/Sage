@@ -4,39 +4,39 @@
 #include "Core/Sav.hpp"
 
 struct GameData::IsActivateCannon : Tag::Structure {
-	struct Tower01 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower02 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower03 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower04 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower05 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower06 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower07 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower08 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower09 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower10 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower11 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower12 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower13 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower14 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Tower15 : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct Tower01 : Tag::Member { using type = bool&; };
+	struct Tower02 : Tag::Member { using type = bool&; };
+	struct Tower03 : Tag::Member { using type = bool&; };
+	struct Tower04 : Tag::Member { using type = bool&; };
+	struct Tower05 : Tag::Member { using type = bool&; };
+	struct Tower06 : Tag::Member { using type = bool&; };
+	struct Tower07 : Tag::Member { using type = bool&; };
+	struct Tower08 : Tag::Member { using type = bool&; };
+	struct Tower09 : Tag::Member { using type = bool&; };
+	struct Tower10 : Tag::Member { using type = bool&; };
+	struct Tower11 : Tag::Member { using type = bool&; };
+	struct Tower12 : Tag::Member { using type = bool&; };
+	struct Tower13 : Tag::Member { using type = bool&; };
+	struct Tower14 : Tag::Member { using type = bool&; };
+	struct Tower15 : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::IsActivateCannon close */
 
 template <> struct Data::Structure<GameData::IsActivateCannon> : GameData::IsActivateCannon {
-	Tower01::type Tower01;
-	Tower02::type Tower02;
-	Tower03::type Tower03;
-	Tower04::type Tower04;
-	Tower05::type Tower05;
-	Tower06::type Tower06;
-	Tower07::type Tower07;
-	Tower08::type Tower08;
-	Tower09::type Tower09;
-	Tower10::type Tower10;
-	Tower11::type Tower11;
-	Tower12::type Tower12;
-	Tower13::type Tower13;
-	Tower14::type Tower14;
-	Tower15::type Tower15;
+	Data::Member<Tower01> Tower01;
+	Data::Member<Tower02> Tower02;
+	Data::Member<Tower03> Tower03;
+	Data::Member<Tower04> Tower04;
+	Data::Member<Tower05> Tower05;
+	Data::Member<Tower06> Tower06;
+	Data::Member<Tower07> Tower07;
+	Data::Member<Tower08> Tower08;
+	Data::Member<Tower09> Tower09;
+	Data::Member<Tower10> Tower10;
+	Data::Member<Tower11> Tower11;
+	Data::Member<Tower12> Tower12;
+	Data::Member<Tower13> Tower13;
+	Data::Member<Tower14> Tower14;
+	Data::Member<Tower15> Tower15;
 	
 	explicit Structure(Sav& s) : 
 		Tower01 { s.get<struct Tower01>() },

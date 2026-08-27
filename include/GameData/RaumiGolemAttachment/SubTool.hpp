@@ -4,15 +4,15 @@
 #include "Core/Sav.hpp"
 
 struct GameData::RaumiGolemAttachment::SubTool : Tag::Structure {
-	struct Life : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct RaumiControlLife : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct Name : Tag::Member { using type = string64; using adapter = adapter<type>*; };
+	struct Life : Tag::Member { using type = s32&; };
+	struct RaumiControlLife : Tag::Member { using type = s32&; };
+	struct Name : Tag::Member { using type = string64*; };
 };/* Tag::Structure GameData::RaumiGolemAttachment::SubTool close */
 
 template <> struct Data::Structure<GameData::RaumiGolemAttachment::SubTool> : GameData::RaumiGolemAttachment::SubTool {
-	Life::type Life;
-	RaumiControlLife::type RaumiControlLife;
-	Name::type Name;
+	Data::Member<Life> Life;
+	Data::Member<RaumiControlLife> RaumiControlLife;
+	Data::Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Life { s.get<struct Life>() },

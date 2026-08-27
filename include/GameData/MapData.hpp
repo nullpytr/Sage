@@ -5,12 +5,12 @@
 
 struct GameData::MapData : Tag::Structure {
 	struct IconData;
-	struct IsGerudoIconEnable : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsOpenFootprintMode : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsOpenGround : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsOpenUnderGround : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct IsGerudoIconEnable : Tag::Member { using type = bool&; };
+	struct IsOpenFootprintMode : Tag::Member { using type = bool&; };
+	struct IsOpenGround : Tag::Member { using type = bool&; };
+	struct IsOpenUnderGround : Tag::Member { using type = bool&; };
 	struct LargeDungeon;
-	struct CurrentLayer : Tag::Enum { using type = ::Enum::Scalar<CurrentLayer>; using adapter = ::Enum::Scalar<CurrentLayer>; enum enum_type : hash_t { Ground = murmurhash3::hash("Ground"), Sky = murmurhash3::hash("Sky"), UnderGround = murmurhash3::hash("UnderGround"), }; };
+	struct CurrentLayer : Tag::Enum { using type = ::Enum::Scalar<CurrentLayer>; enum enum_type : hash_t { Ground = murmurhash3::hash("Ground"), Sky = murmurhash3::hash("Sky"), UnderGround = murmurhash3::hash("UnderGround"), }; };
 };/* Tag::Structure GameData::MapData close */
 
 #include "MapData/IconData.hpp"
@@ -18,12 +18,12 @@ struct GameData::MapData : Tag::Structure {
 
 template <> struct Data::Structure<GameData::MapData> : GameData::MapData {
 	Structure<IconData> IconData;
-	IsGerudoIconEnable::type IsGerudoIconEnable;
-	IsOpenFootprintMode::type IsOpenFootprintMode;
-	IsOpenGround::type IsOpenGround;
-	IsOpenUnderGround::type IsOpenUnderGround;
+	Data::Member<IsGerudoIconEnable> IsGerudoIconEnable;
+	Data::Member<IsOpenFootprintMode> IsOpenFootprintMode;
+	Data::Member<IsOpenGround> IsOpenGround;
+	Data::Member<IsOpenUnderGround> IsOpenUnderGround;
 	Structure<LargeDungeon> LargeDungeon;
-	CurrentLayer::type CurrentLayer;
+	Data::Member<CurrentLayer> CurrentLayer;
 	
 	explicit Structure(Sav& s) : 
 		IconData { s },

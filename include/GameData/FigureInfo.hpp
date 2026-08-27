@@ -4,13 +4,13 @@
 #include "Core/Sav.hpp"
 
 struct GameData::FigureInfo : Tag::Structure {
-	struct Body : Tag::Member { using type = span<byte>; using adapter = adapter<type>*; };
-	struct Header : Tag::Member { using type = span<byte>; using adapter = adapter<type>*; };
+	struct Body : Tag::Member { using type = span<byte>*; };
+	struct Header : Tag::Member { using type = span<byte>*; };
 };/* Tag::Structure GameData::FigureInfo close */
 
 template <> struct Data::Structure<GameData::FigureInfo> : GameData::FigureInfo {
-	Body::type Body;
-	Header::type Header;
+	Data::Member<Body> Body;
+	Data::Member<Header> Header;
 	
 	explicit Structure(Sav& s) : 
 		Body { s.get<struct Body>() },

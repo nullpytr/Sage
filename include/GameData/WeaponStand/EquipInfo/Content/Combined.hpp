@@ -4,13 +4,13 @@
 #include "Core/Sav.hpp"
 
 struct GameData::WeaponStand::EquipInfo::Content::Combined : Tag::Structure {
-	struct Life : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct Name : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
+	struct Life : Tag::Member { using type = span<s32>*; };
+	struct Name : Tag::Member { using type = span<layout<string64>>*; };
 };/* Tag::Structure GameData::WeaponStand::EquipInfo::Content::Combined close */
 
 template <> struct Data::Structure<GameData::WeaponStand::EquipInfo::Content::Combined> : GameData::WeaponStand::EquipInfo::Content::Combined {
-	Life::type Life;
-	Name::type Name;
+	Data::Member<Life> Life;
+	Data::Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Life { s.get<struct Life>() },

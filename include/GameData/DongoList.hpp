@@ -4,17 +4,17 @@
 #include "Core/Sav.hpp"
 
 struct GameData::DongoList : Tag::Structure {
-	struct UseFirstItemList : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
-	struct EatNum : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct PutItemIDList : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct LastEatTime : Tag::Member { using type = span<u32>; using adapter = adapter<type>*; };
+	struct UseFirstItemList : Tag::Member { using type = span<bool>*; };
+	struct EatNum : Tag::Member { using type = span<s32>*; };
+	struct PutItemIDList : Tag::Member { using type = span<s32>*; };
+	struct LastEatTime : Tag::Member { using type = span<u32>*; };
 };/* Tag::Structure GameData::DongoList close */
 
 template <> struct Data::Structure<GameData::DongoList> : GameData::DongoList {
-	UseFirstItemList::type UseFirstItemList;
-	EatNum::type EatNum;
-	PutItemIDList::type PutItemIDList;
-	LastEatTime::type LastEatTime;
+	Data::Member<UseFirstItemList> UseFirstItemList;
+	Data::Member<EatNum> EatNum;
+	Data::Member<PutItemIDList> PutItemIDList;
+	Data::Member<LastEatTime> LastEatTime;
 	
 	explicit Structure(Sav& s) : 
 		UseFirstItemList { s.get<struct UseFirstItemList>() },

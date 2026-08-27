@@ -4,15 +4,15 @@
 #include "Core/Sav.hpp"
 
 struct GameData::DefeatedEnemyNum : Tag::Structure {
-	struct Enemy_CaveMaster_000 : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct Enemy_CaveMaster_Middle : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct Enemy_CaveMaster_Senior : Tag::Member { using type = s32&; using adapter = s32&; };
+	struct Enemy_CaveMaster_000 : Tag::Member { using type = s32&; };
+	struct Enemy_CaveMaster_Middle : Tag::Member { using type = s32&; };
+	struct Enemy_CaveMaster_Senior : Tag::Member { using type = s32&; };
 };/* Tag::Structure GameData::DefeatedEnemyNum close */
 
 template <> struct Data::Structure<GameData::DefeatedEnemyNum> : GameData::DefeatedEnemyNum {
-	Enemy_CaveMaster_000::type Enemy_CaveMaster_000;
-	Enemy_CaveMaster_Middle::type Enemy_CaveMaster_Middle;
-	Enemy_CaveMaster_Senior::type Enemy_CaveMaster_Senior;
+	Data::Member<Enemy_CaveMaster_000> Enemy_CaveMaster_000;
+	Data::Member<Enemy_CaveMaster_Middle> Enemy_CaveMaster_Middle;
+	Data::Member<Enemy_CaveMaster_Senior> Enemy_CaveMaster_Senior;
 	
 	explicit Structure(Sav& s) : 
 		Enemy_CaveMaster_000 { s.get<struct Enemy_CaveMaster_000>() },

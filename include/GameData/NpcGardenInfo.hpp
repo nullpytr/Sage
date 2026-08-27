@@ -4,19 +4,19 @@
 #include "Core/Sav.hpp"
 
 struct GameData::NpcGardenInfo : Tag::Structure {
-	struct IsHarvested : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct CurrentState : Tag::Enum { using type = ::Enum::Scalar<CurrentState>; using adapter = ::Enum::Scalar<CurrentState>; enum enum_type : hash_t { Idle = murmurhash3::hash("Idle"), WaitForGrowth = murmurhash3::hash("WaitForGrowth"), Harvestable = murmurhash3::hash("Harvestable"), }; };
-	struct GrowActorName : Tag::Member { using type = string64; using adapter = adapter<type>*; };
-	struct LastGrowActorName : Tag::Member { using type = string64; using adapter = adapter<type>*; };
-	struct GrowthElapsedTime : Tag::Member { using type = u32&; using adapter = u32&; };
+	struct IsHarvested : Tag::Member { using type = bool&; };
+	struct CurrentState : Tag::Enum { using type = ::Enum::Scalar<CurrentState>; enum enum_type : hash_t { Idle = murmurhash3::hash("Idle"), WaitForGrowth = murmurhash3::hash("WaitForGrowth"), Harvestable = murmurhash3::hash("Harvestable"), }; };
+	struct GrowActorName : Tag::Member { using type = string64*; };
+	struct LastGrowActorName : Tag::Member { using type = string64*; };
+	struct GrowthElapsedTime : Tag::Member { using type = u32&; };
 };/* Tag::Structure GameData::NpcGardenInfo close */
 
 template <> struct Data::Structure<GameData::NpcGardenInfo> : GameData::NpcGardenInfo {
-	IsHarvested::type IsHarvested;
-	CurrentState::type CurrentState;
-	GrowActorName::type GrowActorName;
-	LastGrowActorName::type LastGrowActorName;
-	GrowthElapsedTime::type GrowthElapsedTime;
+	Data::Member<IsHarvested> IsHarvested;
+	Data::Member<CurrentState> CurrentState;
+	Data::Member<GrowActorName> GrowActorName;
+	Data::Member<LastGrowActorName> LastGrowActorName;
+	Data::Member<GrowthElapsedTime> GrowthElapsedTime;
 	
 	explicit Structure(Sav& s) : 
 		IsHarvested { s.get<struct IsHarvested>() },

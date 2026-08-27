@@ -4,16 +4,16 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::SpecialPower : Tag::Structure {
-	struct IsValid : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
-	struct ValidNum : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
+	struct IsValid : Tag::Member { using type = span<bool>*; };
+	struct ValidNum : Tag::Member { using type = span<s32>*; };
 	struct Content;
 };/* Tag::Structure GameData::Pouch::SpecialPower close */
 
 #include "SpecialPower/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::SpecialPower> : GameData::Pouch::SpecialPower {
-	IsValid::type IsValid;
-	ValidNum::type ValidNum;
+	Data::Member<IsValid> IsValid;
+	Data::Member<ValidNum> ValidNum;
 	Structure<Content> Content;
 	
 	explicit Structure(Sav& s) : 

@@ -4,11 +4,11 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::SpecialPower::Content : Tag::Structure {
-	struct Name : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
+	struct Name : Tag::Member { using type = span<layout<string64>>*; };
 };/* Tag::Structure GameData::Pouch::SpecialPower::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::SpecialPower::Content> : GameData::Pouch::SpecialPower::Content {
-	Name::type Name;
+	Data::Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Name { s.get<struct Name>() }

@@ -4,14 +4,14 @@
 #include "Core/Sav.hpp"
 
 struct GameData::RecycleBoxData::_9420253473696152512 : Tag::Structure {
-	struct IsVisit : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct IsVisit : Tag::Member { using type = bool&; };
 	struct EjectNum;
 };/* Tag::Structure GameData::RecycleBoxData::_9420253473696152512 close */
 
 #include "_9420253473696152512/EjectNum.hpp"
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_9420253473696152512> : GameData::RecycleBoxData::_9420253473696152512 {
-	IsVisit::type IsVisit;
+	Data::Member<IsVisit> IsVisit;
 	Structure<EjectNum> EjectNum;
 	
 	explicit Structure(Sav& s) : 

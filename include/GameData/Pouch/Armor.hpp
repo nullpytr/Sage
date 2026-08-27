@@ -4,7 +4,7 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::Armor : Tag::Structure {
-	struct IsValid : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
+	struct IsValid : Tag::Member { using type = span<bool>*; };
 	struct Content;
 	struct EquipIndexes;
 };/* Tag::Structure GameData::Pouch::Armor close */
@@ -13,7 +13,7 @@ struct GameData::Pouch::Armor : Tag::Structure {
 #include "Armor/EquipIndexes.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Armor> : GameData::Pouch::Armor {
-	IsValid::type IsValid;
+	Data::Member<IsValid> IsValid;
 	Structure<Content> Content;
 	Structure<EquipIndexes> EquipIndexes;
 	

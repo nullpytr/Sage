@@ -4,23 +4,23 @@
 #include "Core/Sav.hpp"
 
 struct GameData::CustomHouse::HouseUnitInfo : Tag::Structure {
-	struct IsUsed : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
-	struct HouseUnitType : Tag::Enum { using type = ::Enum::Array<HouseUnitType>; using adapter = ::Enum::Array<HouseUnitType>; enum enum_type : hash_t { TypeA = murmurhash3::hash("TypeA"), TypeB = murmurhash3::hash("TypeB"), TypeC = murmurhash3::hash("TypeC"), TypeD = murmurhash3::hash("TypeD"), TypeE = murmurhash3::hash("TypeE"), TypeF = murmurhash3::hash("TypeF"), TypeG = murmurhash3::hash("TypeG"), TypeH = murmurhash3::hash("TypeH"), TypeI = murmurhash3::hash("TypeI"), TypeJ = murmurhash3::hash("TypeJ"), TypeK = murmurhash3::hash("TypeK"), TypeL = murmurhash3::hash("TypeL"), TypeM = murmurhash3::hash("TypeM"), TypeN = murmurhash3::hash("TypeN"), TypeO = murmurhash3::hash("TypeO"), TypeP = murmurhash3::hash("TypeP"), TypeQ = murmurhash3::hash("TypeQ"), TypeR = murmurhash3::hash("TypeR"), }; };
-	struct HouseUnitSpecificID : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct UnitPos : Tag::Member { using type = span<vec3f>; using adapter = adapter<type>*; };
-	struct UnitRotX : Tag::Member { using type = span<vec3f>; using adapter = adapter<type>*; };
-	struct UnitRotY : Tag::Member { using type = span<vec3f>; using adapter = adapter<type>*; };
-	struct UnitRotZ : Tag::Member { using type = span<vec3f>; using adapter = adapter<type>*; };
+	struct IsUsed : Tag::Member { using type = span<bool>*; };
+	struct HouseUnitType : Tag::Enum { using type = ::Enum::Array<HouseUnitType>; enum enum_type : hash_t { TypeA = murmurhash3::hash("TypeA"), TypeB = murmurhash3::hash("TypeB"), TypeC = murmurhash3::hash("TypeC"), TypeD = murmurhash3::hash("TypeD"), TypeE = murmurhash3::hash("TypeE"), TypeF = murmurhash3::hash("TypeF"), TypeG = murmurhash3::hash("TypeG"), TypeH = murmurhash3::hash("TypeH"), TypeI = murmurhash3::hash("TypeI"), TypeJ = murmurhash3::hash("TypeJ"), TypeK = murmurhash3::hash("TypeK"), TypeL = murmurhash3::hash("TypeL"), TypeM = murmurhash3::hash("TypeM"), TypeN = murmurhash3::hash("TypeN"), TypeO = murmurhash3::hash("TypeO"), TypeP = murmurhash3::hash("TypeP"), TypeQ = murmurhash3::hash("TypeQ"), TypeR = murmurhash3::hash("TypeR"), }; };
+	struct HouseUnitSpecificID : Tag::Member { using type = span<s32>*; };
+	struct UnitPos : Tag::Member { using type = span<vec3f>*; };
+	struct UnitRotX : Tag::Member { using type = span<vec3f>*; };
+	struct UnitRotY : Tag::Member { using type = span<vec3f>*; };
+	struct UnitRotZ : Tag::Member { using type = span<vec3f>*; };
 };/* Tag::Structure GameData::CustomHouse::HouseUnitInfo close */
 
 template <> struct Data::Structure<GameData::CustomHouse::HouseUnitInfo> : GameData::CustomHouse::HouseUnitInfo {
-	IsUsed::type IsUsed;
-	HouseUnitType::type HouseUnitType;
-	HouseUnitSpecificID::type HouseUnitSpecificID;
-	UnitPos::type UnitPos;
-	UnitRotX::type UnitRotX;
-	UnitRotY::type UnitRotY;
-	UnitRotZ::type UnitRotZ;
+	Data::Member<IsUsed> IsUsed;
+	Data::Member<HouseUnitType> HouseUnitType;
+	Data::Member<HouseUnitSpecificID> HouseUnitSpecificID;
+	Data::Member<UnitPos> UnitPos;
+	Data::Member<UnitRotX> UnitRotX;
+	Data::Member<UnitRotY> UnitRotY;
+	Data::Member<UnitRotZ> UnitRotZ;
 	
 	explicit Structure(Sav& s) : 
 		IsUsed { s.get<struct IsUsed>() },

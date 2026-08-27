@@ -5,22 +5,22 @@
 
 struct GameData::Pouch::Food::Content : Tag::Structure {
 	struct Effect;
-	struct LifeRecover : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct Price : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct StockNum : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct MaterialName : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
-	struct Name : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
+	struct LifeRecover : Tag::Member { using type = span<s32>*; };
+	struct Price : Tag::Member { using type = span<s32>*; };
+	struct StockNum : Tag::Member { using type = span<s32>*; };
+	struct MaterialName : Tag::Member { using type = span<layout<string64>>*; };
+	struct Name : Tag::Member { using type = span<layout<string64>>*; };
 };/* Tag::Structure GameData::Pouch::Food::Content close */
 
 #include "Content/Effect.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Food::Content> : GameData::Pouch::Food::Content {
 	Structure<Effect> Effect;
-	LifeRecover::type LifeRecover;
-	Price::type Price;
-	StockNum::type StockNum;
-	MaterialName::type MaterialName;
-	Name::type Name;
+	Data::Member<LifeRecover> LifeRecover;
+	Data::Member<Price> Price;
+	Data::Member<StockNum> StockNum;
+	Data::Member<MaterialName> MaterialName;
+	Data::Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Effect { s },

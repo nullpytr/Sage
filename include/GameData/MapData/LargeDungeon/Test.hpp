@@ -4,14 +4,14 @@
 #include "Core/Sav.hpp"
 
 struct GameData::MapData::LargeDungeon::Test : Tag::Structure {
-	struct IsGetMap : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct IsGetMap : Tag::Member { using type = bool&; };
 	struct IsOpen;
 };/* Tag::Structure GameData::MapData::LargeDungeon::Test close */
 
 #include "Test/IsOpen.hpp"
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Test> : GameData::MapData::LargeDungeon::Test {
-	IsGetMap::type IsGetMap;
+	Data::Member<IsGetMap> IsGetMap;
 	Structure<IsOpen> IsOpen;
 	
 	explicit Structure(Sav& s) : 

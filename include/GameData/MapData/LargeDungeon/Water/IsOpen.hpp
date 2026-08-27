@@ -4,13 +4,13 @@
 #include "Core/Sav.hpp"
 
 struct GameData::MapData::LargeDungeon::Water::IsOpen : Tag::Structure {
-	struct Group000 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Group001 : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct Group000 : Tag::Member { using type = bool&; };
+	struct Group001 : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::MapData::LargeDungeon::Water::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Water::IsOpen> : GameData::MapData::LargeDungeon::Water::IsOpen {
-	Group000::type Group000;
-	Group001::type Group001;
+	Data::Member<Group000> Group000;
+	Data::Member<Group001> Group001;
 	
 	explicit Structure(Sav& s) : 
 		Group000 { s.get<struct Group000>() },

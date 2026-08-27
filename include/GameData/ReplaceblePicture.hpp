@@ -4,47 +4,47 @@
 #include "Core/Sav.hpp"
 
 struct GameData::ReplaceblePicture : Tag::Structure {
-	struct DeathMountainHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct EastHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct ForestHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct GerudoHatago_1 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct GerudoHatago_2 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct HeightHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct HutagoHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct HyruleDepthHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct LakesideHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct LinkHousePicture_0 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct LinkHousePicture_1 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct LinkHousePicture_2 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct LinkHousePicture_3 : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct NewHyruleWestHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct NorthHatelHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct RiverSideHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct SnowfieldHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct SouthHatago : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct TabantaBridgeHatago : Tag::Member { using type = bool&; using adapter = bool&; };
+	struct DeathMountainHatago : Tag::Member { using type = bool&; };
+	struct EastHatago : Tag::Member { using type = bool&; };
+	struct ForestHatago : Tag::Member { using type = bool&; };
+	struct GerudoHatago_1 : Tag::Member { using type = bool&; };
+	struct GerudoHatago_2 : Tag::Member { using type = bool&; };
+	struct HeightHatago : Tag::Member { using type = bool&; };
+	struct HutagoHatago : Tag::Member { using type = bool&; };
+	struct HyruleDepthHatago : Tag::Member { using type = bool&; };
+	struct LakesideHatago : Tag::Member { using type = bool&; };
+	struct LinkHousePicture_0 : Tag::Member { using type = bool&; };
+	struct LinkHousePicture_1 : Tag::Member { using type = bool&; };
+	struct LinkHousePicture_2 : Tag::Member { using type = bool&; };
+	struct LinkHousePicture_3 : Tag::Member { using type = bool&; };
+	struct NewHyruleWestHatago : Tag::Member { using type = bool&; };
+	struct NorthHatelHatago : Tag::Member { using type = bool&; };
+	struct RiverSideHatago : Tag::Member { using type = bool&; };
+	struct SnowfieldHatago : Tag::Member { using type = bool&; };
+	struct SouthHatago : Tag::Member { using type = bool&; };
+	struct TabantaBridgeHatago : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::ReplaceblePicture close */
 
 template <> struct Data::Structure<GameData::ReplaceblePicture> : GameData::ReplaceblePicture {
-	DeathMountainHatago::type DeathMountainHatago;
-	EastHatago::type EastHatago;
-	ForestHatago::type ForestHatago;
-	GerudoHatago_1::type GerudoHatago_1;
-	GerudoHatago_2::type GerudoHatago_2;
-	HeightHatago::type HeightHatago;
-	HutagoHatago::type HutagoHatago;
-	HyruleDepthHatago::type HyruleDepthHatago;
-	LakesideHatago::type LakesideHatago;
-	LinkHousePicture_0::type LinkHousePicture_0;
-	LinkHousePicture_1::type LinkHousePicture_1;
-	LinkHousePicture_2::type LinkHousePicture_2;
-	LinkHousePicture_3::type LinkHousePicture_3;
-	NewHyruleWestHatago::type NewHyruleWestHatago;
-	NorthHatelHatago::type NorthHatelHatago;
-	RiverSideHatago::type RiverSideHatago;
-	SnowfieldHatago::type SnowfieldHatago;
-	SouthHatago::type SouthHatago;
-	TabantaBridgeHatago::type TabantaBridgeHatago;
+	Data::Member<DeathMountainHatago> DeathMountainHatago;
+	Data::Member<EastHatago> EastHatago;
+	Data::Member<ForestHatago> ForestHatago;
+	Data::Member<GerudoHatago_1> GerudoHatago_1;
+	Data::Member<GerudoHatago_2> GerudoHatago_2;
+	Data::Member<HeightHatago> HeightHatago;
+	Data::Member<HutagoHatago> HutagoHatago;
+	Data::Member<HyruleDepthHatago> HyruleDepthHatago;
+	Data::Member<LakesideHatago> LakesideHatago;
+	Data::Member<LinkHousePicture_0> LinkHousePicture_0;
+	Data::Member<LinkHousePicture_1> LinkHousePicture_1;
+	Data::Member<LinkHousePicture_2> LinkHousePicture_2;
+	Data::Member<LinkHousePicture_3> LinkHousePicture_3;
+	Data::Member<NewHyruleWestHatago> NewHyruleWestHatago;
+	Data::Member<NorthHatelHatago> NorthHatelHatago;
+	Data::Member<RiverSideHatago> RiverSideHatago;
+	Data::Member<SnowfieldHatago> SnowfieldHatago;
+	Data::Member<SouthHatago> SouthHatago;
+	Data::Member<TabantaBridgeHatago> TabantaBridgeHatago;
 	
 	explicit Structure(Sav& s) : 
 		DeathMountainHatago { s.get<struct DeathMountainHatago>() },

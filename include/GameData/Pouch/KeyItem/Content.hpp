@@ -4,13 +4,13 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::KeyItem::Content : Tag::Structure {
-	struct StockNum : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct Name : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
+	struct StockNum : Tag::Member { using type = span<s32>*; };
+	struct Name : Tag::Member { using type = span<layout<string64>>*; };
 };/* Tag::Structure GameData::Pouch::KeyItem::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::KeyItem::Content> : GameData::Pouch::KeyItem::Content {
-	StockNum::type StockNum;
-	Name::type Name;
+	Data::Member<StockNum> StockNum;
+	Data::Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		StockNum { s.get<struct StockNum>() },

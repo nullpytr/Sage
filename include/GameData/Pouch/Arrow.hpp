@@ -4,20 +4,20 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::Arrow : Tag::Structure {
-	struct IsValid : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
+	struct IsValid : Tag::Member { using type = span<bool>*; };
 	struct Combined;
 	struct Content;
-	struct EquipIndex : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
+	struct EquipIndex : Tag::Member { using type = span<s32>*; };
 };/* Tag::Structure GameData::Pouch::Arrow close */
 
 #include "Arrow/Combined.hpp"
 #include "Arrow/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Arrow> : GameData::Pouch::Arrow {
-	IsValid::type IsValid;
+	Data::Member<IsValid> IsValid;
 	Structure<Combined> Combined;
 	Structure<Content> Content;
-	EquipIndex::type EquipIndex;
+	Data::Member<EquipIndex> EquipIndex;
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },

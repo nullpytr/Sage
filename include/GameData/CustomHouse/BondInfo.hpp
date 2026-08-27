@@ -4,13 +4,13 @@
 #include "Core/Sav.hpp"
 
 struct GameData::CustomHouse::BondInfo : Tag::Structure {
-	struct UnitAIndex : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct UnitBIndex : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
+	struct UnitAIndex : Tag::Member { using type = span<s32>*; };
+	struct UnitBIndex : Tag::Member { using type = span<s32>*; };
 };/* Tag::Structure GameData::CustomHouse::BondInfo close */
 
 template <> struct Data::Structure<GameData::CustomHouse::BondInfo> : GameData::CustomHouse::BondInfo {
-	UnitAIndex::type UnitAIndex;
-	UnitBIndex::type UnitBIndex;
+	Data::Member<UnitAIndex> UnitAIndex;
+	Data::Member<UnitBIndex> UnitBIndex;
 	
 	explicit Structure(Sav& s) : 
 		UnitAIndex { s.get<struct UnitAIndex>() },

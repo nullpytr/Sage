@@ -4,15 +4,15 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::SpecialParts::Content : Tag::Structure {
-	struct StockNum : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct UseOrder : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct Name : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
+	struct StockNum : Tag::Member { using type = span<s32>*; };
+	struct UseOrder : Tag::Member { using type = span<s32>*; };
+	struct Name : Tag::Member { using type = span<layout<string64>>*; };
 };/* Tag::Structure GameData::Pouch::SpecialParts::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::SpecialParts::Content> : GameData::Pouch::SpecialParts::Content {
-	StockNum::type StockNum;
-	UseOrder::type UseOrder;
-	Name::type Name;
+	Data::Member<StockNum> StockNum;
+	Data::Member<UseOrder> UseOrder;
+	Data::Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		StockNum { s.get<struct StockNum>() },

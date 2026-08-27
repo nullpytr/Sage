@@ -4,14 +4,14 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::KeyItem : Tag::Structure {
-	struct IsValid : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
+	struct IsValid : Tag::Member { using type = span<bool>*; };
 	struct Content;
 };/* Tag::Structure GameData::Pouch::KeyItem close */
 
 #include "KeyItem/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::KeyItem> : GameData::Pouch::KeyItem {
-	IsValid::type IsValid;
+	Data::Member<IsValid> IsValid;
 	Structure<Content> Content;
 	
 	explicit Structure(Sav& s) : 

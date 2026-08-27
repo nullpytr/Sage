@@ -4,14 +4,14 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::Food : Tag::Structure {
-	struct IsValid : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
+	struct IsValid : Tag::Member { using type = span<bool>*; };
 	struct Content;
 };/* Tag::Structure GameData::Pouch::Food close */
 
 #include "Food/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Food> : GameData::Pouch::Food {
-	IsValid::type IsValid;
+	Data::Member<IsValid> IsValid;
 	Structure<Content> Content;
 	
 	explicit Structure(Sav& s) : 

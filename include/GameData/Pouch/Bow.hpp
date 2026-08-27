@@ -4,21 +4,21 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::Bow : Tag::Structure {
-	struct IsEnableShortcut : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
-	struct IsValid : Tag::Member { using type = span<bool>; using adapter = adapter<type>*; };
+	struct IsEnableShortcut : Tag::Member { using type = span<bool>*; };
+	struct IsValid : Tag::Member { using type = span<bool>*; };
 	struct Content;
-	struct EquipIndex : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
-	struct ValidNum : Tag::Member { using type = span<s32>; using adapter = adapter<type>*; };
+	struct EquipIndex : Tag::Member { using type = span<s32>*; };
+	struct ValidNum : Tag::Member { using type = span<s32>*; };
 };/* Tag::Structure GameData::Pouch::Bow close */
 
 #include "Bow/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Bow> : GameData::Pouch::Bow {
-	IsEnableShortcut::type IsEnableShortcut;
-	IsValid::type IsValid;
+	Data::Member<IsEnableShortcut> IsEnableShortcut;
+	Data::Member<IsValid> IsValid;
 	Structure<Content> Content;
-	EquipIndex::type EquipIndex;
-	ValidNum::type ValidNum;
+	Data::Member<EquipIndex> EquipIndex;
+	Data::Member<ValidNum> ValidNum;
 	
 	explicit Structure(Sav& s) : 
 		IsEnableShortcut { s.get<struct IsEnableShortcut>() },

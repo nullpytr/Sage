@@ -4,13 +4,13 @@
 #include "Core/Sav.hpp"
 
 struct GameData::MapData::IconData::FrontierPoint : Tag::Structure {
-	struct IsValid : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct Pos : Tag::Member { using type = vec3f; using adapter = vec3f*; };
+	struct IsValid : Tag::Member { using type = bool&; };
+	struct Pos : Tag::Member { using type = vec3f*; };
 };/* Tag::Structure GameData::MapData::IconData::FrontierPoint close */
 
 template <> struct Data::Structure<GameData::MapData::IconData::FrontierPoint> : GameData::MapData::IconData::FrontierPoint {
-	IsValid::type IsValid;
-	Pos::type Pos;
+	Data::Member<IsValid> IsValid;
+	Data::Member<Pos> Pos;
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },

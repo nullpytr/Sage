@@ -4,25 +4,25 @@
 #include "Core/Sav.hpp"
 
 struct GameData::NpcServeFood : Tag::Structure {
-	struct IsRound : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct IsServedFood : Tag::Member { using type = bool&; using adapter = bool&; };
-	struct CurIndex : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct NextIndex : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct Price : Tag::Member { using type = s32&; using adapter = s32&; };
-	struct FoodName : Tag::Member { using type = string64; using adapter = adapter<type>*; };
-	struct FoodMaterialNames : Tag::Member { using type = span<adapter<string64>>; using adapter = adapter<type>*; };
-	struct LotteryElapsedTime : Tag::Member { using type = u32&; using adapter = u32&; };
+	struct IsRound : Tag::Member { using type = bool&; };
+	struct IsServedFood : Tag::Member { using type = bool&; };
+	struct CurIndex : Tag::Member { using type = s32&; };
+	struct NextIndex : Tag::Member { using type = s32&; };
+	struct Price : Tag::Member { using type = s32&; };
+	struct FoodName : Tag::Member { using type = string64*; };
+	struct FoodMaterialNames : Tag::Member { using type = span<layout<string64>>*; };
+	struct LotteryElapsedTime : Tag::Member { using type = u32&; };
 };/* Tag::Structure GameData::NpcServeFood close */
 
 template <> struct Data::Structure<GameData::NpcServeFood> : GameData::NpcServeFood {
-	IsRound::type IsRound;
-	IsServedFood::type IsServedFood;
-	CurIndex::type CurIndex;
-	NextIndex::type NextIndex;
-	Price::type Price;
-	FoodName::type FoodName;
-	FoodMaterialNames::type FoodMaterialNames;
-	LotteryElapsedTime::type LotteryElapsedTime;
+	Data::Member<IsRound> IsRound;
+	Data::Member<IsServedFood> IsServedFood;
+	Data::Member<CurIndex> CurIndex;
+	Data::Member<NextIndex> NextIndex;
+	Data::Member<Price> Price;
+	Data::Member<FoodName> FoodName;
+	Data::Member<FoodMaterialNames> FoodMaterialNames;
+	Data::Member<LotteryElapsedTime> LotteryElapsedTime;
 	
 	explicit Structure(Sav& s) : 
 		IsRound { s.get<struct IsRound>() },
