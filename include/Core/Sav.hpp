@@ -70,10 +70,11 @@ public:
         return D { *this }; // uses get<M>() to construct members under the hood
     }
 
-    template<typename  M, typename T = Data::Member<M>, typename A = M::layout>
+    template<typename  M, typename T = Data::Member<M>, typename L = Layout<T>, typename P = M::type>
     requires std::derived_from<M, Tag::Member>
     T get()
     {
+        using A = std::conditional_t<std::is_pointer_v<P>, L*, L&>;
         return get<T, A>(Data::Hashtable<M>);
     }
     template <typename T, typename A = T>
