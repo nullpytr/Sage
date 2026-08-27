@@ -2,25 +2,37 @@
 #include "Core/Sav.hpp"
 #include "GameData.hpp"
 
+void require(bool condition) { if (!condition) std::exit(1); }
+
 int main(int const argc, char const* argv[]) {
     /* progress.sav */
     std::println("/* progress.sav */");
-    Sav progress_sav { "other/progress-jan.sav" };
+    Sav save { "other/progress.sav" };
 
-    auto data = progress_sav.get<GameData>();
+    auto data = save.get<GameData>();
 
     std::println("Playtime: {} seconds", data.Playtime); // read any value from struct
     std::print("Pony Points: {}", data.HorseInnMemberPoint);
     data.HorseInnMemberPoint = 69; // write directly to any ref in struct
     std::println(" -> {}", data.HorseInnMemberPoint);
 
-    // top-level strings
+    require(data.HorseInnMemberPoint == 69);
+    require(save.get<GameData::HorseInnMemberPoint>() == data.HorseInnMemberPoint);
+
+    /* Top-level strings */
     std::print("Current Banc: {}", data.Sequence_CurrentBanc); // read
     data.Sequence_CurrentBanc = "HelloWorld"; // directly writes to sav object's memory
     std::print(" -> {}", data.Sequence_CurrentBanc);
 
-    string_view current_banc = progress_sav.get<GameData::Sequence_CurrentBanc>(); // get immutable sv
-    std::println(" ({})", current_banc);
+    require(data.Sequence_CurrentBanc == "HelloWorld");
+    require(save.get<GameData::Sequence_CurrentBanc>() == data.Sequence_CurrentBanc);
+
+    string_view current_banc_sv = save.get<GameData::Sequence_CurrentBanc>(); // get immutable sv
+    std::println(" ({})", current_banc_sv);
+
+    require(current_banc_sv == "HelloWorld");
+    require(data.Sequence_CurrentBanc == current_banc_sv);
+    require(save.get<GameData::Sequence_CurrentBanc>() == current_banc_sv);
 
     /* Query location */
     auto [x, y, z] = data.PlayerStatus.SavePos; // get copies
@@ -33,37 +45,48 @@ int main(int const argc, char const* argv[]) {
     hearts = 40 * 4; // directly writes to sav object's memory
     std::println(" -> {}", data.PlayerStatus.MaxLife / 4);
 
+    require(data.PlayerStatus.MaxLife == 40 * 4);
+    require(save.get<GameData::PlayerStatus::MaxLife>() == data.PlayerStatus.MaxLife);
+
     /* Set rupee amount */
     auto& rupees = data.PlayerStatus.CurrentRupee; // another reference
     std::print("Rupees: {}", rupees);
     rupees = 99'999;
     std::println(" -> {}", data.PlayerStatus.CurrentRupee);
 
+    require(data.PlayerStatus.CurrentRupee == 99'999);
+    require(save.get<GameData::PlayerStatus::CurrentRupee>() == data.PlayerStatus.CurrentRupee);
+
     /* Set weapon capacity */
     auto& weapon_capacity = data.Pouch.Weapon.ValidNum[0];
-
     std::print("Weapon capacity: {}", weapon_capacity);
     weapon_capacity = 20;
     std::println(" -> {}", weapon_capacity);
 
-    // enums
+    /* Enums */
     auto& power = data.PlayerStatus.CurrentSpecialPower;
-    power = power.Amiibo;
+    if (power == power.Amiibo) std::println("Selected player ability: Amiibo");
+    else {
+        power = power.Amiibo;
+        std::println("Selected player ability set to Amiibo");
 
-    if (progress_sav.get<GameData::PlayerStatus::CurrentSpecialPower>() == power.Amiibo)
-        std::println("Player was using Amiibo");
-    else
-        std::println("Player was not using Amiibo");
+        require(save.get<GameData::PlayerStatus::CurrentSpecialPower>() == power.Amiibo);
+    }
 
-    // string arrays
-    // strings inside arrays need to be dereferenced (because of nested adapters, WIP)
+    /* String arrays
+     * strings inside arrays need to be adapted explicitly
+     * (because of nested adapters, WIP) */
     for (auto& name : data.OwnedHorseList.Name)
-        *name = u"my horse"; // write directly into sav object's memory
+        adapt(name) = u"my horse"; // write directly into sav object's memory
 
-    auto const& updated_names = progress_sav.get<GameData::OwnedHorseList::Name>(); // now all identical
-    std::println("Horses renamed successfully: {}", *updated_names[0] == *updated_names[1]);
+    auto const& updated_names = save.get<GameData::OwnedHorseList::Name>(); // now all identical
 
-    progress_sav.dump("other/export.sav");
+    for (auto& name : updated_names)
+        require(adapt(name) == u"my horse");
+
+    std::println("All horses renamed to 'my horse'");
+
+    save.dump("other/export.sav");
 
     std::println("Exported modified save to 'other/export.sav'");
     std::println("/* -- */");
