@@ -7,8 +7,9 @@
 template <typename T>
 struct adapter
 {
-    operator T&()               { return value; }
-    operator T const&() const   { return value; }
+    using to_type = T;
+
+    operator to_type() { return value; }
 
     /*--*/
     T value; // default passthrough
@@ -17,19 +18,23 @@ struct adapter
 template <size_t N, typename CharT, typename Traits>
 struct adapter<basic_string<N, CharT, Traits>>
 {
-    operator basic_string<N, CharT, Traits>() { return { buffer, Traits::length(buffer) }; }
+    using to_type = basic_string<N, CharT, Traits>;
+
+    operator to_type() { return { buffer, Traits::length(buffer) }; }
 
     /*--*/
-    CharT buffer[N + 1];
+    CharT buffer[N + 1]; // basic_string<N, ...> does not include the null terminator
 };
 
 template <typename T>
 struct adapter<span<T>>
 {
-    operator span<T>() { return { data, size }; }
+    using to_type = span<T>;
+
+    operator to_type() { return { data, size }; }
 
     /*--*/
-    u32 size; // blob's layout is inverted
+    u32 size; // blob layout is inverted
     T data[];
 };
 
