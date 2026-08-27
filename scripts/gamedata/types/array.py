@@ -1,14 +1,15 @@
-from .member import MemberView
+from .member import Member
 from .primitive import *
 
-class Array[T: Member](MemberView, MemberPointer):
+class Array[T: Member](Member, Member.Trait.View, Member.Trait.Pointer):
     typename: str = "span<{t}>"
+    element_t: type[Member]
 
     def __class_getitem__(cls, t: type[T]):
         return type(
             f"Array[{t.typename}]", 
             (cls,), 
-            {"typename": f"{cls.typename.format(t=t.typename)}"}
+            {"typename": f"{cls.typename.format(t=t.typename)}", "element_t": t}
         )
 
 BoolArray = Array[Bool]

@@ -1,4 +1,4 @@
-from .member import Member
+from .member import *
 
 class Primitive(Member): 
     pass
@@ -21,10 +21,7 @@ class Float(Primitive):
 class Byte(Primitive):
     typename = "byte"
 
-class MemberPointer(Member):
-    pass # stored as T* instead of T
-
-class String(MemberPointer):
+class String(Member, Member.Trait.View, Member.Trait.Pointer):
     pass
 
 class String32(String):
@@ -36,7 +33,7 @@ class String64(String):
 class WString16(String):
     typename = "wstring16"
 
-class Vector(MemberPointer):# FIXME
+class Vector(Member, Member.Trait.Pointer):# FIXME
     pass
 
 class Vector2(Vector):

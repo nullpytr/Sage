@@ -15,5 +15,13 @@ class Member(GameDataType):
     def __repr__(self) -> str:
         return f"'({self.basename}) {self.typename}({self.name}, {self.hash_text_string}, {self.hash_hexadecimal})'"
 
-class MemberView(Member):
-    pass # view types over members are returned by value
+
+    class Trait():
+        class Base: pass
+        class View(Base): pass # View types need layout adapters
+        class Pointer(Base): pass # Pointer types need indirection resolution
+
+    @classmethod
+    def has_trait(cls, t: type[Trait.Base]) -> bool:
+        return issubclass(cls, t)
+

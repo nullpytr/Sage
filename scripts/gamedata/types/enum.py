@@ -1,6 +1,6 @@
-from .member import MemberView
+from .member import Member
 
-class Enum[EnumName: str](MemberView):
+class Enum[EnumName: str](Member, Member.Trait.View):
     basename = "Tag::Enum"
     typename = "::Enum::...<...>"
 

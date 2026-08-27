@@ -15,8 +15,8 @@ class MemberEmitter():
             if return_type.startswith(("span<string", "span<wstring")): # FIXME
                 return_type = return_type.replace("span<", "span<layout<") + ">"
 
-        if isinstance(member, types.MemberPointer): return_type += "*"
-        elif isinstance(member, types.Primitive): return_type += "&"
+        if member.has_trait(Member.Trait.Pointer): return_type += "*"
+        elif not member.has_trait(Member.Trait.View): return_type += "&" # non-view members are returned by ref
 
         write(f"struct {member.name} : {member.basename}" " {") # def open
         write(f"using type = {return_type};")
