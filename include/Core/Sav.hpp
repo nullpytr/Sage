@@ -52,13 +52,13 @@ public:
         return D { *this }; // uses get<M>() to construct members under the hood
     }
 
-    template<typename  M, typename T = Data::Member<M>, typename L = Layout<T>, typename P = M::type>
+    template<typename  M, typename P = M::type, typename I = std::remove_pointer_t<P>, typename L = Layout<I>, typename O = L::to_type>
     requires std::derived_from<M, Tag::Member>
-    T get()
+    O get()
     {
         hash_t const& hash = Data::Hashtable<M>;
 
-        if constexpr (std::is_pointer_v<P>) {
+        if constexpr (std::is_pointer_v<I>) {
             /* resolve indirection automatically
              * so the user does not have to */
             offset_t const offset = ref<from_hash, u32>(hash);
