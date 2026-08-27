@@ -76,13 +76,13 @@ int main(int const argc, char const* argv[]) {
     /* String arrays
      * strings inside arrays need to be adapted explicitly
      * (because of nested adapters, WIP) */
-    for (auto& name : data.OwnedHorseList.Name)
-        adapt(name) = u"my horse"; // write directly into sav object's memory
+    for (auto name : data.OwnedHorseList.Name)
+        name = u"my horse"; // write directly into sav object's memory
 
     auto const& updated_names = save.get<GameData::OwnedHorseList::Name>(); // now all identical
 
-    for (auto& name : updated_names)
-        require(adapt(name) == u"my horse");
+    for (auto name : updated_names)
+        require(name == u"my horse");
 
     std::println("All horses renamed to 'my horse'");
 

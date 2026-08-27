@@ -44,6 +44,25 @@ struct layout<span<T>>
     T data[];
 };
 
+#include <ranges>
+template <typename T>
+using range = std::ranges::transform_view<span<layout<T>>, decltype(adapt)>;
+
+template <typename T>
+struct layout<range<T>>
+{ /* same as span<T> layout adapter, but also lazily adapts member elements */
+    using to_type = range<T>;
+
+    operator to_type() {
+        return span<layout<T>> { data, size }
+        | std::views::transform(adapt);
+    }
+
+    /*--*/
+    u32 size;
+    layout<T> data[];
+};
+
 template <typename E>
 struct layout<Enum::Scalar<E>>
 {
