@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Core/Types.hpp"
-#include "Core/Enum.hpp"
 
 /* Datatype layout adapter for converting
  * incompatible Nintendo types into C++ view types */
@@ -63,24 +62,13 @@ struct layout<range<T>>
     layout<T> data[];
 };
 
-template <typename E>
-struct layout<Enum::Scalar<E>>
+template <typename V>
+struct layout<Enum<V>>
 {
-    using to_type = Enum::Scalar<E>;
+    using to_type = Enum<V>;
 
     operator to_type() { return { value }; }
 
     /*--*/
-    E::enum_type value;
-};
-
-template <typename E>
-struct layout<Enum::Array<E>>
-{
-    using to_type = Enum::Array<E>;
-
-    operator to_type() { return { adapt(array) }; }
-
-    /*--*/
-    layout<span<typename E::enum_type>> array;
+    to_type::underlying_enum_t value;
 };
