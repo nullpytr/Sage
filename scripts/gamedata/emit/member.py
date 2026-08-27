@@ -9,16 +9,15 @@ class MemberEmitter():
         write = buffer.append
 
         return_type = raw_type = member.typename
+        raw_type = "layout<type>" # type is aliased to return_type (see below)
 
         # TODO: bake this into python's type system instead of forcing it here
         if isinstance(member, (types.Array, types.String)):
-            raw_type = f"layout<type>" # type is aliased to return_type (see below)
             if return_type.startswith(("span<string", "span<wstring")): # FIXME
-                return_type = return_type.replace("span<", "span<adapter<") + ">"
+                return_type = return_type.replace("span<", "span<layout<") + ">"
 
         if isinstance(member, types.MemberPointer): raw_type += "*"
-        elif not isinstance(member, types.Enum): # FIXME
-            raw_type += "&"
+        else: raw_type += "&"
 
         if isinstance(member, types.Primitive):
             return_type += "&"
