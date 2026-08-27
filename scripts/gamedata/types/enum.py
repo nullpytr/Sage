@@ -1,8 +1,9 @@
 from .member import Member
+from .array import Array
 
-class Enum[EnumName: str](Member, Member.Trait.View):
+class Enum(Member, Member.Trait.View):
     basename = "Tag::Enum"
-    typename = "::Enum::...<...>"
+    typename = "enum_t<values_t>"
 
     values: tuple[str, ...]
 
@@ -17,15 +18,5 @@ class Enum[EnumName: str](Member, Member.Trait.View):
         repr_keys_unquoted = repr(self.values).replace("'", "")
         return f"'({self.basename}) {self.typename}{repr_keys_unquoted}'"
 
-    def __class_getitem__(cls, enum_name: EnumName):
-        return type(
-            f"Enum[{enum_name}]", 
-            (cls,), 
-            {"typename": f"{cls.typename.format(enum_name=enum_name)}"}
-        )
-
-class EnumScalar[EnumName: str](Enum[EnumName]):
-    typename = "::Enum::Scalar<{enum_name}>"
-
-class EnumArray[EnumName: str](Enum[EnumName]):
-    typename = "::Enum::Array<{enum_name}>"
+class EnumArray(Array[Enum], Enum):
+    pass
