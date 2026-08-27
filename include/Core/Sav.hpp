@@ -21,7 +21,7 @@ public:
     {
         // Load entire hash table once
         m_offsets.reserve(31000); // approximate size of the hashtable
-        for (u32 offset = 0x000028; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
+        for (offset_t offset = 0x000028; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
         {
             auto hash = ref<hash_t>(offset);
             m_offsets[hash] = offset + sizeof(hash_t);
@@ -61,7 +61,7 @@ public:
         if constexpr (std::is_pointer_v<P>) {
             /* resolve indirection automatically
              * so the user does not have to */
-            u32 const offset = ref<from_hash, u32>(hash);
+            offset_t const offset = ref<from_hash, u32>(hash);
             return ref<L>(offset);
         }
 
@@ -73,7 +73,7 @@ public:
     template <decltype(from_hash), typename T>
     T* ptr(hash_t const hash)
     {
-        u32 const offset = m_offsets.at(hash);
+        offset_t const offset = m_offsets.at(hash);
         return ptr<T>(offset);
     }
 
@@ -87,7 +87,7 @@ public:
     /* Low-level access */
     /* Get pointer to value of type T at given offset */
     template <typename T>
-    T* ptr(u32 const offset)
+    T* ptr(offset_t const offset)
     {
         return reinterpret_cast<T*>(
             &m_data[0]
@@ -97,7 +97,7 @@ public:
 
     /* Get reference to value of type T at given offset */
     template <typename T>
-    T& ref(u32 const offset)
+    T& ref(offset_t const offset)
     {
         return *ptr<T>(offset);
     }
@@ -105,5 +105,5 @@ public:
 
 private: /* Members */
     std::vector<byte> m_data;
-    std::unordered_map<hash_t, u32> m_offsets;
+    std::unordered_map<hash_t, offset_t> m_offsets;
 };

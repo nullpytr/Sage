@@ -34,6 +34,9 @@ using byte = unsigned char;
 #include "External/MurmurHash3.hpp"
 using hash_t = mmh32;
 
+/* blob is <4MB, offset fits into 32 bits */
+using offset_t = u32;
+
 /* STL types */
 #include <span>
 using std::span;
