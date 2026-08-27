@@ -4,9 +4,9 @@
 #include "Core/Sav.hpp"
 
 struct GameData::DeadHorseList : Tag::Structure {
-	struct Name : Tag::Member { using type = span<layout<wstring16>>*; };
+	struct Name : Tag::Member { using type = range<wstring16>*; };
 	struct UidHash : Tag::Member { using type = span<u64>*; };
-	struct ActorName : Tag::Member { using type = span<layout<string64>>*; };
+	struct ActorName : Tag::Member { using type = range<string64>*; };
 	struct ChargeNum : Tag::Member { using type = span<s32>*; };
 	struct ColorType : Tag::Member { using type = span<s32>*; };
 	struct DeadCause : Tag::Member { using type = span<s32>*; };

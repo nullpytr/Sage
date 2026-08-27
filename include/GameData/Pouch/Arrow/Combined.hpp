@@ -5,7 +5,7 @@
 
 struct GameData::Pouch::Arrow::Combined : Tag::Structure {
 	struct Life : Tag::Member { using type = span<s32>*; };
-	struct Name : Tag::Member { using type = span<layout<string64>>*; };
+	struct Name : Tag::Member { using type = range<string64>*; };
 };/* Tag::Structure GameData::Pouch::Arrow::Combined close */
 
 template <> struct Data::Structure<GameData::Pouch::Arrow::Combined> : GameData::Pouch::Arrow::Combined {

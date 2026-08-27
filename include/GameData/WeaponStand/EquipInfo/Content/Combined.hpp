@@ -5,7 +5,7 @@
 
 struct GameData::WeaponStand::EquipInfo::Content::Combined : Tag::Structure {
 	struct Life : Tag::Member { using type = span<s32>*; };
-	struct Name : Tag::Member { using type = span<layout<string64>>*; };
+	struct Name : Tag::Member { using type = range<string64>*; };
 };/* Tag::Structure GameData::WeaponStand::EquipInfo::Content::Combined close */
 
 template <> struct Data::Structure<GameData::WeaponStand::EquipInfo::Content::Combined> : GameData::WeaponStand::EquipInfo::Content::Combined {

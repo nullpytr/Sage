@@ -10,7 +10,7 @@ struct GameData::NpcServeFood : Tag::Structure {
 	struct NextIndex : Tag::Member { using type = s32&; };
 	struct Price : Tag::Member { using type = s32&; };
 	struct FoodName : Tag::Member { using type = string64*; };
-	struct FoodMaterialNames : Tag::Member { using type = span<layout<string64>>*; };
+	struct FoodMaterialNames : Tag::Member { using type = range<string64>*; };
 	struct LotteryElapsedTime : Tag::Member { using type = u32&; };
 };/* Tag::Structure GameData::NpcServeFood close */
 

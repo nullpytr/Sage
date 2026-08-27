@@ -4,7 +4,7 @@
 #include "Core/Sav.hpp"
 
 struct GameData::Pouch::SpecialPower::Content : Tag::Structure {
-	struct Name : Tag::Member { using type = span<layout<string64>>*; };
+	struct Name : Tag::Member { using type = range<string64>*; };
 };/* Tag::Structure GameData::Pouch::SpecialPower::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::SpecialPower::Content> : GameData::Pouch::SpecialPower::Content {

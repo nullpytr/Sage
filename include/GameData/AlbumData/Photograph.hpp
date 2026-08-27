@@ -6,8 +6,8 @@
 struct GameData::AlbumData::Photograph : Tag::Structure {
 	struct FigureHash : Tag::Member { using type = span<s32>*; };
 	struct Index : Tag::Member { using type = span<s32>*; };
-	struct ActorName : Tag::Member { using type = span<layout<string64>>*; };
-	struct Location : Tag::Member { using type = span<layout<string64>>*; };
+	struct ActorName : Tag::Member { using type = range<string64>*; };
+	struct Location : Tag::Member { using type = range<string64>*; };
 };/* Tag::Structure GameData::AlbumData::Photograph close */
 
 template <> struct Data::Structure<GameData::AlbumData::Photograph> : GameData::AlbumData::Photograph {

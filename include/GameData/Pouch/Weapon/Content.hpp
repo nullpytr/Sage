@@ -9,7 +9,7 @@ struct GameData::Pouch::Weapon::Content : Tag::Structure {
 	struct ExtraLife : Tag::Member { using type = span<s32>*; };
 	struct Life : Tag::Member { using type = span<s32>*; };
 	struct RecordExtraLife : Tag::Member { using type = span<s32>*; };
-	struct Name : Tag::Member { using type = span<layout<string64>>*; };
+	struct Name : Tag::Member { using type = range<string64>*; };
 };/* Tag::Structure GameData::Pouch::Weapon::Content close */
 
 #include "Content/Effect.hpp"

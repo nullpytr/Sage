@@ -7,7 +7,7 @@ struct GameData::Pouch::Material::Content : Tag::Structure {
 	struct GetOrder : Tag::Member { using type = span<s32>*; };
 	struct StockNum : Tag::Member { using type = span<s32>*; };
 	struct UseOrder : Tag::Member { using type = span<s32>*; };
-	struct Name : Tag::Member { using type = span<layout<string64>>*; };
+	struct Name : Tag::Member { using type = range<string64>*; };
 };/* Tag::Structure GameData::Pouch::Material::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::Material::Content> : GameData::Pouch::Material::Content {

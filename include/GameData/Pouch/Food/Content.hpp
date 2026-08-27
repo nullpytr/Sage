@@ -8,8 +8,8 @@ struct GameData::Pouch::Food::Content : Tag::Structure {
 	struct LifeRecover : Tag::Member { using type = span<s32>*; };
 	struct Price : Tag::Member { using type = span<s32>*; };
 	struct StockNum : Tag::Member { using type = span<s32>*; };
-	struct MaterialName : Tag::Member { using type = span<layout<string64>>*; };
-	struct Name : Tag::Member { using type = span<layout<string64>>*; };
+	struct MaterialName : Tag::Member { using type = range<string64>*; };
+	struct Name : Tag::Member { using type = range<string64>*; };
 };/* Tag::Structure GameData::Pouch::Food::Content close */
 
 #include "Content/Effect.hpp"
