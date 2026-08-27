@@ -4,8 +4,14 @@
 #include "Core/Sav.hpp"
 
 struct GameData::OwnedHorseList::Body : Tag::Structure {
-	struct EyeColor : Tag::Enum { using type = ::Enum::Array<EyeColor>; enum enum_type : hash_t { Black = murmurhash3::hash("Black"), Blue = murmurhash3::hash("Blue"), }; };
-	struct Pattern : Tag::Enum { using type = ::Enum::Array<Pattern>; enum enum_type : hash_t { _00 = murmurhash3::hash("00"), _01 = murmurhash3::hash("01"), _02 = murmurhash3::hash("02"), _03 = murmurhash3::hash("03"), _04 = murmurhash3::hash("04"), _05 = murmurhash3::hash("05"), _06 = murmurhash3::hash("06"), }; };
+	struct EyeColor : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { Black = murmurhash3::hash("Black"), Blue = murmurhash3::hash("Blue"), }; };
+		using type = range<enum_t<values_t>>*;
+	};
+	struct Pattern : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { _00 = murmurhash3::hash("00"), _01 = murmurhash3::hash("01"), _02 = murmurhash3::hash("02"), _03 = murmurhash3::hash("03"), _04 = murmurhash3::hash("04"), _05 = murmurhash3::hash("05"), _06 = murmurhash3::hash("06"), }; };
+		using type = range<enum_t<values_t>>*;
+	};
 	struct NoseColor;
 	struct PrimaryColor;
 	struct SecondaryColor;
@@ -16,8 +22,8 @@ struct GameData::OwnedHorseList::Body : Tag::Structure {
 #include "Body/SecondaryColor.hpp"
 
 template <> struct Data::Structure<GameData::OwnedHorseList::Body> : GameData::OwnedHorseList::Body {
-	Data::Member<EyeColor> EyeColor;
-	Data::Member<Pattern> Pattern;
+	Data::Enum<EyeColor> EyeColor;
+	Data::Enum<Pattern> Pattern;
 	Structure<NoseColor> NoseColor;
 	Structure<PrimaryColor> PrimaryColor;
 	Structure<SecondaryColor> SecondaryColor;

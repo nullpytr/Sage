@@ -5,7 +5,10 @@
 
 struct GameData::NpcGardenInfo_HatenoVillage023 : Tag::Structure {
 	struct IsHarvested : Tag::Member { using type = bool&; };
-	struct CurrentState : Tag::Enum { using type = ::Enum::Scalar<CurrentState>; enum enum_type : hash_t { Idle = murmurhash3::hash("Idle"), WaitForGrowth = murmurhash3::hash("WaitForGrowth"), Harvestable = murmurhash3::hash("Harvestable"), }; };
+	struct CurrentState : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { Idle = murmurhash3::hash("Idle"), WaitForGrowth = murmurhash3::hash("WaitForGrowth"), Harvestable = murmurhash3::hash("Harvestable"), }; };
+		using type = enum_t<values_t>;
+	};
 	struct GrowActorName : Tag::Member { using type = string64*; };
 	struct LastGrowActorName : Tag::Member { using type = string64*; };
 	struct GrowthElapsedTime : Tag::Member { using type = u32&; };
@@ -13,7 +16,7 @@ struct GameData::NpcGardenInfo_HatenoVillage023 : Tag::Structure {
 
 template <> struct Data::Structure<GameData::NpcGardenInfo_HatenoVillage023> : GameData::NpcGardenInfo_HatenoVillage023 {
 	Data::Member<IsHarvested> IsHarvested;
-	Data::Member<CurrentState> CurrentState;
+	Data::Enum<CurrentState> CurrentState;
 	Data::Member<GrowActorName> GrowActorName;
 	Data::Member<LastGrowActorName> LastGrowActorName;
 	Data::Member<GrowthElapsedTime> GrowthElapsedTime;

@@ -45,304 +45,1186 @@ struct GameData : Tag::Structure {
 	struct DungeonState;
 	struct KeyCrystalDungeonState;
 	struct KorokCarryProgress;
-	struct LastTalkedOrchestraMemberStableHostel : Tag::Enum { using type = ::Enum::Scalar<LastTalkedOrchestraMemberStableHostel>; enum enum_type : hash_t { None = murmurhash3::hash("None"), GerudoCanyon = murmurhash3::hash("GerudoCanyon"), ShirotsumeShinbunsya = murmurhash3::hash("ShirotsumeShinbunsya"), TabantaOhashi = murmurhash3::hash("TabantaOhashi"), Higakkare = murmurhash3::hash("Higakkare"), ShinMaritta = murmurhash3::hash("ShinMaritta"), Minakkare = murmurhash3::hash("Minakkare"), Riverside = murmurhash3::hash("Riverside"), Lakeside = murmurhash3::hash("Lakeside"), Kougen = murmurhash3::hash("Kougen"), Sanroku = murmurhash3::hash("Sanroku"), Shitsugen = murmurhash3::hash("Shitsugen"), Mori = murmurhash3::hash("Mori"), Setsugen = murmurhash3::hash("Setsugen"), Futago = murmurhash3::hash("Futago"), HeigenHazure = murmurhash3::hash("HeigenHazure"), }; };
+	struct LastTalkedOrchestraMemberStableHostel : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), GerudoCanyon = murmurhash3::hash("GerudoCanyon"), ShirotsumeShinbunsya = murmurhash3::hash("ShirotsumeShinbunsya"), TabantaOhashi = murmurhash3::hash("TabantaOhashi"), Higakkare = murmurhash3::hash("Higakkare"), ShinMaritta = murmurhash3::hash("ShinMaritta"), Minakkare = murmurhash3::hash("Minakkare"), Riverside = murmurhash3::hash("Riverside"), Lakeside = murmurhash3::hash("Lakeside"), Kougen = murmurhash3::hash("Kougen"), Sanroku = murmurhash3::hash("Sanroku"), Shitsugen = murmurhash3::hash("Shitsugen"), Mori = murmurhash3::hash("Mori"), Setsugen = murmurhash3::hash("Setsugen"), Futago = murmurhash3::hash("Futago"), HeigenHazure = murmurhash3::hash("HeigenHazure"), }; };
+		using type = enum_t<values_t>;
+	};
 	struct LastWildHorse;
 	struct MaterialShortCut;
 	struct PictureBookData;
-	struct SensorMode : Tag::Enum { using type = ::Enum::Scalar<SensorMode>; enum enum_type : hash_t { None = murmurhash3::hash("None"), Dungeon = murmurhash3::hash("Dungeon"), Actor = murmurhash3::hash("Actor"), }; };
+	struct SensorMode : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), Dungeon = murmurhash3::hash("Dungeon"), Actor = murmurhash3::hash("Actor"), }; };
+		using type = enum_t<values_t>;
+	};
 	struct SortPattern;
-	struct Step_AisyaRescue : Tag::Enum { using type = ::Enum::Scalar<Step_AisyaRescue>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step1a = murmurhash3::hash("Step1a"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_AmberCollector : Tag::Enum { using type = ::Enum::Scalar<Step_AmberCollector>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), SellAmbers = murmurhash3::hash("SellAmbers"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ArrowMeister_Momo : Tag::Enum { using type = ::Enum::Scalar<Step_ArrowMeister_Momo>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), HaveWaterFruit = murmurhash3::hash("HaveWaterFruit"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_AssassinGerudoBase : Tag::Enum { using type = ::Enum::Scalar<Step_AssassinGerudoBase>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Enlist = murmurhash3::hash("Enlist"), Equip = murmurhash3::hash("Equip"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BallBring_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_BallBring_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Basketball_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_Basketball_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Retry = murmurhash3::hash("Retry"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Big_Rotate : Tag::Enum { using type = ::Enum::Scalar<Step_Big_Rotate>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BirdManContest : Tag::Enum { using type = ::Enum::Scalar<Step_BirdManContest>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Game = murmurhash3::hash("Game"), Retire = murmurhash3::hash("Retire"), Result = murmurhash3::hash("Result"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BlindRuinsTreasure : Tag::Enum { using type = ::Enum::Scalar<Step_BlindRuinsTreasure>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), LookAtBoard_1 = murmurhash3::hash("LookAtBoard_1"), Search_1 = murmurhash3::hash("Search_1"), GoToCave = murmurhash3::hash("GoToCave"), RewardNotReceived = murmurhash3::hash("RewardNotReceived"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BlindRuinsTreasure_Gerudo : Tag::Enum { using type = ::Enum::Scalar<Step_BlindRuinsTreasure_Gerudo>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BlindRuinsTreasure_Goron : Tag::Enum { using type = ::Enum::Scalar<Step_BlindRuinsTreasure_Goron>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BlindRuinsTreasure_Rito : Tag::Enum { using type = ::Enum::Scalar<Step_BlindRuinsTreasure_Rito>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BlindRuinsTreasure_Zora : Tag::Enum { using type = ::Enum::Scalar<Step_BlindRuinsTreasure_Zora>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BuildHouse : Tag::Enum { using type = ::Enum::Scalar<Step_BuildHouse>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Build = murmurhash3::hash("Build"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_BuildingMaterialsTutorial : Tag::Enum { using type = ::Enum::Scalar<Step_BuildingMaterialsTutorial>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GiveBuildingMaterials = murmurhash3::hash("GiveBuildingMaterials"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryGoronKid1 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryGoronKid1>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryGoronKid2 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryGoronKid2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), ToStation = murmurhash3::hash("ToStation"), Carry = murmurhash3::hash("Carry"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryStone : Tag::Enum { using type = ::Enum::Scalar<Step_CarryStone>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CarryStone = murmurhash3::hash("CarryStone"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine01 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine02 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine03 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine05 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine05>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine06 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine06>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine07 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine07>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine08_Zora : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine08_Zora>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine09 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine09>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine10 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine10>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine11 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine11>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine12 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine12>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine13 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine13>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine14 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine14>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine15 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine15>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine16 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine16>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine17 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine17>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine19 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine19>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine20 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine20>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine21 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine21>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine22 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine22>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CarryToShrine23 : Tag::Enum { using type = ::Enum::Scalar<Step_CarryToShrine23>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CDungeon_AllDone : Tag::Enum { using type = ::Enum::Scalar<Step_CDungeon_AllDone>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), RewardAppeared = murmurhash3::hash("RewardAppeared"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Circuit_Desert : Tag::Enum { using type = ::Enum::Scalar<Step_Circuit_Desert>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), TimeUp = murmurhash3::hash("TimeUp"), Finish = murmurhash3::hash("Finish"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Circuit_FaronWoods_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_Circuit_FaronWoods_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Game = murmurhash3::hash("Game"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Circuit_Ichikara : Tag::Enum { using type = ::Enum::Scalar<Step_Circuit_Ichikara>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Circuit_Ichikara_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_Circuit_Ichikara_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Playing = murmurhash3::hash("Playing"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Circuit_Uotori_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_Circuit_Uotori_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CleanStatue : Tag::Enum { using type = ::Enum::Scalar<Step_CleanStatue>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CleanUp = murmurhash3::hash("CleanUp"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ClueTotheSixthSage : Tag::Enum { using type = ::Enum::Scalar<Step_ClueTotheSixthSage>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetTauro = murmurhash3::hash("MeetTauro"), RuinsChallenge = murmurhash3::hash("RuinsChallenge"), ZonauChallenge = murmurhash3::hash("ZonauChallenge"), UntilYouReport = murmurhash3::hash("UntilYouReport"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CollectObject_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_CollectObject_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CollectObject_MiniGame_Cliff : Tag::Enum { using type = ::Enum::Scalar<Step_CollectObject_MiniGame_Cliff>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CollectObject_MiniGame_LakeSide : Tag::Enum { using type = ::Enum::Scalar<Step_CollectObject_MiniGame_LakeSide>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Connect_AkkareMaze : Tag::Enum { using type = ::Enum::Scalar<Step_Connect_AkkareMaze>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Land = murmurhash3::hash("Land"), Land2 = murmurhash3::hash("Land2"), Sky = murmurhash3::hash("Sky"), Sky1st = murmurhash3::hash("Sky1st"), Sky2nd = murmurhash3::hash("Sky2nd"), Sky3rd = murmurhash3::hash("Sky3rd"), SkyAll = murmurhash3::hash("SkyAll"), Minus = murmurhash3::hash("Minus"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Connect_FirstIsland : Tag::Enum { using type = ::Enum::Scalar<Step_Connect_FirstIsland>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Sky = murmurhash3::hash("Sky"), Collect1st = murmurhash3::hash("Collect1st"), Collect2nd = murmurhash3::hash("Collect2nd"), Collect3rd = murmurhash3::hash("Collect3rd"), SkyGather = murmurhash3::hash("SkyGather"), Minus1st = murmurhash3::hash("Minus1st"), Minus2nd = murmurhash3::hash("Minus2nd"), Minus3rd = murmurhash3::hash("Minus3rd"), Minus4th = murmurhash3::hash("Minus4th"), Minus5th = murmurhash3::hash("Minus5th"), Minus6th = murmurhash3::hash("Minus6th"), MinusGather = murmurhash3::hash("MinusGather"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Connect_GerudoMaze : Tag::Enum { using type = ::Enum::Scalar<Step_Connect_GerudoMaze>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Land = murmurhash3::hash("Land"), Land2 = murmurhash3::hash("Land2"), Sky = murmurhash3::hash("Sky"), Sky1st = murmurhash3::hash("Sky1st"), Sky2nd = murmurhash3::hash("Sky2nd"), Sky3rd = murmurhash3::hash("Sky3rd"), SkyAll = murmurhash3::hash("SkyAll"), Minus = murmurhash3::hash("Minus"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Connect_TabantaMaze : Tag::Enum { using type = ::Enum::Scalar<Step_Connect_TabantaMaze>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Land = murmurhash3::hash("Land"), Land2 = murmurhash3::hash("Land2"), Sky = murmurhash3::hash("Sky"), Sky1st = murmurhash3::hash("Sky1st"), Sky2nd = murmurhash3::hash("Sky2nd"), Sky3rd = murmurhash3::hash("Sky3rd"), SkyAll = murmurhash3::hash("SkyAll"), Minus = murmurhash3::hash("Minus"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CookAtBaseCamp : Tag::Enum { using type = ::Enum::Scalar<Step_CookAtBaseCamp>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CraftShadowPicture : Tag::Enum { using type = ::Enum::Scalar<Step_CraftShadowPicture>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_CreateArmor : Tag::Enum { using type = ::Enum::Scalar<Step_CreateArmor>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Createshinguard : Tag::Enum { using type = ::Enum::Scalar<Step_Createshinguard>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GatherItem = murmurhash3::hash("GatherItem"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DeepHoleSurvey2 : Tag::Enum { using type = ::Enum::Scalar<Step_DeepHoleSurvey2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), AfterInterview = murmurhash3::hash("AfterInterview"), Step01 = murmurhash3::hash("Step01"), Report = murmurhash3::hash("Report"), Buield = murmurhash3::hash("Buield"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DefeatGanondorf : Tag::Enum { using type = ::Enum::Scalar<Step_DefeatGanondorf>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindWhereabouts = murmurhash3::hash("FindWhereabouts"), GoToDeepHole = murmurhash3::hash("GoToDeepHole"), DefeatMonsterArmy = murmurhash3::hash("DefeatMonsterArmy"), DefeatGanon1 = murmurhash3::hash("DefeatGanon1"), DefeatGanon2 = murmurhash3::hash("DefeatGanon2"), DefeatBlackDragon = murmurhash3::hash("DefeatBlackDragon"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DefeatHugeEnemy_1 : Tag::Enum { using type = ::Enum::Scalar<Step_DefeatHugeEnemy_1>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DefeatHugeEnemy_2 : Tag::Enum { using type = ::Enum::Scalar<Step_DefeatHugeEnemy_2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DefeatHugeEnemy_3 : Tag::Enum { using type = ::Enum::Scalar<Step_DefeatHugeEnemy_3>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DefeatHugeEnemy_4 : Tag::Enum { using type = ::Enum::Scalar<Step_DefeatHugeEnemy_4>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DefeatHugeEnemy_5 : Tag::Enum { using type = ::Enum::Scalar<Step_DefeatHugeEnemy_5>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DefeatHugeEnemy_6 : Tag::Enum { using type = ::Enum::Scalar<Step_DefeatHugeEnemy_6>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EventLightSpot = murmurhash3::hash("EventLightSpot"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DevoteSpring : Tag::Enum { using type = ::Enum::Scalar<Step_DevoteSpring>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_DividedSlate : Tag::Enum { using type = ::Enum::Scalar<Step_DividedSlate>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), RepairSlate = murmurhash3::hash("RepairSlate"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_EightHeroStatues : Tag::Enum { using type = ::Enum::Scalar<Step_EightHeroStatues>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_EightHeroStatues_After : Tag::Enum { using type = ::Enum::Scalar<Step_EightHeroStatues_After>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step1_GoRoom = murmurhash3::hash("Step1_GoRoom"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Step4 = murmurhash3::hash("Step4"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_EveryonesMeal : Tag::Enum { using type = ::Enum::Scalar<Step_EveryonesMeal>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ExcavateFossil1 : Tag::Enum { using type = ::Enum::Scalar<Step_ExcavateFossil1>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), LightPoint = murmurhash3::hash("LightPoint"), GoFossil = murmurhash3::hash("GoFossil"), Excavate = murmurhash3::hash("Excavate"), NextLightPoint = murmurhash3::hash("NextLightPoint"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ExcavateFossil2 : Tag::Enum { using type = ::Enum::Scalar<Step_ExcavateFossil2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoFossil = murmurhash3::hash("GoFossil"), Excavate = murmurhash3::hash("Excavate"), NextLightPoint = murmurhash3::hash("NextLightPoint"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ExcavateFossil3 : Tag::Enum { using type = ::Enum::Scalar<Step_ExcavateFossil3>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoFossil = murmurhash3::hash("GoFossil"), Excavate = murmurhash3::hash("Excavate"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Fairy2 : Tag::Enum { using type = ::Enum::Scalar<Step_Fairy2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), ReturnUmayado = murmurhash3::hash("ReturnUmayado"), CarryNPC = murmurhash3::hash("CarryNPC"), CarryNPC2 = murmurhash3::hash("CarryNPC2"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Fairy3 : Tag::Enum { using type = ::Enum::Scalar<Step_Fairy3>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), GoToOrchestra = murmurhash3::hash("GoToOrchestra"), Craft = murmurhash3::hash("Craft"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Fairy4 : Tag::Enum { using type = ::Enum::Scalar<Step_Fairy4>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), GoToOrchestra = murmurhash3::hash("GoToOrchestra"), CarryNPC = murmurhash3::hash("CarryNPC"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_FindDrefan : Tag::Enum { using type = ::Enum::Scalar<Step_FindDrefan>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindDrefan = murmurhash3::hash("FindDrefan"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_FindSunaNui : Tag::Enum { using type = ::Enum::Scalar<Step_FindSunaNui>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), SetUp = murmurhash3::hash("SetUp"), Playing = murmurhash3::hash("Playing"), Result = murmurhash3::hash("Result"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_FindSunaNui2 : Tag::Enum { using type = ::Enum::Scalar<Step_FindSunaNui2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Result = murmurhash3::hash("Result"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_FindWhiteHorse : Tag::Enum { using type = ::Enum::Scalar<Step_FindWhiteHorse>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_FindWithSensors : Tag::Enum { using type = ::Enum::Scalar<Step_FindWithSensors>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), TestSensor = murmurhash3::hash("TestSensor"), Find = murmurhash3::hash("Find"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_FirstskyislandReturns : Tag::Enum { using type = ::Enum::Scalar<Step_FirstskyislandReturns>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), ReturnReady = murmurhash3::hash("ReturnReady"), InGameWhenActiveTorchNumIs0 = murmurhash3::hash("InGameWhenActiveTorchNumIs0"), InGameWhenActiveTorchNumIs1 = murmurhash3::hash("InGameWhenActiveTorchNumIs1"), InGameWhenActiveTorchNumIs2 = murmurhash3::hash("InGameWhenActiveTorchNumIs2"), GameClear = murmurhash3::hash("GameClear"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_FullyRipenedFlintstones : Tag::Enum { using type = ::Enum::Scalar<Step_FullyRipenedFlintstones>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetFlintstones = murmurhash3::hash("GetFlintstones"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_gather_Insect_Z : Tag::Enum { using type = ::Enum::Scalar<Step_gather_Insect_Z>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GeniusWeapon_Zora : Tag::Enum { using type = ::Enum::Scalar<Step_GeniusWeapon_Zora>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Genkos_Kitchen : Tag::Enum { using type = ::Enum::Scalar<Step_Genkos_Kitchen>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), HaveFish = murmurhash3::hash("HaveFish"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Gerudo_UrbosaWeapon : Tag::Enum { using type = ::Enum::Scalar<Step_Gerudo_UrbosaWeapon>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GerudoCanyon_24hEnduranceComparison : Tag::Enum { using type = ::Enum::Scalar<Step_GerudoCanyon_24hEnduranceComparison>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Prepare = murmurhash3::hash("Prepare"), Comparison = murmurhash3::hash("Comparison"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GerudoCanyon_Adventure : Tag::Enum { using type = ::Enum::Scalar<Step_GerudoCanyon_Adventure>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GerudoCanyon_ColdEnduranceComparison : Tag::Enum { using type = ::Enum::Scalar<Step_GerudoCanyon_ColdEnduranceComparison>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Prepare = murmurhash3::hash("Prepare"), Comparison = murmurhash3::hash("Comparison"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GerudoCanyon_GleeokLiver : Tag::Enum { using type = ::Enum::Scalar<Step_GerudoCanyon_GleeokLiver>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GerudoCanyon_TumbleweedSweep : Tag::Enum { using type = ::Enum::Scalar<Step_GerudoCanyon_TumbleweedSweep>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GerudoDesertTreasure : Tag::Enum { using type = ::Enum::Scalar<Step_GerudoDesertTreasure>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GetCamera : Tag::Enum { using type = ::Enum::Scalar<Step_GetCamera>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GotoUnderground = murmurhash3::hash("GotoUnderground"), TakePicture = murmurhash3::hash("TakePicture"), ReturnBaseCamp = murmurhash3::hash("ReturnBaseCamp"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GetMasterSword : Tag::Enum { using type = ::Enum::Scalar<Step_GetMasterSword>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Order = murmurhash3::hash("Order"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GetSensorPlus : Tag::Enum { using type = ::Enum::Scalar<Step_GetSensorPlus>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GetWalker : Tag::Enum { using type = ::Enum::Scalar<Step_GetWalker>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GetWarpMarker : Tag::Enum { using type = ::Enum::Scalar<Step_GetWarpMarker>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EventLightSpot = murmurhash3::hash("EventLightSpot"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Step03 = murmurhash3::hash("Step03"), Step04 = murmurhash3::hash("Step04"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GiantHorse : Tag::Enum { using type = ::Enum::Scalar<Step_GiantHorse>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GoneSnowQueen : Tag::Enum { using type = ::Enum::Scalar<Step_GoneSnowQueen>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step0 = murmurhash3::hash("Step0"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Goron_MiniGame_01 : Tag::Enum { using type = ::Enum::Scalar<Step_Goron_MiniGame_01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Retire = murmurhash3::hash("Retire"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Goron_MiniGame_02 : Tag::Enum { using type = ::Enum::Scalar<Step_Goron_MiniGame_02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Retire = murmurhash3::hash("Retire"), Finish = murmurhash3::hash("Finish"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Goron_MiniGame_03 : Tag::Enum { using type = ::Enum::Scalar<Step_Goron_MiniGame_03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Retire = murmurhash3::hash("Retire"), CourseOut = murmurhash3::hash("CourseOut"), Finish = murmurhash3::hash("Finish"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Goron_MiniGame_Tutorial_01 : Tag::Enum { using type = ::Enum::Scalar<Step_Goron_MiniGame_Tutorial_01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Retire = murmurhash3::hash("Retire"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Goron_MiniGame_Tutorial_02 : Tag::Enum { using type = ::Enum::Scalar<Step_Goron_MiniGame_Tutorial_02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Retire = murmurhash3::hash("Retire"), Finish = murmurhash3::hash("Finish"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Goron_MiniGame_Tutorial_03 : Tag::Enum { using type = ::Enum::Scalar<Step_Goron_MiniGame_Tutorial_03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Retire = murmurhash3::hash("Retire"), CourseOut = murmurhash3::hash("CourseOut"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GoronPond : Tag::Enum { using type = ::Enum::Scalar<Step_GoronPond>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindThePond = murmurhash3::hash("FindThePond"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GoronReturntoNature : Tag::Enum { using type = ::Enum::Scalar<Step_GoronReturntoNature>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindGraveyard = murmurhash3::hash("FindGraveyard"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GotoFironeZonauRemains : Tag::Enum { using type = ::Enum::Scalar<Step_GotoFironeZonauRemains>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), DecipherTheIithograph = murmurhash3::hash("DecipherTheIithograph"), EventLightSpot01 = murmurhash3::hash("EventLightSpot01"), EventLightSpot02 = murmurhash3::hash("EventLightSpot02"), ZonauRemains_ArriveObservatory = murmurhash3::hash("ZonauRemains_ArriveObservatory"), ZonauRemains_TalkResearcher = murmurhash3::hash("ZonauRemains_TalkResearcher"), ZonauRemains_AppearsSkyIsland = murmurhash3::hash("ZonauRemains_AppearsSkyIsland"), ZonauRemains_OpenedTheDoor = murmurhash3::hash("ZonauRemains_OpenedTheDoor"), ZonauRemains_TouchTheHead = murmurhash3::hash("ZonauRemains_TouchTheHead"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GOToTheCastleOfHyrule : Tag::Enum { using type = ::Enum::Scalar<Step_GOToTheCastleOfHyrule>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetPurah = murmurhash3::hash("MeetPurah"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_GroundPaintingAir01 : Tag::Enum { using type = ::Enum::Scalar<Step_GroundPaintingAir01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoToWandererA = murmurhash3::hash("GoToWandererA"), GoToWandererB = murmurhash3::hash("GoToWandererB"), Carry = murmurhash3::hash("Carry"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hack_GuardGoods : Tag::Enum { using type = ::Enum::Scalar<Step_Hack_GuardGoods>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HammerGong_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_HammerGong_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_Cheese : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_Cheese>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_CoolGuy : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_CoolGuy>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Report = murmurhash3::hash("Report"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_FreshMilk : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_FreshMilk>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_LetUsElection : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_LetUsElection>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Ready1 = murmurhash3::hash("Ready1"), Ready2 = murmurhash3::hash("Ready2"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_NewCostume : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_NewCostume>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_NewSpecialty : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_NewSpecialty>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), ReChallenge = murmurhash3::hash("ReChallenge"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_RevitalizeByNewSpeciality : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_RevitalizeByNewSpeciality>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_SecretLifeOfKusayoshi : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_SecretLifeOfKusayoshi>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_SecretLifeOfSagono : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_SecretLifeOfSagono>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_TellMeTeacher01 : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_TellMeTeacher01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TakeAPicture = murmurhash3::hash("TakeAPicture"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_TellMeTeacher02 : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_TellMeTeacher02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_VillageMayorElection : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_VillageMayorElection>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Step03 = murmurhash3::hash("Step03"), Step04 = murmurhash3::hash("Step04"), Step05 = murmurhash3::hash("Step05"), Step06 = murmurhash3::hash("Step06"), Step07 = murmurhash3::hash("Step07"), Step08 = murmurhash3::hash("Step08"), Step09 = murmurhash3::hash("Step09"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hateno_WhatToPlant : Tag::Enum { using type = ::Enum::Scalar<Step_Hateno_WhatToPlant>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Choice = murmurhash3::hash("Choice"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HatenoPurchasePicture : Tag::Enum { using type = ::Enum::Scalar<Step_HatenoPurchasePicture>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Purchase = murmurhash3::hash("Purchase"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hebra_SkyRingChallenge : Tag::Enum { using type = ::Enum::Scalar<Step_Hebra_SkyRingChallenge>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Preparation = murmurhash3::hash("Preparation"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Hebra_SkyRingChallenge_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_Hebra_SkyRingChallenge_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HorseInnChallenge001 : Tag::Enum { using type = ::Enum::Scalar<Step_HorseInnChallenge001>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Repair = murmurhash3::hash("Repair"), Repair2 = murmurhash3::hash("Repair2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HorseInnChallenge002 : Tag::Enum { using type = ::Enum::Scalar<Step_HorseInnChallenge002>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), step1 = murmurhash3::hash("step1"), Report = murmurhash3::hash("Report"), Report2 = murmurhash3::hash("Report2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HorseInnChallenge003 : Tag::Enum { using type = ::Enum::Scalar<Step_HorseInnChallenge003>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CupsuleDrop = murmurhash3::hash("CupsuleDrop"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HorseInnChallenge005 : Tag::Enum { using type = ::Enum::Scalar<Step_HorseInnChallenge005>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HorseInnChallenge007 : Tag::Enum { using type = ::Enum::Scalar<Step_HorseInnChallenge007>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), AfterDefeat = murmurhash3::hash("AfterDefeat"), GetReward = murmurhash3::hash("GetReward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HotSpringEgg : Tag::Enum { using type = ::Enum::Scalar<Step_HotSpringEgg>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindHotSpring = murmurhash3::hash("FindHotSpring"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HourseInnChallenge004 : Tag::Enum { using type = ::Enum::Scalar<Step_HourseInnChallenge004>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TryToDestroy = murmurhash3::hash("TryToDestroy"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HuntSalmon : Tag::Enum { using type = ::Enum::Scalar<Step_HuntSalmon>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Report = murmurhash3::hash("Report"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_HyruleCastleIncident : Tag::Enum { using type = ::Enum::Scalar<Step_HyruleCastleIncident>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CastleSurvey = murmurhash3::hash("CastleSurvey"), ReturnBCAfterDefeatMonster = murmurhash3::hash("ReturnBCAfterDefeatMonster"), GoToCannon = murmurhash3::hash("GoToCannon"), UseTerminal = murmurhash3::hash("UseTerminal"), UseCannon = murmurhash3::hash("UseCannon"), ToLand = murmurhash3::hash("ToLand"), EventLightSpot = murmurhash3::hash("EventLightSpot"), EventLightSpot2 = murmurhash3::hash("EventLightSpot2"), EventLightSpot3 = murmurhash3::hash("EventLightSpot3"), EventLightSpot4 = murmurhash3::hash("EventLightSpot4"), EventLightSpot5 = murmurhash3::hash("EventLightSpot5"), UnderSurveyOfFourVillages = murmurhash3::hash("UnderSurveyOfFourVillages"), ResearchCastle = murmurhash3::hash("ResearchCastle"), DefeatBlackZelda = murmurhash3::hash("DefeatBlackZelda"), ReturnBCAfterBlackZelda = murmurhash3::hash("ReturnBCAfterBlackZelda"), UnderFindTheFifthSage = murmurhash3::hash("UnderFindTheFifthSage"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_IceMaking : Tag::Enum { using type = ::Enum::Scalar<Step_IceMaking>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_IchikaraChallenge01 : Tag::Enum { using type = ::Enum::Scalar<Step_IchikaraChallenge01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Research = murmurhash3::hash("Research"), Child_Talk = murmurhash3::hash("Child_Talk"), Quiz2 = murmurhash3::hash("Quiz2"), Cooking = murmurhash3::hash("Cooking"), GotoRopeway = murmurhash3::hash("GotoRopeway"), MammyReport = murmurhash3::hash("MammyReport"), PaPaTalk = murmurhash3::hash("PaPaTalk"), Memory = murmurhash3::hash("Memory"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_IchikaraChallenge03 : Tag::Enum { using type = ::Enum::Scalar<Step_IchikaraChallenge03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_IchikaraCircuit_Tutorial : Tag::Enum { using type = ::Enum::Scalar<Step_IchikaraCircuit_Tutorial>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Playing = murmurhash3::hash("Playing"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_IchikaraDaughterPhoto : Tag::Enum { using type = ::Enum::Scalar<Step_IchikaraDaughterPhoto>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_IllnessStartsWithFeelings : Tag::Enum { using type = ::Enum::Scalar<Step_IllnessStartsWithFeelings>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_InfiltrationFromTheSky : Tag::Enum { using type = ::Enum::Scalar<Step_InfiltrationFromTheSky>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_InnNeverReturns : Tag::Enum { using type = ::Enum::Scalar<Step_InnNeverReturns>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_JobSunazarashi : Tag::Enum { using type = ::Enum::Scalar<Step_JobSunazarashi>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Drive1 = murmurhash3::hash("Drive1"), Arrival = murmurhash3::hash("Arrival"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Know_FourStonePlates : Tag::Enum { using type = ::Enum::Scalar<Step_Know_FourStonePlates>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_KokkoGuidePost : Tag::Enum { using type = ::Enum::Scalar<Step_KokkoGuidePost>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), step1 = murmurhash3::hash("step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Korok_CarryToShrine : Tag::Enum { using type = ::Enum::Scalar<Step_Korok_CarryToShrine>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Carry = murmurhash3::hash("Carry"), Crystal = murmurhash3::hash("Crystal"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Lodge_Chemical001 : Tag::Enum { using type = ::Enum::Scalar<Step_Lodge_Chemical001>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), DefeatAnEnemy = murmurhash3::hash("DefeatAnEnemy"), DefeatedEnemies = murmurhash3::hash("DefeatedEnemies"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_LookingForLightSpot : Tag::Enum { using type = ::Enum::Scalar<Step_LookingForLightSpot>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoToLightSpotOfPurahPad = murmurhash3::hash("GoToLightSpotOfPurahPad"), GoBackToTempleEntrance = murmurhash3::hash("GoBackToTempleEntrance"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_LookingForTheVoiceLord : Tag::Enum { using type = ::Enum::Scalar<Step_LookingForTheVoiceLord>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Mack_SecretBase : Tag::Enum { using type = ::Enum::Scalar<Step_Mack_SecretBase>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MainChallenge : Tag::Enum { using type = ::Enum::Scalar<Step_MainChallenge>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetZonauMajic = murmurhash3::hash("GetZonauMajic"), GoToAlterAfterGetRR = murmurhash3::hash("GoToAlterAfterGetRR"), WarpToCaveOfAwake = murmurhash3::hash("WarpToCaveOfAwake"), GoToBackToGolemInTemple = murmurhash3::hash("GoToBackToGolemInTemple"), GoToBackOfTempleOfTimeAfterWD = murmurhash3::hash("GoToBackOfTempleOfTimeAfterWD"), LookingForZelda = murmurhash3::hash("LookingForZelda"), GoToDeepHole = murmurhash3::hash("GoToDeepHole"), DefeatMonsterArmy = murmurhash3::hash("DefeatMonsterArmy"), DefeatGanon1 = murmurhash3::hash("DefeatGanon1"), DefeatGanon2 = murmurhash3::hash("DefeatGanon2"), DefeatBlackDragon = murmurhash3::hash("DefeatBlackDragon"), CatchZelda = murmurhash3::hash("CatchZelda"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MakeAChampionsWeapon_Goron : Tag::Enum { using type = ::Enum::Scalar<Step_MakeAChampionsWeapon_Goron>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MakeWeapon = murmurhash3::hash("MakeWeapon"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MakeChemicalWeapon : Tag::Enum { using type = ::Enum::Scalar<Step_MakeChemicalWeapon>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MasterSwordClues : Tag::Enum { using type = ::Enum::Scalar<Step_MasterSwordClues>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TalkOldKorok = murmurhash3::hash("TalkOldKorok"), TalKDekuTree = murmurhash3::hash("TalKDekuTree"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MeatRock : Tag::Enum { using type = ::Enum::Scalar<Step_MeatRock>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CarryARock = murmurhash3::hash("CarryARock"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MemoryOfTheDragon : Tag::Enum { using type = ::Enum::Scalar<Step_MemoryOfTheDragon>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoTemple = murmurhash3::hash("GoTemple"), GoTemple2 = murmurhash3::hash("GoTemple2"), Step01 = murmurhash3::hash("Step01"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Mercenary_Akkare_Bloody : Tag::Enum { using type = ::Enum::Scalar<Step_Mercenary_Akkare_Bloody>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Mercenary_Eldin_Bloody : Tag::Enum { using type = ::Enum::Scalar<Step_Mercenary_Eldin_Bloody>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Mercenary_Firone_Bloody : Tag::Enum { using type = ::Enum::Scalar<Step_Mercenary_Firone_Bloody>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Mercenary_Hateru_Bloody : Tag::Enum { using type = ::Enum::Scalar<Step_Mercenary_Hateru_Bloody>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Mercenary_Hebra_Bloody : Tag::Enum { using type = ::Enum::Scalar<Step_Mercenary_Hebra_Bloody>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Mercenary_HyrulePlain_Bloody : Tag::Enum { using type = ::Enum::Scalar<Step_Mercenary_HyrulePlain_Bloody>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MercenaryChallenge_Akkare : Tag::Enum { using type = ::Enum::Scalar<Step_MercenaryChallenge_Akkare>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MercenaryChallenge_Eldin : Tag::Enum { using type = ::Enum::Scalar<Step_MercenaryChallenge_Eldin>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MercenaryChallenge_Firone : Tag::Enum { using type = ::Enum::Scalar<Step_MercenaryChallenge_Firone>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MercenaryChallenge_Hateru : Tag::Enum { using type = ::Enum::Scalar<Step_MercenaryChallenge_Hateru>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MercenaryChallenge_Hebra : Tag::Enum { using type = ::Enum::Scalar<Step_MercenaryChallenge_Hebra>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MercenaryChallenge_HyrulePlain : Tag::Enum { using type = ::Enum::Scalar<Step_MercenaryChallenge_HyrulePlain>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MessageBottle_SOS : Tag::Enum { using type = ::Enum::Scalar<Step_MessageBottle_SOS>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MessageBottle_SOS_01 = murmurhash3::hash("MessageBottle_SOS_01"), MessageBottle_SOS_02 = murmurhash3::hash("MessageBottle_SOS_02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MinusYiga : Tag::Enum { using type = ::Enum::Scalar<Step_MinusYiga>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeginBeforeHint = murmurhash3::hash("BeginBeforeHint"), Begin = murmurhash3::hash("Begin"), Again = murmurhash3::hash("Again"), Continue = murmurhash3::hash("Continue"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MonsterFigures01 : Tag::Enum { using type = ::Enum::Scalar<Step_MonsterFigures01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MonsterFigures02 : Tag::Enum { using type = ::Enum::Scalar<Step_MonsterFigures02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MonsterFigures03 : Tag::Enum { using type = ::Enum::Scalar<Step_MonsterFigures03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MonsterFigures04 : Tag::Enum { using type = ::Enum::Scalar<Step_MonsterFigures04>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MonsterFigures05 : Tag::Enum { using type = ::Enum::Scalar<Step_MonsterFigures05>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MushroomSisters_1 : Tag::Enum { using type = ::Enum::Scalar<Step_MushroomSisters_1>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MushroomSisters_2 : Tag::Enum { using type = ::Enum::Scalar<Step_MushroomSisters_2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_MushroomSisters_3 : Tag::Enum { using type = ::Enum::Scalar<Step_MushroomSisters_3>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Nazley_DigCave : Tag::Enum { using type = ::Enum::Scalar<Step_Nazley_DigCave>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Dig = murmurhash3::hash("Dig"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Neck_IceWaterCave : Tag::Enum { using type = ::Enum::Scalar<Step_Neck_IceWaterCave>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_NewCanyonMissingPersonsCase : Tag::Enum { using type = ::Enum::Scalar<Step_NewCanyonMissingPersonsCase>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step0 = murmurhash3::hash("Step0"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_NewsPaper_Mitsuba : Tag::Enum { using type = ::Enum::Scalar<Step_NewsPaper_Mitsuba>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Tribune01 = murmurhash3::hash("Tribune01"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_NoTrespassing : Tag::Enum { using type = ::Enum::Scalar<Step_NoTrespassing>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_NowInTheVillageOfLurelin : Tag::Enum { using type = ::Enum::Scalar<Step_NowInTheVillageOfLurelin>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Npc_BaseCamp_Assistant_ReactingStatue : Tag::Enum { using type = ::Enum::Scalar<Step_Npc_BaseCamp_Assistant_ReactingStatue>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Npc_BaseCamp_Assistant_ReactingStatue2 : Tag::Enum { using type = ::Enum::Scalar<Step_Npc_BaseCamp_Assistant_ReactingStatue2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Npc_BaseCamp_Assistant_ReactingStatue3 : Tag::Enum { using type = ::Enum::Scalar<Step_Npc_BaseCamp_Assistant_ReactingStatue3>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Npc_BaseCamp_Assistant_ReactingStatue4 : Tag::Enum { using type = ::Enum::Scalar<Step_Npc_BaseCamp_Assistant_ReactingStatue4>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_NushiShop_Challenge00 : Tag::Enum { using type = ::Enum::Scalar<Step_NushiShop_Challenge00>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindNushiShop = murmurhash3::hash("FindNushiShop"), HeardSpot = murmurhash3::hash("HeardSpot"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_NushiShop_Tutorial : Tag::Enum { using type = ::Enum::Scalar<Step_NushiShop_Tutorial>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BringCaveMasterMedal = murmurhash3::hash("BringCaveMasterMedal"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_OldKorokHelp : Tag::Enum { using type = ::Enum::Scalar<Step_OldKorokHelp>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), STEP1 = murmurhash3::hash("STEP1"), STEP1_Basecamp = murmurhash3::hash("STEP1_Basecamp"), STEP1_Final = murmurhash3::hash("STEP1_Final"), STEP2 = murmurhash3::hash("STEP2"), STEP2_BaseCamp = murmurhash3::hash("STEP2_BaseCamp"), STEP2_Final = murmurhash3::hash("STEP2_Final"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Orchestra01 : Tag::Enum { using type = ::Enum::Scalar<Step_Orchestra01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), AllMember = murmurhash3::hash("AllMember"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Orchestra02 : Tag::Enum { using type = ::Enum::Scalar<Step_Orchestra02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Orchestra03 : Tag::Enum { using type = ::Enum::Scalar<Step_Orchestra03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), step1 = murmurhash3::hash("step1"), step2 = murmurhash3::hash("step2"), step3 = murmurhash3::hash("step3"), step4 = murmurhash3::hash("step4"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Orchestra04 : Tag::Enum { using type = ::Enum::Scalar<Step_Orchestra04>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Our_Treasure : Tag::Enum { using type = ::Enum::Scalar<Step_Our_Treasure>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Parasail_ChuchuDesign : Tag::Enum { using type = ::Enum::Scalar<Step_Parasail_ChuchuDesign>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_01 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_02 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_03 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_04 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_04>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_05 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_05>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_06 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_06>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_07 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_07>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_08 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_08>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_09 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_09>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_09_2 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_09_2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_10 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_10>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_11 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_11>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_12 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_12>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_13 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_13>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_PhotoSpot_Challenge_14 : Tag::Enum { using type = ::Enum::Scalar<Step_PhotoSpot_Challenge_14>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Raise_GoddesStatue : Tag::Enum { using type = ::Enum::Scalar<Step_Raise_GoddesStatue>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), ToGoal = murmurhash3::hash("ToGoal"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Raise_GoddesStatue_Courage : Tag::Enum { using type = ::Enum::Scalar<Step_Raise_GoddesStatue_Courage>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CheckGoddesStatue = murmurhash3::hash("CheckGoddesStatue"), Report = murmurhash3::hash("Report"), Altarage = murmurhash3::hash("Altarage"), SolvePouch = murmurhash3::hash("SolvePouch"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Raise_GoddesStatue_Power : Tag::Enum { using type = ::Enum::Scalar<Step_Raise_GoddesStatue_Power>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CheckGoddesStatue = murmurhash3::hash("CheckGoddesStatue"), Report = murmurhash3::hash("Report"), Altarage = murmurhash3::hash("Altarage"), SolvePouch = murmurhash3::hash("SolvePouch"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Raise_GoddesStatue_Wisdom : Tag::Enum { using type = ::Enum::Scalar<Step_Raise_GoddesStatue_Wisdom>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CheckGoddesStatue = murmurhash3::hash("CheckGoddesStatue"), Report = murmurhash3::hash("Report"), Altarage = murmurhash3::hash("Altarage"), SolvePouch = murmurhash3::hash("SolvePouch"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_RepairArmor : Tag::Enum { using type = ::Enum::Scalar<Step_RepairArmor>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), SubmitMaterial = murmurhash3::hash("SubmitMaterial"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_RescueHost : Tag::Enum { using type = ::Enum::Scalar<Step_RescueHost>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_RescueVehicle01 : Tag::Enum { using type = ::Enum::Scalar<Step_RescueVehicle01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_RescueWell : Tag::Enum { using type = ::Enum::Scalar<Step_RescueWell>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Repair = murmurhash3::hash("Repair"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ResearchEldin : Tag::Enum { using type = ::Enum::Scalar<Step_ResearchEldin>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), SolveAProblem = murmurhash3::hash("SolveAProblem"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ResearchLanayru : Tag::Enum { using type = ::Enum::Scalar<Step_ResearchLanayru>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CleanMessenger = murmurhash3::hash("CleanMessenger"), GetPresent = murmurhash3::hash("GetPresent"), GetPresent_Village = murmurhash3::hash("GetPresent_Village"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_RestaurantInTheWell : Tag::Enum { using type = ::Enum::Scalar<Step_RestaurantInTheWell>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MakeFood = murmurhash3::hash("MakeFood"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Rito_ItemExchange : Tag::Enum { using type = ::Enum::Scalar<Step_Rito_ItemExchange>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Rito_MedoArmor : Tag::Enum { using type = ::Enum::Scalar<Step_Rito_MedoArmor>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Rito_RevaliWeapon : Tag::Enum { using type = ::Enum::Scalar<Step_Rito_RevaliWeapon>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Rito_ShadowCave : Tag::Enum { using type = ::Enum::Scalar<Step_Rito_ShadowCave>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), GetHint = murmurhash3::hash("GetHint"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_RitoBridgeRepair : Tag::Enum { using type = ::Enum::Scalar<Step_RitoBridgeRepair>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SageOfFire : Tag::Enum { using type = ::Enum::Scalar<Step_SageOfFire>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Dream = murmurhash3::hash("Dream"), GoCrater = murmurhash3::hash("GoCrater"), DefeatBossMiddle = murmurhash3::hash("DefeatBossMiddle"), GoMinusField = murmurhash3::hash("GoMinusField"), GoEntranceDungeon = murmurhash3::hash("GoEntranceDungeon"), GoDungeon = murmurhash3::hash("GoDungeon"), Dungeon = murmurhash3::hash("Dungeon"), StartBossBattle = murmurhash3::hash("StartBossBattle"), DefeatBoss = murmurhash3::hash("DefeatBoss"), TouchSecretStone = murmurhash3::hash("TouchSecretStone"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SageOfGerudo : Tag::Enum { using type = ::Enum::Scalar<Step_SageOfGerudo>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Underground = murmurhash3::hash("Underground"), PracticeStart = murmurhash3::hash("PracticeStart"), PracticeEnd = murmurhash3::hash("PracticeEnd"), PreDefenseStart = murmurhash3::hash("PreDefenseStart"), PreDefenseEnd = murmurhash3::hash("PreDefenseEnd"), DefenseReady = murmurhash3::hash("DefenseReady"), DefenseStart = murmurhash3::hash("DefenseStart"), DefenseEnd = murmurhash3::hash("DefenseEnd"), DungeonSearch = murmurhash3::hash("DungeonSearch"), DungeonFind = murmurhash3::hash("DungeonFind"), DungeonStart = murmurhash3::hash("DungeonStart"), DungeonBossDead = murmurhash3::hash("DungeonBossDead"), DungeonEnd = murmurhash3::hash("DungeonEnd"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SageOfSky : Tag::Enum { using type = ::Enum::Scalar<Step_SageOfSky>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetZonauMajic = murmurhash3::hash("GetZonauMajic"), GoToAlterAfterGetRR = murmurhash3::hash("GoToAlterAfterGetRR"), WarpToCaveOfAwake = murmurhash3::hash("WarpToCaveOfAwake"), GoToBackToGolemInTemple = murmurhash3::hash("GoToBackToGolemInTemple"), GoToBackOfTempleOfTimeAfterWD = murmurhash3::hash("GoToBackOfTempleOfTimeAfterWD"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SageOfSoul : Tag::Enum { using type = ::Enum::Scalar<Step_SageOfSoul>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CarryHead_CheckPoint01 = murmurhash3::hash("CarryHead_CheckPoint01"), CarryHead_CheckPoint02 = murmurhash3::hash("CarryHead_CheckPoint02"), CarryHead_CheckPoint04 = murmurhash3::hash("CarryHead_CheckPoint04"), Collected_AllParts = murmurhash3::hash("Collected_AllParts"), GolemAppearance = murmurhash3::hash("GolemAppearance"), LightSpotOn = murmurhash3::hash("LightSpotOn"), Dungeon_DuringDungeonCapture = murmurhash3::hash("Dungeon_DuringDungeonCapture"), Dungeon_Entrance = murmurhash3::hash("Dungeon_Entrance"), Dungeon_BeforeBossBattle = murmurhash3::hash("Dungeon_BeforeBossBattle"), Dungeon_DefeatedBoss = murmurhash3::hash("Dungeon_DefeatedBoss"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SageOfWind : Tag::Enum { using type = ::Enum::Scalar<Step_SageOfWind>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MountainHut = murmurhash3::hash("MountainHut"), GoToCave = murmurhash3::hash("GoToCave"), FoundTulin = murmurhash3::hash("FoundTulin"), IpponSugi = murmurhash3::hash("IpponSugi"), GetBack = murmurhash3::hash("GetBack"), DefeatEnemy = murmurhash3::hash("DefeatEnemy"), GoToHebra = murmurhash3::hash("GoToHebra"), GoDungeon = murmurhash3::hash("GoDungeon"), CheckTerminal = murmurhash3::hash("CheckTerminal"), DungeonStart = murmurhash3::hash("DungeonStart"), BossBattle = murmurhash3::hash("BossBattle"), DefeatBoss = murmurhash3::hash("DefeatBoss"), TouchSecretStone = murmurhash3::hash("TouchSecretStone"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SageOfZora : Tag::Enum { using type = ::Enum::Scalar<Step_SageOfZora>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetParkShido = murmurhash3::hash("MeetParkShido"), ResearchZora = murmurhash3::hash("ResearchZora"), InterimReportToShido = murmurhash3::hash("InterimReportToShido"), InterimReportToShido_Ex = murmurhash3::hash("InterimReportToShido_Ex"), FindWaterBridge = murmurhash3::hash("FindWaterBridge"), ReportToParkShido = murmurhash3::hash("ReportToParkShido"), DefeatLakeBoss = murmurhash3::hash("DefeatLakeBoss"), GoToLakeShido = murmurhash3::hash("GoToLakeShido"), GoToUnderLake = murmurhash3::hash("GoToUnderLake"), SearchRemains = murmurhash3::hash("SearchRemains"), GoToBeforeDungeon = murmurhash3::hash("GoToBeforeDungeon"), GoToBeforeDungeon_00 = murmurhash3::hash("GoToBeforeDungeon_00"), GoToDungeonStart = murmurhash3::hash("GoToDungeonStart"), TryOneTank = murmurhash3::hash("TryOneTank"), GoToBossArea = murmurhash3::hash("GoToBossArea"), DefeatBoss = murmurhash3::hash("DefeatBoss"), TouchSecretStone = murmurhash3::hash("TouchSecretStone"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SaihateSubjugation : Tag::Enum { using type = ::Enum::Scalar<Step_SaihateSubjugation>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Step4 = murmurhash3::hash("Step4"), Step5 = murmurhash3::hash("Step5"), Step6 = murmurhash3::hash("Step6"), Step7 = murmurhash3::hash("Step7"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SearchCaravan : Tag::Enum { using type = ::Enum::Scalar<Step_SearchCaravan>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step1a = murmurhash3::hash("Step1a"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SecretBase_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_SecretBase_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Retry = murmurhash3::hash("Retry"), Play = murmurhash3::hash("Play"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ShieldSurfing_MiniGame : Tag::Enum { using type = ::Enum::Scalar<Step_ShieldSurfing_MiniGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SkyIsland_MiniGame_01 : Tag::Enum { using type = ::Enum::Scalar<Step_SkyIsland_MiniGame_01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EasyGamePlaying = murmurhash3::hash("EasyGamePlaying"), HardGamePlaying = murmurhash3::hash("HardGamePlaying"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SkyIsland_MiniGame_02 : Tag::Enum { using type = ::Enum::Scalar<Step_SkyIsland_MiniGame_02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EasyGamePlaying = murmurhash3::hash("EasyGamePlaying"), HardGamePlaying = murmurhash3::hash("HardGamePlaying"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SkyIsland_MiniGame_03 : Tag::Enum { using type = ::Enum::Scalar<Step_SkyIsland_MiniGame_03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EasyGamePlaying = murmurhash3::hash("EasyGamePlaying"), HardGamePlaying = murmurhash3::hash("HardGamePlaying"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SnowyMountain_Surfing : Tag::Enum { using type = ::Enum::Scalar<Step_SnowyMountain_Surfing>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_StatueDevilTutorial : Tag::Enum { using type = ::Enum::Scalar<Step_StatueDevilTutorial>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetBackContainer = murmurhash3::hash("GetBackContainer"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_SurveyOfFourVillages : Tag::Enum { using type = ::Enum::Scalar<Step_SurveyOfFourVillages>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EventLightSpot1 = murmurhash3::hash("EventLightSpot1"), EventLightSpot2 = murmurhash3::hash("EventLightSpot2"), EventLightSpot3 = murmurhash3::hash("EventLightSpot3"), EventLightSpot4 = murmurhash3::hash("EventLightSpot4"), EventLightSpot5 = murmurhash3::hash("EventLightSpot5"), _1stSageClear = murmurhash3::hash("1stSageClear"), _2ndSageClear = murmurhash3::hash("2ndSageClear"), _3rdSageClear = murmurhash3::hash("3rdSageClear"), _4thSageClear = murmurhash3::hash("4thSageClear"), ReturnBCAfter4Sage = murmurhash3::hash("ReturnBCAfter4Sage"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TakeAnimals : Tag::Enum { using type = ::Enum::Scalar<Step_TakeAnimals>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TakeOfIce : Tag::Enum { using type = ::Enum::Scalar<Step_TakeOfIce>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TauraChallenge001 : Tag::Enum { using type = ::Enum::Scalar<Step_TauraChallenge001>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TheStrongestWeapon : Tag::Enum { using type = ::Enum::Scalar<Step_TheStrongestWeapon>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureHunt_kokiri : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureHunt_kokiri>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureOfLambda : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureOfLambda>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), OpenTreasure = murmurhash3::hash("OpenTreasure"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureOfLamda_Dream : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureOfLamda_Dream>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureOfLamda_Dream2 : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureOfLamda_Dream2>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureOfLamda_Dream3 : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureOfLamda_Dream3>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureOfLamda_DuelPeak : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureOfLamda_DuelPeak>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureOfLamda_FierceDeity : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureOfLamda_FierceDeity>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetOneTreaure = murmurhash3::hash("GetOneTreaure"), GetTwoTreasure = murmurhash3::hash("GetTwoTreasure"), GetThreeTreasure = murmurhash3::hash("GetThreeTreasure"), GetSword = murmurhash3::hash("GetSword"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureOfLamda_Gerudo : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureOfLamda_Gerudo>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_TreasureOfLamda_Pirate : Tag::Enum { using type = ::Enum::Scalar<Step_TreasureOfLamda_Pirate>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune01 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune01>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune02 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune02>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Escape = murmurhash3::hash("Escape"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune03 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune03>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Hearing = murmurhash3::hash("Hearing"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune04 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune04>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune05 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune05>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Carry = murmurhash3::hash("Carry"), Carry2 = murmurhash3::hash("Carry2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune06 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune06>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune07 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune07>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), step1 = murmurhash3::hash("step1"), step2 = murmurhash3::hash("step2"), step4 = murmurhash3::hash("step4"), step5 = murmurhash3::hash("step5"), step6 = murmurhash3::hash("step6"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune09 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune09>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), HorseTake = murmurhash3::hash("HorseTake"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune10 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune10>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TalkKokkko = murmurhash3::hash("TalkKokkko"), FirstOracle = murmurhash3::hash("FirstOracle"), TimeOverFirst = murmurhash3::hash("TimeOverFirst"), ClearFirst = murmurhash3::hash("ClearFirst"), FinishFirstTrial = murmurhash3::hash("FinishFirstTrial"), SecondOracle = murmurhash3::hash("SecondOracle"), TimeOverSecond = murmurhash3::hash("TimeOverSecond"), ClearSecond = murmurhash3::hash("ClearSecond"), Battle = murmurhash3::hash("Battle"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune11 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune11>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Step4 = murmurhash3::hash("Step4"), Step5 = murmurhash3::hash("Step5"), Step6 = murmurhash3::hash("Step6"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune13 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune13>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Chase = murmurhash3::hash("Chase"), Discovery = murmurhash3::hash("Discovery"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune14 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune14>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Tribune16 : Tag::Enum { using type = ::Enum::Scalar<Step_Tribune16>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Arrival = murmurhash3::hash("Arrival"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Uotori_BreakthePirateBase : Tag::Enum { using type = ::Enum::Scalar<Step_Uotori_BreakthePirateBase>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Uotori_Designer : Tag::Enum { using type = ::Enum::Scalar<Step_Uotori_Designer>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Uotori_ResortPlan : Tag::Enum { using type = ::Enum::Scalar<Step_Uotori_ResortPlan>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Contact = murmurhash3::hash("Contact"), Challenge = murmurhash3::hash("Challenge"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Uotori_RevivePlan : Tag::Enum { using type = ::Enum::Scalar<Step_Uotori_RevivePlan>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CollectWood = murmurhash3::hash("CollectWood"), Revive = murmurhash3::hash("Revive"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Uotori_WhiteLineGame : Tag::Enum { using type = ::Enum::Scalar<Step_Uotori_WhiteLineGame>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_UpgradeOfPurahPad1 : Tag::Enum { using type = ::Enum::Scalar<Step_UpgradeOfPurahPad1>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), EventLightSpot = murmurhash3::hash("EventLightSpot"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_WantedCleaning : Tag::Enum { using type = ::Enum::Scalar<Step_WantedCleaning>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_WashedAwayBusinessTools : Tag::Enum { using type = ::Enum::Scalar<Step_WashedAwayBusinessTools>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_WaterBridgePlace : Tag::Enum { using type = ::Enum::Scalar<Step_WaterBridgePlace>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindDrefan = murmurhash3::hash("FindDrefan"), SearchKingScales = murmurhash3::hash("SearchKingScales"), SearchWaterBridge = murmurhash3::hash("SearchWaterBridge"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_WellCollection : Tag::Enum { using type = ::Enum::Scalar<Step_WellCollection>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_WhichIsStronger : Tag::Enum { using type = ::Enum::Scalar<Step_WhichIsStronger>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Step03 = murmurhash3::hash("Step03"), Step04 = murmurhash3::hash("Step04"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Zonau_GeniusWeapon : Tag::Enum { using type = ::Enum::Scalar<Step_Zonau_GeniusWeapon>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Exchange = murmurhash3::hash("Exchange"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ZonauReliefSearch : Tag::Enum { using type = ::Enum::Scalar<Step_ZonauReliefSearch>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Reach_KakarikoVillage = murmurhash3::hash("Reach_KakarikoVillage"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Zora_Enemy_hunt : Tag::Enum { using type = ::Enum::Scalar<Step_Zora_Enemy_hunt>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Zora_MessageBottle : Tag::Enum { using type = ::Enum::Scalar<Step_Zora_MessageBottle>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step0 = murmurhash3::hash("Step0"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_Zora_RuttaTreasure : Tag::Enum { using type = ::Enum::Scalar<Step_Zora_RuttaTreasure>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TreasureHunt = murmurhash3::hash("TreasureHunt"), Complete = murmurhash3::hash("Complete"), }; };
-	struct Step_ZoraStatue_Picture : Tag::Enum { using type = ::Enum::Scalar<Step_ZoraStatue_Picture>; enum enum_type : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TakePhoto = murmurhash3::hash("TakePhoto"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), }; };
+	struct Step_AisyaRescue : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step1a = murmurhash3::hash("Step1a"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_AmberCollector : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), SellAmbers = murmurhash3::hash("SellAmbers"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ArrowMeister_Momo : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), HaveWaterFruit = murmurhash3::hash("HaveWaterFruit"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_AssassinGerudoBase : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Enlist = murmurhash3::hash("Enlist"), Equip = murmurhash3::hash("Equip"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BallBring_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Basketball_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Retry = murmurhash3::hash("Retry"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Big_Rotate : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BirdManContest : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Game = murmurhash3::hash("Game"), Retire = murmurhash3::hash("Retire"), Result = murmurhash3::hash("Result"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BlindRuinsTreasure : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), LookAtBoard_1 = murmurhash3::hash("LookAtBoard_1"), Search_1 = murmurhash3::hash("Search_1"), GoToCave = murmurhash3::hash("GoToCave"), RewardNotReceived = murmurhash3::hash("RewardNotReceived"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BlindRuinsTreasure_Gerudo : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BlindRuinsTreasure_Goron : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BlindRuinsTreasure_Rito : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BlindRuinsTreasure_Zora : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BuildHouse : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Build = murmurhash3::hash("Build"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_BuildingMaterialsTutorial : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GiveBuildingMaterials = murmurhash3::hash("GiveBuildingMaterials"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryGoronKid1 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryGoronKid2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), ToStation = murmurhash3::hash("ToStation"), Carry = murmurhash3::hash("Carry"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryStone : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CarryStone = murmurhash3::hash("CarryStone"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine05 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine06 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine07 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine08_Zora : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine09 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine10 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine11 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine12 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine13 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine14 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine15 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine16 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine17 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine19 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine20 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine21 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine22 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CarryToShrine23 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CDungeon_AllDone : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), RewardAppeared = murmurhash3::hash("RewardAppeared"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Circuit_Desert : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), TimeUp = murmurhash3::hash("TimeUp"), Finish = murmurhash3::hash("Finish"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Circuit_FaronWoods_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Game = murmurhash3::hash("Game"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Circuit_Ichikara : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Circuit_Ichikara_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Playing = murmurhash3::hash("Playing"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Circuit_Uotori_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CleanStatue : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CleanUp = murmurhash3::hash("CleanUp"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ClueTotheSixthSage : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetTauro = murmurhash3::hash("MeetTauro"), RuinsChallenge = murmurhash3::hash("RuinsChallenge"), ZonauChallenge = murmurhash3::hash("ZonauChallenge"), UntilYouReport = murmurhash3::hash("UntilYouReport"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CollectObject_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CollectObject_MiniGame_Cliff : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CollectObject_MiniGame_LakeSide : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Connect_AkkareMaze : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Land = murmurhash3::hash("Land"), Land2 = murmurhash3::hash("Land2"), Sky = murmurhash3::hash("Sky"), Sky1st = murmurhash3::hash("Sky1st"), Sky2nd = murmurhash3::hash("Sky2nd"), Sky3rd = murmurhash3::hash("Sky3rd"), SkyAll = murmurhash3::hash("SkyAll"), Minus = murmurhash3::hash("Minus"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Connect_FirstIsland : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Sky = murmurhash3::hash("Sky"), Collect1st = murmurhash3::hash("Collect1st"), Collect2nd = murmurhash3::hash("Collect2nd"), Collect3rd = murmurhash3::hash("Collect3rd"), SkyGather = murmurhash3::hash("SkyGather"), Minus1st = murmurhash3::hash("Minus1st"), Minus2nd = murmurhash3::hash("Minus2nd"), Minus3rd = murmurhash3::hash("Minus3rd"), Minus4th = murmurhash3::hash("Minus4th"), Minus5th = murmurhash3::hash("Minus5th"), Minus6th = murmurhash3::hash("Minus6th"), MinusGather = murmurhash3::hash("MinusGather"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Connect_GerudoMaze : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Land = murmurhash3::hash("Land"), Land2 = murmurhash3::hash("Land2"), Sky = murmurhash3::hash("Sky"), Sky1st = murmurhash3::hash("Sky1st"), Sky2nd = murmurhash3::hash("Sky2nd"), Sky3rd = murmurhash3::hash("Sky3rd"), SkyAll = murmurhash3::hash("SkyAll"), Minus = murmurhash3::hash("Minus"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Connect_TabantaMaze : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Land = murmurhash3::hash("Land"), Land2 = murmurhash3::hash("Land2"), Sky = murmurhash3::hash("Sky"), Sky1st = murmurhash3::hash("Sky1st"), Sky2nd = murmurhash3::hash("Sky2nd"), Sky3rd = murmurhash3::hash("Sky3rd"), SkyAll = murmurhash3::hash("SkyAll"), Minus = murmurhash3::hash("Minus"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CookAtBaseCamp : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CraftShadowPicture : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_CreateArmor : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Createshinguard : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GatherItem = murmurhash3::hash("GatherItem"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DeepHoleSurvey2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), AfterInterview = murmurhash3::hash("AfterInterview"), Step01 = murmurhash3::hash("Step01"), Report = murmurhash3::hash("Report"), Buield = murmurhash3::hash("Buield"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DefeatGanondorf : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindWhereabouts = murmurhash3::hash("FindWhereabouts"), GoToDeepHole = murmurhash3::hash("GoToDeepHole"), DefeatMonsterArmy = murmurhash3::hash("DefeatMonsterArmy"), DefeatGanon1 = murmurhash3::hash("DefeatGanon1"), DefeatGanon2 = murmurhash3::hash("DefeatGanon2"), DefeatBlackDragon = murmurhash3::hash("DefeatBlackDragon"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DefeatHugeEnemy_1 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DefeatHugeEnemy_2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DefeatHugeEnemy_3 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DefeatHugeEnemy_4 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DefeatHugeEnemy_5 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DefeatHugeEnemy_6 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EventLightSpot = murmurhash3::hash("EventLightSpot"), Defeat = murmurhash3::hash("Defeat"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DevoteSpring : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_DividedSlate : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), RepairSlate = murmurhash3::hash("RepairSlate"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_EightHeroStatues : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_EightHeroStatues_After : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step1_GoRoom = murmurhash3::hash("Step1_GoRoom"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Step4 = murmurhash3::hash("Step4"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_EveryonesMeal : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ExcavateFossil1 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), LightPoint = murmurhash3::hash("LightPoint"), GoFossil = murmurhash3::hash("GoFossil"), Excavate = murmurhash3::hash("Excavate"), NextLightPoint = murmurhash3::hash("NextLightPoint"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ExcavateFossil2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoFossil = murmurhash3::hash("GoFossil"), Excavate = murmurhash3::hash("Excavate"), NextLightPoint = murmurhash3::hash("NextLightPoint"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ExcavateFossil3 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoFossil = murmurhash3::hash("GoFossil"), Excavate = murmurhash3::hash("Excavate"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Fairy2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), ReturnUmayado = murmurhash3::hash("ReturnUmayado"), CarryNPC = murmurhash3::hash("CarryNPC"), CarryNPC2 = murmurhash3::hash("CarryNPC2"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Fairy3 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), GoToOrchestra = murmurhash3::hash("GoToOrchestra"), Craft = murmurhash3::hash("Craft"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Fairy4 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), GoToOrchestra = murmurhash3::hash("GoToOrchestra"), CarryNPC = murmurhash3::hash("CarryNPC"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_FindDrefan : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindDrefan = murmurhash3::hash("FindDrefan"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_FindSunaNui : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), SetUp = murmurhash3::hash("SetUp"), Playing = murmurhash3::hash("Playing"), Result = murmurhash3::hash("Result"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_FindSunaNui2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Result = murmurhash3::hash("Result"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_FindWhiteHorse : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_FindWithSensors : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), TestSensor = murmurhash3::hash("TestSensor"), Find = murmurhash3::hash("Find"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_FirstskyislandReturns : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), ReturnReady = murmurhash3::hash("ReturnReady"), InGameWhenActiveTorchNumIs0 = murmurhash3::hash("InGameWhenActiveTorchNumIs0"), InGameWhenActiveTorchNumIs1 = murmurhash3::hash("InGameWhenActiveTorchNumIs1"), InGameWhenActiveTorchNumIs2 = murmurhash3::hash("InGameWhenActiveTorchNumIs2"), GameClear = murmurhash3::hash("GameClear"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_FullyRipenedFlintstones : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetFlintstones = murmurhash3::hash("GetFlintstones"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_gather_Insect_Z : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GeniusWeapon_Zora : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Genkos_Kitchen : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), HaveFish = murmurhash3::hash("HaveFish"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Gerudo_UrbosaWeapon : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GerudoCanyon_24hEnduranceComparison : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Prepare = murmurhash3::hash("Prepare"), Comparison = murmurhash3::hash("Comparison"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GerudoCanyon_Adventure : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GerudoCanyon_ColdEnduranceComparison : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Prepare = murmurhash3::hash("Prepare"), Comparison = murmurhash3::hash("Comparison"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GerudoCanyon_GleeokLiver : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GerudoCanyon_TumbleweedSweep : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GerudoDesertTreasure : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GetCamera : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GotoUnderground = murmurhash3::hash("GotoUnderground"), TakePicture = murmurhash3::hash("TakePicture"), ReturnBaseCamp = murmurhash3::hash("ReturnBaseCamp"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GetMasterSword : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Order = murmurhash3::hash("Order"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GetSensorPlus : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GetWalker : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GetWarpMarker : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EventLightSpot = murmurhash3::hash("EventLightSpot"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Step03 = murmurhash3::hash("Step03"), Step04 = murmurhash3::hash("Step04"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GiantHorse : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GoneSnowQueen : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step0 = murmurhash3::hash("Step0"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Goron_MiniGame_01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Retire = murmurhash3::hash("Retire"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Goron_MiniGame_02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Retire = murmurhash3::hash("Retire"), Finish = murmurhash3::hash("Finish"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Goron_MiniGame_03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Retire = murmurhash3::hash("Retire"), CourseOut = murmurhash3::hash("CourseOut"), Finish = murmurhash3::hash("Finish"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Goron_MiniGame_Tutorial_01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Retire = murmurhash3::hash("Retire"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Goron_MiniGame_Tutorial_02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), TimeOver = murmurhash3::hash("TimeOver"), Retire = murmurhash3::hash("Retire"), Finish = murmurhash3::hash("Finish"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Goron_MiniGame_Tutorial_03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Retire = murmurhash3::hash("Retire"), CourseOut = murmurhash3::hash("CourseOut"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GoronPond : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindThePond = murmurhash3::hash("FindThePond"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GoronReturntoNature : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindGraveyard = murmurhash3::hash("FindGraveyard"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GotoFironeZonauRemains : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), DecipherTheIithograph = murmurhash3::hash("DecipherTheIithograph"), EventLightSpot01 = murmurhash3::hash("EventLightSpot01"), EventLightSpot02 = murmurhash3::hash("EventLightSpot02"), ZonauRemains_ArriveObservatory = murmurhash3::hash("ZonauRemains_ArriveObservatory"), ZonauRemains_TalkResearcher = murmurhash3::hash("ZonauRemains_TalkResearcher"), ZonauRemains_AppearsSkyIsland = murmurhash3::hash("ZonauRemains_AppearsSkyIsland"), ZonauRemains_OpenedTheDoor = murmurhash3::hash("ZonauRemains_OpenedTheDoor"), ZonauRemains_TouchTheHead = murmurhash3::hash("ZonauRemains_TouchTheHead"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GOToTheCastleOfHyrule : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetPurah = murmurhash3::hash("MeetPurah"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_GroundPaintingAir01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoToWandererA = murmurhash3::hash("GoToWandererA"), GoToWandererB = murmurhash3::hash("GoToWandererB"), Carry = murmurhash3::hash("Carry"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hack_GuardGoods : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HammerGong_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_Cheese : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_CoolGuy : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Report = murmurhash3::hash("Report"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_FreshMilk : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_LetUsElection : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Ready1 = murmurhash3::hash("Ready1"), Ready2 = murmurhash3::hash("Ready2"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_NewCostume : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_NewSpecialty : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), ReChallenge = murmurhash3::hash("ReChallenge"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_RevitalizeByNewSpeciality : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_SecretLifeOfKusayoshi : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_SecretLifeOfSagono : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_TellMeTeacher01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TakeAPicture = murmurhash3::hash("TakeAPicture"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_TellMeTeacher02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_VillageMayorElection : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Step03 = murmurhash3::hash("Step03"), Step04 = murmurhash3::hash("Step04"), Step05 = murmurhash3::hash("Step05"), Step06 = murmurhash3::hash("Step06"), Step07 = murmurhash3::hash("Step07"), Step08 = murmurhash3::hash("Step08"), Step09 = murmurhash3::hash("Step09"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hateno_WhatToPlant : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Choice = murmurhash3::hash("Choice"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HatenoPurchasePicture : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Purchase = murmurhash3::hash("Purchase"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hebra_SkyRingChallenge : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Preparation = murmurhash3::hash("Preparation"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Hebra_SkyRingChallenge_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HorseInnChallenge001 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Repair = murmurhash3::hash("Repair"), Repair2 = murmurhash3::hash("Repair2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HorseInnChallenge002 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), step1 = murmurhash3::hash("step1"), Report = murmurhash3::hash("Report"), Report2 = murmurhash3::hash("Report2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HorseInnChallenge003 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CupsuleDrop = murmurhash3::hash("CupsuleDrop"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HorseInnChallenge005 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HorseInnChallenge007 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), AfterDefeat = murmurhash3::hash("AfterDefeat"), GetReward = murmurhash3::hash("GetReward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HotSpringEgg : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindHotSpring = murmurhash3::hash("FindHotSpring"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HourseInnChallenge004 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TryToDestroy = murmurhash3::hash("TryToDestroy"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HuntSalmon : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Report = murmurhash3::hash("Report"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_HyruleCastleIncident : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CastleSurvey = murmurhash3::hash("CastleSurvey"), ReturnBCAfterDefeatMonster = murmurhash3::hash("ReturnBCAfterDefeatMonster"), GoToCannon = murmurhash3::hash("GoToCannon"), UseTerminal = murmurhash3::hash("UseTerminal"), UseCannon = murmurhash3::hash("UseCannon"), ToLand = murmurhash3::hash("ToLand"), EventLightSpot = murmurhash3::hash("EventLightSpot"), EventLightSpot2 = murmurhash3::hash("EventLightSpot2"), EventLightSpot3 = murmurhash3::hash("EventLightSpot3"), EventLightSpot4 = murmurhash3::hash("EventLightSpot4"), EventLightSpot5 = murmurhash3::hash("EventLightSpot5"), UnderSurveyOfFourVillages = murmurhash3::hash("UnderSurveyOfFourVillages"), ResearchCastle = murmurhash3::hash("ResearchCastle"), DefeatBlackZelda = murmurhash3::hash("DefeatBlackZelda"), ReturnBCAfterBlackZelda = murmurhash3::hash("ReturnBCAfterBlackZelda"), UnderFindTheFifthSage = murmurhash3::hash("UnderFindTheFifthSage"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_IceMaking : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_IchikaraChallenge01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Research = murmurhash3::hash("Research"), Child_Talk = murmurhash3::hash("Child_Talk"), Quiz2 = murmurhash3::hash("Quiz2"), Cooking = murmurhash3::hash("Cooking"), GotoRopeway = murmurhash3::hash("GotoRopeway"), MammyReport = murmurhash3::hash("MammyReport"), PaPaTalk = murmurhash3::hash("PaPaTalk"), Memory = murmurhash3::hash("Memory"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_IchikaraChallenge03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_IchikaraCircuit_Tutorial : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Playing = murmurhash3::hash("Playing"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_IchikaraDaughterPhoto : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_IllnessStartsWithFeelings : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_InfiltrationFromTheSky : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_InnNeverReturns : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_JobSunazarashi : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Drive1 = murmurhash3::hash("Drive1"), Arrival = murmurhash3::hash("Arrival"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Know_FourStonePlates : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_KokkoGuidePost : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), step1 = murmurhash3::hash("step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Korok_CarryToShrine : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Carry = murmurhash3::hash("Carry"), Crystal = murmurhash3::hash("Crystal"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Lodge_Chemical001 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), DefeatAnEnemy = murmurhash3::hash("DefeatAnEnemy"), DefeatedEnemies = murmurhash3::hash("DefeatedEnemies"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_LookingForLightSpot : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoToLightSpotOfPurahPad = murmurhash3::hash("GoToLightSpotOfPurahPad"), GoBackToTempleEntrance = murmurhash3::hash("GoBackToTempleEntrance"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_LookingForTheVoiceLord : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Mack_SecretBase : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MainChallenge : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetZonauMajic = murmurhash3::hash("GetZonauMajic"), GoToAlterAfterGetRR = murmurhash3::hash("GoToAlterAfterGetRR"), WarpToCaveOfAwake = murmurhash3::hash("WarpToCaveOfAwake"), GoToBackToGolemInTemple = murmurhash3::hash("GoToBackToGolemInTemple"), GoToBackOfTempleOfTimeAfterWD = murmurhash3::hash("GoToBackOfTempleOfTimeAfterWD"), LookingForZelda = murmurhash3::hash("LookingForZelda"), GoToDeepHole = murmurhash3::hash("GoToDeepHole"), DefeatMonsterArmy = murmurhash3::hash("DefeatMonsterArmy"), DefeatGanon1 = murmurhash3::hash("DefeatGanon1"), DefeatGanon2 = murmurhash3::hash("DefeatGanon2"), DefeatBlackDragon = murmurhash3::hash("DefeatBlackDragon"), CatchZelda = murmurhash3::hash("CatchZelda"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MakeAChampionsWeapon_Goron : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MakeWeapon = murmurhash3::hash("MakeWeapon"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MakeChemicalWeapon : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MasterSwordClues : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TalkOldKorok = murmurhash3::hash("TalkOldKorok"), TalKDekuTree = murmurhash3::hash("TalKDekuTree"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MeatRock : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CarryARock = murmurhash3::hash("CarryARock"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MemoryOfTheDragon : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoTemple = murmurhash3::hash("GoTemple"), GoTemple2 = murmurhash3::hash("GoTemple2"), Step01 = murmurhash3::hash("Step01"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Mercenary_Akkare_Bloody : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Mercenary_Eldin_Bloody : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Mercenary_Firone_Bloody : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Mercenary_Hateru_Bloody : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Mercenary_Hebra_Bloody : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Mercenary_HyrulePlain_Bloody : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MercenaryChallenge_Akkare : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MercenaryChallenge_Eldin : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MercenaryChallenge_Firone : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MercenaryChallenge_Hateru : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MercenaryChallenge_Hebra : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MercenaryChallenge_HyrulePlain : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MessageBottle_SOS : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MessageBottle_SOS_01 = murmurhash3::hash("MessageBottle_SOS_01"), MessageBottle_SOS_02 = murmurhash3::hash("MessageBottle_SOS_02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MinusYiga : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeginBeforeHint = murmurhash3::hash("BeginBeforeHint"), Begin = murmurhash3::hash("Begin"), Again = murmurhash3::hash("Again"), Continue = murmurhash3::hash("Continue"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MonsterFigures01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MonsterFigures02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MonsterFigures03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MonsterFigures04 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MonsterFigures05 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Photo = murmurhash3::hash("Photo"), Display = murmurhash3::hash("Display"), Exhibition = murmurhash3::hash("Exhibition"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MushroomSisters_1 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MushroomSisters_2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_MushroomSisters_3 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Nazley_DigCave : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Dig = murmurhash3::hash("Dig"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Neck_IceWaterCave : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Defeat = murmurhash3::hash("Defeat"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_NewCanyonMissingPersonsCase : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step0 = murmurhash3::hash("Step0"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_NewsPaper_Mitsuba : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Tribune01 = murmurhash3::hash("Tribune01"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_NoTrespassing : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_NowInTheVillageOfLurelin : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Npc_BaseCamp_Assistant_ReactingStatue : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Npc_BaseCamp_Assistant_ReactingStatue2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Npc_BaseCamp_Assistant_ReactingStatue3 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Npc_BaseCamp_Assistant_ReactingStatue4 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_NushiShop_Challenge00 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindNushiShop = murmurhash3::hash("FindNushiShop"), HeardSpot = murmurhash3::hash("HeardSpot"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_NushiShop_Tutorial : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BringCaveMasterMedal = murmurhash3::hash("BringCaveMasterMedal"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_OldKorokHelp : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), STEP1 = murmurhash3::hash("STEP1"), STEP1_Basecamp = murmurhash3::hash("STEP1_Basecamp"), STEP1_Final = murmurhash3::hash("STEP1_Final"), STEP2 = murmurhash3::hash("STEP2"), STEP2_BaseCamp = murmurhash3::hash("STEP2_BaseCamp"), STEP2_Final = murmurhash3::hash("STEP2_Final"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Orchestra01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), AllMember = murmurhash3::hash("AllMember"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Orchestra02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Orchestra03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), step1 = murmurhash3::hash("step1"), step2 = murmurhash3::hash("step2"), step3 = murmurhash3::hash("step3"), step4 = murmurhash3::hash("step4"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Orchestra04 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Our_Treasure : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Parasail_ChuchuDesign : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_04 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_05 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_06 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_07 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_08 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_09 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_09_2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_10 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_11 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_12 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_13 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_PhotoSpot_Challenge_14 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Raise_GoddesStatue : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), ToGoal = murmurhash3::hash("ToGoal"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Raise_GoddesStatue_Courage : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CheckGoddesStatue = murmurhash3::hash("CheckGoddesStatue"), Report = murmurhash3::hash("Report"), Altarage = murmurhash3::hash("Altarage"), SolvePouch = murmurhash3::hash("SolvePouch"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Raise_GoddesStatue_Power : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CheckGoddesStatue = murmurhash3::hash("CheckGoddesStatue"), Report = murmurhash3::hash("Report"), Altarage = murmurhash3::hash("Altarage"), SolvePouch = murmurhash3::hash("SolvePouch"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Raise_GoddesStatue_Wisdom : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CheckGoddesStatue = murmurhash3::hash("CheckGoddesStatue"), Report = murmurhash3::hash("Report"), Altarage = murmurhash3::hash("Altarage"), SolvePouch = murmurhash3::hash("SolvePouch"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_RepairArmor : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), SubmitMaterial = murmurhash3::hash("SubmitMaterial"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_RescueHost : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_RescueVehicle01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_RescueWell : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Repair = murmurhash3::hash("Repair"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ResearchEldin : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), SolveAProblem = murmurhash3::hash("SolveAProblem"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ResearchLanayru : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CleanMessenger = murmurhash3::hash("CleanMessenger"), GetPresent = murmurhash3::hash("GetPresent"), GetPresent_Village = murmurhash3::hash("GetPresent_Village"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_RestaurantInTheWell : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MakeFood = murmurhash3::hash("MakeFood"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Rito_ItemExchange : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Rito_MedoArmor : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Rito_RevaliWeapon : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Rito_ShadowCave : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), GetHint = murmurhash3::hash("GetHint"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_RitoBridgeRepair : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SageOfFire : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Dream = murmurhash3::hash("Dream"), GoCrater = murmurhash3::hash("GoCrater"), DefeatBossMiddle = murmurhash3::hash("DefeatBossMiddle"), GoMinusField = murmurhash3::hash("GoMinusField"), GoEntranceDungeon = murmurhash3::hash("GoEntranceDungeon"), GoDungeon = murmurhash3::hash("GoDungeon"), Dungeon = murmurhash3::hash("Dungeon"), StartBossBattle = murmurhash3::hash("StartBossBattle"), DefeatBoss = murmurhash3::hash("DefeatBoss"), TouchSecretStone = murmurhash3::hash("TouchSecretStone"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SageOfGerudo : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Underground = murmurhash3::hash("Underground"), PracticeStart = murmurhash3::hash("PracticeStart"), PracticeEnd = murmurhash3::hash("PracticeEnd"), PreDefenseStart = murmurhash3::hash("PreDefenseStart"), PreDefenseEnd = murmurhash3::hash("PreDefenseEnd"), DefenseReady = murmurhash3::hash("DefenseReady"), DefenseStart = murmurhash3::hash("DefenseStart"), DefenseEnd = murmurhash3::hash("DefenseEnd"), DungeonSearch = murmurhash3::hash("DungeonSearch"), DungeonFind = murmurhash3::hash("DungeonFind"), DungeonStart = murmurhash3::hash("DungeonStart"), DungeonBossDead = murmurhash3::hash("DungeonBossDead"), DungeonEnd = murmurhash3::hash("DungeonEnd"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SageOfSky : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetZonauMajic = murmurhash3::hash("GetZonauMajic"), GoToAlterAfterGetRR = murmurhash3::hash("GoToAlterAfterGetRR"), WarpToCaveOfAwake = murmurhash3::hash("WarpToCaveOfAwake"), GoToBackToGolemInTemple = murmurhash3::hash("GoToBackToGolemInTemple"), GoToBackOfTempleOfTimeAfterWD = murmurhash3::hash("GoToBackOfTempleOfTimeAfterWD"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SageOfSoul : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CarryHead_CheckPoint01 = murmurhash3::hash("CarryHead_CheckPoint01"), CarryHead_CheckPoint02 = murmurhash3::hash("CarryHead_CheckPoint02"), CarryHead_CheckPoint04 = murmurhash3::hash("CarryHead_CheckPoint04"), Collected_AllParts = murmurhash3::hash("Collected_AllParts"), GolemAppearance = murmurhash3::hash("GolemAppearance"), LightSpotOn = murmurhash3::hash("LightSpotOn"), Dungeon_DuringDungeonCapture = murmurhash3::hash("Dungeon_DuringDungeonCapture"), Dungeon_Entrance = murmurhash3::hash("Dungeon_Entrance"), Dungeon_BeforeBossBattle = murmurhash3::hash("Dungeon_BeforeBossBattle"), Dungeon_DefeatedBoss = murmurhash3::hash("Dungeon_DefeatedBoss"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SageOfWind : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MountainHut = murmurhash3::hash("MountainHut"), GoToCave = murmurhash3::hash("GoToCave"), FoundTulin = murmurhash3::hash("FoundTulin"), IpponSugi = murmurhash3::hash("IpponSugi"), GetBack = murmurhash3::hash("GetBack"), DefeatEnemy = murmurhash3::hash("DefeatEnemy"), GoToHebra = murmurhash3::hash("GoToHebra"), GoDungeon = murmurhash3::hash("GoDungeon"), CheckTerminal = murmurhash3::hash("CheckTerminal"), DungeonStart = murmurhash3::hash("DungeonStart"), BossBattle = murmurhash3::hash("BossBattle"), DefeatBoss = murmurhash3::hash("DefeatBoss"), TouchSecretStone = murmurhash3::hash("TouchSecretStone"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SageOfZora : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetParkShido = murmurhash3::hash("MeetParkShido"), ResearchZora = murmurhash3::hash("ResearchZora"), InterimReportToShido = murmurhash3::hash("InterimReportToShido"), InterimReportToShido_Ex = murmurhash3::hash("InterimReportToShido_Ex"), FindWaterBridge = murmurhash3::hash("FindWaterBridge"), ReportToParkShido = murmurhash3::hash("ReportToParkShido"), DefeatLakeBoss = murmurhash3::hash("DefeatLakeBoss"), GoToLakeShido = murmurhash3::hash("GoToLakeShido"), GoToUnderLake = murmurhash3::hash("GoToUnderLake"), SearchRemains = murmurhash3::hash("SearchRemains"), GoToBeforeDungeon = murmurhash3::hash("GoToBeforeDungeon"), GoToBeforeDungeon_00 = murmurhash3::hash("GoToBeforeDungeon_00"), GoToDungeonStart = murmurhash3::hash("GoToDungeonStart"), TryOneTank = murmurhash3::hash("TryOneTank"), GoToBossArea = murmurhash3::hash("GoToBossArea"), DefeatBoss = murmurhash3::hash("DefeatBoss"), TouchSecretStone = murmurhash3::hash("TouchSecretStone"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SaihateSubjugation : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Step4 = murmurhash3::hash("Step4"), Step5 = murmurhash3::hash("Step5"), Step6 = murmurhash3::hash("Step6"), Step7 = murmurhash3::hash("Step7"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SearchCaravan : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step1a = murmurhash3::hash("Step1a"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SecretBase_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Retry = murmurhash3::hash("Retry"), Play = murmurhash3::hash("Play"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ShieldSurfing_MiniGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SkyIsland_MiniGame_01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EasyGamePlaying = murmurhash3::hash("EasyGamePlaying"), HardGamePlaying = murmurhash3::hash("HardGamePlaying"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SkyIsland_MiniGame_02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EasyGamePlaying = murmurhash3::hash("EasyGamePlaying"), HardGamePlaying = murmurhash3::hash("HardGamePlaying"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SkyIsland_MiniGame_03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EasyGamePlaying = murmurhash3::hash("EasyGamePlaying"), HardGamePlaying = murmurhash3::hash("HardGamePlaying"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SnowyMountain_Surfing : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_StatueDevilTutorial : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetBackContainer = murmurhash3::hash("GetBackContainer"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_SurveyOfFourVillages : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), EventLightSpot1 = murmurhash3::hash("EventLightSpot1"), EventLightSpot2 = murmurhash3::hash("EventLightSpot2"), EventLightSpot3 = murmurhash3::hash("EventLightSpot3"), EventLightSpot4 = murmurhash3::hash("EventLightSpot4"), EventLightSpot5 = murmurhash3::hash("EventLightSpot5"), _1stSageClear = murmurhash3::hash("1stSageClear"), _2ndSageClear = murmurhash3::hash("2ndSageClear"), _3rdSageClear = murmurhash3::hash("3rdSageClear"), _4thSageClear = murmurhash3::hash("4thSageClear"), ReturnBCAfter4Sage = murmurhash3::hash("ReturnBCAfter4Sage"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TakeAnimals : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TakeOfIce : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TauraChallenge001 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TheStrongestWeapon : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureHunt_kokiri : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureOfLambda : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), OpenTreasure = murmurhash3::hash("OpenTreasure"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureOfLamda_Dream : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureOfLamda_Dream2 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureOfLamda_Dream3 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureOfLamda_DuelPeak : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureOfLamda_FierceDeity : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetOneTreaure = murmurhash3::hash("GetOneTreaure"), GetTwoTreasure = murmurhash3::hash("GetTwoTreasure"), GetThreeTreasure = murmurhash3::hash("GetThreeTreasure"), GetSword = murmurhash3::hash("GetSword"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureOfLamda_Gerudo : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_TreasureOfLamda_Pirate : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetTreasure = murmurhash3::hash("GetTreasure"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune01 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune02 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Escape = murmurhash3::hash("Escape"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune03 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Hearing = murmurhash3::hash("Hearing"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune04 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune05 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Carry = murmurhash3::hash("Carry"), Carry2 = murmurhash3::hash("Carry2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune06 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune07 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), step1 = murmurhash3::hash("step1"), step2 = murmurhash3::hash("step2"), step4 = murmurhash3::hash("step4"), step5 = murmurhash3::hash("step5"), step6 = murmurhash3::hash("step6"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune09 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), HorseTake = murmurhash3::hash("HorseTake"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune10 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TalkKokkko = murmurhash3::hash("TalkKokkko"), FirstOracle = murmurhash3::hash("FirstOracle"), TimeOverFirst = murmurhash3::hash("TimeOverFirst"), ClearFirst = murmurhash3::hash("ClearFirst"), FinishFirstTrial = murmurhash3::hash("FinishFirstTrial"), SecondOracle = murmurhash3::hash("SecondOracle"), TimeOverSecond = murmurhash3::hash("TimeOverSecond"), ClearSecond = murmurhash3::hash("ClearSecond"), Battle = murmurhash3::hash("Battle"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune11 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Step4 = murmurhash3::hash("Step4"), Step5 = murmurhash3::hash("Step5"), Step6 = murmurhash3::hash("Step6"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune13 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Chase = murmurhash3::hash("Chase"), Discovery = murmurhash3::hash("Discovery"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune14 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Tribune16 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Arrival = murmurhash3::hash("Arrival"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Uotori_BreakthePirateBase : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Uotori_Designer : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Uotori_ResortPlan : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Contact = murmurhash3::hash("Contact"), Challenge = murmurhash3::hash("Challenge"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Uotori_RevivePlan : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), CollectWood = murmurhash3::hash("CollectWood"), Revive = murmurhash3::hash("Revive"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Uotori_WhiteLineGame : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_UpgradeOfPurahPad1 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), EventLightSpot = murmurhash3::hash("EventLightSpot"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_WantedCleaning : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_WashedAwayBusinessTools : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_WaterBridgePlace : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindDrefan = murmurhash3::hash("FindDrefan"), SearchKingScales = murmurhash3::hash("SearchKingScales"), SearchWaterBridge = murmurhash3::hash("SearchWaterBridge"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_WellCollection : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_WhichIsStronger : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Step03 = murmurhash3::hash("Step03"), Step04 = murmurhash3::hash("Step04"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Zonau_GeniusWeapon : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Exchange = murmurhash3::hash("Exchange"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ZonauReliefSearch : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Reach_KakarikoVillage = murmurhash3::hash("Reach_KakarikoVillage"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Zora_Enemy_hunt : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Zora_MessageBottle : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step0 = murmurhash3::hash("Step0"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_Zora_RuttaTreasure : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TreasureHunt = murmurhash3::hash("TreasureHunt"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct Step_ZoraStatue_Picture : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TakePhoto = murmurhash3::hash("TakePhoto"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), }; };
+		using type = enum_t<values_t>;
+	};
 	struct AmiiboData;
 	struct BowStand;
 	struct ShieldStand;
@@ -468,304 +1350,304 @@ template <> struct Data::Structure<GameData> : GameData {
 	Structure<DungeonState> DungeonState;
 	Structure<KeyCrystalDungeonState> KeyCrystalDungeonState;
 	Structure<KorokCarryProgress> KorokCarryProgress;
-	Data::Member<LastTalkedOrchestraMemberStableHostel> LastTalkedOrchestraMemberStableHostel;
+	Data::Enum<LastTalkedOrchestraMemberStableHostel> LastTalkedOrchestraMemberStableHostel;
 	Structure<LastWildHorse> LastWildHorse;
 	Structure<MaterialShortCut> MaterialShortCut;
 	Structure<PictureBookData> PictureBookData;
-	Data::Member<SensorMode> SensorMode;
+	Data::Enum<SensorMode> SensorMode;
 	Structure<SortPattern> SortPattern;
-	Data::Member<Step_AisyaRescue> Step_AisyaRescue;
-	Data::Member<Step_AmberCollector> Step_AmberCollector;
-	Data::Member<Step_ArrowMeister_Momo> Step_ArrowMeister_Momo;
-	Data::Member<Step_AssassinGerudoBase> Step_AssassinGerudoBase;
-	Data::Member<Step_BallBring_MiniGame> Step_BallBring_MiniGame;
-	Data::Member<Step_Basketball_MiniGame> Step_Basketball_MiniGame;
-	Data::Member<Step_Big_Rotate> Step_Big_Rotate;
-	Data::Member<Step_BirdManContest> Step_BirdManContest;
-	Data::Member<Step_BlindRuinsTreasure> Step_BlindRuinsTreasure;
-	Data::Member<Step_BlindRuinsTreasure_Gerudo> Step_BlindRuinsTreasure_Gerudo;
-	Data::Member<Step_BlindRuinsTreasure_Goron> Step_BlindRuinsTreasure_Goron;
-	Data::Member<Step_BlindRuinsTreasure_Rito> Step_BlindRuinsTreasure_Rito;
-	Data::Member<Step_BlindRuinsTreasure_Zora> Step_BlindRuinsTreasure_Zora;
-	Data::Member<Step_BuildHouse> Step_BuildHouse;
-	Data::Member<Step_BuildingMaterialsTutorial> Step_BuildingMaterialsTutorial;
-	Data::Member<Step_CarryGoronKid1> Step_CarryGoronKid1;
-	Data::Member<Step_CarryGoronKid2> Step_CarryGoronKid2;
-	Data::Member<Step_CarryStone> Step_CarryStone;
-	Data::Member<Step_CarryToShrine01> Step_CarryToShrine01;
-	Data::Member<Step_CarryToShrine02> Step_CarryToShrine02;
-	Data::Member<Step_CarryToShrine03> Step_CarryToShrine03;
-	Data::Member<Step_CarryToShrine05> Step_CarryToShrine05;
-	Data::Member<Step_CarryToShrine06> Step_CarryToShrine06;
-	Data::Member<Step_CarryToShrine07> Step_CarryToShrine07;
-	Data::Member<Step_CarryToShrine08_Zora> Step_CarryToShrine08_Zora;
-	Data::Member<Step_CarryToShrine09> Step_CarryToShrine09;
-	Data::Member<Step_CarryToShrine10> Step_CarryToShrine10;
-	Data::Member<Step_CarryToShrine11> Step_CarryToShrine11;
-	Data::Member<Step_CarryToShrine12> Step_CarryToShrine12;
-	Data::Member<Step_CarryToShrine13> Step_CarryToShrine13;
-	Data::Member<Step_CarryToShrine14> Step_CarryToShrine14;
-	Data::Member<Step_CarryToShrine15> Step_CarryToShrine15;
-	Data::Member<Step_CarryToShrine16> Step_CarryToShrine16;
-	Data::Member<Step_CarryToShrine17> Step_CarryToShrine17;
-	Data::Member<Step_CarryToShrine19> Step_CarryToShrine19;
-	Data::Member<Step_CarryToShrine20> Step_CarryToShrine20;
-	Data::Member<Step_CarryToShrine21> Step_CarryToShrine21;
-	Data::Member<Step_CarryToShrine22> Step_CarryToShrine22;
-	Data::Member<Step_CarryToShrine23> Step_CarryToShrine23;
-	Data::Member<Step_CDungeon_AllDone> Step_CDungeon_AllDone;
-	Data::Member<Step_Circuit_Desert> Step_Circuit_Desert;
-	Data::Member<Step_Circuit_FaronWoods_MiniGame> Step_Circuit_FaronWoods_MiniGame;
-	Data::Member<Step_Circuit_Ichikara> Step_Circuit_Ichikara;
-	Data::Member<Step_Circuit_Ichikara_MiniGame> Step_Circuit_Ichikara_MiniGame;
-	Data::Member<Step_Circuit_Uotori_MiniGame> Step_Circuit_Uotori_MiniGame;
-	Data::Member<Step_CleanStatue> Step_CleanStatue;
-	Data::Member<Step_ClueTotheSixthSage> Step_ClueTotheSixthSage;
-	Data::Member<Step_CollectObject_MiniGame> Step_CollectObject_MiniGame;
-	Data::Member<Step_CollectObject_MiniGame_Cliff> Step_CollectObject_MiniGame_Cliff;
-	Data::Member<Step_CollectObject_MiniGame_LakeSide> Step_CollectObject_MiniGame_LakeSide;
-	Data::Member<Step_Connect_AkkareMaze> Step_Connect_AkkareMaze;
-	Data::Member<Step_Connect_FirstIsland> Step_Connect_FirstIsland;
-	Data::Member<Step_Connect_GerudoMaze> Step_Connect_GerudoMaze;
-	Data::Member<Step_Connect_TabantaMaze> Step_Connect_TabantaMaze;
-	Data::Member<Step_CookAtBaseCamp> Step_CookAtBaseCamp;
-	Data::Member<Step_CraftShadowPicture> Step_CraftShadowPicture;
-	Data::Member<Step_CreateArmor> Step_CreateArmor;
-	Data::Member<Step_Createshinguard> Step_Createshinguard;
-	Data::Member<Step_DeepHoleSurvey2> Step_DeepHoleSurvey2;
-	Data::Member<Step_DefeatGanondorf> Step_DefeatGanondorf;
-	Data::Member<Step_DefeatHugeEnemy_1> Step_DefeatHugeEnemy_1;
-	Data::Member<Step_DefeatHugeEnemy_2> Step_DefeatHugeEnemy_2;
-	Data::Member<Step_DefeatHugeEnemy_3> Step_DefeatHugeEnemy_3;
-	Data::Member<Step_DefeatHugeEnemy_4> Step_DefeatHugeEnemy_4;
-	Data::Member<Step_DefeatHugeEnemy_5> Step_DefeatHugeEnemy_5;
-	Data::Member<Step_DefeatHugeEnemy_6> Step_DefeatHugeEnemy_6;
-	Data::Member<Step_DevoteSpring> Step_DevoteSpring;
-	Data::Member<Step_DividedSlate> Step_DividedSlate;
-	Data::Member<Step_EightHeroStatues> Step_EightHeroStatues;
-	Data::Member<Step_EightHeroStatues_After> Step_EightHeroStatues_After;
-	Data::Member<Step_EveryonesMeal> Step_EveryonesMeal;
-	Data::Member<Step_ExcavateFossil1> Step_ExcavateFossil1;
-	Data::Member<Step_ExcavateFossil2> Step_ExcavateFossil2;
-	Data::Member<Step_ExcavateFossil3> Step_ExcavateFossil3;
-	Data::Member<Step_Fairy2> Step_Fairy2;
-	Data::Member<Step_Fairy3> Step_Fairy3;
-	Data::Member<Step_Fairy4> Step_Fairy4;
-	Data::Member<Step_FindDrefan> Step_FindDrefan;
-	Data::Member<Step_FindSunaNui> Step_FindSunaNui;
-	Data::Member<Step_FindSunaNui2> Step_FindSunaNui2;
-	Data::Member<Step_FindWhiteHorse> Step_FindWhiteHorse;
-	Data::Member<Step_FindWithSensors> Step_FindWithSensors;
-	Data::Member<Step_FirstskyislandReturns> Step_FirstskyislandReturns;
-	Data::Member<Step_FullyRipenedFlintstones> Step_FullyRipenedFlintstones;
-	Data::Member<Step_gather_Insect_Z> Step_gather_Insect_Z;
-	Data::Member<Step_GeniusWeapon_Zora> Step_GeniusWeapon_Zora;
-	Data::Member<Step_Genkos_Kitchen> Step_Genkos_Kitchen;
-	Data::Member<Step_Gerudo_UrbosaWeapon> Step_Gerudo_UrbosaWeapon;
-	Data::Member<Step_GerudoCanyon_24hEnduranceComparison> Step_GerudoCanyon_24hEnduranceComparison;
-	Data::Member<Step_GerudoCanyon_Adventure> Step_GerudoCanyon_Adventure;
-	Data::Member<Step_GerudoCanyon_ColdEnduranceComparison> Step_GerudoCanyon_ColdEnduranceComparison;
-	Data::Member<Step_GerudoCanyon_GleeokLiver> Step_GerudoCanyon_GleeokLiver;
-	Data::Member<Step_GerudoCanyon_TumbleweedSweep> Step_GerudoCanyon_TumbleweedSweep;
-	Data::Member<Step_GerudoDesertTreasure> Step_GerudoDesertTreasure;
-	Data::Member<Step_GetCamera> Step_GetCamera;
-	Data::Member<Step_GetMasterSword> Step_GetMasterSword;
-	Data::Member<Step_GetSensorPlus> Step_GetSensorPlus;
-	Data::Member<Step_GetWalker> Step_GetWalker;
-	Data::Member<Step_GetWarpMarker> Step_GetWarpMarker;
-	Data::Member<Step_GiantHorse> Step_GiantHorse;
-	Data::Member<Step_GoneSnowQueen> Step_GoneSnowQueen;
-	Data::Member<Step_Goron_MiniGame_01> Step_Goron_MiniGame_01;
-	Data::Member<Step_Goron_MiniGame_02> Step_Goron_MiniGame_02;
-	Data::Member<Step_Goron_MiniGame_03> Step_Goron_MiniGame_03;
-	Data::Member<Step_Goron_MiniGame_Tutorial_01> Step_Goron_MiniGame_Tutorial_01;
-	Data::Member<Step_Goron_MiniGame_Tutorial_02> Step_Goron_MiniGame_Tutorial_02;
-	Data::Member<Step_Goron_MiniGame_Tutorial_03> Step_Goron_MiniGame_Tutorial_03;
-	Data::Member<Step_GoronPond> Step_GoronPond;
-	Data::Member<Step_GoronReturntoNature> Step_GoronReturntoNature;
-	Data::Member<Step_GotoFironeZonauRemains> Step_GotoFironeZonauRemains;
-	Data::Member<Step_GOToTheCastleOfHyrule> Step_GOToTheCastleOfHyrule;
-	Data::Member<Step_GroundPaintingAir01> Step_GroundPaintingAir01;
-	Data::Member<Step_Hack_GuardGoods> Step_Hack_GuardGoods;
-	Data::Member<Step_HammerGong_MiniGame> Step_HammerGong_MiniGame;
-	Data::Member<Step_Hateno_Cheese> Step_Hateno_Cheese;
-	Data::Member<Step_Hateno_CoolGuy> Step_Hateno_CoolGuy;
-	Data::Member<Step_Hateno_FreshMilk> Step_Hateno_FreshMilk;
-	Data::Member<Step_Hateno_LetUsElection> Step_Hateno_LetUsElection;
-	Data::Member<Step_Hateno_NewCostume> Step_Hateno_NewCostume;
-	Data::Member<Step_Hateno_NewSpecialty> Step_Hateno_NewSpecialty;
-	Data::Member<Step_Hateno_RevitalizeByNewSpeciality> Step_Hateno_RevitalizeByNewSpeciality;
-	Data::Member<Step_Hateno_SecretLifeOfKusayoshi> Step_Hateno_SecretLifeOfKusayoshi;
-	Data::Member<Step_Hateno_SecretLifeOfSagono> Step_Hateno_SecretLifeOfSagono;
-	Data::Member<Step_Hateno_TellMeTeacher01> Step_Hateno_TellMeTeacher01;
-	Data::Member<Step_Hateno_TellMeTeacher02> Step_Hateno_TellMeTeacher02;
-	Data::Member<Step_Hateno_VillageMayorElection> Step_Hateno_VillageMayorElection;
-	Data::Member<Step_Hateno_WhatToPlant> Step_Hateno_WhatToPlant;
-	Data::Member<Step_HatenoPurchasePicture> Step_HatenoPurchasePicture;
-	Data::Member<Step_Hebra_SkyRingChallenge> Step_Hebra_SkyRingChallenge;
-	Data::Member<Step_Hebra_SkyRingChallenge_MiniGame> Step_Hebra_SkyRingChallenge_MiniGame;
-	Data::Member<Step_HorseInnChallenge001> Step_HorseInnChallenge001;
-	Data::Member<Step_HorseInnChallenge002> Step_HorseInnChallenge002;
-	Data::Member<Step_HorseInnChallenge003> Step_HorseInnChallenge003;
-	Data::Member<Step_HorseInnChallenge005> Step_HorseInnChallenge005;
-	Data::Member<Step_HorseInnChallenge007> Step_HorseInnChallenge007;
-	Data::Member<Step_HotSpringEgg> Step_HotSpringEgg;
-	Data::Member<Step_HourseInnChallenge004> Step_HourseInnChallenge004;
-	Data::Member<Step_HuntSalmon> Step_HuntSalmon;
-	Data::Member<Step_HyruleCastleIncident> Step_HyruleCastleIncident;
-	Data::Member<Step_IceMaking> Step_IceMaking;
-	Data::Member<Step_IchikaraChallenge01> Step_IchikaraChallenge01;
-	Data::Member<Step_IchikaraChallenge03> Step_IchikaraChallenge03;
-	Data::Member<Step_IchikaraCircuit_Tutorial> Step_IchikaraCircuit_Tutorial;
-	Data::Member<Step_IchikaraDaughterPhoto> Step_IchikaraDaughterPhoto;
-	Data::Member<Step_IllnessStartsWithFeelings> Step_IllnessStartsWithFeelings;
-	Data::Member<Step_InfiltrationFromTheSky> Step_InfiltrationFromTheSky;
-	Data::Member<Step_InnNeverReturns> Step_InnNeverReturns;
-	Data::Member<Step_JobSunazarashi> Step_JobSunazarashi;
-	Data::Member<Step_Know_FourStonePlates> Step_Know_FourStonePlates;
-	Data::Member<Step_KokkoGuidePost> Step_KokkoGuidePost;
-	Data::Member<Step_Korok_CarryToShrine> Step_Korok_CarryToShrine;
-	Data::Member<Step_Lodge_Chemical001> Step_Lodge_Chemical001;
-	Data::Member<Step_LookingForLightSpot> Step_LookingForLightSpot;
-	Data::Member<Step_LookingForTheVoiceLord> Step_LookingForTheVoiceLord;
-	Data::Member<Step_Mack_SecretBase> Step_Mack_SecretBase;
-	Data::Member<Step_MainChallenge> Step_MainChallenge;
-	Data::Member<Step_MakeAChampionsWeapon_Goron> Step_MakeAChampionsWeapon_Goron;
-	Data::Member<Step_MakeChemicalWeapon> Step_MakeChemicalWeapon;
-	Data::Member<Step_MasterSwordClues> Step_MasterSwordClues;
-	Data::Member<Step_MeatRock> Step_MeatRock;
-	Data::Member<Step_MemoryOfTheDragon> Step_MemoryOfTheDragon;
-	Data::Member<Step_Mercenary_Akkare_Bloody> Step_Mercenary_Akkare_Bloody;
-	Data::Member<Step_Mercenary_Eldin_Bloody> Step_Mercenary_Eldin_Bloody;
-	Data::Member<Step_Mercenary_Firone_Bloody> Step_Mercenary_Firone_Bloody;
-	Data::Member<Step_Mercenary_Hateru_Bloody> Step_Mercenary_Hateru_Bloody;
-	Data::Member<Step_Mercenary_Hebra_Bloody> Step_Mercenary_Hebra_Bloody;
-	Data::Member<Step_Mercenary_HyrulePlain_Bloody> Step_Mercenary_HyrulePlain_Bloody;
-	Data::Member<Step_MercenaryChallenge_Akkare> Step_MercenaryChallenge_Akkare;
-	Data::Member<Step_MercenaryChallenge_Eldin> Step_MercenaryChallenge_Eldin;
-	Data::Member<Step_MercenaryChallenge_Firone> Step_MercenaryChallenge_Firone;
-	Data::Member<Step_MercenaryChallenge_Hateru> Step_MercenaryChallenge_Hateru;
-	Data::Member<Step_MercenaryChallenge_Hebra> Step_MercenaryChallenge_Hebra;
-	Data::Member<Step_MercenaryChallenge_HyrulePlain> Step_MercenaryChallenge_HyrulePlain;
-	Data::Member<Step_MessageBottle_SOS> Step_MessageBottle_SOS;
-	Data::Member<Step_MinusYiga> Step_MinusYiga;
-	Data::Member<Step_MonsterFigures01> Step_MonsterFigures01;
-	Data::Member<Step_MonsterFigures02> Step_MonsterFigures02;
-	Data::Member<Step_MonsterFigures03> Step_MonsterFigures03;
-	Data::Member<Step_MonsterFigures04> Step_MonsterFigures04;
-	Data::Member<Step_MonsterFigures05> Step_MonsterFigures05;
-	Data::Member<Step_MushroomSisters_1> Step_MushroomSisters_1;
-	Data::Member<Step_MushroomSisters_2> Step_MushroomSisters_2;
-	Data::Member<Step_MushroomSisters_3> Step_MushroomSisters_3;
-	Data::Member<Step_Nazley_DigCave> Step_Nazley_DigCave;
-	Data::Member<Step_Neck_IceWaterCave> Step_Neck_IceWaterCave;
-	Data::Member<Step_NewCanyonMissingPersonsCase> Step_NewCanyonMissingPersonsCase;
-	Data::Member<Step_NewsPaper_Mitsuba> Step_NewsPaper_Mitsuba;
-	Data::Member<Step_NoTrespassing> Step_NoTrespassing;
-	Data::Member<Step_NowInTheVillageOfLurelin> Step_NowInTheVillageOfLurelin;
-	Data::Member<Step_Npc_BaseCamp_Assistant_ReactingStatue> Step_Npc_BaseCamp_Assistant_ReactingStatue;
-	Data::Member<Step_Npc_BaseCamp_Assistant_ReactingStatue2> Step_Npc_BaseCamp_Assistant_ReactingStatue2;
-	Data::Member<Step_Npc_BaseCamp_Assistant_ReactingStatue3> Step_Npc_BaseCamp_Assistant_ReactingStatue3;
-	Data::Member<Step_Npc_BaseCamp_Assistant_ReactingStatue4> Step_Npc_BaseCamp_Assistant_ReactingStatue4;
-	Data::Member<Step_NushiShop_Challenge00> Step_NushiShop_Challenge00;
-	Data::Member<Step_NushiShop_Tutorial> Step_NushiShop_Tutorial;
-	Data::Member<Step_OldKorokHelp> Step_OldKorokHelp;
-	Data::Member<Step_Orchestra01> Step_Orchestra01;
-	Data::Member<Step_Orchestra02> Step_Orchestra02;
-	Data::Member<Step_Orchestra03> Step_Orchestra03;
-	Data::Member<Step_Orchestra04> Step_Orchestra04;
-	Data::Member<Step_Our_Treasure> Step_Our_Treasure;
-	Data::Member<Step_Parasail_ChuchuDesign> Step_Parasail_ChuchuDesign;
-	Data::Member<Step_PhotoSpot_Challenge_01> Step_PhotoSpot_Challenge_01;
-	Data::Member<Step_PhotoSpot_Challenge_02> Step_PhotoSpot_Challenge_02;
-	Data::Member<Step_PhotoSpot_Challenge_03> Step_PhotoSpot_Challenge_03;
-	Data::Member<Step_PhotoSpot_Challenge_04> Step_PhotoSpot_Challenge_04;
-	Data::Member<Step_PhotoSpot_Challenge_05> Step_PhotoSpot_Challenge_05;
-	Data::Member<Step_PhotoSpot_Challenge_06> Step_PhotoSpot_Challenge_06;
-	Data::Member<Step_PhotoSpot_Challenge_07> Step_PhotoSpot_Challenge_07;
-	Data::Member<Step_PhotoSpot_Challenge_08> Step_PhotoSpot_Challenge_08;
-	Data::Member<Step_PhotoSpot_Challenge_09> Step_PhotoSpot_Challenge_09;
-	Data::Member<Step_PhotoSpot_Challenge_09_2> Step_PhotoSpot_Challenge_09_2;
-	Data::Member<Step_PhotoSpot_Challenge_10> Step_PhotoSpot_Challenge_10;
-	Data::Member<Step_PhotoSpot_Challenge_11> Step_PhotoSpot_Challenge_11;
-	Data::Member<Step_PhotoSpot_Challenge_12> Step_PhotoSpot_Challenge_12;
-	Data::Member<Step_PhotoSpot_Challenge_13> Step_PhotoSpot_Challenge_13;
-	Data::Member<Step_PhotoSpot_Challenge_14> Step_PhotoSpot_Challenge_14;
-	Data::Member<Step_Raise_GoddesStatue> Step_Raise_GoddesStatue;
-	Data::Member<Step_Raise_GoddesStatue_Courage> Step_Raise_GoddesStatue_Courage;
-	Data::Member<Step_Raise_GoddesStatue_Power> Step_Raise_GoddesStatue_Power;
-	Data::Member<Step_Raise_GoddesStatue_Wisdom> Step_Raise_GoddesStatue_Wisdom;
-	Data::Member<Step_RepairArmor> Step_RepairArmor;
-	Data::Member<Step_RescueHost> Step_RescueHost;
-	Data::Member<Step_RescueVehicle01> Step_RescueVehicle01;
-	Data::Member<Step_RescueWell> Step_RescueWell;
-	Data::Member<Step_ResearchEldin> Step_ResearchEldin;
-	Data::Member<Step_ResearchLanayru> Step_ResearchLanayru;
-	Data::Member<Step_RestaurantInTheWell> Step_RestaurantInTheWell;
-	Data::Member<Step_Rito_ItemExchange> Step_Rito_ItemExchange;
-	Data::Member<Step_Rito_MedoArmor> Step_Rito_MedoArmor;
-	Data::Member<Step_Rito_RevaliWeapon> Step_Rito_RevaliWeapon;
-	Data::Member<Step_Rito_ShadowCave> Step_Rito_ShadowCave;
-	Data::Member<Step_RitoBridgeRepair> Step_RitoBridgeRepair;
-	Data::Member<Step_SageOfFire> Step_SageOfFire;
-	Data::Member<Step_SageOfGerudo> Step_SageOfGerudo;
-	Data::Member<Step_SageOfSky> Step_SageOfSky;
-	Data::Member<Step_SageOfSoul> Step_SageOfSoul;
-	Data::Member<Step_SageOfWind> Step_SageOfWind;
-	Data::Member<Step_SageOfZora> Step_SageOfZora;
-	Data::Member<Step_SaihateSubjugation> Step_SaihateSubjugation;
-	Data::Member<Step_SearchCaravan> Step_SearchCaravan;
-	Data::Member<Step_SecretBase_MiniGame> Step_SecretBase_MiniGame;
-	Data::Member<Step_ShieldSurfing_MiniGame> Step_ShieldSurfing_MiniGame;
-	Data::Member<Step_SkyIsland_MiniGame_01> Step_SkyIsland_MiniGame_01;
-	Data::Member<Step_SkyIsland_MiniGame_02> Step_SkyIsland_MiniGame_02;
-	Data::Member<Step_SkyIsland_MiniGame_03> Step_SkyIsland_MiniGame_03;
-	Data::Member<Step_SnowyMountain_Surfing> Step_SnowyMountain_Surfing;
-	Data::Member<Step_StatueDevilTutorial> Step_StatueDevilTutorial;
-	Data::Member<Step_SurveyOfFourVillages> Step_SurveyOfFourVillages;
-	Data::Member<Step_TakeAnimals> Step_TakeAnimals;
-	Data::Member<Step_TakeOfIce> Step_TakeOfIce;
-	Data::Member<Step_TauraChallenge001> Step_TauraChallenge001;
-	Data::Member<Step_TheStrongestWeapon> Step_TheStrongestWeapon;
-	Data::Member<Step_TreasureHunt_kokiri> Step_TreasureHunt_kokiri;
-	Data::Member<Step_TreasureOfLambda> Step_TreasureOfLambda;
-	Data::Member<Step_TreasureOfLamda_Dream> Step_TreasureOfLamda_Dream;
-	Data::Member<Step_TreasureOfLamda_Dream2> Step_TreasureOfLamda_Dream2;
-	Data::Member<Step_TreasureOfLamda_Dream3> Step_TreasureOfLamda_Dream3;
-	Data::Member<Step_TreasureOfLamda_DuelPeak> Step_TreasureOfLamda_DuelPeak;
-	Data::Member<Step_TreasureOfLamda_FierceDeity> Step_TreasureOfLamda_FierceDeity;
-	Data::Member<Step_TreasureOfLamda_Gerudo> Step_TreasureOfLamda_Gerudo;
-	Data::Member<Step_TreasureOfLamda_Pirate> Step_TreasureOfLamda_Pirate;
-	Data::Member<Step_Tribune01> Step_Tribune01;
-	Data::Member<Step_Tribune02> Step_Tribune02;
-	Data::Member<Step_Tribune03> Step_Tribune03;
-	Data::Member<Step_Tribune04> Step_Tribune04;
-	Data::Member<Step_Tribune05> Step_Tribune05;
-	Data::Member<Step_Tribune06> Step_Tribune06;
-	Data::Member<Step_Tribune07> Step_Tribune07;
-	Data::Member<Step_Tribune09> Step_Tribune09;
-	Data::Member<Step_Tribune10> Step_Tribune10;
-	Data::Member<Step_Tribune11> Step_Tribune11;
-	Data::Member<Step_Tribune13> Step_Tribune13;
-	Data::Member<Step_Tribune14> Step_Tribune14;
-	Data::Member<Step_Tribune16> Step_Tribune16;
-	Data::Member<Step_Uotori_BreakthePirateBase> Step_Uotori_BreakthePirateBase;
-	Data::Member<Step_Uotori_Designer> Step_Uotori_Designer;
-	Data::Member<Step_Uotori_ResortPlan> Step_Uotori_ResortPlan;
-	Data::Member<Step_Uotori_RevivePlan> Step_Uotori_RevivePlan;
-	Data::Member<Step_Uotori_WhiteLineGame> Step_Uotori_WhiteLineGame;
-	Data::Member<Step_UpgradeOfPurahPad1> Step_UpgradeOfPurahPad1;
-	Data::Member<Step_WantedCleaning> Step_WantedCleaning;
-	Data::Member<Step_WashedAwayBusinessTools> Step_WashedAwayBusinessTools;
-	Data::Member<Step_WaterBridgePlace> Step_WaterBridgePlace;
-	Data::Member<Step_WellCollection> Step_WellCollection;
-	Data::Member<Step_WhichIsStronger> Step_WhichIsStronger;
-	Data::Member<Step_Zonau_GeniusWeapon> Step_Zonau_GeniusWeapon;
-	Data::Member<Step_ZonauReliefSearch> Step_ZonauReliefSearch;
-	Data::Member<Step_Zora_Enemy_hunt> Step_Zora_Enemy_hunt;
-	Data::Member<Step_Zora_MessageBottle> Step_Zora_MessageBottle;
-	Data::Member<Step_Zora_RuttaTreasure> Step_Zora_RuttaTreasure;
-	Data::Member<Step_ZoraStatue_Picture> Step_ZoraStatue_Picture;
+	Data::Enum<Step_AisyaRescue> Step_AisyaRescue;
+	Data::Enum<Step_AmberCollector> Step_AmberCollector;
+	Data::Enum<Step_ArrowMeister_Momo> Step_ArrowMeister_Momo;
+	Data::Enum<Step_AssassinGerudoBase> Step_AssassinGerudoBase;
+	Data::Enum<Step_BallBring_MiniGame> Step_BallBring_MiniGame;
+	Data::Enum<Step_Basketball_MiniGame> Step_Basketball_MiniGame;
+	Data::Enum<Step_Big_Rotate> Step_Big_Rotate;
+	Data::Enum<Step_BirdManContest> Step_BirdManContest;
+	Data::Enum<Step_BlindRuinsTreasure> Step_BlindRuinsTreasure;
+	Data::Enum<Step_BlindRuinsTreasure_Gerudo> Step_BlindRuinsTreasure_Gerudo;
+	Data::Enum<Step_BlindRuinsTreasure_Goron> Step_BlindRuinsTreasure_Goron;
+	Data::Enum<Step_BlindRuinsTreasure_Rito> Step_BlindRuinsTreasure_Rito;
+	Data::Enum<Step_BlindRuinsTreasure_Zora> Step_BlindRuinsTreasure_Zora;
+	Data::Enum<Step_BuildHouse> Step_BuildHouse;
+	Data::Enum<Step_BuildingMaterialsTutorial> Step_BuildingMaterialsTutorial;
+	Data::Enum<Step_CarryGoronKid1> Step_CarryGoronKid1;
+	Data::Enum<Step_CarryGoronKid2> Step_CarryGoronKid2;
+	Data::Enum<Step_CarryStone> Step_CarryStone;
+	Data::Enum<Step_CarryToShrine01> Step_CarryToShrine01;
+	Data::Enum<Step_CarryToShrine02> Step_CarryToShrine02;
+	Data::Enum<Step_CarryToShrine03> Step_CarryToShrine03;
+	Data::Enum<Step_CarryToShrine05> Step_CarryToShrine05;
+	Data::Enum<Step_CarryToShrine06> Step_CarryToShrine06;
+	Data::Enum<Step_CarryToShrine07> Step_CarryToShrine07;
+	Data::Enum<Step_CarryToShrine08_Zora> Step_CarryToShrine08_Zora;
+	Data::Enum<Step_CarryToShrine09> Step_CarryToShrine09;
+	Data::Enum<Step_CarryToShrine10> Step_CarryToShrine10;
+	Data::Enum<Step_CarryToShrine11> Step_CarryToShrine11;
+	Data::Enum<Step_CarryToShrine12> Step_CarryToShrine12;
+	Data::Enum<Step_CarryToShrine13> Step_CarryToShrine13;
+	Data::Enum<Step_CarryToShrine14> Step_CarryToShrine14;
+	Data::Enum<Step_CarryToShrine15> Step_CarryToShrine15;
+	Data::Enum<Step_CarryToShrine16> Step_CarryToShrine16;
+	Data::Enum<Step_CarryToShrine17> Step_CarryToShrine17;
+	Data::Enum<Step_CarryToShrine19> Step_CarryToShrine19;
+	Data::Enum<Step_CarryToShrine20> Step_CarryToShrine20;
+	Data::Enum<Step_CarryToShrine21> Step_CarryToShrine21;
+	Data::Enum<Step_CarryToShrine22> Step_CarryToShrine22;
+	Data::Enum<Step_CarryToShrine23> Step_CarryToShrine23;
+	Data::Enum<Step_CDungeon_AllDone> Step_CDungeon_AllDone;
+	Data::Enum<Step_Circuit_Desert> Step_Circuit_Desert;
+	Data::Enum<Step_Circuit_FaronWoods_MiniGame> Step_Circuit_FaronWoods_MiniGame;
+	Data::Enum<Step_Circuit_Ichikara> Step_Circuit_Ichikara;
+	Data::Enum<Step_Circuit_Ichikara_MiniGame> Step_Circuit_Ichikara_MiniGame;
+	Data::Enum<Step_Circuit_Uotori_MiniGame> Step_Circuit_Uotori_MiniGame;
+	Data::Enum<Step_CleanStatue> Step_CleanStatue;
+	Data::Enum<Step_ClueTotheSixthSage> Step_ClueTotheSixthSage;
+	Data::Enum<Step_CollectObject_MiniGame> Step_CollectObject_MiniGame;
+	Data::Enum<Step_CollectObject_MiniGame_Cliff> Step_CollectObject_MiniGame_Cliff;
+	Data::Enum<Step_CollectObject_MiniGame_LakeSide> Step_CollectObject_MiniGame_LakeSide;
+	Data::Enum<Step_Connect_AkkareMaze> Step_Connect_AkkareMaze;
+	Data::Enum<Step_Connect_FirstIsland> Step_Connect_FirstIsland;
+	Data::Enum<Step_Connect_GerudoMaze> Step_Connect_GerudoMaze;
+	Data::Enum<Step_Connect_TabantaMaze> Step_Connect_TabantaMaze;
+	Data::Enum<Step_CookAtBaseCamp> Step_CookAtBaseCamp;
+	Data::Enum<Step_CraftShadowPicture> Step_CraftShadowPicture;
+	Data::Enum<Step_CreateArmor> Step_CreateArmor;
+	Data::Enum<Step_Createshinguard> Step_Createshinguard;
+	Data::Enum<Step_DeepHoleSurvey2> Step_DeepHoleSurvey2;
+	Data::Enum<Step_DefeatGanondorf> Step_DefeatGanondorf;
+	Data::Enum<Step_DefeatHugeEnemy_1> Step_DefeatHugeEnemy_1;
+	Data::Enum<Step_DefeatHugeEnemy_2> Step_DefeatHugeEnemy_2;
+	Data::Enum<Step_DefeatHugeEnemy_3> Step_DefeatHugeEnemy_3;
+	Data::Enum<Step_DefeatHugeEnemy_4> Step_DefeatHugeEnemy_4;
+	Data::Enum<Step_DefeatHugeEnemy_5> Step_DefeatHugeEnemy_5;
+	Data::Enum<Step_DefeatHugeEnemy_6> Step_DefeatHugeEnemy_6;
+	Data::Enum<Step_DevoteSpring> Step_DevoteSpring;
+	Data::Enum<Step_DividedSlate> Step_DividedSlate;
+	Data::Enum<Step_EightHeroStatues> Step_EightHeroStatues;
+	Data::Enum<Step_EightHeroStatues_After> Step_EightHeroStatues_After;
+	Data::Enum<Step_EveryonesMeal> Step_EveryonesMeal;
+	Data::Enum<Step_ExcavateFossil1> Step_ExcavateFossil1;
+	Data::Enum<Step_ExcavateFossil2> Step_ExcavateFossil2;
+	Data::Enum<Step_ExcavateFossil3> Step_ExcavateFossil3;
+	Data::Enum<Step_Fairy2> Step_Fairy2;
+	Data::Enum<Step_Fairy3> Step_Fairy3;
+	Data::Enum<Step_Fairy4> Step_Fairy4;
+	Data::Enum<Step_FindDrefan> Step_FindDrefan;
+	Data::Enum<Step_FindSunaNui> Step_FindSunaNui;
+	Data::Enum<Step_FindSunaNui2> Step_FindSunaNui2;
+	Data::Enum<Step_FindWhiteHorse> Step_FindWhiteHorse;
+	Data::Enum<Step_FindWithSensors> Step_FindWithSensors;
+	Data::Enum<Step_FirstskyislandReturns> Step_FirstskyislandReturns;
+	Data::Enum<Step_FullyRipenedFlintstones> Step_FullyRipenedFlintstones;
+	Data::Enum<Step_gather_Insect_Z> Step_gather_Insect_Z;
+	Data::Enum<Step_GeniusWeapon_Zora> Step_GeniusWeapon_Zora;
+	Data::Enum<Step_Genkos_Kitchen> Step_Genkos_Kitchen;
+	Data::Enum<Step_Gerudo_UrbosaWeapon> Step_Gerudo_UrbosaWeapon;
+	Data::Enum<Step_GerudoCanyon_24hEnduranceComparison> Step_GerudoCanyon_24hEnduranceComparison;
+	Data::Enum<Step_GerudoCanyon_Adventure> Step_GerudoCanyon_Adventure;
+	Data::Enum<Step_GerudoCanyon_ColdEnduranceComparison> Step_GerudoCanyon_ColdEnduranceComparison;
+	Data::Enum<Step_GerudoCanyon_GleeokLiver> Step_GerudoCanyon_GleeokLiver;
+	Data::Enum<Step_GerudoCanyon_TumbleweedSweep> Step_GerudoCanyon_TumbleweedSweep;
+	Data::Enum<Step_GerudoDesertTreasure> Step_GerudoDesertTreasure;
+	Data::Enum<Step_GetCamera> Step_GetCamera;
+	Data::Enum<Step_GetMasterSword> Step_GetMasterSword;
+	Data::Enum<Step_GetSensorPlus> Step_GetSensorPlus;
+	Data::Enum<Step_GetWalker> Step_GetWalker;
+	Data::Enum<Step_GetWarpMarker> Step_GetWarpMarker;
+	Data::Enum<Step_GiantHorse> Step_GiantHorse;
+	Data::Enum<Step_GoneSnowQueen> Step_GoneSnowQueen;
+	Data::Enum<Step_Goron_MiniGame_01> Step_Goron_MiniGame_01;
+	Data::Enum<Step_Goron_MiniGame_02> Step_Goron_MiniGame_02;
+	Data::Enum<Step_Goron_MiniGame_03> Step_Goron_MiniGame_03;
+	Data::Enum<Step_Goron_MiniGame_Tutorial_01> Step_Goron_MiniGame_Tutorial_01;
+	Data::Enum<Step_Goron_MiniGame_Tutorial_02> Step_Goron_MiniGame_Tutorial_02;
+	Data::Enum<Step_Goron_MiniGame_Tutorial_03> Step_Goron_MiniGame_Tutorial_03;
+	Data::Enum<Step_GoronPond> Step_GoronPond;
+	Data::Enum<Step_GoronReturntoNature> Step_GoronReturntoNature;
+	Data::Enum<Step_GotoFironeZonauRemains> Step_GotoFironeZonauRemains;
+	Data::Enum<Step_GOToTheCastleOfHyrule> Step_GOToTheCastleOfHyrule;
+	Data::Enum<Step_GroundPaintingAir01> Step_GroundPaintingAir01;
+	Data::Enum<Step_Hack_GuardGoods> Step_Hack_GuardGoods;
+	Data::Enum<Step_HammerGong_MiniGame> Step_HammerGong_MiniGame;
+	Data::Enum<Step_Hateno_Cheese> Step_Hateno_Cheese;
+	Data::Enum<Step_Hateno_CoolGuy> Step_Hateno_CoolGuy;
+	Data::Enum<Step_Hateno_FreshMilk> Step_Hateno_FreshMilk;
+	Data::Enum<Step_Hateno_LetUsElection> Step_Hateno_LetUsElection;
+	Data::Enum<Step_Hateno_NewCostume> Step_Hateno_NewCostume;
+	Data::Enum<Step_Hateno_NewSpecialty> Step_Hateno_NewSpecialty;
+	Data::Enum<Step_Hateno_RevitalizeByNewSpeciality> Step_Hateno_RevitalizeByNewSpeciality;
+	Data::Enum<Step_Hateno_SecretLifeOfKusayoshi> Step_Hateno_SecretLifeOfKusayoshi;
+	Data::Enum<Step_Hateno_SecretLifeOfSagono> Step_Hateno_SecretLifeOfSagono;
+	Data::Enum<Step_Hateno_TellMeTeacher01> Step_Hateno_TellMeTeacher01;
+	Data::Enum<Step_Hateno_TellMeTeacher02> Step_Hateno_TellMeTeacher02;
+	Data::Enum<Step_Hateno_VillageMayorElection> Step_Hateno_VillageMayorElection;
+	Data::Enum<Step_Hateno_WhatToPlant> Step_Hateno_WhatToPlant;
+	Data::Enum<Step_HatenoPurchasePicture> Step_HatenoPurchasePicture;
+	Data::Enum<Step_Hebra_SkyRingChallenge> Step_Hebra_SkyRingChallenge;
+	Data::Enum<Step_Hebra_SkyRingChallenge_MiniGame> Step_Hebra_SkyRingChallenge_MiniGame;
+	Data::Enum<Step_HorseInnChallenge001> Step_HorseInnChallenge001;
+	Data::Enum<Step_HorseInnChallenge002> Step_HorseInnChallenge002;
+	Data::Enum<Step_HorseInnChallenge003> Step_HorseInnChallenge003;
+	Data::Enum<Step_HorseInnChallenge005> Step_HorseInnChallenge005;
+	Data::Enum<Step_HorseInnChallenge007> Step_HorseInnChallenge007;
+	Data::Enum<Step_HotSpringEgg> Step_HotSpringEgg;
+	Data::Enum<Step_HourseInnChallenge004> Step_HourseInnChallenge004;
+	Data::Enum<Step_HuntSalmon> Step_HuntSalmon;
+	Data::Enum<Step_HyruleCastleIncident> Step_HyruleCastleIncident;
+	Data::Enum<Step_IceMaking> Step_IceMaking;
+	Data::Enum<Step_IchikaraChallenge01> Step_IchikaraChallenge01;
+	Data::Enum<Step_IchikaraChallenge03> Step_IchikaraChallenge03;
+	Data::Enum<Step_IchikaraCircuit_Tutorial> Step_IchikaraCircuit_Tutorial;
+	Data::Enum<Step_IchikaraDaughterPhoto> Step_IchikaraDaughterPhoto;
+	Data::Enum<Step_IllnessStartsWithFeelings> Step_IllnessStartsWithFeelings;
+	Data::Enum<Step_InfiltrationFromTheSky> Step_InfiltrationFromTheSky;
+	Data::Enum<Step_InnNeverReturns> Step_InnNeverReturns;
+	Data::Enum<Step_JobSunazarashi> Step_JobSunazarashi;
+	Data::Enum<Step_Know_FourStonePlates> Step_Know_FourStonePlates;
+	Data::Enum<Step_KokkoGuidePost> Step_KokkoGuidePost;
+	Data::Enum<Step_Korok_CarryToShrine> Step_Korok_CarryToShrine;
+	Data::Enum<Step_Lodge_Chemical001> Step_Lodge_Chemical001;
+	Data::Enum<Step_LookingForLightSpot> Step_LookingForLightSpot;
+	Data::Enum<Step_LookingForTheVoiceLord> Step_LookingForTheVoiceLord;
+	Data::Enum<Step_Mack_SecretBase> Step_Mack_SecretBase;
+	Data::Enum<Step_MainChallenge> Step_MainChallenge;
+	Data::Enum<Step_MakeAChampionsWeapon_Goron> Step_MakeAChampionsWeapon_Goron;
+	Data::Enum<Step_MakeChemicalWeapon> Step_MakeChemicalWeapon;
+	Data::Enum<Step_MasterSwordClues> Step_MasterSwordClues;
+	Data::Enum<Step_MeatRock> Step_MeatRock;
+	Data::Enum<Step_MemoryOfTheDragon> Step_MemoryOfTheDragon;
+	Data::Enum<Step_Mercenary_Akkare_Bloody> Step_Mercenary_Akkare_Bloody;
+	Data::Enum<Step_Mercenary_Eldin_Bloody> Step_Mercenary_Eldin_Bloody;
+	Data::Enum<Step_Mercenary_Firone_Bloody> Step_Mercenary_Firone_Bloody;
+	Data::Enum<Step_Mercenary_Hateru_Bloody> Step_Mercenary_Hateru_Bloody;
+	Data::Enum<Step_Mercenary_Hebra_Bloody> Step_Mercenary_Hebra_Bloody;
+	Data::Enum<Step_Mercenary_HyrulePlain_Bloody> Step_Mercenary_HyrulePlain_Bloody;
+	Data::Enum<Step_MercenaryChallenge_Akkare> Step_MercenaryChallenge_Akkare;
+	Data::Enum<Step_MercenaryChallenge_Eldin> Step_MercenaryChallenge_Eldin;
+	Data::Enum<Step_MercenaryChallenge_Firone> Step_MercenaryChallenge_Firone;
+	Data::Enum<Step_MercenaryChallenge_Hateru> Step_MercenaryChallenge_Hateru;
+	Data::Enum<Step_MercenaryChallenge_Hebra> Step_MercenaryChallenge_Hebra;
+	Data::Enum<Step_MercenaryChallenge_HyrulePlain> Step_MercenaryChallenge_HyrulePlain;
+	Data::Enum<Step_MessageBottle_SOS> Step_MessageBottle_SOS;
+	Data::Enum<Step_MinusYiga> Step_MinusYiga;
+	Data::Enum<Step_MonsterFigures01> Step_MonsterFigures01;
+	Data::Enum<Step_MonsterFigures02> Step_MonsterFigures02;
+	Data::Enum<Step_MonsterFigures03> Step_MonsterFigures03;
+	Data::Enum<Step_MonsterFigures04> Step_MonsterFigures04;
+	Data::Enum<Step_MonsterFigures05> Step_MonsterFigures05;
+	Data::Enum<Step_MushroomSisters_1> Step_MushroomSisters_1;
+	Data::Enum<Step_MushroomSisters_2> Step_MushroomSisters_2;
+	Data::Enum<Step_MushroomSisters_3> Step_MushroomSisters_3;
+	Data::Enum<Step_Nazley_DigCave> Step_Nazley_DigCave;
+	Data::Enum<Step_Neck_IceWaterCave> Step_Neck_IceWaterCave;
+	Data::Enum<Step_NewCanyonMissingPersonsCase> Step_NewCanyonMissingPersonsCase;
+	Data::Enum<Step_NewsPaper_Mitsuba> Step_NewsPaper_Mitsuba;
+	Data::Enum<Step_NoTrespassing> Step_NoTrespassing;
+	Data::Enum<Step_NowInTheVillageOfLurelin> Step_NowInTheVillageOfLurelin;
+	Data::Enum<Step_Npc_BaseCamp_Assistant_ReactingStatue> Step_Npc_BaseCamp_Assistant_ReactingStatue;
+	Data::Enum<Step_Npc_BaseCamp_Assistant_ReactingStatue2> Step_Npc_BaseCamp_Assistant_ReactingStatue2;
+	Data::Enum<Step_Npc_BaseCamp_Assistant_ReactingStatue3> Step_Npc_BaseCamp_Assistant_ReactingStatue3;
+	Data::Enum<Step_Npc_BaseCamp_Assistant_ReactingStatue4> Step_Npc_BaseCamp_Assistant_ReactingStatue4;
+	Data::Enum<Step_NushiShop_Challenge00> Step_NushiShop_Challenge00;
+	Data::Enum<Step_NushiShop_Tutorial> Step_NushiShop_Tutorial;
+	Data::Enum<Step_OldKorokHelp> Step_OldKorokHelp;
+	Data::Enum<Step_Orchestra01> Step_Orchestra01;
+	Data::Enum<Step_Orchestra02> Step_Orchestra02;
+	Data::Enum<Step_Orchestra03> Step_Orchestra03;
+	Data::Enum<Step_Orchestra04> Step_Orchestra04;
+	Data::Enum<Step_Our_Treasure> Step_Our_Treasure;
+	Data::Enum<Step_Parasail_ChuchuDesign> Step_Parasail_ChuchuDesign;
+	Data::Enum<Step_PhotoSpot_Challenge_01> Step_PhotoSpot_Challenge_01;
+	Data::Enum<Step_PhotoSpot_Challenge_02> Step_PhotoSpot_Challenge_02;
+	Data::Enum<Step_PhotoSpot_Challenge_03> Step_PhotoSpot_Challenge_03;
+	Data::Enum<Step_PhotoSpot_Challenge_04> Step_PhotoSpot_Challenge_04;
+	Data::Enum<Step_PhotoSpot_Challenge_05> Step_PhotoSpot_Challenge_05;
+	Data::Enum<Step_PhotoSpot_Challenge_06> Step_PhotoSpot_Challenge_06;
+	Data::Enum<Step_PhotoSpot_Challenge_07> Step_PhotoSpot_Challenge_07;
+	Data::Enum<Step_PhotoSpot_Challenge_08> Step_PhotoSpot_Challenge_08;
+	Data::Enum<Step_PhotoSpot_Challenge_09> Step_PhotoSpot_Challenge_09;
+	Data::Enum<Step_PhotoSpot_Challenge_09_2> Step_PhotoSpot_Challenge_09_2;
+	Data::Enum<Step_PhotoSpot_Challenge_10> Step_PhotoSpot_Challenge_10;
+	Data::Enum<Step_PhotoSpot_Challenge_11> Step_PhotoSpot_Challenge_11;
+	Data::Enum<Step_PhotoSpot_Challenge_12> Step_PhotoSpot_Challenge_12;
+	Data::Enum<Step_PhotoSpot_Challenge_13> Step_PhotoSpot_Challenge_13;
+	Data::Enum<Step_PhotoSpot_Challenge_14> Step_PhotoSpot_Challenge_14;
+	Data::Enum<Step_Raise_GoddesStatue> Step_Raise_GoddesStatue;
+	Data::Enum<Step_Raise_GoddesStatue_Courage> Step_Raise_GoddesStatue_Courage;
+	Data::Enum<Step_Raise_GoddesStatue_Power> Step_Raise_GoddesStatue_Power;
+	Data::Enum<Step_Raise_GoddesStatue_Wisdom> Step_Raise_GoddesStatue_Wisdom;
+	Data::Enum<Step_RepairArmor> Step_RepairArmor;
+	Data::Enum<Step_RescueHost> Step_RescueHost;
+	Data::Enum<Step_RescueVehicle01> Step_RescueVehicle01;
+	Data::Enum<Step_RescueWell> Step_RescueWell;
+	Data::Enum<Step_ResearchEldin> Step_ResearchEldin;
+	Data::Enum<Step_ResearchLanayru> Step_ResearchLanayru;
+	Data::Enum<Step_RestaurantInTheWell> Step_RestaurantInTheWell;
+	Data::Enum<Step_Rito_ItemExchange> Step_Rito_ItemExchange;
+	Data::Enum<Step_Rito_MedoArmor> Step_Rito_MedoArmor;
+	Data::Enum<Step_Rito_RevaliWeapon> Step_Rito_RevaliWeapon;
+	Data::Enum<Step_Rito_ShadowCave> Step_Rito_ShadowCave;
+	Data::Enum<Step_RitoBridgeRepair> Step_RitoBridgeRepair;
+	Data::Enum<Step_SageOfFire> Step_SageOfFire;
+	Data::Enum<Step_SageOfGerudo> Step_SageOfGerudo;
+	Data::Enum<Step_SageOfSky> Step_SageOfSky;
+	Data::Enum<Step_SageOfSoul> Step_SageOfSoul;
+	Data::Enum<Step_SageOfWind> Step_SageOfWind;
+	Data::Enum<Step_SageOfZora> Step_SageOfZora;
+	Data::Enum<Step_SaihateSubjugation> Step_SaihateSubjugation;
+	Data::Enum<Step_SearchCaravan> Step_SearchCaravan;
+	Data::Enum<Step_SecretBase_MiniGame> Step_SecretBase_MiniGame;
+	Data::Enum<Step_ShieldSurfing_MiniGame> Step_ShieldSurfing_MiniGame;
+	Data::Enum<Step_SkyIsland_MiniGame_01> Step_SkyIsland_MiniGame_01;
+	Data::Enum<Step_SkyIsland_MiniGame_02> Step_SkyIsland_MiniGame_02;
+	Data::Enum<Step_SkyIsland_MiniGame_03> Step_SkyIsland_MiniGame_03;
+	Data::Enum<Step_SnowyMountain_Surfing> Step_SnowyMountain_Surfing;
+	Data::Enum<Step_StatueDevilTutorial> Step_StatueDevilTutorial;
+	Data::Enum<Step_SurveyOfFourVillages> Step_SurveyOfFourVillages;
+	Data::Enum<Step_TakeAnimals> Step_TakeAnimals;
+	Data::Enum<Step_TakeOfIce> Step_TakeOfIce;
+	Data::Enum<Step_TauraChallenge001> Step_TauraChallenge001;
+	Data::Enum<Step_TheStrongestWeapon> Step_TheStrongestWeapon;
+	Data::Enum<Step_TreasureHunt_kokiri> Step_TreasureHunt_kokiri;
+	Data::Enum<Step_TreasureOfLambda> Step_TreasureOfLambda;
+	Data::Enum<Step_TreasureOfLamda_Dream> Step_TreasureOfLamda_Dream;
+	Data::Enum<Step_TreasureOfLamda_Dream2> Step_TreasureOfLamda_Dream2;
+	Data::Enum<Step_TreasureOfLamda_Dream3> Step_TreasureOfLamda_Dream3;
+	Data::Enum<Step_TreasureOfLamda_DuelPeak> Step_TreasureOfLamda_DuelPeak;
+	Data::Enum<Step_TreasureOfLamda_FierceDeity> Step_TreasureOfLamda_FierceDeity;
+	Data::Enum<Step_TreasureOfLamda_Gerudo> Step_TreasureOfLamda_Gerudo;
+	Data::Enum<Step_TreasureOfLamda_Pirate> Step_TreasureOfLamda_Pirate;
+	Data::Enum<Step_Tribune01> Step_Tribune01;
+	Data::Enum<Step_Tribune02> Step_Tribune02;
+	Data::Enum<Step_Tribune03> Step_Tribune03;
+	Data::Enum<Step_Tribune04> Step_Tribune04;
+	Data::Enum<Step_Tribune05> Step_Tribune05;
+	Data::Enum<Step_Tribune06> Step_Tribune06;
+	Data::Enum<Step_Tribune07> Step_Tribune07;
+	Data::Enum<Step_Tribune09> Step_Tribune09;
+	Data::Enum<Step_Tribune10> Step_Tribune10;
+	Data::Enum<Step_Tribune11> Step_Tribune11;
+	Data::Enum<Step_Tribune13> Step_Tribune13;
+	Data::Enum<Step_Tribune14> Step_Tribune14;
+	Data::Enum<Step_Tribune16> Step_Tribune16;
+	Data::Enum<Step_Uotori_BreakthePirateBase> Step_Uotori_BreakthePirateBase;
+	Data::Enum<Step_Uotori_Designer> Step_Uotori_Designer;
+	Data::Enum<Step_Uotori_ResortPlan> Step_Uotori_ResortPlan;
+	Data::Enum<Step_Uotori_RevivePlan> Step_Uotori_RevivePlan;
+	Data::Enum<Step_Uotori_WhiteLineGame> Step_Uotori_WhiteLineGame;
+	Data::Enum<Step_UpgradeOfPurahPad1> Step_UpgradeOfPurahPad1;
+	Data::Enum<Step_WantedCleaning> Step_WantedCleaning;
+	Data::Enum<Step_WashedAwayBusinessTools> Step_WashedAwayBusinessTools;
+	Data::Enum<Step_WaterBridgePlace> Step_WaterBridgePlace;
+	Data::Enum<Step_WellCollection> Step_WellCollection;
+	Data::Enum<Step_WhichIsStronger> Step_WhichIsStronger;
+	Data::Enum<Step_Zonau_GeniusWeapon> Step_Zonau_GeniusWeapon;
+	Data::Enum<Step_ZonauReliefSearch> Step_ZonauReliefSearch;
+	Data::Enum<Step_Zora_Enemy_hunt> Step_Zora_Enemy_hunt;
+	Data::Enum<Step_Zora_MessageBottle> Step_Zora_MessageBottle;
+	Data::Enum<Step_Zora_RuttaTreasure> Step_Zora_RuttaTreasure;
+	Data::Enum<Step_ZoraStatue_Picture> Step_ZoraStatue_Picture;
 	Structure<AmiiboData> AmiiboData;
 	Structure<BowStand> BowStand;
 	Structure<ShieldStand> ShieldStand;

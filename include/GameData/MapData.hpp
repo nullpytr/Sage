@@ -10,7 +10,10 @@ struct GameData::MapData : Tag::Structure {
 	struct IsOpenGround : Tag::Member { using type = bool&; };
 	struct IsOpenUnderGround : Tag::Member { using type = bool&; };
 	struct LargeDungeon;
-	struct CurrentLayer : Tag::Enum { using type = ::Enum::Scalar<CurrentLayer>; enum enum_type : hash_t { Ground = murmurhash3::hash("Ground"), Sky = murmurhash3::hash("Sky"), UnderGround = murmurhash3::hash("UnderGround"), }; };
+	struct CurrentLayer : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { Ground = murmurhash3::hash("Ground"), Sky = murmurhash3::hash("Sky"), UnderGround = murmurhash3::hash("UnderGround"), }; };
+		using type = enum_t<values_t>;
+	};
 };/* Tag::Structure GameData::MapData close */
 
 #include "MapData/IconData.hpp"
@@ -23,7 +26,7 @@ template <> struct Data::Structure<GameData::MapData> : GameData::MapData {
 	Data::Member<IsOpenGround> IsOpenGround;
 	Data::Member<IsOpenUnderGround> IsOpenUnderGround;
 	Structure<LargeDungeon> LargeDungeon;
-	Data::Member<CurrentLayer> CurrentLayer;
+	Data::Enum<CurrentLayer> CurrentLayer;
 	
 	explicit Structure(Sav& s) : 
 		IconData { s },

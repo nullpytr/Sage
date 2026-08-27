@@ -4,209 +4,509 @@
 #include "Core/Sav.hpp"
 
 struct GameData::KorokCarryProgress : Tag::Structure {
-	struct _10035618609325695840 : Tag::Enum { using type = ::Enum::Scalar<_10035618609325695840>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _10147912760170894537 : Tag::Enum { using type = ::Enum::Scalar<_10147912760170894537>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _1027829103425503827 : Tag::Enum { using type = ::Enum::Scalar<_1027829103425503827>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _10530533416107128098 : Tag::Enum { using type = ::Enum::Scalar<_10530533416107128098>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _10648733530437086844 : Tag::Enum { using type = ::Enum::Scalar<_10648733530437086844>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _10765936993113452918 : Tag::Enum { using type = ::Enum::Scalar<_10765936993113452918>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _10884485578138139295 : Tag::Enum { using type = ::Enum::Scalar<_10884485578138139295>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _11058875431153592516 : Tag::Enum { using type = ::Enum::Scalar<_11058875431153592516>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _11202514477440889488 : Tag::Enum { using type = ::Enum::Scalar<_11202514477440889488>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _11271636085079936375 : Tag::Enum { using type = ::Enum::Scalar<_11271636085079936375>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _11811958806114551925 : Tag::Enum { using type = ::Enum::Scalar<_11811958806114551925>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _11875758624767344318 : Tag::Enum { using type = ::Enum::Scalar<_11875758624767344318>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _11896787561078353905 : Tag::Enum { using type = ::Enum::Scalar<_11896787561078353905>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _11937967932341810839 : Tag::Enum { using type = ::Enum::Scalar<_11937967932341810839>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _1197214492947962803 : Tag::Enum { using type = ::Enum::Scalar<_1197214492947962803>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _12130885694327852729 : Tag::Enum { using type = ::Enum::Scalar<_12130885694327852729>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _12847198751504072774 : Tag::Enum { using type = ::Enum::Scalar<_12847198751504072774>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _12867974234227336785 : Tag::Enum { using type = ::Enum::Scalar<_12867974234227336785>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _12925413538446962496 : Tag::Enum { using type = ::Enum::Scalar<_12925413538446962496>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _13096531038553645768 : Tag::Enum { using type = ::Enum::Scalar<_13096531038553645768>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _13222893714975519401 : Tag::Enum { using type = ::Enum::Scalar<_13222893714975519401>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _13247469126542819452 : Tag::Enum { using type = ::Enum::Scalar<_13247469126542819452>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _13276398725536494111 : Tag::Enum { using type = ::Enum::Scalar<_13276398725536494111>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _13397407553973487668 : Tag::Enum { using type = ::Enum::Scalar<_13397407553973487668>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _13406578000478771737 : Tag::Enum { using type = ::Enum::Scalar<_13406578000478771737>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _13574721167545880769 : Tag::Enum { using type = ::Enum::Scalar<_13574721167545880769>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _13715318254682426167 : Tag::Enum { using type = ::Enum::Scalar<_13715318254682426167>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14086010442264569915 : Tag::Enum { using type = ::Enum::Scalar<_14086010442264569915>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14386365983047131468 : Tag::Enum { using type = ::Enum::Scalar<_14386365983047131468>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14474122671074317609 : Tag::Enum { using type = ::Enum::Scalar<_14474122671074317609>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14620345371264461858 : Tag::Enum { using type = ::Enum::Scalar<_14620345371264461858>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14675420841305621627 : Tag::Enum { using type = ::Enum::Scalar<_14675420841305621627>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _1467646013161089597 : Tag::Enum { using type = ::Enum::Scalar<_1467646013161089597>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14743492415969903566 : Tag::Enum { using type = ::Enum::Scalar<_14743492415969903566>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14755292463343432412 : Tag::Enum { using type = ::Enum::Scalar<_14755292463343432412>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14835004004034249742 : Tag::Enum { using type = ::Enum::Scalar<_14835004004034249742>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _14913775068882522158 : Tag::Enum { using type = ::Enum::Scalar<_14913775068882522158>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _15014578422836026966 : Tag::Enum { using type = ::Enum::Scalar<_15014578422836026966>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _15217693042586832359 : Tag::Enum { using type = ::Enum::Scalar<_15217693042586832359>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _15261531300099259671 : Tag::Enum { using type = ::Enum::Scalar<_15261531300099259671>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _15270416955868479146 : Tag::Enum { using type = ::Enum::Scalar<_15270416955868479146>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _1559566833430240376 : Tag::Enum { using type = ::Enum::Scalar<_1559566833430240376>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _15764967962530007701 : Tag::Enum { using type = ::Enum::Scalar<_15764967962530007701>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _15812195146511308260 : Tag::Enum { using type = ::Enum::Scalar<_15812195146511308260>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _15896625821746789069 : Tag::Enum { using type = ::Enum::Scalar<_15896625821746789069>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _15951088143512413279 : Tag::Enum { using type = ::Enum::Scalar<_15951088143512413279>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _16672092331503822504 : Tag::Enum { using type = ::Enum::Scalar<_16672092331503822504>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _1701261354463979089 : Tag::Enum { using type = ::Enum::Scalar<_1701261354463979089>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _17015045044967365539 : Tag::Enum { using type = ::Enum::Scalar<_17015045044967365539>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _17210919258426000638 : Tag::Enum { using type = ::Enum::Scalar<_17210919258426000638>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _17594093809162698318 : Tag::Enum { using type = ::Enum::Scalar<_17594093809162698318>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _17670912282596839597 : Tag::Enum { using type = ::Enum::Scalar<_17670912282596839597>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _17802606411144917162 : Tag::Enum { using type = ::Enum::Scalar<_17802606411144917162>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _18153127729825633248 : Tag::Enum { using type = ::Enum::Scalar<_18153127729825633248>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _18235969829881518418 : Tag::Enum { using type = ::Enum::Scalar<_18235969829881518418>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _1845078604478085116 : Tag::Enum { using type = ::Enum::Scalar<_1845078604478085116>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _1977590426358230894 : Tag::Enum { using type = ::Enum::Scalar<_1977590426358230894>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _2065394700677686397 : Tag::Enum { using type = ::Enum::Scalar<_2065394700677686397>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _2425953548859621426 : Tag::Enum { using type = ::Enum::Scalar<_2425953548859621426>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _2753782435549223662 : Tag::Enum { using type = ::Enum::Scalar<_2753782435549223662>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _3033022659337824191 : Tag::Enum { using type = ::Enum::Scalar<_3033022659337824191>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _3039055495308853332 : Tag::Enum { using type = ::Enum::Scalar<_3039055495308853332>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _3140500857535214931 : Tag::Enum { using type = ::Enum::Scalar<_3140500857535214931>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _3643785449856294086 : Tag::Enum { using type = ::Enum::Scalar<_3643785449856294086>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _4192588996974612514 : Tag::Enum { using type = ::Enum::Scalar<_4192588996974612514>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _4278308988828624825 : Tag::Enum { using type = ::Enum::Scalar<_4278308988828624825>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _4386102791994685188 : Tag::Enum { using type = ::Enum::Scalar<_4386102791994685188>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _4494468278546116134 : Tag::Enum { using type = ::Enum::Scalar<_4494468278546116134>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _5036066410770918472 : Tag::Enum { using type = ::Enum::Scalar<_5036066410770918472>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _5145081417529458167 : Tag::Enum { using type = ::Enum::Scalar<_5145081417529458167>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _5230411027965047570 : Tag::Enum { using type = ::Enum::Scalar<_5230411027965047570>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _5298571532246140711 : Tag::Enum { using type = ::Enum::Scalar<_5298571532246140711>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _55136037473008208 : Tag::Enum { using type = ::Enum::Scalar<_55136037473008208>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _5634362082519974124 : Tag::Enum { using type = ::Enum::Scalar<_5634362082519974124>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _5869665143813001026 : Tag::Enum { using type = ::Enum::Scalar<_5869665143813001026>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _5937135356624406219 : Tag::Enum { using type = ::Enum::Scalar<_5937135356624406219>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _661645095586149546 : Tag::Enum { using type = ::Enum::Scalar<_661645095586149546>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _6773575892270236835 : Tag::Enum { using type = ::Enum::Scalar<_6773575892270236835>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _702982911163221302 : Tag::Enum { using type = ::Enum::Scalar<_702982911163221302>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _711316197736138568 : Tag::Enum { using type = ::Enum::Scalar<_711316197736138568>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _7200846769452032765 : Tag::Enum { using type = ::Enum::Scalar<_7200846769452032765>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _7205909546088832266 : Tag::Enum { using type = ::Enum::Scalar<_7205909546088832266>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _7252382242329520081 : Tag::Enum { using type = ::Enum::Scalar<_7252382242329520081>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _7705700044124304347 : Tag::Enum { using type = ::Enum::Scalar<_7705700044124304347>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _7786864151230414866 : Tag::Enum { using type = ::Enum::Scalar<_7786864151230414866>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _8004497664373186229 : Tag::Enum { using type = ::Enum::Scalar<_8004497664373186229>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _8497568152468259638 : Tag::Enum { using type = ::Enum::Scalar<_8497568152468259638>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _857511348685999225 : Tag::Enum { using type = ::Enum::Scalar<_857511348685999225>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _879993071457401920 : Tag::Enum { using type = ::Enum::Scalar<_879993071457401920>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _882636985276030155 : Tag::Enum { using type = ::Enum::Scalar<_882636985276030155>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _8971903895020413263 : Tag::Enum { using type = ::Enum::Scalar<_8971903895020413263>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _8993451623919032985 : Tag::Enum { using type = ::Enum::Scalar<_8993451623919032985>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _9073478381193169871 : Tag::Enum { using type = ::Enum::Scalar<_9073478381193169871>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _9329678298925105483 : Tag::Enum { using type = ::Enum::Scalar<_9329678298925105483>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _9380338098995773009 : Tag::Enum { using type = ::Enum::Scalar<_9380338098995773009>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _9539946314806298996 : Tag::Enum { using type = ::Enum::Scalar<_9539946314806298996>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _9545094517092549436 : Tag::Enum { using type = ::Enum::Scalar<_9545094517092549436>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _9705479798924140351 : Tag::Enum { using type = ::Enum::Scalar<_9705479798924140351>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _9707096629495885452 : Tag::Enum { using type = ::Enum::Scalar<_9707096629495885452>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
-	struct _9734881248452388660 : Tag::Enum { using type = ::Enum::Scalar<_9734881248452388660>; enum enum_type : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+	struct _10035618609325695840 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _10147912760170894537 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _1027829103425503827 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _10530533416107128098 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _10648733530437086844 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _10765936993113452918 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _10884485578138139295 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _11058875431153592516 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _11202514477440889488 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _11271636085079936375 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _11811958806114551925 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _11875758624767344318 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _11896787561078353905 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _11937967932341810839 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _1197214492947962803 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _12130885694327852729 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _12847198751504072774 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _12867974234227336785 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _12925413538446962496 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _13096531038553645768 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _13222893714975519401 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _13247469126542819452 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _13276398725536494111 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _13397407553973487668 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _13406578000478771737 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _13574721167545880769 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _13715318254682426167 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14086010442264569915 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14386365983047131468 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14474122671074317609 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14620345371264461858 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14675420841305621627 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _1467646013161089597 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14743492415969903566 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14755292463343432412 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14835004004034249742 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _14913775068882522158 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _15014578422836026966 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _15217693042586832359 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _15261531300099259671 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _15270416955868479146 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _1559566833430240376 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _15764967962530007701 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _15812195146511308260 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _15896625821746789069 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _15951088143512413279 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _16672092331503822504 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _1701261354463979089 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _17015045044967365539 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _17210919258426000638 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _17594093809162698318 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _17670912282596839597 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _17802606411144917162 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _18153127729825633248 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _18235969829881518418 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _1845078604478085116 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _1977590426358230894 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _2065394700677686397 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _2425953548859621426 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _2753782435549223662 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _3033022659337824191 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _3039055495308853332 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _3140500857535214931 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _3643785449856294086 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _4192588996974612514 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _4278308988828624825 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _4386102791994685188 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _4494468278546116134 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _5036066410770918472 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _5145081417529458167 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _5230411027965047570 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _5298571532246140711 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _55136037473008208 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _5634362082519974124 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _5869665143813001026 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _5937135356624406219 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _661645095586149546 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _6773575892270236835 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _702982911163221302 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _711316197736138568 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _7200846769452032765 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _7205909546088832266 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _7252382242329520081 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _7705700044124304347 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _7786864151230414866 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _8004497664373186229 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _8497568152468259638 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _857511348685999225 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _879993071457401920 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _882636985276030155 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _8971903895020413263 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _8993451623919032985 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _9073478381193169871 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _9329678298925105483 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _9380338098995773009 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _9539946314806298996 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _9545094517092549436 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _9705479798924140351 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _9707096629495885452 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
+	struct _9734881248452388660 : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
+		using type = enum_t<values_t>;
+	};
 };/* Tag::Structure GameData::KorokCarryProgress close */
 
 template <> struct Data::Structure<GameData::KorokCarryProgress> : GameData::KorokCarryProgress {
-	Data::Member<_10035618609325695840> _10035618609325695840;
-	Data::Member<_10147912760170894537> _10147912760170894537;
-	Data::Member<_1027829103425503827> _1027829103425503827;
-	Data::Member<_10530533416107128098> _10530533416107128098;
-	Data::Member<_10648733530437086844> _10648733530437086844;
-	Data::Member<_10765936993113452918> _10765936993113452918;
-	Data::Member<_10884485578138139295> _10884485578138139295;
-	Data::Member<_11058875431153592516> _11058875431153592516;
-	Data::Member<_11202514477440889488> _11202514477440889488;
-	Data::Member<_11271636085079936375> _11271636085079936375;
-	Data::Member<_11811958806114551925> _11811958806114551925;
-	Data::Member<_11875758624767344318> _11875758624767344318;
-	Data::Member<_11896787561078353905> _11896787561078353905;
-	Data::Member<_11937967932341810839> _11937967932341810839;
-	Data::Member<_1197214492947962803> _1197214492947962803;
-	Data::Member<_12130885694327852729> _12130885694327852729;
-	Data::Member<_12847198751504072774> _12847198751504072774;
-	Data::Member<_12867974234227336785> _12867974234227336785;
-	Data::Member<_12925413538446962496> _12925413538446962496;
-	Data::Member<_13096531038553645768> _13096531038553645768;
-	Data::Member<_13222893714975519401> _13222893714975519401;
-	Data::Member<_13247469126542819452> _13247469126542819452;
-	Data::Member<_13276398725536494111> _13276398725536494111;
-	Data::Member<_13397407553973487668> _13397407553973487668;
-	Data::Member<_13406578000478771737> _13406578000478771737;
-	Data::Member<_13574721167545880769> _13574721167545880769;
-	Data::Member<_13715318254682426167> _13715318254682426167;
-	Data::Member<_14086010442264569915> _14086010442264569915;
-	Data::Member<_14386365983047131468> _14386365983047131468;
-	Data::Member<_14474122671074317609> _14474122671074317609;
-	Data::Member<_14620345371264461858> _14620345371264461858;
-	Data::Member<_14675420841305621627> _14675420841305621627;
-	Data::Member<_1467646013161089597> _1467646013161089597;
-	Data::Member<_14743492415969903566> _14743492415969903566;
-	Data::Member<_14755292463343432412> _14755292463343432412;
-	Data::Member<_14835004004034249742> _14835004004034249742;
-	Data::Member<_14913775068882522158> _14913775068882522158;
-	Data::Member<_15014578422836026966> _15014578422836026966;
-	Data::Member<_15217693042586832359> _15217693042586832359;
-	Data::Member<_15261531300099259671> _15261531300099259671;
-	Data::Member<_15270416955868479146> _15270416955868479146;
-	Data::Member<_1559566833430240376> _1559566833430240376;
-	Data::Member<_15764967962530007701> _15764967962530007701;
-	Data::Member<_15812195146511308260> _15812195146511308260;
-	Data::Member<_15896625821746789069> _15896625821746789069;
-	Data::Member<_15951088143512413279> _15951088143512413279;
-	Data::Member<_16672092331503822504> _16672092331503822504;
-	Data::Member<_1701261354463979089> _1701261354463979089;
-	Data::Member<_17015045044967365539> _17015045044967365539;
-	Data::Member<_17210919258426000638> _17210919258426000638;
-	Data::Member<_17594093809162698318> _17594093809162698318;
-	Data::Member<_17670912282596839597> _17670912282596839597;
-	Data::Member<_17802606411144917162> _17802606411144917162;
-	Data::Member<_18153127729825633248> _18153127729825633248;
-	Data::Member<_18235969829881518418> _18235969829881518418;
-	Data::Member<_1845078604478085116> _1845078604478085116;
-	Data::Member<_1977590426358230894> _1977590426358230894;
-	Data::Member<_2065394700677686397> _2065394700677686397;
-	Data::Member<_2425953548859621426> _2425953548859621426;
-	Data::Member<_2753782435549223662> _2753782435549223662;
-	Data::Member<_3033022659337824191> _3033022659337824191;
-	Data::Member<_3039055495308853332> _3039055495308853332;
-	Data::Member<_3140500857535214931> _3140500857535214931;
-	Data::Member<_3643785449856294086> _3643785449856294086;
-	Data::Member<_4192588996974612514> _4192588996974612514;
-	Data::Member<_4278308988828624825> _4278308988828624825;
-	Data::Member<_4386102791994685188> _4386102791994685188;
-	Data::Member<_4494468278546116134> _4494468278546116134;
-	Data::Member<_5036066410770918472> _5036066410770918472;
-	Data::Member<_5145081417529458167> _5145081417529458167;
-	Data::Member<_5230411027965047570> _5230411027965047570;
-	Data::Member<_5298571532246140711> _5298571532246140711;
-	Data::Member<_55136037473008208> _55136037473008208;
-	Data::Member<_5634362082519974124> _5634362082519974124;
-	Data::Member<_5869665143813001026> _5869665143813001026;
-	Data::Member<_5937135356624406219> _5937135356624406219;
-	Data::Member<_661645095586149546> _661645095586149546;
-	Data::Member<_6773575892270236835> _6773575892270236835;
-	Data::Member<_702982911163221302> _702982911163221302;
-	Data::Member<_711316197736138568> _711316197736138568;
-	Data::Member<_7200846769452032765> _7200846769452032765;
-	Data::Member<_7205909546088832266> _7205909546088832266;
-	Data::Member<_7252382242329520081> _7252382242329520081;
-	Data::Member<_7705700044124304347> _7705700044124304347;
-	Data::Member<_7786864151230414866> _7786864151230414866;
-	Data::Member<_8004497664373186229> _8004497664373186229;
-	Data::Member<_8497568152468259638> _8497568152468259638;
-	Data::Member<_857511348685999225> _857511348685999225;
-	Data::Member<_879993071457401920> _879993071457401920;
-	Data::Member<_882636985276030155> _882636985276030155;
-	Data::Member<_8971903895020413263> _8971903895020413263;
-	Data::Member<_8993451623919032985> _8993451623919032985;
-	Data::Member<_9073478381193169871> _9073478381193169871;
-	Data::Member<_9329678298925105483> _9329678298925105483;
-	Data::Member<_9380338098995773009> _9380338098995773009;
-	Data::Member<_9539946314806298996> _9539946314806298996;
-	Data::Member<_9545094517092549436> _9545094517092549436;
-	Data::Member<_9705479798924140351> _9705479798924140351;
-	Data::Member<_9707096629495885452> _9707096629495885452;
-	Data::Member<_9734881248452388660> _9734881248452388660;
+	Data::Enum<_10035618609325695840> _10035618609325695840;
+	Data::Enum<_10147912760170894537> _10147912760170894537;
+	Data::Enum<_1027829103425503827> _1027829103425503827;
+	Data::Enum<_10530533416107128098> _10530533416107128098;
+	Data::Enum<_10648733530437086844> _10648733530437086844;
+	Data::Enum<_10765936993113452918> _10765936993113452918;
+	Data::Enum<_10884485578138139295> _10884485578138139295;
+	Data::Enum<_11058875431153592516> _11058875431153592516;
+	Data::Enum<_11202514477440889488> _11202514477440889488;
+	Data::Enum<_11271636085079936375> _11271636085079936375;
+	Data::Enum<_11811958806114551925> _11811958806114551925;
+	Data::Enum<_11875758624767344318> _11875758624767344318;
+	Data::Enum<_11896787561078353905> _11896787561078353905;
+	Data::Enum<_11937967932341810839> _11937967932341810839;
+	Data::Enum<_1197214492947962803> _1197214492947962803;
+	Data::Enum<_12130885694327852729> _12130885694327852729;
+	Data::Enum<_12847198751504072774> _12847198751504072774;
+	Data::Enum<_12867974234227336785> _12867974234227336785;
+	Data::Enum<_12925413538446962496> _12925413538446962496;
+	Data::Enum<_13096531038553645768> _13096531038553645768;
+	Data::Enum<_13222893714975519401> _13222893714975519401;
+	Data::Enum<_13247469126542819452> _13247469126542819452;
+	Data::Enum<_13276398725536494111> _13276398725536494111;
+	Data::Enum<_13397407553973487668> _13397407553973487668;
+	Data::Enum<_13406578000478771737> _13406578000478771737;
+	Data::Enum<_13574721167545880769> _13574721167545880769;
+	Data::Enum<_13715318254682426167> _13715318254682426167;
+	Data::Enum<_14086010442264569915> _14086010442264569915;
+	Data::Enum<_14386365983047131468> _14386365983047131468;
+	Data::Enum<_14474122671074317609> _14474122671074317609;
+	Data::Enum<_14620345371264461858> _14620345371264461858;
+	Data::Enum<_14675420841305621627> _14675420841305621627;
+	Data::Enum<_1467646013161089597> _1467646013161089597;
+	Data::Enum<_14743492415969903566> _14743492415969903566;
+	Data::Enum<_14755292463343432412> _14755292463343432412;
+	Data::Enum<_14835004004034249742> _14835004004034249742;
+	Data::Enum<_14913775068882522158> _14913775068882522158;
+	Data::Enum<_15014578422836026966> _15014578422836026966;
+	Data::Enum<_15217693042586832359> _15217693042586832359;
+	Data::Enum<_15261531300099259671> _15261531300099259671;
+	Data::Enum<_15270416955868479146> _15270416955868479146;
+	Data::Enum<_1559566833430240376> _1559566833430240376;
+	Data::Enum<_15764967962530007701> _15764967962530007701;
+	Data::Enum<_15812195146511308260> _15812195146511308260;
+	Data::Enum<_15896625821746789069> _15896625821746789069;
+	Data::Enum<_15951088143512413279> _15951088143512413279;
+	Data::Enum<_16672092331503822504> _16672092331503822504;
+	Data::Enum<_1701261354463979089> _1701261354463979089;
+	Data::Enum<_17015045044967365539> _17015045044967365539;
+	Data::Enum<_17210919258426000638> _17210919258426000638;
+	Data::Enum<_17594093809162698318> _17594093809162698318;
+	Data::Enum<_17670912282596839597> _17670912282596839597;
+	Data::Enum<_17802606411144917162> _17802606411144917162;
+	Data::Enum<_18153127729825633248> _18153127729825633248;
+	Data::Enum<_18235969829881518418> _18235969829881518418;
+	Data::Enum<_1845078604478085116> _1845078604478085116;
+	Data::Enum<_1977590426358230894> _1977590426358230894;
+	Data::Enum<_2065394700677686397> _2065394700677686397;
+	Data::Enum<_2425953548859621426> _2425953548859621426;
+	Data::Enum<_2753782435549223662> _2753782435549223662;
+	Data::Enum<_3033022659337824191> _3033022659337824191;
+	Data::Enum<_3039055495308853332> _3039055495308853332;
+	Data::Enum<_3140500857535214931> _3140500857535214931;
+	Data::Enum<_3643785449856294086> _3643785449856294086;
+	Data::Enum<_4192588996974612514> _4192588996974612514;
+	Data::Enum<_4278308988828624825> _4278308988828624825;
+	Data::Enum<_4386102791994685188> _4386102791994685188;
+	Data::Enum<_4494468278546116134> _4494468278546116134;
+	Data::Enum<_5036066410770918472> _5036066410770918472;
+	Data::Enum<_5145081417529458167> _5145081417529458167;
+	Data::Enum<_5230411027965047570> _5230411027965047570;
+	Data::Enum<_5298571532246140711> _5298571532246140711;
+	Data::Enum<_55136037473008208> _55136037473008208;
+	Data::Enum<_5634362082519974124> _5634362082519974124;
+	Data::Enum<_5869665143813001026> _5869665143813001026;
+	Data::Enum<_5937135356624406219> _5937135356624406219;
+	Data::Enum<_661645095586149546> _661645095586149546;
+	Data::Enum<_6773575892270236835> _6773575892270236835;
+	Data::Enum<_702982911163221302> _702982911163221302;
+	Data::Enum<_711316197736138568> _711316197736138568;
+	Data::Enum<_7200846769452032765> _7200846769452032765;
+	Data::Enum<_7205909546088832266> _7205909546088832266;
+	Data::Enum<_7252382242329520081> _7252382242329520081;
+	Data::Enum<_7705700044124304347> _7705700044124304347;
+	Data::Enum<_7786864151230414866> _7786864151230414866;
+	Data::Enum<_8004497664373186229> _8004497664373186229;
+	Data::Enum<_8497568152468259638> _8497568152468259638;
+	Data::Enum<_857511348685999225> _857511348685999225;
+	Data::Enum<_879993071457401920> _879993071457401920;
+	Data::Enum<_882636985276030155> _882636985276030155;
+	Data::Enum<_8971903895020413263> _8971903895020413263;
+	Data::Enum<_8993451623919032985> _8993451623919032985;
+	Data::Enum<_9073478381193169871> _9073478381193169871;
+	Data::Enum<_9329678298925105483> _9329678298925105483;
+	Data::Enum<_9380338098995773009> _9380338098995773009;
+	Data::Enum<_9539946314806298996> _9539946314806298996;
+	Data::Enum<_9545094517092549436> _9545094517092549436;
+	Data::Enum<_9705479798924140351> _9705479798924140351;
+	Data::Enum<_9707096629495885452> _9707096629495885452;
+	Data::Enum<_9734881248452388660> _9734881248452388660;
 	
 	explicit Structure(Sav& s) : 
 		_10035618609325695840 { s.get<struct _10035618609325695840>() },

@@ -12,7 +12,10 @@ struct GameData::PlayerStatus::Companion::Water : Tag::Structure {
 	struct IsPlayedSoulSageFirstAppearanceEvent : Tag::Member { using type = bool&; };
 	struct IsSageDynamicGenerate : Tag::Member { using type = bool&; };
 	struct IsSummon : Tag::Member { using type = bool&; };
-	struct JoiningCondition : Tag::Enum { using type = ::Enum::Scalar<JoiningCondition>; enum enum_type : hash_t { Joining = murmurhash3::hash("Joining"), BreakawayNotice = murmurhash3::hash("BreakawayNotice"), Breakaway = murmurhash3::hash("Breakaway"), }; };
+	struct JoiningCondition : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { Joining = murmurhash3::hash("Joining"), BreakawayNotice = murmurhash3::hash("BreakawayNotice"), Breakaway = murmurhash3::hash("Breakaway"), }; };
+		using type = enum_t<values_t>;
+	};
 	struct RemainingEnergy : Tag::Member { using type = float&; };
 	struct ForUI;
 	struct CurrentPos : Tag::Member { using type = vec3f*; };
@@ -29,7 +32,7 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion::Water> : G
 	Data::Member<IsPlayedSoulSageFirstAppearanceEvent> IsPlayedSoulSageFirstAppearanceEvent;
 	Data::Member<IsSageDynamicGenerate> IsSageDynamicGenerate;
 	Data::Member<IsSummon> IsSummon;
-	Data::Member<JoiningCondition> JoiningCondition;
+	Data::Enum<JoiningCondition> JoiningCondition;
 	Data::Member<RemainingEnergy> RemainingEnergy;
 	Structure<ForUI> ForUI;
 	Data::Member<CurrentPos> CurrentPos;

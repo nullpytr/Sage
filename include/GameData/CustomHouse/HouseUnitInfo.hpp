@@ -5,7 +5,10 @@
 
 struct GameData::CustomHouse::HouseUnitInfo : Tag::Structure {
 	struct IsUsed : Tag::Member { using type = span<bool>*; };
-	struct HouseUnitType : Tag::Enum { using type = ::Enum::Array<HouseUnitType>; enum enum_type : hash_t { TypeA = murmurhash3::hash("TypeA"), TypeB = murmurhash3::hash("TypeB"), TypeC = murmurhash3::hash("TypeC"), TypeD = murmurhash3::hash("TypeD"), TypeE = murmurhash3::hash("TypeE"), TypeF = murmurhash3::hash("TypeF"), TypeG = murmurhash3::hash("TypeG"), TypeH = murmurhash3::hash("TypeH"), TypeI = murmurhash3::hash("TypeI"), TypeJ = murmurhash3::hash("TypeJ"), TypeK = murmurhash3::hash("TypeK"), TypeL = murmurhash3::hash("TypeL"), TypeM = murmurhash3::hash("TypeM"), TypeN = murmurhash3::hash("TypeN"), TypeO = murmurhash3::hash("TypeO"), TypeP = murmurhash3::hash("TypeP"), TypeQ = murmurhash3::hash("TypeQ"), TypeR = murmurhash3::hash("TypeR"), }; };
+	struct HouseUnitType : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { TypeA = murmurhash3::hash("TypeA"), TypeB = murmurhash3::hash("TypeB"), TypeC = murmurhash3::hash("TypeC"), TypeD = murmurhash3::hash("TypeD"), TypeE = murmurhash3::hash("TypeE"), TypeF = murmurhash3::hash("TypeF"), TypeG = murmurhash3::hash("TypeG"), TypeH = murmurhash3::hash("TypeH"), TypeI = murmurhash3::hash("TypeI"), TypeJ = murmurhash3::hash("TypeJ"), TypeK = murmurhash3::hash("TypeK"), TypeL = murmurhash3::hash("TypeL"), TypeM = murmurhash3::hash("TypeM"), TypeN = murmurhash3::hash("TypeN"), TypeO = murmurhash3::hash("TypeO"), TypeP = murmurhash3::hash("TypeP"), TypeQ = murmurhash3::hash("TypeQ"), TypeR = murmurhash3::hash("TypeR"), }; };
+		using type = range<enum_t<values_t>>*;
+	};
 	struct HouseUnitSpecificID : Tag::Member { using type = span<s32>*; };
 	struct UnitPos : Tag::Member { using type = span<vec3f>*; };
 	struct UnitRotX : Tag::Member { using type = span<vec3f>*; };
@@ -15,7 +18,7 @@ struct GameData::CustomHouse::HouseUnitInfo : Tag::Structure {
 
 template <> struct Data::Structure<GameData::CustomHouse::HouseUnitInfo> : GameData::CustomHouse::HouseUnitInfo {
 	Data::Member<IsUsed> IsUsed;
-	Data::Member<HouseUnitType> HouseUnitType;
+	Data::Enum<HouseUnitType> HouseUnitType;
 	Data::Member<HouseUnitSpecificID> HouseUnitSpecificID;
 	Data::Member<UnitPos> UnitPos;
 	Data::Member<UnitRotX> UnitRotX;

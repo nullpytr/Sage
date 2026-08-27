@@ -5,13 +5,16 @@
 
 struct GameData::MapData::IconData::MapPinData : Tag::Structure {
 	struct IsFit : Tag::Member { using type = span<bool>*; };
-	struct Type : Tag::Enum { using type = ::Enum::Array<Type>; enum enum_type : hash_t { Invalid = murmurhash3::hash("Invalid"), Red = murmurhash3::hash("Red"), Blue = murmurhash3::hash("Blue"), Yellow = murmurhash3::hash("Yellow"), Green = murmurhash3::hash("Green"), Purple = murmurhash3::hash("Purple"), LightBlue = murmurhash3::hash("LightBlue"), }; };
+	struct Type : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { Invalid = murmurhash3::hash("Invalid"), Red = murmurhash3::hash("Red"), Blue = murmurhash3::hash("Blue"), Yellow = murmurhash3::hash("Yellow"), Green = murmurhash3::hash("Green"), Purple = murmurhash3::hash("Purple"), LightBlue = murmurhash3::hash("LightBlue"), }; };
+		using type = range<enum_t<values_t>>*;
+	};
 	struct Pos : Tag::Member { using type = span<vec3f>*; };
 };/* Tag::Structure GameData::MapData::IconData::MapPinData close */
 
 template <> struct Data::Structure<GameData::MapData::IconData::MapPinData> : GameData::MapData::IconData::MapPinData {
 	Data::Member<IsFit> IsFit;
-	Data::Member<Type> Type;
+	Data::Enum<Type> Type;
 	Data::Member<Pos> Pos;
 	
 	explicit Structure(Sav& s) : 
