@@ -70,7 +70,7 @@ class StructureEmitter():
             if child.hash_text_string == "Playtime":
                 child_hash = f"0x{child.hash_hexadecimal}" # unknown hash text for playtime field
 
-            write(f"template <> hash_t constexpr Data::Hashtable<{child.path}> = {child_hash};")
+            write(f"template <> {types.Hash} constexpr Data::Hashtable<{child.path}> = {child_hash};")
 
         string = delim.join(buffer)
         if include_dir: 

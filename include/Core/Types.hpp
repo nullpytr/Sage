@@ -34,6 +34,9 @@ using byte = unsigned char;
 #include "External/MurmurHash3.hpp"
 using hash_t = mmh32;
 
+/* blob is <4MB, offset fits into 32 bits */
+using offset_t = u32;
+
 /* STL types */
 #include <span>
 using std::span;
@@ -76,9 +79,9 @@ namespace Data
         return 0;
     }();
 
-    template <typename M>
-    using Member = M::type;
+    template <typename M, typename T = M::type>
+    using Member = std::remove_pointer_t<T>;
 
     template <typename E>
-    using Enum = E::type;
+    using Enum = Member<E>;
 }

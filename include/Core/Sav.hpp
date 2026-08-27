@@ -11,6 +11,8 @@
 
 #define METADATA_SAVE_TYPE_HASH 0xa3db7114
 
+inline constexpr struct {} from_hash;
+
 class Sav
 {
 public:
@@ -19,9 +21,9 @@ public:
     {
         // Load entire hash table once
         m_offsets.reserve(31000); // approximate size of the hashtable
-        for (u32 offset = 0x000028; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
+        for (offset_t offset = 0x000028; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
         {
-            auto hash = value_at<hash_t>(offset);
+            auto hash = ref<hash_t>(offset);
             m_offsets[hash] = offset + sizeof(hash_t);
 
             /* Hashtable ends at MetaData.SaveTypeHash
@@ -40,29 +42,9 @@ public:
 
     /* -- */
 
-    /* Low-level access */
-    /* Get reference to value of type T at given offset */
-    template <typename T>
-    T& value_at(u32 const offset)
-    {
-        return *ptr<T>(offset);
-    }
-
-    /* Get pointer to value of type T at given offset */
-    template <typename T>
-    T* ptr(u32 const offset)
-    {
-        return reinterpret_cast<T*>(
-            &m_data[0]
-            + offset
-        );
-    }
-    /* -- */
-
     /* High-level access: using GameData types (recommended)
-     * Powered by the private getter machinery below and the
-     * auto generated header include/GameData.hpp
-     */
+     * Powered by the lower level access methods and the
+     * auto generated header include/GameData.hpp */
     template<typename S, typename D = Data::Structure<S>>
     requires std::derived_from<S, Tag::Structure>
     D get()
@@ -70,41 +52,58 @@ public:
         return D { *this }; // uses get<M>() to construct members under the hood
     }
 
-    template<typename  M, typename T = Data::Member<M>, typename A = M::layout>
+    template<typename  M, typename T = Data::Member<M>, typename L = Layout<T>, typename P = M::type>
     requires std::derived_from<M, Tag::Member>
     T get()
     {
-        return get<T, A>(Data::Hashtable<M>);
+        hash_t const& hash = Data::Hashtable<M>;
+
+        if constexpr (std::is_pointer_v<P>) {
+            /* resolve indirection automatically
+             * so the user does not have to */
+            offset_t const offset = ref<from_hash, u32>(hash);
+            return ref<L>(offset);
+        }
+
+        return ref<from_hash, L>(hash); // default
     }
-    template <typename T, typename A = T>
-    T get(hash_t const hash)
+
+    /* Mid-level access */
+    /* Get pointer to value of type T from hash */
+    template <decltype(from_hash), typename T>
+    T* ptr(hash_t const hash)
     {
-        return Getter<A>::get(*this, hash);
+        offset_t const offset = m_offsets.at(hash);
+        return ptr<T>(offset);
     }
 
+    /* Get reference to value of type T from hash */
+    template <decltype(from_hash), typename T>
+    T& ref(hash_t const hash)
+    {
+        return *ptr<from_hash, T>(hash);
+    }
 
-private: /* Specializations for different data types */
+    /* Low-level access */
+    /* Get pointer to value of type T at given offset */
     template <typename T>
-    struct Getter;
+    T* ptr(offset_t const offset)
+    {
+        return reinterpret_cast<T*>(
+            &m_data[0]
+            + offset
+        );
+    }
 
+    /* Get reference to value of type T at given offset */
     template <typename T>
-    struct Getter<T&> {
-        static T& get(Sav& self, hash_t const hash) {
-            return self.value_at<T>(
-                self.m_offsets.at(hash)
-            );
-        }
-    };
-
-    template <typename T>
-    struct Getter<T*> {
-        static T& get(Sav& self, hash_t const hash) {
-            u32 const value_offset = Getter<u32&>::get(self, hash); // hash gives offest of actual value
-            return *self.ptr<T>(value_offset);
-        }
-    };
+    T& ref(offset_t const offset)
+    {
+        return *ptr<T>(offset);
+    }
+    /* -- */
 
 private: /* Members */
     std::vector<byte> m_data;
-    std::unordered_map<hash_t, u32> m_offsets;
+    std::unordered_map<hash_t, offset_t> m_offsets;
 };
