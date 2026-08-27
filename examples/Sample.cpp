@@ -1,4 +1,5 @@
 #include <print>
+#include <algorithm>
 #include "Core/Sav.hpp"
 #include "GameData.hpp"
 
@@ -72,6 +73,24 @@ int main(int const argc, char const* argv[]) {
 
         require(save.get<GameData::PlayerStatus::CurrentSpecialPower>() == power.Amiibo);
     }
+
+    /* Enum arrays */
+    auto& saddle_array = data.OwnedHorseList.Saddle;
+    auto first_saddle = saddle_array[0];
+    std::println(
+        "First horse {} wearing saddle GameRomHorseSaddle_00",
+        first_saddle == first_saddle.GameRomHorseSaddle_00 ? "is" : "is not"
+   );
+
+    // Find which horse is wearing a specific saddle
+    auto const itr = std::ranges::find_if(
+        saddle_array,
+        [](auto s) { return s == s.GameRomHorseSaddle_00; }
+    );
+    auto const pos = itr - saddle_array.begin();
+
+    if (pos < saddle_array.size()) std::println("GameRomHorseSaddle_00 found at position {} of array", pos);
+    else std::println("GameRomHorseSaddle_00 not found in array");
 
     /* String arrays
      * strings inside arrays need to be adapted explicitly
