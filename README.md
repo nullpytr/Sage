@@ -1,124 +1,119 @@
 # Sage
 
-Simple tool for parsing and patching savegame files for TLoZ: Tears of the Kingdom.
+Header-only C++23 library for no-copy, in-place inspection and editing of *The Legend of Zelda: Tears of the Kingdom* save game files.
 
-## Credits
-This tool is based on [this](https://www.marcrobledo.com/savegame-editors/zelda-totk) amazing savegame editor by [Marc Robeldo](https://www.marcrobledo.com/) and extensive game data gathered by [MrCheeze](https://github.com/MrCheeze/totk-tools) and [McSpazzy](https://github.com/McSpazzy/totk-gamedata).
+All member reads and writes go directly into the loaded byte blob. No intermediate objects, no serialization round-trip.
 
-## Usage
-At this stage, no user interface has been implemented;  
-but the `Sav.hpp` header can be included and used like a library as such:
-```c++
-    /* progress.sav */
-    std::println("/* progress.sav */");
-    Sav progress_sav { "test/progress.sav" };
+## Usage / API
 
-    auto data = progress_sav.get<GameData::GameData>();
+Add `lib/` & `include/` to your include paths and simply:
 
-    // read any value from struct
-    std::println("Playtime: {} seconds", data.Playtime);
-
-    std::print("Pony Points: {}", data.HorseInnMemberPoint);
-    data.HorseInnMemberPoint = 69; // write directly to any ref in struct
-    std::println(" -> {}", data.HorseInnMemberPoint);
-
-    // cstrings can be (optionally) upgraded to string views
-    string const current_banc = data.Sequence_CurrentBanc;
-
-    std::println("Current Banc: {}", current_banc);
-
-
-    /* Query location */
-    auto [x, y, z] = data.PlayerStatus.SavePos; // get copy
-    std::println("Location: {}, {}, {}", x, y, z);
-
-    /* Set heart container count */
-    auto& hearts = data.PlayerStatus.MaxLife; // get as reference
-
-    std::print("Heart containers: {}", hearts / 4);
-    hearts = 40 * 4; // directly writes to sav object's memory
-    std::println(" -> {}", hearts / 4);
-
-    /* Set rupee amount */
-    auto& rupees = data.PlayerStatus.CurrentRupee; // another ref
-    std::print("Rupees: {}", rupees);
-    rupees = 99'999;
-    std::println(" -> {}", rupees);
-
-    /* Set weapon capacity */
-    auto& weapon_capacity = data.Pouch.Weapon.ValidNum[0];
-    std::print("Weapon capacity: {}", weapon_capacity);
-    weapon_capacity = 20;
-    std::println(" -> {}", weapon_capacity);
-
-    /* Query cleared shrine count */
-    auto& dungeon = data.DungeonState.Dungeon;
-    std::print("Shrines cleared: {}", dungeon.test(dungeon.Clear)); // 50
-
-    /* Set all shrines as cleared */
-    for (auto idx = 0; idx < dungeon.size; ++idx) dungeon[idx] = dungeon.Clear;
-    std::println(" -> {}", dungeon.test(dungeon.Clear)); // 152
-
-    progress_sav.dump("test/export.sav");
-    
-    std::println("Exported modified save to 'test/export.sav'");
-    std::println("/* -- */");
-    /* -- */
-
-    /* caption.sav */
-    std::println("\n/* caption.sav */");
-    Sav caption_sav { "test/caption.sav" };
-
-    /* Query location */
-    auto caption_data = caption_sav.get<GameData::CaptionData::Data>();
-    std::println(
-        "Location: {}",
-        string {caption_data.LocationName /* string64 - should be wrapped in string_view */}
-    );
-
-    /* Export save thumbnail (menu preview image) */
-    write_all_bytes(
-        "test/preview.jpg",
-        caption_data.ScreenShot // array<byte>
-    );
-    std::println("Exported save thumbnail to 'test/preview.jpg'");
-    std::println("/* -- */");
-    /* -- */
+```cpp
+#include <sage>
 ```
 
-should output:
-```c++
-/* progress.sav */
-Playtime: 193449 seconds
-Pony Points: 26 -> 69
-Current Banc: MainField
-Location: -255.73038, 616.5528, -1062.7076
-Heart containers: 40 -> 40
-Rupees: 986836 -> 99999
-Weapon capacity: 20 -> 20
-Shrines cleared: 51 -> 152
-Exported modified save to 'test/export.sav'
-/* -- */
+Sage provides three different ways to access save data - basically 3 tiers of abstraction:
 
-/* caption.sav */
-Location: MapArea_TamulPlateau
-Exported save thumbnail to 'test/preview.jpg'
-/* -- */
+### High level
+
+Load an entire subsystem at once. Member access mirrors the in-game data hierarchy.
+
+```cpp
+Sav save("progress.sav");
+auto data = save.get<GameData>();
+
+auto& life    = data.PlayerStatus.MaxLife;
+auto& stamina = data.PlayerStatus.MaxStamina;
+
+// Writes go back into the blob in-place.
+data.PlayerStatus.MaxLife = 40.0f;
+save.export("progress.sav");
 ```
 
-The modifications (ex. number of heart containers and amount of rupees) will reflect in-game:
-![sample-image](https://github.com/priyamkalra0/Sage/releases/download/sample-image/sample.png)
+### Medium level
 
-## Dependencies
+Fetch a single member without constructing the full parent structure. Useful when you only need one field.
 
-*   none
+```cpp
+auto& life = save.get<GameData::PlayerStatus::MaxLife>();
+life = 40.0f;
+```
+
+### Low level
+
+Direct offset or hash-based access. Useful for quick inspection or fields not yet covered by the generated headers.
+
+```cpp
+// By file offset
+auto& life_ref = save.ref<float>(0x1A4C);
+auto* life_ptr = save.ptr<float>(0x1A4C); // deref will also give life_ref
+```
+```cpp
+// By MurmurHash3 of the field name
+auto& life_ref = save.ref<from_hash, float>(0x1A4C);
+auto* life_ptr = save.ptr<from_hash, float>(0x1A4C);
+```
+
+## Examples
+More detailed examples can be found [here](./examples).
+
+## How it works
+
+### I. Sav: file I/O and field lookup
+
+`Sav` reads the entire save file into a `std::vector<byte>`. On construction it walks the blob's internal hash table and builds an `unordered_map<hash_t, offset_t>` for O(1) field lookup by name hash. All subsequent member access "overlay" that buffer.
+
+Filesystem I/O lives in `Core/Filesystem.hpp` via `read_all_bytes()` and `write_all_bytes()`.
+
+### II. Overlay System
+
+The type system splits into two namespaces:
+
+- `Tag::Structure`, `Tag::Member`, `Tag::Enum` are compile-time constraints. Template specializations are gated behind `std::derived_from` concept checks so only valid types are accepted.
+- `Data::Structure<S>` is the constructible copy of the tag structure, it can be constructed with Sav&, and "overlays" it's members over the data of the Sav object. Automatically constructed on `Sav::get<S>()`.
+- `Data::Hashtable<M>` stores compile-time hash values for each member, computed via `consteval murmurhash3::hash()`. Each subsystem header defines its own specializations; `lib/GameData/GameData.hpp` includes all ~50 of them. `lib/Sage.hpp` includes `GameData.hpp`, and `include/sage` forwards to `Sage.hpp`, so a single `#include <sage>` brings everything in.
+
+### III. `Sav::get<[S|M|E]>()` dispatch
+
+`get<[S|M|E]>()` dispatches at compile time based on the tag `T` carries:
+
+- `Tag::Structure (S)`: builds `Data::Structure<T>`, initializing every member reference from the blob.
+- `Tag::Member (M)`: resolves the hash from `Data::Hashtable<M>` and applies layout adaptation. If the member type is a pointer (e.g. `X*`), `get<M>()` resolves the indirection automatically and returns `X`. Non-pointer members (e.g. `float&`) read directly from the runtime hashtable offset.
+- `Tag::Enum (E)`: `Tag::Enum` inherits from `Tag::Member`, so enum members go through the same `get<M>()` path. Scalar enums have `type = enum_t<E>&` (non-pointer, direct read); enum arrays have `type = span<enum_t<E>>*` (pointer-indirect).
+
+### IV. Overlay layout adaptors
+
+The blob uses Nintendo's binary layout, which doesn't map 1:1 to C++ types. `Core/Layout.hpp` adapts each type at point of access with no copying of the underlying data, always "overlaying" or "viewing" the buffer.
+
+| type | Blob layout | C++ type | Adapter |
+|---|---|---|---|
+| `primitive` | `u8`-`u64`, `s8`-`s64`, `float` | direct `&` | not needed, identitical memory layout |
+| `vec2f \| vec3f` | `float[2\|3]` | `vec2f \| vec3f` | needs pointer indirection resolution |
+| `string<CharT>` | `CharT buf[N+1]` | `string16/32/64`, `wstring16/32/64` (`mutable_string_view`) | raw char buffer as a mutable bounds-checked string view |
+| `array<T>` | `{ u32 size; T data[] }` | `span<T>` | needs pointer indirection resolution |
+| `enum`  | `hash_t enum_value` | `enum_t<E>&` | not needed |
+| `enum array` | `hash_t enum_buf[]` | `span<enum_t<E>>` | needs pointer indirection; each element reinterpreted as a typed enum |
+| `array<adaptive_t>` | nested array of adaptive types | `adaptive_range<T>` (lazy `std::views::transform`) | lazy per-element layout adapt via `std::views::transform`; still no copy |
+
+## Codegen
+
+The overlay schema is autogenerated from `data/preset`(s) or explicit metadata files, and output to `lib/GameData`. See [`scripts`](./scripts) for more information.
+
+## Dependencies (vendored at `include/External/`)
+
+- [boost::static_string](https://github.com/boostorg/static_string) - A patched verion (header-only, standalone mode). Provides fixed-capacity string views backing `string16/32/64` and their wide variants.
+- [StaticMurmurHash3](https://github.com/AntonJohansson/StaticMurmur/blob/master/StaticMurmur.hpp) - A compile time implementation of MurmurHash3 by [AntonJohansson](https://github.com/AntonJohansson)
 
 ## Build
 
-This project uses CMake. To build, navigate to the project root and run:
+Requires *CMake 3.14+* and a *C++23* compiler.
 
-```bash
-mkdir build
-cd build && cmake ..
-cmake --build .
+```sh
+cmake -S . -B build
+cmake --build build
 ```
+
+## Credits
+
+Code reference: [Marc Robeldo](https://www.marcrobledo.com/savegame-editors/zelda-totk)  
+Data mining: [MrCheeze](https://github.com/MrCheeze/totk-tools) & [McSpazzy](https://github.com/McSpazzy/totk-gamedata)
