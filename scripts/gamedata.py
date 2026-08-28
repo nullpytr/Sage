@@ -120,7 +120,7 @@ def run(args: argparse.Namespace) -> None:
     emit = tree.TreeEmitter.emit
     with redirect_stdout(verbose_fd):
         if args.standalone: emit(gamedata, header_fp=header_file)
-        else: emit(gamedata, include_dir=header_dir)
+        else: emit(gamedata, include_dir=out_dir)
 
     print(header_file)
     if not args.standalone: print(header_dir)
