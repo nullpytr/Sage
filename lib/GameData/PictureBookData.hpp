@@ -60,8 +60,8 @@ struct GameData::PictureBookData : Tag::Structure {
 	struct Animal_SkyGull_A;
 	struct Animal_SkyPigeon_A;
 	struct Animal_Squirrel_A;
-	struct Animal_Sunazarashi_A;
 	struct Animal_SunazarashiSP_C;
+	struct Animal_Sunazarashi_A;
 	struct Animal_WildDuck_A;
 	struct Animal_WildGoat_A;
 	struct Animal_Wolf_A;
@@ -83,8 +83,8 @@ struct GameData::PictureBookData : Tag::Structure {
 	struct Enemy_Bokoblin_Junior;
 	struct Enemy_Bokoblin_Middle;
 	struct Enemy_Bokoblin_Senior;
-	struct Enemy_CaveMaster_000;
 	struct Enemy_CDungeon_Practice;
+	struct Enemy_CaveMaster_000;
 	struct Enemy_Chuchu_Electric_Junior;
 	struct Enemy_Chuchu_Fire_Junior;
 	struct Enemy_Chuchu_Ice_Junior;
@@ -296,6 +296,8 @@ struct GameData::PictureBookData : Tag::Structure {
 	struct Item_InsectGet_K;
 	struct Item_InsectGet_O;
 	struct Item_InsectGet_Z;
+	struct Item_MushroomGet_D;
+	struct Item_MushroomGet_K;
 	struct Item_Mushroom_A;
 	struct Item_Mushroom_B;
 	struct Item_Mushroom_C;
@@ -308,8 +310,6 @@ struct GameData::PictureBookData : Tag::Structure {
 	struct Item_Mushroom_N;
 	struct Item_Mushroom_O;
 	struct Item_Mushroom_P;
-	struct Item_MushroomGet_D;
-	struct Item_MushroomGet_K;
 	struct Item_PlantGet_A;
 	struct Item_PlantGet_B;
 	struct Item_PlantGet_C;
@@ -571,8 +571,8 @@ struct GameData::PictureBookData : Tag::Structure {
 #include "PictureBookData/Animal_SkyGull_A.hpp"
 #include "PictureBookData/Animal_SkyPigeon_A.hpp"
 #include "PictureBookData/Animal_Squirrel_A.hpp"
-#include "PictureBookData/Animal_Sunazarashi_A.hpp"
 #include "PictureBookData/Animal_SunazarashiSP_C.hpp"
+#include "PictureBookData/Animal_Sunazarashi_A.hpp"
 #include "PictureBookData/Animal_WildDuck_A.hpp"
 #include "PictureBookData/Animal_WildGoat_A.hpp"
 #include "PictureBookData/Animal_Wolf_A.hpp"
@@ -594,8 +594,8 @@ struct GameData::PictureBookData : Tag::Structure {
 #include "PictureBookData/Enemy_Bokoblin_Junior.hpp"
 #include "PictureBookData/Enemy_Bokoblin_Middle.hpp"
 #include "PictureBookData/Enemy_Bokoblin_Senior.hpp"
-#include "PictureBookData/Enemy_CaveMaster_000.hpp"
 #include "PictureBookData/Enemy_CDungeon_Practice.hpp"
+#include "PictureBookData/Enemy_CaveMaster_000.hpp"
 #include "PictureBookData/Enemy_Chuchu_Electric_Junior.hpp"
 #include "PictureBookData/Enemy_Chuchu_Fire_Junior.hpp"
 #include "PictureBookData/Enemy_Chuchu_Ice_Junior.hpp"
@@ -807,6 +807,8 @@ struct GameData::PictureBookData : Tag::Structure {
 #include "PictureBookData/Item_InsectGet_K.hpp"
 #include "PictureBookData/Item_InsectGet_O.hpp"
 #include "PictureBookData/Item_InsectGet_Z.hpp"
+#include "PictureBookData/Item_MushroomGet_D.hpp"
+#include "PictureBookData/Item_MushroomGet_K.hpp"
 #include "PictureBookData/Item_Mushroom_A.hpp"
 #include "PictureBookData/Item_Mushroom_B.hpp"
 #include "PictureBookData/Item_Mushroom_C.hpp"
@@ -819,8 +821,6 @@ struct GameData::PictureBookData : Tag::Structure {
 #include "PictureBookData/Item_Mushroom_N.hpp"
 #include "PictureBookData/Item_Mushroom_O.hpp"
 #include "PictureBookData/Item_Mushroom_P.hpp"
-#include "PictureBookData/Item_MushroomGet_D.hpp"
-#include "PictureBookData/Item_MushroomGet_K.hpp"
 #include "PictureBookData/Item_PlantGet_A.hpp"
 #include "PictureBookData/Item_PlantGet_B.hpp"
 #include "PictureBookData/Item_PlantGet_C.hpp"
@@ -1082,8 +1082,8 @@ template <> struct Data::Structure<GameData::PictureBookData> : GameData::Pictur
 	Structure<Animal_SkyGull_A> Animal_SkyGull_A;
 	Structure<Animal_SkyPigeon_A> Animal_SkyPigeon_A;
 	Structure<Animal_Squirrel_A> Animal_Squirrel_A;
-	Structure<Animal_Sunazarashi_A> Animal_Sunazarashi_A;
 	Structure<Animal_SunazarashiSP_C> Animal_SunazarashiSP_C;
+	Structure<Animal_Sunazarashi_A> Animal_Sunazarashi_A;
 	Structure<Animal_WildDuck_A> Animal_WildDuck_A;
 	Structure<Animal_WildGoat_A> Animal_WildGoat_A;
 	Structure<Animal_Wolf_A> Animal_Wolf_A;
@@ -1105,8 +1105,8 @@ template <> struct Data::Structure<GameData::PictureBookData> : GameData::Pictur
 	Structure<Enemy_Bokoblin_Junior> Enemy_Bokoblin_Junior;
 	Structure<Enemy_Bokoblin_Middle> Enemy_Bokoblin_Middle;
 	Structure<Enemy_Bokoblin_Senior> Enemy_Bokoblin_Senior;
-	Structure<Enemy_CaveMaster_000> Enemy_CaveMaster_000;
 	Structure<Enemy_CDungeon_Practice> Enemy_CDungeon_Practice;
+	Structure<Enemy_CaveMaster_000> Enemy_CaveMaster_000;
 	Structure<Enemy_Chuchu_Electric_Junior> Enemy_Chuchu_Electric_Junior;
 	Structure<Enemy_Chuchu_Fire_Junior> Enemy_Chuchu_Fire_Junior;
 	Structure<Enemy_Chuchu_Ice_Junior> Enemy_Chuchu_Ice_Junior;
@@ -1318,6 +1318,8 @@ template <> struct Data::Structure<GameData::PictureBookData> : GameData::Pictur
 	Structure<Item_InsectGet_K> Item_InsectGet_K;
 	Structure<Item_InsectGet_O> Item_InsectGet_O;
 	Structure<Item_InsectGet_Z> Item_InsectGet_Z;
+	Structure<Item_MushroomGet_D> Item_MushroomGet_D;
+	Structure<Item_MushroomGet_K> Item_MushroomGet_K;
 	Structure<Item_Mushroom_A> Item_Mushroom_A;
 	Structure<Item_Mushroom_B> Item_Mushroom_B;
 	Structure<Item_Mushroom_C> Item_Mushroom_C;
@@ -1330,8 +1332,6 @@ template <> struct Data::Structure<GameData::PictureBookData> : GameData::Pictur
 	Structure<Item_Mushroom_N> Item_Mushroom_N;
 	Structure<Item_Mushroom_O> Item_Mushroom_O;
 	Structure<Item_Mushroom_P> Item_Mushroom_P;
-	Structure<Item_MushroomGet_D> Item_MushroomGet_D;
-	Structure<Item_MushroomGet_K> Item_MushroomGet_K;
 	Structure<Item_PlantGet_A> Item_PlantGet_A;
 	Structure<Item_PlantGet_B> Item_PlantGet_B;
 	Structure<Item_PlantGet_C> Item_PlantGet_C;
@@ -1593,8 +1593,8 @@ template <> struct Data::Structure<GameData::PictureBookData> : GameData::Pictur
 		Animal_SkyGull_A { s },
 		Animal_SkyPigeon_A { s },
 		Animal_Squirrel_A { s },
-		Animal_Sunazarashi_A { s },
 		Animal_SunazarashiSP_C { s },
+		Animal_Sunazarashi_A { s },
 		Animal_WildDuck_A { s },
 		Animal_WildGoat_A { s },
 		Animal_Wolf_A { s },
@@ -1616,8 +1616,8 @@ template <> struct Data::Structure<GameData::PictureBookData> : GameData::Pictur
 		Enemy_Bokoblin_Junior { s },
 		Enemy_Bokoblin_Middle { s },
 		Enemy_Bokoblin_Senior { s },
-		Enemy_CaveMaster_000 { s },
 		Enemy_CDungeon_Practice { s },
+		Enemy_CaveMaster_000 { s },
 		Enemy_Chuchu_Electric_Junior { s },
 		Enemy_Chuchu_Fire_Junior { s },
 		Enemy_Chuchu_Ice_Junior { s },
@@ -1829,6 +1829,8 @@ template <> struct Data::Structure<GameData::PictureBookData> : GameData::Pictur
 		Item_InsectGet_K { s },
 		Item_InsectGet_O { s },
 		Item_InsectGet_Z { s },
+		Item_MushroomGet_D { s },
+		Item_MushroomGet_K { s },
 		Item_Mushroom_A { s },
 		Item_Mushroom_B { s },
 		Item_Mushroom_C { s },
@@ -1841,8 +1843,6 @@ template <> struct Data::Structure<GameData::PictureBookData> : GameData::Pictur
 		Item_Mushroom_N { s },
 		Item_Mushroom_O { s },
 		Item_Mushroom_P { s },
-		Item_MushroomGet_D { s },
-		Item_MushroomGet_K { s },
 		Item_PlantGet_A { s },
 		Item_PlantGet_B { s },
 		Item_PlantGet_C { s },

@@ -2,59 +2,37 @@
 #include <sage>
 
 struct GameData : Tag::Structure {
-	struct OwnedHorseList;
-	struct DeadHorseList;
-	struct AutoBuilder;
-	struct FigureInfo;
-	struct ActionGuide_IsNew;
-	struct CheckPoint_IsDisplayFoliage;
-	struct CustomHouse;
-	struct DragonMemoryDataForUI;
-	struct IsActivateCannon;
-	struct IsAppearKorok;
-	struct IsDefeatBossEnemy;
-	struct IsFindTreasureMap;
-	struct IsGetAdventureMemory;
-	struct IsGetCaveMasterMedal;
-	struct IsOpenCannon;
-	struct IsVisitLocation;
-	struct IsVisitLocationArea_CaveEntrance;
-	struct KeyCrystalDungeonUnlocked;
-	struct MapData;
-	struct NpcGardenInfo;
-	struct NpcGardenInfo_HatenoVillage023;
-	struct NpcServeFood;
+	struct HorseInnMemberPoint : Tag::Member { using type = s32&; };
 	struct NushiShop_MedalComplete : Tag::Member { using type = bool&; };
-	struct OwnedCustomizableHorseTack_Reins;
-	struct OwnedCustomizableHorseTack_Saddle;
-	struct OwnedParasailPattern;
-	struct PlayerStatus;
-	struct ReadyMadeAutoBuilderDraft;
-	struct RecycleBoxData;
-	struct ReplaceblePicture;
+	struct Playtime : Tag::Member { using type = u32&; };
+	struct Sequence_CurrentBanc : Tag::Member { using type = string64*; };
+	struct ValidPouchIndex : Tag::Member { using type = s32&; };
+	struct WellCollectionRewardUnit : Tag::Member { using type = s32&; };
+	struct WellDiscoverNumCurrent : Tag::Member { using type = s32&; };
+	struct WellDiscoverNumLeft : Tag::Member { using type = s32&; };
+	struct WellDiscoverNumTotal : Tag::Member { using type = s32&; };
+	struct WellReportNum : Tag::Member { using type = s32&; };
+	struct WellReportNumMinusOne : Tag::Member { using type = s32&; };
+	struct WellReportNumThisTime : Tag::Member { using type = s32&; };
+	struct World_BloodyMoonTimer : Tag::Member { using type = u64&; };
+	struct World_CurrentDateTime : Tag::Member { using type = u64&; };
+	struct World_CurrentDays : Tag::Member { using type = s32&; };
+	struct World_CurrentHour : Tag::Member { using type = s32&; };
+	struct World_CurrentMinute : Tag::Member { using type = s32&; };
 	struct World_IsBloodyMoonDay : Tag::Member { using type = bool&; };
 	struct World_IsZonauRespawnDay : Tag::Member { using type = bool&; };
-	struct DongoList;
-	struct DongoLocatorList;
-	struct LightBallBud;
-	struct Pouch;
-	struct ArrivalPointState;
-	struct ChallengeLogState_Challenge;
-	struct DungeonState;
-	struct KeyCrystalDungeonState;
-	struct KorokCarryProgress;
+	struct World_PlayerPos : Tag::Member { using type = vec3f*; };
+	struct World_ShootingStarPosition : Tag::Member { using type = vec3f*; };
+	struct World_WeatherForecast : Tag::Member { using type = span<s32>*; };
+	struct World_ZonauRespawnTimer : Tag::Member { using type = u64&; };
 	struct LastTalkedOrchestraMemberStableHostel : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), GerudoCanyon = murmurhash3::hash("GerudoCanyon"), ShirotsumeShinbunsya = murmurhash3::hash("ShirotsumeShinbunsya"), TabantaOhashi = murmurhash3::hash("TabantaOhashi"), Higakkare = murmurhash3::hash("Higakkare"), ShinMaritta = murmurhash3::hash("ShinMaritta"), Minakkare = murmurhash3::hash("Minakkare"), Riverside = murmurhash3::hash("Riverside"), Lakeside = murmurhash3::hash("Lakeside"), Kougen = murmurhash3::hash("Kougen"), Sanroku = murmurhash3::hash("Sanroku"), Shitsugen = murmurhash3::hash("Shitsugen"), Mori = murmurhash3::hash("Mori"), Setsugen = murmurhash3::hash("Setsugen"), Futago = murmurhash3::hash("Futago"), HeigenHazure = murmurhash3::hash("HeigenHazure"), };
 		using type = enum_t<LastTalkedOrchestraMemberStableHostel>&;
 	};
-	struct LastWildHorse;
-	struct MaterialShortCut;
-	struct PictureBookData;
 	struct SensorMode : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), Dungeon = murmurhash3::hash("Dungeon"), Actor = murmurhash3::hash("Actor"), };
 		using type = enum_t<SensorMode>&;
 	};
-	struct SortPattern;
 	struct Step_AisyaRescue : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step1a = murmurhash3::hash("Step1a"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_AisyaRescue>&;
@@ -114,6 +92,10 @@ struct GameData : Tag::Structure {
 	struct Step_BuildingMaterialsTutorial : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GiveBuildingMaterials = murmurhash3::hash("GiveBuildingMaterials"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_BuildingMaterialsTutorial>&;
+	};
+	struct Step_CDungeon_AllDone : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), RewardAppeared = murmurhash3::hash("RewardAppeared"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_CDungeon_AllDone>&;
 	};
 	struct Step_CarryGoronKid1 : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Reach = murmurhash3::hash("Reach"), Complete = murmurhash3::hash("Complete"), };
@@ -210,10 +192,6 @@ struct GameData : Tag::Structure {
 	struct Step_CarryToShrine23 : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Carry = murmurhash3::hash("Carry"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_CarryToShrine23>&;
-	};
-	struct Step_CDungeon_AllDone : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), RewardAppeared = murmurhash3::hash("RewardAppeared"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_CDungeon_AllDone>&;
 	};
 	struct Step_Circuit_Desert : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), TimeUp = murmurhash3::hash("TimeUp"), Finish = murmurhash3::hash("Finish"), Reward = murmurhash3::hash("Reward"), Complete = murmurhash3::hash("Complete"), };
@@ -391,9 +369,9 @@ struct GameData : Tag::Structure {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GetFlintstones = murmurhash3::hash("GetFlintstones"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_FullyRipenedFlintstones>&;
 	};
-	struct Step_gather_Insect_Z : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_gather_Insect_Z>&;
+	struct Step_GOToTheCastleOfHyrule : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetPurah = murmurhash3::hash("MeetPurah"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_GOToTheCastleOfHyrule>&;
 	};
 	struct Step_GeniusWeapon_Zora : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), };
@@ -402,10 +380,6 @@ struct GameData : Tag::Structure {
 	struct Step_Genkos_Kitchen : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), HaveFish = murmurhash3::hash("HaveFish"), GetPresent = murmurhash3::hash("GetPresent"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_Genkos_Kitchen>&;
-	};
-	struct Step_Gerudo_UrbosaWeapon : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_Gerudo_UrbosaWeapon>&;
 	};
 	struct Step_GerudoCanyon_24hEnduranceComparison : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Prepare = murmurhash3::hash("Prepare"), Comparison = murmurhash3::hash("Comparison"), Complete = murmurhash3::hash("Complete"), };
@@ -430,6 +404,10 @@ struct GameData : Tag::Structure {
 	struct Step_GerudoDesertTreasure : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_GerudoDesertTreasure>&;
+	};
+	struct Step_Gerudo_UrbosaWeapon : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_Gerudo_UrbosaWeapon>&;
 	};
 	struct Step_GetCamera : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GotoUnderground = murmurhash3::hash("GotoUnderground"), TakePicture = murmurhash3::hash("TakePicture"), ReturnBaseCamp = murmurhash3::hash("ReturnBaseCamp"), Complete = murmurhash3::hash("Complete"), };
@@ -459,6 +437,14 @@ struct GameData : Tag::Structure {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step0 = murmurhash3::hash("Step0"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Step3 = murmurhash3::hash("Step3"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_GoneSnowQueen>&;
 	};
+	struct Step_GoronPond : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindThePond = murmurhash3::hash("FindThePond"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_GoronPond>&;
+	};
+	struct Step_GoronReturntoNature : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindGraveyard = murmurhash3::hash("FindGraveyard"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_GoronReturntoNature>&;
+	};
 	struct Step_Goron_MiniGame_01 : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Finish = murmurhash3::hash("Finish"), Retire = murmurhash3::hash("Retire"), PlayerOut = murmurhash3::hash("PlayerOut"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_Goron_MiniGame_01>&;
@@ -483,21 +469,9 @@ struct GameData : Tag::Structure {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), BeforeGame = murmurhash3::hash("BeforeGame"), Craft = murmurhash3::hash("Craft"), Playing = murmurhash3::hash("Playing"), Retire = murmurhash3::hash("Retire"), CourseOut = murmurhash3::hash("CourseOut"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_Goron_MiniGame_Tutorial_03>&;
 	};
-	struct Step_GoronPond : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindThePond = murmurhash3::hash("FindThePond"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_GoronPond>&;
-	};
-	struct Step_GoronReturntoNature : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), FindGraveyard = murmurhash3::hash("FindGraveyard"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_GoronReturntoNature>&;
-	};
 	struct Step_GotoFironeZonauRemains : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), DecipherTheIithograph = murmurhash3::hash("DecipherTheIithograph"), EventLightSpot01 = murmurhash3::hash("EventLightSpot01"), EventLightSpot02 = murmurhash3::hash("EventLightSpot02"), ZonauRemains_ArriveObservatory = murmurhash3::hash("ZonauRemains_ArriveObservatory"), ZonauRemains_TalkResearcher = murmurhash3::hash("ZonauRemains_TalkResearcher"), ZonauRemains_AppearsSkyIsland = murmurhash3::hash("ZonauRemains_AppearsSkyIsland"), ZonauRemains_OpenedTheDoor = murmurhash3::hash("ZonauRemains_OpenedTheDoor"), ZonauRemains_TouchTheHead = murmurhash3::hash("ZonauRemains_TouchTheHead"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_GotoFironeZonauRemains>&;
-	};
-	struct Step_GOToTheCastleOfHyrule : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetPurah = murmurhash3::hash("MeetPurah"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_GOToTheCastleOfHyrule>&;
 	};
 	struct Step_GroundPaintingAir01 : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoToWandererA = murmurhash3::hash("GoToWandererA"), GoToWandererB = murmurhash3::hash("GoToWandererB"), Carry = murmurhash3::hash("Carry"), Search = murmurhash3::hash("Search"), Complete = murmurhash3::hash("Complete"), };
@@ -510,6 +484,10 @@ struct GameData : Tag::Structure {
 	struct Step_HammerGong_MiniGame : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), Finish = murmurhash3::hash("Finish"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_HammerGong_MiniGame>&;
+	};
+	struct Step_HatenoPurchasePicture : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Purchase = murmurhash3::hash("Purchase"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_HatenoPurchasePicture>&;
 	};
 	struct Step_Hateno_Cheese : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Complete = murmurhash3::hash("Complete"), };
@@ -562,10 +540,6 @@ struct GameData : Tag::Structure {
 	struct Step_Hateno_WhatToPlant : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Choice = murmurhash3::hash("Choice"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_Hateno_WhatToPlant>&;
-	};
-	struct Step_HatenoPurchasePicture : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Purchase = murmurhash3::hash("Purchase"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_HatenoPurchasePicture>&;
 	};
 	struct Step_Hebra_SkyRingChallenge : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Preparation = murmurhash3::hash("Preparation"), Playing = murmurhash3::hash("Playing"), Retry = murmurhash3::hash("Retry"), TimeOver = murmurhash3::hash("TimeOver"), Complete = murmurhash3::hash("Complete"), };
@@ -699,30 +673,6 @@ struct GameData : Tag::Structure {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), GoTemple = murmurhash3::hash("GoTemple"), GoTemple2 = murmurhash3::hash("GoTemple2"), Step01 = murmurhash3::hash("Step01"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_MemoryOfTheDragon>&;
 	};
-	struct Step_Mercenary_Akkare_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_Mercenary_Akkare_Bloody>&;
-	};
-	struct Step_Mercenary_Eldin_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_Mercenary_Eldin_Bloody>&;
-	};
-	struct Step_Mercenary_Firone_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_Mercenary_Firone_Bloody>&;
-	};
-	struct Step_Mercenary_Hateru_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_Mercenary_Hateru_Bloody>&;
-	};
-	struct Step_Mercenary_Hebra_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_Mercenary_Hebra_Bloody>&;
-	};
-	struct Step_Mercenary_HyrulePlain_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_Mercenary_HyrulePlain_Bloody>&;
-	};
 	struct Step_MercenaryChallenge_Akkare : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_MercenaryChallenge_Akkare>&;
@@ -746,6 +696,30 @@ struct GameData : Tag::Structure {
 	struct Step_MercenaryChallenge_HyrulePlain : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_MercenaryChallenge_HyrulePlain>&;
+	};
+	struct Step_Mercenary_Akkare_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_Mercenary_Akkare_Bloody>&;
+	};
+	struct Step_Mercenary_Eldin_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_Mercenary_Eldin_Bloody>&;
+	};
+	struct Step_Mercenary_Firone_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_Mercenary_Firone_Bloody>&;
+	};
+	struct Step_Mercenary_Hateru_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Craft = murmurhash3::hash("Craft"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_Mercenary_Hateru_Bloody>&;
+	};
+	struct Step_Mercenary_Hebra_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MeetAgain = murmurhash3::hash("MeetAgain"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_Mercenary_Hebra_Bloody>&;
+	};
+	struct Step_Mercenary_HyrulePlain_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Move = murmurhash3::hash("Move"), Exterminate = murmurhash3::hash("Exterminate"), Report = murmurhash3::hash("Report"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_Mercenary_HyrulePlain_Bloody>&;
 	};
 	struct Step_MessageBottle_SOS : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MessageBottle_SOS_01 = murmurhash3::hash("MessageBottle_SOS_01"), MessageBottle_SOS_02 = murmurhash3::hash("MessageBottle_SOS_02"), Complete = murmurhash3::hash("Complete"), };
@@ -967,6 +941,10 @@ struct GameData : Tag::Structure {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), MakeFood = murmurhash3::hash("MakeFood"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_RestaurantInTheWell>&;
 	};
+	struct Step_RitoBridgeRepair : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_RitoBridgeRepair>&;
+	};
 	struct Step_Rito_ItemExchange : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_Rito_ItemExchange>&;
@@ -982,10 +960,6 @@ struct GameData : Tag::Structure {
 	struct Step_Rito_ShadowCave : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), GetHint = murmurhash3::hash("GetHint"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_Rito_ShadowCave>&;
-	};
-	struct Step_RitoBridgeRepair : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Search = murmurhash3::hash("Search"), Report = murmurhash3::hash("Report"), Collect = murmurhash3::hash("Collect"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_RitoBridgeRepair>&;
 	};
 	struct Step_SageOfFire : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Dream = murmurhash3::hash("Dream"), GoCrater = murmurhash3::hash("GoCrater"), DefeatBossMiddle = murmurhash3::hash("DefeatBossMiddle"), GoMinusField = murmurhash3::hash("GoMinusField"), GoEntranceDungeon = murmurhash3::hash("GoEntranceDungeon"), GoDungeon = murmurhash3::hash("GoDungeon"), Dungeon = murmurhash3::hash("Dungeon"), StartBossBattle = murmurhash3::hash("StartBossBattle"), DefeatBoss = murmurhash3::hash("DefeatBoss"), TouchSecretStone = murmurhash3::hash("TouchSecretStone"), Finale = murmurhash3::hash("Finale"), Complete = murmurhash3::hash("Complete"), };
@@ -1199,13 +1173,17 @@ struct GameData : Tag::Structure {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step01 = murmurhash3::hash("Step01"), Step02 = murmurhash3::hash("Step02"), Step03 = murmurhash3::hash("Step03"), Step04 = murmurhash3::hash("Step04"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_WhichIsStronger>&;
 	};
+	struct Step_ZonauReliefSearch : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Reach_KakarikoVillage = murmurhash3::hash("Reach_KakarikoVillage"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_ZonauReliefSearch>&;
+	};
 	struct Step_Zonau_GeniusWeapon : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Exchange = murmurhash3::hash("Exchange"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_Zonau_GeniusWeapon>&;
 	};
-	struct Step_ZonauReliefSearch : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Reach_KakarikoVillage = murmurhash3::hash("Reach_KakarikoVillage"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_ZonauReliefSearch>&;
+	struct Step_ZoraStatue_Picture : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TakePhoto = murmurhash3::hash("TakePhoto"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_ZoraStatue_Picture>&;
 	};
 	struct Step_Zora_Enemy_hunt : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Step2 = murmurhash3::hash("Step2"), Complete = murmurhash3::hash("Complete"), };
@@ -1219,49 +1197,81 @@ struct GameData : Tag::Structure {
 		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TreasureHunt = murmurhash3::hash("TreasureHunt"), Complete = murmurhash3::hash("Complete"), };
 		using type = enum_t<Step_Zora_RuttaTreasure>&;
 	};
-	struct Step_ZoraStatue_Picture : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), TakePhoto = murmurhash3::hash("TakePhoto"), GetPrize = murmurhash3::hash("GetPrize"), Complete = murmurhash3::hash("Complete"), };
-		using type = enum_t<Step_ZoraStatue_Picture>&;
+	struct Step_gather_Insect_Z : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotReady = murmurhash3::hash("NotReady"), Ready = murmurhash3::hash("Ready"), Step1 = murmurhash3::hash("Step1"), Complete = murmurhash3::hash("Complete"), };
+		using type = enum_t<Step_gather_Insect_Z>&;
 	};
-	struct AmiiboData;
-	struct BowStand;
-	struct ShieldStand;
-	struct WeaponStand;
-	struct CustomHouseTakeOutNum;
-	struct DefeatedEnemyNum;
-	struct HorseInnMemberPoint : Tag::Member { using type = s32&; };
-	struct RaumiGolemAttachment;
-	struct ValidPouchIndex : Tag::Member { using type = s32&; };
-	struct WellCollectionRewardUnit : Tag::Member { using type = s32&; };
-	struct WellDiscoverNumCurrent : Tag::Member { using type = s32&; };
-	struct WellDiscoverNumLeft : Tag::Member { using type = s32&; };
-	struct WellDiscoverNumTotal : Tag::Member { using type = s32&; };
-	struct WellReportNum : Tag::Member { using type = s32&; };
-	struct WellReportNumMinusOne : Tag::Member { using type = s32&; };
-	struct WellReportNumThisTime : Tag::Member { using type = s32&; };
-	struct World_CurrentDays : Tag::Member { using type = s32&; };
-	struct World_CurrentHour : Tag::Member { using type = s32&; };
-	struct World_CurrentMinute : Tag::Member { using type = s32&; };
+	struct ActionGuide_IsNew;
 	struct AlbumData;
-	struct World_WeatherForecast : Tag::Member { using type = span<s32>*; };
-	struct Sequence_CurrentBanc : Tag::Member { using type = string64*; };
-	struct Playtime : Tag::Member { using type = u32&; };
-	struct World_BloodyMoonTimer : Tag::Member { using type = u64&; };
-	struct World_CurrentDateTime : Tag::Member { using type = u64&; };
-	struct World_ZonauRespawnTimer : Tag::Member { using type = u64&; };
-	struct World_PlayerPos : Tag::Member { using type = vec3f*; };
-	struct World_ShootingStarPosition : Tag::Member { using type = vec3f*; };
+	struct AmiiboData;
+	struct ArrivalPointState;
+	struct AutoBuilder;
+	struct BowStand;
+	struct ChallengeLogState_Challenge;
+	struct CheckPoint_IsDisplayFoliage;
+	struct CustomHouse;
+	struct CustomHouseTakeOutNum;
+	struct DeadHorseList;
+	struct DefeatedEnemyNum;
+	struct DongoList;
+	struct DongoLocatorList;
+	struct DragonMemoryDataForUI;
+	struct DungeonState;
 	struct FigureCreateInfo;
+	struct FigureInfo;
+	struct IsActivateCannon;
+	struct IsAppearKorok;
+	struct IsDefeatBossEnemy;
+	struct IsFindTreasureMap;
+	struct IsGetAdventureMemory;
+	struct IsGetCaveMasterMedal;
+	struct IsOpenCannon;
+	struct IsVisitLocation;
+	struct IsVisitLocationArea_CaveEntrance;
+	struct KeyCrystalDungeonState;
+	struct KeyCrystalDungeonUnlocked;
+	struct KorokCarryProgress;
+	struct LastWildHorse;
+	struct LightBallBud;
+	struct MapData;
+	struct MaterialShortCut;
+	struct NpcGardenInfo;
+	struct NpcGardenInfo_HatenoVillage023;
+	struct NpcServeFood;
+	struct OwnedCustomizableHorseTack_Reins;
+	struct OwnedCustomizableHorseTack_Saddle;
+	struct OwnedHorseList;
+	struct OwnedParasailPattern;
+	struct PictureBookData;
+	struct PlayerStatus;
+	struct Pouch;
+	struct RaumiGolemAttachment;
+	struct ReadyMadeAutoBuilderDraft;
+	struct RecycleBoxData;
+	struct ReplaceblePicture;
+	struct ShieldStand;
+	struct SortPattern;
+	struct WeaponStand;
 };/* Tag::Structure GameData close */
 
-#include "GameData/OwnedHorseList.hpp"
-#include "GameData/DeadHorseList.hpp"
-#include "GameData/AutoBuilder.hpp"
-#include "GameData/FigureInfo.hpp"
 #include "GameData/ActionGuide_IsNew.hpp"
+#include "GameData/AlbumData.hpp"
+#include "GameData/AmiiboData.hpp"
+#include "GameData/ArrivalPointState.hpp"
+#include "GameData/AutoBuilder.hpp"
+#include "GameData/BowStand.hpp"
+#include "GameData/ChallengeLogState_Challenge.hpp"
 #include "GameData/CheckPoint_IsDisplayFoliage.hpp"
 #include "GameData/CustomHouse.hpp"
+#include "GameData/CustomHouseTakeOutNum.hpp"
+#include "GameData/DeadHorseList.hpp"
+#include "GameData/DefeatedEnemyNum.hpp"
+#include "GameData/DongoList.hpp"
+#include "GameData/DongoLocatorList.hpp"
 #include "GameData/DragonMemoryDataForUI.hpp"
+#include "GameData/DungeonState.hpp"
+#include "GameData/FigureCreateInfo.hpp"
+#include "GameData/FigureInfo.hpp"
 #include "GameData/IsActivateCannon.hpp"
 #include "GameData/IsAppearKorok.hpp"
 #include "GameData/IsDefeatBossEnemy.hpp"
@@ -1271,89 +1281,57 @@ struct GameData : Tag::Structure {
 #include "GameData/IsOpenCannon.hpp"
 #include "GameData/IsVisitLocation.hpp"
 #include "GameData/IsVisitLocationArea_CaveEntrance.hpp"
+#include "GameData/KeyCrystalDungeonState.hpp"
 #include "GameData/KeyCrystalDungeonUnlocked.hpp"
+#include "GameData/KorokCarryProgress.hpp"
+#include "GameData/LastWildHorse.hpp"
+#include "GameData/LightBallBud.hpp"
 #include "GameData/MapData.hpp"
+#include "GameData/MaterialShortCut.hpp"
 #include "GameData/NpcGardenInfo.hpp"
 #include "GameData/NpcGardenInfo_HatenoVillage023.hpp"
 #include "GameData/NpcServeFood.hpp"
 #include "GameData/OwnedCustomizableHorseTack_Reins.hpp"
 #include "GameData/OwnedCustomizableHorseTack_Saddle.hpp"
+#include "GameData/OwnedHorseList.hpp"
 #include "GameData/OwnedParasailPattern.hpp"
+#include "GameData/PictureBookData.hpp"
 #include "GameData/PlayerStatus.hpp"
+#include "GameData/Pouch.hpp"
+#include "GameData/RaumiGolemAttachment.hpp"
 #include "GameData/ReadyMadeAutoBuilderDraft.hpp"
 #include "GameData/RecycleBoxData.hpp"
 #include "GameData/ReplaceblePicture.hpp"
-#include "GameData/DongoList.hpp"
-#include "GameData/DongoLocatorList.hpp"
-#include "GameData/LightBallBud.hpp"
-#include "GameData/Pouch.hpp"
-#include "GameData/ArrivalPointState.hpp"
-#include "GameData/ChallengeLogState_Challenge.hpp"
-#include "GameData/DungeonState.hpp"
-#include "GameData/KeyCrystalDungeonState.hpp"
-#include "GameData/KorokCarryProgress.hpp"
-#include "GameData/LastWildHorse.hpp"
-#include "GameData/MaterialShortCut.hpp"
-#include "GameData/PictureBookData.hpp"
-#include "GameData/SortPattern.hpp"
-#include "GameData/AmiiboData.hpp"
-#include "GameData/BowStand.hpp"
 #include "GameData/ShieldStand.hpp"
+#include "GameData/SortPattern.hpp"
 #include "GameData/WeaponStand.hpp"
-#include "GameData/CustomHouseTakeOutNum.hpp"
-#include "GameData/DefeatedEnemyNum.hpp"
-#include "GameData/RaumiGolemAttachment.hpp"
-#include "GameData/AlbumData.hpp"
-#include "GameData/FigureCreateInfo.hpp"
 
 template <> struct Data::Structure<GameData> : GameData {
-	Structure<OwnedHorseList> OwnedHorseList;
-	Structure<DeadHorseList> DeadHorseList;
-	Structure<AutoBuilder> AutoBuilder;
-	Structure<FigureInfo> FigureInfo;
-	Structure<ActionGuide_IsNew> ActionGuide_IsNew;
-	Structure<CheckPoint_IsDisplayFoliage> CheckPoint_IsDisplayFoliage;
-	Structure<CustomHouse> CustomHouse;
-	Structure<DragonMemoryDataForUI> DragonMemoryDataForUI;
-	Structure<IsActivateCannon> IsActivateCannon;
-	Structure<IsAppearKorok> IsAppearKorok;
-	Structure<IsDefeatBossEnemy> IsDefeatBossEnemy;
-	Structure<IsFindTreasureMap> IsFindTreasureMap;
-	Structure<IsGetAdventureMemory> IsGetAdventureMemory;
-	Structure<IsGetCaveMasterMedal> IsGetCaveMasterMedal;
-	Structure<IsOpenCannon> IsOpenCannon;
-	Structure<IsVisitLocation> IsVisitLocation;
-	Structure<IsVisitLocationArea_CaveEntrance> IsVisitLocationArea_CaveEntrance;
-	Structure<KeyCrystalDungeonUnlocked> KeyCrystalDungeonUnlocked;
-	Structure<MapData> MapData;
-	Structure<NpcGardenInfo> NpcGardenInfo;
-	Structure<NpcGardenInfo_HatenoVillage023> NpcGardenInfo_HatenoVillage023;
-	Structure<NpcServeFood> NpcServeFood;
+	Member<HorseInnMemberPoint> HorseInnMemberPoint;
 	Member<NushiShop_MedalComplete> NushiShop_MedalComplete;
-	Structure<OwnedCustomizableHorseTack_Reins> OwnedCustomizableHorseTack_Reins;
-	Structure<OwnedCustomizableHorseTack_Saddle> OwnedCustomizableHorseTack_Saddle;
-	Structure<OwnedParasailPattern> OwnedParasailPattern;
-	Structure<PlayerStatus> PlayerStatus;
-	Structure<ReadyMadeAutoBuilderDraft> ReadyMadeAutoBuilderDraft;
-	Structure<RecycleBoxData> RecycleBoxData;
-	Structure<ReplaceblePicture> ReplaceblePicture;
+	Member<Playtime> Playtime;
+	Member<Sequence_CurrentBanc> Sequence_CurrentBanc;
+	Member<ValidPouchIndex> ValidPouchIndex;
+	Member<WellCollectionRewardUnit> WellCollectionRewardUnit;
+	Member<WellDiscoverNumCurrent> WellDiscoverNumCurrent;
+	Member<WellDiscoverNumLeft> WellDiscoverNumLeft;
+	Member<WellDiscoverNumTotal> WellDiscoverNumTotal;
+	Member<WellReportNum> WellReportNum;
+	Member<WellReportNumMinusOne> WellReportNumMinusOne;
+	Member<WellReportNumThisTime> WellReportNumThisTime;
+	Member<World_BloodyMoonTimer> World_BloodyMoonTimer;
+	Member<World_CurrentDateTime> World_CurrentDateTime;
+	Member<World_CurrentDays> World_CurrentDays;
+	Member<World_CurrentHour> World_CurrentHour;
+	Member<World_CurrentMinute> World_CurrentMinute;
 	Member<World_IsBloodyMoonDay> World_IsBloodyMoonDay;
 	Member<World_IsZonauRespawnDay> World_IsZonauRespawnDay;
-	Structure<DongoList> DongoList;
-	Structure<DongoLocatorList> DongoLocatorList;
-	Structure<LightBallBud> LightBallBud;
-	Structure<Pouch> Pouch;
-	Structure<ArrivalPointState> ArrivalPointState;
-	Structure<ChallengeLogState_Challenge> ChallengeLogState_Challenge;
-	Structure<DungeonState> DungeonState;
-	Structure<KeyCrystalDungeonState> KeyCrystalDungeonState;
-	Structure<KorokCarryProgress> KorokCarryProgress;
+	Member<World_PlayerPos> World_PlayerPos;
+	Member<World_ShootingStarPosition> World_ShootingStarPosition;
+	Member<World_WeatherForecast> World_WeatherForecast;
+	Member<World_ZonauRespawnTimer> World_ZonauRespawnTimer;
 	Enum<LastTalkedOrchestraMemberStableHostel> LastTalkedOrchestraMemberStableHostel;
-	Structure<LastWildHorse> LastWildHorse;
-	Structure<MaterialShortCut> MaterialShortCut;
-	Structure<PictureBookData> PictureBookData;
 	Enum<SensorMode> SensorMode;
-	Structure<SortPattern> SortPattern;
 	Enum<Step_AisyaRescue> Step_AisyaRescue;
 	Enum<Step_AmberCollector> Step_AmberCollector;
 	Enum<Step_ArrowMeister_Momo> Step_ArrowMeister_Momo;
@@ -1369,6 +1347,7 @@ template <> struct Data::Structure<GameData> : GameData {
 	Enum<Step_BlindRuinsTreasure_Zora> Step_BlindRuinsTreasure_Zora;
 	Enum<Step_BuildHouse> Step_BuildHouse;
 	Enum<Step_BuildingMaterialsTutorial> Step_BuildingMaterialsTutorial;
+	Enum<Step_CDungeon_AllDone> Step_CDungeon_AllDone;
 	Enum<Step_CarryGoronKid1> Step_CarryGoronKid1;
 	Enum<Step_CarryGoronKid2> Step_CarryGoronKid2;
 	Enum<Step_CarryStone> Step_CarryStone;
@@ -1393,7 +1372,6 @@ template <> struct Data::Structure<GameData> : GameData {
 	Enum<Step_CarryToShrine21> Step_CarryToShrine21;
 	Enum<Step_CarryToShrine22> Step_CarryToShrine22;
 	Enum<Step_CarryToShrine23> Step_CarryToShrine23;
-	Enum<Step_CDungeon_AllDone> Step_CDungeon_AllDone;
 	Enum<Step_Circuit_Desert> Step_Circuit_Desert;
 	Enum<Step_Circuit_FaronWoods_MiniGame> Step_Circuit_FaronWoods_MiniGame;
 	Enum<Step_Circuit_Ichikara> Step_Circuit_Ichikara;
@@ -1438,16 +1416,16 @@ template <> struct Data::Structure<GameData> : GameData {
 	Enum<Step_FindWithSensors> Step_FindWithSensors;
 	Enum<Step_FirstskyislandReturns> Step_FirstskyislandReturns;
 	Enum<Step_FullyRipenedFlintstones> Step_FullyRipenedFlintstones;
-	Enum<Step_gather_Insect_Z> Step_gather_Insect_Z;
+	Enum<Step_GOToTheCastleOfHyrule> Step_GOToTheCastleOfHyrule;
 	Enum<Step_GeniusWeapon_Zora> Step_GeniusWeapon_Zora;
 	Enum<Step_Genkos_Kitchen> Step_Genkos_Kitchen;
-	Enum<Step_Gerudo_UrbosaWeapon> Step_Gerudo_UrbosaWeapon;
 	Enum<Step_GerudoCanyon_24hEnduranceComparison> Step_GerudoCanyon_24hEnduranceComparison;
 	Enum<Step_GerudoCanyon_Adventure> Step_GerudoCanyon_Adventure;
 	Enum<Step_GerudoCanyon_ColdEnduranceComparison> Step_GerudoCanyon_ColdEnduranceComparison;
 	Enum<Step_GerudoCanyon_GleeokLiver> Step_GerudoCanyon_GleeokLiver;
 	Enum<Step_GerudoCanyon_TumbleweedSweep> Step_GerudoCanyon_TumbleweedSweep;
 	Enum<Step_GerudoDesertTreasure> Step_GerudoDesertTreasure;
+	Enum<Step_Gerudo_UrbosaWeapon> Step_Gerudo_UrbosaWeapon;
 	Enum<Step_GetCamera> Step_GetCamera;
 	Enum<Step_GetMasterSword> Step_GetMasterSword;
 	Enum<Step_GetSensorPlus> Step_GetSensorPlus;
@@ -1455,19 +1433,19 @@ template <> struct Data::Structure<GameData> : GameData {
 	Enum<Step_GetWarpMarker> Step_GetWarpMarker;
 	Enum<Step_GiantHorse> Step_GiantHorse;
 	Enum<Step_GoneSnowQueen> Step_GoneSnowQueen;
+	Enum<Step_GoronPond> Step_GoronPond;
+	Enum<Step_GoronReturntoNature> Step_GoronReturntoNature;
 	Enum<Step_Goron_MiniGame_01> Step_Goron_MiniGame_01;
 	Enum<Step_Goron_MiniGame_02> Step_Goron_MiniGame_02;
 	Enum<Step_Goron_MiniGame_03> Step_Goron_MiniGame_03;
 	Enum<Step_Goron_MiniGame_Tutorial_01> Step_Goron_MiniGame_Tutorial_01;
 	Enum<Step_Goron_MiniGame_Tutorial_02> Step_Goron_MiniGame_Tutorial_02;
 	Enum<Step_Goron_MiniGame_Tutorial_03> Step_Goron_MiniGame_Tutorial_03;
-	Enum<Step_GoronPond> Step_GoronPond;
-	Enum<Step_GoronReturntoNature> Step_GoronReturntoNature;
 	Enum<Step_GotoFironeZonauRemains> Step_GotoFironeZonauRemains;
-	Enum<Step_GOToTheCastleOfHyrule> Step_GOToTheCastleOfHyrule;
 	Enum<Step_GroundPaintingAir01> Step_GroundPaintingAir01;
 	Enum<Step_Hack_GuardGoods> Step_Hack_GuardGoods;
 	Enum<Step_HammerGong_MiniGame> Step_HammerGong_MiniGame;
+	Enum<Step_HatenoPurchasePicture> Step_HatenoPurchasePicture;
 	Enum<Step_Hateno_Cheese> Step_Hateno_Cheese;
 	Enum<Step_Hateno_CoolGuy> Step_Hateno_CoolGuy;
 	Enum<Step_Hateno_FreshMilk> Step_Hateno_FreshMilk;
@@ -1481,7 +1459,6 @@ template <> struct Data::Structure<GameData> : GameData {
 	Enum<Step_Hateno_TellMeTeacher02> Step_Hateno_TellMeTeacher02;
 	Enum<Step_Hateno_VillageMayorElection> Step_Hateno_VillageMayorElection;
 	Enum<Step_Hateno_WhatToPlant> Step_Hateno_WhatToPlant;
-	Enum<Step_HatenoPurchasePicture> Step_HatenoPurchasePicture;
 	Enum<Step_Hebra_SkyRingChallenge> Step_Hebra_SkyRingChallenge;
 	Enum<Step_Hebra_SkyRingChallenge_MiniGame> Step_Hebra_SkyRingChallenge_MiniGame;
 	Enum<Step_HorseInnChallenge001> Step_HorseInnChallenge001;
@@ -1515,18 +1492,18 @@ template <> struct Data::Structure<GameData> : GameData {
 	Enum<Step_MasterSwordClues> Step_MasterSwordClues;
 	Enum<Step_MeatRock> Step_MeatRock;
 	Enum<Step_MemoryOfTheDragon> Step_MemoryOfTheDragon;
-	Enum<Step_Mercenary_Akkare_Bloody> Step_Mercenary_Akkare_Bloody;
-	Enum<Step_Mercenary_Eldin_Bloody> Step_Mercenary_Eldin_Bloody;
-	Enum<Step_Mercenary_Firone_Bloody> Step_Mercenary_Firone_Bloody;
-	Enum<Step_Mercenary_Hateru_Bloody> Step_Mercenary_Hateru_Bloody;
-	Enum<Step_Mercenary_Hebra_Bloody> Step_Mercenary_Hebra_Bloody;
-	Enum<Step_Mercenary_HyrulePlain_Bloody> Step_Mercenary_HyrulePlain_Bloody;
 	Enum<Step_MercenaryChallenge_Akkare> Step_MercenaryChallenge_Akkare;
 	Enum<Step_MercenaryChallenge_Eldin> Step_MercenaryChallenge_Eldin;
 	Enum<Step_MercenaryChallenge_Firone> Step_MercenaryChallenge_Firone;
 	Enum<Step_MercenaryChallenge_Hateru> Step_MercenaryChallenge_Hateru;
 	Enum<Step_MercenaryChallenge_Hebra> Step_MercenaryChallenge_Hebra;
 	Enum<Step_MercenaryChallenge_HyrulePlain> Step_MercenaryChallenge_HyrulePlain;
+	Enum<Step_Mercenary_Akkare_Bloody> Step_Mercenary_Akkare_Bloody;
+	Enum<Step_Mercenary_Eldin_Bloody> Step_Mercenary_Eldin_Bloody;
+	Enum<Step_Mercenary_Firone_Bloody> Step_Mercenary_Firone_Bloody;
+	Enum<Step_Mercenary_Hateru_Bloody> Step_Mercenary_Hateru_Bloody;
+	Enum<Step_Mercenary_Hebra_Bloody> Step_Mercenary_Hebra_Bloody;
+	Enum<Step_Mercenary_HyrulePlain_Bloody> Step_Mercenary_HyrulePlain_Bloody;
 	Enum<Step_MessageBottle_SOS> Step_MessageBottle_SOS;
 	Enum<Step_MinusYiga> Step_MinusYiga;
 	Enum<Step_MonsterFigures01> Step_MonsterFigures01;
@@ -1582,11 +1559,11 @@ template <> struct Data::Structure<GameData> : GameData {
 	Enum<Step_ResearchEldin> Step_ResearchEldin;
 	Enum<Step_ResearchLanayru> Step_ResearchLanayru;
 	Enum<Step_RestaurantInTheWell> Step_RestaurantInTheWell;
+	Enum<Step_RitoBridgeRepair> Step_RitoBridgeRepair;
 	Enum<Step_Rito_ItemExchange> Step_Rito_ItemExchange;
 	Enum<Step_Rito_MedoArmor> Step_Rito_MedoArmor;
 	Enum<Step_Rito_RevaliWeapon> Step_Rito_RevaliWeapon;
 	Enum<Step_Rito_ShadowCave> Step_Rito_ShadowCave;
-	Enum<Step_RitoBridgeRepair> Step_RitoBridgeRepair;
 	Enum<Step_SageOfFire> Step_SageOfFire;
 	Enum<Step_SageOfGerudo> Step_SageOfGerudo;
 	Enum<Step_SageOfSky> Step_SageOfSky;
@@ -1640,90 +1617,91 @@ template <> struct Data::Structure<GameData> : GameData {
 	Enum<Step_WaterBridgePlace> Step_WaterBridgePlace;
 	Enum<Step_WellCollection> Step_WellCollection;
 	Enum<Step_WhichIsStronger> Step_WhichIsStronger;
-	Enum<Step_Zonau_GeniusWeapon> Step_Zonau_GeniusWeapon;
 	Enum<Step_ZonauReliefSearch> Step_ZonauReliefSearch;
+	Enum<Step_Zonau_GeniusWeapon> Step_Zonau_GeniusWeapon;
+	Enum<Step_ZoraStatue_Picture> Step_ZoraStatue_Picture;
 	Enum<Step_Zora_Enemy_hunt> Step_Zora_Enemy_hunt;
 	Enum<Step_Zora_MessageBottle> Step_Zora_MessageBottle;
 	Enum<Step_Zora_RuttaTreasure> Step_Zora_RuttaTreasure;
-	Enum<Step_ZoraStatue_Picture> Step_ZoraStatue_Picture;
-	Structure<AmiiboData> AmiiboData;
-	Structure<BowStand> BowStand;
-	Structure<ShieldStand> ShieldStand;
-	Structure<WeaponStand> WeaponStand;
-	Structure<CustomHouseTakeOutNum> CustomHouseTakeOutNum;
-	Structure<DefeatedEnemyNum> DefeatedEnemyNum;
-	Member<HorseInnMemberPoint> HorseInnMemberPoint;
-	Structure<RaumiGolemAttachment> RaumiGolemAttachment;
-	Member<ValidPouchIndex> ValidPouchIndex;
-	Member<WellCollectionRewardUnit> WellCollectionRewardUnit;
-	Member<WellDiscoverNumCurrent> WellDiscoverNumCurrent;
-	Member<WellDiscoverNumLeft> WellDiscoverNumLeft;
-	Member<WellDiscoverNumTotal> WellDiscoverNumTotal;
-	Member<WellReportNum> WellReportNum;
-	Member<WellReportNumMinusOne> WellReportNumMinusOne;
-	Member<WellReportNumThisTime> WellReportNumThisTime;
-	Member<World_CurrentDays> World_CurrentDays;
-	Member<World_CurrentHour> World_CurrentHour;
-	Member<World_CurrentMinute> World_CurrentMinute;
+	Enum<Step_gather_Insect_Z> Step_gather_Insect_Z;
+	Structure<ActionGuide_IsNew> ActionGuide_IsNew;
 	Structure<AlbumData> AlbumData;
-	Member<World_WeatherForecast> World_WeatherForecast;
-	Member<Sequence_CurrentBanc> Sequence_CurrentBanc;
-	Member<Playtime> Playtime;
-	Member<World_BloodyMoonTimer> World_BloodyMoonTimer;
-	Member<World_CurrentDateTime> World_CurrentDateTime;
-	Member<World_ZonauRespawnTimer> World_ZonauRespawnTimer;
-	Member<World_PlayerPos> World_PlayerPos;
-	Member<World_ShootingStarPosition> World_ShootingStarPosition;
+	Structure<AmiiboData> AmiiboData;
+	Structure<ArrivalPointState> ArrivalPointState;
+	Structure<AutoBuilder> AutoBuilder;
+	Structure<BowStand> BowStand;
+	Structure<ChallengeLogState_Challenge> ChallengeLogState_Challenge;
+	Structure<CheckPoint_IsDisplayFoliage> CheckPoint_IsDisplayFoliage;
+	Structure<CustomHouse> CustomHouse;
+	Structure<CustomHouseTakeOutNum> CustomHouseTakeOutNum;
+	Structure<DeadHorseList> DeadHorseList;
+	Structure<DefeatedEnemyNum> DefeatedEnemyNum;
+	Structure<DongoList> DongoList;
+	Structure<DongoLocatorList> DongoLocatorList;
+	Structure<DragonMemoryDataForUI> DragonMemoryDataForUI;
+	Structure<DungeonState> DungeonState;
 	Structure<FigureCreateInfo> FigureCreateInfo;
+	Structure<FigureInfo> FigureInfo;
+	Structure<IsActivateCannon> IsActivateCannon;
+	Structure<IsAppearKorok> IsAppearKorok;
+	Structure<IsDefeatBossEnemy> IsDefeatBossEnemy;
+	Structure<IsFindTreasureMap> IsFindTreasureMap;
+	Structure<IsGetAdventureMemory> IsGetAdventureMemory;
+	Structure<IsGetCaveMasterMedal> IsGetCaveMasterMedal;
+	Structure<IsOpenCannon> IsOpenCannon;
+	Structure<IsVisitLocation> IsVisitLocation;
+	Structure<IsVisitLocationArea_CaveEntrance> IsVisitLocationArea_CaveEntrance;
+	Structure<KeyCrystalDungeonState> KeyCrystalDungeonState;
+	Structure<KeyCrystalDungeonUnlocked> KeyCrystalDungeonUnlocked;
+	Structure<KorokCarryProgress> KorokCarryProgress;
+	Structure<LastWildHorse> LastWildHorse;
+	Structure<LightBallBud> LightBallBud;
+	Structure<MapData> MapData;
+	Structure<MaterialShortCut> MaterialShortCut;
+	Structure<NpcGardenInfo> NpcGardenInfo;
+	Structure<NpcGardenInfo_HatenoVillage023> NpcGardenInfo_HatenoVillage023;
+	Structure<NpcServeFood> NpcServeFood;
+	Structure<OwnedCustomizableHorseTack_Reins> OwnedCustomizableHorseTack_Reins;
+	Structure<OwnedCustomizableHorseTack_Saddle> OwnedCustomizableHorseTack_Saddle;
+	Structure<OwnedHorseList> OwnedHorseList;
+	Structure<OwnedParasailPattern> OwnedParasailPattern;
+	Structure<PictureBookData> PictureBookData;
+	Structure<PlayerStatus> PlayerStatus;
+	Structure<Pouch> Pouch;
+	Structure<RaumiGolemAttachment> RaumiGolemAttachment;
+	Structure<ReadyMadeAutoBuilderDraft> ReadyMadeAutoBuilderDraft;
+	Structure<RecycleBoxData> RecycleBoxData;
+	Structure<ReplaceblePicture> ReplaceblePicture;
+	Structure<ShieldStand> ShieldStand;
+	Structure<SortPattern> SortPattern;
+	Structure<WeaponStand> WeaponStand;
 	
 	explicit Structure(Sav& s) : 
-		OwnedHorseList { s },
-		DeadHorseList { s },
-		AutoBuilder { s },
-		FigureInfo { s },
-		ActionGuide_IsNew { s },
-		CheckPoint_IsDisplayFoliage { s },
-		CustomHouse { s },
-		DragonMemoryDataForUI { s },
-		IsActivateCannon { s },
-		IsAppearKorok { s },
-		IsDefeatBossEnemy { s },
-		IsFindTreasureMap { s },
-		IsGetAdventureMemory { s },
-		IsGetCaveMasterMedal { s },
-		IsOpenCannon { s },
-		IsVisitLocation { s },
-		IsVisitLocationArea_CaveEntrance { s },
-		KeyCrystalDungeonUnlocked { s },
-		MapData { s },
-		NpcGardenInfo { s },
-		NpcGardenInfo_HatenoVillage023 { s },
-		NpcServeFood { s },
+		HorseInnMemberPoint { s.get<struct HorseInnMemberPoint>() },
 		NushiShop_MedalComplete { s.get<struct NushiShop_MedalComplete>() },
-		OwnedCustomizableHorseTack_Reins { s },
-		OwnedCustomizableHorseTack_Saddle { s },
-		OwnedParasailPattern { s },
-		PlayerStatus { s },
-		ReadyMadeAutoBuilderDraft { s },
-		RecycleBoxData { s },
-		ReplaceblePicture { s },
+		Playtime { s.get<struct Playtime>() },
+		Sequence_CurrentBanc { s.get<struct Sequence_CurrentBanc>() },
+		ValidPouchIndex { s.get<struct ValidPouchIndex>() },
+		WellCollectionRewardUnit { s.get<struct WellCollectionRewardUnit>() },
+		WellDiscoverNumCurrent { s.get<struct WellDiscoverNumCurrent>() },
+		WellDiscoverNumLeft { s.get<struct WellDiscoverNumLeft>() },
+		WellDiscoverNumTotal { s.get<struct WellDiscoverNumTotal>() },
+		WellReportNum { s.get<struct WellReportNum>() },
+		WellReportNumMinusOne { s.get<struct WellReportNumMinusOne>() },
+		WellReportNumThisTime { s.get<struct WellReportNumThisTime>() },
+		World_BloodyMoonTimer { s.get<struct World_BloodyMoonTimer>() },
+		World_CurrentDateTime { s.get<struct World_CurrentDateTime>() },
+		World_CurrentDays { s.get<struct World_CurrentDays>() },
+		World_CurrentHour { s.get<struct World_CurrentHour>() },
+		World_CurrentMinute { s.get<struct World_CurrentMinute>() },
 		World_IsBloodyMoonDay { s.get<struct World_IsBloodyMoonDay>() },
 		World_IsZonauRespawnDay { s.get<struct World_IsZonauRespawnDay>() },
-		DongoList { s },
-		DongoLocatorList { s },
-		LightBallBud { s },
-		Pouch { s },
-		ArrivalPointState { s },
-		ChallengeLogState_Challenge { s },
-		DungeonState { s },
-		KeyCrystalDungeonState { s },
-		KorokCarryProgress { s },
+		World_PlayerPos { s.get<struct World_PlayerPos>() },
+		World_ShootingStarPosition { s.get<struct World_ShootingStarPosition>() },
+		World_WeatherForecast { s.get<struct World_WeatherForecast>() },
+		World_ZonauRespawnTimer { s.get<struct World_ZonauRespawnTimer>() },
 		LastTalkedOrchestraMemberStableHostel { s.get<struct LastTalkedOrchestraMemberStableHostel>() },
-		LastWildHorse { s },
-		MaterialShortCut { s },
-		PictureBookData { s },
 		SensorMode { s.get<struct SensorMode>() },
-		SortPattern { s },
 		Step_AisyaRescue { s.get<struct Step_AisyaRescue>() },
 		Step_AmberCollector { s.get<struct Step_AmberCollector>() },
 		Step_ArrowMeister_Momo { s.get<struct Step_ArrowMeister_Momo>() },
@@ -1739,6 +1717,7 @@ template <> struct Data::Structure<GameData> : GameData {
 		Step_BlindRuinsTreasure_Zora { s.get<struct Step_BlindRuinsTreasure_Zora>() },
 		Step_BuildHouse { s.get<struct Step_BuildHouse>() },
 		Step_BuildingMaterialsTutorial { s.get<struct Step_BuildingMaterialsTutorial>() },
+		Step_CDungeon_AllDone { s.get<struct Step_CDungeon_AllDone>() },
 		Step_CarryGoronKid1 { s.get<struct Step_CarryGoronKid1>() },
 		Step_CarryGoronKid2 { s.get<struct Step_CarryGoronKid2>() },
 		Step_CarryStone { s.get<struct Step_CarryStone>() },
@@ -1763,7 +1742,6 @@ template <> struct Data::Structure<GameData> : GameData {
 		Step_CarryToShrine21 { s.get<struct Step_CarryToShrine21>() },
 		Step_CarryToShrine22 { s.get<struct Step_CarryToShrine22>() },
 		Step_CarryToShrine23 { s.get<struct Step_CarryToShrine23>() },
-		Step_CDungeon_AllDone { s.get<struct Step_CDungeon_AllDone>() },
 		Step_Circuit_Desert { s.get<struct Step_Circuit_Desert>() },
 		Step_Circuit_FaronWoods_MiniGame { s.get<struct Step_Circuit_FaronWoods_MiniGame>() },
 		Step_Circuit_Ichikara { s.get<struct Step_Circuit_Ichikara>() },
@@ -1808,16 +1786,16 @@ template <> struct Data::Structure<GameData> : GameData {
 		Step_FindWithSensors { s.get<struct Step_FindWithSensors>() },
 		Step_FirstskyislandReturns { s.get<struct Step_FirstskyislandReturns>() },
 		Step_FullyRipenedFlintstones { s.get<struct Step_FullyRipenedFlintstones>() },
-		Step_gather_Insect_Z { s.get<struct Step_gather_Insect_Z>() },
+		Step_GOToTheCastleOfHyrule { s.get<struct Step_GOToTheCastleOfHyrule>() },
 		Step_GeniusWeapon_Zora { s.get<struct Step_GeniusWeapon_Zora>() },
 		Step_Genkos_Kitchen { s.get<struct Step_Genkos_Kitchen>() },
-		Step_Gerudo_UrbosaWeapon { s.get<struct Step_Gerudo_UrbosaWeapon>() },
 		Step_GerudoCanyon_24hEnduranceComparison { s.get<struct Step_GerudoCanyon_24hEnduranceComparison>() },
 		Step_GerudoCanyon_Adventure { s.get<struct Step_GerudoCanyon_Adventure>() },
 		Step_GerudoCanyon_ColdEnduranceComparison { s.get<struct Step_GerudoCanyon_ColdEnduranceComparison>() },
 		Step_GerudoCanyon_GleeokLiver { s.get<struct Step_GerudoCanyon_GleeokLiver>() },
 		Step_GerudoCanyon_TumbleweedSweep { s.get<struct Step_GerudoCanyon_TumbleweedSweep>() },
 		Step_GerudoDesertTreasure { s.get<struct Step_GerudoDesertTreasure>() },
+		Step_Gerudo_UrbosaWeapon { s.get<struct Step_Gerudo_UrbosaWeapon>() },
 		Step_GetCamera { s.get<struct Step_GetCamera>() },
 		Step_GetMasterSword { s.get<struct Step_GetMasterSword>() },
 		Step_GetSensorPlus { s.get<struct Step_GetSensorPlus>() },
@@ -1825,19 +1803,19 @@ template <> struct Data::Structure<GameData> : GameData {
 		Step_GetWarpMarker { s.get<struct Step_GetWarpMarker>() },
 		Step_GiantHorse { s.get<struct Step_GiantHorse>() },
 		Step_GoneSnowQueen { s.get<struct Step_GoneSnowQueen>() },
+		Step_GoronPond { s.get<struct Step_GoronPond>() },
+		Step_GoronReturntoNature { s.get<struct Step_GoronReturntoNature>() },
 		Step_Goron_MiniGame_01 { s.get<struct Step_Goron_MiniGame_01>() },
 		Step_Goron_MiniGame_02 { s.get<struct Step_Goron_MiniGame_02>() },
 		Step_Goron_MiniGame_03 { s.get<struct Step_Goron_MiniGame_03>() },
 		Step_Goron_MiniGame_Tutorial_01 { s.get<struct Step_Goron_MiniGame_Tutorial_01>() },
 		Step_Goron_MiniGame_Tutorial_02 { s.get<struct Step_Goron_MiniGame_Tutorial_02>() },
 		Step_Goron_MiniGame_Tutorial_03 { s.get<struct Step_Goron_MiniGame_Tutorial_03>() },
-		Step_GoronPond { s.get<struct Step_GoronPond>() },
-		Step_GoronReturntoNature { s.get<struct Step_GoronReturntoNature>() },
 		Step_GotoFironeZonauRemains { s.get<struct Step_GotoFironeZonauRemains>() },
-		Step_GOToTheCastleOfHyrule { s.get<struct Step_GOToTheCastleOfHyrule>() },
 		Step_GroundPaintingAir01 { s.get<struct Step_GroundPaintingAir01>() },
 		Step_Hack_GuardGoods { s.get<struct Step_Hack_GuardGoods>() },
 		Step_HammerGong_MiniGame { s.get<struct Step_HammerGong_MiniGame>() },
+		Step_HatenoPurchasePicture { s.get<struct Step_HatenoPurchasePicture>() },
 		Step_Hateno_Cheese { s.get<struct Step_Hateno_Cheese>() },
 		Step_Hateno_CoolGuy { s.get<struct Step_Hateno_CoolGuy>() },
 		Step_Hateno_FreshMilk { s.get<struct Step_Hateno_FreshMilk>() },
@@ -1851,7 +1829,6 @@ template <> struct Data::Structure<GameData> : GameData {
 		Step_Hateno_TellMeTeacher02 { s.get<struct Step_Hateno_TellMeTeacher02>() },
 		Step_Hateno_VillageMayorElection { s.get<struct Step_Hateno_VillageMayorElection>() },
 		Step_Hateno_WhatToPlant { s.get<struct Step_Hateno_WhatToPlant>() },
-		Step_HatenoPurchasePicture { s.get<struct Step_HatenoPurchasePicture>() },
 		Step_Hebra_SkyRingChallenge { s.get<struct Step_Hebra_SkyRingChallenge>() },
 		Step_Hebra_SkyRingChallenge_MiniGame { s.get<struct Step_Hebra_SkyRingChallenge_MiniGame>() },
 		Step_HorseInnChallenge001 { s.get<struct Step_HorseInnChallenge001>() },
@@ -1885,18 +1862,18 @@ template <> struct Data::Structure<GameData> : GameData {
 		Step_MasterSwordClues { s.get<struct Step_MasterSwordClues>() },
 		Step_MeatRock { s.get<struct Step_MeatRock>() },
 		Step_MemoryOfTheDragon { s.get<struct Step_MemoryOfTheDragon>() },
-		Step_Mercenary_Akkare_Bloody { s.get<struct Step_Mercenary_Akkare_Bloody>() },
-		Step_Mercenary_Eldin_Bloody { s.get<struct Step_Mercenary_Eldin_Bloody>() },
-		Step_Mercenary_Firone_Bloody { s.get<struct Step_Mercenary_Firone_Bloody>() },
-		Step_Mercenary_Hateru_Bloody { s.get<struct Step_Mercenary_Hateru_Bloody>() },
-		Step_Mercenary_Hebra_Bloody { s.get<struct Step_Mercenary_Hebra_Bloody>() },
-		Step_Mercenary_HyrulePlain_Bloody { s.get<struct Step_Mercenary_HyrulePlain_Bloody>() },
 		Step_MercenaryChallenge_Akkare { s.get<struct Step_MercenaryChallenge_Akkare>() },
 		Step_MercenaryChallenge_Eldin { s.get<struct Step_MercenaryChallenge_Eldin>() },
 		Step_MercenaryChallenge_Firone { s.get<struct Step_MercenaryChallenge_Firone>() },
 		Step_MercenaryChallenge_Hateru { s.get<struct Step_MercenaryChallenge_Hateru>() },
 		Step_MercenaryChallenge_Hebra { s.get<struct Step_MercenaryChallenge_Hebra>() },
 		Step_MercenaryChallenge_HyrulePlain { s.get<struct Step_MercenaryChallenge_HyrulePlain>() },
+		Step_Mercenary_Akkare_Bloody { s.get<struct Step_Mercenary_Akkare_Bloody>() },
+		Step_Mercenary_Eldin_Bloody { s.get<struct Step_Mercenary_Eldin_Bloody>() },
+		Step_Mercenary_Firone_Bloody { s.get<struct Step_Mercenary_Firone_Bloody>() },
+		Step_Mercenary_Hateru_Bloody { s.get<struct Step_Mercenary_Hateru_Bloody>() },
+		Step_Mercenary_Hebra_Bloody { s.get<struct Step_Mercenary_Hebra_Bloody>() },
+		Step_Mercenary_HyrulePlain_Bloody { s.get<struct Step_Mercenary_HyrulePlain_Bloody>() },
 		Step_MessageBottle_SOS { s.get<struct Step_MessageBottle_SOS>() },
 		Step_MinusYiga { s.get<struct Step_MinusYiga>() },
 		Step_MonsterFigures01 { s.get<struct Step_MonsterFigures01>() },
@@ -1952,11 +1929,11 @@ template <> struct Data::Structure<GameData> : GameData {
 		Step_ResearchEldin { s.get<struct Step_ResearchEldin>() },
 		Step_ResearchLanayru { s.get<struct Step_ResearchLanayru>() },
 		Step_RestaurantInTheWell { s.get<struct Step_RestaurantInTheWell>() },
+		Step_RitoBridgeRepair { s.get<struct Step_RitoBridgeRepair>() },
 		Step_Rito_ItemExchange { s.get<struct Step_Rito_ItemExchange>() },
 		Step_Rito_MedoArmor { s.get<struct Step_Rito_MedoArmor>() },
 		Step_Rito_RevaliWeapon { s.get<struct Step_Rito_RevaliWeapon>() },
 		Step_Rito_ShadowCave { s.get<struct Step_Rito_ShadowCave>() },
-		Step_RitoBridgeRepair { s.get<struct Step_RitoBridgeRepair>() },
 		Step_SageOfFire { s.get<struct Step_SageOfFire>() },
 		Step_SageOfGerudo { s.get<struct Step_SageOfGerudo>() },
 		Step_SageOfSky { s.get<struct Step_SageOfSky>() },
@@ -2010,47 +1987,90 @@ template <> struct Data::Structure<GameData> : GameData {
 		Step_WaterBridgePlace { s.get<struct Step_WaterBridgePlace>() },
 		Step_WellCollection { s.get<struct Step_WellCollection>() },
 		Step_WhichIsStronger { s.get<struct Step_WhichIsStronger>() },
-		Step_Zonau_GeniusWeapon { s.get<struct Step_Zonau_GeniusWeapon>() },
 		Step_ZonauReliefSearch { s.get<struct Step_ZonauReliefSearch>() },
+		Step_Zonau_GeniusWeapon { s.get<struct Step_Zonau_GeniusWeapon>() },
+		Step_ZoraStatue_Picture { s.get<struct Step_ZoraStatue_Picture>() },
 		Step_Zora_Enemy_hunt { s.get<struct Step_Zora_Enemy_hunt>() },
 		Step_Zora_MessageBottle { s.get<struct Step_Zora_MessageBottle>() },
 		Step_Zora_RuttaTreasure { s.get<struct Step_Zora_RuttaTreasure>() },
-		Step_ZoraStatue_Picture { s.get<struct Step_ZoraStatue_Picture>() },
-		AmiiboData { s },
-		BowStand { s },
-		ShieldStand { s },
-		WeaponStand { s },
-		CustomHouseTakeOutNum { s },
-		DefeatedEnemyNum { s },
-		HorseInnMemberPoint { s.get<struct HorseInnMemberPoint>() },
-		RaumiGolemAttachment { s },
-		ValidPouchIndex { s.get<struct ValidPouchIndex>() },
-		WellCollectionRewardUnit { s.get<struct WellCollectionRewardUnit>() },
-		WellDiscoverNumCurrent { s.get<struct WellDiscoverNumCurrent>() },
-		WellDiscoverNumLeft { s.get<struct WellDiscoverNumLeft>() },
-		WellDiscoverNumTotal { s.get<struct WellDiscoverNumTotal>() },
-		WellReportNum { s.get<struct WellReportNum>() },
-		WellReportNumMinusOne { s.get<struct WellReportNumMinusOne>() },
-		WellReportNumThisTime { s.get<struct WellReportNumThisTime>() },
-		World_CurrentDays { s.get<struct World_CurrentDays>() },
-		World_CurrentHour { s.get<struct World_CurrentHour>() },
-		World_CurrentMinute { s.get<struct World_CurrentMinute>() },
+		Step_gather_Insect_Z { s.get<struct Step_gather_Insect_Z>() },
+		ActionGuide_IsNew { s },
 		AlbumData { s },
-		World_WeatherForecast { s.get<struct World_WeatherForecast>() },
-		Sequence_CurrentBanc { s.get<struct Sequence_CurrentBanc>() },
-		Playtime { s.get<struct Playtime>() },
-		World_BloodyMoonTimer { s.get<struct World_BloodyMoonTimer>() },
-		World_CurrentDateTime { s.get<struct World_CurrentDateTime>() },
-		World_ZonauRespawnTimer { s.get<struct World_ZonauRespawnTimer>() },
-		World_PlayerPos { s.get<struct World_PlayerPos>() },
-		World_ShootingStarPosition { s.get<struct World_ShootingStarPosition>() },
-		FigureCreateInfo { s }
+		AmiiboData { s },
+		ArrivalPointState { s },
+		AutoBuilder { s },
+		BowStand { s },
+		ChallengeLogState_Challenge { s },
+		CheckPoint_IsDisplayFoliage { s },
+		CustomHouse { s },
+		CustomHouseTakeOutNum { s },
+		DeadHorseList { s },
+		DefeatedEnemyNum { s },
+		DongoList { s },
+		DongoLocatorList { s },
+		DragonMemoryDataForUI { s },
+		DungeonState { s },
+		FigureCreateInfo { s },
+		FigureInfo { s },
+		IsActivateCannon { s },
+		IsAppearKorok { s },
+		IsDefeatBossEnemy { s },
+		IsFindTreasureMap { s },
+		IsGetAdventureMemory { s },
+		IsGetCaveMasterMedal { s },
+		IsOpenCannon { s },
+		IsVisitLocation { s },
+		IsVisitLocationArea_CaveEntrance { s },
+		KeyCrystalDungeonState { s },
+		KeyCrystalDungeonUnlocked { s },
+		KorokCarryProgress { s },
+		LastWildHorse { s },
+		LightBallBud { s },
+		MapData { s },
+		MaterialShortCut { s },
+		NpcGardenInfo { s },
+		NpcGardenInfo_HatenoVillage023 { s },
+		NpcServeFood { s },
+		OwnedCustomizableHorseTack_Reins { s },
+		OwnedCustomizableHorseTack_Saddle { s },
+		OwnedHorseList { s },
+		OwnedParasailPattern { s },
+		PictureBookData { s },
+		PlayerStatus { s },
+		Pouch { s },
+		RaumiGolemAttachment { s },
+		ReadyMadeAutoBuilderDraft { s },
+		RecycleBoxData { s },
+		ReplaceblePicture { s },
+		ShieldStand { s },
+		SortPattern { s },
+		WeaponStand { s }
 	{ }
 };/* Data::Structure GameData close */
 
+template <> hash_t constexpr Data::Hashtable<GameData::HorseInnMemberPoint> = murmurhash3::hash("HorseInnMemberPoint");
 template <> hash_t constexpr Data::Hashtable<GameData::NushiShop_MedalComplete> = murmurhash3::hash("NushiShop_MedalComplete");
+template <> hash_t constexpr Data::Hashtable<GameData::Playtime> = 0xe573f564;
+template <> hash_t constexpr Data::Hashtable<GameData::Sequence_CurrentBanc> = murmurhash3::hash("Sequence_CurrentBanc");
+template <> hash_t constexpr Data::Hashtable<GameData::ValidPouchIndex> = murmurhash3::hash("ValidPouchIndex");
+template <> hash_t constexpr Data::Hashtable<GameData::WellCollectionRewardUnit> = murmurhash3::hash("WellCollectionRewardUnit");
+template <> hash_t constexpr Data::Hashtable<GameData::WellDiscoverNumCurrent> = murmurhash3::hash("WellDiscoverNumCurrent");
+template <> hash_t constexpr Data::Hashtable<GameData::WellDiscoverNumLeft> = murmurhash3::hash("WellDiscoverNumLeft");
+template <> hash_t constexpr Data::Hashtable<GameData::WellDiscoverNumTotal> = murmurhash3::hash("WellDiscoverNumTotal");
+template <> hash_t constexpr Data::Hashtable<GameData::WellReportNum> = murmurhash3::hash("WellReportNum");
+template <> hash_t constexpr Data::Hashtable<GameData::WellReportNumMinusOne> = murmurhash3::hash("WellReportNumMinusOne");
+template <> hash_t constexpr Data::Hashtable<GameData::WellReportNumThisTime> = murmurhash3::hash("WellReportNumThisTime");
+template <> hash_t constexpr Data::Hashtable<GameData::World_BloodyMoonTimer> = murmurhash3::hash("World_BloodyMoonTimer");
+template <> hash_t constexpr Data::Hashtable<GameData::World_CurrentDateTime> = murmurhash3::hash("World_CurrentDateTime");
+template <> hash_t constexpr Data::Hashtable<GameData::World_CurrentDays> = murmurhash3::hash("World_CurrentDays");
+template <> hash_t constexpr Data::Hashtable<GameData::World_CurrentHour> = murmurhash3::hash("World_CurrentHour");
+template <> hash_t constexpr Data::Hashtable<GameData::World_CurrentMinute> = murmurhash3::hash("World_CurrentMinute");
 template <> hash_t constexpr Data::Hashtable<GameData::World_IsBloodyMoonDay> = murmurhash3::hash("World_IsBloodyMoonDay");
 template <> hash_t constexpr Data::Hashtable<GameData::World_IsZonauRespawnDay> = murmurhash3::hash("World_IsZonauRespawnDay");
+template <> hash_t constexpr Data::Hashtable<GameData::World_PlayerPos> = murmurhash3::hash("World_PlayerPos");
+template <> hash_t constexpr Data::Hashtable<GameData::World_ShootingStarPosition> = murmurhash3::hash("World_ShootingStarPosition");
+template <> hash_t constexpr Data::Hashtable<GameData::World_WeatherForecast> = murmurhash3::hash("World_WeatherForecast");
+template <> hash_t constexpr Data::Hashtable<GameData::World_ZonauRespawnTimer> = murmurhash3::hash("World_ZonauRespawnTimer");
 template <> hash_t constexpr Data::Hashtable<GameData::LastTalkedOrchestraMemberStableHostel> = murmurhash3::hash("LastTalkedOrchestraMemberStableHostel");
 template <> hash_t constexpr Data::Hashtable<GameData::SensorMode> = murmurhash3::hash("SensorMode");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_AisyaRescue> = murmurhash3::hash("Step_AisyaRescue");
@@ -2068,6 +2088,7 @@ template <> hash_t constexpr Data::Hashtable<GameData::Step_BlindRuinsTreasure_R
 template <> hash_t constexpr Data::Hashtable<GameData::Step_BlindRuinsTreasure_Zora> = murmurhash3::hash("Step_BlindRuinsTreasure_Zora");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_BuildHouse> = murmurhash3::hash("Step_BuildHouse");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_BuildingMaterialsTutorial> = murmurhash3::hash("Step_BuildingMaterialsTutorial");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_CDungeon_AllDone> = murmurhash3::hash("Step_CDungeon_AllDone");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_CarryGoronKid1> = murmurhash3::hash("Step_CarryGoronKid1");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_CarryGoronKid2> = murmurhash3::hash("Step_CarryGoronKid2");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_CarryStone> = murmurhash3::hash("Step_CarryStone");
@@ -2092,7 +2113,6 @@ template <> hash_t constexpr Data::Hashtable<GameData::Step_CarryToShrine20> = m
 template <> hash_t constexpr Data::Hashtable<GameData::Step_CarryToShrine21> = murmurhash3::hash("Step_CarryToShrine21");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_CarryToShrine22> = murmurhash3::hash("Step_CarryToShrine22");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_CarryToShrine23> = murmurhash3::hash("Step_CarryToShrine23");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_CDungeon_AllDone> = murmurhash3::hash("Step_CDungeon_AllDone");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Circuit_Desert> = murmurhash3::hash("Step_Circuit_Desert");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Circuit_FaronWoods_MiniGame> = murmurhash3::hash("Step_Circuit_FaronWoods_MiniGame");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Circuit_Ichikara> = murmurhash3::hash("Step_Circuit_Ichikara");
@@ -2137,16 +2157,16 @@ template <> hash_t constexpr Data::Hashtable<GameData::Step_FindWhiteHorse> = mu
 template <> hash_t constexpr Data::Hashtable<GameData::Step_FindWithSensors> = murmurhash3::hash("Step_FindWithSensors");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_FirstskyislandReturns> = murmurhash3::hash("Step_FirstskyislandReturns");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_FullyRipenedFlintstones> = murmurhash3::hash("Step_FullyRipenedFlintstones");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_gather_Insect_Z> = murmurhash3::hash("Step_gather_Insect_Z");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_GOToTheCastleOfHyrule> = murmurhash3::hash("Step_GOToTheCastleOfHyrule");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GeniusWeapon_Zora> = murmurhash3::hash("Step_GeniusWeapon_Zora");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Genkos_Kitchen> = murmurhash3::hash("Step_Genkos_Kitchen");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_Gerudo_UrbosaWeapon> = murmurhash3::hash("Step_Gerudo_UrbosaWeapon");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GerudoCanyon_24hEnduranceComparison> = murmurhash3::hash("Step_GerudoCanyon_24hEnduranceComparison");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GerudoCanyon_Adventure> = murmurhash3::hash("Step_GerudoCanyon_Adventure");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GerudoCanyon_ColdEnduranceComparison> = murmurhash3::hash("Step_GerudoCanyon_ColdEnduranceComparison");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GerudoCanyon_GleeokLiver> = murmurhash3::hash("Step_GerudoCanyon_GleeokLiver");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GerudoCanyon_TumbleweedSweep> = murmurhash3::hash("Step_GerudoCanyon_TumbleweedSweep");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GerudoDesertTreasure> = murmurhash3::hash("Step_GerudoDesertTreasure");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_Gerudo_UrbosaWeapon> = murmurhash3::hash("Step_Gerudo_UrbosaWeapon");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GetCamera> = murmurhash3::hash("Step_GetCamera");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GetMasterSword> = murmurhash3::hash("Step_GetMasterSword");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GetSensorPlus> = murmurhash3::hash("Step_GetSensorPlus");
@@ -2154,19 +2174,19 @@ template <> hash_t constexpr Data::Hashtable<GameData::Step_GetWalker> = murmurh
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GetWarpMarker> = murmurhash3::hash("Step_GetWarpMarker");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GiantHorse> = murmurhash3::hash("Step_GiantHorse");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GoneSnowQueen> = murmurhash3::hash("Step_GoneSnowQueen");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_GoronPond> = murmurhash3::hash("Step_GoronPond");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_GoronReturntoNature> = murmurhash3::hash("Step_GoronReturntoNature");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Goron_MiniGame_01> = murmurhash3::hash("Step_Goron_MiniGame_01");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Goron_MiniGame_02> = murmurhash3::hash("Step_Goron_MiniGame_02");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Goron_MiniGame_03> = murmurhash3::hash("Step_Goron_MiniGame_03");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Goron_MiniGame_Tutorial_01> = murmurhash3::hash("Step_Goron_MiniGame_Tutorial_01");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Goron_MiniGame_Tutorial_02> = murmurhash3::hash("Step_Goron_MiniGame_Tutorial_02");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Goron_MiniGame_Tutorial_03> = murmurhash3::hash("Step_Goron_MiniGame_Tutorial_03");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_GoronPond> = murmurhash3::hash("Step_GoronPond");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_GoronReturntoNature> = murmurhash3::hash("Step_GoronReturntoNature");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GotoFironeZonauRemains> = murmurhash3::hash("Step_GotoFironeZonauRemains");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_GOToTheCastleOfHyrule> = murmurhash3::hash("Step_GOToTheCastleOfHyrule");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_GroundPaintingAir01> = murmurhash3::hash("Step_GroundPaintingAir01");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hack_GuardGoods> = murmurhash3::hash("Step_Hack_GuardGoods");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_HammerGong_MiniGame> = murmurhash3::hash("Step_HammerGong_MiniGame");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_HatenoPurchasePicture> = murmurhash3::hash("Step_HatenoPurchasePicture");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hateno_Cheese> = murmurhash3::hash("Step_Hateno_Cheese");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hateno_CoolGuy> = murmurhash3::hash("Step_Hateno_CoolGuy");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hateno_FreshMilk> = murmurhash3::hash("Step_Hateno_FreshMilk");
@@ -2180,7 +2200,6 @@ template <> hash_t constexpr Data::Hashtable<GameData::Step_Hateno_TellMeTeacher
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hateno_TellMeTeacher02> = murmurhash3::hash("Step_Hateno_TellMeTeacher02");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hateno_VillageMayorElection> = murmurhash3::hash("Step_Hateno_VillageMayorElection");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hateno_WhatToPlant> = murmurhash3::hash("Step_Hateno_WhatToPlant");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_HatenoPurchasePicture> = murmurhash3::hash("Step_HatenoPurchasePicture");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hebra_SkyRingChallenge> = murmurhash3::hash("Step_Hebra_SkyRingChallenge");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Hebra_SkyRingChallenge_MiniGame> = murmurhash3::hash("Step_Hebra_SkyRingChallenge_MiniGame");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_HorseInnChallenge001> = murmurhash3::hash("Step_HorseInnChallenge001");
@@ -2214,18 +2233,18 @@ template <> hash_t constexpr Data::Hashtable<GameData::Step_MakeChemicalWeapon> 
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MasterSwordClues> = murmurhash3::hash("Step_MasterSwordClues");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MeatRock> = murmurhash3::hash("Step_MeatRock");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MemoryOfTheDragon> = murmurhash3::hash("Step_MemoryOfTheDragon");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Akkare_Bloody> = murmurhash3::hash("Step_Mercenary_Akkare_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Eldin_Bloody> = murmurhash3::hash("Step_Mercenary_Eldin_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Firone_Bloody> = murmurhash3::hash("Step_Mercenary_Firone_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Hateru_Bloody> = murmurhash3::hash("Step_Mercenary_Hateru_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Hebra_Bloody> = murmurhash3::hash("Step_Mercenary_Hebra_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_HyrulePlain_Bloody> = murmurhash3::hash("Step_Mercenary_HyrulePlain_Bloody");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MercenaryChallenge_Akkare> = murmurhash3::hash("Step_MercenaryChallenge_Akkare");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MercenaryChallenge_Eldin> = murmurhash3::hash("Step_MercenaryChallenge_Eldin");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MercenaryChallenge_Firone> = murmurhash3::hash("Step_MercenaryChallenge_Firone");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MercenaryChallenge_Hateru> = murmurhash3::hash("Step_MercenaryChallenge_Hateru");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MercenaryChallenge_Hebra> = murmurhash3::hash("Step_MercenaryChallenge_Hebra");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MercenaryChallenge_HyrulePlain> = murmurhash3::hash("Step_MercenaryChallenge_HyrulePlain");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Akkare_Bloody> = murmurhash3::hash("Step_Mercenary_Akkare_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Eldin_Bloody> = murmurhash3::hash("Step_Mercenary_Eldin_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Firone_Bloody> = murmurhash3::hash("Step_Mercenary_Firone_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Hateru_Bloody> = murmurhash3::hash("Step_Mercenary_Hateru_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_Hebra_Bloody> = murmurhash3::hash("Step_Mercenary_Hebra_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_Mercenary_HyrulePlain_Bloody> = murmurhash3::hash("Step_Mercenary_HyrulePlain_Bloody");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MessageBottle_SOS> = murmurhash3::hash("Step_MessageBottle_SOS");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MinusYiga> = murmurhash3::hash("Step_MinusYiga");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_MonsterFigures01> = murmurhash3::hash("Step_MonsterFigures01");
@@ -2281,11 +2300,11 @@ template <> hash_t constexpr Data::Hashtable<GameData::Step_RescueWell> = murmur
 template <> hash_t constexpr Data::Hashtable<GameData::Step_ResearchEldin> = murmurhash3::hash("Step_ResearchEldin");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_ResearchLanayru> = murmurhash3::hash("Step_ResearchLanayru");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_RestaurantInTheWell> = murmurhash3::hash("Step_RestaurantInTheWell");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_RitoBridgeRepair> = murmurhash3::hash("Step_RitoBridgeRepair");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Rito_ItemExchange> = murmurhash3::hash("Step_Rito_ItemExchange");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Rito_MedoArmor> = murmurhash3::hash("Step_Rito_MedoArmor");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Rito_RevaliWeapon> = murmurhash3::hash("Step_Rito_RevaliWeapon");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Rito_ShadowCave> = murmurhash3::hash("Step_Rito_ShadowCave");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_RitoBridgeRepair> = murmurhash3::hash("Step_RitoBridgeRepair");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_SageOfFire> = murmurhash3::hash("Step_SageOfFire");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_SageOfGerudo> = murmurhash3::hash("Step_SageOfGerudo");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_SageOfSky> = murmurhash3::hash("Step_SageOfSky");
@@ -2339,29 +2358,10 @@ template <> hash_t constexpr Data::Hashtable<GameData::Step_WashedAwayBusinessTo
 template <> hash_t constexpr Data::Hashtable<GameData::Step_WaterBridgePlace> = murmurhash3::hash("Step_WaterBridgePlace");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_WellCollection> = murmurhash3::hash("Step_WellCollection");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_WhichIsStronger> = murmurhash3::hash("Step_WhichIsStronger");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_Zonau_GeniusWeapon> = murmurhash3::hash("Step_Zonau_GeniusWeapon");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_ZonauReliefSearch> = murmurhash3::hash("Step_ZonauReliefSearch");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_Zonau_GeniusWeapon> = murmurhash3::hash("Step_Zonau_GeniusWeapon");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_ZoraStatue_Picture> = murmurhash3::hash("Step_ZoraStatue_Picture");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Zora_Enemy_hunt> = murmurhash3::hash("Step_Zora_Enemy_hunt");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Zora_MessageBottle> = murmurhash3::hash("Step_Zora_MessageBottle");
 template <> hash_t constexpr Data::Hashtable<GameData::Step_Zora_RuttaTreasure> = murmurhash3::hash("Step_Zora_RuttaTreasure");
-template <> hash_t constexpr Data::Hashtable<GameData::Step_ZoraStatue_Picture> = murmurhash3::hash("Step_ZoraStatue_Picture");
-template <> hash_t constexpr Data::Hashtable<GameData::HorseInnMemberPoint> = murmurhash3::hash("HorseInnMemberPoint");
-template <> hash_t constexpr Data::Hashtable<GameData::ValidPouchIndex> = murmurhash3::hash("ValidPouchIndex");
-template <> hash_t constexpr Data::Hashtable<GameData::WellCollectionRewardUnit> = murmurhash3::hash("WellCollectionRewardUnit");
-template <> hash_t constexpr Data::Hashtable<GameData::WellDiscoverNumCurrent> = murmurhash3::hash("WellDiscoverNumCurrent");
-template <> hash_t constexpr Data::Hashtable<GameData::WellDiscoverNumLeft> = murmurhash3::hash("WellDiscoverNumLeft");
-template <> hash_t constexpr Data::Hashtable<GameData::WellDiscoverNumTotal> = murmurhash3::hash("WellDiscoverNumTotal");
-template <> hash_t constexpr Data::Hashtable<GameData::WellReportNum> = murmurhash3::hash("WellReportNum");
-template <> hash_t constexpr Data::Hashtable<GameData::WellReportNumMinusOne> = murmurhash3::hash("WellReportNumMinusOne");
-template <> hash_t constexpr Data::Hashtable<GameData::WellReportNumThisTime> = murmurhash3::hash("WellReportNumThisTime");
-template <> hash_t constexpr Data::Hashtable<GameData::World_CurrentDays> = murmurhash3::hash("World_CurrentDays");
-template <> hash_t constexpr Data::Hashtable<GameData::World_CurrentHour> = murmurhash3::hash("World_CurrentHour");
-template <> hash_t constexpr Data::Hashtable<GameData::World_CurrentMinute> = murmurhash3::hash("World_CurrentMinute");
-template <> hash_t constexpr Data::Hashtable<GameData::World_WeatherForecast> = murmurhash3::hash("World_WeatherForecast");
-template <> hash_t constexpr Data::Hashtable<GameData::Sequence_CurrentBanc> = murmurhash3::hash("Sequence_CurrentBanc");
-template <> hash_t constexpr Data::Hashtable<GameData::Playtime> = 0xe573f564;
-template <> hash_t constexpr Data::Hashtable<GameData::World_BloodyMoonTimer> = murmurhash3::hash("World_BloodyMoonTimer");
-template <> hash_t constexpr Data::Hashtable<GameData::World_CurrentDateTime> = murmurhash3::hash("World_CurrentDateTime");
-template <> hash_t constexpr Data::Hashtable<GameData::World_ZonauRespawnTimer> = murmurhash3::hash("World_ZonauRespawnTimer");
-template <> hash_t constexpr Data::Hashtable<GameData::World_PlayerPos> = murmurhash3::hash("World_PlayerPos");
-template <> hash_t constexpr Data::Hashtable<GameData::World_ShootingStarPosition> = murmurhash3::hash("World_ShootingStarPosition");
+template <> hash_t constexpr Data::Hashtable<GameData::Step_gather_Insect_Z> = murmurhash3::hash("Step_gather_Insect_Z");

@@ -118,6 +118,16 @@ struct GameData::IsGetCaveMasterMedal : Tag::Structure {
 	struct Cave_HyruleRidge_0006 : Tag::Member { using type = bool&; };
 	struct Cave_HyruleRidge_0007 : Tag::Member { using type = bool&; };
 	struct Cave_HyruleRidge_0008 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0002 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0006 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0008 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0010 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0014 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0016 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0022 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0024 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0025 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0026 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0006 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0008 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0014 : Tag::Member { using type = bool&; };
@@ -137,16 +147,6 @@ struct GameData::IsGetCaveMasterMedal : Tag::Structure {
 	struct Cave_Lanayru_0060 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0061 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0063 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0002 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0006 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0008 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0010 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0014 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0016 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0022 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0024 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0025 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0026 : Tag::Member { using type = bool&; };
 	struct Cave_Tabantha_0001 : Tag::Member { using type = bool&; };
 	struct Cave_Tabantha_0002 : Tag::Member { using type = bool&; };
 	struct Cave_Tabantha_0003 : Tag::Member { using type = bool&; };
@@ -241,8 +241,8 @@ struct GameData::IsGetCaveMasterMedal : Tag::Structure {
 	struct Well_0057 : Tag::Member { using type = bool&; };
 	struct Well_0058 : Tag::Member { using type = bool&; };
 	struct Well_0059 : Tag::Member { using type = bool&; };
-	struct Zora_Imperial_Palace : Tag::Member { using type = bool&; };
 	struct ZoraZonauTerminal : Tag::Member { using type = bool&; };
+	struct Zora_Imperial_Palace : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::IsGetCaveMasterMedal close */
 
 template <> struct Data::Structure<GameData::IsGetCaveMasterMedal> : GameData::IsGetCaveMasterMedal {
@@ -362,6 +362,16 @@ template <> struct Data::Structure<GameData::IsGetCaveMasterMedal> : GameData::I
 	Member<Cave_HyruleRidge_0006> Cave_HyruleRidge_0006;
 	Member<Cave_HyruleRidge_0007> Cave_HyruleRidge_0007;
 	Member<Cave_HyruleRidge_0008> Cave_HyruleRidge_0008;
+	Member<Cave_LanayruMountain_0002> Cave_LanayruMountain_0002;
+	Member<Cave_LanayruMountain_0006> Cave_LanayruMountain_0006;
+	Member<Cave_LanayruMountain_0008> Cave_LanayruMountain_0008;
+	Member<Cave_LanayruMountain_0010> Cave_LanayruMountain_0010;
+	Member<Cave_LanayruMountain_0014> Cave_LanayruMountain_0014;
+	Member<Cave_LanayruMountain_0016> Cave_LanayruMountain_0016;
+	Member<Cave_LanayruMountain_0022> Cave_LanayruMountain_0022;
+	Member<Cave_LanayruMountain_0024> Cave_LanayruMountain_0024;
+	Member<Cave_LanayruMountain_0025> Cave_LanayruMountain_0025;
+	Member<Cave_LanayruMountain_0026> Cave_LanayruMountain_0026;
 	Member<Cave_Lanayru_0006> Cave_Lanayru_0006;
 	Member<Cave_Lanayru_0008> Cave_Lanayru_0008;
 	Member<Cave_Lanayru_0014> Cave_Lanayru_0014;
@@ -381,16 +391,6 @@ template <> struct Data::Structure<GameData::IsGetCaveMasterMedal> : GameData::I
 	Member<Cave_Lanayru_0060> Cave_Lanayru_0060;
 	Member<Cave_Lanayru_0061> Cave_Lanayru_0061;
 	Member<Cave_Lanayru_0063> Cave_Lanayru_0063;
-	Member<Cave_LanayruMountain_0002> Cave_LanayruMountain_0002;
-	Member<Cave_LanayruMountain_0006> Cave_LanayruMountain_0006;
-	Member<Cave_LanayruMountain_0008> Cave_LanayruMountain_0008;
-	Member<Cave_LanayruMountain_0010> Cave_LanayruMountain_0010;
-	Member<Cave_LanayruMountain_0014> Cave_LanayruMountain_0014;
-	Member<Cave_LanayruMountain_0016> Cave_LanayruMountain_0016;
-	Member<Cave_LanayruMountain_0022> Cave_LanayruMountain_0022;
-	Member<Cave_LanayruMountain_0024> Cave_LanayruMountain_0024;
-	Member<Cave_LanayruMountain_0025> Cave_LanayruMountain_0025;
-	Member<Cave_LanayruMountain_0026> Cave_LanayruMountain_0026;
 	Member<Cave_Tabantha_0001> Cave_Tabantha_0001;
 	Member<Cave_Tabantha_0002> Cave_Tabantha_0002;
 	Member<Cave_Tabantha_0003> Cave_Tabantha_0003;
@@ -485,8 +485,8 @@ template <> struct Data::Structure<GameData::IsGetCaveMasterMedal> : GameData::I
 	Member<Well_0057> Well_0057;
 	Member<Well_0058> Well_0058;
 	Member<Well_0059> Well_0059;
-	Member<Zora_Imperial_Palace> Zora_Imperial_Palace;
 	Member<ZoraZonauTerminal> ZoraZonauTerminal;
+	Member<Zora_Imperial_Palace> Zora_Imperial_Palace;
 	
 	explicit Structure(Sav& s) : 
 		Cave_Akkala_0000 { s.get<struct Cave_Akkala_0000>() },
@@ -605,6 +605,16 @@ template <> struct Data::Structure<GameData::IsGetCaveMasterMedal> : GameData::I
 		Cave_HyruleRidge_0006 { s.get<struct Cave_HyruleRidge_0006>() },
 		Cave_HyruleRidge_0007 { s.get<struct Cave_HyruleRidge_0007>() },
 		Cave_HyruleRidge_0008 { s.get<struct Cave_HyruleRidge_0008>() },
+		Cave_LanayruMountain_0002 { s.get<struct Cave_LanayruMountain_0002>() },
+		Cave_LanayruMountain_0006 { s.get<struct Cave_LanayruMountain_0006>() },
+		Cave_LanayruMountain_0008 { s.get<struct Cave_LanayruMountain_0008>() },
+		Cave_LanayruMountain_0010 { s.get<struct Cave_LanayruMountain_0010>() },
+		Cave_LanayruMountain_0014 { s.get<struct Cave_LanayruMountain_0014>() },
+		Cave_LanayruMountain_0016 { s.get<struct Cave_LanayruMountain_0016>() },
+		Cave_LanayruMountain_0022 { s.get<struct Cave_LanayruMountain_0022>() },
+		Cave_LanayruMountain_0024 { s.get<struct Cave_LanayruMountain_0024>() },
+		Cave_LanayruMountain_0025 { s.get<struct Cave_LanayruMountain_0025>() },
+		Cave_LanayruMountain_0026 { s.get<struct Cave_LanayruMountain_0026>() },
 		Cave_Lanayru_0006 { s.get<struct Cave_Lanayru_0006>() },
 		Cave_Lanayru_0008 { s.get<struct Cave_Lanayru_0008>() },
 		Cave_Lanayru_0014 { s.get<struct Cave_Lanayru_0014>() },
@@ -624,16 +634,6 @@ template <> struct Data::Structure<GameData::IsGetCaveMasterMedal> : GameData::I
 		Cave_Lanayru_0060 { s.get<struct Cave_Lanayru_0060>() },
 		Cave_Lanayru_0061 { s.get<struct Cave_Lanayru_0061>() },
 		Cave_Lanayru_0063 { s.get<struct Cave_Lanayru_0063>() },
-		Cave_LanayruMountain_0002 { s.get<struct Cave_LanayruMountain_0002>() },
-		Cave_LanayruMountain_0006 { s.get<struct Cave_LanayruMountain_0006>() },
-		Cave_LanayruMountain_0008 { s.get<struct Cave_LanayruMountain_0008>() },
-		Cave_LanayruMountain_0010 { s.get<struct Cave_LanayruMountain_0010>() },
-		Cave_LanayruMountain_0014 { s.get<struct Cave_LanayruMountain_0014>() },
-		Cave_LanayruMountain_0016 { s.get<struct Cave_LanayruMountain_0016>() },
-		Cave_LanayruMountain_0022 { s.get<struct Cave_LanayruMountain_0022>() },
-		Cave_LanayruMountain_0024 { s.get<struct Cave_LanayruMountain_0024>() },
-		Cave_LanayruMountain_0025 { s.get<struct Cave_LanayruMountain_0025>() },
-		Cave_LanayruMountain_0026 { s.get<struct Cave_LanayruMountain_0026>() },
 		Cave_Tabantha_0001 { s.get<struct Cave_Tabantha_0001>() },
 		Cave_Tabantha_0002 { s.get<struct Cave_Tabantha_0002>() },
 		Cave_Tabantha_0003 { s.get<struct Cave_Tabantha_0003>() },
@@ -728,8 +728,8 @@ template <> struct Data::Structure<GameData::IsGetCaveMasterMedal> : GameData::I
 		Well_0057 { s.get<struct Well_0057>() },
 		Well_0058 { s.get<struct Well_0058>() },
 		Well_0059 { s.get<struct Well_0059>() },
-		Zora_Imperial_Palace { s.get<struct Zora_Imperial_Palace>() },
-		ZoraZonauTerminal { s.get<struct ZoraZonauTerminal>() }
+		ZoraZonauTerminal { s.get<struct ZoraZonauTerminal>() },
+		Zora_Imperial_Palace { s.get<struct Zora_Imperial_Palace>() }
 	{ }
 };/* Data::Structure GameData::IsGetCaveMasterMedal close */
 
@@ -849,6 +849,16 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cav
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_HyruleRidge_0006> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_HyruleRidge_0006");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_HyruleRidge_0007> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_HyruleRidge_0007");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_HyruleRidge_0008> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_HyruleRidge_0008");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0002> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0002");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0006> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0006");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0008> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0008");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0010> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0010");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0014> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0014");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0016> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0016");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0022> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0022");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0024> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0024");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0025> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0025");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0026> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0026");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Lanayru_0006> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Lanayru_0006");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Lanayru_0008> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Lanayru_0008");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Lanayru_0014> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Lanayru_0014");
@@ -868,16 +878,6 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cav
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Lanayru_0060> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Lanayru_0060");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Lanayru_0061> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Lanayru_0061");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Lanayru_0063> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Lanayru_0063");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0002> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0002");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0006> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0006");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0008> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0008");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0010> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0010");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0014> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0014");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0016> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0016");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0022> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0022");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0024> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0024");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0025> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0025");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_LanayruMountain_0026> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_LanayruMountain_0026");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Tabantha_0001> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Tabantha_0001");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Tabantha_0002> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Tabantha_0002");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Tabantha_0003> = murmurhash3::hash("IsGetCaveMasterMedal.Cave_Tabantha_0003");
@@ -972,5 +972,5 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Wel
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Well_0057> = murmurhash3::hash("IsGetCaveMasterMedal.Well_0057");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Well_0058> = murmurhash3::hash("IsGetCaveMasterMedal.Well_0058");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Well_0059> = murmurhash3::hash("IsGetCaveMasterMedal.Well_0059");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Zora_Imperial_Palace> = murmurhash3::hash("IsGetCaveMasterMedal.Zora_Imperial_Palace");
 template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::ZoraZonauTerminal> = murmurhash3::hash("IsGetCaveMasterMedal.ZoraZonauTerminal");
+template <> hash_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Zora_Imperial_Palace> = murmurhash3::hash("IsGetCaveMasterMedal.Zora_Imperial_Palace");

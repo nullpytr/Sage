@@ -8,11 +8,11 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct AgePlateau : Tag::Member { using type = bool&; };
 	struct AgunaiLake : Tag::Member { using type = bool&; };
 	struct AkazaMt : Tag::Member { using type = bool&; };
-	struct Akkare_OctaPond : Tag::Member { using type = bool&; };
 	struct AkkareBigBridge : Tag::Member { using type = bool&; };
 	struct AkkareGarrison : Tag::Member { using type = bool&; };
 	struct AkkareZhai : Tag::Member { using type = bool&; };
 	struct AkkareZhaiBridge : Tag::Member { using type = bool&; };
+	struct Akkare_OctaPond : Tag::Member { using type = bool&; };
 	struct AmimePlateau : Tag::Member { using type = bool&; };
 	struct AmonenePlateau : Tag::Member { using type = bool&; };
 	struct AnbonBeach : Tag::Member { using type = bool&; };
@@ -40,10 +40,10 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct BatteryExchangeShop_00 : Tag::Member { using type = bool&; };
 	struct BatteryExchangeShop_01 : Tag::Member { using type = bool&; };
 	struct BeginningIsland : Tag::Member { using type = bool&; };
-	struct BigalLake : Tag::Member { using type = bool&; };
 	struct BigBrotherBridge : Tag::Member { using type = bool&; };
-	struct BiginaTrees : Tag::Member { using type = bool&; };
 	struct BigTree : Tag::Member { using type = bool&; };
+	struct BigalLake : Tag::Member { using type = bool&; };
+	struct BiginaTrees : Tag::Member { using type = bool&; };
 	struct BiridinHill : Tag::Member { using type = bool&; };
 	struct BironSnow : Tag::Member { using type = bool&; };
 	struct BituoValley : Tag::Member { using type = bool&; };
@@ -61,6 +61,7 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct BuidaLake : Tag::Member { using type = bool&; };
 	struct BumiPlain : Tag::Member { using type = bool&; };
 	struct BuramuPlateau : Tag::Member { using type = bool&; };
+	struct CDungeon : Tag::Member { using type = bool&; };
 	struct CastleTownMark : Tag::Member { using type = bool&; };
 	struct Cave_Akkala_0000 : Tag::Member { using type = bool&; };
 	struct Cave_Akkala_0003 : Tag::Member { using type = bool&; };
@@ -178,6 +179,16 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct Cave_HyruleRidge_0006 : Tag::Member { using type = bool&; };
 	struct Cave_HyruleRidge_0007 : Tag::Member { using type = bool&; };
 	struct Cave_HyruleRidge_0008 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0002 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0006 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0008 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0010 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0014 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0016 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0022 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0024 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0025 : Tag::Member { using type = bool&; };
+	struct Cave_LanayruMountain_0026 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0006 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0008 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0014 : Tag::Member { using type = bool&; };
@@ -197,20 +208,9 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct Cave_Lanayru_0060 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0061 : Tag::Member { using type = bool&; };
 	struct Cave_Lanayru_0063 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0002 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0006 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0008 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0010 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0014 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0016 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0022 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0024 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0025 : Tag::Member { using type = bool&; };
-	struct Cave_LanayruMountain_0026 : Tag::Member { using type = bool&; };
 	struct Cave_Tabantha_0001 : Tag::Member { using type = bool&; };
 	struct Cave_Tabantha_0002 : Tag::Member { using type = bool&; };
 	struct Cave_Tabantha_0003 : Tag::Member { using type = bool&; };
-	struct CDungeon : Tag::Member { using type = bool&; };
 	struct CentralExchange : Tag::Member { using type = bool&; };
 	struct ChagaraMt : Tag::Member { using type = bool&; };
 	struct CheckPoint000 : Tag::Member { using type = bool&; };
@@ -350,9 +350,9 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct DasukidaPlateau : Tag::Member { using type = bool&; };
 	struct DatsuPlain : Tag::Member { using type = bool&; };
 	struct DeathCaldera : Tag::Member { using type = bool&; };
-	struct DeathMountain_Entrance : Tag::Member { using type = bool&; };
 	struct DeathMountainHatago : Tag::Member { using type = bool&; };
 	struct DeathMountainWestWorkshop : Tag::Member { using type = bool&; };
+	struct DeathMountain_Entrance : Tag::Member { using type = bool&; };
 	struct DeepHole_AkkareSkull : Tag::Member { using type = bool&; };
 	struct DeepHole_B_6_AssasisnBoss : Tag::Member { using type = bool&; };
 	struct DeepHole_B_6_Tower : Tag::Member { using type = bool&; };
@@ -398,7 +398,6 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct DonLake : Tag::Member { using type = bool&; };
 	struct DotiBeach : Tag::Member { using type = bool&; };
 	struct DragonMarsh : Tag::Member { using type = bool&; };
-	struct DragonsFar : Tag::Member { using type = bool&; };
 	struct DragonTears01 : Tag::Member { using type = bool&; };
 	struct DragonTears02 : Tag::Member { using type = bool&; };
 	struct DragonTears03 : Tag::Member { using type = bool&; };
@@ -411,6 +410,7 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct DragonTears10 : Tag::Member { using type = bool&; };
 	struct DragonTears11 : Tag::Member { using type = bool&; };
 	struct DragonTears12 : Tag::Member { using type = bool&; };
+	struct DragonsFar : Tag::Member { using type = bool&; };
 	struct Dungeon000 : Tag::Member { using type = bool&; };
 	struct Dungeon001 : Tag::Member { using type = bool&; };
 	struct Dungeon002 : Tag::Member { using type = bool&; };
@@ -563,6 +563,7 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct Dungeon149 : Tag::Member { using type = bool&; };
 	struct Dungeon150 : Tag::Member { using type = bool&; };
 	struct Dungeon151 : Tag::Member { using type = bool&; };
+	struct EX_LowGravityIsland : Tag::Member { using type = bool&; };
 	struct EagleBridge : Tag::Member { using type = bool&; };
 	struct EastDam : Tag::Member { using type = bool&; };
 	struct EastEunpoHighlands : Tag::Member { using type = bool&; };
@@ -577,7 +578,6 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct EquePlateau : Tag::Member { using type = bool&; };
 	struct ErumedaPlateau : Tag::Member { using type = bool&; };
 	struct EunpoHighlands : Tag::Member { using type = bool&; };
-	struct EX_LowGravityIsland : Tag::Member { using type = bool&; };
 	struct Execution : Tag::Member { using type = bool&; };
 	struct ExpaTrees : Tag::Member { using type = bool&; };
 	struct EzzuBridge : Tag::Member { using type = bool&; };
@@ -620,8 +620,8 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct Gerudo : Tag::Member { using type = bool&; };
 	struct GerudoCanyon : Tag::Member { using type = bool&; };
 	struct GerudoCanyon_Entrance : Tag::Member { using type = bool&; };
-	struct GerudoDesert_Entrance : Tag::Member { using type = bool&; };
 	struct GerudoDesertCrack : Tag::Member { using type = bool&; };
+	struct GerudoDesert_Entrance : Tag::Member { using type = bool&; };
 	struct GerudoEightHeroStatue : Tag::Member { using type = bool&; };
 	struct GerudoHatago : Tag::Member { using type = bool&; };
 	struct GerudoPyramidDungeon_1 : Tag::Member { using type = bool&; };
@@ -662,9 +662,9 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct HatenoBeach : Tag::Member { using type = bool&; };
 	struct HatenoFarm : Tag::Member { using type = bool&; };
 	struct HatenoGate : Tag::Member { using type = bool&; };
-	struct HatenokoIsland : Tag::Member { using type = bool&; };
 	struct HatenoLabo : Tag::Member { using type = bool&; };
 	struct HatenoSchool : Tag::Member { using type = bool&; };
+	struct HatenokoIsland : Tag::Member { using type = bool&; };
 	struct HawkMt : Tag::Member { using type = bool&; };
 	struct HeburaEastSummit : Tag::Member { using type = bool&; };
 	struct HeburaIcicle : Tag::Member { using type = bool&; };
@@ -689,8 +689,8 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct HyliaRiver : Tag::Member { using type = bool&; };
 	struct HyralBridge : Tag::Member { using type = bool&; };
 	struct HyralIslands : Tag::Member { using type = bool&; };
-	struct Hyrule_Out : Tag::Member { using type = bool&; };
 	struct HyruleCastle : Tag::Member { using type = bool&; };
+	struct HyruleCastleUnderground : Tag::Member { using type = bool&; };
 	struct HyruleCastle_Hall_0 : Tag::Member { using type = bool&; };
 	struct HyruleCastle_Hall_1 : Tag::Member { using type = bool&; };
 	struct HyruleCastle_Hall_2 : Tag::Member { using type = bool&; };
@@ -705,7 +705,6 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct HyruleCastle_Room_7 : Tag::Member { using type = bool&; };
 	struct HyruleCastle_Room_8 : Tag::Member { using type = bool&; };
 	struct HyruleCastle_Room_9 : Tag::Member { using type = bool&; };
-	struct HyruleCastleUnderground : Tag::Member { using type = bool&; };
 	struct HyruleCave : Tag::Member { using type = bool&; };
 	struct HyruleCentralPlace : Tag::Member { using type = bool&; };
 	struct HyruleDepthHatago : Tag::Member { using type = bool&; };
@@ -721,6 +720,7 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct HyruleUnderground : Tag::Member { using type = bool&; };
 	struct HyruleWater : Tag::Member { using type = bool&; };
 	struct HyruleWestTown : Tag::Member { using type = bool&; };
+	struct Hyrule_Out : Tag::Member { using type = bool&; };
 	struct IbaraPlateau : Tag::Member { using type = bool&; };
 	struct IceHouse : Tag::Member { using type = bool&; };
 	struct IkokoPlateau : Tag::Member { using type = bool&; };
@@ -764,9 +764,9 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct KikinosaPlain : Tag::Member { using type = bool&; };
 	struct KimarikaMt : Tag::Member { using type = bool&; };
 	struct KimarikaPlateau : Tag::Member { using type = bool&; };
-	struct KingfisherSpa : Tag::Member { using type = bool&; };
 	struct KingValley : Tag::Member { using type = bool&; };
 	struct KingValley2 : Tag::Member { using type = bool&; };
+	struct KingfisherSpa : Tag::Member { using type = bool&; };
 	struct KinmePlateau : Tag::Member { using type = bool&; };
 	struct KinshoiMt : Tag::Member { using type = bool&; };
 	struct KirisasaPlateau : Tag::Member { using type = bool&; };
@@ -990,8 +990,8 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct MinusField_KazuryuLake : Tag::Member { using type = bool&; };
 	struct MinusField_KikinosaMt : Tag::Member { using type = bool&; };
 	struct MinusField_KimarikaMt : Tag::Member { using type = bool&; };
-	struct MinusField_KingfisherSpa : Tag::Member { using type = bool&; };
 	struct MinusField_KingValley : Tag::Member { using type = bool&; };
+	struct MinusField_KingfisherSpa : Tag::Member { using type = bool&; };
 	struct MinusField_KinshoiMt : Tag::Member { using type = bool&; };
 	struct MinusField_KiyanbaTrees : Tag::Member { using type = bool&; };
 	struct MinusField_KorokForest : Tag::Member { using type = bool&; };
@@ -1108,8 +1108,8 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct RiritotoLake : Tag::Member { using type = bool&; };
 	struct RishakutoPlateau : Tag::Member { using type = bool&; };
 	struct Rito : Tag::Member { using type = bool&; };
-	struct Rito_SkyHighIsland : Tag::Member { using type = bool&; };
 	struct RitoHatago : Tag::Member { using type = bool&; };
+	struct Rito_SkyHighIsland : Tag::Member { using type = bool&; };
 	struct RiverSideHatago : Tag::Member { using type = bool&; };
 	struct RodaiLake : Tag::Member { using type = bool&; };
 	struct RogyLake : Tag::Member { using type = bool&; };
@@ -1123,8 +1123,8 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct RutesLake : Tag::Member { using type = bool&; };
 	struct RutimaHill : Tag::Member { using type = bool&; };
 	struct RutsuPlain : Tag::Member { using type = bool&; };
-	struct SaihokuCastle : Tag::Member { using type = bool&; };
 	struct SaiMt : Tag::Member { using type = bool&; };
+	struct SaihokuCastle : Tag::Member { using type = bool&; };
 	struct SanaePlateau : Tag::Member { using type = bool&; };
 	struct SanrosaLake : Tag::Member { using type = bool&; };
 	struct SaohPoint : Tag::Member { using type = bool&; };
@@ -1305,16 +1305,16 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct TurasuLake : Tag::Member { using type = bool&; };
 	struct TutukikiSnow : Tag::Member { using type = bool&; };
 	struct TwinsMountain : Tag::Member { using type = bool&; };
+	struct UMiiVillage : Tag::Member { using type = bool&; };
+	struct UMiiVillage_JobField : Tag::Member { using type = bool&; };
 	struct UbotsuPlateau : Tag::Member { using type = bool&; };
 	struct UchoPlateau : Tag::Member { using type = bool&; };
 	struct UkkoPond : Tag::Member { using type = bool&; };
-	struct UMiiVillage : Tag::Member { using type = bool&; };
-	struct UMiiVillage_JobField : Tag::Member { using type = bool&; };
 	struct Unknown : Tag::Member { using type = bool&; };
 	struct UraitoLake : Tag::Member { using type = bool&; };
 	struct UrokoCape : Tag::Member { using type = bool&; };
-	struct ValleyVillage : Tag::Member { using type = bool&; };
 	struct VPlateau : Tag::Member { using type = bool&; };
+	struct ValleyVillage : Tag::Member { using type = bool&; };
 	struct WabiLake : Tag::Member { using type = bool&; };
 	struct WatakaPlateau : Tag::Member { using type = bool&; };
 	struct WeaponCureSpring : Tag::Member { using type = bool&; };
@@ -1420,11 +1420,11 @@ struct GameData::IsVisitLocation : Tag::Structure {
 	struct ZonauSatelliteShrine_RightLeg : Tag::Member { using type = bool&; };
 	struct ZonauThunderSkyIsland : Tag::Member { using type = bool&; };
 	struct ZonauTriedForceSkyIsland : Tag::Member { using type = bool&; };
+	struct ZoraBridge : Tag::Member { using type = bool&; };
+	struct ZoraZonauTerminal : Tag::Member { using type = bool&; };
 	struct Zora_Belvedere : Tag::Member { using type = bool&; };
 	struct Zora_FishIsland : Tag::Member { using type = bool&; };
 	struct Zora_Imperial_Palace : Tag::Member { using type = bool&; };
-	struct ZoraBridge : Tag::Member { using type = bool&; };
-	struct ZoraZonauTerminal : Tag::Member { using type = bool&; };
 };/* Tag::Structure GameData::IsVisitLocation close */
 
 template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisitLocation {
@@ -1434,11 +1434,11 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<AgePlateau> AgePlateau;
 	Member<AgunaiLake> AgunaiLake;
 	Member<AkazaMt> AkazaMt;
-	Member<Akkare_OctaPond> Akkare_OctaPond;
 	Member<AkkareBigBridge> AkkareBigBridge;
 	Member<AkkareGarrison> AkkareGarrison;
 	Member<AkkareZhai> AkkareZhai;
 	Member<AkkareZhaiBridge> AkkareZhaiBridge;
+	Member<Akkare_OctaPond> Akkare_OctaPond;
 	Member<AmimePlateau> AmimePlateau;
 	Member<AmonenePlateau> AmonenePlateau;
 	Member<AnbonBeach> AnbonBeach;
@@ -1466,10 +1466,10 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<BatteryExchangeShop_00> BatteryExchangeShop_00;
 	Member<BatteryExchangeShop_01> BatteryExchangeShop_01;
 	Member<BeginningIsland> BeginningIsland;
-	Member<BigalLake> BigalLake;
 	Member<BigBrotherBridge> BigBrotherBridge;
-	Member<BiginaTrees> BiginaTrees;
 	Member<BigTree> BigTree;
+	Member<BigalLake> BigalLake;
+	Member<BiginaTrees> BiginaTrees;
 	Member<BiridinHill> BiridinHill;
 	Member<BironSnow> BironSnow;
 	Member<BituoValley> BituoValley;
@@ -1487,6 +1487,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<BuidaLake> BuidaLake;
 	Member<BumiPlain> BumiPlain;
 	Member<BuramuPlateau> BuramuPlateau;
+	Member<CDungeon> CDungeon;
 	Member<CastleTownMark> CastleTownMark;
 	Member<Cave_Akkala_0000> Cave_Akkala_0000;
 	Member<Cave_Akkala_0003> Cave_Akkala_0003;
@@ -1604,6 +1605,16 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<Cave_HyruleRidge_0006> Cave_HyruleRidge_0006;
 	Member<Cave_HyruleRidge_0007> Cave_HyruleRidge_0007;
 	Member<Cave_HyruleRidge_0008> Cave_HyruleRidge_0008;
+	Member<Cave_LanayruMountain_0002> Cave_LanayruMountain_0002;
+	Member<Cave_LanayruMountain_0006> Cave_LanayruMountain_0006;
+	Member<Cave_LanayruMountain_0008> Cave_LanayruMountain_0008;
+	Member<Cave_LanayruMountain_0010> Cave_LanayruMountain_0010;
+	Member<Cave_LanayruMountain_0014> Cave_LanayruMountain_0014;
+	Member<Cave_LanayruMountain_0016> Cave_LanayruMountain_0016;
+	Member<Cave_LanayruMountain_0022> Cave_LanayruMountain_0022;
+	Member<Cave_LanayruMountain_0024> Cave_LanayruMountain_0024;
+	Member<Cave_LanayruMountain_0025> Cave_LanayruMountain_0025;
+	Member<Cave_LanayruMountain_0026> Cave_LanayruMountain_0026;
 	Member<Cave_Lanayru_0006> Cave_Lanayru_0006;
 	Member<Cave_Lanayru_0008> Cave_Lanayru_0008;
 	Member<Cave_Lanayru_0014> Cave_Lanayru_0014;
@@ -1623,20 +1634,9 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<Cave_Lanayru_0060> Cave_Lanayru_0060;
 	Member<Cave_Lanayru_0061> Cave_Lanayru_0061;
 	Member<Cave_Lanayru_0063> Cave_Lanayru_0063;
-	Member<Cave_LanayruMountain_0002> Cave_LanayruMountain_0002;
-	Member<Cave_LanayruMountain_0006> Cave_LanayruMountain_0006;
-	Member<Cave_LanayruMountain_0008> Cave_LanayruMountain_0008;
-	Member<Cave_LanayruMountain_0010> Cave_LanayruMountain_0010;
-	Member<Cave_LanayruMountain_0014> Cave_LanayruMountain_0014;
-	Member<Cave_LanayruMountain_0016> Cave_LanayruMountain_0016;
-	Member<Cave_LanayruMountain_0022> Cave_LanayruMountain_0022;
-	Member<Cave_LanayruMountain_0024> Cave_LanayruMountain_0024;
-	Member<Cave_LanayruMountain_0025> Cave_LanayruMountain_0025;
-	Member<Cave_LanayruMountain_0026> Cave_LanayruMountain_0026;
 	Member<Cave_Tabantha_0001> Cave_Tabantha_0001;
 	Member<Cave_Tabantha_0002> Cave_Tabantha_0002;
 	Member<Cave_Tabantha_0003> Cave_Tabantha_0003;
-	Member<CDungeon> CDungeon;
 	Member<CentralExchange> CentralExchange;
 	Member<ChagaraMt> ChagaraMt;
 	Member<CheckPoint000> CheckPoint000;
@@ -1776,9 +1776,9 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<DasukidaPlateau> DasukidaPlateau;
 	Member<DatsuPlain> DatsuPlain;
 	Member<DeathCaldera> DeathCaldera;
-	Member<DeathMountain_Entrance> DeathMountain_Entrance;
 	Member<DeathMountainHatago> DeathMountainHatago;
 	Member<DeathMountainWestWorkshop> DeathMountainWestWorkshop;
+	Member<DeathMountain_Entrance> DeathMountain_Entrance;
 	Member<DeepHole_AkkareSkull> DeepHole_AkkareSkull;
 	Member<DeepHole_B_6_AssasisnBoss> DeepHole_B_6_AssasisnBoss;
 	Member<DeepHole_B_6_Tower> DeepHole_B_6_Tower;
@@ -1824,7 +1824,6 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<DonLake> DonLake;
 	Member<DotiBeach> DotiBeach;
 	Member<DragonMarsh> DragonMarsh;
-	Member<DragonsFar> DragonsFar;
 	Member<DragonTears01> DragonTears01;
 	Member<DragonTears02> DragonTears02;
 	Member<DragonTears03> DragonTears03;
@@ -1837,6 +1836,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<DragonTears10> DragonTears10;
 	Member<DragonTears11> DragonTears11;
 	Member<DragonTears12> DragonTears12;
+	Member<DragonsFar> DragonsFar;
 	Member<Dungeon000> Dungeon000;
 	Member<Dungeon001> Dungeon001;
 	Member<Dungeon002> Dungeon002;
@@ -1989,6 +1989,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<Dungeon149> Dungeon149;
 	Member<Dungeon150> Dungeon150;
 	Member<Dungeon151> Dungeon151;
+	Member<EX_LowGravityIsland> EX_LowGravityIsland;
 	Member<EagleBridge> EagleBridge;
 	Member<EastDam> EastDam;
 	Member<EastEunpoHighlands> EastEunpoHighlands;
@@ -2003,7 +2004,6 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<EquePlateau> EquePlateau;
 	Member<ErumedaPlateau> ErumedaPlateau;
 	Member<EunpoHighlands> EunpoHighlands;
-	Member<EX_LowGravityIsland> EX_LowGravityIsland;
 	Member<Execution> Execution;
 	Member<ExpaTrees> ExpaTrees;
 	Member<EzzuBridge> EzzuBridge;
@@ -2046,8 +2046,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<Gerudo> Gerudo;
 	Member<GerudoCanyon> GerudoCanyon;
 	Member<GerudoCanyon_Entrance> GerudoCanyon_Entrance;
-	Member<GerudoDesert_Entrance> GerudoDesert_Entrance;
 	Member<GerudoDesertCrack> GerudoDesertCrack;
+	Member<GerudoDesert_Entrance> GerudoDesert_Entrance;
 	Member<GerudoEightHeroStatue> GerudoEightHeroStatue;
 	Member<GerudoHatago> GerudoHatago;
 	Member<GerudoPyramidDungeon_1> GerudoPyramidDungeon_1;
@@ -2088,9 +2088,9 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<HatenoBeach> HatenoBeach;
 	Member<HatenoFarm> HatenoFarm;
 	Member<HatenoGate> HatenoGate;
-	Member<HatenokoIsland> HatenokoIsland;
 	Member<HatenoLabo> HatenoLabo;
 	Member<HatenoSchool> HatenoSchool;
+	Member<HatenokoIsland> HatenokoIsland;
 	Member<HawkMt> HawkMt;
 	Member<HeburaEastSummit> HeburaEastSummit;
 	Member<HeburaIcicle> HeburaIcicle;
@@ -2115,8 +2115,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<HyliaRiver> HyliaRiver;
 	Member<HyralBridge> HyralBridge;
 	Member<HyralIslands> HyralIslands;
-	Member<Hyrule_Out> Hyrule_Out;
 	Member<HyruleCastle> HyruleCastle;
+	Member<HyruleCastleUnderground> HyruleCastleUnderground;
 	Member<HyruleCastle_Hall_0> HyruleCastle_Hall_0;
 	Member<HyruleCastle_Hall_1> HyruleCastle_Hall_1;
 	Member<HyruleCastle_Hall_2> HyruleCastle_Hall_2;
@@ -2131,7 +2131,6 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<HyruleCastle_Room_7> HyruleCastle_Room_7;
 	Member<HyruleCastle_Room_8> HyruleCastle_Room_8;
 	Member<HyruleCastle_Room_9> HyruleCastle_Room_9;
-	Member<HyruleCastleUnderground> HyruleCastleUnderground;
 	Member<HyruleCave> HyruleCave;
 	Member<HyruleCentralPlace> HyruleCentralPlace;
 	Member<HyruleDepthHatago> HyruleDepthHatago;
@@ -2147,6 +2146,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<HyruleUnderground> HyruleUnderground;
 	Member<HyruleWater> HyruleWater;
 	Member<HyruleWestTown> HyruleWestTown;
+	Member<Hyrule_Out> Hyrule_Out;
 	Member<IbaraPlateau> IbaraPlateau;
 	Member<IceHouse> IceHouse;
 	Member<IkokoPlateau> IkokoPlateau;
@@ -2190,9 +2190,9 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<KikinosaPlain> KikinosaPlain;
 	Member<KimarikaMt> KimarikaMt;
 	Member<KimarikaPlateau> KimarikaPlateau;
-	Member<KingfisherSpa> KingfisherSpa;
 	Member<KingValley> KingValley;
 	Member<KingValley2> KingValley2;
+	Member<KingfisherSpa> KingfisherSpa;
 	Member<KinmePlateau> KinmePlateau;
 	Member<KinshoiMt> KinshoiMt;
 	Member<KirisasaPlateau> KirisasaPlateau;
@@ -2416,8 +2416,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<MinusField_KazuryuLake> MinusField_KazuryuLake;
 	Member<MinusField_KikinosaMt> MinusField_KikinosaMt;
 	Member<MinusField_KimarikaMt> MinusField_KimarikaMt;
-	Member<MinusField_KingfisherSpa> MinusField_KingfisherSpa;
 	Member<MinusField_KingValley> MinusField_KingValley;
+	Member<MinusField_KingfisherSpa> MinusField_KingfisherSpa;
 	Member<MinusField_KinshoiMt> MinusField_KinshoiMt;
 	Member<MinusField_KiyanbaTrees> MinusField_KiyanbaTrees;
 	Member<MinusField_KorokForest> MinusField_KorokForest;
@@ -2534,8 +2534,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<RiritotoLake> RiritotoLake;
 	Member<RishakutoPlateau> RishakutoPlateau;
 	Member<Rito> Rito;
-	Member<Rito_SkyHighIsland> Rito_SkyHighIsland;
 	Member<RitoHatago> RitoHatago;
+	Member<Rito_SkyHighIsland> Rito_SkyHighIsland;
 	Member<RiverSideHatago> RiverSideHatago;
 	Member<RodaiLake> RodaiLake;
 	Member<RogyLake> RogyLake;
@@ -2549,8 +2549,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<RutesLake> RutesLake;
 	Member<RutimaHill> RutimaHill;
 	Member<RutsuPlain> RutsuPlain;
-	Member<SaihokuCastle> SaihokuCastle;
 	Member<SaiMt> SaiMt;
+	Member<SaihokuCastle> SaihokuCastle;
 	Member<SanaePlateau> SanaePlateau;
 	Member<SanrosaLake> SanrosaLake;
 	Member<SaohPoint> SaohPoint;
@@ -2731,16 +2731,16 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<TurasuLake> TurasuLake;
 	Member<TutukikiSnow> TutukikiSnow;
 	Member<TwinsMountain> TwinsMountain;
+	Member<UMiiVillage> UMiiVillage;
+	Member<UMiiVillage_JobField> UMiiVillage_JobField;
 	Member<UbotsuPlateau> UbotsuPlateau;
 	Member<UchoPlateau> UchoPlateau;
 	Member<UkkoPond> UkkoPond;
-	Member<UMiiVillage> UMiiVillage;
-	Member<UMiiVillage_JobField> UMiiVillage_JobField;
 	Member<Unknown> Unknown;
 	Member<UraitoLake> UraitoLake;
 	Member<UrokoCape> UrokoCape;
-	Member<ValleyVillage> ValleyVillage;
 	Member<VPlateau> VPlateau;
+	Member<ValleyVillage> ValleyVillage;
 	Member<WabiLake> WabiLake;
 	Member<WatakaPlateau> WatakaPlateau;
 	Member<WeaponCureSpring> WeaponCureSpring;
@@ -2846,11 +2846,11 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 	Member<ZonauSatelliteShrine_RightLeg> ZonauSatelliteShrine_RightLeg;
 	Member<ZonauThunderSkyIsland> ZonauThunderSkyIsland;
 	Member<ZonauTriedForceSkyIsland> ZonauTriedForceSkyIsland;
+	Member<ZoraBridge> ZoraBridge;
+	Member<ZoraZonauTerminal> ZoraZonauTerminal;
 	Member<Zora_Belvedere> Zora_Belvedere;
 	Member<Zora_FishIsland> Zora_FishIsland;
 	Member<Zora_Imperial_Palace> Zora_Imperial_Palace;
-	Member<ZoraBridge> ZoraBridge;
-	Member<ZoraZonauTerminal> ZoraZonauTerminal;
 	
 	explicit Structure(Sav& s) : 
 		AagetoMt { s.get<struct AagetoMt>() },
@@ -2859,11 +2859,11 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		AgePlateau { s.get<struct AgePlateau>() },
 		AgunaiLake { s.get<struct AgunaiLake>() },
 		AkazaMt { s.get<struct AkazaMt>() },
-		Akkare_OctaPond { s.get<struct Akkare_OctaPond>() },
 		AkkareBigBridge { s.get<struct AkkareBigBridge>() },
 		AkkareGarrison { s.get<struct AkkareGarrison>() },
 		AkkareZhai { s.get<struct AkkareZhai>() },
 		AkkareZhaiBridge { s.get<struct AkkareZhaiBridge>() },
+		Akkare_OctaPond { s.get<struct Akkare_OctaPond>() },
 		AmimePlateau { s.get<struct AmimePlateau>() },
 		AmonenePlateau { s.get<struct AmonenePlateau>() },
 		AnbonBeach { s.get<struct AnbonBeach>() },
@@ -2891,10 +2891,10 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		BatteryExchangeShop_00 { s.get<struct BatteryExchangeShop_00>() },
 		BatteryExchangeShop_01 { s.get<struct BatteryExchangeShop_01>() },
 		BeginningIsland { s.get<struct BeginningIsland>() },
-		BigalLake { s.get<struct BigalLake>() },
 		BigBrotherBridge { s.get<struct BigBrotherBridge>() },
-		BiginaTrees { s.get<struct BiginaTrees>() },
 		BigTree { s.get<struct BigTree>() },
+		BigalLake { s.get<struct BigalLake>() },
+		BiginaTrees { s.get<struct BiginaTrees>() },
 		BiridinHill { s.get<struct BiridinHill>() },
 		BironSnow { s.get<struct BironSnow>() },
 		BituoValley { s.get<struct BituoValley>() },
@@ -2912,6 +2912,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		BuidaLake { s.get<struct BuidaLake>() },
 		BumiPlain { s.get<struct BumiPlain>() },
 		BuramuPlateau { s.get<struct BuramuPlateau>() },
+		CDungeon { s.get<struct CDungeon>() },
 		CastleTownMark { s.get<struct CastleTownMark>() },
 		Cave_Akkala_0000 { s.get<struct Cave_Akkala_0000>() },
 		Cave_Akkala_0003 { s.get<struct Cave_Akkala_0003>() },
@@ -3029,6 +3030,16 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		Cave_HyruleRidge_0006 { s.get<struct Cave_HyruleRidge_0006>() },
 		Cave_HyruleRidge_0007 { s.get<struct Cave_HyruleRidge_0007>() },
 		Cave_HyruleRidge_0008 { s.get<struct Cave_HyruleRidge_0008>() },
+		Cave_LanayruMountain_0002 { s.get<struct Cave_LanayruMountain_0002>() },
+		Cave_LanayruMountain_0006 { s.get<struct Cave_LanayruMountain_0006>() },
+		Cave_LanayruMountain_0008 { s.get<struct Cave_LanayruMountain_0008>() },
+		Cave_LanayruMountain_0010 { s.get<struct Cave_LanayruMountain_0010>() },
+		Cave_LanayruMountain_0014 { s.get<struct Cave_LanayruMountain_0014>() },
+		Cave_LanayruMountain_0016 { s.get<struct Cave_LanayruMountain_0016>() },
+		Cave_LanayruMountain_0022 { s.get<struct Cave_LanayruMountain_0022>() },
+		Cave_LanayruMountain_0024 { s.get<struct Cave_LanayruMountain_0024>() },
+		Cave_LanayruMountain_0025 { s.get<struct Cave_LanayruMountain_0025>() },
+		Cave_LanayruMountain_0026 { s.get<struct Cave_LanayruMountain_0026>() },
 		Cave_Lanayru_0006 { s.get<struct Cave_Lanayru_0006>() },
 		Cave_Lanayru_0008 { s.get<struct Cave_Lanayru_0008>() },
 		Cave_Lanayru_0014 { s.get<struct Cave_Lanayru_0014>() },
@@ -3048,20 +3059,9 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		Cave_Lanayru_0060 { s.get<struct Cave_Lanayru_0060>() },
 		Cave_Lanayru_0061 { s.get<struct Cave_Lanayru_0061>() },
 		Cave_Lanayru_0063 { s.get<struct Cave_Lanayru_0063>() },
-		Cave_LanayruMountain_0002 { s.get<struct Cave_LanayruMountain_0002>() },
-		Cave_LanayruMountain_0006 { s.get<struct Cave_LanayruMountain_0006>() },
-		Cave_LanayruMountain_0008 { s.get<struct Cave_LanayruMountain_0008>() },
-		Cave_LanayruMountain_0010 { s.get<struct Cave_LanayruMountain_0010>() },
-		Cave_LanayruMountain_0014 { s.get<struct Cave_LanayruMountain_0014>() },
-		Cave_LanayruMountain_0016 { s.get<struct Cave_LanayruMountain_0016>() },
-		Cave_LanayruMountain_0022 { s.get<struct Cave_LanayruMountain_0022>() },
-		Cave_LanayruMountain_0024 { s.get<struct Cave_LanayruMountain_0024>() },
-		Cave_LanayruMountain_0025 { s.get<struct Cave_LanayruMountain_0025>() },
-		Cave_LanayruMountain_0026 { s.get<struct Cave_LanayruMountain_0026>() },
 		Cave_Tabantha_0001 { s.get<struct Cave_Tabantha_0001>() },
 		Cave_Tabantha_0002 { s.get<struct Cave_Tabantha_0002>() },
 		Cave_Tabantha_0003 { s.get<struct Cave_Tabantha_0003>() },
-		CDungeon { s.get<struct CDungeon>() },
 		CentralExchange { s.get<struct CentralExchange>() },
 		ChagaraMt { s.get<struct ChagaraMt>() },
 		CheckPoint000 { s.get<struct CheckPoint000>() },
@@ -3201,9 +3201,9 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		DasukidaPlateau { s.get<struct DasukidaPlateau>() },
 		DatsuPlain { s.get<struct DatsuPlain>() },
 		DeathCaldera { s.get<struct DeathCaldera>() },
-		DeathMountain_Entrance { s.get<struct DeathMountain_Entrance>() },
 		DeathMountainHatago { s.get<struct DeathMountainHatago>() },
 		DeathMountainWestWorkshop { s.get<struct DeathMountainWestWorkshop>() },
+		DeathMountain_Entrance { s.get<struct DeathMountain_Entrance>() },
 		DeepHole_AkkareSkull { s.get<struct DeepHole_AkkareSkull>() },
 		DeepHole_B_6_AssasisnBoss { s.get<struct DeepHole_B_6_AssasisnBoss>() },
 		DeepHole_B_6_Tower { s.get<struct DeepHole_B_6_Tower>() },
@@ -3249,7 +3249,6 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		DonLake { s.get<struct DonLake>() },
 		DotiBeach { s.get<struct DotiBeach>() },
 		DragonMarsh { s.get<struct DragonMarsh>() },
-		DragonsFar { s.get<struct DragonsFar>() },
 		DragonTears01 { s.get<struct DragonTears01>() },
 		DragonTears02 { s.get<struct DragonTears02>() },
 		DragonTears03 { s.get<struct DragonTears03>() },
@@ -3262,6 +3261,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		DragonTears10 { s.get<struct DragonTears10>() },
 		DragonTears11 { s.get<struct DragonTears11>() },
 		DragonTears12 { s.get<struct DragonTears12>() },
+		DragonsFar { s.get<struct DragonsFar>() },
 		Dungeon000 { s.get<struct Dungeon000>() },
 		Dungeon001 { s.get<struct Dungeon001>() },
 		Dungeon002 { s.get<struct Dungeon002>() },
@@ -3414,6 +3414,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		Dungeon149 { s.get<struct Dungeon149>() },
 		Dungeon150 { s.get<struct Dungeon150>() },
 		Dungeon151 { s.get<struct Dungeon151>() },
+		EX_LowGravityIsland { s.get<struct EX_LowGravityIsland>() },
 		EagleBridge { s.get<struct EagleBridge>() },
 		EastDam { s.get<struct EastDam>() },
 		EastEunpoHighlands { s.get<struct EastEunpoHighlands>() },
@@ -3428,7 +3429,6 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		EquePlateau { s.get<struct EquePlateau>() },
 		ErumedaPlateau { s.get<struct ErumedaPlateau>() },
 		EunpoHighlands { s.get<struct EunpoHighlands>() },
-		EX_LowGravityIsland { s.get<struct EX_LowGravityIsland>() },
 		Execution { s.get<struct Execution>() },
 		ExpaTrees { s.get<struct ExpaTrees>() },
 		EzzuBridge { s.get<struct EzzuBridge>() },
@@ -3471,8 +3471,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		Gerudo { s.get<struct Gerudo>() },
 		GerudoCanyon { s.get<struct GerudoCanyon>() },
 		GerudoCanyon_Entrance { s.get<struct GerudoCanyon_Entrance>() },
-		GerudoDesert_Entrance { s.get<struct GerudoDesert_Entrance>() },
 		GerudoDesertCrack { s.get<struct GerudoDesertCrack>() },
+		GerudoDesert_Entrance { s.get<struct GerudoDesert_Entrance>() },
 		GerudoEightHeroStatue { s.get<struct GerudoEightHeroStatue>() },
 		GerudoHatago { s.get<struct GerudoHatago>() },
 		GerudoPyramidDungeon_1 { s.get<struct GerudoPyramidDungeon_1>() },
@@ -3513,9 +3513,9 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		HatenoBeach { s.get<struct HatenoBeach>() },
 		HatenoFarm { s.get<struct HatenoFarm>() },
 		HatenoGate { s.get<struct HatenoGate>() },
-		HatenokoIsland { s.get<struct HatenokoIsland>() },
 		HatenoLabo { s.get<struct HatenoLabo>() },
 		HatenoSchool { s.get<struct HatenoSchool>() },
+		HatenokoIsland { s.get<struct HatenokoIsland>() },
 		HawkMt { s.get<struct HawkMt>() },
 		HeburaEastSummit { s.get<struct HeburaEastSummit>() },
 		HeburaIcicle { s.get<struct HeburaIcicle>() },
@@ -3540,8 +3540,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		HyliaRiver { s.get<struct HyliaRiver>() },
 		HyralBridge { s.get<struct HyralBridge>() },
 		HyralIslands { s.get<struct HyralIslands>() },
-		Hyrule_Out { s.get<struct Hyrule_Out>() },
 		HyruleCastle { s.get<struct HyruleCastle>() },
+		HyruleCastleUnderground { s.get<struct HyruleCastleUnderground>() },
 		HyruleCastle_Hall_0 { s.get<struct HyruleCastle_Hall_0>() },
 		HyruleCastle_Hall_1 { s.get<struct HyruleCastle_Hall_1>() },
 		HyruleCastle_Hall_2 { s.get<struct HyruleCastle_Hall_2>() },
@@ -3556,7 +3556,6 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		HyruleCastle_Room_7 { s.get<struct HyruleCastle_Room_7>() },
 		HyruleCastle_Room_8 { s.get<struct HyruleCastle_Room_8>() },
 		HyruleCastle_Room_9 { s.get<struct HyruleCastle_Room_9>() },
-		HyruleCastleUnderground { s.get<struct HyruleCastleUnderground>() },
 		HyruleCave { s.get<struct HyruleCave>() },
 		HyruleCentralPlace { s.get<struct HyruleCentralPlace>() },
 		HyruleDepthHatago { s.get<struct HyruleDepthHatago>() },
@@ -3572,6 +3571,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		HyruleUnderground { s.get<struct HyruleUnderground>() },
 		HyruleWater { s.get<struct HyruleWater>() },
 		HyruleWestTown { s.get<struct HyruleWestTown>() },
+		Hyrule_Out { s.get<struct Hyrule_Out>() },
 		IbaraPlateau { s.get<struct IbaraPlateau>() },
 		IceHouse { s.get<struct IceHouse>() },
 		IkokoPlateau { s.get<struct IkokoPlateau>() },
@@ -3615,9 +3615,9 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		KikinosaPlain { s.get<struct KikinosaPlain>() },
 		KimarikaMt { s.get<struct KimarikaMt>() },
 		KimarikaPlateau { s.get<struct KimarikaPlateau>() },
-		KingfisherSpa { s.get<struct KingfisherSpa>() },
 		KingValley { s.get<struct KingValley>() },
 		KingValley2 { s.get<struct KingValley2>() },
+		KingfisherSpa { s.get<struct KingfisherSpa>() },
 		KinmePlateau { s.get<struct KinmePlateau>() },
 		KinshoiMt { s.get<struct KinshoiMt>() },
 		KirisasaPlateau { s.get<struct KirisasaPlateau>() },
@@ -3841,8 +3841,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		MinusField_KazuryuLake { s.get<struct MinusField_KazuryuLake>() },
 		MinusField_KikinosaMt { s.get<struct MinusField_KikinosaMt>() },
 		MinusField_KimarikaMt { s.get<struct MinusField_KimarikaMt>() },
-		MinusField_KingfisherSpa { s.get<struct MinusField_KingfisherSpa>() },
 		MinusField_KingValley { s.get<struct MinusField_KingValley>() },
+		MinusField_KingfisherSpa { s.get<struct MinusField_KingfisherSpa>() },
 		MinusField_KinshoiMt { s.get<struct MinusField_KinshoiMt>() },
 		MinusField_KiyanbaTrees { s.get<struct MinusField_KiyanbaTrees>() },
 		MinusField_KorokForest { s.get<struct MinusField_KorokForest>() },
@@ -3959,8 +3959,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		RiritotoLake { s.get<struct RiritotoLake>() },
 		RishakutoPlateau { s.get<struct RishakutoPlateau>() },
 		Rito { s.get<struct Rito>() },
-		Rito_SkyHighIsland { s.get<struct Rito_SkyHighIsland>() },
 		RitoHatago { s.get<struct RitoHatago>() },
+		Rito_SkyHighIsland { s.get<struct Rito_SkyHighIsland>() },
 		RiverSideHatago { s.get<struct RiverSideHatago>() },
 		RodaiLake { s.get<struct RodaiLake>() },
 		RogyLake { s.get<struct RogyLake>() },
@@ -3974,8 +3974,8 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		RutesLake { s.get<struct RutesLake>() },
 		RutimaHill { s.get<struct RutimaHill>() },
 		RutsuPlain { s.get<struct RutsuPlain>() },
-		SaihokuCastle { s.get<struct SaihokuCastle>() },
 		SaiMt { s.get<struct SaiMt>() },
+		SaihokuCastle { s.get<struct SaihokuCastle>() },
 		SanaePlateau { s.get<struct SanaePlateau>() },
 		SanrosaLake { s.get<struct SanrosaLake>() },
 		SaohPoint { s.get<struct SaohPoint>() },
@@ -4156,16 +4156,16 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		TurasuLake { s.get<struct TurasuLake>() },
 		TutukikiSnow { s.get<struct TutukikiSnow>() },
 		TwinsMountain { s.get<struct TwinsMountain>() },
+		UMiiVillage { s.get<struct UMiiVillage>() },
+		UMiiVillage_JobField { s.get<struct UMiiVillage_JobField>() },
 		UbotsuPlateau { s.get<struct UbotsuPlateau>() },
 		UchoPlateau { s.get<struct UchoPlateau>() },
 		UkkoPond { s.get<struct UkkoPond>() },
-		UMiiVillage { s.get<struct UMiiVillage>() },
-		UMiiVillage_JobField { s.get<struct UMiiVillage_JobField>() },
 		Unknown { s.get<struct Unknown>() },
 		UraitoLake { s.get<struct UraitoLake>() },
 		UrokoCape { s.get<struct UrokoCape>() },
-		ValleyVillage { s.get<struct ValleyVillage>() },
 		VPlateau { s.get<struct VPlateau>() },
+		ValleyVillage { s.get<struct ValleyVillage>() },
 		WabiLake { s.get<struct WabiLake>() },
 		WatakaPlateau { s.get<struct WatakaPlateau>() },
 		WeaponCureSpring { s.get<struct WeaponCureSpring>() },
@@ -4271,11 +4271,11 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		ZonauSatelliteShrine_RightLeg { s.get<struct ZonauSatelliteShrine_RightLeg>() },
 		ZonauThunderSkyIsland { s.get<struct ZonauThunderSkyIsland>() },
 		ZonauTriedForceSkyIsland { s.get<struct ZonauTriedForceSkyIsland>() },
+		ZoraBridge { s.get<struct ZoraBridge>() },
+		ZoraZonauTerminal { s.get<struct ZoraZonauTerminal>() },
 		Zora_Belvedere { s.get<struct Zora_Belvedere>() },
 		Zora_FishIsland { s.get<struct Zora_FishIsland>() },
-		Zora_Imperial_Palace { s.get<struct Zora_Imperial_Palace>() },
-		ZoraBridge { s.get<struct ZoraBridge>() },
-		ZoraZonauTerminal { s.get<struct ZoraZonauTerminal>() }
+		Zora_Imperial_Palace { s.get<struct Zora_Imperial_Palace>() }
 	{ }
 };/* Data::Structure GameData::IsVisitLocation close */
 
@@ -4285,11 +4285,11 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AdeyaVil
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AgePlateau> = murmurhash3::hash("IsVisitLocation.AgePlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AgunaiLake> = murmurhash3::hash("IsVisitLocation.AgunaiLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AkazaMt> = murmurhash3::hash("IsVisitLocation.AkazaMt");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Akkare_OctaPond> = murmurhash3::hash("IsVisitLocation.Akkare_OctaPond");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AkkareBigBridge> = murmurhash3::hash("IsVisitLocation.AkkareBigBridge");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AkkareGarrison> = murmurhash3::hash("IsVisitLocation.AkkareGarrison");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AkkareZhai> = murmurhash3::hash("IsVisitLocation.AkkareZhai");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AkkareZhaiBridge> = murmurhash3::hash("IsVisitLocation.AkkareZhaiBridge");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Akkare_OctaPond> = murmurhash3::hash("IsVisitLocation.Akkare_OctaPond");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AmimePlateau> = murmurhash3::hash("IsVisitLocation.AmimePlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AmonenePlateau> = murmurhash3::hash("IsVisitLocation.AmonenePlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::AnbonBeach> = murmurhash3::hash("IsVisitLocation.AnbonBeach");
@@ -4317,10 +4317,10 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BaseCamp
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BatteryExchangeShop_00> = murmurhash3::hash("IsVisitLocation.BatteryExchangeShop_00");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BatteryExchangeShop_01> = murmurhash3::hash("IsVisitLocation.BatteryExchangeShop_01");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BeginningIsland> = murmurhash3::hash("IsVisitLocation.BeginningIsland");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BigalLake> = murmurhash3::hash("IsVisitLocation.BigalLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BigBrotherBridge> = murmurhash3::hash("IsVisitLocation.BigBrotherBridge");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BiginaTrees> = murmurhash3::hash("IsVisitLocation.BiginaTrees");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BigTree> = murmurhash3::hash("IsVisitLocation.BigTree");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BigalLake> = murmurhash3::hash("IsVisitLocation.BigalLake");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BiginaTrees> = murmurhash3::hash("IsVisitLocation.BiginaTrees");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BiridinHill> = murmurhash3::hash("IsVisitLocation.BiridinHill");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BironSnow> = murmurhash3::hash("IsVisitLocation.BironSnow");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BituoValley> = murmurhash3::hash("IsVisitLocation.BituoValley");
@@ -4338,6 +4338,7 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Buichada
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BuidaLake> = murmurhash3::hash("IsVisitLocation.BuidaLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BumiPlain> = murmurhash3::hash("IsVisitLocation.BumiPlain");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::BuramuPlateau> = murmurhash3::hash("IsVisitLocation.BuramuPlateau");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::CDungeon> = murmurhash3::hash("IsVisitLocation.CDungeon");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::CastleTownMark> = murmurhash3::hash("IsVisitLocation.CastleTownMark");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Akkala_0000> = murmurhash3::hash("IsVisitLocation.Cave_Akkala_0000");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Akkala_0003> = murmurhash3::hash("IsVisitLocation.Cave_Akkala_0003");
@@ -4455,6 +4456,16 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Hyr
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_HyruleRidge_0006> = murmurhash3::hash("IsVisitLocation.Cave_HyruleRidge_0006");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_HyruleRidge_0007> = murmurhash3::hash("IsVisitLocation.Cave_HyruleRidge_0007");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_HyruleRidge_0008> = murmurhash3::hash("IsVisitLocation.Cave_HyruleRidge_0008");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0002> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0002");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0006> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0006");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0008> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0008");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0010> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0010");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0014> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0014");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0016> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0016");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0022> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0022");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0024> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0024");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0025> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0025");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0026> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0026");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Lanayru_0006> = murmurhash3::hash("IsVisitLocation.Cave_Lanayru_0006");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Lanayru_0008> = murmurhash3::hash("IsVisitLocation.Cave_Lanayru_0008");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Lanayru_0014> = murmurhash3::hash("IsVisitLocation.Cave_Lanayru_0014");
@@ -4474,20 +4485,9 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Lan
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Lanayru_0060> = murmurhash3::hash("IsVisitLocation.Cave_Lanayru_0060");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Lanayru_0061> = murmurhash3::hash("IsVisitLocation.Cave_Lanayru_0061");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Lanayru_0063> = murmurhash3::hash("IsVisitLocation.Cave_Lanayru_0063");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0002> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0002");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0006> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0006");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0008> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0008");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0010> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0010");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0014> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0014");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0016> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0016");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0022> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0022");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0024> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0024");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0025> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0025");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_LanayruMountain_0026> = murmurhash3::hash("IsVisitLocation.Cave_LanayruMountain_0026");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Tabantha_0001> = murmurhash3::hash("IsVisitLocation.Cave_Tabantha_0001");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Tabantha_0002> = murmurhash3::hash("IsVisitLocation.Cave_Tabantha_0002");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Cave_Tabantha_0003> = murmurhash3::hash("IsVisitLocation.Cave_Tabantha_0003");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::CDungeon> = murmurhash3::hash("IsVisitLocation.CDungeon");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::CentralExchange> = murmurhash3::hash("IsVisitLocation.CentralExchange");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ChagaraMt> = murmurhash3::hash("IsVisitLocation.ChagaraMt");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::CheckPoint000> = murmurhash3::hash("IsVisitLocation.CheckPoint000");
@@ -4627,9 +4627,9 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Dasukida
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DasukidaPlateau> = murmurhash3::hash("IsVisitLocation.DasukidaPlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DatsuPlain> = murmurhash3::hash("IsVisitLocation.DatsuPlain");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DeathCaldera> = murmurhash3::hash("IsVisitLocation.DeathCaldera");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DeathMountain_Entrance> = murmurhash3::hash("IsVisitLocation.DeathMountain_Entrance");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DeathMountainHatago> = murmurhash3::hash("IsVisitLocation.DeathMountainHatago");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DeathMountainWestWorkshop> = murmurhash3::hash("IsVisitLocation.DeathMountainWestWorkshop");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DeathMountain_Entrance> = murmurhash3::hash("IsVisitLocation.DeathMountain_Entrance");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DeepHole_AkkareSkull> = murmurhash3::hash("IsVisitLocation.DeepHole_AkkareSkull");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DeepHole_B_6_AssasisnBoss> = murmurhash3::hash("IsVisitLocation.DeepHole_B-6_AssasisnBoss");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DeepHole_B_6_Tower> = murmurhash3::hash("IsVisitLocation.DeepHole_B-6_Tower");
@@ -4675,7 +4675,6 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DokuroPo
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DonLake> = murmurhash3::hash("IsVisitLocation.DonLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DotiBeach> = murmurhash3::hash("IsVisitLocation.DotiBeach");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonMarsh> = murmurhash3::hash("IsVisitLocation.DragonMarsh");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonsFar> = murmurhash3::hash("IsVisitLocation.DragonsFar");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonTears01> = murmurhash3::hash("IsVisitLocation.DragonTears01");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonTears02> = murmurhash3::hash("IsVisitLocation.DragonTears02");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonTears03> = murmurhash3::hash("IsVisitLocation.DragonTears03");
@@ -4688,6 +4687,7 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonTe
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonTears10> = murmurhash3::hash("IsVisitLocation.DragonTears10");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonTears11> = murmurhash3::hash("IsVisitLocation.DragonTears11");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonTears12> = murmurhash3::hash("IsVisitLocation.DragonTears12");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::DragonsFar> = murmurhash3::hash("IsVisitLocation.DragonsFar");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Dungeon000> = murmurhash3::hash("IsVisitLocation.Dungeon000");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Dungeon001> = murmurhash3::hash("IsVisitLocation.Dungeon001");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Dungeon002> = murmurhash3::hash("IsVisitLocation.Dungeon002");
@@ -4840,6 +4840,7 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Dungeon1
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Dungeon149> = murmurhash3::hash("IsVisitLocation.Dungeon149");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Dungeon150> = murmurhash3::hash("IsVisitLocation.Dungeon150");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Dungeon151> = murmurhash3::hash("IsVisitLocation.Dungeon151");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EX_LowGravityIsland> = murmurhash3::hash("IsVisitLocation.EX_LowGravityIsland");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EagleBridge> = murmurhash3::hash("IsVisitLocation.EagleBridge");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EastDam> = murmurhash3::hash("IsVisitLocation.EastDam");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EastEunpoHighlands> = murmurhash3::hash("IsVisitLocation.EastEunpoHighlands");
@@ -4854,7 +4855,6 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EnRiver>
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EquePlateau> = murmurhash3::hash("IsVisitLocation.EquePlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ErumedaPlateau> = murmurhash3::hash("IsVisitLocation.ErumedaPlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EunpoHighlands> = murmurhash3::hash("IsVisitLocation.EunpoHighlands");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EX_LowGravityIsland> = murmurhash3::hash("IsVisitLocation.EX_LowGravityIsland");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Execution> = murmurhash3::hash("IsVisitLocation.Execution");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ExpaTrees> = murmurhash3::hash("IsVisitLocation.ExpaTrees");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::EzzuBridge> = murmurhash3::hash("IsVisitLocation.EzzuBridge");
@@ -4897,8 +4897,8 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GeraRive
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Gerudo> = murmurhash3::hash("IsVisitLocation.Gerudo");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GerudoCanyon> = murmurhash3::hash("IsVisitLocation.GerudoCanyon");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GerudoCanyon_Entrance> = murmurhash3::hash("IsVisitLocation.GerudoCanyon_Entrance");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GerudoDesert_Entrance> = murmurhash3::hash("IsVisitLocation.GerudoDesert_Entrance");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GerudoDesertCrack> = murmurhash3::hash("IsVisitLocation.GerudoDesertCrack");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GerudoDesert_Entrance> = murmurhash3::hash("IsVisitLocation.GerudoDesert_Entrance");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GerudoEightHeroStatue> = murmurhash3::hash("IsVisitLocation.GerudoEightHeroStatue");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GerudoHatago> = murmurhash3::hash("IsVisitLocation.GerudoHatago");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::GerudoPyramidDungeon_1> = murmurhash3::hash("IsVisitLocation.GerudoPyramidDungeon_1");
@@ -4939,9 +4939,9 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HatenoBa
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HatenoBeach> = murmurhash3::hash("IsVisitLocation.HatenoBeach");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HatenoFarm> = murmurhash3::hash("IsVisitLocation.HatenoFarm");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HatenoGate> = murmurhash3::hash("IsVisitLocation.HatenoGate");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HatenokoIsland> = murmurhash3::hash("IsVisitLocation.HatenokoIsland");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HatenoLabo> = murmurhash3::hash("IsVisitLocation.HatenoLabo");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HatenoSchool> = murmurhash3::hash("IsVisitLocation.HatenoSchool");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HatenokoIsland> = murmurhash3::hash("IsVisitLocation.HatenokoIsland");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HawkMt> = murmurhash3::hash("IsVisitLocation.HawkMt");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HeburaEastSummit> = murmurhash3::hash("IsVisitLocation.HeburaEastSummit");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HeburaIcicle> = murmurhash3::hash("IsVisitLocation.HeburaIcicle");
@@ -4966,8 +4966,8 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyliaMt>
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyliaRiver> = murmurhash3::hash("IsVisitLocation.HyliaRiver");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyralBridge> = murmurhash3::hash("IsVisitLocation.HyralBridge");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyralIslands> = murmurhash3::hash("IsVisitLocation.HyralIslands");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Hyrule_Out> = murmurhash3::hash("IsVisitLocation.Hyrule_Out");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastle> = murmurhash3::hash("IsVisitLocation.HyruleCastle");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastleUnderground> = murmurhash3::hash("IsVisitLocation.HyruleCastleUnderground");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastle_Hall_0> = murmurhash3::hash("IsVisitLocation.HyruleCastle_Hall_0");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastle_Hall_1> = murmurhash3::hash("IsVisitLocation.HyruleCastle_Hall_1");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastle_Hall_2> = murmurhash3::hash("IsVisitLocation.HyruleCastle_Hall_2");
@@ -4982,7 +4982,6 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCa
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastle_Room_7> = murmurhash3::hash("IsVisitLocation.HyruleCastle_Room_7");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastle_Room_8> = murmurhash3::hash("IsVisitLocation.HyruleCastle_Room_8");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastle_Room_9> = murmurhash3::hash("IsVisitLocation.HyruleCastle_Room_9");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCastleUnderground> = murmurhash3::hash("IsVisitLocation.HyruleCastleUnderground");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCave> = murmurhash3::hash("IsVisitLocation.HyruleCave");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleCentralPlace> = murmurhash3::hash("IsVisitLocation.HyruleCentralPlace");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleDepthHatago> = murmurhash3::hash("IsVisitLocation.HyruleDepthHatago");
@@ -4998,6 +4997,7 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleTo
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleUnderground> = murmurhash3::hash("IsVisitLocation.HyruleUnderground");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleWater> = murmurhash3::hash("IsVisitLocation.HyruleWater");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::HyruleWestTown> = murmurhash3::hash("IsVisitLocation.HyruleWestTown");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Hyrule_Out> = murmurhash3::hash("IsVisitLocation.Hyrule_Out");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::IbaraPlateau> = murmurhash3::hash("IsVisitLocation.IbaraPlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::IceHouse> = murmurhash3::hash("IsVisitLocation.IceHouse");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::IkokoPlateau> = murmurhash3::hash("IsVisitLocation.IkokoPlateau");
@@ -5041,9 +5041,9 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Kikinosa
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KikinosaPlain> = murmurhash3::hash("IsVisitLocation.KikinosaPlain");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KimarikaMt> = murmurhash3::hash("IsVisitLocation.KimarikaMt");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KimarikaPlateau> = murmurhash3::hash("IsVisitLocation.KimarikaPlateau");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KingfisherSpa> = murmurhash3::hash("IsVisitLocation.KingfisherSpa");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KingValley> = murmurhash3::hash("IsVisitLocation.KingValley");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KingValley2> = murmurhash3::hash("IsVisitLocation.KingValley2");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KingfisherSpa> = murmurhash3::hash("IsVisitLocation.KingfisherSpa");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KinmePlateau> = murmurhash3::hash("IsVisitLocation.KinmePlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KinshoiMt> = murmurhash3::hash("IsVisitLocation.KinshoiMt");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::KirisasaPlateau> = murmurhash3::hash("IsVisitLocation.KirisasaPlateau");
@@ -5267,8 +5267,8 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusFie
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KazuryuLake> = murmurhash3::hash("IsVisitLocation.MinusField_KazuryuLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KikinosaMt> = murmurhash3::hash("IsVisitLocation.MinusField_KikinosaMt");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KimarikaMt> = murmurhash3::hash("IsVisitLocation.MinusField_KimarikaMt");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KingfisherSpa> = murmurhash3::hash("IsVisitLocation.MinusField_KingfisherSpa");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KingValley> = murmurhash3::hash("IsVisitLocation.MinusField_KingValley");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KingfisherSpa> = murmurhash3::hash("IsVisitLocation.MinusField_KingfisherSpa");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KinshoiMt> = murmurhash3::hash("IsVisitLocation.MinusField_KinshoiMt");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KiyanbaTrees> = murmurhash3::hash("IsVisitLocation.MinusField_KiyanbaTrees");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::MinusField_KorokForest> = murmurhash3::hash("IsVisitLocation.MinusField_KorokForest");
@@ -5385,8 +5385,8 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Ririmuku
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RiritotoLake> = murmurhash3::hash("IsVisitLocation.RiritotoLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RishakutoPlateau> = murmurhash3::hash("IsVisitLocation.RishakutoPlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Rito> = murmurhash3::hash("IsVisitLocation.Rito");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Rito_SkyHighIsland> = murmurhash3::hash("IsVisitLocation.Rito_SkyHighIsland");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RitoHatago> = murmurhash3::hash("IsVisitLocation.RitoHatago");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Rito_SkyHighIsland> = murmurhash3::hash("IsVisitLocation.Rito_SkyHighIsland");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RiverSideHatago> = murmurhash3::hash("IsVisitLocation.RiverSideHatago");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RodaiLake> = murmurhash3::hash("IsVisitLocation.RodaiLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RogyLake> = murmurhash3::hash("IsVisitLocation.RogyLake");
@@ -5400,8 +5400,8 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RuberaHi
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RutesLake> = murmurhash3::hash("IsVisitLocation.RutesLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RutimaHill> = murmurhash3::hash("IsVisitLocation.RutimaHill");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::RutsuPlain> = murmurhash3::hash("IsVisitLocation.RutsuPlain");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::SaihokuCastle> = murmurhash3::hash("IsVisitLocation.SaihokuCastle");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::SaiMt> = murmurhash3::hash("IsVisitLocation.SaiMt");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::SaihokuCastle> = murmurhash3::hash("IsVisitLocation.SaihokuCastle");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::SanaePlateau> = murmurhash3::hash("IsVisitLocation.SanaePlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::SanrosaLake> = murmurhash3::hash("IsVisitLocation.SanrosaLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::SaohPoint> = murmurhash3::hash("IsVisitLocation.SaohPoint");
@@ -5582,16 +5582,16 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::TurasuBr
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::TurasuLake> = murmurhash3::hash("IsVisitLocation.TurasuLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::TutukikiSnow> = murmurhash3::hash("IsVisitLocation.TutukikiSnow");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::TwinsMountain> = murmurhash3::hash("IsVisitLocation.TwinsMountain");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UMiiVillage> = murmurhash3::hash("IsVisitLocation.UMiiVillage");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UMiiVillage_JobField> = murmurhash3::hash("IsVisitLocation.UMiiVillage_JobField");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UbotsuPlateau> = murmurhash3::hash("IsVisitLocation.UbotsuPlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UchoPlateau> = murmurhash3::hash("IsVisitLocation.UchoPlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UkkoPond> = murmurhash3::hash("IsVisitLocation.UkkoPond");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UMiiVillage> = murmurhash3::hash("IsVisitLocation.UMiiVillage");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UMiiVillage_JobField> = murmurhash3::hash("IsVisitLocation.UMiiVillage_JobField");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Unknown> = murmurhash3::hash("IsVisitLocation.Unknown");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UraitoLake> = murmurhash3::hash("IsVisitLocation.UraitoLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::UrokoCape> = murmurhash3::hash("IsVisitLocation.UrokoCape");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ValleyVillage> = murmurhash3::hash("IsVisitLocation.ValleyVillage");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::VPlateau> = murmurhash3::hash("IsVisitLocation.VPlateau");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ValleyVillage> = murmurhash3::hash("IsVisitLocation.ValleyVillage");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::WabiLake> = murmurhash3::hash("IsVisitLocation.WabiLake");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::WatakaPlateau> = murmurhash3::hash("IsVisitLocation.WatakaPlateau");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::WeaponCureSpring> = murmurhash3::hash("IsVisitLocation.WeaponCureSpring");
@@ -5697,8 +5697,8 @@ template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ZonauSat
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ZonauSatelliteShrine_RightLeg> = murmurhash3::hash("IsVisitLocation.ZonauSatelliteShrine_RightLeg");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ZonauThunderSkyIsland> = murmurhash3::hash("IsVisitLocation.ZonauThunderSkyIsland");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ZonauTriedForceSkyIsland> = murmurhash3::hash("IsVisitLocation.ZonauTriedForceSkyIsland");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ZoraBridge> = murmurhash3::hash("IsVisitLocation.ZoraBridge");
+template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ZoraZonauTerminal> = murmurhash3::hash("IsVisitLocation.ZoraZonauTerminal");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Zora_Belvedere> = murmurhash3::hash("IsVisitLocation.Zora_Belvedere");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Zora_FishIsland> = murmurhash3::hash("IsVisitLocation.Zora_FishIsland");
 template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::Zora_Imperial_Palace> = murmurhash3::hash("IsVisitLocation.Zora_Imperial_Palace");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ZoraBridge> = murmurhash3::hash("IsVisitLocation.ZoraBridge");
-template <> hash_t constexpr Data::Hashtable<GameData::IsVisitLocation::ZoraZonauTerminal> = murmurhash3::hash("IsVisitLocation.ZoraZonauTerminal");

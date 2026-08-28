@@ -2,18 +2,6 @@
 #include <sage>
 
 struct GameData::ReadyMadeAutoBuilderDraft : Tag::Structure {
-	struct Obj_AutoBuilderDraft_00;
-	struct Obj_AutoBuilderDraft_01;
-	struct Obj_AutoBuilderDraft_02;
-	struct Obj_AutoBuilderDraft_03;
-	struct Obj_AutoBuilderDraft_04;
-	struct Obj_AutoBuilderDraft_05;
-	struct Obj_AutoBuilderDraft_06;
-	struct Obj_AutoBuilderDraft_07;
-	struct Obj_AutoBuilderDraft_08;
-	struct Obj_AutoBuilderDraft_09;
-	struct Obj_AutoBuilderDraft_10;
-	struct Obj_AutoBuilderDraft_11;
 	struct Obj_AutoBuilderDraftAssassin_00;
 	struct Obj_AutoBuilderDraftAssassin_01;
 	struct Obj_AutoBuilderDraftAssassin_02;
@@ -48,20 +36,20 @@ struct GameData::ReadyMadeAutoBuilderDraft : Tag::Structure {
 	struct Obj_AutoBuilderDraftAssassin_31;
 	struct Obj_AutoBuilderDraftAssassin_32;
 	struct Obj_AutoBuilderDraftAssassin_33;
+	struct Obj_AutoBuilderDraft_00;
+	struct Obj_AutoBuilderDraft_01;
+	struct Obj_AutoBuilderDraft_02;
+	struct Obj_AutoBuilderDraft_03;
+	struct Obj_AutoBuilderDraft_04;
+	struct Obj_AutoBuilderDraft_05;
+	struct Obj_AutoBuilderDraft_06;
+	struct Obj_AutoBuilderDraft_07;
+	struct Obj_AutoBuilderDraft_08;
+	struct Obj_AutoBuilderDraft_09;
+	struct Obj_AutoBuilderDraft_10;
+	struct Obj_AutoBuilderDraft_11;
 };/* Tag::Structure GameData::ReadyMadeAutoBuilderDraft close */
 
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_00.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_01.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_02.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_03.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_04.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_05.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_06.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_07.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_08.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_09.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_10.hpp"
-#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_11.hpp"
 #include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraftAssassin_00.hpp"
 #include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraftAssassin_01.hpp"
 #include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraftAssassin_02.hpp"
@@ -96,20 +84,20 @@ struct GameData::ReadyMadeAutoBuilderDraft : Tag::Structure {
 #include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraftAssassin_31.hpp"
 #include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraftAssassin_32.hpp"
 #include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraftAssassin_33.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_00.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_01.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_02.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_03.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_04.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_05.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_06.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_07.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_08.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_09.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_10.hpp"
+#include "ReadyMadeAutoBuilderDraft/Obj_AutoBuilderDraft_11.hpp"
 
 template <> struct Data::Structure<GameData::ReadyMadeAutoBuilderDraft> : GameData::ReadyMadeAutoBuilderDraft {
-	Structure<Obj_AutoBuilderDraft_00> Obj_AutoBuilderDraft_00;
-	Structure<Obj_AutoBuilderDraft_01> Obj_AutoBuilderDraft_01;
-	Structure<Obj_AutoBuilderDraft_02> Obj_AutoBuilderDraft_02;
-	Structure<Obj_AutoBuilderDraft_03> Obj_AutoBuilderDraft_03;
-	Structure<Obj_AutoBuilderDraft_04> Obj_AutoBuilderDraft_04;
-	Structure<Obj_AutoBuilderDraft_05> Obj_AutoBuilderDraft_05;
-	Structure<Obj_AutoBuilderDraft_06> Obj_AutoBuilderDraft_06;
-	Structure<Obj_AutoBuilderDraft_07> Obj_AutoBuilderDraft_07;
-	Structure<Obj_AutoBuilderDraft_08> Obj_AutoBuilderDraft_08;
-	Structure<Obj_AutoBuilderDraft_09> Obj_AutoBuilderDraft_09;
-	Structure<Obj_AutoBuilderDraft_10> Obj_AutoBuilderDraft_10;
-	Structure<Obj_AutoBuilderDraft_11> Obj_AutoBuilderDraft_11;
 	Structure<Obj_AutoBuilderDraftAssassin_00> Obj_AutoBuilderDraftAssassin_00;
 	Structure<Obj_AutoBuilderDraftAssassin_01> Obj_AutoBuilderDraftAssassin_01;
 	Structure<Obj_AutoBuilderDraftAssassin_02> Obj_AutoBuilderDraftAssassin_02;
@@ -144,20 +132,20 @@ template <> struct Data::Structure<GameData::ReadyMadeAutoBuilderDraft> : GameDa
 	Structure<Obj_AutoBuilderDraftAssassin_31> Obj_AutoBuilderDraftAssassin_31;
 	Structure<Obj_AutoBuilderDraftAssassin_32> Obj_AutoBuilderDraftAssassin_32;
 	Structure<Obj_AutoBuilderDraftAssassin_33> Obj_AutoBuilderDraftAssassin_33;
+	Structure<Obj_AutoBuilderDraft_00> Obj_AutoBuilderDraft_00;
+	Structure<Obj_AutoBuilderDraft_01> Obj_AutoBuilderDraft_01;
+	Structure<Obj_AutoBuilderDraft_02> Obj_AutoBuilderDraft_02;
+	Structure<Obj_AutoBuilderDraft_03> Obj_AutoBuilderDraft_03;
+	Structure<Obj_AutoBuilderDraft_04> Obj_AutoBuilderDraft_04;
+	Structure<Obj_AutoBuilderDraft_05> Obj_AutoBuilderDraft_05;
+	Structure<Obj_AutoBuilderDraft_06> Obj_AutoBuilderDraft_06;
+	Structure<Obj_AutoBuilderDraft_07> Obj_AutoBuilderDraft_07;
+	Structure<Obj_AutoBuilderDraft_08> Obj_AutoBuilderDraft_08;
+	Structure<Obj_AutoBuilderDraft_09> Obj_AutoBuilderDraft_09;
+	Structure<Obj_AutoBuilderDraft_10> Obj_AutoBuilderDraft_10;
+	Structure<Obj_AutoBuilderDraft_11> Obj_AutoBuilderDraft_11;
 	
 	explicit Structure(Sav& s) : 
-		Obj_AutoBuilderDraft_00 { s },
-		Obj_AutoBuilderDraft_01 { s },
-		Obj_AutoBuilderDraft_02 { s },
-		Obj_AutoBuilderDraft_03 { s },
-		Obj_AutoBuilderDraft_04 { s },
-		Obj_AutoBuilderDraft_05 { s },
-		Obj_AutoBuilderDraft_06 { s },
-		Obj_AutoBuilderDraft_07 { s },
-		Obj_AutoBuilderDraft_08 { s },
-		Obj_AutoBuilderDraft_09 { s },
-		Obj_AutoBuilderDraft_10 { s },
-		Obj_AutoBuilderDraft_11 { s },
 		Obj_AutoBuilderDraftAssassin_00 { s },
 		Obj_AutoBuilderDraftAssassin_01 { s },
 		Obj_AutoBuilderDraftAssassin_02 { s },
@@ -191,6 +179,18 @@ template <> struct Data::Structure<GameData::ReadyMadeAutoBuilderDraft> : GameDa
 		Obj_AutoBuilderDraftAssassin_30 { s },
 		Obj_AutoBuilderDraftAssassin_31 { s },
 		Obj_AutoBuilderDraftAssassin_32 { s },
-		Obj_AutoBuilderDraftAssassin_33 { s }
+		Obj_AutoBuilderDraftAssassin_33 { s },
+		Obj_AutoBuilderDraft_00 { s },
+		Obj_AutoBuilderDraft_01 { s },
+		Obj_AutoBuilderDraft_02 { s },
+		Obj_AutoBuilderDraft_03 { s },
+		Obj_AutoBuilderDraft_04 { s },
+		Obj_AutoBuilderDraft_05 { s },
+		Obj_AutoBuilderDraft_06 { s },
+		Obj_AutoBuilderDraft_07 { s },
+		Obj_AutoBuilderDraft_08 { s },
+		Obj_AutoBuilderDraft_09 { s },
+		Obj_AutoBuilderDraft_10 { s },
+		Obj_AutoBuilderDraft_11 { s }
 	{ }
 };/* Data::Structure GameData::ReadyMadeAutoBuilderDraft close */

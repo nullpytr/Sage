@@ -62,6 +62,10 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<BuildingMaterialsTutorial>&;
 	};
+	struct CDungeon_AllDone : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<CDungeon_AllDone>&;
+	};
 	struct CarryGoronKid1 : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<CarryGoronKid1>&;
@@ -157,10 +161,6 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 	struct CarryToShrine23 : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<CarryToShrine23>&;
-	};
-	struct CDungeon_AllDone : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<CDungeon_AllDone>&;
 	};
 	struct Circuit_Desert : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -330,9 +330,9 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<FullyRipenedFlintstones>&;
 	};
-	struct gather_Insect_Z : Tag::Enum {
+	struct GOToTheCastleOfHyrule : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<gather_Insect_Z>&;
+		using type = enum_t<GOToTheCastleOfHyrule>&;
 	};
 	struct GeniusWeapon_Zora : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -341,10 +341,6 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 	struct Genkos_Kitchen : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<Genkos_Kitchen>&;
-	};
-	struct Gerudo_UrbosaWeapon : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<Gerudo_UrbosaWeapon>&;
 	};
 	struct GerudoCanyon_24hEnduranceComparison : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -369,6 +365,10 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 	struct GerudoDesertTreasure : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<GerudoDesertTreasure>&;
+	};
+	struct Gerudo_UrbosaWeapon : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<Gerudo_UrbosaWeapon>&;
 	};
 	struct GetCamera : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -398,6 +398,14 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<GoneSnowQueen>&;
 	};
+	struct GoronPond : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<GoronPond>&;
+	};
+	struct GoronReturntoNature : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<GoronReturntoNature>&;
+	};
 	struct Goron_MiniGame_01 : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<Goron_MiniGame_01>&;
@@ -422,21 +430,9 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<Goron_MiniGame_Tutorial_03>&;
 	};
-	struct GoronPond : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<GoronPond>&;
-	};
-	struct GoronReturntoNature : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<GoronReturntoNature>&;
-	};
 	struct GotoFironeZonauRemains : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<GotoFironeZonauRemains>&;
-	};
-	struct GOToTheCastleOfHyrule : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<GOToTheCastleOfHyrule>&;
 	};
 	struct GroundPaintingAir01 : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -449,6 +445,10 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 	struct HammerGong_MiniGame : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<HammerGong_MiniGame>&;
+	};
+	struct HatenoPurchasePicture : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<HatenoPurchasePicture>&;
 	};
 	struct Hateno_Cheese : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -501,10 +501,6 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 	struct Hateno_WhatToPlant : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<Hateno_WhatToPlant>&;
-	};
-	struct HatenoPurchasePicture : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<HatenoPurchasePicture>&;
 	};
 	struct Hebra_SkyRingChallenge : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -638,30 +634,6 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<MemoryOfTheDragon>&;
 	};
-	struct Mercenary_Akkare_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<Mercenary_Akkare_Bloody>&;
-	};
-	struct Mercenary_Eldin_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<Mercenary_Eldin_Bloody>&;
-	};
-	struct Mercenary_Firone_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<Mercenary_Firone_Bloody>&;
-	};
-	struct Mercenary_Hateru_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<Mercenary_Hateru_Bloody>&;
-	};
-	struct Mercenary_Hebra_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<Mercenary_Hebra_Bloody>&;
-	};
-	struct Mercenary_HyrulePlain_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<Mercenary_HyrulePlain_Bloody>&;
-	};
 	struct MercenaryChallenge_Akkare : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<MercenaryChallenge_Akkare>&;
@@ -685,6 +657,30 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 	struct MercenaryChallenge_HyrulePlain : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<MercenaryChallenge_HyrulePlain>&;
+	};
+	struct Mercenary_Akkare_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<Mercenary_Akkare_Bloody>&;
+	};
+	struct Mercenary_Eldin_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<Mercenary_Eldin_Bloody>&;
+	};
+	struct Mercenary_Firone_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<Mercenary_Firone_Bloody>&;
+	};
+	struct Mercenary_Hateru_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<Mercenary_Hateru_Bloody>&;
+	};
+	struct Mercenary_Hebra_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<Mercenary_Hebra_Bloody>&;
+	};
+	struct Mercenary_HyrulePlain_Bloody : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<Mercenary_HyrulePlain_Bloody>&;
 	};
 	struct MessageBottle_SOS : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -902,6 +898,10 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<RestaurantInTheWell>&;
 	};
+	struct RitoBridgeRepair : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<RitoBridgeRepair>&;
+	};
 	struct Rito_ItemExchange : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<Rito_ItemExchange>&;
@@ -917,10 +917,6 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 	struct Rito_ShadowCave : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<Rito_ShadowCave>&;
-	};
-	struct RitoBridgeRepair : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<RitoBridgeRepair>&;
 	};
 	struct SageOfFire : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -1118,13 +1114,17 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<WhichIsStronger>&;
 	};
+	struct ZonauReliefSearch : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using type = enum_t<ZonauReliefSearch>&;
+	};
 	struct Zonau_GeniusWeapon : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<Zonau_GeniusWeapon>&;
 	};
-	struct ZonauReliefSearch : Tag::Enum {
+	struct ZoraStatue_Picture : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<ZonauReliefSearch>&;
+		using type = enum_t<ZoraStatue_Picture>&;
 	};
 	struct Zora_Enemy_hunt : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
@@ -1138,9 +1138,9 @@ struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
 		using type = enum_t<Zora_RuttaTreasure>&;
 	};
-	struct ZoraStatue_Picture : Tag::Enum {
+	struct gather_Insect_Z : Tag::Enum {
 		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
-		using type = enum_t<ZoraStatue_Picture>&;
+		using type = enum_t<gather_Insect_Z>&;
 	};
 };/* Tag::Structure GameData::ChallengeLogState_Challenge close */
 
@@ -1160,6 +1160,7 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 	Enum<BlindRuinsTreasure_Zora> BlindRuinsTreasure_Zora;
 	Enum<BuildHouse> BuildHouse;
 	Enum<BuildingMaterialsTutorial> BuildingMaterialsTutorial;
+	Enum<CDungeon_AllDone> CDungeon_AllDone;
 	Enum<CarryGoronKid1> CarryGoronKid1;
 	Enum<CarryGoronKid2> CarryGoronKid2;
 	Enum<CarryStone> CarryStone;
@@ -1184,7 +1185,6 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 	Enum<CarryToShrine21> CarryToShrine21;
 	Enum<CarryToShrine22> CarryToShrine22;
 	Enum<CarryToShrine23> CarryToShrine23;
-	Enum<CDungeon_AllDone> CDungeon_AllDone;
 	Enum<Circuit_Desert> Circuit_Desert;
 	Enum<Circuit_FaronWoods_MiniGame> Circuit_FaronWoods_MiniGame;
 	Enum<Circuit_Ichikara> Circuit_Ichikara;
@@ -1227,16 +1227,16 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 	Enum<FindWithSensors> FindWithSensors;
 	Enum<FirstskyislandReturns> FirstskyislandReturns;
 	Enum<FullyRipenedFlintstones> FullyRipenedFlintstones;
-	Enum<gather_Insect_Z> gather_Insect_Z;
+	Enum<GOToTheCastleOfHyrule> GOToTheCastleOfHyrule;
 	Enum<GeniusWeapon_Zora> GeniusWeapon_Zora;
 	Enum<Genkos_Kitchen> Genkos_Kitchen;
-	Enum<Gerudo_UrbosaWeapon> Gerudo_UrbosaWeapon;
 	Enum<GerudoCanyon_24hEnduranceComparison> GerudoCanyon_24hEnduranceComparison;
 	Enum<GerudoCanyon_Adventure> GerudoCanyon_Adventure;
 	Enum<GerudoCanyon_ColdEnduranceComparison> GerudoCanyon_ColdEnduranceComparison;
 	Enum<GerudoCanyon_GleeokLiver> GerudoCanyon_GleeokLiver;
 	Enum<GerudoCanyon_TumbleweedSweep> GerudoCanyon_TumbleweedSweep;
 	Enum<GerudoDesertTreasure> GerudoDesertTreasure;
+	Enum<Gerudo_UrbosaWeapon> Gerudo_UrbosaWeapon;
 	Enum<GetCamera> GetCamera;
 	Enum<GetMasterSword> GetMasterSword;
 	Enum<GetSensorPlus> GetSensorPlus;
@@ -1244,19 +1244,19 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 	Enum<GetWarpMarker> GetWarpMarker;
 	Enum<GiantHorse> GiantHorse;
 	Enum<GoneSnowQueen> GoneSnowQueen;
+	Enum<GoronPond> GoronPond;
+	Enum<GoronReturntoNature> GoronReturntoNature;
 	Enum<Goron_MiniGame_01> Goron_MiniGame_01;
 	Enum<Goron_MiniGame_02> Goron_MiniGame_02;
 	Enum<Goron_MiniGame_03> Goron_MiniGame_03;
 	Enum<Goron_MiniGame_Tutorial_01> Goron_MiniGame_Tutorial_01;
 	Enum<Goron_MiniGame_Tutorial_02> Goron_MiniGame_Tutorial_02;
 	Enum<Goron_MiniGame_Tutorial_03> Goron_MiniGame_Tutorial_03;
-	Enum<GoronPond> GoronPond;
-	Enum<GoronReturntoNature> GoronReturntoNature;
 	Enum<GotoFironeZonauRemains> GotoFironeZonauRemains;
-	Enum<GOToTheCastleOfHyrule> GOToTheCastleOfHyrule;
 	Enum<GroundPaintingAir01> GroundPaintingAir01;
 	Enum<Hack_GuardGoods> Hack_GuardGoods;
 	Enum<HammerGong_MiniGame> HammerGong_MiniGame;
+	Enum<HatenoPurchasePicture> HatenoPurchasePicture;
 	Enum<Hateno_Cheese> Hateno_Cheese;
 	Enum<Hateno_CoolGuy> Hateno_CoolGuy;
 	Enum<Hateno_FreshMilk> Hateno_FreshMilk;
@@ -1270,7 +1270,6 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 	Enum<Hateno_TellMeTeacher02> Hateno_TellMeTeacher02;
 	Enum<Hateno_VillageMayorElection> Hateno_VillageMayorElection;
 	Enum<Hateno_WhatToPlant> Hateno_WhatToPlant;
-	Enum<HatenoPurchasePicture> HatenoPurchasePicture;
 	Enum<Hebra_SkyRingChallenge> Hebra_SkyRingChallenge;
 	Enum<Hebra_SkyRingChallenge_MiniGame> Hebra_SkyRingChallenge_MiniGame;
 	Enum<HorseInnChallenge001> HorseInnChallenge001;
@@ -1304,18 +1303,18 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 	Enum<MasterSwordClues> MasterSwordClues;
 	Enum<MeatRock> MeatRock;
 	Enum<MemoryOfTheDragon> MemoryOfTheDragon;
-	Enum<Mercenary_Akkare_Bloody> Mercenary_Akkare_Bloody;
-	Enum<Mercenary_Eldin_Bloody> Mercenary_Eldin_Bloody;
-	Enum<Mercenary_Firone_Bloody> Mercenary_Firone_Bloody;
-	Enum<Mercenary_Hateru_Bloody> Mercenary_Hateru_Bloody;
-	Enum<Mercenary_Hebra_Bloody> Mercenary_Hebra_Bloody;
-	Enum<Mercenary_HyrulePlain_Bloody> Mercenary_HyrulePlain_Bloody;
 	Enum<MercenaryChallenge_Akkare> MercenaryChallenge_Akkare;
 	Enum<MercenaryChallenge_Eldin> MercenaryChallenge_Eldin;
 	Enum<MercenaryChallenge_Firone> MercenaryChallenge_Firone;
 	Enum<MercenaryChallenge_Hateru> MercenaryChallenge_Hateru;
 	Enum<MercenaryChallenge_Hebra> MercenaryChallenge_Hebra;
 	Enum<MercenaryChallenge_HyrulePlain> MercenaryChallenge_HyrulePlain;
+	Enum<Mercenary_Akkare_Bloody> Mercenary_Akkare_Bloody;
+	Enum<Mercenary_Eldin_Bloody> Mercenary_Eldin_Bloody;
+	Enum<Mercenary_Firone_Bloody> Mercenary_Firone_Bloody;
+	Enum<Mercenary_Hateru_Bloody> Mercenary_Hateru_Bloody;
+	Enum<Mercenary_Hebra_Bloody> Mercenary_Hebra_Bloody;
+	Enum<Mercenary_HyrulePlain_Bloody> Mercenary_HyrulePlain_Bloody;
 	Enum<MessageBottle_SOS> MessageBottle_SOS;
 	Enum<MinusYiga> MinusYiga;
 	Enum<MonsterFigures01> MonsterFigures01;
@@ -1370,11 +1369,11 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 	Enum<ResearchEldin> ResearchEldin;
 	Enum<ResearchLanayru> ResearchLanayru;
 	Enum<RestaurantInTheWell> RestaurantInTheWell;
+	Enum<RitoBridgeRepair> RitoBridgeRepair;
 	Enum<Rito_ItemExchange> Rito_ItemExchange;
 	Enum<Rito_MedoArmor> Rito_MedoArmor;
 	Enum<Rito_RevaliWeapon> Rito_RevaliWeapon;
 	Enum<Rito_ShadowCave> Rito_ShadowCave;
-	Enum<RitoBridgeRepair> RitoBridgeRepair;
 	Enum<SageOfFire> SageOfFire;
 	Enum<SageOfGerudo> SageOfGerudo;
 	Enum<SageOfSoul> SageOfSoul;
@@ -1424,12 +1423,13 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 	Enum<WaterBridgePlace> WaterBridgePlace;
 	Enum<WellCollection> WellCollection;
 	Enum<WhichIsStronger> WhichIsStronger;
-	Enum<Zonau_GeniusWeapon> Zonau_GeniusWeapon;
 	Enum<ZonauReliefSearch> ZonauReliefSearch;
+	Enum<Zonau_GeniusWeapon> Zonau_GeniusWeapon;
+	Enum<ZoraStatue_Picture> ZoraStatue_Picture;
 	Enum<Zora_Enemy_hunt> Zora_Enemy_hunt;
 	Enum<Zora_MessageBottle> Zora_MessageBottle;
 	Enum<Zora_RuttaTreasure> Zora_RuttaTreasure;
-	Enum<ZoraStatue_Picture> ZoraStatue_Picture;
+	Enum<gather_Insect_Z> gather_Insect_Z;
 	
 	explicit Structure(Sav& s) : 
 		AisyaRescue { s.get<struct AisyaRescue>() },
@@ -1447,6 +1447,7 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		BlindRuinsTreasure_Zora { s.get<struct BlindRuinsTreasure_Zora>() },
 		BuildHouse { s.get<struct BuildHouse>() },
 		BuildingMaterialsTutorial { s.get<struct BuildingMaterialsTutorial>() },
+		CDungeon_AllDone { s.get<struct CDungeon_AllDone>() },
 		CarryGoronKid1 { s.get<struct CarryGoronKid1>() },
 		CarryGoronKid2 { s.get<struct CarryGoronKid2>() },
 		CarryStone { s.get<struct CarryStone>() },
@@ -1471,7 +1472,6 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		CarryToShrine21 { s.get<struct CarryToShrine21>() },
 		CarryToShrine22 { s.get<struct CarryToShrine22>() },
 		CarryToShrine23 { s.get<struct CarryToShrine23>() },
-		CDungeon_AllDone { s.get<struct CDungeon_AllDone>() },
 		Circuit_Desert { s.get<struct Circuit_Desert>() },
 		Circuit_FaronWoods_MiniGame { s.get<struct Circuit_FaronWoods_MiniGame>() },
 		Circuit_Ichikara { s.get<struct Circuit_Ichikara>() },
@@ -1514,16 +1514,16 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		FindWithSensors { s.get<struct FindWithSensors>() },
 		FirstskyislandReturns { s.get<struct FirstskyislandReturns>() },
 		FullyRipenedFlintstones { s.get<struct FullyRipenedFlintstones>() },
-		gather_Insect_Z { s.get<struct gather_Insect_Z>() },
+		GOToTheCastleOfHyrule { s.get<struct GOToTheCastleOfHyrule>() },
 		GeniusWeapon_Zora { s.get<struct GeniusWeapon_Zora>() },
 		Genkos_Kitchen { s.get<struct Genkos_Kitchen>() },
-		Gerudo_UrbosaWeapon { s.get<struct Gerudo_UrbosaWeapon>() },
 		GerudoCanyon_24hEnduranceComparison { s.get<struct GerudoCanyon_24hEnduranceComparison>() },
 		GerudoCanyon_Adventure { s.get<struct GerudoCanyon_Adventure>() },
 		GerudoCanyon_ColdEnduranceComparison { s.get<struct GerudoCanyon_ColdEnduranceComparison>() },
 		GerudoCanyon_GleeokLiver { s.get<struct GerudoCanyon_GleeokLiver>() },
 		GerudoCanyon_TumbleweedSweep { s.get<struct GerudoCanyon_TumbleweedSweep>() },
 		GerudoDesertTreasure { s.get<struct GerudoDesertTreasure>() },
+		Gerudo_UrbosaWeapon { s.get<struct Gerudo_UrbosaWeapon>() },
 		GetCamera { s.get<struct GetCamera>() },
 		GetMasterSword { s.get<struct GetMasterSword>() },
 		GetSensorPlus { s.get<struct GetSensorPlus>() },
@@ -1531,19 +1531,19 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		GetWarpMarker { s.get<struct GetWarpMarker>() },
 		GiantHorse { s.get<struct GiantHorse>() },
 		GoneSnowQueen { s.get<struct GoneSnowQueen>() },
+		GoronPond { s.get<struct GoronPond>() },
+		GoronReturntoNature { s.get<struct GoronReturntoNature>() },
 		Goron_MiniGame_01 { s.get<struct Goron_MiniGame_01>() },
 		Goron_MiniGame_02 { s.get<struct Goron_MiniGame_02>() },
 		Goron_MiniGame_03 { s.get<struct Goron_MiniGame_03>() },
 		Goron_MiniGame_Tutorial_01 { s.get<struct Goron_MiniGame_Tutorial_01>() },
 		Goron_MiniGame_Tutorial_02 { s.get<struct Goron_MiniGame_Tutorial_02>() },
 		Goron_MiniGame_Tutorial_03 { s.get<struct Goron_MiniGame_Tutorial_03>() },
-		GoronPond { s.get<struct GoronPond>() },
-		GoronReturntoNature { s.get<struct GoronReturntoNature>() },
 		GotoFironeZonauRemains { s.get<struct GotoFironeZonauRemains>() },
-		GOToTheCastleOfHyrule { s.get<struct GOToTheCastleOfHyrule>() },
 		GroundPaintingAir01 { s.get<struct GroundPaintingAir01>() },
 		Hack_GuardGoods { s.get<struct Hack_GuardGoods>() },
 		HammerGong_MiniGame { s.get<struct HammerGong_MiniGame>() },
+		HatenoPurchasePicture { s.get<struct HatenoPurchasePicture>() },
 		Hateno_Cheese { s.get<struct Hateno_Cheese>() },
 		Hateno_CoolGuy { s.get<struct Hateno_CoolGuy>() },
 		Hateno_FreshMilk { s.get<struct Hateno_FreshMilk>() },
@@ -1557,7 +1557,6 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		Hateno_TellMeTeacher02 { s.get<struct Hateno_TellMeTeacher02>() },
 		Hateno_VillageMayorElection { s.get<struct Hateno_VillageMayorElection>() },
 		Hateno_WhatToPlant { s.get<struct Hateno_WhatToPlant>() },
-		HatenoPurchasePicture { s.get<struct HatenoPurchasePicture>() },
 		Hebra_SkyRingChallenge { s.get<struct Hebra_SkyRingChallenge>() },
 		Hebra_SkyRingChallenge_MiniGame { s.get<struct Hebra_SkyRingChallenge_MiniGame>() },
 		HorseInnChallenge001 { s.get<struct HorseInnChallenge001>() },
@@ -1591,18 +1590,18 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		MasterSwordClues { s.get<struct MasterSwordClues>() },
 		MeatRock { s.get<struct MeatRock>() },
 		MemoryOfTheDragon { s.get<struct MemoryOfTheDragon>() },
-		Mercenary_Akkare_Bloody { s.get<struct Mercenary_Akkare_Bloody>() },
-		Mercenary_Eldin_Bloody { s.get<struct Mercenary_Eldin_Bloody>() },
-		Mercenary_Firone_Bloody { s.get<struct Mercenary_Firone_Bloody>() },
-		Mercenary_Hateru_Bloody { s.get<struct Mercenary_Hateru_Bloody>() },
-		Mercenary_Hebra_Bloody { s.get<struct Mercenary_Hebra_Bloody>() },
-		Mercenary_HyrulePlain_Bloody { s.get<struct Mercenary_HyrulePlain_Bloody>() },
 		MercenaryChallenge_Akkare { s.get<struct MercenaryChallenge_Akkare>() },
 		MercenaryChallenge_Eldin { s.get<struct MercenaryChallenge_Eldin>() },
 		MercenaryChallenge_Firone { s.get<struct MercenaryChallenge_Firone>() },
 		MercenaryChallenge_Hateru { s.get<struct MercenaryChallenge_Hateru>() },
 		MercenaryChallenge_Hebra { s.get<struct MercenaryChallenge_Hebra>() },
 		MercenaryChallenge_HyrulePlain { s.get<struct MercenaryChallenge_HyrulePlain>() },
+		Mercenary_Akkare_Bloody { s.get<struct Mercenary_Akkare_Bloody>() },
+		Mercenary_Eldin_Bloody { s.get<struct Mercenary_Eldin_Bloody>() },
+		Mercenary_Firone_Bloody { s.get<struct Mercenary_Firone_Bloody>() },
+		Mercenary_Hateru_Bloody { s.get<struct Mercenary_Hateru_Bloody>() },
+		Mercenary_Hebra_Bloody { s.get<struct Mercenary_Hebra_Bloody>() },
+		Mercenary_HyrulePlain_Bloody { s.get<struct Mercenary_HyrulePlain_Bloody>() },
 		MessageBottle_SOS { s.get<struct MessageBottle_SOS>() },
 		MinusYiga { s.get<struct MinusYiga>() },
 		MonsterFigures01 { s.get<struct MonsterFigures01>() },
@@ -1657,11 +1656,11 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		ResearchEldin { s.get<struct ResearchEldin>() },
 		ResearchLanayru { s.get<struct ResearchLanayru>() },
 		RestaurantInTheWell { s.get<struct RestaurantInTheWell>() },
+		RitoBridgeRepair { s.get<struct RitoBridgeRepair>() },
 		Rito_ItemExchange { s.get<struct Rito_ItemExchange>() },
 		Rito_MedoArmor { s.get<struct Rito_MedoArmor>() },
 		Rito_RevaliWeapon { s.get<struct Rito_RevaliWeapon>() },
 		Rito_ShadowCave { s.get<struct Rito_ShadowCave>() },
-		RitoBridgeRepair { s.get<struct RitoBridgeRepair>() },
 		SageOfFire { s.get<struct SageOfFire>() },
 		SageOfGerudo { s.get<struct SageOfGerudo>() },
 		SageOfSoul { s.get<struct SageOfSoul>() },
@@ -1711,12 +1710,13 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		WaterBridgePlace { s.get<struct WaterBridgePlace>() },
 		WellCollection { s.get<struct WellCollection>() },
 		WhichIsStronger { s.get<struct WhichIsStronger>() },
-		Zonau_GeniusWeapon { s.get<struct Zonau_GeniusWeapon>() },
 		ZonauReliefSearch { s.get<struct ZonauReliefSearch>() },
+		Zonau_GeniusWeapon { s.get<struct Zonau_GeniusWeapon>() },
+		ZoraStatue_Picture { s.get<struct ZoraStatue_Picture>() },
 		Zora_Enemy_hunt { s.get<struct Zora_Enemy_hunt>() },
 		Zora_MessageBottle { s.get<struct Zora_MessageBottle>() },
 		Zora_RuttaTreasure { s.get<struct Zora_RuttaTreasure>() },
-		ZoraStatue_Picture { s.get<struct ZoraStatue_Picture>() }
+		gather_Insect_Z { s.get<struct gather_Insect_Z>() }
 	{ }
 };/* Data::Structure GameData::ChallengeLogState_Challenge close */
 
@@ -1735,6 +1735,7 @@ template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challen
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::BlindRuinsTreasure_Zora> = murmurhash3::hash("ChallengeLogState_Challenge.BlindRuinsTreasure_Zora");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::BuildHouse> = murmurhash3::hash("ChallengeLogState_Challenge.BuildHouse");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::BuildingMaterialsTutorial> = murmurhash3::hash("ChallengeLogState_Challenge.BuildingMaterialsTutorial");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::CDungeon_AllDone> = murmurhash3::hash("ChallengeLogState_Challenge.CDungeon_AllDone");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::CarryGoronKid1> = murmurhash3::hash("ChallengeLogState_Challenge.CarryGoronKid1");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::CarryGoronKid2> = murmurhash3::hash("ChallengeLogState_Challenge.CarryGoronKid2");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::CarryStone> = murmurhash3::hash("ChallengeLogState_Challenge.CarryStone");
@@ -1759,7 +1760,6 @@ template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challen
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::CarryToShrine21> = murmurhash3::hash("ChallengeLogState_Challenge.CarryToShrine21");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::CarryToShrine22> = murmurhash3::hash("ChallengeLogState_Challenge.CarryToShrine22");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::CarryToShrine23> = murmurhash3::hash("ChallengeLogState_Challenge.CarryToShrine23");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::CDungeon_AllDone> = murmurhash3::hash("ChallengeLogState_Challenge.CDungeon_AllDone");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Circuit_Desert> = murmurhash3::hash("ChallengeLogState_Challenge.Circuit_Desert");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Circuit_FaronWoods_MiniGame> = murmurhash3::hash("ChallengeLogState_Challenge.Circuit_FaronWoods_MiniGame");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Circuit_Ichikara> = murmurhash3::hash("ChallengeLogState_Challenge.Circuit_Ichikara");
@@ -1802,16 +1802,16 @@ template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challen
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::FindWithSensors> = murmurhash3::hash("ChallengeLogState_Challenge.FindWithSensors");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::FirstskyislandReturns> = murmurhash3::hash("ChallengeLogState_Challenge.FirstskyislandReturns");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::FullyRipenedFlintstones> = murmurhash3::hash("ChallengeLogState_Challenge.FullyRipenedFlintstones");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::gather_Insect_Z> = murmurhash3::hash("ChallengeLogState_Challenge.gather_Insect_Z");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GOToTheCastleOfHyrule> = murmurhash3::hash("ChallengeLogState_Challenge.GOToTheCastleOfHyrule");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GeniusWeapon_Zora> = murmurhash3::hash("ChallengeLogState_Challenge.GeniusWeapon_Zora");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Genkos_Kitchen> = murmurhash3::hash("ChallengeLogState_Challenge.Genkos_Kitchen");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Gerudo_UrbosaWeapon> = murmurhash3::hash("ChallengeLogState_Challenge.Gerudo_UrbosaWeapon");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GerudoCanyon_24hEnduranceComparison> = murmurhash3::hash("ChallengeLogState_Challenge.GerudoCanyon_24hEnduranceComparison");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GerudoCanyon_Adventure> = murmurhash3::hash("ChallengeLogState_Challenge.GerudoCanyon_Adventure");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GerudoCanyon_ColdEnduranceComparison> = murmurhash3::hash("ChallengeLogState_Challenge.GerudoCanyon_ColdEnduranceComparison");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GerudoCanyon_GleeokLiver> = murmurhash3::hash("ChallengeLogState_Challenge.GerudoCanyon_GleeokLiver");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GerudoCanyon_TumbleweedSweep> = murmurhash3::hash("ChallengeLogState_Challenge.GerudoCanyon_TumbleweedSweep");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GerudoDesertTreasure> = murmurhash3::hash("ChallengeLogState_Challenge.GerudoDesertTreasure");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Gerudo_UrbosaWeapon> = murmurhash3::hash("ChallengeLogState_Challenge.Gerudo_UrbosaWeapon");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GetCamera> = murmurhash3::hash("ChallengeLogState_Challenge.GetCamera");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GetMasterSword> = murmurhash3::hash("ChallengeLogState_Challenge.GetMasterSword");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GetSensorPlus> = murmurhash3::hash("ChallengeLogState_Challenge.GetSensorPlus");
@@ -1819,19 +1819,19 @@ template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challen
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GetWarpMarker> = murmurhash3::hash("ChallengeLogState_Challenge.GetWarpMarker");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GiantHorse> = murmurhash3::hash("ChallengeLogState_Challenge.GiantHorse");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GoneSnowQueen> = murmurhash3::hash("ChallengeLogState_Challenge.GoneSnowQueen");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GoronPond> = murmurhash3::hash("ChallengeLogState_Challenge.GoronPond");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GoronReturntoNature> = murmurhash3::hash("ChallengeLogState_Challenge.GoronReturntoNature");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Goron_MiniGame_01> = murmurhash3::hash("ChallengeLogState_Challenge.Goron_MiniGame_01");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Goron_MiniGame_02> = murmurhash3::hash("ChallengeLogState_Challenge.Goron_MiniGame_02");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Goron_MiniGame_03> = murmurhash3::hash("ChallengeLogState_Challenge.Goron_MiniGame_03");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Goron_MiniGame_Tutorial_01> = murmurhash3::hash("ChallengeLogState_Challenge.Goron_MiniGame_Tutorial_01");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Goron_MiniGame_Tutorial_02> = murmurhash3::hash("ChallengeLogState_Challenge.Goron_MiniGame_Tutorial_02");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Goron_MiniGame_Tutorial_03> = murmurhash3::hash("ChallengeLogState_Challenge.Goron_MiniGame_Tutorial_03");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GoronPond> = murmurhash3::hash("ChallengeLogState_Challenge.GoronPond");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GoronReturntoNature> = murmurhash3::hash("ChallengeLogState_Challenge.GoronReturntoNature");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GotoFironeZonauRemains> = murmurhash3::hash("ChallengeLogState_Challenge.GotoFironeZonauRemains");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GOToTheCastleOfHyrule> = murmurhash3::hash("ChallengeLogState_Challenge.GOToTheCastleOfHyrule");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::GroundPaintingAir01> = murmurhash3::hash("ChallengeLogState_Challenge.GroundPaintingAir01");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hack_GuardGoods> = murmurhash3::hash("ChallengeLogState_Challenge.Hack_GuardGoods");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::HammerGong_MiniGame> = murmurhash3::hash("ChallengeLogState_Challenge.HammerGong_MiniGame");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::HatenoPurchasePicture> = murmurhash3::hash("ChallengeLogState_Challenge.HatenoPurchasePicture");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hateno_Cheese> = murmurhash3::hash("ChallengeLogState_Challenge.Hateno_Cheese");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hateno_CoolGuy> = murmurhash3::hash("ChallengeLogState_Challenge.Hateno_CoolGuy");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hateno_FreshMilk> = murmurhash3::hash("ChallengeLogState_Challenge.Hateno_FreshMilk");
@@ -1845,7 +1845,6 @@ template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challen
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hateno_TellMeTeacher02> = murmurhash3::hash("ChallengeLogState_Challenge.Hateno_TellMeTeacher02");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hateno_VillageMayorElection> = murmurhash3::hash("ChallengeLogState_Challenge.Hateno_VillageMayorElection");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hateno_WhatToPlant> = murmurhash3::hash("ChallengeLogState_Challenge.Hateno_WhatToPlant");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::HatenoPurchasePicture> = murmurhash3::hash("ChallengeLogState_Challenge.HatenoPurchasePicture");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hebra_SkyRingChallenge> = murmurhash3::hash("ChallengeLogState_Challenge.Hebra_SkyRingChallenge");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Hebra_SkyRingChallenge_MiniGame> = murmurhash3::hash("ChallengeLogState_Challenge.Hebra_SkyRingChallenge_MiniGame");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::HorseInnChallenge001> = murmurhash3::hash("ChallengeLogState_Challenge.HorseInnChallenge001");
@@ -1879,18 +1878,18 @@ template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challen
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MasterSwordClues> = murmurhash3::hash("ChallengeLogState_Challenge.MasterSwordClues");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MeatRock> = murmurhash3::hash("ChallengeLogState_Challenge.MeatRock");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MemoryOfTheDragon> = murmurhash3::hash("ChallengeLogState_Challenge.MemoryOfTheDragon");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Akkare_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Akkare_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Eldin_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Eldin_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Firone_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Firone_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Hateru_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Hateru_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Hebra_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Hebra_Bloody");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_HyrulePlain_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_HyrulePlain_Bloody");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MercenaryChallenge_Akkare> = murmurhash3::hash("ChallengeLogState_Challenge.MercenaryChallenge_Akkare");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MercenaryChallenge_Eldin> = murmurhash3::hash("ChallengeLogState_Challenge.MercenaryChallenge_Eldin");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MercenaryChallenge_Firone> = murmurhash3::hash("ChallengeLogState_Challenge.MercenaryChallenge_Firone");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MercenaryChallenge_Hateru> = murmurhash3::hash("ChallengeLogState_Challenge.MercenaryChallenge_Hateru");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MercenaryChallenge_Hebra> = murmurhash3::hash("ChallengeLogState_Challenge.MercenaryChallenge_Hebra");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MercenaryChallenge_HyrulePlain> = murmurhash3::hash("ChallengeLogState_Challenge.MercenaryChallenge_HyrulePlain");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Akkare_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Akkare_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Eldin_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Eldin_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Firone_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Firone_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Hateru_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Hateru_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_Hebra_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_Hebra_Bloody");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Mercenary_HyrulePlain_Bloody> = murmurhash3::hash("ChallengeLogState_Challenge.Mercenary_HyrulePlain_Bloody");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MessageBottle_SOS> = murmurhash3::hash("ChallengeLogState_Challenge.MessageBottle_SOS");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MinusYiga> = murmurhash3::hash("ChallengeLogState_Challenge.MinusYiga");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::MonsterFigures01> = murmurhash3::hash("ChallengeLogState_Challenge.MonsterFigures01");
@@ -1945,11 +1944,11 @@ template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challen
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::ResearchEldin> = murmurhash3::hash("ChallengeLogState_Challenge.ResearchEldin");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::ResearchLanayru> = murmurhash3::hash("ChallengeLogState_Challenge.ResearchLanayru");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::RestaurantInTheWell> = murmurhash3::hash("ChallengeLogState_Challenge.RestaurantInTheWell");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::RitoBridgeRepair> = murmurhash3::hash("ChallengeLogState_Challenge.RitoBridgeRepair");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Rito_ItemExchange> = murmurhash3::hash("ChallengeLogState_Challenge.Rito_ItemExchange");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Rito_MedoArmor> = murmurhash3::hash("ChallengeLogState_Challenge.Rito_MedoArmor");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Rito_RevaliWeapon> = murmurhash3::hash("ChallengeLogState_Challenge.Rito_RevaliWeapon");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Rito_ShadowCave> = murmurhash3::hash("ChallengeLogState_Challenge.Rito_ShadowCave");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::RitoBridgeRepair> = murmurhash3::hash("ChallengeLogState_Challenge.RitoBridgeRepair");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::SageOfFire> = murmurhash3::hash("ChallengeLogState_Challenge.SageOfFire");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::SageOfGerudo> = murmurhash3::hash("ChallengeLogState_Challenge.SageOfGerudo");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::SageOfSoul> = murmurhash3::hash("ChallengeLogState_Challenge.SageOfSoul");
@@ -1999,9 +1998,10 @@ template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challen
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::WaterBridgePlace> = murmurhash3::hash("ChallengeLogState_Challenge.WaterBridgePlace");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::WellCollection> = murmurhash3::hash("ChallengeLogState_Challenge.WellCollection");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::WhichIsStronger> = murmurhash3::hash("ChallengeLogState_Challenge.WhichIsStronger");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Zonau_GeniusWeapon> = murmurhash3::hash("ChallengeLogState_Challenge.Zonau_GeniusWeapon");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::ZonauReliefSearch> = murmurhash3::hash("ChallengeLogState_Challenge.ZonauReliefSearch");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Zonau_GeniusWeapon> = murmurhash3::hash("ChallengeLogState_Challenge.Zonau_GeniusWeapon");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::ZoraStatue_Picture> = murmurhash3::hash("ChallengeLogState_Challenge.ZoraStatue_Picture");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Zora_Enemy_hunt> = murmurhash3::hash("ChallengeLogState_Challenge.Zora_Enemy_hunt");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Zora_MessageBottle> = murmurhash3::hash("ChallengeLogState_Challenge.Zora_MessageBottle");
 template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::Zora_RuttaTreasure> = murmurhash3::hash("ChallengeLogState_Challenge.Zora_RuttaTreasure");
-template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::ZoraStatue_Picture> = murmurhash3::hash("ChallengeLogState_Challenge.ZoraStatue_Picture");
+template <> hash_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::gather_Insect_Z> = murmurhash3::hash("ChallengeLogState_Challenge.gather_Insect_Z");

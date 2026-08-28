@@ -2,38 +2,38 @@
 #include <sage>
 
 struct GameData::MapData : Tag::Structure {
-	struct IconData;
 	struct IsGerudoIconEnable : Tag::Member { using type = bool&; };
 	struct IsOpenFootprintMode : Tag::Member { using type = bool&; };
 	struct IsOpenGround : Tag::Member { using type = bool&; };
 	struct IsOpenUnderGround : Tag::Member { using type = bool&; };
-	struct LargeDungeon;
 	struct CurrentLayer : Tag::Enum {
 		enum underlying_enum_t : hash_t { Ground = murmurhash3::hash("Ground"), Sky = murmurhash3::hash("Sky"), UnderGround = murmurhash3::hash("UnderGround"), };
 		using type = enum_t<CurrentLayer>&;
 	};
+	struct IconData;
+	struct LargeDungeon;
 };/* Tag::Structure GameData::MapData close */
 
 #include "MapData/IconData.hpp"
 #include "MapData/LargeDungeon.hpp"
 
 template <> struct Data::Structure<GameData::MapData> : GameData::MapData {
-	Structure<IconData> IconData;
 	Member<IsGerudoIconEnable> IsGerudoIconEnable;
 	Member<IsOpenFootprintMode> IsOpenFootprintMode;
 	Member<IsOpenGround> IsOpenGround;
 	Member<IsOpenUnderGround> IsOpenUnderGround;
-	Structure<LargeDungeon> LargeDungeon;
 	Enum<CurrentLayer> CurrentLayer;
+	Structure<IconData> IconData;
+	Structure<LargeDungeon> LargeDungeon;
 	
 	explicit Structure(Sav& s) : 
-		IconData { s },
 		IsGerudoIconEnable { s.get<struct IsGerudoIconEnable>() },
 		IsOpenFootprintMode { s.get<struct IsOpenFootprintMode>() },
 		IsOpenGround { s.get<struct IsOpenGround>() },
 		IsOpenUnderGround { s.get<struct IsOpenUnderGround>() },
-		LargeDungeon { s },
-		CurrentLayer { s.get<struct CurrentLayer>() }
+		CurrentLayer { s.get<struct CurrentLayer>() },
+		IconData { s },
+		LargeDungeon { s }
 	{ }
 };/* Data::Structure GameData::MapData close */
 
