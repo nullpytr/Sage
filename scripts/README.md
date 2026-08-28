@@ -59,7 +59,8 @@ These add the underlying enum values to previously declared `Enum` or `EnumArray
 ```
 gamedata.py
   tree.make_tree()        build in-memory tree from the metadata file
-  tree.TreeEmitter.emit() walk the tree, write header(s)
+  Tree.sort()        sort children for deterministic output order
+  TreeEmitter.emit() walk the tree, write header(s)
 ```
 
 ### I. Tree building (`tree.py`)
@@ -69,6 +70,11 @@ gamedata.py
 `parse_data_record` splits the dot-path into identifiers, walks the tree creating `Structure` nodes for each non-leaf identifier, and inserts a typed `Member` leaf at the end. Every identifier is sanitized: leading digits get a `_` prefix and hyphens become underscores.
 
 `parse_enum_value_record` finds already-inserted `Enum` nodes by exact name or regex pattern match, then replaces each match with a complete copy that carries the `values` tuple. Before replacement, enum members exist in the tree as "incomplete" nodes with an empty `values` tuple.
+
+After parsing, the tree is sorted twice to guarantee deterministic output regardless of metadata order. `Structure.sort(by, key, reverse, recv) (aka Tree.sort)` sorts `children` in-place by any attribute, with an optional key transform and optional recursion into child structures (`recv=True` by default). The two passes are:
+
+1. `sort(by="name")` - alphabetical A→Z across all children, recursively.
+2. `sort(by="basename", key=("Tag::Member", "Tag::Enum", "Tag::Structure").index)` - groups by kind: members first, enums second, nested structures last.
 
 ### II. Type system (`types/`)
 
@@ -136,6 +142,18 @@ struct CurrentSpecialPower : Tag::Enum {
 2. Nested struct bodies: recurses into each child `Structure` and emits it to its own file when `include_dir` is set, and `#include`s after forward declaration. inline otherwise.
 3. Data struct: emits `template <> struct Data::Structure<Subsystem> : Subsystem` with one typed field per member and an explicit constructor which overlays the subsytem on a Sav& blob. 
 4. Hashtable specializations: `template <> hash_t constexpr Data::Hashtable<Subsystem::Member> = murmurhash3::hash("dot.path");` for every `Tag::Member`. The only exception is `Playtime`, it's original hash text is unknown; we're using a raw hex literal instead.
+```cpp
+struct GameData::PlayerStatus : Tag::Structure {
+    struct MaxLife    : Tag::Member { using type = s32&; };
+    struct SavePos    : Tag::Member { using type = vec3f*; };
+    struct CurrentSpecialPower : Tag::Enum {
+        enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), UltraHand = murmurhash3::hash("UltraHand"), ... };
+        using type = enum_t<CurrentSpecialPower>&;
+    };
+    struct Companion;
+};
+```
+
 
 All three emitters accept `header_fp` for direct-to-file output. `StructureEmitter` additionally accepts `include_dir` for per-struct directory output. `#pragma once` and `#include <sage>` are prepended only when one of those is set; inline emission skips them.
 
@@ -164,3 +182,174 @@ lib/
 ```
 
 With `--standalone`, everything is concatenated into a single `GameData.hpp` at the output root instead. In non-standalone mode, every header is self contained and can be included independently (the foward decl includes are obviously needed).
+
+Putting it all together here is an example header `GameData::PlayerStatus` in non-standalone mode:
+```cpp
+#pragma once
+#include <sage>
+
+struct GameData::PlayerStatus : Tag::Structure {
+	struct BreakLife : Tag::Member { using type = s32&; };
+	struct CookBuff : Tag::Member { using type = s32&; };
+	struct CookBuffLv : Tag::Member { using type = s32&; };
+	struct CookBuffTime : Tag::Member { using type = float&; };
+	struct CurrentMamo : Tag::Member { using type = s32&; };
+	struct CurrentRupee : Tag::Member { using type = s32&; };
+	struct ExtraEnergy : Tag::Member { using type = float&; };
+	struct ExtraLife : Tag::Member { using type = s32&; };
+	struct ExtraStamina : Tag::Member { using type = float&; };
+	struct FirstSkyIslandEventFailureOnce : Tag::Member { using type = bool&; };
+	struct HasAnyBluePrint : Tag::Member { using type = bool&; };
+	struct IsEquipShoulderBelt : Tag::Member { using type = bool&; };
+	struct IsEquipWaistBelt : Tag::Member { using type = bool&; };
+	struct IsForceDisableSummonCompanion : Tag::Member { using type = bool&; };
+	struct IsForceDisableUseSpecialPower : Tag::Member { using type = bool&; };
+	struct IsMasterSwordSleeping : Tag::Member { using type = bool&; };
+	struct IsUseCameraPointer : Tag::Member { using type = bool&; };
+	struct IsUseTemporaryLife : Tag::Member { using type = bool&; };
+	struct Life : Tag::Member { using type = s32&; };
+	struct MasterSwordSleepTimer : Tag::Member { using type = float&; };
+	struct MaxEnergy : Tag::Member { using type = float&; };
+	struct MaxLife : Tag::Member { using type = s32&; };
+	struct MaxLifeForBeforeVSGanon : Tag::Member { using type = s32&; };
+	struct MaxStamina : Tag::Member { using type = float&; };
+	struct SavePos : Tag::Member { using type = vec3f*; };
+	struct SavePosRadY : Tag::Member { using type = float&; };
+	struct TemporaryBreakLife : Tag::Member { using type = s32&; };
+	struct TemporaryExtraEnergy : Tag::Member { using type = float&; };
+	struct TemporaryExtraLife : Tag::Member { using type = s32&; };
+	struct TemporaryExtraStamina : Tag::Member { using type = float&; };
+	struct TemporaryLife : Tag::Member { using type = s32&; };
+	struct UseScopeStartEvent : Tag::Member { using type = bool&; };
+	struct WeaponAttachCount : Tag::Member { using type = s32&; };
+	struct ZonauEventFailureOnce : Tag::Member { using type = bool&; };
+	struct CurrentSpecialPower : Tag::Enum {
+		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), UltraHand = murmurhash3::hash("UltraHand"), OneTouchBond = murmurhash3::hash("OneTouchBond"), CeilingClipper = murmurhash3::hash("CeilingClipper"), ReverseRecorder = murmurhash3::hash("ReverseRecorder"), AutoBuilder = murmurhash3::hash("AutoBuilder"), SheikahCamera = murmurhash3::hash("SheikahCamera"), Map = murmurhash3::hash("Map"), Amiibo = murmurhash3::hash("Amiibo"), };
+		using type = enum_t<CurrentSpecialPower>&;
+	};
+	struct ParasailPattern : Tag::Enum {
+		enum underlying_enum_t : hash_t { Default = murmurhash3::hash("Default"), Pattern00 = murmurhash3::hash("Pattern00"), Pattern01 = murmurhash3::hash("Pattern01"), Pattern02 = murmurhash3::hash("Pattern02"), Pattern03 = murmurhash3::hash("Pattern03"), Pattern04 = murmurhash3::hash("Pattern04"), Pattern05 = murmurhash3::hash("Pattern05"), ..., Pattern51 = murmurhash3::hash("Pattern51"), Pattern52 = murmurhash3::hash("Pattern52"), Pattern53 = murmurhash3::hash("Pattern53"), Pattern55 = murmurhash3::hash("Pattern55"), Pattern56 = murmurhash3::hash("Pattern56"), };
+		using type = enum_t<ParasailPattern>&;
+	};
+	struct Companion;
+};/* Tag::Structure GameData::PlayerStatus close */
+
+#include "PlayerStatus/Companion.hpp"
+
+template <> struct Data::Structure<GameData::PlayerStatus> : GameData::PlayerStatus {
+	Member<BreakLife> BreakLife;
+	Member<CookBuff> CookBuff;
+	Member<CookBuffLv> CookBuffLv;
+	Member<CookBuffTime> CookBuffTime;
+	Member<CurrentMamo> CurrentMamo;
+	Member<CurrentRupee> CurrentRupee;
+	Member<ExtraEnergy> ExtraEnergy;
+	Member<ExtraLife> ExtraLife;
+	Member<ExtraStamina> ExtraStamina;
+	Member<FirstSkyIslandEventFailureOnce> FirstSkyIslandEventFailureOnce;
+	Member<HasAnyBluePrint> HasAnyBluePrint;
+	Member<IsEquipShoulderBelt> IsEquipShoulderBelt;
+	Member<IsEquipWaistBelt> IsEquipWaistBelt;
+	Member<IsForceDisableSummonCompanion> IsForceDisableSummonCompanion;
+	Member<IsForceDisableUseSpecialPower> IsForceDisableUseSpecialPower;
+	Member<IsMasterSwordSleeping> IsMasterSwordSleeping;
+	Member<IsUseCameraPointer> IsUseCameraPointer;
+	Member<IsUseTemporaryLife> IsUseTemporaryLife;
+	Member<Life> Life;
+	Member<MasterSwordSleepTimer> MasterSwordSleepTimer;
+	Member<MaxEnergy> MaxEnergy;
+	Member<MaxLife> MaxLife;
+	Member<MaxLifeForBeforeVSGanon> MaxLifeForBeforeVSGanon;
+	Member<MaxStamina> MaxStamina;
+	Member<SavePos> SavePos;
+	Member<SavePosRadY> SavePosRadY;
+	Member<TemporaryBreakLife> TemporaryBreakLife;
+	Member<TemporaryExtraEnergy> TemporaryExtraEnergy;
+	Member<TemporaryExtraLife> TemporaryExtraLife;
+	Member<TemporaryExtraStamina> TemporaryExtraStamina;
+	Member<TemporaryLife> TemporaryLife;
+	Member<UseScopeStartEvent> UseScopeStartEvent;
+	Member<WeaponAttachCount> WeaponAttachCount;
+	Member<ZonauEventFailureOnce> ZonauEventFailureOnce;
+	Enum<CurrentSpecialPower> CurrentSpecialPower;
+	Enum<ParasailPattern> ParasailPattern;
+	Structure<Companion> Companion;
+	
+	explicit Structure(Sav& s) : 
+		BreakLife { s.get<struct BreakLife>() },
+		CookBuff { s.get<struct CookBuff>() },
+		CookBuffLv { s.get<struct CookBuffLv>() },
+		CookBuffTime { s.get<struct CookBuffTime>() },
+		CurrentMamo { s.get<struct CurrentMamo>() },
+		CurrentRupee { s.get<struct CurrentRupee>() },
+		ExtraEnergy { s.get<struct ExtraEnergy>() },
+		ExtraLife { s.get<struct ExtraLife>() },
+		ExtraStamina { s.get<struct ExtraStamina>() },
+		FirstSkyIslandEventFailureOnce { s.get<struct FirstSkyIslandEventFailureOnce>() },
+		HasAnyBluePrint { s.get<struct HasAnyBluePrint>() },
+		IsEquipShoulderBelt { s.get<struct IsEquipShoulderBelt>() },
+		IsEquipWaistBelt { s.get<struct IsEquipWaistBelt>() },
+		IsForceDisableSummonCompanion { s.get<struct IsForceDisableSummonCompanion>() },
+		IsForceDisableUseSpecialPower { s.get<struct IsForceDisableUseSpecialPower>() },
+		IsMasterSwordSleeping { s.get<struct IsMasterSwordSleeping>() },
+		IsUseCameraPointer { s.get<struct IsUseCameraPointer>() },
+		IsUseTemporaryLife { s.get<struct IsUseTemporaryLife>() },
+		Life { s.get<struct Life>() },
+		MasterSwordSleepTimer { s.get<struct MasterSwordSleepTimer>() },
+		MaxEnergy { s.get<struct MaxEnergy>() },
+		MaxLife { s.get<struct MaxLife>() },
+		MaxLifeForBeforeVSGanon { s.get<struct MaxLifeForBeforeVSGanon>() },
+		MaxStamina { s.get<struct MaxStamina>() },
+		SavePos { s.get<struct SavePos>() },
+		SavePosRadY { s.get<struct SavePosRadY>() },
+		TemporaryBreakLife { s.get<struct TemporaryBreakLife>() },
+		TemporaryExtraEnergy { s.get<struct TemporaryExtraEnergy>() },
+		TemporaryExtraLife { s.get<struct TemporaryExtraLife>() },
+		TemporaryExtraStamina { s.get<struct TemporaryExtraStamina>() },
+		TemporaryLife { s.get<struct TemporaryLife>() },
+		UseScopeStartEvent { s.get<struct UseScopeStartEvent>() },
+		WeaponAttachCount { s.get<struct WeaponAttachCount>() },
+		ZonauEventFailureOnce { s.get<struct ZonauEventFailureOnce>() },
+		CurrentSpecialPower { s.get<struct CurrentSpecialPower>() },
+		ParasailPattern { s.get<struct ParasailPattern>() },
+		Companion { s }
+	{ }
+};/* Data::Structure GameData::PlayerStatus close */
+
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::BreakLife> = murmurhash3::hash("PlayerStatus.BreakLife");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::CookBuff> = murmurhash3::hash("PlayerStatus.CookBuff");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::CookBuffLv> = murmurhash3::hash("PlayerStatus.CookBuffLv");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::CookBuffTime> = murmurhash3::hash("PlayerStatus.CookBuffTime");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::CurrentMamo> = murmurhash3::hash("PlayerStatus.CurrentMamo");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::CurrentRupee> = murmurhash3::hash("PlayerStatus.CurrentRupee");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::ExtraEnergy> = murmurhash3::hash("PlayerStatus.ExtraEnergy");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::ExtraLife> = murmurhash3::hash("PlayerStatus.ExtraLife");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::ExtraStamina> = murmurhash3::hash("PlayerStatus.ExtraStamina");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::FirstSkyIslandEventFailureOnce> = murmurhash3::hash("PlayerStatus.FirstSkyIslandEventFailureOnce");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::HasAnyBluePrint> = murmurhash3::hash("PlayerStatus.HasAnyBluePrint");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::IsEquipShoulderBelt> = murmurhash3::hash("PlayerStatus.IsEquipShoulderBelt");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::IsEquipWaistBelt> = murmurhash3::hash("PlayerStatus.IsEquipWaistBelt");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::IsForceDisableSummonCompanion> = murmurhash3::hash("PlayerStatus.IsForceDisableSummonCompanion");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::IsForceDisableUseSpecialPower> = murmurhash3::hash("PlayerStatus.IsForceDisableUseSpecialPower");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::IsMasterSwordSleeping> = murmurhash3::hash("PlayerStatus.IsMasterSwordSleeping");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::IsUseCameraPointer> = murmurhash3::hash("PlayerStatus.IsUseCameraPointer");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::IsUseTemporaryLife> = murmurhash3::hash("PlayerStatus.IsUseTemporaryLife");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Life> = murmurhash3::hash("PlayerStatus.Life");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::MasterSwordSleepTimer> = murmurhash3::hash("PlayerStatus.MasterSwordSleepTimer");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::MaxEnergy> = murmurhash3::hash("PlayerStatus.MaxEnergy");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::MaxLife> = murmurhash3::hash("PlayerStatus.MaxLife");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::MaxLifeForBeforeVSGanon> = murmurhash3::hash("PlayerStatus.MaxLifeForBeforeVSGanon");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::MaxStamina> = murmurhash3::hash("PlayerStatus.MaxStamina");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::SavePos> = murmurhash3::hash("PlayerStatus.SavePos");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::SavePosRadY> = murmurhash3::hash("PlayerStatus.SavePosRadY");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::TemporaryBreakLife> = murmurhash3::hash("PlayerStatus.TemporaryBreakLife");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::TemporaryExtraEnergy> = murmurhash3::hash("PlayerStatus.TemporaryExtraEnergy");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::TemporaryExtraLife> = murmurhash3::hash("PlayerStatus.TemporaryExtraLife");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::TemporaryExtraStamina> = murmurhash3::hash("PlayerStatus.TemporaryExtraStamina");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::TemporaryLife> = murmurhash3::hash("PlayerStatus.TemporaryLife");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::UseScopeStartEvent> = murmurhash3::hash("PlayerStatus.UseScopeStartEvent");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::WeaponAttachCount> = murmurhash3::hash("PlayerStatus.WeaponAttachCount");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::ZonauEventFailureOnce> = murmurhash3::hash("PlayerStatus.ZonauEventFailureOnce");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::CurrentSpecialPower> = murmurhash3::hash("PlayerStatus.CurrentSpecialPower");
+template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::ParasailPattern> = murmurhash3::hash("PlayerStatus.ParasailPattern");
+```

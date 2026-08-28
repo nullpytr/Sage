@@ -113,6 +113,9 @@ def run(args: argparse.Namespace) -> None:
         root = tree.Tree(args.name)
         if data_fp: tree.make_tree(data_fp.open("r"), root)
 
+        root.sort(by="name") # sort: alpha A -> Z
+        root.sort(by="basename", key=("Tag::Member", "Tag::Enum", "Tag::Structure").index)
+
     if args.tree and data_fp: return print(json.dumps(as_dict(root), indent=2))
     if args.dry and data_fp: return print("[cli/dry]", f"parsed {data_fp.name}")
 
