@@ -7,12 +7,13 @@ Structure = types.Structure
 
 class StructureEmitter():
     @staticmethod
-    def emit(struct: Structure, delim: str = "\n", include_dir: Path | str | None = None) -> str:
+    def emit(struct: Structure, delim: str = "\n", header_fp: Path | str | None = None, include_dir: Path | str | None = None) -> str:
         depth = 0
         buffer: list[str] = []
         write = lambda s: buffer.append("\t" * depth + s)
 
-        if include_dir: # emit header files
+        is_fs_emit = header_fp or include_dir # are we writing an actual file?
+        if is_fs_emit:
             write("#pragma once")
             write("#include <sage>")
             write("")
@@ -33,7 +34,7 @@ class StructureEmitter():
         _old_len = len(buffer)
         for child in struct.children.values(): # out of line child struct tags (gd v5.x)
             if not isinstance(child, Structure): continue
-            substruct = StructureEmitter.emit(child, delim, include_dir)
+            substruct = StructureEmitter.emit(child, delim, include_dir=include_dir)
             if include_dir: write(f"#include \"{struct.name}/{child.name}.hpp\"")
             else: write(substruct)
         if _old_len != len(buffer): write("")
@@ -72,11 +73,13 @@ class StructureEmitter():
             write(f"template <> {types.Hash} constexpr Data::Hashtable<{child.path}> = {child_hash};")
 
         string = delim.join(buffer)
-        if include_dir: 
+        if include_dir:
             relpath = struct.path.replace("::", "/") + ".hpp"
             header_file = Path(include_dir).absolute() / relpath
             header_file.parent.mkdir(exist_ok=True, parents=True)
             header_file.write_text(string)
+        elif header_fp:
+            Path(header_fp).write_text(string)
 
         return string
             
