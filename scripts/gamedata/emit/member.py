@@ -1,12 +1,19 @@
+from pathlib import Path
+
 from .. import types
 
 Member = types.Member
 
 class MemberEmitter():
     @staticmethod
-    def emit(member: Member, delim: str = " ") -> str:
+    def emit(member: Member, delim: str = " ", header_fp: Path | str | None = None) -> str:
         buffer: list[str] = []
         write = buffer.append
+
+        if header_fp:
+            write("#pragma once")
+            write("#include <sage>")
+            write("")
 
         return_type = member.typename
 
@@ -20,4 +27,7 @@ class MemberEmitter():
         write(f"using type = {return_type};")
         write("};") # def close
 
-        return delim.join(buffer)
+        string = delim.join(buffer)
+        if header_fp: Path(header_fp).write_text(string)
+
+        return string
