@@ -4,10 +4,8 @@
 #include <vector>
 #include <unordered_map>
 
+#include "Core.hpp"
 #include "External/Filesystem.hpp"
-#include "Core/Types.hpp"
-#include "Core/Layout.hpp"
-#include "Core/Data.hpp"
 
 #define METADATA_SAVE_TYPE_HASH 0xa3db7114
 
