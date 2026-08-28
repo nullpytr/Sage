@@ -48,8 +48,9 @@ def parse_data_record(
         if curr_id not in curr_node.children:
             curr_node.children[curr_id] = Structure(
                 name=curr_id,
-                path=f"{curr_node.path}::{curr_id}",
-                children={}
+                # path=f"{curr_node.path}::{curr_id}",
+                children={},
+                parent=curr_node
             )
 
         next_node = curr_node.children[curr_id]
@@ -72,19 +73,21 @@ def parse_data_record(
     curr_node.children[id] = \
         resolve_member_type(raw_typename)(
             name=id,
-            path=f"{curr_node.path}::{id}",
+            # path=f"{curr_node.path}::{id}",
             hash_text_string=hash_text_string,
-            hash_hexadecimal=hash_hexadecimal
+            hash_hexadecimal=hash_hexadecimal,
+            parent=curr_node.parent
         )
 
 def resolve_incomplete_enum_member(values: tuple[str, ...], incomplete_t: Enum) -> Enum:
     complete_t = EnumArray[incomplete_t.name] if isinstance(incomplete_t, EnumArray) else Enum[incomplete_t.name]
     return complete_t(
         name=incomplete_t.name,
-        path=incomplete_t.path,
+        # path=incomplete_t.path,
         hash_hexadecimal=incomplete_t.hash_hexadecimal,
         hash_text_string=incomplete_t.hash_text_string,
-        values=values
+        values=values,
+        parent=incomplete_t.parent
     )
 
 def resolve_incomplete_enum_members_in_scope(pattern: str, values: tuple[str, ...], scope: Tree) -> None: 

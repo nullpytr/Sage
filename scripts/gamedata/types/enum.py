@@ -1,4 +1,4 @@
-from .member import Member
+from .member import GameDataType, Member
 from .array import Array
 
 class Enum[EnumName: str](Member):
@@ -7,11 +7,8 @@ class Enum[EnumName: str](Member):
 
     values: tuple[str, ...]
 
-    def __init__(self, name: str, path: str, hash_text_string: str, hash_hexadecimal: str, values: tuple[str, ...] = ()) -> None:
-        self.name = name
-        self.path = path
-        self.hash_text_string = hash_text_string
-        self.hash_hexadecimal = hash_hexadecimal
+    def __init__(self, name: str, hash_text_string: str, hash_hexadecimal: str, values: tuple[str, ...] = (), parent: GameDataType | None = None) -> None:
+        super().__init__(name=name, hash_text_string=hash_text_string, hash_hexadecimal=hash_hexadecimal, parent=parent)
         self.values = values  
 
     def __repr__(self) -> str:

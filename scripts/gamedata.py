@@ -28,22 +28,25 @@ def resolve_datafile(args: argparse.Namespace) -> Path:
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="gamedata",
-        description="Regenerate Sage C++ headers from a gamedata CSV.",
+        description="Regenerate Sage C++ headers from a preset or metadata file.",
     )
-    p.add_argument(
+
+    src = p.add_mutually_exclusive_group()
+    src.add_argument(
         "--preset", "-p",
         choices=PRESET_CHOICES,
         default="medium",
         metavar="PRESET",
         help=f"Metadata preset to use: ({' | '.join(PRESET_CHOICES)}) (default: medium)",
     )
-    p.add_argument(
+    src.add_argument(
         "--metadata", "-m",
         type=Path,
         default=None,
         metavar="FILE",
         help="Path to a metadata file (overrides --preset)",
     )
+
     p.add_argument(
         "--out", "-o",
         type=Path,
@@ -56,11 +59,6 @@ def build_parser() -> argparse.ArgumentParser:
         default="GameData",
         metavar="NAME",
         help="Aggregate header name (default: GameData)",
-    )
-    p.add_argument(
-        "--clear", "-c",
-        action="store_true",
-        help="Clear all generated headers",
     )
     p.add_argument(
         "--standalone", "-s",
@@ -78,39 +76,51 @@ def build_parser() -> argparse.ArgumentParser:
         help="Print the parsed type tree as JSON",
     )
     p.add_argument(
-        "--dirty",
-        action="store_true",
-        help="Keep the existing output directory instead of deleting it first",
-    )
-    p.add_argument(
         "--verbose", "-v",
         action="store_true",
         help="Show output from the parser and emitter",
     )
+
+    cleanup = p.add_mutually_exclusive_group()
+    cleanup.add_argument(
+        "--clear", "-c",
+        action="store_true",
+        help="Clear all generated headers (does nothing else)",
+    )
+    cleanup.add_argument(
+        "--dirty",
+        action="store_true",
+        help="Keep the existing output directory instead of deleting it first",
+    )
+
     return p
 
 def run(args: argparse.Namespace) -> None:
     verbose_fd = sys.stdout if args.verbose else SINK_FD
 
-    data_fp = resolve_datafile(args)
-    assert data_fp.exists(), f"metadata file does not exist: {data_fp}"
+    data_fp = None
+    if not args.clear: # clear overrides everything else
+        data_fp = resolve_datafile(args)
+        assert data_fp.exists(), f"metadata file does not exist: {data_fp}"
 
     with redirect_stdout(verbose_fd):
         gamedata = tree.Tree(name=args.name, path=args.name, children={})
-        with data_fp.open() as f: tree.make_tree(f, gamedata)
+        if data_fp: tree.make_tree(data_fp.open("r"), gamedata)
 
-    if args.tree: return print(json.dumps(as_dict(gamedata), indent=2))
-    if args.dry: return print("[cli/dry]", f"parsed {data_fp.name}")
+    if args.tree and data_fp: return print(json.dumps(as_dict(gamedata), indent=2))
+    if args.dry and data_fp: return print("[cli/dry]", f"parsed {data_fp.name}")
 
     out_dir = Path(args.out)
     header_dir = out_dir / str(args.name)
     header_file = header_dir.with_suffix(".hpp")
 
-    if not args.standalone and not args.dirty and header_dir.exists():
+    should_clear_header_dir =  not (args.standalone or args.dirty) 
+    if should_clear_header_dir and header_dir.exists():
         rmtree(header_dir)
         print("[cli/clear]", f"cleared {header_dir}")
 
-    if not args.dirty and header_file.exists(): 
+    should_clear_header_file = (not args.dirty)
+    if should_clear_header_file and header_file.exists(): 
         header_file.unlink()
         print("[cli/clear]", f"cleared {header_file}")
 

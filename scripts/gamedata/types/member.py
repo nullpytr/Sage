@@ -1,4 +1,5 @@
 from .base import GameDataType
+from .structure import Structure
 
 class Member(GameDataType):
     basename = "Tag::Member"
@@ -6,9 +7,8 @@ class Member(GameDataType):
     hash_text_string: str
     hash_hexadecimal: str
 
-    def __init__(self, name: str, path: str, hash_text_string: str, hash_hexadecimal: str) -> None:
-        self.name = name
-        self.path = path
+    def __init__(self, name: str, hash_text_string: str, hash_hexadecimal: str, parent: GameDataType | None = None) -> None:
+        super().__init__(name=name, parent=parent)
         self.hash_text_string = hash_text_string
         self.hash_hexadecimal = hash_hexadecimal
 

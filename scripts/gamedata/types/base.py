@@ -6,4 +6,14 @@ class GameDataType():
     typename: str = "..."
 
     name: str
-    path: str
+    parent: "GameDataType | None"
+
+    def __init__(self, name: str, parent: "GameDataType | None" = None) -> None:
+        self.name = name
+        self.parent = parent
+
+    @property
+    def path(self) -> str:
+        return f"{self.parent.path if self.parent else ''}{self.PATH_DELIM}{self.name}"
+
+    PATH_DELIM = "::"
