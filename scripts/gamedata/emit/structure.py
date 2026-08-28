@@ -74,7 +74,7 @@ class StructureEmitter():
 
         string = delim.join(buffer)
         if include_dir:
-            relpath = struct.path.replace("::", "/") + ".hpp"
+            relpath = "./" + struct.path.replace("::", "/").removeprefix("/") + ".hpp"
             header_file = Path(include_dir).absolute() / relpath
             header_file.parent.mkdir(exist_ok=True, parents=True)
             header_file.write_text(string)
