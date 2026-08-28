@@ -10,11 +10,11 @@ struct GameData::RecycleBoxData::_11115447318048549580::EjectNum : Tag::Structur
 };/* Tag::Structure GameData::RecycleBoxData::_11115447318048549580::EjectNum close */
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_11115447318048549580::EjectNum> : GameData::RecycleBoxData::_11115447318048549580::EjectNum {
-	Data::Member<SpObj_Beamos_Capsule_A_01> SpObj_Beamos_Capsule_A_01;
-	Data::Member<SpObj_Chaser_Capsule_A_01> SpObj_Chaser_Capsule_A_01;
-	Data::Member<SpObj_FlameThrower_Capsule_A_01> SpObj_FlameThrower_Capsule_A_01;
-	Data::Member<SpObj_SnowMachine_Capsule_A_01> SpObj_SnowMachine_Capsule_A_01;
-	Data::Member<SpObj_TimerBomb_Capsule_A_01> SpObj_TimerBomb_Capsule_A_01;
+	Member<SpObj_Beamos_Capsule_A_01> SpObj_Beamos_Capsule_A_01;
+	Member<SpObj_Chaser_Capsule_A_01> SpObj_Chaser_Capsule_A_01;
+	Member<SpObj_FlameThrower_Capsule_A_01> SpObj_FlameThrower_Capsule_A_01;
+	Member<SpObj_SnowMachine_Capsule_A_01> SpObj_SnowMachine_Capsule_A_01;
+	Member<SpObj_TimerBomb_Capsule_A_01> SpObj_TimerBomb_Capsule_A_01;
 	
 	explicit Structure(Sav& s) : 
 		SpObj_Beamos_Capsule_A_01 { s.get<struct SpObj_Beamos_Capsule_A_01>() },

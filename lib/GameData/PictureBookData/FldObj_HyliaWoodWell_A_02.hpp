@@ -9,7 +9,7 @@ struct GameData::PictureBookData::FldObj_HyliaWoodWell_A_02 : Tag::Structure {
 };/* Tag::Structure GameData::PictureBookData::FldObj_HyliaWoodWell_A_02 close */
 
 template <> struct Data::Structure<GameData::PictureBookData::FldObj_HyliaWoodWell_A_02> : GameData::PictureBookData::FldObj_HyliaWoodWell_A_02 {
-	Data::Enum<State> State;
+	Enum<State> State;
 	
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }

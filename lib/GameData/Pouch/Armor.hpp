@@ -11,7 +11,7 @@ struct GameData::Pouch::Armor : Tag::Structure {
 #include "Armor/EquipIndexes.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Armor> : GameData::Pouch::Armor {
-	Data::Member<IsValid> IsValid;
+	Member<IsValid> IsValid;
 	Structure<Content> Content;
 	Structure<EquipIndexes> EquipIndexes;
 	

@@ -8,9 +8,9 @@ struct GameData::LastWildHorse::Hair::SecondaryColor : Tag::Structure {
 };/* Tag::Structure GameData::LastWildHorse::Hair::SecondaryColor close */
 
 template <> struct Data::Structure<GameData::LastWildHorse::Hair::SecondaryColor> : GameData::LastWildHorse::Hair::SecondaryColor {
-	Data::Member<Blue> Blue;
-	Data::Member<Green> Green;
-	Data::Member<Red> Red;
+	Member<Blue> Blue;
+	Member<Green> Green;
+	Member<Red> Red;
 	
 	explicit Structure(Sav& s) : 
 		Blue { s.get<struct Blue>() },

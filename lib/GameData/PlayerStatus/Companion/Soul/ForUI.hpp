@@ -7,8 +7,8 @@ struct GameData::PlayerStatus::Companion::Soul::ForUI : Tag::Structure {
 };/* Tag::Structure GameData::PlayerStatus::Companion::Soul::ForUI close */
 
 template <> struct Data::Structure<GameData::PlayerStatus::Companion::Soul::ForUI> : GameData::PlayerStatus::Companion::Soul::ForUI {
-	Data::Member<RemainingMinute> RemainingMinute;
-	Data::Member<RemainingSecond> RemainingSecond;
+	Member<RemainingMinute> RemainingMinute;
+	Member<RemainingSecond> RemainingSecond;
 	
 	explicit Structure(Sav& s) : 
 		RemainingMinute { s.get<struct RemainingMinute>() },

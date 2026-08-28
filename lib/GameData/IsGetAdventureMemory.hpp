@@ -25,26 +25,26 @@ struct GameData::IsGetAdventureMemory : Tag::Structure {
 };/* Tag::Structure GameData::IsGetAdventureMemory close */
 
 template <> struct Data::Structure<GameData::IsGetAdventureMemory> : GameData::IsGetAdventureMemory {
-	Data::Member<Dm_BZ_0005_PreRender> Dm_BZ_0005_PreRender;
-	Data::Member<Dm_OT_0015_PreRender> Dm_OT_0015_PreRender;
-	Data::Member<Dm_SK_0003_PreRender> Dm_SK_0003_PreRender;
-	Data::Member<Dm_ZE_0004_PreRender> Dm_ZE_0004_PreRender;
-	Data::Member<Dm_ZE_0005_PreRender> Dm_ZE_0005_PreRender;
-	Data::Member<Dm_ZE_0006_PreRender> Dm_ZE_0006_PreRender;
-	Data::Member<Dm_ZE_0007_PreRender> Dm_ZE_0007_PreRender;
-	Data::Member<Dm_ZE_0008_PreRender> Dm_ZE_0008_PreRender;
-	Data::Member<Dm_ZE_0010_PreRender> Dm_ZE_0010_PreRender;
-	Data::Member<Dm_ZE_0011_PreRender> Dm_ZE_0011_PreRender;
-	Data::Member<Dm_ZN_0033_PreRender> Dm_ZN_0033_PreRender;
-	Data::Member<Dm_ZN_0039_PreRender> Dm_ZN_0039_PreRender;
-	Data::Member<DmT_OP_GanonWakeUp_PreRender_Memory> DmT_OP_GanonWakeUp_PreRender_Memory;
-	Data::Member<DmT_ZE_Birth_PreRender> DmT_ZE_Birth_PreRender;
-	Data::Member<DmT_ZE_LieServant_PreRender> DmT_ZE_LieServant_PreRender;
-	Data::Member<DmT_ZE_Meet_PreRender> DmT_ZE_Meet_PreRender;
-	Data::Member<DmT_ZE_Molduga_PreRender> DmT_ZE_Molduga_PreRender;
-	Data::Member<DmT_ZE_QueenDead_PreRender> DmT_ZE_QueenDead_PreRender;
-	Data::Member<IsNeedIcon> IsNeedIcon;
-	Data::Member<IsOpenList> IsOpenList;
+	Member<Dm_BZ_0005_PreRender> Dm_BZ_0005_PreRender;
+	Member<Dm_OT_0015_PreRender> Dm_OT_0015_PreRender;
+	Member<Dm_SK_0003_PreRender> Dm_SK_0003_PreRender;
+	Member<Dm_ZE_0004_PreRender> Dm_ZE_0004_PreRender;
+	Member<Dm_ZE_0005_PreRender> Dm_ZE_0005_PreRender;
+	Member<Dm_ZE_0006_PreRender> Dm_ZE_0006_PreRender;
+	Member<Dm_ZE_0007_PreRender> Dm_ZE_0007_PreRender;
+	Member<Dm_ZE_0008_PreRender> Dm_ZE_0008_PreRender;
+	Member<Dm_ZE_0010_PreRender> Dm_ZE_0010_PreRender;
+	Member<Dm_ZE_0011_PreRender> Dm_ZE_0011_PreRender;
+	Member<Dm_ZN_0033_PreRender> Dm_ZN_0033_PreRender;
+	Member<Dm_ZN_0039_PreRender> Dm_ZN_0039_PreRender;
+	Member<DmT_OP_GanonWakeUp_PreRender_Memory> DmT_OP_GanonWakeUp_PreRender_Memory;
+	Member<DmT_ZE_Birth_PreRender> DmT_ZE_Birth_PreRender;
+	Member<DmT_ZE_LieServant_PreRender> DmT_ZE_LieServant_PreRender;
+	Member<DmT_ZE_Meet_PreRender> DmT_ZE_Meet_PreRender;
+	Member<DmT_ZE_Molduga_PreRender> DmT_ZE_Molduga_PreRender;
+	Member<DmT_ZE_QueenDead_PreRender> DmT_ZE_QueenDead_PreRender;
+	Member<IsNeedIcon> IsNeedIcon;
+	Member<IsOpenList> IsOpenList;
 	
 	explicit Structure(Sav& s) : 
 		Dm_BZ_0005_PreRender { s.get<struct Dm_BZ_0005_PreRender>() },

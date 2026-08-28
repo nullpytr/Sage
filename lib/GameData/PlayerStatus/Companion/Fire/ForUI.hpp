@@ -7,8 +7,8 @@ struct GameData::PlayerStatus::Companion::Fire::ForUI : Tag::Structure {
 };/* Tag::Structure GameData::PlayerStatus::Companion::Fire::ForUI close */
 
 template <> struct Data::Structure<GameData::PlayerStatus::Companion::Fire::ForUI> : GameData::PlayerStatus::Companion::Fire::ForUI {
-	Data::Member<RemainingMinute> RemainingMinute;
-	Data::Member<RemainingSecond> RemainingSecond;
+	Member<RemainingMinute> RemainingMinute;
+	Member<RemainingSecond> RemainingSecond;
 	
 	explicit Structure(Sav& s) : 
 		RemainingMinute { s.get<struct RemainingMinute>() },

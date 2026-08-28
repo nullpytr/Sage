@@ -13,14 +13,14 @@ struct GameData::NpcServeFood : Tag::Structure {
 };/* Tag::Structure GameData::NpcServeFood close */
 
 template <> struct Data::Structure<GameData::NpcServeFood> : GameData::NpcServeFood {
-	Data::Member<IsRound> IsRound;
-	Data::Member<IsServedFood> IsServedFood;
-	Data::Member<CurIndex> CurIndex;
-	Data::Member<NextIndex> NextIndex;
-	Data::Member<Price> Price;
-	Data::Member<FoodName> FoodName;
-	Data::Member<FoodMaterialNames> FoodMaterialNames;
-	Data::Member<LotteryElapsedTime> LotteryElapsedTime;
+	Member<IsRound> IsRound;
+	Member<IsServedFood> IsServedFood;
+	Member<CurIndex> CurIndex;
+	Member<NextIndex> NextIndex;
+	Member<Price> Price;
+	Member<FoodName> FoodName;
+	Member<FoodMaterialNames> FoodMaterialNames;
+	Member<LotteryElapsedTime> LotteryElapsedTime;
 	
 	explicit Structure(Sav& s) : 
 		IsRound { s.get<struct IsRound>() },

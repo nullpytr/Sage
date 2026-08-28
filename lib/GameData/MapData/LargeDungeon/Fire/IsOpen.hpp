@@ -6,7 +6,7 @@ struct GameData::MapData::LargeDungeon::Fire::IsOpen : Tag::Structure {
 };/* Tag::Structure GameData::MapData::LargeDungeon::Fire::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Fire::IsOpen> : GameData::MapData::LargeDungeon::Fire::IsOpen {
-	Data::Member<Group000> Group000;
+	Member<Group000> Group000;
 	
 	explicit Structure(Sav& s) : 
 		Group000 { s.get<struct Group000>() }

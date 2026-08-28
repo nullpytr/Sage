@@ -16,10 +16,10 @@ struct GameData::Pouch::Weapon::Content : Tag::Structure {
 template <> struct Data::Structure<GameData::Pouch::Weapon::Content> : GameData::Pouch::Weapon::Content {
 	Structure<Effect> Effect;
 	Structure<Combined> Combined;
-	Data::Member<ExtraLife> ExtraLife;
-	Data::Member<Life> Life;
-	Data::Member<RecordExtraLife> RecordExtraLife;
-	Data::Member<Name> Name;
+	Member<ExtraLife> ExtraLife;
+	Member<Life> Life;
+	Member<RecordExtraLife> RecordExtraLife;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Effect { s },

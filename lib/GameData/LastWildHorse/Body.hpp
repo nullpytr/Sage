@@ -20,8 +20,8 @@ struct GameData::LastWildHorse::Body : Tag::Structure {
 #include "Body/SecondaryColor.hpp"
 
 template <> struct Data::Structure<GameData::LastWildHorse::Body> : GameData::LastWildHorse::Body {
-	Data::Enum<EyeColor> EyeColor;
-	Data::Enum<Pattern> Pattern;
+	Enum<EyeColor> EyeColor;
+	Enum<Pattern> Pattern;
 	Structure<NoseColor> NoseColor;
 	Structure<PrimaryColor> PrimaryColor;
 	Structure<SecondaryColor> SecondaryColor;

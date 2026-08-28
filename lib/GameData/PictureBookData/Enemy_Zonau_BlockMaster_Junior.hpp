@@ -9,7 +9,7 @@ struct GameData::PictureBookData::Enemy_Zonau_BlockMaster_Junior : Tag::Structur
 };/* Tag::Structure GameData::PictureBookData::Enemy_Zonau_BlockMaster_Junior close */
 
 template <> struct Data::Structure<GameData::PictureBookData::Enemy_Zonau_BlockMaster_Junior> : GameData::PictureBookData::Enemy_Zonau_BlockMaster_Junior {
-	Data::Enum<State> State;
+	Enum<State> State;
 	
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }

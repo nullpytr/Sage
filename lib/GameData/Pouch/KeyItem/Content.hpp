@@ -7,8 +7,8 @@ struct GameData::Pouch::KeyItem::Content : Tag::Structure {
 };/* Tag::Structure GameData::Pouch::KeyItem::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::KeyItem::Content> : GameData::Pouch::KeyItem::Content {
-	Data::Member<StockNum> StockNum;
-	Data::Member<Name> Name;
+	Member<StockNum> StockNum;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		StockNum { s.get<struct StockNum>() },

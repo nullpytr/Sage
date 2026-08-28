@@ -7,8 +7,8 @@ struct GameData::FigureInfo : Tag::Structure {
 };/* Tag::Structure GameData::FigureInfo close */
 
 template <> struct Data::Structure<GameData::FigureInfo> : GameData::FigureInfo {
-	Data::Member<Body> Body;
-	Data::Member<Header> Header;
+	Member<Body> Body;
+	Member<Header> Header;
 	
 	explicit Structure(Sav& s) : 
 		Body { s.get<struct Body>() },

@@ -8,9 +8,9 @@ struct GameData::DefeatedEnemyNum : Tag::Structure {
 };/* Tag::Structure GameData::DefeatedEnemyNum close */
 
 template <> struct Data::Structure<GameData::DefeatedEnemyNum> : GameData::DefeatedEnemyNum {
-	Data::Member<Enemy_CaveMaster_000> Enemy_CaveMaster_000;
-	Data::Member<Enemy_CaveMaster_Middle> Enemy_CaveMaster_Middle;
-	Data::Member<Enemy_CaveMaster_Senior> Enemy_CaveMaster_Senior;
+	Member<Enemy_CaveMaster_000> Enemy_CaveMaster_000;
+	Member<Enemy_CaveMaster_Middle> Enemy_CaveMaster_Middle;
+	Member<Enemy_CaveMaster_Senior> Enemy_CaveMaster_Senior;
 	
 	explicit Structure(Sav& s) : 
 		Enemy_CaveMaster_000 { s.get<struct Enemy_CaveMaster_000>() },

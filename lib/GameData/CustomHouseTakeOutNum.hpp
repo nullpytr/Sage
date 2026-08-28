@@ -23,24 +23,24 @@ struct GameData::CustomHouseTakeOutNum : Tag::Structure {
 };/* Tag::Structure GameData::CustomHouseTakeOutNum close */
 
 template <> struct Data::Structure<GameData::CustomHouseTakeOutNum> : GameData::CustomHouseTakeOutNum {
-	Data::Member<TypeA> TypeA;
-	Data::Member<TypeB> TypeB;
-	Data::Member<TypeC> TypeC;
-	Data::Member<TypeD> TypeD;
-	Data::Member<TypeE> TypeE;
-	Data::Member<TypeF> TypeF;
-	Data::Member<TypeG> TypeG;
-	Data::Member<TypeH> TypeH;
-	Data::Member<TypeI> TypeI;
-	Data::Member<TypeJ> TypeJ;
-	Data::Member<TypeK> TypeK;
-	Data::Member<TypeL> TypeL;
-	Data::Member<TypeM> TypeM;
-	Data::Member<TypeN> TypeN;
-	Data::Member<TypeO> TypeO;
-	Data::Member<TypeP> TypeP;
-	Data::Member<TypeQ> TypeQ;
-	Data::Member<TypeR> TypeR;
+	Member<TypeA> TypeA;
+	Member<TypeB> TypeB;
+	Member<TypeC> TypeC;
+	Member<TypeD> TypeD;
+	Member<TypeE> TypeE;
+	Member<TypeF> TypeF;
+	Member<TypeG> TypeG;
+	Member<TypeH> TypeH;
+	Member<TypeI> TypeI;
+	Member<TypeJ> TypeJ;
+	Member<TypeK> TypeK;
+	Member<TypeL> TypeL;
+	Member<TypeM> TypeM;
+	Member<TypeN> TypeN;
+	Member<TypeO> TypeO;
+	Member<TypeP> TypeP;
+	Member<TypeQ> TypeQ;
+	Member<TypeR> TypeR;
 	
 	explicit Structure(Sav& s) : 
 		TypeA { s.get<struct TypeA>() },

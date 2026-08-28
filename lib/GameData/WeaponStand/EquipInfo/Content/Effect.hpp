@@ -10,8 +10,8 @@ struct GameData::WeaponStand::EquipInfo::Content::Effect : Tag::Structure {
 };/* Tag::Structure GameData::WeaponStand::EquipInfo::Content::Effect close */
 
 template <> struct Data::Structure<GameData::WeaponStand::EquipInfo::Content::Effect> : GameData::WeaponStand::EquipInfo::Content::Effect {
-	Data::Enum<Type> Type;
-	Data::Member<Value> Value;
+	Enum<Type> Type;
+	Member<Value> Value;
 	
 	explicit Structure(Sav& s) : 
 		Type { s.get<struct Type>() },

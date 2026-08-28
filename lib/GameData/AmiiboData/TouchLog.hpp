@@ -24,16 +24,16 @@ struct GameData::AmiiboData::TouchLog : Tag::Structure {
 };/* Tag::Structure GameData::AmiiboData::TouchLog close */
 
 template <> struct Data::Structure<GameData::AmiiboData::TouchLog> : GameData::AmiiboData::TouchLog {
-	Data::Enum<CharacterBaseID> CharacterBaseID;
-	Data::Enum<CharacterID> CharacterID;
-	Data::Enum<NumberingID> NumberingID;
-	Data::Member<Count> Count;
-	Data::Member<Day> Day;
-	Data::Member<Hour> Hour;
-	Data::Member<Minute> Minute;
-	Data::Member<Month> Month;
-	Data::Member<Year> Year;
-	Data::Member<UIDHash> UIDHash;
+	Enum<CharacterBaseID> CharacterBaseID;
+	Enum<CharacterID> CharacterID;
+	Enum<NumberingID> NumberingID;
+	Member<Count> Count;
+	Member<Day> Day;
+	Member<Hour> Hour;
+	Member<Minute> Minute;
+	Member<Month> Month;
+	Member<Year> Year;
+	Member<UIDHash> UIDHash;
 	
 	explicit Structure(Sav& s) : 
 		CharacterBaseID { s.get<struct CharacterBaseID>() },

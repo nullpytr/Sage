@@ -14,15 +14,15 @@ struct GameData::OwnedCustomizableHorseTack_Saddle : Tag::Structure {
 };/* Tag::Structure GameData::OwnedCustomizableHorseTack_Saddle close */
 
 template <> struct Data::Structure<GameData::OwnedCustomizableHorseTack_Saddle> : GameData::OwnedCustomizableHorseTack_Saddle {
-	Data::Member<GameRomHorseSaddle_00> GameRomHorseSaddle_00;
-	Data::Member<GameRomHorseSaddle_01> GameRomHorseSaddle_01;
-	Data::Member<GameRomHorseSaddle_02> GameRomHorseSaddle_02;
-	Data::Member<GameRomHorseSaddle_03> GameRomHorseSaddle_03;
-	Data::Member<GameRomHorseSaddle_04> GameRomHorseSaddle_04;
-	Data::Member<GameRomHorseSaddle_05> GameRomHorseSaddle_05;
-	Data::Member<GameRomHorseSaddle_07> GameRomHorseSaddle_07;
-	Data::Member<GameRomHorseSaddle_07_ExternalCoupler> GameRomHorseSaddle_07_ExternalCoupler;
-	Data::Member<GameRomHorseSaddle_07_WithWagon> GameRomHorseSaddle_07_WithWagon;
+	Member<GameRomHorseSaddle_00> GameRomHorseSaddle_00;
+	Member<GameRomHorseSaddle_01> GameRomHorseSaddle_01;
+	Member<GameRomHorseSaddle_02> GameRomHorseSaddle_02;
+	Member<GameRomHorseSaddle_03> GameRomHorseSaddle_03;
+	Member<GameRomHorseSaddle_04> GameRomHorseSaddle_04;
+	Member<GameRomHorseSaddle_05> GameRomHorseSaddle_05;
+	Member<GameRomHorseSaddle_07> GameRomHorseSaddle_07;
+	Member<GameRomHorseSaddle_07_ExternalCoupler> GameRomHorseSaddle_07_ExternalCoupler;
+	Member<GameRomHorseSaddle_07_WithWagon> GameRomHorseSaddle_07_WithWagon;
 	
 	explicit Structure(Sav& s) : 
 		GameRomHorseSaddle_00 { s.get<struct GameRomHorseSaddle_00>() },

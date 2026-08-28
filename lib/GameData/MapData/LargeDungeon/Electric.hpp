@@ -9,7 +9,7 @@ struct GameData::MapData::LargeDungeon::Electric : Tag::Structure {
 #include "Electric/IsOpen.hpp"
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric> : GameData::MapData::LargeDungeon::Electric {
-	Data::Member<IsGetMap> IsGetMap;
+	Member<IsGetMap> IsGetMap;
 	Structure<IsOpen> IsOpen;
 	
 	explicit Structure(Sav& s) : 

@@ -22,18 +22,18 @@ struct GameData::PlayerStatus::Companion::Soul : Tag::Structure {
 #include "Soul/ForUI.hpp"
 
 template <> struct Data::Structure<GameData::PlayerStatus::Companion::Soul> : GameData::PlayerStatus::Companion::Soul {
-	Data::Member<IsFollowMode> IsFollowMode;
-	Data::Member<IsGet> IsGet;
-	Data::Member<IsGoThroughAirWall> IsGoThroughAirWall;
-	Data::Member<IsGoThroughAirWallPrepare> IsGoThroughAirWallPrepare;
-	Data::Member<IsLeaveFollower> IsLeaveFollower;
-	Data::Member<IsPlayedSoulSageFirstAppearanceEvent> IsPlayedSoulSageFirstAppearanceEvent;
-	Data::Member<IsSageDynamicGenerate> IsSageDynamicGenerate;
-	Data::Member<IsSummon> IsSummon;
-	Data::Enum<JoiningCondition> JoiningCondition;
-	Data::Member<RemainingEnergy> RemainingEnergy;
+	Member<IsFollowMode> IsFollowMode;
+	Member<IsGet> IsGet;
+	Member<IsGoThroughAirWall> IsGoThroughAirWall;
+	Member<IsGoThroughAirWallPrepare> IsGoThroughAirWallPrepare;
+	Member<IsLeaveFollower> IsLeaveFollower;
+	Member<IsPlayedSoulSageFirstAppearanceEvent> IsPlayedSoulSageFirstAppearanceEvent;
+	Member<IsSageDynamicGenerate> IsSageDynamicGenerate;
+	Member<IsSummon> IsSummon;
+	Enum<JoiningCondition> JoiningCondition;
+	Member<RemainingEnergy> RemainingEnergy;
 	Structure<ForUI> ForUI;
-	Data::Member<CurrentPos> CurrentPos;
+	Member<CurrentPos> CurrentPos;
 	
 	explicit Structure(Sav& s) : 
 		IsFollowMode { s.get<struct IsFollowMode>() },

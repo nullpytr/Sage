@@ -9,10 +9,10 @@ struct GameData::AlbumData::Photograph : Tag::Structure {
 };/* Tag::Structure GameData::AlbumData::Photograph close */
 
 template <> struct Data::Structure<GameData::AlbumData::Photograph> : GameData::AlbumData::Photograph {
-	Data::Member<FigureHash> FigureHash;
-	Data::Member<Index> Index;
-	Data::Member<ActorName> ActorName;
-	Data::Member<Location> Location;
+	Member<FigureHash> FigureHash;
+	Member<Index> Index;
+	Member<ActorName> ActorName;
+	Member<Location> Location;
 	
 	explicit Structure(Sav& s) : 
 		FigureHash { s.get<struct FigureHash>() },

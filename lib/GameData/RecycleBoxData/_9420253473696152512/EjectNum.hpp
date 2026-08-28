@@ -9,10 +9,10 @@ struct GameData::RecycleBoxData::_9420253473696152512::EjectNum : Tag::Structure
 };/* Tag::Structure GameData::RecycleBoxData::_9420253473696152512::EjectNum close */
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_9420253473696152512::EjectNum> : GameData::RecycleBoxData::_9420253473696152512::EjectNum {
-	Data::Member<SpObj_Beamos_Capsule_A_01> SpObj_Beamos_Capsule_A_01;
-	Data::Member<SpObj_ControlStick_Capsule_A_01> SpObj_ControlStick_Capsule_A_01;
-	Data::Member<SpObj_LiftableWaterPump_Capsule_A_01> SpObj_LiftableWaterPump_Capsule_A_01;
-	Data::Member<SpObj_SpringPiston_Capsule_A_01> SpObj_SpringPiston_Capsule_A_01;
+	Member<SpObj_Beamos_Capsule_A_01> SpObj_Beamos_Capsule_A_01;
+	Member<SpObj_ControlStick_Capsule_A_01> SpObj_ControlStick_Capsule_A_01;
+	Member<SpObj_LiftableWaterPump_Capsule_A_01> SpObj_LiftableWaterPump_Capsule_A_01;
+	Member<SpObj_SpringPiston_Capsule_A_01> SpObj_SpringPiston_Capsule_A_01;
 	
 	explicit Structure(Sav& s) : 
 		SpObj_Beamos_Capsule_A_01 { s.get<struct SpObj_Beamos_Capsule_A_01>() },

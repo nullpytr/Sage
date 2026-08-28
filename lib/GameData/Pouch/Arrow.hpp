@@ -12,10 +12,10 @@ struct GameData::Pouch::Arrow : Tag::Structure {
 #include "Arrow/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Arrow> : GameData::Pouch::Arrow {
-	Data::Member<IsValid> IsValid;
+	Member<IsValid> IsValid;
 	Structure<Combined> Combined;
 	Structure<Content> Content;
-	Data::Member<EquipIndex> EquipIndex;
+	Member<EquipIndex> EquipIndex;
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },

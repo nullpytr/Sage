@@ -8,9 +8,9 @@ struct GameData::Pouch::SpecialParts::Content : Tag::Structure {
 };/* Tag::Structure GameData::Pouch::SpecialParts::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::SpecialParts::Content> : GameData::Pouch::SpecialParts::Content {
-	Data::Member<StockNum> StockNum;
-	Data::Member<UseOrder> UseOrder;
-	Data::Member<Name> Name;
+	Member<StockNum> StockNum;
+	Member<UseOrder> UseOrder;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		StockNum { s.get<struct StockNum>() },

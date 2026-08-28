@@ -13,14 +13,14 @@ struct GameData::MapData::LargeDungeon::Wind::IsOpen : Tag::Structure {
 };/* Tag::Structure GameData::MapData::LargeDungeon::Wind::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind::IsOpen> : GameData::MapData::LargeDungeon::Wind::IsOpen {
-	Data::Member<Group002> Group002;
-	Data::Member<Group003> Group003;
-	Data::Member<Group004> Group004;
-	Data::Member<Group005> Group005;
-	Data::Member<Group006> Group006;
-	Data::Member<Group007> Group007;
-	Data::Member<Group008> Group008;
-	Data::Member<Group009> Group009;
+	Member<Group002> Group002;
+	Member<Group003> Group003;
+	Member<Group004> Group004;
+	Member<Group005> Group005;
+	Member<Group006> Group006;
+	Member<Group007> Group007;
+	Member<Group008> Group008;
+	Member<Group009> Group009;
 	
 	explicit Structure(Sav& s) : 
 		Group002 { s.get<struct Group002>() },

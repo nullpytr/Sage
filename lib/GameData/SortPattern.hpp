@@ -53,18 +53,18 @@ struct GameData::SortPattern : Tag::Structure {
 };/* Tag::Structure GameData::SortPattern close */
 
 template <> struct Data::Structure<GameData::SortPattern> : GameData::SortPattern {
-	Data::Enum<Pouch_Armor> Pouch_Armor;
-	Data::Enum<Pouch_Bow> Pouch_Bow;
-	Data::Enum<Pouch_Food> Pouch_Food;
-	Data::Enum<Pouch_KeyItem> Pouch_KeyItem;
-	Data::Enum<Pouch_Material> Pouch_Material;
-	Data::Enum<Pouch_Shield> Pouch_Shield;
-	Data::Enum<Pouch_SpecialParts> Pouch_SpecialParts;
-	Data::Enum<Pouch_Weapon> Pouch_Weapon;
-	Data::Enum<ShortCut_Bow> ShortCut_Bow;
-	Data::Enum<ShortCut_Material> ShortCut_Material;
-	Data::Enum<ShortCut_Shield> ShortCut_Shield;
-	Data::Enum<ShortCut_Weapon> ShortCut_Weapon;
+	Enum<Pouch_Armor> Pouch_Armor;
+	Enum<Pouch_Bow> Pouch_Bow;
+	Enum<Pouch_Food> Pouch_Food;
+	Enum<Pouch_KeyItem> Pouch_KeyItem;
+	Enum<Pouch_Material> Pouch_Material;
+	Enum<Pouch_Shield> Pouch_Shield;
+	Enum<Pouch_SpecialParts> Pouch_SpecialParts;
+	Enum<Pouch_Weapon> Pouch_Weapon;
+	Enum<ShortCut_Bow> ShortCut_Bow;
+	Enum<ShortCut_Material> ShortCut_Material;
+	Enum<ShortCut_Shield> ShortCut_Shield;
+	Enum<ShortCut_Weapon> ShortCut_Weapon;
 	
 	explicit Structure(Sav& s) : 
 		Pouch_Armor { s.get<struct Pouch_Armor>() },

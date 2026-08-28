@@ -9,10 +9,10 @@ struct GameData::Pouch::Material::Content : Tag::Structure {
 };/* Tag::Structure GameData::Pouch::Material::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::Material::Content> : GameData::Pouch::Material::Content {
-	Data::Member<GetOrder> GetOrder;
-	Data::Member<StockNum> StockNum;
-	Data::Member<UseOrder> UseOrder;
-	Data::Member<Name> Name;
+	Member<GetOrder> GetOrder;
+	Member<StockNum> StockNum;
+	Member<UseOrder> UseOrder;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		GetOrder { s.get<struct GetOrder>() },

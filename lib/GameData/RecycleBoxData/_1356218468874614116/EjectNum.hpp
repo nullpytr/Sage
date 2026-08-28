@@ -10,11 +10,11 @@ struct GameData::RecycleBoxData::_1356218468874614116::EjectNum : Tag::Structure
 };/* Tag::Structure GameData::RecycleBoxData::_1356218468874614116::EjectNum close */
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_1356218468874614116::EjectNum> : GameData::RecycleBoxData::_1356218468874614116::EjectNum {
-	Data::Member<SpObj_BalloonEnvelope_Capsule_A_01> SpObj_BalloonEnvelope_Capsule_A_01;
-	Data::Member<SpObj_Cart_Capsule_A_01> SpObj_Cart_Capsule_A_01;
-	Data::Member<SpObj_GolemHead_Capsule_A_01> SpObj_GolemHead_Capsule_A_01;
-	Data::Member<SpObj_LiftableWaterPump_Capsule_A_01> SpObj_LiftableWaterPump_Capsule_A_01;
-	Data::Member<SpObj_TiltingDoll_Capsule_A_01> SpObj_TiltingDoll_Capsule_A_01;
+	Member<SpObj_BalloonEnvelope_Capsule_A_01> SpObj_BalloonEnvelope_Capsule_A_01;
+	Member<SpObj_Cart_Capsule_A_01> SpObj_Cart_Capsule_A_01;
+	Member<SpObj_GolemHead_Capsule_A_01> SpObj_GolemHead_Capsule_A_01;
+	Member<SpObj_LiftableWaterPump_Capsule_A_01> SpObj_LiftableWaterPump_Capsule_A_01;
+	Member<SpObj_TiltingDoll_Capsule_A_01> SpObj_TiltingDoll_Capsule_A_01;
 	
 	explicit Structure(Sav& s) : 
 		SpObj_BalloonEnvelope_Capsule_A_01 { s.get<struct SpObj_BalloonEnvelope_Capsule_A_01>() },

@@ -8,9 +8,9 @@ struct GameData::Pouch::Armor::EquipIndexes : Tag::Structure {
 };/* Tag::Structure GameData::Pouch::Armor::EquipIndexes close */
 
 template <> struct Data::Structure<GameData::Pouch::Armor::EquipIndexes> : GameData::Pouch::Armor::EquipIndexes {
-	Data::Member<Bottom> Bottom;
-	Data::Member<Head> Head;
-	Data::Member<Upper> Upper;
+	Member<Bottom> Bottom;
+	Member<Head> Head;
+	Member<Upper> Upper;
 	
 	explicit Structure(Sav& s) : 
 		Bottom { s.get<struct Bottom>() },

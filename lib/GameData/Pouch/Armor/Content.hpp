@@ -10,8 +10,8 @@ struct GameData::Pouch::Armor::Content : Tag::Structure {
 };/* Tag::Structure GameData::Pouch::Armor::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::Armor::Content> : GameData::Pouch::Armor::Content {
-	Data::Enum<ColorVariation> ColorVariation;
-	Data::Member<Name> Name;
+	Enum<ColorVariation> ColorVariation;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		ColorVariation { s.get<struct ColorVariation>() },

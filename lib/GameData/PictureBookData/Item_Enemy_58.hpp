@@ -9,7 +9,7 @@ struct GameData::PictureBookData::Item_Enemy_58 : Tag::Structure {
 };/* Tag::Structure GameData::PictureBookData::Item_Enemy_58 close */
 
 template <> struct Data::Structure<GameData::PictureBookData::Item_Enemy_58> : GameData::PictureBookData::Item_Enemy_58 {
-	Data::Enum<State> State;
+	Enum<State> State;
 	
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }

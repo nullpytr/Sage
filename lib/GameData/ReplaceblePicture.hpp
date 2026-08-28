@@ -24,25 +24,25 @@ struct GameData::ReplaceblePicture : Tag::Structure {
 };/* Tag::Structure GameData::ReplaceblePicture close */
 
 template <> struct Data::Structure<GameData::ReplaceblePicture> : GameData::ReplaceblePicture {
-	Data::Member<DeathMountainHatago> DeathMountainHatago;
-	Data::Member<EastHatago> EastHatago;
-	Data::Member<ForestHatago> ForestHatago;
-	Data::Member<GerudoHatago_1> GerudoHatago_1;
-	Data::Member<GerudoHatago_2> GerudoHatago_2;
-	Data::Member<HeightHatago> HeightHatago;
-	Data::Member<HutagoHatago> HutagoHatago;
-	Data::Member<HyruleDepthHatago> HyruleDepthHatago;
-	Data::Member<LakesideHatago> LakesideHatago;
-	Data::Member<LinkHousePicture_0> LinkHousePicture_0;
-	Data::Member<LinkHousePicture_1> LinkHousePicture_1;
-	Data::Member<LinkHousePicture_2> LinkHousePicture_2;
-	Data::Member<LinkHousePicture_3> LinkHousePicture_3;
-	Data::Member<NewHyruleWestHatago> NewHyruleWestHatago;
-	Data::Member<NorthHatelHatago> NorthHatelHatago;
-	Data::Member<RiverSideHatago> RiverSideHatago;
-	Data::Member<SnowfieldHatago> SnowfieldHatago;
-	Data::Member<SouthHatago> SouthHatago;
-	Data::Member<TabantaBridgeHatago> TabantaBridgeHatago;
+	Member<DeathMountainHatago> DeathMountainHatago;
+	Member<EastHatago> EastHatago;
+	Member<ForestHatago> ForestHatago;
+	Member<GerudoHatago_1> GerudoHatago_1;
+	Member<GerudoHatago_2> GerudoHatago_2;
+	Member<HeightHatago> HeightHatago;
+	Member<HutagoHatago> HutagoHatago;
+	Member<HyruleDepthHatago> HyruleDepthHatago;
+	Member<LakesideHatago> LakesideHatago;
+	Member<LinkHousePicture_0> LinkHousePicture_0;
+	Member<LinkHousePicture_1> LinkHousePicture_1;
+	Member<LinkHousePicture_2> LinkHousePicture_2;
+	Member<LinkHousePicture_3> LinkHousePicture_3;
+	Member<NewHyruleWestHatago> NewHyruleWestHatago;
+	Member<NorthHatelHatago> NorthHatelHatago;
+	Member<RiverSideHatago> RiverSideHatago;
+	Member<SnowfieldHatago> SnowfieldHatago;
+	Member<SouthHatago> SouthHatago;
+	Member<TabantaBridgeHatago> TabantaBridgeHatago;
 	
 	explicit Structure(Sav& s) : 
 		DeathMountainHatago { s.get<struct DeathMountainHatago>() },

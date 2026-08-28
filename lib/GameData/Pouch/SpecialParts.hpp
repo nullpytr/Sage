@@ -10,9 +10,9 @@ struct GameData::Pouch::SpecialParts : Tag::Structure {
 #include "SpecialParts/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::SpecialParts> : GameData::Pouch::SpecialParts {
-	Data::Member<IsValid> IsValid;
+	Member<IsValid> IsValid;
 	Structure<Content> Content;
-	Data::Member<EquipIndex> EquipIndex;
+	Member<EquipIndex> EquipIndex;
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },

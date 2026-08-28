@@ -9,7 +9,7 @@ struct GameData::PictureBookData::Enemy_DungeonBoss_Goron : Tag::Structure {
 };/* Tag::Structure GameData::PictureBookData::Enemy_DungeonBoss_Goron close */
 
 template <> struct Data::Structure<GameData::PictureBookData::Enemy_DungeonBoss_Goron> : GameData::PictureBookData::Enemy_DungeonBoss_Goron {
-	Data::Enum<State> State;
+	Enum<State> State;
 	
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }

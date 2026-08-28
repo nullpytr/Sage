@@ -6,7 +6,7 @@ struct GameData::Pouch::SpecialPower::Content : Tag::Structure {
 };/* Tag::Structure GameData::Pouch::SpecialPower::Content close */
 
 template <> struct Data::Structure<GameData::Pouch::SpecialPower::Content> : GameData::Pouch::SpecialPower::Content {
-	Data::Member<Name> Name;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Name { s.get<struct Name>() }

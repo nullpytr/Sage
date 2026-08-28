@@ -19,12 +19,12 @@ struct GameData::MapData : Tag::Structure {
 
 template <> struct Data::Structure<GameData::MapData> : GameData::MapData {
 	Structure<IconData> IconData;
-	Data::Member<IsGerudoIconEnable> IsGerudoIconEnable;
-	Data::Member<IsOpenFootprintMode> IsOpenFootprintMode;
-	Data::Member<IsOpenGround> IsOpenGround;
-	Data::Member<IsOpenUnderGround> IsOpenUnderGround;
+	Member<IsGerudoIconEnable> IsGerudoIconEnable;
+	Member<IsOpenFootprintMode> IsOpenFootprintMode;
+	Member<IsOpenGround> IsOpenGround;
+	Member<IsOpenUnderGround> IsOpenUnderGround;
 	Structure<LargeDungeon> LargeDungeon;
-	Data::Enum<CurrentLayer> CurrentLayer;
+	Enum<CurrentLayer> CurrentLayer;
 	
 	explicit Structure(Sav& s) : 
 		IconData { s },

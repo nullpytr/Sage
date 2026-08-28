@@ -9,10 +9,10 @@ struct GameData::RecycleBoxData::_18210954504481072128::EjectNum : Tag::Structur
 };/* Tag::Structure GameData::RecycleBoxData::_18210954504481072128::EjectNum close */
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_18210954504481072128::EjectNum> : GameData::RecycleBoxData::_18210954504481072128::EjectNum {
-	Data::Member<SpObj_BalloonEnvelope_Capsule_A_01> SpObj_BalloonEnvelope_Capsule_A_01;
-	Data::Member<SpObj_FastWheel_Capsule_B_01> SpObj_FastWheel_Capsule_B_01;
-	Data::Member<SpObj_TiltingDoll_Capsule_A_01> SpObj_TiltingDoll_Capsule_A_01;
-	Data::Member<SpObj_WindGenerator_Capsule_A_01> SpObj_WindGenerator_Capsule_A_01;
+	Member<SpObj_BalloonEnvelope_Capsule_A_01> SpObj_BalloonEnvelope_Capsule_A_01;
+	Member<SpObj_FastWheel_Capsule_B_01> SpObj_FastWheel_Capsule_B_01;
+	Member<SpObj_TiltingDoll_Capsule_A_01> SpObj_TiltingDoll_Capsule_A_01;
+	Member<SpObj_WindGenerator_Capsule_A_01> SpObj_WindGenerator_Capsule_A_01;
 	
 	explicit Structure(Sav& s) : 
 		SpObj_BalloonEnvelope_Capsule_A_01 { s.get<struct SpObj_BalloonEnvelope_Capsule_A_01>() },

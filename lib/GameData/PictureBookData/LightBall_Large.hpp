@@ -9,7 +9,7 @@ struct GameData::PictureBookData::LightBall_Large : Tag::Structure {
 };/* Tag::Structure GameData::PictureBookData::LightBall_Large close */
 
 template <> struct Data::Structure<GameData::PictureBookData::LightBall_Large> : GameData::PictureBookData::LightBall_Large {
-	Data::Enum<State> State;
+	Enum<State> State;
 	
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }

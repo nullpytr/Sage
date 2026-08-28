@@ -15,13 +15,13 @@ struct GameData::CustomHouse::HouseUnitInfo : Tag::Structure {
 };/* Tag::Structure GameData::CustomHouse::HouseUnitInfo close */
 
 template <> struct Data::Structure<GameData::CustomHouse::HouseUnitInfo> : GameData::CustomHouse::HouseUnitInfo {
-	Data::Member<IsUsed> IsUsed;
-	Data::Enum<HouseUnitType> HouseUnitType;
-	Data::Member<HouseUnitSpecificID> HouseUnitSpecificID;
-	Data::Member<UnitPos> UnitPos;
-	Data::Member<UnitRotX> UnitRotX;
-	Data::Member<UnitRotY> UnitRotY;
-	Data::Member<UnitRotZ> UnitRotZ;
+	Member<IsUsed> IsUsed;
+	Enum<HouseUnitType> HouseUnitType;
+	Member<HouseUnitSpecificID> HouseUnitSpecificID;
+	Member<UnitPos> UnitPos;
+	Member<UnitRotX> UnitRotX;
+	Member<UnitRotY> UnitRotY;
+	Member<UnitRotZ> UnitRotZ;
 	
 	explicit Structure(Sav& s) : 
 		IsUsed { s.get<struct IsUsed>() },

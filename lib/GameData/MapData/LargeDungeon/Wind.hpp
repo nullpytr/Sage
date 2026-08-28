@@ -9,7 +9,7 @@ struct GameData::MapData::LargeDungeon::Wind : Tag::Structure {
 #include "Wind/IsOpen.hpp"
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind> : GameData::MapData::LargeDungeon::Wind {
-	Data::Member<IsGetMap> IsGetMap;
+	Member<IsGetMap> IsGetMap;
 	Structure<IsOpen> IsOpen;
 	
 	explicit Structure(Sav& s) : 

@@ -12,11 +12,11 @@ struct GameData::Pouch::Bow : Tag::Structure {
 #include "Bow/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Bow> : GameData::Pouch::Bow {
-	Data::Member<IsEnableShortcut> IsEnableShortcut;
-	Data::Member<IsValid> IsValid;
+	Member<IsEnableShortcut> IsEnableShortcut;
+	Member<IsValid> IsValid;
 	Structure<Content> Content;
-	Data::Member<EquipIndex> EquipIndex;
-	Data::Member<ValidNum> ValidNum;
+	Member<EquipIndex> EquipIndex;
+	Member<ValidNum> ValidNum;
 	
 	explicit Structure(Sav& s) : 
 		IsEnableShortcut { s.get<struct IsEnableShortcut>() },

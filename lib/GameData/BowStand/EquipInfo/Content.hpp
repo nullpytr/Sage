@@ -11,8 +11,8 @@ struct GameData::BowStand::EquipInfo::Content : Tag::Structure {
 
 template <> struct Data::Structure<GameData::BowStand::EquipInfo::Content> : GameData::BowStand::EquipInfo::Content {
 	Structure<Effect> Effect;
-	Data::Member<Life> Life;
-	Data::Member<Name> Name;
+	Member<Life> Life;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Effect { s },

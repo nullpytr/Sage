@@ -9,10 +9,10 @@ struct GameData::RecycleBoxData::_16384479221673125997::EjectNum : Tag::Structur
 };/* Tag::Structure GameData::RecycleBoxData::_16384479221673125997::EjectNum close */
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_16384479221673125997::EjectNum> : GameData::RecycleBoxData::_16384479221673125997::EjectNum {
-	Data::Member<SpObj_Chaser_Capsule_A_01> SpObj_Chaser_Capsule_A_01;
-	Data::Member<SpObj_ControlStick_Capsule_A_01> SpObj_ControlStick_Capsule_A_01;
-	Data::Member<SpObj_ElectricBoxGenerator_Capsule_A_01> SpObj_ElectricBoxGenerator_Capsule_A_01;
-	Data::Member<SpObj_FlashLight_Capsule_A_01> SpObj_FlashLight_Capsule_A_01;
+	Member<SpObj_Chaser_Capsule_A_01> SpObj_Chaser_Capsule_A_01;
+	Member<SpObj_ControlStick_Capsule_A_01> SpObj_ControlStick_Capsule_A_01;
+	Member<SpObj_ElectricBoxGenerator_Capsule_A_01> SpObj_ElectricBoxGenerator_Capsule_A_01;
+	Member<SpObj_FlashLight_Capsule_A_01> SpObj_FlashLight_Capsule_A_01;
 	
 	explicit Structure(Sav& s) : 
 		SpObj_Chaser_Capsule_A_01 { s.get<struct SpObj_Chaser_Capsule_A_01>() },

@@ -8,9 +8,9 @@ struct GameData::RaumiGolemAttachment::Tool : Tag::Structure {
 };/* Tag::Structure GameData::RaumiGolemAttachment::Tool close */
 
 template <> struct Data::Structure<GameData::RaumiGolemAttachment::Tool> : GameData::RaumiGolemAttachment::Tool {
-	Data::Member<Life> Life;
-	Data::Member<RaumiControlLife> RaumiControlLife;
-	Data::Member<Name> Name;
+	Member<Life> Life;
+	Member<RaumiControlLife> RaumiControlLife;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Life { s.get<struct Life>() },

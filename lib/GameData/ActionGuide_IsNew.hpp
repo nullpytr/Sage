@@ -14,15 +14,15 @@ struct GameData::ActionGuide_IsNew : Tag::Structure {
 };/* Tag::Structure GameData::ActionGuide_IsNew close */
 
 template <> struct Data::Structure<GameData::ActionGuide_IsNew> : GameData::ActionGuide_IsNew {
-	Data::Member<Backflip> Backflip;
-	Data::Member<ChargrAttack> ChargrAttack;
-	Data::Member<JumpSlash> JumpSlash;
-	Data::Member<JustGuard> JustGuard;
-	Data::Member<ShieldSurfing> ShieldSurfing;
-	Data::Member<SideJump> SideJump;
-	Data::Member<ThrowMaterial> ThrowMaterial;
-	Data::Member<UseAmiibo> UseAmiibo;
-	Data::Member<UseCameraPointer> UseCameraPointer;
+	Member<Backflip> Backflip;
+	Member<ChargrAttack> ChargrAttack;
+	Member<JumpSlash> JumpSlash;
+	Member<JustGuard> JustGuard;
+	Member<ShieldSurfing> ShieldSurfing;
+	Member<SideJump> SideJump;
+	Member<ThrowMaterial> ThrowMaterial;
+	Member<UseAmiibo> UseAmiibo;
+	Member<UseCameraPointer> UseCameraPointer;
 	
 	explicit Structure(Sav& s) : 
 		Backflip { s.get<struct Backflip>() },

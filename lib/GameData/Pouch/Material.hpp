@@ -11,10 +11,10 @@ struct GameData::Pouch::Material : Tag::Structure {
 #include "Material/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Material> : GameData::Pouch::Material {
-	Data::Member<IsEnableShortcut> IsEnableShortcut;
-	Data::Member<IsValid> IsValid;
+	Member<IsEnableShortcut> IsEnableShortcut;
+	Member<IsValid> IsValid;
 	Structure<Content> Content;
-	Data::Member<EquipIndex> EquipIndex;
+	Member<EquipIndex> EquipIndex;
 	
 	explicit Structure(Sav& s) : 
 		IsEnableShortcut { s.get<struct IsEnableShortcut>() },

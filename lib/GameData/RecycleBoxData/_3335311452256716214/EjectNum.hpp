@@ -9,10 +9,10 @@ struct GameData::RecycleBoxData::_3335311452256716214::EjectNum : Tag::Structure
 };/* Tag::Structure GameData::RecycleBoxData::_3335311452256716214::EjectNum close */
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_3335311452256716214::EjectNum> : GameData::RecycleBoxData::_3335311452256716214::EjectNum {
-	Data::Member<SpObj_Cannon_Capsule_A_01> SpObj_Cannon_Capsule_A_01;
-	Data::Member<SpObj_ControlStick_Capsule_A_01> SpObj_ControlStick_Capsule_A_01;
-	Data::Member<SpObj_FastWheel_Capsule_A_01> SpObj_FastWheel_Capsule_A_01;
-	Data::Member<SpObj_FlashLight_Capsule_A_01> SpObj_FlashLight_Capsule_A_01;
+	Member<SpObj_Cannon_Capsule_A_01> SpObj_Cannon_Capsule_A_01;
+	Member<SpObj_ControlStick_Capsule_A_01> SpObj_ControlStick_Capsule_A_01;
+	Member<SpObj_FastWheel_Capsule_A_01> SpObj_FastWheel_Capsule_A_01;
+	Member<SpObj_FlashLight_Capsule_A_01> SpObj_FlashLight_Capsule_A_01;
 	
 	explicit Structure(Sav& s) : 
 		SpObj_Cannon_Capsule_A_01 { s.get<struct SpObj_Cannon_Capsule_A_01>() },

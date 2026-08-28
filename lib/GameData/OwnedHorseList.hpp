@@ -35,23 +35,23 @@ struct GameData::OwnedHorseList : Tag::Structure {
 #include "OwnedHorseList/Hair.hpp"
 
 template <> struct Data::Structure<GameData::OwnedHorseList> : GameData::OwnedHorseList {
-	Data::Member<Name> Name;
-	Data::Member<UidHash> UidHash;
-	Data::Member<ActorName> ActorName;
-	Data::Member<ChargeNum> ChargeNum;
-	Data::Member<ColorType> ColorType;
-	Data::Member<FootType> FootType;
-	Data::Member<HorsePower> HorsePower;
-	Data::Member<HorseType> HorseType;
-	Data::Member<RoomID> RoomID;
-	Data::Member<Speed> Speed;
-	Data::Member<Toughness> Toughness;
-	Data::Member<Familiarity> Familiarity;
+	Member<Name> Name;
+	Member<UidHash> UidHash;
+	Member<ActorName> ActorName;
+	Member<ChargeNum> ChargeNum;
+	Member<ColorType> ColorType;
+	Member<FootType> FootType;
+	Member<HorsePower> HorsePower;
+	Member<HorseType> HorseType;
+	Member<RoomID> RoomID;
+	Member<Speed> Speed;
+	Member<Toughness> Toughness;
+	Member<Familiarity> Familiarity;
 	Structure<Body> Body;
-	Data::Enum<Mane> Mane;
-	Data::Enum<Rein> Rein;
-	Data::Enum<Saddle> Saddle;
-	Data::Member<IsFamiliarityChecked> IsFamiliarityChecked;
+	Enum<Mane> Mane;
+	Enum<Rein> Rein;
+	Enum<Saddle> Saddle;
+	Member<IsFamiliarityChecked> IsFamiliarityChecked;
 	Structure<Hair> Hair;
 	
 	explicit Structure(Sav& s) : 

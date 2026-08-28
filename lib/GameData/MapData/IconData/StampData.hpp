@@ -14,9 +14,9 @@ struct GameData::MapData::IconData::StampData : Tag::Structure {
 };/* Tag::Structure GameData::MapData::IconData::StampData close */
 
 template <> struct Data::Structure<GameData::MapData::IconData::StampData> : GameData::MapData::IconData::StampData {
-	Data::Enum<Layer> Layer;
-	Data::Enum<Type> Type;
-	Data::Member<Pos> Pos;
+	Enum<Layer> Layer;
+	Enum<Type> Type;
+	Member<Pos> Pos;
 	
 	explicit Structure(Sav& s) : 
 		Layer { s.get<struct Layer>() },

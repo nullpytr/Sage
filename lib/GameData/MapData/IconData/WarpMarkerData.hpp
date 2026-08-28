@@ -8,9 +8,9 @@ struct GameData::MapData::IconData::WarpMarkerData : Tag::Structure {
 };/* Tag::Structure GameData::MapData::IconData::WarpMarkerData close */
 
 template <> struct Data::Structure<GameData::MapData::IconData::WarpMarkerData> : GameData::MapData::IconData::WarpMarkerData {
-	Data::Member<Index> Index;
-	Data::Member<Pos> Pos;
-	Data::Member<Rot> Rot;
+	Member<Index> Index;
+	Member<Pos> Pos;
+	Member<Rot> Rot;
 	
 	explicit Structure(Sav& s) : 
 		Index { s.get<struct Index>() },

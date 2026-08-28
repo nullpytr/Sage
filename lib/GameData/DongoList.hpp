@@ -9,10 +9,10 @@ struct GameData::DongoList : Tag::Structure {
 };/* Tag::Structure GameData::DongoList close */
 
 template <> struct Data::Structure<GameData::DongoList> : GameData::DongoList {
-	Data::Member<UseFirstItemList> UseFirstItemList;
-	Data::Member<EatNum> EatNum;
-	Data::Member<PutItemIDList> PutItemIDList;
-	Data::Member<LastEatTime> LastEatTime;
+	Member<UseFirstItemList> UseFirstItemList;
+	Member<EatNum> EatNum;
+	Member<PutItemIDList> PutItemIDList;
+	Member<LastEatTime> LastEatTime;
 	
 	explicit Structure(Sav& s) : 
 		UseFirstItemList { s.get<struct UseFirstItemList>() },

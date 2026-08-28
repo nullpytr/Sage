@@ -9,7 +9,7 @@ struct GameData::Pouch::KeyItem : Tag::Structure {
 #include "KeyItem/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::KeyItem> : GameData::Pouch::KeyItem {
-	Data::Member<IsValid> IsValid;
+	Member<IsValid> IsValid;
 	Structure<Content> Content;
 	
 	explicit Structure(Sav& s) : 

@@ -7,8 +7,8 @@ struct GameData::MapData::IconData::FrontierPoint : Tag::Structure {
 };/* Tag::Structure GameData::MapData::IconData::FrontierPoint close */
 
 template <> struct Data::Structure<GameData::MapData::IconData::FrontierPoint> : GameData::MapData::IconData::FrontierPoint {
-	Data::Member<IsValid> IsValid;
-	Data::Member<Pos> Pos;
+	Member<IsValid> IsValid;
+	Member<Pos> Pos;
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },

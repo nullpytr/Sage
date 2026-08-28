@@ -11,8 +11,8 @@ struct GameData::Pouch::Bow::Content : Tag::Structure {
 
 template <> struct Data::Structure<GameData::Pouch::Bow::Content> : GameData::Pouch::Bow::Content {
 	Structure<Effect> Effect;
-	Data::Member<Life> Life;
-	Data::Member<Name> Name;
+	Member<Life> Life;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Effect { s },

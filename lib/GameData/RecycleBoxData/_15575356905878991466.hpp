@@ -9,7 +9,7 @@ struct GameData::RecycleBoxData::_15575356905878991466 : Tag::Structure {
 #include "_15575356905878991466/EjectNum.hpp"
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_15575356905878991466> : GameData::RecycleBoxData::_15575356905878991466 {
-	Data::Member<IsVisit> IsVisit;
+	Member<IsVisit> IsVisit;
 	Structure<EjectNum> EjectNum;
 	
 	explicit Structure(Sav& s) : 

@@ -7,8 +7,8 @@ struct GameData::Pouch::Weapon::Content::Combined : Tag::Structure {
 };/* Tag::Structure GameData::Pouch::Weapon::Content::Combined close */
 
 template <> struct Data::Structure<GameData::Pouch::Weapon::Content::Combined> : GameData::Pouch::Weapon::Content::Combined {
-	Data::Member<Life> Life;
-	Data::Member<Name> Name;
+	Member<Life> Life;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Life { s.get<struct Life>() },

@@ -7,8 +7,8 @@ struct GameData::CustomHouse::BondInfo : Tag::Structure {
 };/* Tag::Structure GameData::CustomHouse::BondInfo close */
 
 template <> struct Data::Structure<GameData::CustomHouse::BondInfo> : GameData::CustomHouse::BondInfo {
-	Data::Member<UnitAIndex> UnitAIndex;
-	Data::Member<UnitBIndex> UnitBIndex;
+	Member<UnitAIndex> UnitAIndex;
+	Member<UnitBIndex> UnitBIndex;
 	
 	explicit Structure(Sav& s) : 
 		UnitAIndex { s.get<struct UnitAIndex>() },

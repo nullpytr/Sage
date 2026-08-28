@@ -11,9 +11,9 @@ struct GameData::Pouch::Food::Content::Effect : Tag::Structure {
 };/* Tag::Structure GameData::Pouch::Food::Content::Effect close */
 
 template <> struct Data::Structure<GameData::Pouch::Food::Content::Effect> : GameData::Pouch::Food::Content::Effect {
-	Data::Enum<Type> Type;
-	Data::Member<Level> Level;
-	Data::Member<Time> Time;
+	Enum<Type> Type;
+	Member<Level> Level;
+	Member<Time> Time;
 	
 	explicit Structure(Sav& s) : 
 		Type { s.get<struct Type>() },

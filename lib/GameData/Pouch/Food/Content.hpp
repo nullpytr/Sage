@@ -14,11 +14,11 @@ struct GameData::Pouch::Food::Content : Tag::Structure {
 
 template <> struct Data::Structure<GameData::Pouch::Food::Content> : GameData::Pouch::Food::Content {
 	Structure<Effect> Effect;
-	Data::Member<LifeRecover> LifeRecover;
-	Data::Member<Price> Price;
-	Data::Member<StockNum> StockNum;
-	Data::Member<MaterialName> MaterialName;
-	Data::Member<Name> Name;
+	Member<LifeRecover> LifeRecover;
+	Member<Price> Price;
+	Member<StockNum> StockNum;
+	Member<MaterialName> MaterialName;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Effect { s },

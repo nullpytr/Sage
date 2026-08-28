@@ -11,12 +11,12 @@ struct GameData::OwnedCustomizableHorseTack_Reins : Tag::Structure {
 };/* Tag::Structure GameData::OwnedCustomizableHorseTack_Reins close */
 
 template <> struct Data::Structure<GameData::OwnedCustomizableHorseTack_Reins> : GameData::OwnedCustomizableHorseTack_Reins {
-	Data::Member<GameRomHorseReins_00> GameRomHorseReins_00;
-	Data::Member<GameRomHorseReins_01> GameRomHorseReins_01;
-	Data::Member<GameRomHorseReins_02> GameRomHorseReins_02;
-	Data::Member<GameRomHorseReins_03> GameRomHorseReins_03;
-	Data::Member<GameRomHorseReins_04> GameRomHorseReins_04;
-	Data::Member<GameRomHorseReins_05> GameRomHorseReins_05;
+	Member<GameRomHorseReins_00> GameRomHorseReins_00;
+	Member<GameRomHorseReins_01> GameRomHorseReins_01;
+	Member<GameRomHorseReins_02> GameRomHorseReins_02;
+	Member<GameRomHorseReins_03> GameRomHorseReins_03;
+	Member<GameRomHorseReins_04> GameRomHorseReins_04;
+	Member<GameRomHorseReins_05> GameRomHorseReins_05;
 	
 	explicit Structure(Sav& s) : 
 		GameRomHorseReins_00 { s.get<struct GameRomHorseReins_00>() },

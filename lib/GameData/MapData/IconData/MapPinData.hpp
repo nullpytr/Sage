@@ -11,9 +11,9 @@ struct GameData::MapData::IconData::MapPinData : Tag::Structure {
 };/* Tag::Structure GameData::MapData::IconData::MapPinData close */
 
 template <> struct Data::Structure<GameData::MapData::IconData::MapPinData> : GameData::MapData::IconData::MapPinData {
-	Data::Member<IsFit> IsFit;
-	Data::Enum<Type> Type;
-	Data::Member<Pos> Pos;
+	Member<IsFit> IsFit;
+	Enum<Type> Type;
+	Member<Pos> Pos;
 	
 	explicit Structure(Sav& s) : 
 		IsFit { s.get<struct IsFit>() },

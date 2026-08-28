@@ -10,11 +10,11 @@ struct GameData::RecycleBoxData::_1295595582221552811::EjectNum : Tag::Structure
 };/* Tag::Structure GameData::RecycleBoxData::_1295595582221552811::EjectNum close */
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_1295595582221552811::EjectNum> : GameData::RecycleBoxData::_1295595582221552811::EjectNum {
-	Data::Member<SpObj_Cart_Capsule_A_01> SpObj_Cart_Capsule_A_01;
-	Data::Member<SpObj_FlashLight_Capsule_A_01> SpObj_FlashLight_Capsule_A_01;
-	Data::Member<SpObj_LiftGeneratorWing_Capsule_A_01> SpObj_LiftGeneratorWing_Capsule_A_01;
-	Data::Member<SpObj_SlipBoard_Capsule_A_01> SpObj_SlipBoard_Capsule_A_01;
-	Data::Member<SpObj_WindGenerator_Capsule_A_01> SpObj_WindGenerator_Capsule_A_01;
+	Member<SpObj_Cart_Capsule_A_01> SpObj_Cart_Capsule_A_01;
+	Member<SpObj_FlashLight_Capsule_A_01> SpObj_FlashLight_Capsule_A_01;
+	Member<SpObj_LiftGeneratorWing_Capsule_A_01> SpObj_LiftGeneratorWing_Capsule_A_01;
+	Member<SpObj_SlipBoard_Capsule_A_01> SpObj_SlipBoard_Capsule_A_01;
+	Member<SpObj_WindGenerator_Capsule_A_01> SpObj_WindGenerator_Capsule_A_01;
 	
 	explicit Structure(Sav& s) : 
 		SpObj_Cart_Capsule_A_01 { s.get<struct SpObj_Cart_Capsule_A_01>() },

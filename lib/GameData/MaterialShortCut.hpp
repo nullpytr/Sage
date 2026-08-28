@@ -10,8 +10,8 @@ struct GameData::MaterialShortCut : Tag::Structure {
 };/* Tag::Structure GameData::MaterialShortCut close */
 
 template <> struct Data::Structure<GameData::MaterialShortCut> : GameData::MaterialShortCut {
-	Data::Enum<Category> Category;
-	Data::Member<PouchIndex> PouchIndex;
+	Enum<Category> Category;
+	Member<PouchIndex> PouchIndex;
 	
 	explicit Structure(Sav& s) : 
 		Category { s.get<struct Category>() },

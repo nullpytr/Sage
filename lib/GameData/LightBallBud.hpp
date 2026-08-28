@@ -10,11 +10,11 @@ struct GameData::LightBallBud : Tag::Structure {
 };/* Tag::Structure GameData::LightBallBud close */
 
 template <> struct Data::Structure<GameData::LightBallBud> : GameData::LightBallBud {
-	Data::Member<IsValid> IsValid;
-	Data::Member<Size> Size;
-	Data::Member<Pos> Pos;
-	Data::Member<CreatedTime> CreatedTime;
-	Data::Member<Nrm> Nrm;
+	Member<IsValid> IsValid;
+	Member<Size> Size;
+	Member<Pos> Pos;
+	Member<CreatedTime> CreatedTime;
+	Member<Nrm> Nrm;
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },

@@ -20,21 +20,21 @@ struct GameData::IsOpenCannon : Tag::Structure {
 };/* Tag::Structure GameData::IsOpenCannon close */
 
 template <> struct Data::Structure<GameData::IsOpenCannon> : GameData::IsOpenCannon {
-	Data::Member<Tower01> Tower01;
-	Data::Member<Tower02> Tower02;
-	Data::Member<Tower03> Tower03;
-	Data::Member<Tower04> Tower04;
-	Data::Member<Tower05> Tower05;
-	Data::Member<Tower06> Tower06;
-	Data::Member<Tower07> Tower07;
-	Data::Member<Tower08> Tower08;
-	Data::Member<Tower09> Tower09;
-	Data::Member<Tower10> Tower10;
-	Data::Member<Tower11> Tower11;
-	Data::Member<Tower12> Tower12;
-	Data::Member<Tower13> Tower13;
-	Data::Member<Tower14> Tower14;
-	Data::Member<Tower15> Tower15;
+	Member<Tower01> Tower01;
+	Member<Tower02> Tower02;
+	Member<Tower03> Tower03;
+	Member<Tower04> Tower04;
+	Member<Tower05> Tower05;
+	Member<Tower06> Tower06;
+	Member<Tower07> Tower07;
+	Member<Tower08> Tower08;
+	Member<Tower09> Tower09;
+	Member<Tower10> Tower10;
+	Member<Tower11> Tower11;
+	Member<Tower12> Tower12;
+	Member<Tower13> Tower13;
+	Member<Tower14> Tower14;
+	Member<Tower15> Tower15;
 	
 	explicit Structure(Sav& s) : 
 		Tower01 { s.get<struct Tower01>() },

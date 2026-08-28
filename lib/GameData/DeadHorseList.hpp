@@ -34,22 +34,22 @@ struct GameData::DeadHorseList : Tag::Structure {
 #include "DeadHorseList/Hair.hpp"
 
 template <> struct Data::Structure<GameData::DeadHorseList> : GameData::DeadHorseList {
-	Data::Member<Name> Name;
-	Data::Member<UidHash> UidHash;
-	Data::Member<ActorName> ActorName;
-	Data::Member<ChargeNum> ChargeNum;
-	Data::Member<ColorType> ColorType;
-	Data::Member<DeadCause> DeadCause;
-	Data::Member<FootType> FootType;
-	Data::Member<HorsePower> HorsePower;
-	Data::Member<HorseType> HorseType;
-	Data::Member<Speed> Speed;
-	Data::Member<Toughness> Toughness;
-	Data::Member<Familiarity> Familiarity;
+	Member<Name> Name;
+	Member<UidHash> UidHash;
+	Member<ActorName> ActorName;
+	Member<ChargeNum> ChargeNum;
+	Member<ColorType> ColorType;
+	Member<DeadCause> DeadCause;
+	Member<FootType> FootType;
+	Member<HorsePower> HorsePower;
+	Member<HorseType> HorseType;
+	Member<Speed> Speed;
+	Member<Toughness> Toughness;
+	Member<Familiarity> Familiarity;
 	Structure<Body> Body;
-	Data::Enum<Mane> Mane;
-	Data::Enum<Rein> Rein;
-	Data::Enum<Saddle> Saddle;
+	Enum<Mane> Mane;
+	Enum<Rein> Rein;
+	Enum<Saddle> Saddle;
 	Structure<Hair> Hair;
 	
 	explicit Structure(Sav& s) : 

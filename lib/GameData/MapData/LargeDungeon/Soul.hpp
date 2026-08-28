@@ -9,7 +9,7 @@ struct GameData::MapData::LargeDungeon::Soul : Tag::Structure {
 #include "Soul/IsOpen.hpp"
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Soul> : GameData::MapData::LargeDungeon::Soul {
-	Data::Member<IsGetMap> IsGetMap;
+	Member<IsGetMap> IsGetMap;
 	Structure<IsOpen> IsOpen;
 	
 	explicit Structure(Sav& s) : 

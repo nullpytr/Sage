@@ -10,8 +10,8 @@ struct GameData::Pouch::SpecialPower : Tag::Structure {
 #include "SpecialPower/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::SpecialPower> : GameData::Pouch::SpecialPower {
-	Data::Member<IsValid> IsValid;
-	Data::Member<ValidNum> ValidNum;
+	Member<IsValid> IsValid;
+	Member<ValidNum> ValidNum;
 	Structure<Content> Content;
 	
 	explicit Structure(Sav& s) : 

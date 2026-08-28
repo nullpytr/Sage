@@ -15,9 +15,9 @@ struct GameData::ShieldStand::EquipInfo::Content : Tag::Structure {
 template <> struct Data::Structure<GameData::ShieldStand::EquipInfo::Content> : GameData::ShieldStand::EquipInfo::Content {
 	Structure<Effect> Effect;
 	Structure<Combined> Combined;
-	Data::Member<ExtraLife> ExtraLife;
-	Data::Member<Life> Life;
-	Data::Member<Name> Name;
+	Member<ExtraLife> ExtraLife;
+	Member<Life> Life;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Effect { s },

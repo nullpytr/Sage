@@ -33,20 +33,20 @@ struct GameData::LastWildHorse : Tag::Structure {
 
 template <> struct Data::Structure<GameData::LastWildHorse> : GameData::LastWildHorse {
 	Structure<Body> Body;
-	Data::Enum<Mane> Mane;
-	Data::Enum<Rein> Rein;
-	Data::Enum<Saddle> Saddle;
-	Data::Member<Familiarity> Familiarity;
-	Data::Member<ChargeNum> ChargeNum;
-	Data::Member<ColorType> ColorType;
-	Data::Member<FootType> FootType;
-	Data::Member<HorsePower> HorsePower;
-	Data::Member<HorseType> HorseType;
-	Data::Member<Speed> Speed;
-	Data::Member<Toughness> Toughness;
-	Data::Member<ActorName> ActorName;
+	Enum<Mane> Mane;
+	Enum<Rein> Rein;
+	Enum<Saddle> Saddle;
+	Member<Familiarity> Familiarity;
+	Member<ChargeNum> ChargeNum;
+	Member<ColorType> ColorType;
+	Member<FootType> FootType;
+	Member<HorsePower> HorsePower;
+	Member<HorseType> HorseType;
+	Member<Speed> Speed;
+	Member<Toughness> Toughness;
+	Member<ActorName> ActorName;
 	Structure<Hair> Hair;
-	Data::Member<UidHash> UidHash;
+	Member<UidHash> UidHash;
 	
 	explicit Structure(Sav& s) : 
 		Body { s },

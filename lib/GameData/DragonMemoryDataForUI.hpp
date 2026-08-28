@@ -7,8 +7,8 @@ struct GameData::DragonMemoryDataForUI : Tag::Structure {
 };/* Tag::Structure GameData::DragonMemoryDataForUI close */
 
 template <> struct Data::Structure<GameData::DragonMemoryDataForUI> : GameData::DragonMemoryDataForUI {
-	Data::Member<IsNeedIcon> IsNeedIcon;
-	Data::Member<IsOpenList> IsOpenList;
+	Member<IsNeedIcon> IsNeedIcon;
+	Member<IsOpenList> IsOpenList;
 	
 	explicit Structure(Sav& s) : 
 		IsNeedIcon { s.get<struct IsNeedIcon>() },

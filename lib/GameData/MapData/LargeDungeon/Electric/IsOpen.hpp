@@ -13,14 +13,14 @@ struct GameData::MapData::LargeDungeon::Electric::IsOpen : Tag::Structure {
 };/* Tag::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric::IsOpen> : GameData::MapData::LargeDungeon::Electric::IsOpen {
-	Data::Member<Group000> Group000;
-	Data::Member<Group001> Group001;
-	Data::Member<Group002> Group002;
-	Data::Member<Group003> Group003;
-	Data::Member<Group004> Group004;
-	Data::Member<Group005> Group005;
-	Data::Member<Group006> Group006;
-	Data::Member<Group007> Group007;
+	Member<Group000> Group000;
+	Member<Group001> Group001;
+	Member<Group002> Group002;
+	Member<Group003> Group003;
+	Member<Group004> Group004;
+	Member<Group005> Group005;
+	Member<Group006> Group006;
+	Member<Group007> Group007;
 	
 	explicit Structure(Sav& s) : 
 		Group000 { s.get<struct Group000>() },

@@ -13,11 +13,11 @@ struct GameData::CustomHouse : Tag::Structure {
 #include "CustomHouse/BondInfo.hpp"
 
 template <> struct Data::Structure<GameData::CustomHouse> : GameData::CustomHouse {
-	Data::Member<IsBuildMode> IsBuildMode;
+	Member<IsBuildMode> IsBuildMode;
 	Structure<HouseUnitInfo> HouseUnitInfo;
 	Structure<BondInfo> BondInfo;
-	Data::Member<UsedHouseUnitNumAll> UsedHouseUnitNumAll;
-	Data::Member<OwnHouseUnitCount> OwnHouseUnitCount;
+	Member<UsedHouseUnitNumAll> UsedHouseUnitNumAll;
+	Member<OwnHouseUnitCount> OwnHouseUnitCount;
 	
 	explicit Structure(Sav& s) : 
 		IsBuildMode { s.get<struct IsBuildMode>() },

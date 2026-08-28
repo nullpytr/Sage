@@ -13,11 +13,11 @@ struct GameData::NpcGardenInfo_HatenoVillage023 : Tag::Structure {
 };/* Tag::Structure GameData::NpcGardenInfo_HatenoVillage023 close */
 
 template <> struct Data::Structure<GameData::NpcGardenInfo_HatenoVillage023> : GameData::NpcGardenInfo_HatenoVillage023 {
-	Data::Member<IsHarvested> IsHarvested;
-	Data::Enum<CurrentState> CurrentState;
-	Data::Member<GrowActorName> GrowActorName;
-	Data::Member<LastGrowActorName> LastGrowActorName;
-	Data::Member<GrowthElapsedTime> GrowthElapsedTime;
+	Member<IsHarvested> IsHarvested;
+	Enum<CurrentState> CurrentState;
+	Member<GrowActorName> GrowActorName;
+	Member<LastGrowActorName> LastGrowActorName;
+	Member<GrowthElapsedTime> GrowthElapsedTime;
 	
 	explicit Structure(Sav& s) : 
 		IsHarvested { s.get<struct IsHarvested>() },

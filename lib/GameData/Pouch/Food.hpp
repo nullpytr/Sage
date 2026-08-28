@@ -9,7 +9,7 @@ struct GameData::Pouch::Food : Tag::Structure {
 #include "Food/Content.hpp"
 
 template <> struct Data::Structure<GameData::Pouch::Food> : GameData::Pouch::Food {
-	Data::Member<IsValid> IsValid;
+	Member<IsValid> IsValid;
 	Structure<Content> Content;
 	
 	explicit Structure(Sav& s) : 

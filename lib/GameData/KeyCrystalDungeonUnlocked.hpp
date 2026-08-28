@@ -38,39 +38,39 @@ struct GameData::KeyCrystalDungeonUnlocked : Tag::Structure {
 };/* Tag::Structure GameData::KeyCrystalDungeonUnlocked close */
 
 template <> struct Data::Structure<GameData::KeyCrystalDungeonUnlocked> : GameData::KeyCrystalDungeonUnlocked {
-	Data::Member<Dungeon000> Dungeon000;
-	Data::Member<Dungeon006> Dungeon006;
-	Data::Member<Dungeon054> Dungeon054;
-	Data::Member<Dungeon066> Dungeon066;
-	Data::Member<Dungeon071> Dungeon071;
-	Data::Member<Dungeon078> Dungeon078;
-	Data::Member<Dungeon079> Dungeon079;
-	Data::Member<Dungeon085> Dungeon085;
-	Data::Member<Dungeon088> Dungeon088;
-	Data::Member<Dungeon089> Dungeon089;
-	Data::Member<Dungeon092> Dungeon092;
-	Data::Member<Dungeon093> Dungeon093;
-	Data::Member<Dungeon098> Dungeon098;
-	Data::Member<Dungeon099> Dungeon099;
-	Data::Member<Dungeon100> Dungeon100;
-	Data::Member<Dungeon101> Dungeon101;
-	Data::Member<Dungeon103> Dungeon103;
-	Data::Member<Dungeon107> Dungeon107;
-	Data::Member<Dungeon108> Dungeon108;
-	Data::Member<Dungeon110> Dungeon110;
-	Data::Member<Dungeon111> Dungeon111;
-	Data::Member<Dungeon112> Dungeon112;
-	Data::Member<Dungeon115> Dungeon115;
-	Data::Member<Dungeon117> Dungeon117;
-	Data::Member<Dungeon123> Dungeon123;
-	Data::Member<Dungeon127> Dungeon127;
-	Data::Member<Dungeon131> Dungeon131;
-	Data::Member<Dungeon132> Dungeon132;
-	Data::Member<Dungeon134> Dungeon134;
-	Data::Member<Dungeon145> Dungeon145;
-	Data::Member<Dungeon149> Dungeon149;
-	Data::Member<Dungeon150> Dungeon150;
-	Data::Member<Dungeon151> Dungeon151;
+	Member<Dungeon000> Dungeon000;
+	Member<Dungeon006> Dungeon006;
+	Member<Dungeon054> Dungeon054;
+	Member<Dungeon066> Dungeon066;
+	Member<Dungeon071> Dungeon071;
+	Member<Dungeon078> Dungeon078;
+	Member<Dungeon079> Dungeon079;
+	Member<Dungeon085> Dungeon085;
+	Member<Dungeon088> Dungeon088;
+	Member<Dungeon089> Dungeon089;
+	Member<Dungeon092> Dungeon092;
+	Member<Dungeon093> Dungeon093;
+	Member<Dungeon098> Dungeon098;
+	Member<Dungeon099> Dungeon099;
+	Member<Dungeon100> Dungeon100;
+	Member<Dungeon101> Dungeon101;
+	Member<Dungeon103> Dungeon103;
+	Member<Dungeon107> Dungeon107;
+	Member<Dungeon108> Dungeon108;
+	Member<Dungeon110> Dungeon110;
+	Member<Dungeon111> Dungeon111;
+	Member<Dungeon112> Dungeon112;
+	Member<Dungeon115> Dungeon115;
+	Member<Dungeon117> Dungeon117;
+	Member<Dungeon123> Dungeon123;
+	Member<Dungeon127> Dungeon127;
+	Member<Dungeon131> Dungeon131;
+	Member<Dungeon132> Dungeon132;
+	Member<Dungeon134> Dungeon134;
+	Member<Dungeon145> Dungeon145;
+	Member<Dungeon149> Dungeon149;
+	Member<Dungeon150> Dungeon150;
+	Member<Dungeon151> Dungeon151;
 	
 	explicit Structure(Sav& s) : 
 		Dungeon000 { s.get<struct Dungeon000>() },

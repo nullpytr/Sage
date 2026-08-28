@@ -9,7 +9,7 @@ struct GameData::PictureBookData::TBox_Field_Iron : Tag::Structure {
 };/* Tag::Structure GameData::PictureBookData::TBox_Field_Iron close */
 
 template <> struct Data::Structure<GameData::PictureBookData::TBox_Field_Iron> : GameData::PictureBookData::TBox_Field_Iron {
-	Data::Enum<State> State;
+	Enum<State> State;
 	
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }

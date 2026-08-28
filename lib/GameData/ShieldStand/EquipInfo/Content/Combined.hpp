@@ -7,8 +7,8 @@ struct GameData::ShieldStand::EquipInfo::Content::Combined : Tag::Structure {
 };/* Tag::Structure GameData::ShieldStand::EquipInfo::Content::Combined close */
 
 template <> struct Data::Structure<GameData::ShieldStand::EquipInfo::Content::Combined> : GameData::ShieldStand::EquipInfo::Content::Combined {
-	Data::Member<Life> Life;
-	Data::Member<Name> Name;
+	Member<Life> Life;
+	Member<Name> Name;
 	
 	explicit Structure(Sav& s) : 
 		Life { s.get<struct Life>() },

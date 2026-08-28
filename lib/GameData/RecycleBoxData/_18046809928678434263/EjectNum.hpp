@@ -11,12 +11,12 @@ struct GameData::RecycleBoxData::_18046809928678434263::EjectNum : Tag::Structur
 };/* Tag::Structure GameData::RecycleBoxData::_18046809928678434263::EjectNum close */
 
 template <> struct Data::Structure<GameData::RecycleBoxData::_18046809928678434263::EjectNum> : GameData::RecycleBoxData::_18046809928678434263::EjectNum {
-	Data::Member<SpObj_ControlStick_Capsule_A_01> SpObj_ControlStick_Capsule_A_01;
-	Data::Member<SpObj_FastWheel_Capsule_A_01> SpObj_FastWheel_Capsule_A_01;
-	Data::Member<SpObj_FastWheel_Capsule_B_01> SpObj_FastWheel_Capsule_B_01;
-	Data::Member<SpObj_GolemHead_Capsule_A_01> SpObj_GolemHead_Capsule_A_01;
-	Data::Member<SpObj_LiftGeneratorWing_Capsule_A_01> SpObj_LiftGeneratorWing_Capsule_A_01;
-	Data::Member<SpObj_Rocket_Capsule_A_01> SpObj_Rocket_Capsule_A_01;
+	Member<SpObj_ControlStick_Capsule_A_01> SpObj_ControlStick_Capsule_A_01;
+	Member<SpObj_FastWheel_Capsule_A_01> SpObj_FastWheel_Capsule_A_01;
+	Member<SpObj_FastWheel_Capsule_B_01> SpObj_FastWheel_Capsule_B_01;
+	Member<SpObj_GolemHead_Capsule_A_01> SpObj_GolemHead_Capsule_A_01;
+	Member<SpObj_LiftGeneratorWing_Capsule_A_01> SpObj_LiftGeneratorWing_Capsule_A_01;
+	Member<SpObj_Rocket_Capsule_A_01> SpObj_Rocket_Capsule_A_01;
 	
 	explicit Structure(Sav& s) : 
 		SpObj_ControlStick_Capsule_A_01 { s.get<struct SpObj_ControlStick_Capsule_A_01>() },
