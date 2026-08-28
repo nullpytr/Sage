@@ -29,14 +29,14 @@ def build_parser() -> argparse.ArgumentParser:
         choices=PRESET_CHOICES,
         default=DEFAULT_PRESET_CHOICE,
         metavar="PRESET",
-        help=f"Metadata preset to use: ({' | '.join(PRESET_CHOICES)}) (default: {DEFAULT_PRESET_CHOICE})",
+        help=f"Metadata preset to use: ({' | '.join(PRESET_CHOICES)}) (default: {DEFAULT_PRESET_CHOICE}); mutually exclusive with --metadata",
     )
     src.add_argument(
         "--metadata", "-m",
         type=Path,
         default=None,
         metavar="FILE",
-        help="Path to a metadata file (overrides --preset)",
+        help="Path to an arbitrary metadata file; mutually exclusive with --preset",
     )
 
     p.add_argument(
@@ -52,47 +52,47 @@ def build_parser() -> argparse.ArgumentParser:
         "--name", "-n", 
         metavar="NAME",
         default=DEFAULT_TOP_LEVEL_HEADER_NAME,
-        help=f"Top-level header name (default: {DEFAULT_TOP_LEVEL_HEADER_NAME})",
+        help=f"Top-level structure/header name (default: {DEFAULT_TOP_LEVEL_HEADER_NAME}); mutually exclusive with --pick",
     )
     spec.add_argument(
         "--pick", "-q",
         type=Picker,
         default=None,
         metavar="PICKER",
-        help="Cherry pick a single struct from the metadata file",
+        help="Cherry-pick a single tag type by :: path (e.g. OwnedHorseList::Body::EyeColor); output header/directory name matches the tag type; mutually exclusive with --name",
     )
 
     p.add_argument(
         "--standalone", "-s",
         action="store_true",
-        help="Emit only single standalone header",
+        help="Emit a single combined header instead of per-subsytem files",
     )
     p.add_argument(
         "--dry",
         action="store_true",
-        help="Parse tree without writing any files",
+        help="Parse the tree without writing any files",
     )
     p.add_argument(
         "--tree",
         action="store_true",
-        help="Print the parsed type tree as JSON",
+        help="Only generate the type tree as JSON and exit",
     )
     p.add_argument(
         "--verbose", "-v",
         action="store_true",
-        help="Show output from the parser and emitter",
+        help="Show parser and emitter debug output (suppressed by default)",
     )
 
     cleanup = p.add_mutually_exclusive_group()
     cleanup.add_argument(
         "--clear", "-c",
         action="store_true",
-        help="Clear all generated headers (does nothing else)",
+        help="Delete generated headers without regenerating; mutually exclusive with --dirty",
     )
     cleanup.add_argument(
         "--dirty",
         action="store_true",
-        help="Keep the existing output directory instead of deleting it first",
+        help="Skip deleting the output directory before writing; mutually exclusive with --clear",
     )
 
     return p
