@@ -1,0 +1,25 @@
+#pragma once
+#include <sage>
+
+struct GameData::Pouch::Bow::Content : Tag::Structure {
+	struct Effect;
+	struct Life : Tag::Member { using type = span<s32>*; };
+	struct Name : Tag::Member { using type = adaptive_range<string64>*; };
+};/* Tag::Structure GameData::Pouch::Bow::Content close */
+
+#include "Content/Effect.hpp"
+
+template <> struct Data::Structure<GameData::Pouch::Bow::Content> : GameData::Pouch::Bow::Content {
+	Structure<Effect> Effect;
+	Data::Member<Life> Life;
+	Data::Member<Name> Name;
+	
+	explicit Structure(Sav& s) : 
+		Effect { s },
+		Life { s.get<struct Life>() },
+		Name { s.get<struct Name>() }
+	{ }
+};/* Data::Structure GameData::Pouch::Bow::Content close */
+
+template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Life> = murmurhash3::hash("Pouch.Bow.Content.Life");
+template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Name> = murmurhash3::hash("Pouch.Bow.Content.Name");

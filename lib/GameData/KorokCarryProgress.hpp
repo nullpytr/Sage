@@ -1,0 +1,712 @@
+#pragma once
+#include <sage>
+
+struct GameData::KorokCarryProgress : Tag::Structure {
+	struct _10035618609325695840 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_10035618609325695840>&;
+	};
+	struct _10147912760170894537 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_10147912760170894537>&;
+	};
+	struct _1027829103425503827 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_1027829103425503827>&;
+	};
+	struct _10530533416107128098 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_10530533416107128098>&;
+	};
+	struct _10648733530437086844 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_10648733530437086844>&;
+	};
+	struct _10765936993113452918 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_10765936993113452918>&;
+	};
+	struct _10884485578138139295 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_10884485578138139295>&;
+	};
+	struct _11058875431153592516 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_11058875431153592516>&;
+	};
+	struct _11202514477440889488 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_11202514477440889488>&;
+	};
+	struct _11271636085079936375 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_11271636085079936375>&;
+	};
+	struct _11811958806114551925 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_11811958806114551925>&;
+	};
+	struct _11875758624767344318 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_11875758624767344318>&;
+	};
+	struct _11896787561078353905 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_11896787561078353905>&;
+	};
+	struct _11937967932341810839 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_11937967932341810839>&;
+	};
+	struct _1197214492947962803 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_1197214492947962803>&;
+	};
+	struct _12130885694327852729 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_12130885694327852729>&;
+	};
+	struct _12847198751504072774 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_12847198751504072774>&;
+	};
+	struct _12867974234227336785 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_12867974234227336785>&;
+	};
+	struct _12925413538446962496 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_12925413538446962496>&;
+	};
+	struct _13096531038553645768 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_13096531038553645768>&;
+	};
+	struct _13222893714975519401 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_13222893714975519401>&;
+	};
+	struct _13247469126542819452 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_13247469126542819452>&;
+	};
+	struct _13276398725536494111 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_13276398725536494111>&;
+	};
+	struct _13397407553973487668 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_13397407553973487668>&;
+	};
+	struct _13406578000478771737 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_13406578000478771737>&;
+	};
+	struct _13574721167545880769 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_13574721167545880769>&;
+	};
+	struct _13715318254682426167 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_13715318254682426167>&;
+	};
+	struct _14086010442264569915 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14086010442264569915>&;
+	};
+	struct _14386365983047131468 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14386365983047131468>&;
+	};
+	struct _14474122671074317609 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14474122671074317609>&;
+	};
+	struct _14620345371264461858 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14620345371264461858>&;
+	};
+	struct _14675420841305621627 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14675420841305621627>&;
+	};
+	struct _1467646013161089597 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_1467646013161089597>&;
+	};
+	struct _14743492415969903566 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14743492415969903566>&;
+	};
+	struct _14755292463343432412 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14755292463343432412>&;
+	};
+	struct _14835004004034249742 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14835004004034249742>&;
+	};
+	struct _14913775068882522158 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_14913775068882522158>&;
+	};
+	struct _15014578422836026966 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_15014578422836026966>&;
+	};
+	struct _15217693042586832359 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_15217693042586832359>&;
+	};
+	struct _15261531300099259671 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_15261531300099259671>&;
+	};
+	struct _15270416955868479146 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_15270416955868479146>&;
+	};
+	struct _1559566833430240376 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_1559566833430240376>&;
+	};
+	struct _15764967962530007701 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_15764967962530007701>&;
+	};
+	struct _15812195146511308260 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_15812195146511308260>&;
+	};
+	struct _15896625821746789069 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_15896625821746789069>&;
+	};
+	struct _15951088143512413279 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_15951088143512413279>&;
+	};
+	struct _16672092331503822504 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_16672092331503822504>&;
+	};
+	struct _1701261354463979089 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_1701261354463979089>&;
+	};
+	struct _17015045044967365539 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_17015045044967365539>&;
+	};
+	struct _17210919258426000638 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_17210919258426000638>&;
+	};
+	struct _17594093809162698318 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_17594093809162698318>&;
+	};
+	struct _17670912282596839597 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_17670912282596839597>&;
+	};
+	struct _17802606411144917162 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_17802606411144917162>&;
+	};
+	struct _18153127729825633248 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_18153127729825633248>&;
+	};
+	struct _18235969829881518418 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_18235969829881518418>&;
+	};
+	struct _1845078604478085116 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_1845078604478085116>&;
+	};
+	struct _1977590426358230894 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_1977590426358230894>&;
+	};
+	struct _2065394700677686397 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_2065394700677686397>&;
+	};
+	struct _2425953548859621426 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_2425953548859621426>&;
+	};
+	struct _2753782435549223662 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_2753782435549223662>&;
+	};
+	struct _3033022659337824191 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_3033022659337824191>&;
+	};
+	struct _3039055495308853332 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_3039055495308853332>&;
+	};
+	struct _3140500857535214931 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_3140500857535214931>&;
+	};
+	struct _3643785449856294086 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_3643785449856294086>&;
+	};
+	struct _4192588996974612514 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_4192588996974612514>&;
+	};
+	struct _4278308988828624825 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_4278308988828624825>&;
+	};
+	struct _4386102791994685188 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_4386102791994685188>&;
+	};
+	struct _4494468278546116134 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_4494468278546116134>&;
+	};
+	struct _5036066410770918472 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_5036066410770918472>&;
+	};
+	struct _5145081417529458167 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_5145081417529458167>&;
+	};
+	struct _5230411027965047570 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_5230411027965047570>&;
+	};
+	struct _5298571532246140711 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_5298571532246140711>&;
+	};
+	struct _55136037473008208 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_55136037473008208>&;
+	};
+	struct _5634362082519974124 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_5634362082519974124>&;
+	};
+	struct _5869665143813001026 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_5869665143813001026>&;
+	};
+	struct _5937135356624406219 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_5937135356624406219>&;
+	};
+	struct _661645095586149546 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_661645095586149546>&;
+	};
+	struct _6773575892270236835 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_6773575892270236835>&;
+	};
+	struct _702982911163221302 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_702982911163221302>&;
+	};
+	struct _711316197736138568 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_711316197736138568>&;
+	};
+	struct _7200846769452032765 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_7200846769452032765>&;
+	};
+	struct _7205909546088832266 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_7205909546088832266>&;
+	};
+	struct _7252382242329520081 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_7252382242329520081>&;
+	};
+	struct _7705700044124304347 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_7705700044124304347>&;
+	};
+	struct _7786864151230414866 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_7786864151230414866>&;
+	};
+	struct _8004497664373186229 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_8004497664373186229>&;
+	};
+	struct _8497568152468259638 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_8497568152468259638>&;
+	};
+	struct _857511348685999225 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_857511348685999225>&;
+	};
+	struct _879993071457401920 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_879993071457401920>&;
+	};
+	struct _882636985276030155 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_882636985276030155>&;
+	};
+	struct _8971903895020413263 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_8971903895020413263>&;
+	};
+	struct _8993451623919032985 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_8993451623919032985>&;
+	};
+	struct _9073478381193169871 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_9073478381193169871>&;
+	};
+	struct _9329678298925105483 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_9329678298925105483>&;
+	};
+	struct _9380338098995773009 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_9380338098995773009>&;
+	};
+	struct _9539946314806298996 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_9539946314806298996>&;
+	};
+	struct _9545094517092549436 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_9545094517092549436>&;
+	};
+	struct _9705479798924140351 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_9705479798924140351>&;
+	};
+	struct _9707096629495885452 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_9707096629495885452>&;
+	};
+	struct _9734881248452388660 : Tag::Enum {
+		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using type = enum_t<_9734881248452388660>&;
+	};
+};/* Tag::Structure GameData::KorokCarryProgress close */
+
+template <> struct Data::Structure<GameData::KorokCarryProgress> : GameData::KorokCarryProgress {
+	Data::Enum<_10035618609325695840> _10035618609325695840;
+	Data::Enum<_10147912760170894537> _10147912760170894537;
+	Data::Enum<_1027829103425503827> _1027829103425503827;
+	Data::Enum<_10530533416107128098> _10530533416107128098;
+	Data::Enum<_10648733530437086844> _10648733530437086844;
+	Data::Enum<_10765936993113452918> _10765936993113452918;
+	Data::Enum<_10884485578138139295> _10884485578138139295;
+	Data::Enum<_11058875431153592516> _11058875431153592516;
+	Data::Enum<_11202514477440889488> _11202514477440889488;
+	Data::Enum<_11271636085079936375> _11271636085079936375;
+	Data::Enum<_11811958806114551925> _11811958806114551925;
+	Data::Enum<_11875758624767344318> _11875758624767344318;
+	Data::Enum<_11896787561078353905> _11896787561078353905;
+	Data::Enum<_11937967932341810839> _11937967932341810839;
+	Data::Enum<_1197214492947962803> _1197214492947962803;
+	Data::Enum<_12130885694327852729> _12130885694327852729;
+	Data::Enum<_12847198751504072774> _12847198751504072774;
+	Data::Enum<_12867974234227336785> _12867974234227336785;
+	Data::Enum<_12925413538446962496> _12925413538446962496;
+	Data::Enum<_13096531038553645768> _13096531038553645768;
+	Data::Enum<_13222893714975519401> _13222893714975519401;
+	Data::Enum<_13247469126542819452> _13247469126542819452;
+	Data::Enum<_13276398725536494111> _13276398725536494111;
+	Data::Enum<_13397407553973487668> _13397407553973487668;
+	Data::Enum<_13406578000478771737> _13406578000478771737;
+	Data::Enum<_13574721167545880769> _13574721167545880769;
+	Data::Enum<_13715318254682426167> _13715318254682426167;
+	Data::Enum<_14086010442264569915> _14086010442264569915;
+	Data::Enum<_14386365983047131468> _14386365983047131468;
+	Data::Enum<_14474122671074317609> _14474122671074317609;
+	Data::Enum<_14620345371264461858> _14620345371264461858;
+	Data::Enum<_14675420841305621627> _14675420841305621627;
+	Data::Enum<_1467646013161089597> _1467646013161089597;
+	Data::Enum<_14743492415969903566> _14743492415969903566;
+	Data::Enum<_14755292463343432412> _14755292463343432412;
+	Data::Enum<_14835004004034249742> _14835004004034249742;
+	Data::Enum<_14913775068882522158> _14913775068882522158;
+	Data::Enum<_15014578422836026966> _15014578422836026966;
+	Data::Enum<_15217693042586832359> _15217693042586832359;
+	Data::Enum<_15261531300099259671> _15261531300099259671;
+	Data::Enum<_15270416955868479146> _15270416955868479146;
+	Data::Enum<_1559566833430240376> _1559566833430240376;
+	Data::Enum<_15764967962530007701> _15764967962530007701;
+	Data::Enum<_15812195146511308260> _15812195146511308260;
+	Data::Enum<_15896625821746789069> _15896625821746789069;
+	Data::Enum<_15951088143512413279> _15951088143512413279;
+	Data::Enum<_16672092331503822504> _16672092331503822504;
+	Data::Enum<_1701261354463979089> _1701261354463979089;
+	Data::Enum<_17015045044967365539> _17015045044967365539;
+	Data::Enum<_17210919258426000638> _17210919258426000638;
+	Data::Enum<_17594093809162698318> _17594093809162698318;
+	Data::Enum<_17670912282596839597> _17670912282596839597;
+	Data::Enum<_17802606411144917162> _17802606411144917162;
+	Data::Enum<_18153127729825633248> _18153127729825633248;
+	Data::Enum<_18235969829881518418> _18235969829881518418;
+	Data::Enum<_1845078604478085116> _1845078604478085116;
+	Data::Enum<_1977590426358230894> _1977590426358230894;
+	Data::Enum<_2065394700677686397> _2065394700677686397;
+	Data::Enum<_2425953548859621426> _2425953548859621426;
+	Data::Enum<_2753782435549223662> _2753782435549223662;
+	Data::Enum<_3033022659337824191> _3033022659337824191;
+	Data::Enum<_3039055495308853332> _3039055495308853332;
+	Data::Enum<_3140500857535214931> _3140500857535214931;
+	Data::Enum<_3643785449856294086> _3643785449856294086;
+	Data::Enum<_4192588996974612514> _4192588996974612514;
+	Data::Enum<_4278308988828624825> _4278308988828624825;
+	Data::Enum<_4386102791994685188> _4386102791994685188;
+	Data::Enum<_4494468278546116134> _4494468278546116134;
+	Data::Enum<_5036066410770918472> _5036066410770918472;
+	Data::Enum<_5145081417529458167> _5145081417529458167;
+	Data::Enum<_5230411027965047570> _5230411027965047570;
+	Data::Enum<_5298571532246140711> _5298571532246140711;
+	Data::Enum<_55136037473008208> _55136037473008208;
+	Data::Enum<_5634362082519974124> _5634362082519974124;
+	Data::Enum<_5869665143813001026> _5869665143813001026;
+	Data::Enum<_5937135356624406219> _5937135356624406219;
+	Data::Enum<_661645095586149546> _661645095586149546;
+	Data::Enum<_6773575892270236835> _6773575892270236835;
+	Data::Enum<_702982911163221302> _702982911163221302;
+	Data::Enum<_711316197736138568> _711316197736138568;
+	Data::Enum<_7200846769452032765> _7200846769452032765;
+	Data::Enum<_7205909546088832266> _7205909546088832266;
+	Data::Enum<_7252382242329520081> _7252382242329520081;
+	Data::Enum<_7705700044124304347> _7705700044124304347;
+	Data::Enum<_7786864151230414866> _7786864151230414866;
+	Data::Enum<_8004497664373186229> _8004497664373186229;
+	Data::Enum<_8497568152468259638> _8497568152468259638;
+	Data::Enum<_857511348685999225> _857511348685999225;
+	Data::Enum<_879993071457401920> _879993071457401920;
+	Data::Enum<_882636985276030155> _882636985276030155;
+	Data::Enum<_8971903895020413263> _8971903895020413263;
+	Data::Enum<_8993451623919032985> _8993451623919032985;
+	Data::Enum<_9073478381193169871> _9073478381193169871;
+	Data::Enum<_9329678298925105483> _9329678298925105483;
+	Data::Enum<_9380338098995773009> _9380338098995773009;
+	Data::Enum<_9539946314806298996> _9539946314806298996;
+	Data::Enum<_9545094517092549436> _9545094517092549436;
+	Data::Enum<_9705479798924140351> _9705479798924140351;
+	Data::Enum<_9707096629495885452> _9707096629495885452;
+	Data::Enum<_9734881248452388660> _9734881248452388660;
+	
+	explicit Structure(Sav& s) : 
+		_10035618609325695840 { s.get<struct _10035618609325695840>() },
+		_10147912760170894537 { s.get<struct _10147912760170894537>() },
+		_1027829103425503827 { s.get<struct _1027829103425503827>() },
+		_10530533416107128098 { s.get<struct _10530533416107128098>() },
+		_10648733530437086844 { s.get<struct _10648733530437086844>() },
+		_10765936993113452918 { s.get<struct _10765936993113452918>() },
+		_10884485578138139295 { s.get<struct _10884485578138139295>() },
+		_11058875431153592516 { s.get<struct _11058875431153592516>() },
+		_11202514477440889488 { s.get<struct _11202514477440889488>() },
+		_11271636085079936375 { s.get<struct _11271636085079936375>() },
+		_11811958806114551925 { s.get<struct _11811958806114551925>() },
+		_11875758624767344318 { s.get<struct _11875758624767344318>() },
+		_11896787561078353905 { s.get<struct _11896787561078353905>() },
+		_11937967932341810839 { s.get<struct _11937967932341810839>() },
+		_1197214492947962803 { s.get<struct _1197214492947962803>() },
+		_12130885694327852729 { s.get<struct _12130885694327852729>() },
+		_12847198751504072774 { s.get<struct _12847198751504072774>() },
+		_12867974234227336785 { s.get<struct _12867974234227336785>() },
+		_12925413538446962496 { s.get<struct _12925413538446962496>() },
+		_13096531038553645768 { s.get<struct _13096531038553645768>() },
+		_13222893714975519401 { s.get<struct _13222893714975519401>() },
+		_13247469126542819452 { s.get<struct _13247469126542819452>() },
+		_13276398725536494111 { s.get<struct _13276398725536494111>() },
+		_13397407553973487668 { s.get<struct _13397407553973487668>() },
+		_13406578000478771737 { s.get<struct _13406578000478771737>() },
+		_13574721167545880769 { s.get<struct _13574721167545880769>() },
+		_13715318254682426167 { s.get<struct _13715318254682426167>() },
+		_14086010442264569915 { s.get<struct _14086010442264569915>() },
+		_14386365983047131468 { s.get<struct _14386365983047131468>() },
+		_14474122671074317609 { s.get<struct _14474122671074317609>() },
+		_14620345371264461858 { s.get<struct _14620345371264461858>() },
+		_14675420841305621627 { s.get<struct _14675420841305621627>() },
+		_1467646013161089597 { s.get<struct _1467646013161089597>() },
+		_14743492415969903566 { s.get<struct _14743492415969903566>() },
+		_14755292463343432412 { s.get<struct _14755292463343432412>() },
+		_14835004004034249742 { s.get<struct _14835004004034249742>() },
+		_14913775068882522158 { s.get<struct _14913775068882522158>() },
+		_15014578422836026966 { s.get<struct _15014578422836026966>() },
+		_15217693042586832359 { s.get<struct _15217693042586832359>() },
+		_15261531300099259671 { s.get<struct _15261531300099259671>() },
+		_15270416955868479146 { s.get<struct _15270416955868479146>() },
+		_1559566833430240376 { s.get<struct _1559566833430240376>() },
+		_15764967962530007701 { s.get<struct _15764967962530007701>() },
+		_15812195146511308260 { s.get<struct _15812195146511308260>() },
+		_15896625821746789069 { s.get<struct _15896625821746789069>() },
+		_15951088143512413279 { s.get<struct _15951088143512413279>() },
+		_16672092331503822504 { s.get<struct _16672092331503822504>() },
+		_1701261354463979089 { s.get<struct _1701261354463979089>() },
+		_17015045044967365539 { s.get<struct _17015045044967365539>() },
+		_17210919258426000638 { s.get<struct _17210919258426000638>() },
+		_17594093809162698318 { s.get<struct _17594093809162698318>() },
+		_17670912282596839597 { s.get<struct _17670912282596839597>() },
+		_17802606411144917162 { s.get<struct _17802606411144917162>() },
+		_18153127729825633248 { s.get<struct _18153127729825633248>() },
+		_18235969829881518418 { s.get<struct _18235969829881518418>() },
+		_1845078604478085116 { s.get<struct _1845078604478085116>() },
+		_1977590426358230894 { s.get<struct _1977590426358230894>() },
+		_2065394700677686397 { s.get<struct _2065394700677686397>() },
+		_2425953548859621426 { s.get<struct _2425953548859621426>() },
+		_2753782435549223662 { s.get<struct _2753782435549223662>() },
+		_3033022659337824191 { s.get<struct _3033022659337824191>() },
+		_3039055495308853332 { s.get<struct _3039055495308853332>() },
+		_3140500857535214931 { s.get<struct _3140500857535214931>() },
+		_3643785449856294086 { s.get<struct _3643785449856294086>() },
+		_4192588996974612514 { s.get<struct _4192588996974612514>() },
+		_4278308988828624825 { s.get<struct _4278308988828624825>() },
+		_4386102791994685188 { s.get<struct _4386102791994685188>() },
+		_4494468278546116134 { s.get<struct _4494468278546116134>() },
+		_5036066410770918472 { s.get<struct _5036066410770918472>() },
+		_5145081417529458167 { s.get<struct _5145081417529458167>() },
+		_5230411027965047570 { s.get<struct _5230411027965047570>() },
+		_5298571532246140711 { s.get<struct _5298571532246140711>() },
+		_55136037473008208 { s.get<struct _55136037473008208>() },
+		_5634362082519974124 { s.get<struct _5634362082519974124>() },
+		_5869665143813001026 { s.get<struct _5869665143813001026>() },
+		_5937135356624406219 { s.get<struct _5937135356624406219>() },
+		_661645095586149546 { s.get<struct _661645095586149546>() },
+		_6773575892270236835 { s.get<struct _6773575892270236835>() },
+		_702982911163221302 { s.get<struct _702982911163221302>() },
+		_711316197736138568 { s.get<struct _711316197736138568>() },
+		_7200846769452032765 { s.get<struct _7200846769452032765>() },
+		_7205909546088832266 { s.get<struct _7205909546088832266>() },
+		_7252382242329520081 { s.get<struct _7252382242329520081>() },
+		_7705700044124304347 { s.get<struct _7705700044124304347>() },
+		_7786864151230414866 { s.get<struct _7786864151230414866>() },
+		_8004497664373186229 { s.get<struct _8004497664373186229>() },
+		_8497568152468259638 { s.get<struct _8497568152468259638>() },
+		_857511348685999225 { s.get<struct _857511348685999225>() },
+		_879993071457401920 { s.get<struct _879993071457401920>() },
+		_882636985276030155 { s.get<struct _882636985276030155>() },
+		_8971903895020413263 { s.get<struct _8971903895020413263>() },
+		_8993451623919032985 { s.get<struct _8993451623919032985>() },
+		_9073478381193169871 { s.get<struct _9073478381193169871>() },
+		_9329678298925105483 { s.get<struct _9329678298925105483>() },
+		_9380338098995773009 { s.get<struct _9380338098995773009>() },
+		_9539946314806298996 { s.get<struct _9539946314806298996>() },
+		_9545094517092549436 { s.get<struct _9545094517092549436>() },
+		_9705479798924140351 { s.get<struct _9705479798924140351>() },
+		_9707096629495885452 { s.get<struct _9707096629495885452>() },
+		_9734881248452388660 { s.get<struct _9734881248452388660>() }
+	{ }
+};/* Data::Structure GameData::KorokCarryProgress close */
+
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10035618609325695840> = murmurhash3::hash("KorokCarryProgress.10035618609325695840");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10147912760170894537> = murmurhash3::hash("KorokCarryProgress.10147912760170894537");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_1027829103425503827> = murmurhash3::hash("KorokCarryProgress.1027829103425503827");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10530533416107128098> = murmurhash3::hash("KorokCarryProgress.10530533416107128098");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10648733530437086844> = murmurhash3::hash("KorokCarryProgress.10648733530437086844");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10765936993113452918> = murmurhash3::hash("KorokCarryProgress.10765936993113452918");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10884485578138139295> = murmurhash3::hash("KorokCarryProgress.10884485578138139295");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_11058875431153592516> = murmurhash3::hash("KorokCarryProgress.11058875431153592516");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_11202514477440889488> = murmurhash3::hash("KorokCarryProgress.11202514477440889488");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_11271636085079936375> = murmurhash3::hash("KorokCarryProgress.11271636085079936375");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_11811958806114551925> = murmurhash3::hash("KorokCarryProgress.11811958806114551925");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_11875758624767344318> = murmurhash3::hash("KorokCarryProgress.11875758624767344318");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_11896787561078353905> = murmurhash3::hash("KorokCarryProgress.11896787561078353905");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_11937967932341810839> = murmurhash3::hash("KorokCarryProgress.11937967932341810839");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_1197214492947962803> = murmurhash3::hash("KorokCarryProgress.1197214492947962803");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_12130885694327852729> = murmurhash3::hash("KorokCarryProgress.12130885694327852729");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_12847198751504072774> = murmurhash3::hash("KorokCarryProgress.12847198751504072774");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_12867974234227336785> = murmurhash3::hash("KorokCarryProgress.12867974234227336785");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_12925413538446962496> = murmurhash3::hash("KorokCarryProgress.12925413538446962496");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_13096531038553645768> = murmurhash3::hash("KorokCarryProgress.13096531038553645768");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_13222893714975519401> = murmurhash3::hash("KorokCarryProgress.13222893714975519401");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_13247469126542819452> = murmurhash3::hash("KorokCarryProgress.13247469126542819452");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_13276398725536494111> = murmurhash3::hash("KorokCarryProgress.13276398725536494111");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_13397407553973487668> = murmurhash3::hash("KorokCarryProgress.13397407553973487668");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_13406578000478771737> = murmurhash3::hash("KorokCarryProgress.13406578000478771737");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_13574721167545880769> = murmurhash3::hash("KorokCarryProgress.13574721167545880769");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_13715318254682426167> = murmurhash3::hash("KorokCarryProgress.13715318254682426167");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14086010442264569915> = murmurhash3::hash("KorokCarryProgress.14086010442264569915");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14386365983047131468> = murmurhash3::hash("KorokCarryProgress.14386365983047131468");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14474122671074317609> = murmurhash3::hash("KorokCarryProgress.14474122671074317609");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14620345371264461858> = murmurhash3::hash("KorokCarryProgress.14620345371264461858");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14675420841305621627> = murmurhash3::hash("KorokCarryProgress.14675420841305621627");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_1467646013161089597> = murmurhash3::hash("KorokCarryProgress.1467646013161089597");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14743492415969903566> = murmurhash3::hash("KorokCarryProgress.14743492415969903566");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14755292463343432412> = murmurhash3::hash("KorokCarryProgress.14755292463343432412");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14835004004034249742> = murmurhash3::hash("KorokCarryProgress.14835004004034249742");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_14913775068882522158> = murmurhash3::hash("KorokCarryProgress.14913775068882522158");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_15014578422836026966> = murmurhash3::hash("KorokCarryProgress.15014578422836026966");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_15217693042586832359> = murmurhash3::hash("KorokCarryProgress.15217693042586832359");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_15261531300099259671> = murmurhash3::hash("KorokCarryProgress.15261531300099259671");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_15270416955868479146> = murmurhash3::hash("KorokCarryProgress.15270416955868479146");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_1559566833430240376> = murmurhash3::hash("KorokCarryProgress.1559566833430240376");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_15764967962530007701> = murmurhash3::hash("KorokCarryProgress.15764967962530007701");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_15812195146511308260> = murmurhash3::hash("KorokCarryProgress.15812195146511308260");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_15896625821746789069> = murmurhash3::hash("KorokCarryProgress.15896625821746789069");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_15951088143512413279> = murmurhash3::hash("KorokCarryProgress.15951088143512413279");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_16672092331503822504> = murmurhash3::hash("KorokCarryProgress.16672092331503822504");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_1701261354463979089> = murmurhash3::hash("KorokCarryProgress.1701261354463979089");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_17015045044967365539> = murmurhash3::hash("KorokCarryProgress.17015045044967365539");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_17210919258426000638> = murmurhash3::hash("KorokCarryProgress.17210919258426000638");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_17594093809162698318> = murmurhash3::hash("KorokCarryProgress.17594093809162698318");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_17670912282596839597> = murmurhash3::hash("KorokCarryProgress.17670912282596839597");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_17802606411144917162> = murmurhash3::hash("KorokCarryProgress.17802606411144917162");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_18153127729825633248> = murmurhash3::hash("KorokCarryProgress.18153127729825633248");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_18235969829881518418> = murmurhash3::hash("KorokCarryProgress.18235969829881518418");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_1845078604478085116> = murmurhash3::hash("KorokCarryProgress.1845078604478085116");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_1977590426358230894> = murmurhash3::hash("KorokCarryProgress.1977590426358230894");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_2065394700677686397> = murmurhash3::hash("KorokCarryProgress.2065394700677686397");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_2425953548859621426> = murmurhash3::hash("KorokCarryProgress.2425953548859621426");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_2753782435549223662> = murmurhash3::hash("KorokCarryProgress.2753782435549223662");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_3033022659337824191> = murmurhash3::hash("KorokCarryProgress.3033022659337824191");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_3039055495308853332> = murmurhash3::hash("KorokCarryProgress.3039055495308853332");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_3140500857535214931> = murmurhash3::hash("KorokCarryProgress.3140500857535214931");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_3643785449856294086> = murmurhash3::hash("KorokCarryProgress.3643785449856294086");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_4192588996974612514> = murmurhash3::hash("KorokCarryProgress.4192588996974612514");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_4278308988828624825> = murmurhash3::hash("KorokCarryProgress.4278308988828624825");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_4386102791994685188> = murmurhash3::hash("KorokCarryProgress.4386102791994685188");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_4494468278546116134> = murmurhash3::hash("KorokCarryProgress.4494468278546116134");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_5036066410770918472> = murmurhash3::hash("KorokCarryProgress.5036066410770918472");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_5145081417529458167> = murmurhash3::hash("KorokCarryProgress.5145081417529458167");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_5230411027965047570> = murmurhash3::hash("KorokCarryProgress.5230411027965047570");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_5298571532246140711> = murmurhash3::hash("KorokCarryProgress.5298571532246140711");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_55136037473008208> = murmurhash3::hash("KorokCarryProgress.55136037473008208");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_5634362082519974124> = murmurhash3::hash("KorokCarryProgress.5634362082519974124");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_5869665143813001026> = murmurhash3::hash("KorokCarryProgress.5869665143813001026");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_5937135356624406219> = murmurhash3::hash("KorokCarryProgress.5937135356624406219");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_661645095586149546> = murmurhash3::hash("KorokCarryProgress.661645095586149546");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_6773575892270236835> = murmurhash3::hash("KorokCarryProgress.6773575892270236835");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_702982911163221302> = murmurhash3::hash("KorokCarryProgress.702982911163221302");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_711316197736138568> = murmurhash3::hash("KorokCarryProgress.711316197736138568");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_7200846769452032765> = murmurhash3::hash("KorokCarryProgress.7200846769452032765");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_7205909546088832266> = murmurhash3::hash("KorokCarryProgress.7205909546088832266");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_7252382242329520081> = murmurhash3::hash("KorokCarryProgress.7252382242329520081");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_7705700044124304347> = murmurhash3::hash("KorokCarryProgress.7705700044124304347");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_7786864151230414866> = murmurhash3::hash("KorokCarryProgress.7786864151230414866");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_8004497664373186229> = murmurhash3::hash("KorokCarryProgress.8004497664373186229");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_8497568152468259638> = murmurhash3::hash("KorokCarryProgress.8497568152468259638");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_857511348685999225> = murmurhash3::hash("KorokCarryProgress.857511348685999225");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_879993071457401920> = murmurhash3::hash("KorokCarryProgress.879993071457401920");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_882636985276030155> = murmurhash3::hash("KorokCarryProgress.882636985276030155");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_8971903895020413263> = murmurhash3::hash("KorokCarryProgress.8971903895020413263");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_8993451623919032985> = murmurhash3::hash("KorokCarryProgress.8993451623919032985");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_9073478381193169871> = murmurhash3::hash("KorokCarryProgress.9073478381193169871");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_9329678298925105483> = murmurhash3::hash("KorokCarryProgress.9329678298925105483");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_9380338098995773009> = murmurhash3::hash("KorokCarryProgress.9380338098995773009");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_9539946314806298996> = murmurhash3::hash("KorokCarryProgress.9539946314806298996");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_9545094517092549436> = murmurhash3::hash("KorokCarryProgress.9545094517092549436");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_9705479798924140351> = murmurhash3::hash("KorokCarryProgress.9705479798924140351");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_9707096629495885452> = murmurhash3::hash("KorokCarryProgress.9707096629495885452");
+template <> hash_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_9734881248452388660> = murmurhash3::hash("KorokCarryProgress.9734881248452388660");

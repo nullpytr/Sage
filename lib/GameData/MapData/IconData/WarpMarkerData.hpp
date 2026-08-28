@@ -1,0 +1,24 @@
+#pragma once
+#include <sage>
+
+struct GameData::MapData::IconData::WarpMarkerData : Tag::Structure {
+	struct Index : Tag::Member { using type = span<s32>*; };
+	struct Pos : Tag::Member { using type = span<vec3f>*; };
+	struct Rot : Tag::Member { using type = span<vec3f>*; };
+};/* Tag::Structure GameData::MapData::IconData::WarpMarkerData close */
+
+template <> struct Data::Structure<GameData::MapData::IconData::WarpMarkerData> : GameData::MapData::IconData::WarpMarkerData {
+	Data::Member<Index> Index;
+	Data::Member<Pos> Pos;
+	Data::Member<Rot> Rot;
+	
+	explicit Structure(Sav& s) : 
+		Index { s.get<struct Index>() },
+		Pos { s.get<struct Pos>() },
+		Rot { s.get<struct Rot>() }
+	{ }
+};/* Data::Structure GameData::MapData::IconData::WarpMarkerData close */
+
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Index> = murmurhash3::hash("MapData.IconData.WarpMarkerData.Index");
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Pos> = murmurhash3::hash("MapData.IconData.WarpMarkerData.Pos");
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Rot> = murmurhash3::hash("MapData.IconData.WarpMarkerData.Rot");

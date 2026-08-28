@@ -1,0 +1,44 @@
+#pragma once
+#include <sage>
+
+struct GameData::MapData : Tag::Structure {
+	struct IconData;
+	struct IsGerudoIconEnable : Tag::Member { using type = bool&; };
+	struct IsOpenFootprintMode : Tag::Member { using type = bool&; };
+	struct IsOpenGround : Tag::Member { using type = bool&; };
+	struct IsOpenUnderGround : Tag::Member { using type = bool&; };
+	struct LargeDungeon;
+	struct CurrentLayer : Tag::Enum {
+		enum underlying_enum_t : hash_t { Ground = murmurhash3::hash("Ground"), Sky = murmurhash3::hash("Sky"), UnderGround = murmurhash3::hash("UnderGround"), };
+		using type = enum_t<CurrentLayer>&;
+	};
+};/* Tag::Structure GameData::MapData close */
+
+#include "MapData/IconData.hpp"
+#include "MapData/LargeDungeon.hpp"
+
+template <> struct Data::Structure<GameData::MapData> : GameData::MapData {
+	Structure<IconData> IconData;
+	Data::Member<IsGerudoIconEnable> IsGerudoIconEnable;
+	Data::Member<IsOpenFootprintMode> IsOpenFootprintMode;
+	Data::Member<IsOpenGround> IsOpenGround;
+	Data::Member<IsOpenUnderGround> IsOpenUnderGround;
+	Structure<LargeDungeon> LargeDungeon;
+	Data::Enum<CurrentLayer> CurrentLayer;
+	
+	explicit Structure(Sav& s) : 
+		IconData { s },
+		IsGerudoIconEnable { s.get<struct IsGerudoIconEnable>() },
+		IsOpenFootprintMode { s.get<struct IsOpenFootprintMode>() },
+		IsOpenGround { s.get<struct IsOpenGround>() },
+		IsOpenUnderGround { s.get<struct IsOpenUnderGround>() },
+		LargeDungeon { s },
+		CurrentLayer { s.get<struct CurrentLayer>() }
+	{ }
+};/* Data::Structure GameData::MapData close */
+
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::IsGerudoIconEnable> = murmurhash3::hash("MapData.IsGerudoIconEnable");
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::IsOpenFootprintMode> = murmurhash3::hash("MapData.IsOpenFootprintMode");
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::IsOpenGround> = murmurhash3::hash("MapData.IsOpenGround");
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::IsOpenUnderGround> = murmurhash3::hash("MapData.IsOpenUnderGround");
+template <> hash_t constexpr Data::Hashtable<GameData::MapData::CurrentLayer> = murmurhash3::hash("MapData.CurrentLayer");

@@ -1,0 +1,19 @@
+#pragma once
+#include <sage>
+
+struct GameData::PictureBookData::Enemy_Zombie_Boss_Junior : Tag::Structure {
+	struct State : Tag::Enum {
+		enum underlying_enum_t : hash_t { Unopened = murmurhash3::hash("Unopened"), TakePhoto = murmurhash3::hash("TakePhoto"), Buy = murmurhash3::hash("Buy"), };
+		using type = enum_t<State>&;
+	};
+};/* Tag::Structure GameData::PictureBookData::Enemy_Zombie_Boss_Junior close */
+
+template <> struct Data::Structure<GameData::PictureBookData::Enemy_Zombie_Boss_Junior> : GameData::PictureBookData::Enemy_Zombie_Boss_Junior {
+	Data::Enum<State> State;
+	
+	explicit Structure(Sav& s) : 
+		State { s.get<struct State>() }
+	{ }
+};/* Data::Structure GameData::PictureBookData::Enemy_Zombie_Boss_Junior close */
+
+template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Zombie_Boss_Junior::State> = murmurhash3::hash("PictureBookData.Enemy_Zombie_Boss_Junior.State");
