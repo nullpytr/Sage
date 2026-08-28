@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(Sage)
+project(include)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -9,4 +9,4 @@ add_executable(
         examples/Sample.cpp
 )
 
-target_include_directories(main PUBLIC include)
+target_include_directories(main PUBLIC lib include)
