@@ -6,7 +6,7 @@ import json
 proj_root = Path(__file__).parents[1]
 gamedata_file = proj_root / "data" / "gamedata-medium.csv" # in
 root_header_name = "GameData"
-header_include_dir = proj_root / "include" # out
+header_include_dir = proj_root / "lib" # out
 # header_file_path = proj_root / "include" / f"{root_header_name}.hpp"
 
 gamedata = tree.Tree(name=root_header_name, path=root_header_name, children={})
