@@ -3,10 +3,12 @@ from typing import TextIO
 import re as regexp
 
 from .types import *
+from .emit.structure import StructureEmitter
 
 Tree = Structure
+TreeEmitter = StructureEmitter
 
-def parse_csv(fh_data_in: TextIO, tree_out: Tree):
+def make_tree(fh_data_in: TextIO, tree_out: Tree):
     for raw_data in fh_data_in:
         raw_data = raw_data.strip()
         if not raw_data or raw_data.startswith("#"): continue
