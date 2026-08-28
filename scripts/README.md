@@ -63,7 +63,7 @@ gamedata.py
   TreeEmitter.emit() walk the tree, write header(s)
 ```
 
-### I. Tree building (`tree.py`)
+### 1. Tree building (`tree.py`)
 
 `make_tree` dispatches each record to `parse_data_record` or `parse_enum_value_record`.
 
@@ -76,7 +76,7 @@ After parsing, the tree is sorted twice to guarantee deterministic output regard
 1. `sort(by="name")` - alphabetical A→Z across all children, recursively.
 2. `sort(by="basename", key=("Tag::Member", "Tag::Enum", "Tag::Structure").index)` - groups by kind: members first, enums second, nested structures last.
 
-### II. Type system (`types/`)
+### 2. Type system (`types/`)
 
 `resolve_member_type(raw_typename)` maps the logical typename string to a Python class. The lookup table is built at import time by reflecting all `Member` subclasses in scope, so adding a new concrete type is enough to register it.
 
@@ -104,7 +104,7 @@ Three traits on `Member` control what the emitter appends to the C++ return type
 - `Trait.Pointer`: accessor automatically resolves indirection.
 - Note: types that do not have `Trait.Transparent` are termed Opaque, and need a layout adaptor to wrap the emitted type. (e.g. `String64Array`, `WString16Array`)
 
-### III. Code generation (`emit/`)
+### 3. Code generation (`emit/`)
 
 **`MemberEmitter`** produces a single-line `Tag::Member` struct with a `type` alias:
 

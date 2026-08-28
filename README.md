@@ -1,8 +1,6 @@
 # Sage
 
-Header-only C++23 library for no-copy, in-place inspection and editing of *The Legend of Zelda: Tears of the Kingdom* save game files.
-
-All member reads and writes go directly into the loaded byte blob. No intermediate objects, no serialization round-trip.
+Header-only C++23 library for no-copy, in-place inspection and editing of *The Legend of Zelda: Tears of the Kingdom* save game files.  All member reads and writes go directly into the loaded byte blob. No intermediate objects, no serialization round-trip.
 
 ## Usage / API
 
@@ -59,13 +57,13 @@ More detailed examples can be found [here](./examples).
 
 ## How it works
 
-### I. Sav: file I/O and field lookup
+### 1. Sav: file I/O and field lookup
 
 `Sav` reads the entire save file into a `std::vector<byte>`. On construction it walks the blob's internal hash table and builds an `unordered_map<hash_t, offset_t>` for O(1) field lookup by name hash. All subsequent member access "overlay" that buffer.
 
 Filesystem I/O lives in `Core/Filesystem.hpp` via `read_all_bytes()` and `write_all_bytes()`.
 
-### II. Overlay System
+### 2. Overlay System
 
 The type system splits into two namespaces:
 
@@ -73,7 +71,7 @@ The type system splits into two namespaces:
 - `Data::Structure<S>` is the constructible copy of the tag structure, it can be constructed with Sav&, and "overlays" it's members over the data of the Sav object. Automatically constructed on `Sav::get<S>()`.
 - `Data::Hashtable<M>` stores compile-time hash values for each member, computed via `consteval murmurhash3::hash()`. Each subsystem header defines its own specializations; `lib/GameData/GameData.hpp` includes all ~50 of them. `lib/Sage.hpp` includes `GameData.hpp`, and `include/sage` forwards to `Sage.hpp`, so a single `#include <sage>` brings everything in.
 
-### III. `Sav::get<[S|M|E]>()` dispatch
+### 3. `Sav::get<[S|M|E]>()` dispatch
 
 `get<[S|M|E]>()` dispatches at compile time based on the tag `T` carries:
 
@@ -81,7 +79,7 @@ The type system splits into two namespaces:
 - `Tag::Member (M)`: resolves the hash from `Data::Hashtable<M>` and applies layout adaptation. If the member type is a pointer (e.g. `X*`), `get<M>()` resolves the indirection automatically and returns `X`. Non-pointer members (e.g. `float&`) read directly from the runtime hashtable offset.
 - `Tag::Enum (E)`: `Tag::Enum` inherits from `Tag::Member`, so enum members go through the same `get<M>()` path. Scalar enums have `type = enum_t<E>&` (non-pointer, direct read); enum arrays have `type = span<enum_t<E>>*` (pointer-indirect).
 
-### IV. Overlay layout adaptors
+### 4. Overlay layout adaptors
 
 The blob uses Nintendo's binary layout, which doesn't map 1:1 to C++ types. `Core/Layout.hpp` adapts each type at point of access with no copying of the underlying data, always "overlaying" or "viewing" the buffer.
 
