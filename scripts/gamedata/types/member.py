@@ -18,8 +18,9 @@ class Member(GameDataType):
 
     class Trait():
         class Base: pass
-        class View(Base): pass # View types need layout adapters
-        class Pointer(Base): pass # Pointer types need indirection resolution
+        class Transparent(Base): pass # Transparent members can be returned directly
+        class Reference(Transparent): pass # Reference members are also transparent
+        class Pointer(Base): pass # Pointer members need indirection resolution
 
     @classmethod
     def has_trait(cls, t: type[Trait.Base]) -> bool:
