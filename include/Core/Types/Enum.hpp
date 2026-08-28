@@ -1,7 +1,7 @@
 #pragma once
 
 template <typename V>
-struct enum_t : V // V (values_t) brings all the enum values into scope of this blob type
+struct enum_t /* enum is a reserved keyword */ : V // V brings all the enum values into scope of this blob type
 {
     using typename V::underlying_enum_t;
 
