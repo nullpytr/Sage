@@ -76,7 +76,7 @@ def parse_data_record(
             # path=f"{curr_node.path}::{id}",
             hash_text_string=hash_text_string,
             hash_hexadecimal=hash_hexadecimal,
-            parent=curr_node.parent
+            parent=curr_node
         )
 
 def resolve_incomplete_enum_member(values: tuple[str, ...], incomplete_t: Enum) -> Enum:
