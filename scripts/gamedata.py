@@ -1,8 +1,7 @@
 #!/usr/bin/env py
 
-import sys, argparse, json
+import os, sys, argparse, json
 from contextlib import redirect_stdout
-from io import StringIO
 from shutil import rmtree
 from pathlib import Path
 
@@ -10,9 +9,9 @@ from gamedata import tree
 
 PROJECT_ROOT = Path(__file__).parents[1] # scripts/..
 PRESETS_DIR = PROJECT_ROOT / "data" / "presets"
-PRESETS = tuple(sorted(p.stem for p in PRESETS_DIR.iterdir()))
+PRESET_CHOICES = tuple(sorted(p.stem for p in PRESETS_DIR.iterdir()))
 
-SINK = StringIO()
+SINK_FD = open(os.devnull, "w")
 
 def as_dict(t: tree.Tree) -> dict:
     s = repr(t).replace("'", '"')
@@ -33,10 +32,10 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument(
         "--preset", "-p",
-        choices=PRESETS,
+        choices=PRESET_CHOICES,
         default="medium",
         metavar="PRESET",
-        help=f"Metadata preset to use: ({' | '.join(PRESETS)}) (default: medium)",
+        help=f"Metadata preset to use: ({' | '.join(PRESET_CHOICES)}) (default: medium)",
     )
     p.add_argument(
         "--metadata", "-m",
@@ -91,7 +90,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 def run(args: argparse.Namespace) -> None:
-    verbose_fd = sys.stdout if args.verbose else SINK
+    verbose_fd = sys.stdout if args.verbose else SINK_FD
 
     data_fp = resolve_datafile(args)
     assert data_fp.exists(), f"metadata file does not exist: {data_fp}"
