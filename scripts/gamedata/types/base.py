@@ -14,6 +14,6 @@ class GameDataType():
 
     @property
     def path(self) -> str:
-        return f"{self.parent.path if self.parent else ''}{self.PATH_DELIM}{self.name}"
+        return f"{self.parent.path + self.PATH_DELIM if self.parent else ''}{self.name}"
 
     PATH_DELIM = "::"
