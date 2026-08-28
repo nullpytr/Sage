@@ -54,6 +54,13 @@ def build_parser() -> argparse.ArgumentParser:
         default=DEFAULT_TOP_LEVEL_HEADER_NAME,
         help=f"Top-level header name (default: {DEFAULT_TOP_LEVEL_HEADER_NAME})",
     )
+    spec.add_argument(
+        "--pick", "-q",
+        type=Picker,
+        default=None,
+        metavar="PICKER",
+        help="Cherry pick a single struct from the metadata file",
+    )
 
     p.add_argument(
         "--standalone", "-s",
@@ -98,12 +105,15 @@ def run(args: argparse.Namespace) -> None:
         data_fp = resolve_datafile(args)
         assert data_fp.exists(), f"metadata file does not exist: {data_fp}"
 
+    picker = Picker(args.pick)
+    if picker and args.name == DEFAULT_TOP_LEVEL_HEADER_NAME:
+        args.name = picker.id_list[-1]
 
     with redirect_stdout(verbose_fd):
-        gamedata = tree.Tree(args.name)
-        if data_fp: tree.make_tree(data_fp.open("r"), gamedata)
+        root = tree.Tree(args.name)
+        if data_fp: tree.make_tree(data_fp.open("r"), root)
 
-    if args.tree and data_fp: return print(json.dumps(as_dict(gamedata), indent=2))
+    if args.tree and data_fp: return print(json.dumps(as_dict(root), indent=2))
     if args.dry and data_fp: return print("[cli/dry]", f"parsed {data_fp.name}")
 
     out_dir = Path(args.out)
@@ -122,12 +132,13 @@ def run(args: argparse.Namespace) -> None:
 
     if args.clear: return 
 
-    args.standalone = args.standalone or isinstance(gamedata, types.Member) # member always standalone
-
-    emitter = tree.TreeEmitter
+    if picker: root = picker.root(root)
+    args.standalone = args.standalone or isinstance(root, types.Member) # member always standalone
+    
+    emitter = picker.emitter(root)
     with redirect_stdout(verbose_fd):
-        if args.standalone: emitter.emit(gamedata, header_fp=header_file)
-        else: emitter.emit(gamedata, include_dir=out_dir)
+        if args.standalone: emitter.emit(root, header_fp=header_file) # type: ignore
+        else: emitter.emit(root, include_dir=out_dir) # type: ignore
 
     if not args.standalone: print(header_dir)
     print(header_file)
@@ -151,6 +162,36 @@ def resolve_datafile(args: argparse.Namespace) -> Path:
     assert preset_file.exists(), f"preset does not exist: {args.preset}"
 
     return preset_file
+
+class Picker():
+    DELIM: str = "::"
+
+    id_list: list[str]
+
+    def __init__(self, x: "str | Picker | None") -> None:
+        if isinstance(x, Picker): self.id_list = x.id_list
+        elif isinstance(x, str): self.id_list = x.split(self.DELIM)
+        else: self.id_list = []
+
+    def __bool__(self) -> bool:
+        return bool(self.id_list)
+
+    def root(self, t: tree.Tree) -> types.GameDataType:
+        result: types.GameDataType = t # decay
+        for id in self.id_list:
+            assert isinstance(result, tree.Tree), "unexpected: non-leaf non-tree type"
+            assert id in result.children, f"type {id} does not exist"
+            result = result.children[id] # non-leaf; keep going
+
+        result.parent = None # re-root
+        return result
+
+    def emitter(self, node: types.GameDataType):
+        if isinstance(node, tree.Tree): return tree.TreeEmitter
+        elif isinstance(node, types.Enum): return emit.enum.EnumEmitter
+        elif isinstance(node, types.Member): return emit.member.MemberEmitter
+        else: raise AssertionError(f"[cli/emit] unknown node type {type(node)} found")
+         
     
 if __name__ == "__main__":
     main()
