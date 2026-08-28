@@ -5,7 +5,7 @@ Python pipeline that generates the C++ headers under `lib/GameData/` from a semi
 ## Usage
 
 ```sh
-./scripts/gamedata.py [options]
+py scripts/gamedata.py [options]
 ```
 
 | flag | short | default | effect |
