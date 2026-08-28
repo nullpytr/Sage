@@ -1,7 +1,8 @@
+
 #include <print>
 #include <algorithm>
-#include "Core/Sav.hpp"
-#include "GameData.hpp"
+
+#include <sage>
 
 static void require(bool const condition) { if (!condition) std::exit(1); }
 
@@ -20,6 +21,7 @@ static bool is_ability_amiibo(Data::Enum<GameData::PlayerStatus::CurrentSpecialP
 static auto is_player_in_mainfield = [](Data::Member<GameData::Sequence_CurrentBanc> const& banc) { return banc == "MainField"; };
 
 int main(int const argc, char const* argv[]) {
+
     /* progress.sav */
     std::println("/* progress.sav */");
     Sav save { "other/progress.sav" };
@@ -116,9 +118,7 @@ int main(int const argc, char const* argv[]) {
     if (pos < saddle_array.size()) std::println("[horses/saddle] GameRomHorseSaddle_00 found at position {} of array", pos);
     else std::println("[horses/saddle] GameRomHorseSaddle_00 not found in array");
 
-    /* String arrays
-     * strings inside arrays need to be adapted explicitly
-     * (because of nested adapters, WIP) */
+    /* String arrays */
     for (auto name : data.OwnedHorseList.Name)
         name = u"my horse"; // write directly into sav object's memory
 

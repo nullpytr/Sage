@@ -1,6 +1,5 @@
 #include <print>
-#include "Core/Sav.hpp"
-#include "GameData.hpp"
+#include <sage>
 
 int main(int const argc, char const* argv[]) {
     std::println("/* progress.sav */");

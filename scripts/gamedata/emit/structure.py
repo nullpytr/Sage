@@ -14,9 +14,7 @@ class StructureEmitter():
 
         if include_dir: # emit header files
             write("#pragma once")
-            write("#include \"Core/Types.hpp\"")
-            write("#include \"Core/Enum.hpp\"")
-            write("#include \"Core/Sav.hpp\"")
+            write("#include <sage>")
             write("")
 
         write(f"struct {struct.path} : {struct.basename}" " {") # tag open
