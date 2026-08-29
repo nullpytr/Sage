@@ -4,7 +4,7 @@ C++23 header-only library for no-copy, in-place inspection and editing of *The L
 
 ## Usage
 
-1. Download the [bundled header](../../releases/latest) (or [generate your own](./scripts/README.md#scripts/bundle)) and place it in your project's include directory.
+1. Download the [bundled header](../../releases/latest) (or [generate your own](./scripts/README.md#scriptsbundle)) and place it in your project's include directory.
 
 2. Set it up as a precompiled header to avoid recompilation on every build of your project.
 
@@ -87,7 +87,30 @@ auto* hashtable = save.ptr<hash_t>(METADATA_HASHTABLE_START);
 std::println("{}", hashtable[0] == save.ref<hash_t>(METADATA_HASHTABLE_START)); // true
 ```
 ## Examples
-More detailed examples can be found [here](./examples).
+The example below patches the hearts, stamina, rupee and bubbul gem values to their max limits, essentially like a cheat. 
+
+```cpp
+auto status = save.get<GameData::PlayerStatus>(); // get subsystem overlay
+
+constexpr auto limit_rupee = std::numeric_limits<std::decay_t<decltype(status.CurrentRupee)>>::max(); // limits
+constexpr auto limit_mamo = std::numeric_limits<std::decay_t<decltype(status.CurrentMamo)>>::max();
+
+status.MaxLife = LIMIT_MAX_LIFE; // set
+status.MaxStamina = LIMIT_MAX_STAMINA;
+status.MaxEnergy = LIMIT_MAX_ENERGY;
+status.CurrentRupee = limit_rupee;
+status.CurrentMamo = limit_mamo;
+
+require(save.get<GameData::PlayerStatus::MaxLife>() == LIMIT_MAX_LIFE); // verify
+require(save.get<GameData::PlayerStatus::MaxStamina>() == LIMIT_MAX_STAMINA);
+require(save.get<GameData::PlayerStatus::MaxEnergy>() == LIMIT_MAX_ENERGY);
+require(save.get<GameData::PlayerStatus::CurrentRupee>() == limit_rupee);
+require(save.get<GameData::PlayerStatus::CurrentMamo>() == limit_mamo);
+```
+
+The changes reflect in game which can be seen in this snapshot: ![example-image](../../releases/download/example-image/example.png)
+
+The full code for this cheat can be found [here](./examples/Cheat.cpp) and more examples can be found [here](./examples).
 
 ## How it works
 
