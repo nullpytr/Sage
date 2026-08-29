@@ -7,7 +7,9 @@
 #include "External/Filesystem.hpp"
 #include "Core.hpp"
 
-#define METADATA_SAVE_TYPE_HASH 0xa3db7114
+#define METADATA_HASHTABLE_START 0x000028
+#define METADATA_HASHTABLE_SIZE_ESTIMATE 31000
+#define METADATA_HASHTABLE_END_VALUE murmurhash3::hash("Metadata.SaveTypeHash")
 
 class Sav
 {
@@ -16,8 +18,8 @@ public:
     explicit Sav(std::string const& path) : m_data { read_all_bytes(path) }
     {
         // Load entire hash table once
-        m_offsets.reserve(31000); // approximate size of the hashtable
-        for (offset_t offset = 0x000028; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
+        m_offsets.reserve(METADATA_HASHTABLE_SIZE_ESTIMATE);
+        for (offset_t offset = METADATA_HASHTABLE_START; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
         {
             auto hash = ref<hash_t>(offset);
             m_offsets[hash] = offset + sizeof(hash_t);
@@ -25,7 +27,7 @@ public:
             /* Hashtable ends at MetaData.SaveTypeHash
              * See: https://github.com/marcrobledo/savegame-editors/blob/b65dc1ecf655ba4f5f8bb74d4a7d402fc375fbf1/zelda-totk/zelda-totk.variables.js#L757
              */
-            if (hash == METADATA_SAVE_TYPE_HASH) break;
+            if (hash == METADATA_HASHTABLE_END_VALUE) break;
         }
     }
 
