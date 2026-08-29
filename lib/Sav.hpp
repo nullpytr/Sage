@@ -9,8 +9,6 @@
 
 #define METADATA_SAVE_TYPE_HASH 0xa3db7114
 
-inline constexpr struct {} from_hash;
-
 class Sav
 {
 public:
@@ -54,32 +52,32 @@ public:
     requires std::derived_from<M, Tag::Member>
     O get()
     {
-        hash_t const& hash = Data::Hashtable<M>;
+        auto const& hash = Data::Hashtable<M>;
 
         if constexpr (std::is_pointer_v<P>) {
             /* resolve indirection automatically
              * so the user does not have to */
-            offset_t const offset = ref<from_hash, u32>(hash);
+            offset_t const offset = ref<u32>(hash);
             return ref<L>(offset);
         }
 
-        return ref<from_hash, L>(hash); // default
+        return ref<L>(hash); // default
     }
 
     /* Mid-level access */
-    /* Get pointer to value of type T from hash */
-    template <decltype(from_hash), typename T>
-    T* ptr(hash_t const hash)
+    /* Get pointer to value of type T from hash text or value */
+    template <typename T>
+    T* ptr(hash_value_t const& h)
     {
-        offset_t const offset = m_offsets.at(hash);
+        offset_t const offset = m_offsets.at(h);
         return ptr<T>(offset);
     }
 
-    /* Get reference to value of type T from hash */
-    template <decltype(from_hash), typename T>
-    T& ref(hash_t const hash)
+    /* Get reference to value of type T from hash text or value */
+    template <typename T>
+    T& ref(hash_value_t const& h)
     {
-        return *ptr<from_hash, T>(hash);
+        return *ptr<T>(h);
     }
 
     /* Low-level access */

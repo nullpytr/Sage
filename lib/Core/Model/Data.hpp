@@ -18,7 +18,7 @@ namespace Data
      * keyed using corresponding tag (subclass of Tag::Member) */
     template <typename M>
     requires std::derived_from<M, Tag::Member>
-    inline constexpr hash_t Hashtable = [] {
+    inline constexpr hash_value_t Hashtable = [] {
         /* This static assert ensures that no other type
          * can fall back to this non-specialised template (because this is not an impl)
          * -- we throw a hard error for undefined specializations. */

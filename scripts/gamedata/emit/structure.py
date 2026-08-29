@@ -66,11 +66,11 @@ class StructureEmitter():
 
         for child in struct.children.values(): # member hashtable defs
             if not isinstance(child, member.Member): continue
-            child_hash = f"murmurhash3::hash(\"{child.hash_text_string}\")"
+            child_hash = f'"{child.hash_text_string}"'
             if child.hash_text_string == "Playtime":
                 child_hash = f"0x{child.hash_hexadecimal}" # unknown hash text for playtime field
 
-            write(f"template <> {types.Hash} constexpr Data::Hashtable<{child.path}> = {child_hash};")
+            write(f"template <> {types.HashtableEntry} constexpr Data::Hashtable<{child.path}> " "{ " + child_hash + " };")
 
         string = delim.join(buffer)
         if include_dir:

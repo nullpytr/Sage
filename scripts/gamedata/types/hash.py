@@ -1,5 +1,8 @@
-class _Hash: 
-    typename = "hash_t"
+class Typename: 
+    typename: str
+
+    def __init__(self, typename: str) -> None:
+        self.typename = typename
 
     def __repr__(self) -> str:
         return self.typename
@@ -7,4 +10,5 @@ class _Hash:
     def __str__(self) -> str:
         return repr(self)
 
-Hash = _Hash()
+Hash = Typename("hash_t")
+HashtableEntry = Typename("hash_value_t")
