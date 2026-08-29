@@ -21,10 +21,7 @@ static bool is_ability_amiibo(Data::Enum<GameData::PlayerStatus::CurrentSpecialP
 static auto is_player_in_mainfield = [](Data::Member<GameData::Sequence_CurrentBanc> const& banc) { return banc == "MainField"; };
 
 int main(int const argc, char const* argv[]) {
-
-    /* progress.sav */
-    std::println("/* progress.sav */");
-    Sav save { "other/progress.sav" };
+    Sav save { "other/progress.sav" }; /* progress.sav */
 
     auto data = save.get<GameData>();
 

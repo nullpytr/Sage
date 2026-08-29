@@ -20,48 +20,72 @@ To update to a newer version, simply drop in the latest bundled header from [rel
 
 ## API
 
-Sage provides three different ways to access save data - basically 3 tiers of abstraction:
-
-### High level
-
-Load an entire subsystem at once. Member access mirrors the in-game data hierarchy.
-
+Load a save file using
 ```cpp
-Sav save("progress.sav");
-auto data = save.get<GameData>();
-
-auto& life    = data.PlayerStatus.MaxLife;
-auto& stamina = data.PlayerStatus.MaxStamina;
-
-// Writes go back into the blob in-place.
-data.PlayerStatus.MaxLife = 40.0f;
-save.export("progress.sav");
+Sav save { "other/progress.sav" };
 ```
 
-### Medium level
+& Export it after editing using
+```cpp
+save.dump("export.sav");
+```
+  
+  
+Sage provides three different ways to access save data from a save file - 3 tiers of abstraction:
 
-Fetch a single member without constructing the full parent structure. Useful when you only need one field.
+### High-level (recommended)
+
+Fully type safe & structured access using the GameData overlay model.
 
 ```cpp
-auto& life = save.get<GameData::PlayerStatus::MaxLife>();
-life = 40.0f;
+{ // Pathway A: Parse entire save in one go and use overlay instances
+   auto const& data = save.get<GameData>();
+   auto const& playtime = data.Playtime;
+   auto const& status = data.PlayerStatus.MaxLife;
+   auto const& stamina = data.PlayerStatus.MaxStamina;
+}
+
+{ // Pathway B: Parse and use only what you want using overlay types
+   auto const& playtime = save.get<GameData::Playtime>(); // member field
+   auto const& status = save.get<GameData::PlayerStatus>(); // subsystem
+
+   // subsystem overlay fully loaded in, access anything
+   auto const& life = status.MaxLife;
+   auto const& stamina = status.MaxStamina;
+
+   // or skip the subsytem entirely
+   auto const& life_ = save.get<GameData::PlayerStatus::MaxLife>();
+   auto const & stamina_ = save.get<GameData::PlayerStatus::MaxStamina>();
+}
+```
+
+### Medium-level
+
+Get a pointer or reference to a member field by it's path or hash value. The string literals are hashed at compile time and stripped out of the binary (that's why they need to be wrapped with braces `{}`). Useful for fields not yet covered by the generated headers.
+
+
+```cpp
+{ // Get pointers to fields using hash text or value
+   auto* playtime = save.ptr<u32>(hash_value_t { 0xe573f564 });
+   auto* life = save.ptr<s32>({ "PlayerStatus.MaxLife" });
+}
+
+{ // Get references to fields using hash text or value
+   auto& playtime = save.ref<u32>(hash_value_t { 0xe573f564 });
+   auto& life = save.ref<s32>({ "PlayerStatus.MaxLife" });
+
+   auto& stamina = *save.ptr<s32>({ "PlayerStatus.MaxStamina" }); // also works
+}
 ```
 
 ### Low level
 
-Direct offset or hash-based access. Useful for quick inspection or fields not yet covered by the generated headers.
+Get a pointer or reference to data at a given offset directly.
 
 ```cpp
-// By file offset
-auto& life_ref = save.ref<float>(0x1A4C);
-auto* life_ptr = save.ptr<float>(0x1A4C); // deref will also give life_ref
+auto* hashtable = save.ptr<hash_t>(METADATA_HASHTABLE_START);
+std::println("{}", hashtable[0] == save.ref<hash_t>(METADATA_HASHTABLE_START)); // true
 ```
-```cpp
-// By MurmurHash3 of the field name
-auto& life_ref = save.ref<from_hash, float>(0x1A4C);
-auto* life_ptr = save.ptr<from_hash, float>(0x1A4C);
-```
-
 ## Examples
 More detailed examples can be found [here](./examples).
 
