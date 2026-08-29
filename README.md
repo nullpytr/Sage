@@ -108,11 +108,13 @@ require(save.get<GameData::PlayerStatus::CurrentRupee>() == limit_rupee);
 require(save.get<GameData::PlayerStatus::CurrentMamo>() == limit_mamo);
 ```
 
-The changes reflect in game which can be seen in this snapshot: ![example-image](../../releases/download/example-image/example.png)
+The changes reflect in game which can be seen in this snapshot: ![images-example](../../releases/download/images/example.png)
 
 The full code for this cheat can be found [here](./examples/Cheat.cpp) and more examples can be found [here](./examples).
 
 ## How it works
+
+![images-sage](../../releases/download/images/diagram.png)
 
 ### 1. Sav: file I/O and field lookup
 
