@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::LastWildHorse::Body::SecondaryColor
 	{ }
 };/* Data::Structure GameData::LastWildHorse::Body::SecondaryColor close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::SecondaryColor::Blue> = murmurhash3::hash("LastWildHorse.Body.SecondaryColor.Blue");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::SecondaryColor::Green> = murmurhash3::hash("LastWildHorse.Body.SecondaryColor.Green");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::SecondaryColor::Red> = murmurhash3::hash("LastWildHorse.Body.SecondaryColor.Red");
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::SecondaryColor::Blue> { "LastWildHorse.Body.SecondaryColor.Blue" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::SecondaryColor::Green> { "LastWildHorse.Body.SecondaryColor.Green" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::SecondaryColor::Red> { "LastWildHorse.Body.SecondaryColor.Red" };

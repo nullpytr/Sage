@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::RaumiGolemAttachment::SubTool> : Ga
 	{ }
 };/* Data::Structure GameData::RaumiGolemAttachment::SubTool close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubTool::Life> = murmurhash3::hash("RaumiGolemAttachment.SubTool.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubTool::Name> = murmurhash3::hash("RaumiGolemAttachment.SubTool.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubTool::RaumiControlLife> = murmurhash3::hash("RaumiGolemAttachment.SubTool.RaumiControlLife");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubTool::Life> { "RaumiGolemAttachment.SubTool.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubTool::Name> { "RaumiGolemAttachment.SubTool.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubTool::RaumiControlLife> { "RaumiGolemAttachment.SubTool.RaumiControlLife" };

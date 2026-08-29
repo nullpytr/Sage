@@ -21,5 +21,5 @@ template <> struct Data::Structure<GameData::Pouch::SpecialParts> : GameData::Po
 	{ }
 };/* Data::Structure GameData::Pouch::SpecialParts close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::EquipIndex> = murmurhash3::hash("Pouch.SpecialParts.EquipIndex");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::IsValid> = murmurhash3::hash("Pouch.SpecialParts.IsValid");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::EquipIndex> { "Pouch.SpecialParts.EquipIndex" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::IsValid> { "Pouch.SpecialParts.IsValid" };

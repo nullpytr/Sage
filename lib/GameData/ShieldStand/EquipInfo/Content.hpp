@@ -28,6 +28,6 @@ template <> struct Data::Structure<GameData::ShieldStand::EquipInfo::Content> : 
 	{ }
 };/* Data::Structure GameData::ShieldStand::EquipInfo::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::ExtraLife> = murmurhash3::hash("ShieldStand.EquipInfo.Content.ExtraLife");
-template <> hash_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Life> = murmurhash3::hash("ShieldStand.EquipInfo.Content.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Name> = murmurhash3::hash("ShieldStand.EquipInfo.Content.Name");
+template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::ExtraLife> { "ShieldStand.EquipInfo.Content.ExtraLife" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Life> { "ShieldStand.EquipInfo.Content.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Name> { "ShieldStand.EquipInfo.Content.Name" };

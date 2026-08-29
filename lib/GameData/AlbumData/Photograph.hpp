@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::AlbumData::Photograph> : GameData::
 	{ }
 };/* Data::Structure GameData::AlbumData::Photograph close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::ActorName> = murmurhash3::hash("AlbumData.Photograph.ActorName");
-template <> hash_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::FigureHash> = murmurhash3::hash("AlbumData.Photograph.FigureHash");
-template <> hash_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::Index> = murmurhash3::hash("AlbumData.Photograph.Index");
-template <> hash_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::Location> = murmurhash3::hash("AlbumData.Photograph.Location");
+template <> hash_value_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::ActorName> { "AlbumData.Photograph.ActorName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::FigureHash> { "AlbumData.Photograph.FigureHash" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::Index> { "AlbumData.Photograph.Index" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::Location> { "AlbumData.Photograph.Location" };

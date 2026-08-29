@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_163844792216731259
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_16384479221673125997::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16384479221673125997::EjectNum::SpObj_Chaser_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.16384479221673125997.EjectNum.SpObj_Chaser_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16384479221673125997::EjectNum::SpObj_ControlStick_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.16384479221673125997.EjectNum.SpObj_ControlStick_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16384479221673125997::EjectNum::SpObj_ElectricBoxGenerator_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.16384479221673125997.EjectNum.SpObj_ElectricBoxGenerator_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16384479221673125997::EjectNum::SpObj_FlashLight_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.16384479221673125997.EjectNum.SpObj_FlashLight_Capsule_A_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16384479221673125997::EjectNum::SpObj_Chaser_Capsule_A_01> { "RecycleBoxData.16384479221673125997.EjectNum.SpObj_Chaser_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16384479221673125997::EjectNum::SpObj_ControlStick_Capsule_A_01> { "RecycleBoxData.16384479221673125997.EjectNum.SpObj_ControlStick_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16384479221673125997::EjectNum::SpObj_ElectricBoxGenerator_Capsule_A_01> { "RecycleBoxData.16384479221673125997.EjectNum.SpObj_ElectricBoxGenerator_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16384479221673125997::EjectNum::SpObj_FlashLight_Capsule_A_01> { "RecycleBoxData.16384479221673125997.EjectNum.SpObj_FlashLight_Capsule_A_01" };

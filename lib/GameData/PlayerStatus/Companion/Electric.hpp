@@ -54,15 +54,15 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion::Electric> 
 	{ }
 };/* Data::Structure GameData::PlayerStatus::Companion::Electric close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::CurrentPos> = murmurhash3::hash("PlayerStatus.Companion.Electric.CurrentPos");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsFollowMode> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsFollowMode");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsGet> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsGet");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsGoThroughAirWall> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsGoThroughAirWall");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsGoThroughAirWallPrepare> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsGoThroughAirWallPrepare");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsLeaveFollower> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsLeaveFollower");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsLightningReady> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsLightningReady");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsPlayedSoulSageFirstAppearanceEvent> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsPlayedSoulSageFirstAppearanceEvent");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsSageDynamicGenerate> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsSageDynamicGenerate");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsSummon> = murmurhash3::hash("PlayerStatus.Companion.Electric.IsSummon");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::RemainingEnergy> = murmurhash3::hash("PlayerStatus.Companion.Electric.RemainingEnergy");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::JoiningCondition> = murmurhash3::hash("PlayerStatus.Companion.Electric.JoiningCondition");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::CurrentPos> { "PlayerStatus.Companion.Electric.CurrentPos" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsFollowMode> { "PlayerStatus.Companion.Electric.IsFollowMode" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsGet> { "PlayerStatus.Companion.Electric.IsGet" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsGoThroughAirWall> { "PlayerStatus.Companion.Electric.IsGoThroughAirWall" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsGoThroughAirWallPrepare> { "PlayerStatus.Companion.Electric.IsGoThroughAirWallPrepare" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsLeaveFollower> { "PlayerStatus.Companion.Electric.IsLeaveFollower" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsLightningReady> { "PlayerStatus.Companion.Electric.IsLightningReady" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsPlayedSoulSageFirstAppearanceEvent> { "PlayerStatus.Companion.Electric.IsPlayedSoulSageFirstAppearanceEvent" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsSageDynamicGenerate> { "PlayerStatus.Companion.Electric.IsSageDynamicGenerate" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::IsSummon> { "PlayerStatus.Companion.Electric.IsSummon" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::RemainingEnergy> { "PlayerStatus.Companion.Electric.RemainingEnergy" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Electric::JoiningCondition> { "PlayerStatus.Companion.Electric.JoiningCondition" };

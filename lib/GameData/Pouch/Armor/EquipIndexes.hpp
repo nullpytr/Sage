@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::Pouch::Armor::EquipIndexes> : GameD
 	{ }
 };/* Data::Structure GameData::Pouch::Armor::EquipIndexes close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Armor::EquipIndexes::Bottom> = murmurhash3::hash("Pouch.Armor.EquipIndexes.Bottom");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Armor::EquipIndexes::Head> = murmurhash3::hash("Pouch.Armor.EquipIndexes.Head");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Armor::EquipIndexes::Upper> = murmurhash3::hash("Pouch.Armor.EquipIndexes.Upper");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::EquipIndexes::Bottom> { "Pouch.Armor.EquipIndexes.Bottom" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::EquipIndexes::Head> { "Pouch.Armor.EquipIndexes.Head" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::EquipIndexes::Upper> { "Pouch.Armor.EquipIndexes.Upper" };

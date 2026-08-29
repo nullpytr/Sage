@@ -28,8 +28,8 @@ template <> struct Data::Structure<GameData::NpcGardenInfo_HatenoVillage023> : G
 	{ }
 };/* Data::Structure GameData::NpcGardenInfo_HatenoVillage023 close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::GrowActorName> = murmurhash3::hash("NpcGardenInfo_HatenoVillage023.GrowActorName");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::GrowthElapsedTime> = murmurhash3::hash("NpcGardenInfo_HatenoVillage023.GrowthElapsedTime");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::IsHarvested> = murmurhash3::hash("NpcGardenInfo_HatenoVillage023.IsHarvested");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::LastGrowActorName> = murmurhash3::hash("NpcGardenInfo_HatenoVillage023.LastGrowActorName");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::CurrentState> = murmurhash3::hash("NpcGardenInfo_HatenoVillage023.CurrentState");
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::GrowActorName> { "NpcGardenInfo_HatenoVillage023.GrowActorName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::GrowthElapsedTime> { "NpcGardenInfo_HatenoVillage023.GrowthElapsedTime" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::IsHarvested> { "NpcGardenInfo_HatenoVillage023.IsHarvested" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::LastGrowActorName> { "NpcGardenInfo_HatenoVillage023.LastGrowActorName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::CurrentState> { "NpcGardenInfo_HatenoVillage023.CurrentState" };

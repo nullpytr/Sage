@@ -27,7 +27,7 @@ template <> struct Data::Structure<GameData::Pouch::Bow> : GameData::Pouch::Bow 
 	{ }
 };/* Data::Structure GameData::Pouch::Bow close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::EquipIndex> = murmurhash3::hash("Pouch.Bow.EquipIndex");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::IsEnableShortcut> = murmurhash3::hash("Pouch.Bow.IsEnableShortcut");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::IsValid> = murmurhash3::hash("Pouch.Bow.IsValid");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::ValidNum> = murmurhash3::hash("Pouch.Bow.ValidNum");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::EquipIndex> { "Pouch.Bow.EquipIndex" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::IsEnableShortcut> { "Pouch.Bow.IsEnableShortcut" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::IsValid> { "Pouch.Bow.IsValid" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::ValidNum> { "Pouch.Bow.ValidNum" };

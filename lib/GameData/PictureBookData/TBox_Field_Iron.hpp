@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::TBox_Field_Iron> :
 	{ }
 };/* Data::Structure GameData::PictureBookData::TBox_Field_Iron close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::TBox_Field_Iron::State> = murmurhash3::hash("PictureBookData.TBox_Field_Iron.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::TBox_Field_Iron::State> { "PictureBookData.TBox_Field_Iron.State" };

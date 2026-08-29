@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::FldObj_Pinecone_A_
 	{ }
 };/* Data::Structure GameData::PictureBookData::FldObj_Pinecone_A_01 close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::FldObj_Pinecone_A_01::State> = murmurhash3::hash("PictureBookData.FldObj_Pinecone_A_01.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::FldObj_Pinecone_A_01::State> { "PictureBookData.FldObj_Pinecone_A_01.State" };

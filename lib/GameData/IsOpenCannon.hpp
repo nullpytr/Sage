@@ -55,18 +55,18 @@ template <> struct Data::Structure<GameData::IsOpenCannon> : GameData::IsOpenCan
 	{ }
 };/* Data::Structure GameData::IsOpenCannon close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower01> = murmurhash3::hash("IsOpenCannon.Tower01");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower02> = murmurhash3::hash("IsOpenCannon.Tower02");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower03> = murmurhash3::hash("IsOpenCannon.Tower03");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower04> = murmurhash3::hash("IsOpenCannon.Tower04");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower05> = murmurhash3::hash("IsOpenCannon.Tower05");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower06> = murmurhash3::hash("IsOpenCannon.Tower06");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower07> = murmurhash3::hash("IsOpenCannon.Tower07");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower08> = murmurhash3::hash("IsOpenCannon.Tower08");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower09> = murmurhash3::hash("IsOpenCannon.Tower09");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower10> = murmurhash3::hash("IsOpenCannon.Tower10");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower11> = murmurhash3::hash("IsOpenCannon.Tower11");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower12> = murmurhash3::hash("IsOpenCannon.Tower12");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower13> = murmurhash3::hash("IsOpenCannon.Tower13");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower14> = murmurhash3::hash("IsOpenCannon.Tower14");
-template <> hash_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower15> = murmurhash3::hash("IsOpenCannon.Tower15");
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower01> { "IsOpenCannon.Tower01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower02> { "IsOpenCannon.Tower02" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower03> { "IsOpenCannon.Tower03" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower04> { "IsOpenCannon.Tower04" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower05> { "IsOpenCannon.Tower05" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower06> { "IsOpenCannon.Tower06" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower07> { "IsOpenCannon.Tower07" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower08> { "IsOpenCannon.Tower08" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower09> { "IsOpenCannon.Tower09" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower10> { "IsOpenCannon.Tower10" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower11> { "IsOpenCannon.Tower11" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower12> { "IsOpenCannon.Tower12" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower13> { "IsOpenCannon.Tower13" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower14> { "IsOpenCannon.Tower14" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower15> { "IsOpenCannon.Tower15" };

@@ -37,8 +37,8 @@ template <> struct Data::Structure<GameData::MapData> : GameData::MapData {
 	{ }
 };/* Data::Structure GameData::MapData close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IsGerudoIconEnable> = murmurhash3::hash("MapData.IsGerudoIconEnable");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IsOpenFootprintMode> = murmurhash3::hash("MapData.IsOpenFootprintMode");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IsOpenGround> = murmurhash3::hash("MapData.IsOpenGround");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IsOpenUnderGround> = murmurhash3::hash("MapData.IsOpenUnderGround");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::CurrentLayer> = murmurhash3::hash("MapData.CurrentLayer");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IsGerudoIconEnable> { "MapData.IsGerudoIconEnable" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IsOpenFootprintMode> { "MapData.IsOpenFootprintMode" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IsOpenGround> { "MapData.IsOpenGround" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IsOpenUnderGround> { "MapData.IsOpenUnderGround" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::CurrentLayer> { "MapData.CurrentLayer" };

@@ -37,12 +37,12 @@ template <> struct Data::Structure<GameData::ActionGuide_IsNew> : GameData::Acti
 	{ }
 };/* Data::Structure GameData::ActionGuide_IsNew close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::Backflip> = murmurhash3::hash("ActionGuide_IsNew.Backflip");
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::ChargrAttack> = murmurhash3::hash("ActionGuide_IsNew.ChargrAttack");
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::JumpSlash> = murmurhash3::hash("ActionGuide_IsNew.JumpSlash");
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::JustGuard> = murmurhash3::hash("ActionGuide_IsNew.JustGuard");
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::ShieldSurfing> = murmurhash3::hash("ActionGuide_IsNew.ShieldSurfing");
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::SideJump> = murmurhash3::hash("ActionGuide_IsNew.SideJump");
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::ThrowMaterial> = murmurhash3::hash("ActionGuide_IsNew.ThrowMaterial");
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::UseAmiibo> = murmurhash3::hash("ActionGuide_IsNew.UseAmiibo");
-template <> hash_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::UseCameraPointer> = murmurhash3::hash("ActionGuide_IsNew.UseCameraPointer");
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::Backflip> { "ActionGuide_IsNew.Backflip" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::ChargrAttack> { "ActionGuide_IsNew.ChargrAttack" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::JumpSlash> { "ActionGuide_IsNew.JumpSlash" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::JustGuard> { "ActionGuide_IsNew.JustGuard" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::ShieldSurfing> { "ActionGuide_IsNew.ShieldSurfing" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::SideJump> { "ActionGuide_IsNew.SideJump" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::ThrowMaterial> { "ActionGuide_IsNew.ThrowMaterial" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::UseAmiibo> { "ActionGuide_IsNew.UseAmiibo" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::UseCameraPointer> { "ActionGuide_IsNew.UseCameraPointer" };

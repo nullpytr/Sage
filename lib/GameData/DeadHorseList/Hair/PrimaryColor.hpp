@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::DeadHorseList::Hair::PrimaryColor> 
 	{ }
 };/* Data::Structure GameData::DeadHorseList::Hair::PrimaryColor close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Hair::PrimaryColor::Blue> = murmurhash3::hash("DeadHorseList.Hair.PrimaryColor.Blue");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Hair::PrimaryColor::Green> = murmurhash3::hash("DeadHorseList.Hair.PrimaryColor.Green");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Hair::PrimaryColor::Red> = murmurhash3::hash("DeadHorseList.Hair.PrimaryColor.Red");
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Hair::PrimaryColor::Blue> { "DeadHorseList.Hair.PrimaryColor.Blue" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Hair::PrimaryColor::Green> { "DeadHorseList.Hair.PrimaryColor.Green" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Hair::PrimaryColor::Red> { "DeadHorseList.Hair.PrimaryColor.Red" };

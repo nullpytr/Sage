@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::MapData::IconData::WarpMarkerData> 
 	{ }
 };/* Data::Structure GameData::MapData::IconData::WarpMarkerData close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Index> = murmurhash3::hash("MapData.IconData.WarpMarkerData.Index");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Pos> = murmurhash3::hash("MapData.IconData.WarpMarkerData.Pos");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Rot> = murmurhash3::hash("MapData.IconData.WarpMarkerData.Rot");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Index> { "MapData.IconData.WarpMarkerData.Index" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Pos> { "MapData.IconData.WarpMarkerData.Pos" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Rot> { "MapData.IconData.WarpMarkerData.Rot" };

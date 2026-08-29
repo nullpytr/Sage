@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::DongoList> : GameData::DongoList {
 	{ }
 };/* Data::Structure GameData::DongoList close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::DongoList::EatNum> = murmurhash3::hash("DongoList.EatNum");
-template <> hash_t constexpr Data::Hashtable<GameData::DongoList::LastEatTime> = murmurhash3::hash("DongoList.LastEatTime");
-template <> hash_t constexpr Data::Hashtable<GameData::DongoList::PutItemIDList> = murmurhash3::hash("DongoList.PutItemIDList");
-template <> hash_t constexpr Data::Hashtable<GameData::DongoList::UseFirstItemList> = murmurhash3::hash("DongoList.UseFirstItemList");
+template <> hash_value_t constexpr Data::Hashtable<GameData::DongoList::EatNum> { "DongoList.EatNum" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DongoList::LastEatTime> { "DongoList.LastEatTime" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DongoList::PutItemIDList> { "DongoList.PutItemIDList" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DongoList::UseFirstItemList> { "DongoList.UseFirstItemList" };

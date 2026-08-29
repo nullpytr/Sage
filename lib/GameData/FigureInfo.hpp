@@ -16,5 +16,5 @@ template <> struct Data::Structure<GameData::FigureInfo> : GameData::FigureInfo 
 	{ }
 };/* Data::Structure GameData::FigureInfo close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::FigureInfo::Body> = murmurhash3::hash("FigureInfo.Body");
-template <> hash_t constexpr Data::Hashtable<GameData::FigureInfo::Header> = murmurhash3::hash("FigureInfo.Header");
+template <> hash_value_t constexpr Data::Hashtable<GameData::FigureInfo::Body> { "FigureInfo.Body" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::FigureInfo::Header> { "FigureInfo.Header" };

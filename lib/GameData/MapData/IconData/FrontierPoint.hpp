@@ -16,5 +16,5 @@ template <> struct Data::Structure<GameData::MapData::IconData::FrontierPoint> :
 	{ }
 };/* Data::Structure GameData::MapData::IconData::FrontierPoint close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::FrontierPoint::IsValid> = murmurhash3::hash("MapData.IconData.FrontierPoint.IsValid");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::FrontierPoint::Pos> = murmurhash3::hash("MapData.IconData.FrontierPoint.Pos");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::FrontierPoint::IsValid> { "MapData.IconData.FrontierPoint.IsValid" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::FrontierPoint::Pos> { "MapData.IconData.FrontierPoint.Pos" };

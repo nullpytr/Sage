@@ -25,8 +25,8 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Test::IsOpen
 	{ }
 };/* Data::Structure GameData::MapData::LargeDungeon::Test::IsOpen close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group000> = murmurhash3::hash("MapData.LargeDungeon.Test.IsOpen.Group000");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group001> = murmurhash3::hash("MapData.LargeDungeon.Test.IsOpen.Group001");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group002> = murmurhash3::hash("MapData.LargeDungeon.Test.IsOpen.Group002");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group009> = murmurhash3::hash("MapData.LargeDungeon.Test.IsOpen.Group009");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group010> = murmurhash3::hash("MapData.LargeDungeon.Test.IsOpen.Group010");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group000> { "MapData.LargeDungeon.Test.IsOpen.Group000" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group001> { "MapData.LargeDungeon.Test.IsOpen.Group001" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group002> { "MapData.LargeDungeon.Test.IsOpen.Group002" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group009> { "MapData.LargeDungeon.Test.IsOpen.Group009" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group010> { "MapData.LargeDungeon.Test.IsOpen.Group010" };

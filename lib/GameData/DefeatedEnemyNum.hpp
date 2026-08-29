@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::DefeatedEnemyNum> : GameData::Defea
 	{ }
 };/* Data::Structure GameData::DefeatedEnemyNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::DefeatedEnemyNum::Enemy_CaveMaster_000> = murmurhash3::hash("DefeatedEnemyNum.Enemy_CaveMaster_000");
-template <> hash_t constexpr Data::Hashtable<GameData::DefeatedEnemyNum::Enemy_CaveMaster_Middle> = murmurhash3::hash("DefeatedEnemyNum.Enemy_CaveMaster_Middle");
-template <> hash_t constexpr Data::Hashtable<GameData::DefeatedEnemyNum::Enemy_CaveMaster_Senior> = murmurhash3::hash("DefeatedEnemyNum.Enemy_CaveMaster_Senior");
+template <> hash_value_t constexpr Data::Hashtable<GameData::DefeatedEnemyNum::Enemy_CaveMaster_000> { "DefeatedEnemyNum.Enemy_CaveMaster_000" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DefeatedEnemyNum::Enemy_CaveMaster_Middle> { "DefeatedEnemyNum.Enemy_CaveMaster_Middle" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DefeatedEnemyNum::Enemy_CaveMaster_Senior> { "DefeatedEnemyNum.Enemy_CaveMaster_Senior" };

@@ -25,6 +25,6 @@ template <> struct Data::Structure<GameData::MapData::IconData::StampData> : Gam
 	{ }
 };/* Data::Structure GameData::MapData::IconData::StampData close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::StampData::Pos> = murmurhash3::hash("MapData.IconData.StampData.Pos");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::StampData::Layer> = murmurhash3::hash("MapData.IconData.StampData.Layer");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::StampData::Type> = murmurhash3::hash("MapData.IconData.StampData.Type");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::StampData::Pos> { "MapData.IconData.StampData.Pos" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::StampData::Layer> { "MapData.IconData.StampData.Layer" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::StampData::Type> { "MapData.IconData.StampData.Type" };

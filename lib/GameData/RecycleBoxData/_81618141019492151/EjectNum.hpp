@@ -25,8 +25,8 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_81618141019492151:
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_81618141019492151::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_ElectricBoxGenerator_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.81618141019492151.EjectNum.SpObj_ElectricBoxGenerator_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_Pile_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.81618141019492151.EjectNum.SpObj_Pile_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_SlipBoard_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.81618141019492151.EjectNum.SpObj_SlipBoard_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_SnowMachine_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.81618141019492151.EjectNum.SpObj_SnowMachine_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_TiltingDoll_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.81618141019492151.EjectNum.SpObj_TiltingDoll_Capsule_A_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_ElectricBoxGenerator_Capsule_A_01> { "RecycleBoxData.81618141019492151.EjectNum.SpObj_ElectricBoxGenerator_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_Pile_Capsule_A_01> { "RecycleBoxData.81618141019492151.EjectNum.SpObj_Pile_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_SlipBoard_Capsule_A_01> { "RecycleBoxData.81618141019492151.EjectNum.SpObj_SlipBoard_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_SnowMachine_Capsule_A_01> { "RecycleBoxData.81618141019492151.EjectNum.SpObj_SnowMachine_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_81618141019492151::EjectNum::SpObj_TiltingDoll_Capsule_A_01> { "RecycleBoxData.81618141019492151.EjectNum.SpObj_TiltingDoll_Capsule_A_01" };

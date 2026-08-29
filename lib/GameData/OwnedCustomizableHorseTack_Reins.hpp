@@ -28,9 +28,9 @@ template <> struct Data::Structure<GameData::OwnedCustomizableHorseTack_Reins> :
 	{ }
 };/* Data::Structure GameData::OwnedCustomizableHorseTack_Reins close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_00> = murmurhash3::hash("OwnedCustomizableHorseTack_Reins.GameRomHorseReins_00");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_01> = murmurhash3::hash("OwnedCustomizableHorseTack_Reins.GameRomHorseReins_01");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_02> = murmurhash3::hash("OwnedCustomizableHorseTack_Reins.GameRomHorseReins_02");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_03> = murmurhash3::hash("OwnedCustomizableHorseTack_Reins.GameRomHorseReins_03");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_04> = murmurhash3::hash("OwnedCustomizableHorseTack_Reins.GameRomHorseReins_04");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_05> = murmurhash3::hash("OwnedCustomizableHorseTack_Reins.GameRomHorseReins_05");
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_00> { "OwnedCustomizableHorseTack_Reins.GameRomHorseReins_00" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_01> { "OwnedCustomizableHorseTack_Reins.GameRomHorseReins_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_02> { "OwnedCustomizableHorseTack_Reins.GameRomHorseReins_02" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_03> { "OwnedCustomizableHorseTack_Reins.GameRomHorseReins_03" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_04> { "OwnedCustomizableHorseTack_Reins.GameRomHorseReins_04" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Reins::GameRomHorseReins_05> { "OwnedCustomizableHorseTack_Reins.GameRomHorseReins_05" };

@@ -35,5 +35,5 @@ template <> struct Data::Structure<GameData::LastWildHorse::Body> : GameData::La
 	{ }
 };/* Data::Structure GameData::LastWildHorse::Body close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::EyeColor> = murmurhash3::hash("LastWildHorse.Body.EyeColor");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::Pattern> = murmurhash3::hash("LastWildHorse.Body.Pattern");
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::EyeColor> { "LastWildHorse.Body.EyeColor" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Body::Pattern> { "LastWildHorse.Body.Pattern" };

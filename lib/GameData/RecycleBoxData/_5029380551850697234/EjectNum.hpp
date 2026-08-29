@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_502938055185069723
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_5029380551850697234::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_5029380551850697234::EjectNum::SpObj_CookSet_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.5029380551850697234.EjectNum.SpObj_CookSet_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_5029380551850697234::EjectNum::SpObj_ElectricBoxGenerator_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.5029380551850697234.EjectNum.SpObj_ElectricBoxGenerator_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_5029380551850697234::EjectNum::SpObj_EnergyBank_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.5029380551850697234.EjectNum.SpObj_EnergyBank_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_5029380551850697234::EjectNum::SpObj_WindGenerator_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.5029380551850697234.EjectNum.SpObj_WindGenerator_Capsule_A_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_5029380551850697234::EjectNum::SpObj_CookSet_Capsule_A_01> { "RecycleBoxData.5029380551850697234.EjectNum.SpObj_CookSet_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_5029380551850697234::EjectNum::SpObj_ElectricBoxGenerator_Capsule_A_01> { "RecycleBoxData.5029380551850697234.EjectNum.SpObj_ElectricBoxGenerator_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_5029380551850697234::EjectNum::SpObj_EnergyBank_Capsule_A_01> { "RecycleBoxData.5029380551850697234.EjectNum.SpObj_EnergyBank_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_5029380551850697234::EjectNum::SpObj_WindGenerator_Capsule_A_01> { "RecycleBoxData.5029380551850697234.EjectNum.SpObj_WindGenerator_Capsule_A_01" };

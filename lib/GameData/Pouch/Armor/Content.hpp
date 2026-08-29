@@ -19,5 +19,5 @@ template <> struct Data::Structure<GameData::Pouch::Armor::Content> : GameData::
 	{ }
 };/* Data::Structure GameData::Pouch::Armor::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Armor::Content::Name> = murmurhash3::hash("Pouch.Armor.Content.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Armor::Content::ColorVariation> = murmurhash3::hash("Pouch.Armor.Content.ColorVariation");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::Content::Name> { "Pouch.Armor.Content.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::Content::ColorVariation> { "Pouch.Armor.Content.ColorVariation" };

@@ -67,16 +67,16 @@ template <> struct Data::Structure<GameData::LastWildHorse> : GameData::LastWild
 	{ }
 };/* Data::Structure GameData::LastWildHorse close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::ActorName> = murmurhash3::hash("LastWildHorse.ActorName");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::ChargeNum> = murmurhash3::hash("LastWildHorse.ChargeNum");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::ColorType> = murmurhash3::hash("LastWildHorse.ColorType");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Familiarity> = murmurhash3::hash("LastWildHorse.Familiarity");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::FootType> = murmurhash3::hash("LastWildHorse.FootType");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::HorsePower> = murmurhash3::hash("LastWildHorse.HorsePower");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::HorseType> = murmurhash3::hash("LastWildHorse.HorseType");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Speed> = murmurhash3::hash("LastWildHorse.Speed");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Toughness> = murmurhash3::hash("LastWildHorse.Toughness");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::UidHash> = murmurhash3::hash("LastWildHorse.UidHash");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Mane> = murmurhash3::hash("LastWildHorse.Mane");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Rein> = murmurhash3::hash("LastWildHorse.Rein");
-template <> hash_t constexpr Data::Hashtable<GameData::LastWildHorse::Saddle> = murmurhash3::hash("LastWildHorse.Saddle");
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::ActorName> { "LastWildHorse.ActorName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::ChargeNum> { "LastWildHorse.ChargeNum" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::ColorType> { "LastWildHorse.ColorType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Familiarity> { "LastWildHorse.Familiarity" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::FootType> { "LastWildHorse.FootType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::HorsePower> { "LastWildHorse.HorsePower" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::HorseType> { "LastWildHorse.HorseType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Speed> { "LastWildHorse.Speed" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Toughness> { "LastWildHorse.Toughness" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::UidHash> { "LastWildHorse.UidHash" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Mane> { "LastWildHorse.Mane" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Rein> { "LastWildHorse.Rein" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Saddle> { "LastWildHorse.Saddle" };

@@ -55,18 +55,18 @@ template <> struct Data::Structure<GameData::IsActivateCannon> : GameData::IsAct
 	{ }
 };/* Data::Structure GameData::IsActivateCannon close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower01> = murmurhash3::hash("IsActivateCannon.Tower01");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower02> = murmurhash3::hash("IsActivateCannon.Tower02");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower03> = murmurhash3::hash("IsActivateCannon.Tower03");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower04> = murmurhash3::hash("IsActivateCannon.Tower04");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower05> = murmurhash3::hash("IsActivateCannon.Tower05");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower06> = murmurhash3::hash("IsActivateCannon.Tower06");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower07> = murmurhash3::hash("IsActivateCannon.Tower07");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower08> = murmurhash3::hash("IsActivateCannon.Tower08");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower09> = murmurhash3::hash("IsActivateCannon.Tower09");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower10> = murmurhash3::hash("IsActivateCannon.Tower10");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower11> = murmurhash3::hash("IsActivateCannon.Tower11");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower12> = murmurhash3::hash("IsActivateCannon.Tower12");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower13> = murmurhash3::hash("IsActivateCannon.Tower13");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower14> = murmurhash3::hash("IsActivateCannon.Tower14");
-template <> hash_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower15> = murmurhash3::hash("IsActivateCannon.Tower15");
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower01> { "IsActivateCannon.Tower01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower02> { "IsActivateCannon.Tower02" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower03> { "IsActivateCannon.Tower03" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower04> { "IsActivateCannon.Tower04" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower05> { "IsActivateCannon.Tower05" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower06> { "IsActivateCannon.Tower06" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower07> { "IsActivateCannon.Tower07" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower08> { "IsActivateCannon.Tower08" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower09> { "IsActivateCannon.Tower09" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower10> { "IsActivateCannon.Tower10" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower11> { "IsActivateCannon.Tower11" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower12> { "IsActivateCannon.Tower12" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower13> { "IsActivateCannon.Tower13" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower14> { "IsActivateCannon.Tower14" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower15> { "IsActivateCannon.Tower15" };

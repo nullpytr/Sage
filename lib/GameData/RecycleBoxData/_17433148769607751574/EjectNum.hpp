@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_174331487696077515
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_17433148769607751574::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_17433148769607751574::EjectNum::SpObj_FastWheel_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.17433148769607751574.EjectNum.SpObj_FastWheel_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_17433148769607751574::EjectNum::SpObj_FlashLight_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.17433148769607751574.EjectNum.SpObj_FlashLight_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_17433148769607751574::EjectNum::SpObj_Rocket_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.17433148769607751574.EjectNum.SpObj_Rocket_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_17433148769607751574::EjectNum::SpObj_TimerBomb_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.17433148769607751574.EjectNum.SpObj_TimerBomb_Capsule_A_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_17433148769607751574::EjectNum::SpObj_FastWheel_Capsule_A_01> { "RecycleBoxData.17433148769607751574.EjectNum.SpObj_FastWheel_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_17433148769607751574::EjectNum::SpObj_FlashLight_Capsule_A_01> { "RecycleBoxData.17433148769607751574.EjectNum.SpObj_FlashLight_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_17433148769607751574::EjectNum::SpObj_Rocket_Capsule_A_01> { "RecycleBoxData.17433148769607751574.EjectNum.SpObj_Rocket_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_17433148769607751574::EjectNum::SpObj_TimerBomb_Capsule_A_01> { "RecycleBoxData.17433148769607751574.EjectNum.SpObj_TimerBomb_Capsule_A_01" };

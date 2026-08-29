@@ -25,8 +25,8 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_110150946370931461
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_11015094637093146118::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_BalloonEnvelope_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.11015094637093146118.EjectNum.SpObj_BalloonEnvelope_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_FloatingStone_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.11015094637093146118.EjectNum.SpObj_FloatingStone_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_LiftGeneratorWing_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.11015094637093146118.EjectNum.SpObj_LiftGeneratorWing_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_LightMirror_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.11015094637093146118.EjectNum.SpObj_LightMirror_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_SpringPiston_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.11015094637093146118.EjectNum.SpObj_SpringPiston_Capsule_A_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_BalloonEnvelope_Capsule_A_01> { "RecycleBoxData.11015094637093146118.EjectNum.SpObj_BalloonEnvelope_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_FloatingStone_Capsule_A_01> { "RecycleBoxData.11015094637093146118.EjectNum.SpObj_FloatingStone_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_LiftGeneratorWing_Capsule_A_01> { "RecycleBoxData.11015094637093146118.EjectNum.SpObj_LiftGeneratorWing_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_LightMirror_Capsule_A_01> { "RecycleBoxData.11015094637093146118.EjectNum.SpObj_LightMirror_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11015094637093146118::EjectNum::SpObj_SpringPiston_Capsule_A_01> { "RecycleBoxData.11015094637093146118.EjectNum.SpObj_SpringPiston_Capsule_A_01" };

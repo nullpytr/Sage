@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::Pouch::Material::Content> : GameDat
 	{ }
 };/* Data::Structure GameData::Pouch::Material::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::GetOrder> = murmurhash3::hash("Pouch.Material.Content.GetOrder");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::Name> = murmurhash3::hash("Pouch.Material.Content.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::StockNum> = murmurhash3::hash("Pouch.Material.Content.StockNum");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::UseOrder> = murmurhash3::hash("Pouch.Material.Content.UseOrder");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::GetOrder> { "Pouch.Material.Content.GetOrder" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::Name> { "Pouch.Material.Content.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::StockNum> { "Pouch.Material.Content.StockNum" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::UseOrder> { "Pouch.Material.Content.UseOrder" };

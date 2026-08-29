@@ -28,6 +28,6 @@ template <> struct Data::Structure<GameData::Pouch::Shield::Content> : GameData:
 	{ }
 };/* Data::Structure GameData::Pouch::Shield::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Shield::Content::ExtraLife> = murmurhash3::hash("Pouch.Shield.Content.ExtraLife");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Shield::Content::Life> = murmurhash3::hash("Pouch.Shield.Content.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Shield::Content::Name> = murmurhash3::hash("Pouch.Shield.Content.Name");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Shield::Content::ExtraLife> { "Pouch.Shield.Content.ExtraLife" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Shield::Content::Life> { "Pouch.Shield.Content.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Shield::Content::Name> { "Pouch.Shield.Content.Name" };

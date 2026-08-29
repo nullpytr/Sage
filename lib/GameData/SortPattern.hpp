@@ -82,15 +82,15 @@ template <> struct Data::Structure<GameData::SortPattern> : GameData::SortPatter
 	{ }
 };/* Data::Structure GameData::SortPattern close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Armor> = murmurhash3::hash("SortPattern.Pouch_Armor");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Bow> = murmurhash3::hash("SortPattern.Pouch_Bow");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Food> = murmurhash3::hash("SortPattern.Pouch_Food");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_KeyItem> = murmurhash3::hash("SortPattern.Pouch_KeyItem");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Material> = murmurhash3::hash("SortPattern.Pouch_Material");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Shield> = murmurhash3::hash("SortPattern.Pouch_Shield");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_SpecialParts> = murmurhash3::hash("SortPattern.Pouch_SpecialParts");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Weapon> = murmurhash3::hash("SortPattern.Pouch_Weapon");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::ShortCut_Bow> = murmurhash3::hash("SortPattern.ShortCut_Bow");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::ShortCut_Material> = murmurhash3::hash("SortPattern.ShortCut_Material");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::ShortCut_Shield> = murmurhash3::hash("SortPattern.ShortCut_Shield");
-template <> hash_t constexpr Data::Hashtable<GameData::SortPattern::ShortCut_Weapon> = murmurhash3::hash("SortPattern.ShortCut_Weapon");
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Armor> { "SortPattern.Pouch_Armor" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Bow> { "SortPattern.Pouch_Bow" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Food> { "SortPattern.Pouch_Food" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_KeyItem> { "SortPattern.Pouch_KeyItem" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Material> { "SortPattern.Pouch_Material" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Shield> { "SortPattern.Pouch_Shield" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_SpecialParts> { "SortPattern.Pouch_SpecialParts" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Weapon> { "SortPattern.Pouch_Weapon" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::ShortCut_Bow> { "SortPattern.ShortCut_Bow" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::ShortCut_Material> { "SortPattern.ShortCut_Material" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::ShortCut_Shield> { "SortPattern.ShortCut_Shield" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::ShortCut_Weapon> { "SortPattern.ShortCut_Weapon" };

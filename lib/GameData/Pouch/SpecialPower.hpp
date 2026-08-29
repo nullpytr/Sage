@@ -21,5 +21,5 @@ template <> struct Data::Structure<GameData::Pouch::SpecialPower> : GameData::Po
 	{ }
 };/* Data::Structure GameData::Pouch::SpecialPower close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::IsValid> = murmurhash3::hash("Pouch.SpecialPower.IsValid");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::ValidNum> = murmurhash3::hash("Pouch.SpecialPower.ValidNum");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::IsValid> { "Pouch.SpecialPower.IsValid" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::ValidNum> { "Pouch.SpecialPower.ValidNum" };

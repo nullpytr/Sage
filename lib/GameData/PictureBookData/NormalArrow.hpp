@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::NormalArrow> : Gam
 	{ }
 };/* Data::Structure GameData::PictureBookData::NormalArrow close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::NormalArrow::State> = murmurhash3::hash("PictureBookData.NormalArrow.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::NormalArrow::State> { "PictureBookData.NormalArrow.State" };

@@ -19,5 +19,5 @@ template <> struct Data::Structure<GameData::MaterialShortCut> : GameData::Mater
 	{ }
 };/* Data::Structure GameData::MaterialShortCut close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MaterialShortCut::PouchIndex> = murmurhash3::hash("MaterialShortCut.PouchIndex");
-template <> hash_t constexpr Data::Hashtable<GameData::MaterialShortCut::Category> = murmurhash3::hash("MaterialShortCut.Category");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MaterialShortCut::PouchIndex> { "MaterialShortCut.PouchIndex" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MaterialShortCut::Category> { "MaterialShortCut.Category" };

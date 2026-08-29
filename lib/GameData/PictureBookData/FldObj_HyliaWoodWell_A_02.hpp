@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::FldObj_HyliaWoodWe
 	{ }
 };/* Data::Structure GameData::PictureBookData::FldObj_HyliaWoodWell_A_02 close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::FldObj_HyliaWoodWell_A_02::State> = murmurhash3::hash("PictureBookData.FldObj_HyliaWoodWell_A_02.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::FldObj_HyliaWoodWell_A_02::State> { "PictureBookData.FldObj_HyliaWoodWell_A_02.State" };

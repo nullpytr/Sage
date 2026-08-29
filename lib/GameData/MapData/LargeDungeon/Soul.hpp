@@ -18,4 +18,4 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Soul> : Game
 	{ }
 };/* Data::Structure GameData::MapData::LargeDungeon::Soul close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Soul::IsGetMap> = murmurhash3::hash("MapData.LargeDungeon.Soul.IsGetMap");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Soul::IsGetMap> { "MapData.LargeDungeon.Soul.IsGetMap" };

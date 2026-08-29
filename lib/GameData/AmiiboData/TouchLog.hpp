@@ -49,13 +49,13 @@ template <> struct Data::Structure<GameData::AmiiboData::TouchLog> : GameData::A
 	{ }
 };/* Data::Structure GameData::AmiiboData::TouchLog close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Count> = murmurhash3::hash("AmiiboData.TouchLog.Count");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Day> = murmurhash3::hash("AmiiboData.TouchLog.Day");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Hour> = murmurhash3::hash("AmiiboData.TouchLog.Hour");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Minute> = murmurhash3::hash("AmiiboData.TouchLog.Minute");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Month> = murmurhash3::hash("AmiiboData.TouchLog.Month");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::UIDHash> = murmurhash3::hash("AmiiboData.TouchLog.UIDHash");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Year> = murmurhash3::hash("AmiiboData.TouchLog.Year");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::CharacterBaseID> = murmurhash3::hash("AmiiboData.TouchLog.CharacterBaseID");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::CharacterID> = murmurhash3::hash("AmiiboData.TouchLog.CharacterID");
-template <> hash_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::NumberingID> = murmurhash3::hash("AmiiboData.TouchLog.NumberingID");
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Count> { "AmiiboData.TouchLog.Count" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Day> { "AmiiboData.TouchLog.Day" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Hour> { "AmiiboData.TouchLog.Hour" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Minute> { "AmiiboData.TouchLog.Minute" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Month> { "AmiiboData.TouchLog.Month" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::UIDHash> { "AmiiboData.TouchLog.UIDHash" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Year> { "AmiiboData.TouchLog.Year" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::CharacterBaseID> { "AmiiboData.TouchLog.CharacterBaseID" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::CharacterID> { "AmiiboData.TouchLog.CharacterID" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::NumberingID> { "AmiiboData.TouchLog.NumberingID" };

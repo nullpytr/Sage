@@ -16,5 +16,5 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion::Fire::ForU
 	{ }
 };/* Data::Structure GameData::PlayerStatus::Companion::Fire::ForUI close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Fire::ForUI::RemainingMinute> = murmurhash3::hash("PlayerStatus.Companion.Fire.ForUI.RemainingMinute");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Fire::ForUI::RemainingSecond> = murmurhash3::hash("PlayerStatus.Companion.Fire.ForUI.RemainingSecond");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Fire::ForUI::RemainingMinute> { "PlayerStatus.Companion.Fire.ForUI.RemainingMinute" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Fire::ForUI::RemainingSecond> { "PlayerStatus.Companion.Fire.ForUI.RemainingSecond" };

@@ -19,5 +19,5 @@ template <> struct Data::Structure<GameData::Pouch::Bow::Content::Effect> : Game
 	{ }
 };/* Data::Structure GameData::Pouch::Bow::Content::Effect close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Effect::Value> = murmurhash3::hash("Pouch.Bow.Content.Effect.Value");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Effect::Type> = murmurhash3::hash("Pouch.Bow.Content.Effect.Type");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Effect::Value> { "Pouch.Bow.Content.Effect.Value" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Effect::Type> { "Pouch.Bow.Content.Effect.Type" };

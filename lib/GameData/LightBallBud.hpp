@@ -25,8 +25,8 @@ template <> struct Data::Structure<GameData::LightBallBud> : GameData::LightBall
 	{ }
 };/* Data::Structure GameData::LightBallBud close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::LightBallBud::CreatedTime> = murmurhash3::hash("LightBallBud.CreatedTime");
-template <> hash_t constexpr Data::Hashtable<GameData::LightBallBud::IsValid> = murmurhash3::hash("LightBallBud.IsValid");
-template <> hash_t constexpr Data::Hashtable<GameData::LightBallBud::Nrm> = murmurhash3::hash("LightBallBud.Nrm");
-template <> hash_t constexpr Data::Hashtable<GameData::LightBallBud::Pos> = murmurhash3::hash("LightBallBud.Pos");
-template <> hash_t constexpr Data::Hashtable<GameData::LightBallBud::Size> = murmurhash3::hash("LightBallBud.Size");
+template <> hash_value_t constexpr Data::Hashtable<GameData::LightBallBud::CreatedTime> { "LightBallBud.CreatedTime" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LightBallBud::IsValid> { "LightBallBud.IsValid" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LightBallBud::Nrm> { "LightBallBud.Nrm" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LightBallBud::Pos> { "LightBallBud.Pos" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::LightBallBud::Size> { "LightBallBud.Size" };

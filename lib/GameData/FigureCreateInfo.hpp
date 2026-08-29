@@ -16,5 +16,5 @@ template <> struct Data::Structure<GameData::FigureCreateInfo> : GameData::Figur
 	{ }
 };/* Data::Structure GameData::FigureCreateInfo close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::FigureCreateInfo::Position> = murmurhash3::hash("FigureCreateInfo.Position");
-template <> hash_t constexpr Data::Hashtable<GameData::FigureCreateInfo::Rot> = murmurhash3::hash("FigureCreateInfo.Rot");
+template <> hash_value_t constexpr Data::Hashtable<GameData::FigureCreateInfo::Position> { "FigureCreateInfo.Position" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::FigureCreateInfo::Rot> { "FigureCreateInfo.Rot" };

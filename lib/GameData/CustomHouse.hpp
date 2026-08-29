@@ -28,6 +28,6 @@ template <> struct Data::Structure<GameData::CustomHouse> : GameData::CustomHous
 	{ }
 };/* Data::Structure GameData::CustomHouse close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::IsBuildMode> = murmurhash3::hash("CustomHouse.IsBuildMode");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::OwnHouseUnitCount> = murmurhash3::hash("CustomHouse.OwnHouseUnitCount");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::UsedHouseUnitNumAll> = murmurhash3::hash("CustomHouse.UsedHouseUnitNumAll");
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::IsBuildMode> { "CustomHouse.IsBuildMode" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::OwnHouseUnitCount> { "CustomHouse.OwnHouseUnitCount" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::UsedHouseUnitNumAll> { "CustomHouse.UsedHouseUnitNumAll" };

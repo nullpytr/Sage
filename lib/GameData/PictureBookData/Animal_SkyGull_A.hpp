@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::Animal_SkyGull_A> 
 	{ }
 };/* Data::Structure GameData::PictureBookData::Animal_SkyGull_A close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::Animal_SkyGull_A::State> = murmurhash3::hash("PictureBookData.Animal_SkyGull_A.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::Animal_SkyGull_A::State> { "PictureBookData.Animal_SkyGull_A.State" };

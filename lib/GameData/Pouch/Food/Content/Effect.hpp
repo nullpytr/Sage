@@ -22,6 +22,6 @@ template <> struct Data::Structure<GameData::Pouch::Food::Content::Effect> : Gam
 	{ }
 };/* Data::Structure GameData::Pouch::Food::Content::Effect close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Effect::Level> = murmurhash3::hash("Pouch.Food.Content.Effect.Level");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Effect::Time> = murmurhash3::hash("Pouch.Food.Content.Effect.Time");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Effect::Type> = murmurhash3::hash("Pouch.Food.Content.Effect.Type");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Effect::Level> { "Pouch.Food.Content.Effect.Level" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Effect::Time> { "Pouch.Food.Content.Effect.Time" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Effect::Type> { "Pouch.Food.Content.Effect.Type" };

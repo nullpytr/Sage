@@ -73,18 +73,18 @@ template <> struct Data::Structure<GameData::DeadHorseList> : GameData::DeadHors
 	{ }
 };/* Data::Structure GameData::DeadHorseList close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::ActorName> = murmurhash3::hash("DeadHorseList.ActorName");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::ChargeNum> = murmurhash3::hash("DeadHorseList.ChargeNum");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::ColorType> = murmurhash3::hash("DeadHorseList.ColorType");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::DeadCause> = murmurhash3::hash("DeadHorseList.DeadCause");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Familiarity> = murmurhash3::hash("DeadHorseList.Familiarity");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::FootType> = murmurhash3::hash("DeadHorseList.FootType");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::HorsePower> = murmurhash3::hash("DeadHorseList.HorsePower");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::HorseType> = murmurhash3::hash("DeadHorseList.HorseType");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Name> = murmurhash3::hash("DeadHorseList.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Speed> = murmurhash3::hash("DeadHorseList.Speed");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Toughness> = murmurhash3::hash("DeadHorseList.Toughness");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::UidHash> = murmurhash3::hash("DeadHorseList.UidHash");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Mane> = murmurhash3::hash("DeadHorseList.Mane");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Rein> = murmurhash3::hash("DeadHorseList.Rein");
-template <> hash_t constexpr Data::Hashtable<GameData::DeadHorseList::Saddle> = murmurhash3::hash("DeadHorseList.Saddle");
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::ActorName> { "DeadHorseList.ActorName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::ChargeNum> { "DeadHorseList.ChargeNum" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::ColorType> { "DeadHorseList.ColorType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::DeadCause> { "DeadHorseList.DeadCause" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Familiarity> { "DeadHorseList.Familiarity" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::FootType> { "DeadHorseList.FootType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::HorsePower> { "DeadHorseList.HorsePower" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::HorseType> { "DeadHorseList.HorseType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Name> { "DeadHorseList.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Speed> { "DeadHorseList.Speed" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Toughness> { "DeadHorseList.Toughness" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::UidHash> { "DeadHorseList.UidHash" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Mane> { "DeadHorseList.Mane" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Rein> { "DeadHorseList.Rein" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::Saddle> { "DeadHorseList.Saddle" };

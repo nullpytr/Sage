@@ -64,21 +64,21 @@ template <> struct Data::Structure<GameData::CustomHouseTakeOutNum> : GameData::
 	{ }
 };/* Data::Structure GameData::CustomHouseTakeOutNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeA> = murmurhash3::hash("CustomHouseTakeOutNum.TypeA");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeB> = murmurhash3::hash("CustomHouseTakeOutNum.TypeB");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeC> = murmurhash3::hash("CustomHouseTakeOutNum.TypeC");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeD> = murmurhash3::hash("CustomHouseTakeOutNum.TypeD");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeE> = murmurhash3::hash("CustomHouseTakeOutNum.TypeE");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeF> = murmurhash3::hash("CustomHouseTakeOutNum.TypeF");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeG> = murmurhash3::hash("CustomHouseTakeOutNum.TypeG");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeH> = murmurhash3::hash("CustomHouseTakeOutNum.TypeH");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeI> = murmurhash3::hash("CustomHouseTakeOutNum.TypeI");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeJ> = murmurhash3::hash("CustomHouseTakeOutNum.TypeJ");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeK> = murmurhash3::hash("CustomHouseTakeOutNum.TypeK");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeL> = murmurhash3::hash("CustomHouseTakeOutNum.TypeL");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeM> = murmurhash3::hash("CustomHouseTakeOutNum.TypeM");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeN> = murmurhash3::hash("CustomHouseTakeOutNum.TypeN");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeO> = murmurhash3::hash("CustomHouseTakeOutNum.TypeO");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeP> = murmurhash3::hash("CustomHouseTakeOutNum.TypeP");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeQ> = murmurhash3::hash("CustomHouseTakeOutNum.TypeQ");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeR> = murmurhash3::hash("CustomHouseTakeOutNum.TypeR");
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeA> { "CustomHouseTakeOutNum.TypeA" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeB> { "CustomHouseTakeOutNum.TypeB" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeC> { "CustomHouseTakeOutNum.TypeC" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeD> { "CustomHouseTakeOutNum.TypeD" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeE> { "CustomHouseTakeOutNum.TypeE" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeF> { "CustomHouseTakeOutNum.TypeF" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeG> { "CustomHouseTakeOutNum.TypeG" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeH> { "CustomHouseTakeOutNum.TypeH" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeI> { "CustomHouseTakeOutNum.TypeI" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeJ> { "CustomHouseTakeOutNum.TypeJ" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeK> { "CustomHouseTakeOutNum.TypeK" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeL> { "CustomHouseTakeOutNum.TypeL" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeM> { "CustomHouseTakeOutNum.TypeM" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeN> { "CustomHouseTakeOutNum.TypeN" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeO> { "CustomHouseTakeOutNum.TypeO" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeP> { "CustomHouseTakeOutNum.TypeP" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeQ> { "CustomHouseTakeOutNum.TypeQ" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeR> { "CustomHouseTakeOutNum.TypeR" };

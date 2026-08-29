@@ -51,14 +51,14 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion::Soul> : Ga
 	{ }
 };/* Data::Structure GameData::PlayerStatus::Companion::Soul close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::CurrentPos> = murmurhash3::hash("PlayerStatus.Companion.Soul.CurrentPos");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsFollowMode> = murmurhash3::hash("PlayerStatus.Companion.Soul.IsFollowMode");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsGet> = murmurhash3::hash("PlayerStatus.Companion.Soul.IsGet");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsGoThroughAirWall> = murmurhash3::hash("PlayerStatus.Companion.Soul.IsGoThroughAirWall");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsGoThroughAirWallPrepare> = murmurhash3::hash("PlayerStatus.Companion.Soul.IsGoThroughAirWallPrepare");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsLeaveFollower> = murmurhash3::hash("PlayerStatus.Companion.Soul.IsLeaveFollower");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsPlayedSoulSageFirstAppearanceEvent> = murmurhash3::hash("PlayerStatus.Companion.Soul.IsPlayedSoulSageFirstAppearanceEvent");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsSageDynamicGenerate> = murmurhash3::hash("PlayerStatus.Companion.Soul.IsSageDynamicGenerate");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsSummon> = murmurhash3::hash("PlayerStatus.Companion.Soul.IsSummon");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::RemainingEnergy> = murmurhash3::hash("PlayerStatus.Companion.Soul.RemainingEnergy");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::JoiningCondition> = murmurhash3::hash("PlayerStatus.Companion.Soul.JoiningCondition");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::CurrentPos> { "PlayerStatus.Companion.Soul.CurrentPos" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsFollowMode> { "PlayerStatus.Companion.Soul.IsFollowMode" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsGet> { "PlayerStatus.Companion.Soul.IsGet" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsGoThroughAirWall> { "PlayerStatus.Companion.Soul.IsGoThroughAirWall" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsGoThroughAirWallPrepare> { "PlayerStatus.Companion.Soul.IsGoThroughAirWallPrepare" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsLeaveFollower> { "PlayerStatus.Companion.Soul.IsLeaveFollower" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsPlayedSoulSageFirstAppearanceEvent> { "PlayerStatus.Companion.Soul.IsPlayedSoulSageFirstAppearanceEvent" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsSageDynamicGenerate> { "PlayerStatus.Companion.Soul.IsSageDynamicGenerate" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsSummon> { "PlayerStatus.Companion.Soul.IsSummon" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::RemainingEnergy> { "PlayerStatus.Companion.Soul.RemainingEnergy" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::JoiningCondition> { "PlayerStatus.Companion.Soul.JoiningCondition" };

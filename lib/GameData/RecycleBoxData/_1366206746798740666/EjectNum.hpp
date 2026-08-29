@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_136620674679874066
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_1366206746798740666::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1366206746798740666::EjectNum::SpObj_ControlStick_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.1366206746798740666.EjectNum.SpObj_ControlStick_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1366206746798740666::EjectNum::SpObj_CookSet_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.1366206746798740666.EjectNum.SpObj_CookSet_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1366206746798740666::EjectNum::SpObj_EnergyBank_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.1366206746798740666.EjectNum.SpObj_EnergyBank_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1366206746798740666::EjectNum::SpObj_FastWheel_Capsule_B_01> = murmurhash3::hash("RecycleBoxData.1366206746798740666.EjectNum.SpObj_FastWheel_Capsule_B_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1366206746798740666::EjectNum::SpObj_ControlStick_Capsule_A_01> { "RecycleBoxData.1366206746798740666.EjectNum.SpObj_ControlStick_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1366206746798740666::EjectNum::SpObj_CookSet_Capsule_A_01> { "RecycleBoxData.1366206746798740666.EjectNum.SpObj_CookSet_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1366206746798740666::EjectNum::SpObj_EnergyBank_Capsule_A_01> { "RecycleBoxData.1366206746798740666.EjectNum.SpObj_EnergyBank_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1366206746798740666::EjectNum::SpObj_FastWheel_Capsule_B_01> { "RecycleBoxData.1366206746798740666.EjectNum.SpObj_FastWheel_Capsule_B_01" };

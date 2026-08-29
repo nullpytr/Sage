@@ -13,4 +13,4 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Fire::IsOpen
 	{ }
 };/* Data::Structure GameData::MapData::LargeDungeon::Fire::IsOpen close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Fire::IsOpen::Group000> = murmurhash3::hash("MapData.LargeDungeon.Fire.IsOpen.Group000");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Fire::IsOpen::Group000> { "MapData.LargeDungeon.Fire.IsOpen.Group000" };

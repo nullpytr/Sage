@@ -28,8 +28,8 @@ template <> struct Data::Structure<GameData::NpcGardenInfo> : GameData::NpcGarde
 	{ }
 };/* Data::Structure GameData::NpcGardenInfo close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo::GrowActorName> = murmurhash3::hash("NpcGardenInfo.GrowActorName");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo::GrowthElapsedTime> = murmurhash3::hash("NpcGardenInfo.GrowthElapsedTime");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo::IsHarvested> = murmurhash3::hash("NpcGardenInfo.IsHarvested");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo::LastGrowActorName> = murmurhash3::hash("NpcGardenInfo.LastGrowActorName");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcGardenInfo::CurrentState> = murmurhash3::hash("NpcGardenInfo.CurrentState");
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo::GrowActorName> { "NpcGardenInfo.GrowActorName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo::GrowthElapsedTime> { "NpcGardenInfo.GrowthElapsedTime" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo::IsHarvested> { "NpcGardenInfo.IsHarvested" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo::LastGrowActorName> { "NpcGardenInfo.LastGrowActorName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo::CurrentState> { "NpcGardenInfo.CurrentState" };

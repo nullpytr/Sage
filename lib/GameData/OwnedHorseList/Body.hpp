@@ -35,5 +35,5 @@ template <> struct Data::Structure<GameData::OwnedHorseList::Body> : GameData::O
 	{ }
 };/* Data::Structure GameData::OwnedHorseList::Body close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::EyeColor> = murmurhash3::hash("OwnedHorseList.Body.EyeColor");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::Pattern> = murmurhash3::hash("OwnedHorseList.Body.Pattern");
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::EyeColor> { "OwnedHorseList.Body.EyeColor" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::Pattern> { "OwnedHorseList.Body.Pattern" };

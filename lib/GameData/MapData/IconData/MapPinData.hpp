@@ -22,6 +22,6 @@ template <> struct Data::Structure<GameData::MapData::IconData::MapPinData> : Ga
 	{ }
 };/* Data::Structure GameData::MapData::IconData::MapPinData close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::MapPinData::IsFit> = murmurhash3::hash("MapData.IconData.MapPinData.IsFit");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::MapPinData::Pos> = murmurhash3::hash("MapData.IconData.MapPinData.Pos");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::IconData::MapPinData::Type> = murmurhash3::hash("MapData.IconData.MapPinData.Type");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::MapPinData::IsFit> { "MapData.IconData.MapPinData.IsFit" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::MapPinData::Pos> { "MapData.IconData.MapPinData.Pos" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::MapPinData::Type> { "MapData.IconData.MapPinData.Type" };

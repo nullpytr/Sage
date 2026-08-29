@@ -16,5 +16,5 @@ template <> struct Data::Structure<GameData::CustomHouse::BondInfo> : GameData::
 	{ }
 };/* Data::Structure GameData::CustomHouse::BondInfo close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::BondInfo::UnitAIndex> = murmurhash3::hash("CustomHouse.BondInfo.UnitAIndex");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::BondInfo::UnitBIndex> = murmurhash3::hash("CustomHouse.BondInfo.UnitBIndex");
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::BondInfo::UnitAIndex> { "CustomHouse.BondInfo.UnitAIndex" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::BondInfo::UnitBIndex> { "CustomHouse.BondInfo.UnitBIndex" };

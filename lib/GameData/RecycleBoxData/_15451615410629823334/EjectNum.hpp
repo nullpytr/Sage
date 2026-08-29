@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_154516154106298233
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_15451615410629823334::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_15451615410629823334::EjectNum::SpObj_EnergyBank_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.15451615410629823334.EjectNum.SpObj_EnergyBank_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_15451615410629823334::EjectNum::SpObj_LiftGeneratorWing_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.15451615410629823334.EjectNum.SpObj_LiftGeneratorWing_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_15451615410629823334::EjectNum::SpObj_LightMirror_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.15451615410629823334.EjectNum.SpObj_LightMirror_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_15451615410629823334::EjectNum::SpObj_SnowMachine_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.15451615410629823334.EjectNum.SpObj_SnowMachine_Capsule_A_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_15451615410629823334::EjectNum::SpObj_EnergyBank_Capsule_A_01> { "RecycleBoxData.15451615410629823334.EjectNum.SpObj_EnergyBank_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_15451615410629823334::EjectNum::SpObj_LiftGeneratorWing_Capsule_A_01> { "RecycleBoxData.15451615410629823334.EjectNum.SpObj_LiftGeneratorWing_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_15451615410629823334::EjectNum::SpObj_LightMirror_Capsule_A_01> { "RecycleBoxData.15451615410629823334.EjectNum.SpObj_LightMirror_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_15451615410629823334::EjectNum::SpObj_SnowMachine_Capsule_A_01> { "RecycleBoxData.15451615410629823334.EjectNum.SpObj_SnowMachine_Capsule_A_01" };

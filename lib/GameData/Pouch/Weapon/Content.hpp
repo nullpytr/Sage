@@ -31,7 +31,7 @@ template <> struct Data::Structure<GameData::Pouch::Weapon::Content> : GameData:
 	{ }
 };/* Data::Structure GameData::Pouch::Weapon::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::ExtraLife> = murmurhash3::hash("Pouch.Weapon.Content.ExtraLife");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::Life> = murmurhash3::hash("Pouch.Weapon.Content.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::Name> = murmurhash3::hash("Pouch.Weapon.Content.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::RecordExtraLife> = murmurhash3::hash("Pouch.Weapon.Content.RecordExtraLife");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::ExtraLife> { "Pouch.Weapon.Content.ExtraLife" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::Life> { "Pouch.Weapon.Content.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::Name> { "Pouch.Weapon.Content.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::RecordExtraLife> { "Pouch.Weapon.Content.RecordExtraLife" };

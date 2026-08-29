@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_181168757010190366
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_18116875701019036673::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_18116875701019036673::EjectNum::SpObj_Chaser_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.18116875701019036673.EjectNum.SpObj_Chaser_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_18116875701019036673::EjectNum::SpObj_FloatingStone_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.18116875701019036673.EjectNum.SpObj_FloatingStone_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_18116875701019036673::EjectNum::SpObj_LiftableWaterPump_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.18116875701019036673.EjectNum.SpObj_LiftableWaterPump_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_18116875701019036673::EjectNum::SpObj_TimerBomb_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.18116875701019036673.EjectNum.SpObj_TimerBomb_Capsule_A_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_18116875701019036673::EjectNum::SpObj_Chaser_Capsule_A_01> { "RecycleBoxData.18116875701019036673.EjectNum.SpObj_Chaser_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_18116875701019036673::EjectNum::SpObj_FloatingStone_Capsule_A_01> { "RecycleBoxData.18116875701019036673.EjectNum.SpObj_FloatingStone_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_18116875701019036673::EjectNum::SpObj_LiftableWaterPump_Capsule_A_01> { "RecycleBoxData.18116875701019036673.EjectNum.SpObj_LiftableWaterPump_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_18116875701019036673::EjectNum::SpObj_TimerBomb_Capsule_A_01> { "RecycleBoxData.18116875701019036673.EjectNum.SpObj_TimerBomb_Capsule_A_01" };

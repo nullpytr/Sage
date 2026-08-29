@@ -21,5 +21,5 @@ template <> struct Data::Structure<GameData::Pouch::Bow::Content> : GameData::Po
 	{ }
 };/* Data::Structure GameData::Pouch::Bow::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Life> = murmurhash3::hash("Pouch.Bow.Content.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Name> = murmurhash3::hash("Pouch.Bow.Content.Name");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Life> { "Pouch.Bow.Content.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Name> { "Pouch.Bow.Content.Name" };

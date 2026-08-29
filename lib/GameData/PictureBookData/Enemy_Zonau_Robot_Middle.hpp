@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::Enemy_Zonau_Robot_
 	{ }
 };/* Data::Structure GameData::PictureBookData::Enemy_Zonau_Robot_Middle close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Zonau_Robot_Middle::State> = murmurhash3::hash("PictureBookData.Enemy_Zonau_Robot_Middle.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Zonau_Robot_Middle::State> { "PictureBookData.Enemy_Zonau_Robot_Middle.State" };

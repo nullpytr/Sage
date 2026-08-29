@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::RaumiGolemAttachment::SubWeapon> : 
 	{ }
 };/* Data::Structure GameData::RaumiGolemAttachment::SubWeapon close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubWeapon::Life> = murmurhash3::hash("RaumiGolemAttachment.SubWeapon.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubWeapon::Name> = murmurhash3::hash("RaumiGolemAttachment.SubWeapon.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubWeapon::RaumiControlLife> = murmurhash3::hash("RaumiGolemAttachment.SubWeapon.RaumiControlLife");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubWeapon::Life> { "RaumiGolemAttachment.SubWeapon.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubWeapon::Name> { "RaumiGolemAttachment.SubWeapon.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubWeapon::RaumiControlLife> { "RaumiGolemAttachment.SubWeapon.RaumiControlLife" };

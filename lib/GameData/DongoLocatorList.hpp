@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::DongoLocatorList> : GameData::Dongo
 	{ }
 };/* Data::Structure GameData::DongoLocatorList close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::DongoLocatorList::DongoID> = murmurhash3::hash("DongoLocatorList.DongoID");
-template <> hash_t constexpr Data::Hashtable<GameData::DongoLocatorList::LocatorID> = murmurhash3::hash("DongoLocatorList.LocatorID");
-template <> hash_t constexpr Data::Hashtable<GameData::DongoLocatorList::PutItemId> = murmurhash3::hash("DongoLocatorList.PutItemId");
-template <> hash_t constexpr Data::Hashtable<GameData::DongoLocatorList::UseFirstItemList> = murmurhash3::hash("DongoLocatorList.UseFirstItemList");
+template <> hash_value_t constexpr Data::Hashtable<GameData::DongoLocatorList::DongoID> { "DongoLocatorList.DongoID" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DongoLocatorList::LocatorID> { "DongoLocatorList.LocatorID" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DongoLocatorList::PutItemId> { "DongoLocatorList.PutItemId" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DongoLocatorList::UseFirstItemList> { "DongoLocatorList.UseFirstItemList" };

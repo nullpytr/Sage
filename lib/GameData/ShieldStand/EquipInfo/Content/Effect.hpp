@@ -19,5 +19,5 @@ template <> struct Data::Structure<GameData::ShieldStand::EquipInfo::Content::Ef
 	{ }
 };/* Data::Structure GameData::ShieldStand::EquipInfo::Content::Effect close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Effect::Value> = murmurhash3::hash("ShieldStand.EquipInfo.Content.Effect.Value");
-template <> hash_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Effect::Type> = murmurhash3::hash("ShieldStand.EquipInfo.Content.Effect.Type");
+template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Effect::Value> { "ShieldStand.EquipInfo.Content.Effect.Value" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Effect::Type> { "ShieldStand.EquipInfo.Content.Effect.Type" };

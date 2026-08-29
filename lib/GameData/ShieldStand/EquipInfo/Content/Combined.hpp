@@ -16,5 +16,5 @@ template <> struct Data::Structure<GameData::ShieldStand::EquipInfo::Content::Co
 	{ }
 };/* Data::Structure GameData::ShieldStand::EquipInfo::Content::Combined close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Combined::Life> = murmurhash3::hash("ShieldStand.EquipInfo.Content.Combined.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Combined::Name> = murmurhash3::hash("ShieldStand.EquipInfo.Content.Combined.Name");
+template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Combined::Life> { "ShieldStand.EquipInfo.Content.Combined.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Combined::Name> { "ShieldStand.EquipInfo.Content.Combined.Name" };

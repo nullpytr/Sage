@@ -22,7 +22,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_120312911709452002
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_12031291170945200222::EjectNum close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_12031291170945200222::EjectNum::SpObj_Cart_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.12031291170945200222.EjectNum.SpObj_Cart_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_12031291170945200222::EjectNum::SpObj_ControlStick_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.12031291170945200222.EjectNum.SpObj_ControlStick_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_12031291170945200222::EjectNum::SpObj_LiftGeneratorWing_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.12031291170945200222.EjectNum.SpObj_LiftGeneratorWing_Capsule_A_01");
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_12031291170945200222::EjectNum::SpObj_WindGenerator_Capsule_A_01> = murmurhash3::hash("RecycleBoxData.12031291170945200222.EjectNum.SpObj_WindGenerator_Capsule_A_01");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_12031291170945200222::EjectNum::SpObj_Cart_Capsule_A_01> { "RecycleBoxData.12031291170945200222.EjectNum.SpObj_Cart_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_12031291170945200222::EjectNum::SpObj_ControlStick_Capsule_A_01> { "RecycleBoxData.12031291170945200222.EjectNum.SpObj_ControlStick_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_12031291170945200222::EjectNum::SpObj_LiftGeneratorWing_Capsule_A_01> { "RecycleBoxData.12031291170945200222.EjectNum.SpObj_LiftGeneratorWing_Capsule_A_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_12031291170945200222::EjectNum::SpObj_WindGenerator_Capsule_A_01> { "RecycleBoxData.12031291170945200222.EjectNum.SpObj_WindGenerator_Capsule_A_01" };

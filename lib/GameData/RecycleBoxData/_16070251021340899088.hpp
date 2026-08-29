@@ -18,4 +18,4 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_160702510213408990
 	{ }
 };/* Data::Structure GameData::RecycleBoxData::_16070251021340899088 close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16070251021340899088::IsVisit> = murmurhash3::hash("RecycleBoxData.16070251021340899088.IsVisit");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_16070251021340899088::IsVisit> { "RecycleBoxData.16070251021340899088.IsVisit" };

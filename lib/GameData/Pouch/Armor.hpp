@@ -22,4 +22,4 @@ template <> struct Data::Structure<GameData::Pouch::Armor> : GameData::Pouch::Ar
 	{ }
 };/* Data::Structure GameData::Pouch::Armor close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Armor::IsValid> = murmurhash3::hash("Pouch.Armor.IsValid");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::IsValid> { "Pouch.Armor.IsValid" };

@@ -37,12 +37,12 @@ template <> struct Data::Structure<GameData::OwnedCustomizableHorseTack_Saddle> 
 	{ }
 };/* Data::Structure GameData::OwnedCustomizableHorseTack_Saddle close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_00> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_00");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_01> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_01");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_02> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_02");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_03> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_03");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_04> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_04");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_05> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_05");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_07> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_07");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_07_ExternalCoupler> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_07_ExternalCoupler");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_07_WithWagon> = murmurhash3::hash("OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_07_WithWagon");
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_00> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_00" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_01> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_01" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_02> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_02" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_03> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_03" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_04> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_04" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_05> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_05" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_07> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_07" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_07_ExternalCoupler> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_07_ExternalCoupler" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_07_WithWagon> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_07_WithWagon" };

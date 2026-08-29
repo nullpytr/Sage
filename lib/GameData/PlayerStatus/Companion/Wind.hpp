@@ -51,14 +51,14 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion::Wind> : Ga
 	{ }
 };/* Data::Structure GameData::PlayerStatus::Companion::Wind close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::CurrentPos> = murmurhash3::hash("PlayerStatus.Companion.Wind.CurrentPos");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsFollowMode> = murmurhash3::hash("PlayerStatus.Companion.Wind.IsFollowMode");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsGet> = murmurhash3::hash("PlayerStatus.Companion.Wind.IsGet");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsGoThroughAirWall> = murmurhash3::hash("PlayerStatus.Companion.Wind.IsGoThroughAirWall");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsGoThroughAirWallPrepare> = murmurhash3::hash("PlayerStatus.Companion.Wind.IsGoThroughAirWallPrepare");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsLeaveFollower> = murmurhash3::hash("PlayerStatus.Companion.Wind.IsLeaveFollower");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsPlayedSoulSageFirstAppearanceEvent> = murmurhash3::hash("PlayerStatus.Companion.Wind.IsPlayedSoulSageFirstAppearanceEvent");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsSageDynamicGenerate> = murmurhash3::hash("PlayerStatus.Companion.Wind.IsSageDynamicGenerate");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsSummon> = murmurhash3::hash("PlayerStatus.Companion.Wind.IsSummon");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::RemainingEnergy> = murmurhash3::hash("PlayerStatus.Companion.Wind.RemainingEnergy");
-template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::JoiningCondition> = murmurhash3::hash("PlayerStatus.Companion.Wind.JoiningCondition");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::CurrentPos> { "PlayerStatus.Companion.Wind.CurrentPos" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsFollowMode> { "PlayerStatus.Companion.Wind.IsFollowMode" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsGet> { "PlayerStatus.Companion.Wind.IsGet" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsGoThroughAirWall> { "PlayerStatus.Companion.Wind.IsGoThroughAirWall" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsGoThroughAirWallPrepare> { "PlayerStatus.Companion.Wind.IsGoThroughAirWallPrepare" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsLeaveFollower> { "PlayerStatus.Companion.Wind.IsLeaveFollower" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsPlayedSoulSageFirstAppearanceEvent> { "PlayerStatus.Companion.Wind.IsPlayedSoulSageFirstAppearanceEvent" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsSageDynamicGenerate> { "PlayerStatus.Companion.Wind.IsSageDynamicGenerate" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::IsSummon> { "PlayerStatus.Companion.Wind.IsSummon" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::RemainingEnergy> { "PlayerStatus.Companion.Wind.RemainingEnergy" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::JoiningCondition> { "PlayerStatus.Companion.Wind.JoiningCondition" };

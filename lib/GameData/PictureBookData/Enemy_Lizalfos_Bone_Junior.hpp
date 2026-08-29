@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::Enemy_Lizalfos_Bon
 	{ }
 };/* Data::Structure GameData::PictureBookData::Enemy_Lizalfos_Bone_Junior close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Lizalfos_Bone_Junior::State> = murmurhash3::hash("PictureBookData.Enemy_Lizalfos_Bone_Junior.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Lizalfos_Bone_Junior::State> { "PictureBookData.Enemy_Lizalfos_Bone_Junior.State" };

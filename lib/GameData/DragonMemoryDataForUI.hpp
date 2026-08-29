@@ -16,5 +16,5 @@ template <> struct Data::Structure<GameData::DragonMemoryDataForUI> : GameData::
 	{ }
 };/* Data::Structure GameData::DragonMemoryDataForUI close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::DragonMemoryDataForUI::IsNeedIcon> = murmurhash3::hash("DragonMemoryDataForUI.IsNeedIcon");
-template <> hash_t constexpr Data::Hashtable<GameData::DragonMemoryDataForUI::IsOpenList> = murmurhash3::hash("DragonMemoryDataForUI.IsOpenList");
+template <> hash_value_t constexpr Data::Hashtable<GameData::DragonMemoryDataForUI::IsNeedIcon> { "DragonMemoryDataForUI.IsNeedIcon" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::DragonMemoryDataForUI::IsOpenList> { "DragonMemoryDataForUI.IsOpenList" };

@@ -16,5 +16,5 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Water::IsOpe
 	{ }
 };/* Data::Structure GameData::MapData::LargeDungeon::Water::IsOpen close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Water::IsOpen::Group000> = murmurhash3::hash("MapData.LargeDungeon.Water.IsOpen.Group000");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Water::IsOpen::Group001> = murmurhash3::hash("MapData.LargeDungeon.Water.IsOpen.Group001");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Water::IsOpen::Group000> { "MapData.LargeDungeon.Water.IsOpen.Group000" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Water::IsOpen::Group001> { "MapData.LargeDungeon.Water.IsOpen.Group001" };

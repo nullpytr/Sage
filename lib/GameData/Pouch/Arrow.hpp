@@ -25,5 +25,5 @@ template <> struct Data::Structure<GameData::Pouch::Arrow> : GameData::Pouch::Ar
 	{ }
 };/* Data::Structure GameData::Pouch::Arrow close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Arrow::EquipIndex> = murmurhash3::hash("Pouch.Arrow.EquipIndex");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Arrow::IsValid> = murmurhash3::hash("Pouch.Arrow.IsValid");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Arrow::EquipIndex> { "Pouch.Arrow.EquipIndex" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Arrow::IsValid> { "Pouch.Arrow.IsValid" };

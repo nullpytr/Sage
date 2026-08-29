@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::OwnedHorseList::Hair::SecondaryColo
 	{ }
 };/* Data::Structure GameData::OwnedHorseList::Hair::SecondaryColor close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Blue> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Blue");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Green> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Green");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Red> = murmurhash3::hash("OwnedHorseList.Hair.SecondaryColor.Red");
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Blue> { "OwnedHorseList.Hair.SecondaryColor.Blue" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Green> { "OwnedHorseList.Hair.SecondaryColor.Green" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Hair::SecondaryColor::Red> { "OwnedHorseList.Hair.SecondaryColor.Red" };

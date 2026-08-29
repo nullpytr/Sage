@@ -30,8 +30,8 @@ template <> struct Data::Structure<GameData::Pouch::Food::Content> : GameData::P
 	{ }
 };/* Data::Structure GameData::Pouch::Food::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::LifeRecover> = murmurhash3::hash("Pouch.Food.Content.LifeRecover");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::MaterialName> = murmurhash3::hash("Pouch.Food.Content.MaterialName");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Name> = murmurhash3::hash("Pouch.Food.Content.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Price> = murmurhash3::hash("Pouch.Food.Content.Price");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::StockNum> = murmurhash3::hash("Pouch.Food.Content.StockNum");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::LifeRecover> { "Pouch.Food.Content.LifeRecover" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::MaterialName> { "Pouch.Food.Content.MaterialName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Name> { "Pouch.Food.Content.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Price> { "Pouch.Food.Content.Price" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::StockNum> { "Pouch.Food.Content.StockNum" };

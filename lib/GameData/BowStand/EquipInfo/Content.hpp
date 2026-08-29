@@ -21,5 +21,5 @@ template <> struct Data::Structure<GameData::BowStand::EquipInfo::Content> : Gam
 	{ }
 };/* Data::Structure GameData::BowStand::EquipInfo::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::BowStand::EquipInfo::Content::Life> = murmurhash3::hash("BowStand.EquipInfo.Content.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::BowStand::EquipInfo::Content::Name> = murmurhash3::hash("BowStand.EquipInfo.Content.Name");
+template <> hash_value_t constexpr Data::Hashtable<GameData::BowStand::EquipInfo::Content::Life> { "BowStand.EquipInfo.Content.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::BowStand::EquipInfo::Content::Name> { "BowStand.EquipInfo.Content.Name" };

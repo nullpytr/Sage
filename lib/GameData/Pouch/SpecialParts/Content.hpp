@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::Pouch::SpecialParts::Content> : Gam
 	{ }
 };/* Data::Structure GameData::Pouch::SpecialParts::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::Content::Name> = murmurhash3::hash("Pouch.SpecialParts.Content.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::Content::StockNum> = murmurhash3::hash("Pouch.SpecialParts.Content.StockNum");
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::Content::UseOrder> = murmurhash3::hash("Pouch.SpecialParts.Content.UseOrder");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::Content::Name> { "Pouch.SpecialParts.Content.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::Content::StockNum> { "Pouch.SpecialParts.Content.StockNum" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::Content::UseOrder> { "Pouch.SpecialParts.Content.UseOrder" };

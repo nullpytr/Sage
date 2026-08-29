@@ -34,11 +34,11 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind::IsOpen
 	{ }
 };/* Data::Structure GameData::MapData::LargeDungeon::Wind::IsOpen close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group002> = murmurhash3::hash("MapData.LargeDungeon.Wind.IsOpen.Group002");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group003> = murmurhash3::hash("MapData.LargeDungeon.Wind.IsOpen.Group003");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group004> = murmurhash3::hash("MapData.LargeDungeon.Wind.IsOpen.Group004");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group005> = murmurhash3::hash("MapData.LargeDungeon.Wind.IsOpen.Group005");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group006> = murmurhash3::hash("MapData.LargeDungeon.Wind.IsOpen.Group006");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group007> = murmurhash3::hash("MapData.LargeDungeon.Wind.IsOpen.Group007");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group008> = murmurhash3::hash("MapData.LargeDungeon.Wind.IsOpen.Group008");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group009> = murmurhash3::hash("MapData.LargeDungeon.Wind.IsOpen.Group009");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group002> { "MapData.LargeDungeon.Wind.IsOpen.Group002" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group003> { "MapData.LargeDungeon.Wind.IsOpen.Group003" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group004> { "MapData.LargeDungeon.Wind.IsOpen.Group004" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group005> { "MapData.LargeDungeon.Wind.IsOpen.Group005" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group006> { "MapData.LargeDungeon.Wind.IsOpen.Group006" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group007> { "MapData.LargeDungeon.Wind.IsOpen.Group007" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group008> { "MapData.LargeDungeon.Wind.IsOpen.Group008" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group009> { "MapData.LargeDungeon.Wind.IsOpen.Group009" };

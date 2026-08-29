@@ -67,22 +67,22 @@ template <> struct Data::Structure<GameData::ReplaceblePicture> : GameData::Repl
 	{ }
 };/* Data::Structure GameData::ReplaceblePicture close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::DeathMountainHatago> = murmurhash3::hash("ReplaceblePicture.DeathMountainHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::EastHatago> = murmurhash3::hash("ReplaceblePicture.EastHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::ForestHatago> = murmurhash3::hash("ReplaceblePicture.ForestHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::GerudoHatago_1> = murmurhash3::hash("ReplaceblePicture.GerudoHatago_1");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::GerudoHatago_2> = murmurhash3::hash("ReplaceblePicture.GerudoHatago_2");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::HeightHatago> = murmurhash3::hash("ReplaceblePicture.HeightHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::HutagoHatago> = murmurhash3::hash("ReplaceblePicture.HutagoHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::HyruleDepthHatago> = murmurhash3::hash("ReplaceblePicture.HyruleDepthHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LakesideHatago> = murmurhash3::hash("ReplaceblePicture.LakesideHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LinkHousePicture_0> = murmurhash3::hash("ReplaceblePicture.LinkHousePicture_0");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LinkHousePicture_1> = murmurhash3::hash("ReplaceblePicture.LinkHousePicture_1");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LinkHousePicture_2> = murmurhash3::hash("ReplaceblePicture.LinkHousePicture_2");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LinkHousePicture_3> = murmurhash3::hash("ReplaceblePicture.LinkHousePicture_3");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::NewHyruleWestHatago> = murmurhash3::hash("ReplaceblePicture.NewHyruleWestHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::NorthHatelHatago> = murmurhash3::hash("ReplaceblePicture.NorthHatelHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::RiverSideHatago> = murmurhash3::hash("ReplaceblePicture.RiverSideHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::SnowfieldHatago> = murmurhash3::hash("ReplaceblePicture.SnowfieldHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::SouthHatago> = murmurhash3::hash("ReplaceblePicture.SouthHatago");
-template <> hash_t constexpr Data::Hashtable<GameData::ReplaceblePicture::TabantaBridgeHatago> = murmurhash3::hash("ReplaceblePicture.TabantaBridgeHatago");
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::DeathMountainHatago> { "ReplaceblePicture.DeathMountainHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::EastHatago> { "ReplaceblePicture.EastHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::ForestHatago> { "ReplaceblePicture.ForestHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::GerudoHatago_1> { "ReplaceblePicture.GerudoHatago_1" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::GerudoHatago_2> { "ReplaceblePicture.GerudoHatago_2" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::HeightHatago> { "ReplaceblePicture.HeightHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::HutagoHatago> { "ReplaceblePicture.HutagoHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::HyruleDepthHatago> { "ReplaceblePicture.HyruleDepthHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LakesideHatago> { "ReplaceblePicture.LakesideHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LinkHousePicture_0> { "ReplaceblePicture.LinkHousePicture_0" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LinkHousePicture_1> { "ReplaceblePicture.LinkHousePicture_1" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LinkHousePicture_2> { "ReplaceblePicture.LinkHousePicture_2" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::LinkHousePicture_3> { "ReplaceblePicture.LinkHousePicture_3" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::NewHyruleWestHatago> { "ReplaceblePicture.NewHyruleWestHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::NorthHatelHatago> { "ReplaceblePicture.NorthHatelHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::RiverSideHatago> { "ReplaceblePicture.RiverSideHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::SnowfieldHatago> { "ReplaceblePicture.SnowfieldHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::SouthHatago> { "ReplaceblePicture.SouthHatago" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::TabantaBridgeHatago> { "ReplaceblePicture.TabantaBridgeHatago" };

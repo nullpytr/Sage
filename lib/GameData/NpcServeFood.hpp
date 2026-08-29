@@ -34,11 +34,11 @@ template <> struct Data::Structure<GameData::NpcServeFood> : GameData::NpcServeF
 	{ }
 };/* Data::Structure GameData::NpcServeFood close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::NpcServeFood::CurIndex> = murmurhash3::hash("NpcServeFood.CurIndex");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcServeFood::FoodMaterialNames> = murmurhash3::hash("NpcServeFood.FoodMaterialNames");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcServeFood::FoodName> = murmurhash3::hash("NpcServeFood.FoodName");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcServeFood::IsRound> = murmurhash3::hash("NpcServeFood.IsRound");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcServeFood::IsServedFood> = murmurhash3::hash("NpcServeFood.IsServedFood");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcServeFood::LotteryElapsedTime> = murmurhash3::hash("NpcServeFood.LotteryElapsedTime");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcServeFood::NextIndex> = murmurhash3::hash("NpcServeFood.NextIndex");
-template <> hash_t constexpr Data::Hashtable<GameData::NpcServeFood::Price> = murmurhash3::hash("NpcServeFood.Price");
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::CurIndex> { "NpcServeFood.CurIndex" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::FoodMaterialNames> { "NpcServeFood.FoodMaterialNames" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::FoodName> { "NpcServeFood.FoodName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::IsRound> { "NpcServeFood.IsRound" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::IsServedFood> { "NpcServeFood.IsServedFood" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::LotteryElapsedTime> { "NpcServeFood.LotteryElapsedTime" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::NextIndex> { "NpcServeFood.NextIndex" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::Price> { "NpcServeFood.Price" };

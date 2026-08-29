@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::LightBall_Large> :
 	{ }
 };/* Data::Structure GameData::PictureBookData::LightBall_Large close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::LightBall_Large::State> = murmurhash3::hash("PictureBookData.LightBall_Large.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::LightBall_Large::State> { "PictureBookData.LightBall_Large.State" };

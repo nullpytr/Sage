@@ -70,23 +70,23 @@ template <> struct Data::Structure<GameData::IsGetAdventureMemory> : GameData::I
 	{ }
 };/* Data::Structure GameData::IsGetAdventureMemory close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_OP_GanonWakeUp_PreRender_Memory> = murmurhash3::hash("IsGetAdventureMemory.DmT_OP_GanonWakeUp_PreRender_Memory");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_Birth_PreRender> = murmurhash3::hash("IsGetAdventureMemory.DmT_ZE_Birth_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_LieServant_PreRender> = murmurhash3::hash("IsGetAdventureMemory.DmT_ZE_LieServant_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_Meet_PreRender> = murmurhash3::hash("IsGetAdventureMemory.DmT_ZE_Meet_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_Molduga_PreRender> = murmurhash3::hash("IsGetAdventureMemory.DmT_ZE_Molduga_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_QueenDead_PreRender> = murmurhash3::hash("IsGetAdventureMemory.DmT_ZE_QueenDead_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_BZ_0005_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_BZ_0005_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_OT_0015_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_OT_0015_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_SK_0003_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_SK_0003_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0004_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZE_0004_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0005_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZE_0005_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0006_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZE_0006_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0007_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZE_0007_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0008_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZE_0008_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0010_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZE_0010_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0011_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZE_0011_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZN_0033_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZN_0033_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZN_0039_PreRender> = murmurhash3::hash("IsGetAdventureMemory.Dm_ZN_0039_PreRender");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::IsNeedIcon> = murmurhash3::hash("IsGetAdventureMemory.IsNeedIcon");
-template <> hash_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::IsOpenList> = murmurhash3::hash("IsGetAdventureMemory.IsOpenList");
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_OP_GanonWakeUp_PreRender_Memory> { "IsGetAdventureMemory.DmT_OP_GanonWakeUp_PreRender_Memory" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_Birth_PreRender> { "IsGetAdventureMemory.DmT_ZE_Birth_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_LieServant_PreRender> { "IsGetAdventureMemory.DmT_ZE_LieServant_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_Meet_PreRender> { "IsGetAdventureMemory.DmT_ZE_Meet_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_Molduga_PreRender> { "IsGetAdventureMemory.DmT_ZE_Molduga_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_QueenDead_PreRender> { "IsGetAdventureMemory.DmT_ZE_QueenDead_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_BZ_0005_PreRender> { "IsGetAdventureMemory.Dm_BZ_0005_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_OT_0015_PreRender> { "IsGetAdventureMemory.Dm_OT_0015_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_SK_0003_PreRender> { "IsGetAdventureMemory.Dm_SK_0003_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0004_PreRender> { "IsGetAdventureMemory.Dm_ZE_0004_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0005_PreRender> { "IsGetAdventureMemory.Dm_ZE_0005_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0006_PreRender> { "IsGetAdventureMemory.Dm_ZE_0006_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0007_PreRender> { "IsGetAdventureMemory.Dm_ZE_0007_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0008_PreRender> { "IsGetAdventureMemory.Dm_ZE_0008_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0010_PreRender> { "IsGetAdventureMemory.Dm_ZE_0010_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZE_0011_PreRender> { "IsGetAdventureMemory.Dm_ZE_0011_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZN_0033_PreRender> { "IsGetAdventureMemory.Dm_ZN_0033_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::Dm_ZN_0039_PreRender> { "IsGetAdventureMemory.Dm_ZN_0039_PreRender" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::IsNeedIcon> { "IsGetAdventureMemory.IsNeedIcon" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::IsOpenList> { "IsGetAdventureMemory.IsOpenList" };

@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::Enemy_Ganondorf_Mi
 	{ }
 };/* Data::Structure GameData::PictureBookData::Enemy_Ganondorf_Miasma close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Ganondorf_Miasma::State> = murmurhash3::hash("PictureBookData.Enemy_Ganondorf_Miasma.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Ganondorf_Miasma::State> { "PictureBookData.Enemy_Ganondorf_Miasma.State" };

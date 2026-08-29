@@ -19,6 +19,6 @@ template <> struct Data::Structure<GameData::RaumiGolemAttachment::Tool> : GameD
 	{ }
 };/* Data::Structure GameData::RaumiGolemAttachment::Tool close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::Tool::Life> = murmurhash3::hash("RaumiGolemAttachment.Tool.Life");
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::Tool::Name> = murmurhash3::hash("RaumiGolemAttachment.Tool.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::Tool::RaumiControlLife> = murmurhash3::hash("RaumiGolemAttachment.Tool.RaumiControlLife");
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::Tool::Life> { "RaumiGolemAttachment.Tool.Life" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::Tool::Name> { "RaumiGolemAttachment.Tool.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::Tool::RaumiControlLife> { "RaumiGolemAttachment.Tool.RaumiControlLife" };

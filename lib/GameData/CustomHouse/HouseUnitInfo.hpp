@@ -34,10 +34,10 @@ template <> struct Data::Structure<GameData::CustomHouse::HouseUnitInfo> : GameD
 	{ }
 };/* Data::Structure GameData::CustomHouse::HouseUnitInfo close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::HouseUnitSpecificID> = murmurhash3::hash("CustomHouse.HouseUnitInfo.HouseUnitSpecificID");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::IsUsed> = murmurhash3::hash("CustomHouse.HouseUnitInfo.IsUsed");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::UnitPos> = murmurhash3::hash("CustomHouse.HouseUnitInfo.UnitPos");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::UnitRotX> = murmurhash3::hash("CustomHouse.HouseUnitInfo.UnitRotX");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::UnitRotY> = murmurhash3::hash("CustomHouse.HouseUnitInfo.UnitRotY");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::UnitRotZ> = murmurhash3::hash("CustomHouse.HouseUnitInfo.UnitRotZ");
-template <> hash_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::HouseUnitType> = murmurhash3::hash("CustomHouse.HouseUnitInfo.HouseUnitType");
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::HouseUnitSpecificID> { "CustomHouse.HouseUnitInfo.HouseUnitSpecificID" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::IsUsed> { "CustomHouse.HouseUnitInfo.IsUsed" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::UnitPos> { "CustomHouse.HouseUnitInfo.UnitPos" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::UnitRotX> { "CustomHouse.HouseUnitInfo.UnitRotX" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::UnitRotY> { "CustomHouse.HouseUnitInfo.UnitRotY" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::UnitRotZ> { "CustomHouse.HouseUnitInfo.UnitRotZ" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::HouseUnitType> { "CustomHouse.HouseUnitInfo.HouseUnitType" };

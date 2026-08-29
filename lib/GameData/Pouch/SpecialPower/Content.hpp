@@ -13,4 +13,4 @@ template <> struct Data::Structure<GameData::Pouch::SpecialPower::Content> : Gam
 	{ }
 };/* Data::Structure GameData::Pouch::SpecialPower::Content close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::Content::Name> = murmurhash3::hash("Pouch.SpecialPower.Content.Name");
+template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::Content::Name> { "Pouch.SpecialPower.Content.Name" };

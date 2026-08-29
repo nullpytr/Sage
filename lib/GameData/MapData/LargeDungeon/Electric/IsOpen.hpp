@@ -34,11 +34,11 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric::Is
 	{ }
 };/* Data::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group000> = murmurhash3::hash("MapData.LargeDungeon.Electric.IsOpen.Group000");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group001> = murmurhash3::hash("MapData.LargeDungeon.Electric.IsOpen.Group001");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group002> = murmurhash3::hash("MapData.LargeDungeon.Electric.IsOpen.Group002");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group003> = murmurhash3::hash("MapData.LargeDungeon.Electric.IsOpen.Group003");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group004> = murmurhash3::hash("MapData.LargeDungeon.Electric.IsOpen.Group004");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group005> = murmurhash3::hash("MapData.LargeDungeon.Electric.IsOpen.Group005");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group006> = murmurhash3::hash("MapData.LargeDungeon.Electric.IsOpen.Group006");
-template <> hash_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group007> = murmurhash3::hash("MapData.LargeDungeon.Electric.IsOpen.Group007");
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group000> { "MapData.LargeDungeon.Electric.IsOpen.Group000" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group001> { "MapData.LargeDungeon.Electric.IsOpen.Group001" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group002> { "MapData.LargeDungeon.Electric.IsOpen.Group002" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group003> { "MapData.LargeDungeon.Electric.IsOpen.Group003" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group004> { "MapData.LargeDungeon.Electric.IsOpen.Group004" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group005> { "MapData.LargeDungeon.Electric.IsOpen.Group005" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group006> { "MapData.LargeDungeon.Electric.IsOpen.Group006" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group007> { "MapData.LargeDungeon.Electric.IsOpen.Group007" };

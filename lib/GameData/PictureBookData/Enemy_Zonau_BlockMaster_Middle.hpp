@@ -16,4 +16,4 @@ template <> struct Data::Structure<GameData::PictureBookData::Enemy_Zonau_BlockM
 	{ }
 };/* Data::Structure GameData::PictureBookData::Enemy_Zonau_BlockMaster_Middle close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Zonau_BlockMaster_Middle::State> = murmurhash3::hash("PictureBookData.Enemy_Zonau_BlockMaster_Middle.State");
+template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Zonau_BlockMaster_Middle::State> { "PictureBookData.Enemy_Zonau_BlockMaster_Middle.State" };

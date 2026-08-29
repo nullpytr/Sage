@@ -76,19 +76,19 @@ template <> struct Data::Structure<GameData::OwnedHorseList> : GameData::OwnedHo
 	{ }
 };/* Data::Structure GameData::OwnedHorseList close */
 
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::ActorName> = murmurhash3::hash("OwnedHorseList.ActorName");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::ChargeNum> = murmurhash3::hash("OwnedHorseList.ChargeNum");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::ColorType> = murmurhash3::hash("OwnedHorseList.ColorType");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Familiarity> = murmurhash3::hash("OwnedHorseList.Familiarity");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::FootType> = murmurhash3::hash("OwnedHorseList.FootType");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::HorsePower> = murmurhash3::hash("OwnedHorseList.HorsePower");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::HorseType> = murmurhash3::hash("OwnedHorseList.HorseType");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::IsFamiliarityChecked> = murmurhash3::hash("OwnedHorseList.IsFamiliarityChecked");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Name> = murmurhash3::hash("OwnedHorseList.Name");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::RoomID> = murmurhash3::hash("OwnedHorseList.RoomID");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Speed> = murmurhash3::hash("OwnedHorseList.Speed");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Toughness> = murmurhash3::hash("OwnedHorseList.Toughness");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::UidHash> = murmurhash3::hash("OwnedHorseList.UidHash");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Mane> = murmurhash3::hash("OwnedHorseList.Mane");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Rein> = murmurhash3::hash("OwnedHorseList.Rein");
-template <> hash_t constexpr Data::Hashtable<GameData::OwnedHorseList::Saddle> = murmurhash3::hash("OwnedHorseList.Saddle");
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::ActorName> { "OwnedHorseList.ActorName" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::ChargeNum> { "OwnedHorseList.ChargeNum" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::ColorType> { "OwnedHorseList.ColorType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Familiarity> { "OwnedHorseList.Familiarity" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::FootType> { "OwnedHorseList.FootType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::HorsePower> { "OwnedHorseList.HorsePower" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::HorseType> { "OwnedHorseList.HorseType" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::IsFamiliarityChecked> { "OwnedHorseList.IsFamiliarityChecked" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Name> { "OwnedHorseList.Name" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::RoomID> { "OwnedHorseList.RoomID" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Speed> { "OwnedHorseList.Speed" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Toughness> { "OwnedHorseList.Toughness" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::UidHash> { "OwnedHorseList.UidHash" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Mane> { "OwnedHorseList.Mane" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Rein> { "OwnedHorseList.Rein" };
+template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Saddle> { "OwnedHorseList.Saddle" };
