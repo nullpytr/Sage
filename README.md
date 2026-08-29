@@ -1,6 +1,6 @@
 # Sage
 
-Header-only C++23 library for no-copy, in-place inspection and editing of *The Legend of Zelda: Tears of the Kingdom* save game files.  All member reads and writes go directly into the loaded byte blob. No intermediate objects, no serialization round-trip.
+C++23 header-only library for no-copy, in-place inspection and editing of *The Legend of Zelda: Tears of the Kingdom* save game files.  All member reads and writes go directly into the loaded save blob. Only lightweight view types, no serialization round-trip.
 
 ## Usage / API
 

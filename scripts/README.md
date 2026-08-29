@@ -10,17 +10,17 @@ py scripts/gamedata.py [options]
 
 | flag | short | default | effect |
 |------|-------|---------|--------|
-| `--preset` | `-p` | `medium` | Metadata preset to use: (high \| low \| medium) (default: medium); mutually exclusive with `--metadata` |
+| `--preset` | `-p` | `medium` | Metadata preset to use: (high \| low \| medium); mutually exclusive with `--metadata` |
 | `--metadata` | `-m` | | Path to an arbitrary metadata file; mutually exclusive with `--preset` |
 | `--out` | `-o` | `lib/` | Output directory for generated headers |
-| `--name` | `-n` | `GameData` | Top-level structure/header name (default: GameData); mutually exclusive with `--pick` |
+| `--name` | `-n` | `GameData` | Top-level structure/header name; mutually exclusive with `--pick` |
 | `--pick` | `-q` | | Cherry-pick a single tag type by `::` path (e.g. `OwnedHorseList::Body::EyeColor`); output header/directory name matches the tag type; mutually exclusive with `--name` |
 | `--standalone` | `-s` | | Emit a single combined header instead of per-subsytem files |
 | `--clear` | `-c` | | Delete generated headers without regenerating; mutually exclusive with `--dirty` |
 | `--dry` | | | Parse the tree without writing any files |
 | `--tree` | | | Only generate the type tree as JSON and exit |
 | `--dirty` | | | Skip deleting the output directory before writing; mutually exclusive with `--clear` |
-| `--verbose` | `-v` | | Show parser and emitter debug output (suppressed by default) |
+| `--verbose` | `-v` | `false` | Show parser and emitter debug output |
 
 Presets are `.txt` files discovered from `data/presets/`
 
@@ -372,8 +372,8 @@ py scripts/bundle.py [source] [options]
 
 | arg / flag | short | default | effect |
 |------------|-------|---------|--------|
-| `source` | | `Sage.hpp` | Top-level source header to bundle (default: `Sage.hpp`) |
-| `--out` | `-o` | `include/sage` | Output header path (default: `include/sage`) |
-| `--include` | `-I` | `lib` | Additional include search directories; may be repeated (default: `[lib]`) |
+| `source` | | `Sage.hpp` | Top-level source header to bundle |
+| `--out` | `-o` | `include/sage` | Output header path |
+| `--include` | `-I` | `lib` | Additional include search directories; may be repeated |
 | `--unsafe` | `-u` | | Also hoist includes inside conditional blocks, WILL break the conditional logic |
 | `--quiet` | `-q` | | Do not output list of hoisted includes |
