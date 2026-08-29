@@ -31,14 +31,14 @@ Preset and metadata files are semicolon-delimited with two record types. Lines s
 ### Member records
 
 ```
-hash_hex ; TypeName ; DotPath.to.Member
+Hashval ; Typename ; Hashtext
 ```
 
 | column | example | meaning |
 |--------|---------|---------|
-| `hash_hex` | `d2ddb868` | MurmurHash3 of the full dot-path, as stored in the save blob |
-| `TypeName` | `WString16Array` | logical type (see type table below) |
-| `DotPath` | `OwnedHorseList.Name` | dot-separated path mirroring the in-game data hierarchy |
+| `Hashval` | `d2ddb868` | MurmurHash3 of the full dot-path, as stored in the save blob |
+| `Typename` | `WString16Array` | logical type (see type table below) |
+| `Hashtext` | `OwnedHorseList.Name` | dot-separated path describing the in-game data hierarchy |
 
 ### EnumValues records
 
@@ -48,7 +48,7 @@ EnumValues ; target ; Value1,Value2,...
 
 `target` can be:
 
-- A single dot-path: `MapData.CurrentLayer`
+- A single dot-path (hashtext): `MapData.CurrentLayer`
 - A comma-separated list of exact paths: `LastWildHorse.Mane,OwnedHorseList.Mane`
 - A regexp  pattern with wildcard: `DungeonState.Dungeon*`, `PlayerStatus.Companion.*.JoiningCondition`
 
@@ -67,7 +67,7 @@ gamedata.py
 
 `make_tree` dispatches each record to `parse_data_record` or `parse_enum_value_record`.
 
-`parse_data_record` splits the dot-path into identifiers, walks the tree creating `Structure` nodes for each non-leaf identifier, and inserts a typed `Member` leaf at the end. Every identifier is sanitized: leading digits get a `_` prefix and hyphens become underscores.
+`parse_data_record` splits the dot-path (hashtext) into identifiers, walks the tree creating `Structure` nodes for each non-leaf identifier, and inserts a typed `Member` leaf at the end. Every identifier is sanitized: leading digits get a `_` prefix and hyphens become underscores.
 
 `parse_enum_value_record` finds already-inserted `Enum` nodes by exact name or regex pattern match, then replaces each match with a complete copy that carries the `values` tuple. Before replacement, enum members exist in the tree as "incomplete" nodes with an empty `values` tuple.
 
@@ -141,7 +141,7 @@ struct CurrentSpecialPower : Tag::Enum {
 1. Tag struct: opens `struct Subsystem : Tag::Structure`, forward-declares nested structures, emits inline members and enums, closes.
 2. Nested struct bodies: recurses into each child `Structure` and emits it to its own file when `include_dir` is set, and `#include`s after forward declaration. inline otherwise.
 3. Data struct: emits `template <> struct Data::Structure<Subsystem> : Subsystem` with one typed field per member and an explicit constructor which overlays the subsytem on a Sav& blob. 
-4. Hashtable specializations: `template <> hash_t constexpr Data::Hashtable<Subsystem::Member> = murmurhash3::hash("dot.path");` for every `Tag::Member`. The only exception is `Playtime`, it's original hash text is unknown; we're using a raw hex literal instead.
+4. Hashtable specializations: `template <> hash_t constexpr Data::Hashtable<Subsystem::Member> = murmurhash3::hash("hashtext");` for every `Tag::Member`. The only exception is `Playtime`, it's original hash text is unknown; we're using a raw hex literal instead.
 ```cpp
 struct GameData::PlayerStatus : Tag::Structure {
     struct MaxLife    : Tag::Member { using type = s32&; };
@@ -352,4 +352,28 @@ template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::WeaponAttac
 template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::ZonauEventFailureOnce> = murmurhash3::hash("PlayerStatus.ZonauEventFailureOnce");
 template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::CurrentSpecialPower> = murmurhash3::hash("PlayerStatus.CurrentSpecialPower");
 template <> hash_t constexpr Data::Hashtable<GameData::PlayerStatus::ParasailPattern> = murmurhash3::hash("PlayerStatus.ParasailPattern");
+```  
+<br><hr> 
+   
+# scripts/bundle
+
+Bundle Sage headers into a single self-contained file. After quom runs, a post-processing pass hoists unconditional `#include` directives out of the bundled output and sorts them at the top of the file.
+
+Requires the [quom](https://github.com/Viatorus/quom) tool made by [Viatorus](https://github.com/Viatorus):
+```sh
+pip install quom
 ```
+
+## Usage
+
+```sh
+py scripts/bundle.py [source] [options]
+```
+
+| arg / flag | short | default | effect |
+|------------|-------|---------|--------|
+| `source` | | `Sage.hpp` | Top-level source header to bundle (default: `Sage.hpp`) |
+| `--out` | `-o` | `include/sage` | Output header path (default: `include/sage`) |
+| `--include` | `-I` | `lib` | Additional include search directories; may be repeated (default: `[lib]`) |
+| `--unsafe` | `-u` | | Also hoist includes inside conditional blocks, WILL break the conditional logic |
+| `--quiet` | `-q` | | Do not output list of hoisted includes |

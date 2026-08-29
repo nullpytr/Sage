@@ -4,7 +4,7 @@ Header-only C++23 library for no-copy, in-place inspection and editing of *The L
 
 ## Usage / API
 
-Add `lib/` & `include/` to your include paths and simply:
+Drop in the `include/sage` bundled header (or [generate your own](./scripts/README.md#scripts/bundle)) in your project, add it as an include target in yout toolchain and simply:
 
 ```cpp
 #include <sage>
