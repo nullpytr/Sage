@@ -53,15 +53,42 @@ Fully type safe & structured access using the GameData overlay model.
    auto const& life = status.MaxLife;
    auto const& stamina = status.MaxStamina;
 
-   // or skip the subsytem entirely
+   // or skip the subsystem entirely
    auto const& life_ = save.get<GameData::PlayerStatus::MaxLife>();
-   auto const & stamina_ = save.get<GameData::PlayerStatus::MaxStamina>();
+   auto const& stamina_ = save.get<GameData::PlayerStatus::MaxStamina>();
+}
+```
+
+Sage v0.5.2 adds `from` & `as` keywords to access data using macros. Clean but can cause unintentional expansions.
+Opt-out using `#define SAGE_DISABLE_KEYWORD_ACCESS` before `#include <sage>`.
+
+```cpp
+{ // Pathway A: Parse entire save in one go and use overlay instances
+  auto const& data { GameData from save };
+  auto const& data_ { save as GameData }; // equivalent
+
+  auto const& playtime = data.Playtime;
+  auto const& status = data.PlayerStatus.MaxLife;
+  auto const& stamina = data.PlayerStatus.MaxStamina;
+}
+
+{ // Pathway B: Parse and use only what you want using overlay types
+  auto const& playtime { GameData::Playtime from save }; // OR: { save as GameData::Playtime }
+  auto const& status { GameData::PlayerStatus from save }; // OR: { save as GameData::PlayerStatus }
+
+  // subsystem overlay fully loaded in, access anything
+  auto const& life = status.MaxLife;
+  auto const& stamina = status.MaxStamina;
+
+  // or skip the subsystem entirely
+  auto const& life_ { GameData::PlayerStatus::MaxLife from save }; // OR: { save as GameData::PlayerStatus::MaxLife }
+  auto const& stamina_ { GameData::PlayerStatus::MaxStamina from save }; // OR: { save as GameData::PlayerStatus::MaxStamina }
 }
 ```
 
 ### Medium-level
 
-Get a pointer or reference to a member field by it's path or hash value. The string literals are hashed at compile time and stripped out of the binary (that's why they need to be wrapped with braces `{}`). Useful for fields not yet covered by the generated headers.
+Get a pointer or reference to a member field by its path or hash value. The string literals are hashed at compile time and stripped out of the binary (that's why they need to be wrapped with braces `{}`). Useful for fields not yet covered by the generated headers.
 
 
 ```cpp
@@ -90,7 +117,7 @@ std::println("{}", hashtable[0] == save.ref<hash_t>(METADATA_HASHTABLE_START)); 
 The example below patches the hearts, stamina, rupee and bubbul gem values to their max limits, essentially like a cheat. 
 
 ```cpp
-auto status = save.get<GameData::PlayerStatus>(); // get subsystem overlay
+auto status { GameData::PlayerStatus from save }; // get subsystem overlay
 
 constexpr auto limit_rupee = std::numeric_limits<std::decay_t<decltype(status.CurrentRupee)>>::max(); // limits
 constexpr auto limit_mamo = std::numeric_limits<std::decay_t<decltype(status.CurrentMamo)>>::max();
@@ -101,11 +128,12 @@ status.MaxEnergy = LIMIT_MAX_ENERGY;
 status.CurrentRupee = limit_rupee;
 status.CurrentMamo = limit_mamo;
 
-require(save.get<GameData::PlayerStatus::MaxLife>() == LIMIT_MAX_LIFE); // verify
-require(save.get<GameData::PlayerStatus::MaxStamina>() == LIMIT_MAX_STAMINA);
-require(save.get<GameData::PlayerStatus::MaxEnergy>() == LIMIT_MAX_ENERGY);
-require(save.get<GameData::PlayerStatus::CurrentRupee>() == limit_rupee);
-require(save.get<GameData::PlayerStatus::CurrentMamo>() == limit_mamo);
+
+require(save as GameData::PlayerStatus::MaxLife == LIMIT_MAX_LIFE); // verify
+require(save as GameData::PlayerStatus::MaxStamina == LIMIT_MAX_STAMINA);
+require(save as GameData::PlayerStatus::MaxEnergy == LIMIT_MAX_ENERGY);
+require(save as GameData::PlayerStatus::CurrentRupee == limit_rupee);
+require(save as GameData::PlayerStatus::CurrentMamo == limit_mamo);
 ```
 
 The changes reflect in game which can be seen in this snapshot: ![images-example](../../releases/download/images/example.png)
@@ -120,7 +148,7 @@ The full code for this cheat can be found [here](./examples/Cheat.cpp) and more 
 
 `Sav` reads the entire save file into a `std::vector<byte>`. On construction it walks the blob's internal hash table and builds an `unordered_map<hash_t, offset_t>` for O(1) field lookup by name hash. All subsequent member access "overlay" that buffer.
 
-Filesystem I/O lives in `Core/Filesystem.hpp` via `read_all_bytes()` and `write_all_bytes()`.
+Filesystem I/O lives in `External/Filesystem.hpp` via `read_all_bytes()` and `write_all_bytes()`.
 
 ### 2. Overlay System
 

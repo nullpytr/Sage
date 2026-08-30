@@ -105,3 +105,25 @@ private: /* Members */
     std::vector<byte> m_data;
     std::unordered_map<hash_t, offset_t> m_offsets;
 };
+
+/* Shift operators (v0.5.2+) */
+
+// lshift: auto data { overlay() << sav }
+template<typename T> requires std::derived_from<T, Tag::Type>
+auto operator<<(T const&, Sav& s) { return s.get<T>(); }
+
+// rshift: auto data { sav >> overlay() }
+template<typename T> requires std::derived_from<T, Tag::Type>
+auto operator>>(Sav& s, T const&) { return s.get<T>(); }
+
+/* Keyword access (optional, v0.5.2+) */
+#ifndef SAGE_DISABLE_KEYWORD_ACCESS
+
+// auto data { overlay from sav }
+#define from ()<<
+
+// auto data { sav as overlay }
+inline Tag::Type RESERVED_SAGE_TAG_PLACEMENT_BUFFER;
+#define as >> *new(&RESERVED_SAGE_TAG_PLACEMENT_BUFFER)
+
+#endif
