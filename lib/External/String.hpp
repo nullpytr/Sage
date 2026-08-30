@@ -19,10 +19,24 @@ template <size_t N> // u16string<N> DOES include null term
 using u16string = basic_string<N - 1, char16_t>;
 
 #include <format>
-template <size_t N>
-struct std::formatter<::basic_string<N, char>> : std::formatter<std::string_view>
+template <size_t N, typename Traits>
+struct std::formatter<::basic_string<N, char, Traits>> : std::formatter<std::string_view>
 {
     auto format(const ::basic_string<N, char>& s, std::format_context& ctx) const {
         return std::formatter<std::string_view>::format(std::string_view{ s }, ctx);
+    }
+};
+
+#include "UTF8.hpp"
+template <size_t N, typename Traits>
+struct std::formatter<::basic_string<N, char16_t, Traits>> : std::formatter<std::string_view>
+{
+    auto format(const ::basic_string<N, char16_t, Traits>& s, std::format_context& ctx) const {
+        char u16_buf[N * 3]; // UTF16 string is at most 3x size when encoded as UTF8
+        auto const* end = utf8::utf16to8(s.data(), s.data() + s.size(), u16_buf);
+        return std::formatter<std::string_view>::format(
+            std::string_view { u16_buf, end - u16_buf },
+            ctx
+        );
     }
 };
