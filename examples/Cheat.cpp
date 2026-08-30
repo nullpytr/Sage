@@ -27,10 +27,5 @@ int main(int const argc, char const* argv[]) {
     require(save as GameData::PlayerStatus::MaxEnergy == LIMIT_MAX_ENERGY);
     require(save as GameData::PlayerStatus::CurrentRupee == limit_rupee);
     require(save as GameData::PlayerStatus::CurrentMamo == limit_mamo);
-
-    save.dump("other/cheat.sav");
-
-    std::println("[export] modified save written to 'other/cheat.sav'");
-    std::println("/* -- */");
     /* -- */
 }

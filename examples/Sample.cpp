@@ -125,10 +125,5 @@ int main(int const argc, char const* argv[]) {
         require(name == u"my horse");
 
     std::println("[horses/names] all horses renamed to 'my horse'");
-
-    save.dump("other/export.sav");
-
-    std::println("[export] modified save written to 'other/export.sav'");
-    std::println("/* -- */");
     /* -- */
 }
