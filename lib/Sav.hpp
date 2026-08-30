@@ -31,6 +31,13 @@ public:
         }
     }
 
+    void flush()
+    {
+        std::error_code error;
+        m_data.sync(error);
+        if (error) throw std::system_error { error };
+    }
+
     [[nodiscard]] byte const* data_ptr() const { return m_data.data(); }
 
     /* -- */
