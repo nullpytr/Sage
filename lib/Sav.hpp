@@ -5,7 +5,7 @@
 #include <unordered_map>
 
 #include "External/Mio.hpp"
-#include "External/Filesystem.hpp"
+
 #include "Core.hpp"
 
 #define METADATA_HASHTABLE_START 0x000028
@@ -15,7 +15,6 @@
 class Sav
 {
 public:
-    /* [Open | Export] of Sav blob */
     explicit Sav(std::string const& path) : m_data { path }
     {
         // Load entire hash table once
@@ -30,11 +29,6 @@ public:
              */
             if (hash == METADATA_HASHTABLE_END_VALUE) break;
         }
-    }
-
-    void dump(std::string const& path) const
-    {
-        write_all_bytes(path, m_data);
     }
 
     [[nodiscard]] byte const* data_ptr() const { return m_data.data(); }
