@@ -1,10 +1,11 @@
 #pragma once
 
 #include <string>
-#include <vector>
+#include <stdexcept>
 #include <unordered_map>
 
-#include "External/Filesystem.hpp"
+#include "External/Mio.hpp"
+
 #include "Core.hpp"
 
 #define METADATA_HASHTABLE_START 0x000028
@@ -14,12 +15,11 @@
 class Sav
 {
 public:
-    /* [Open | Export] of Sav blob */
-    explicit Sav(std::string const& path) : m_data { read_all_bytes(path) }
+    explicit Sav(std::string const& path) : m_data { path }
     {
         // Load entire hash table once
         m_offsets.reserve(METADATA_HASHTABLE_SIZE_ESTIMATE);
-        for (offset_t offset = METADATA_HASHTABLE_START; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(u32))
+        for (offset_t offset = METADATA_HASHTABLE_START; offset < m_data.size(); offset += sizeof(hash_t) + sizeof(offset_t))
         {
             auto hash = ref<hash_t>(offset);
             m_offsets[hash] = offset + sizeof(hash_t);
@@ -31,12 +31,14 @@ public:
         }
     }
 
-    void dump(std::string const& path) const
+    void flush()
     {
-        write_all_bytes(path, m_data);
+        std::error_code error;
+        m_data.sync(error);
+        if (error) throw std::system_error { error };
     }
 
-    [[nodiscard]] byte const* data_ptr() const { return &m_data[0]; }
+    [[nodiscard]] byte const* data_ptr() const { return m_data.data(); }
 
     /* -- */
 
@@ -84,13 +86,13 @@ public:
 
     /* Low-level access */
     /* Get pointer to value of type T at given offset */
-    template <typename T, size_t E = sizeof(T) - 1>
+    template <typename T>
     T* ptr(offset_t const offset)
     {
-        auto& start = m_data.at(offset); // vector::at() will ensure start is in bounds
-        m_data.at(offset + E); // also ensure that end is in bounds
+        if (m_data.size() < offset + sizeof(T))
+            throw std::out_of_range("Sav: out of range");
 
-        return std::bit_cast<T*>(&start);
+        return std::bit_cast<T*>(m_data.data() + offset);
     }
 
     /* Get reference to value of type T at given offset */
@@ -102,7 +104,7 @@ public:
     /* -- */
 
 private: /* Members */
-    std::vector<byte> m_data;
+    mio::ummap_sink m_data;
     std::unordered_map<hash_t, offset_t> m_offsets;
 };
 
