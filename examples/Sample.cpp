@@ -116,14 +116,17 @@ int main(int const argc, char const* argv[]) {
     else std::println("[horses/saddle] GameRomHorseSaddle_00 not found in array");
 
     /* String arrays */
-    for (auto name : data.OwnedHorseList.Name)
+    for (auto idx = 0; auto name : data.OwnedHorseList.Name){
+        std::print("[horses/names] Horse[{}]: {}", idx++, name);
         name = u"my horse"; // write directly into sav object's memory
+        std::println(" -> {}", name);
+    }
 
     auto const& updated_names = save.get<GameData::OwnedHorseList::Name>(); // now all identical
 
     for (auto name : updated_names)
         require(name == u"my horse");
 
-    std::println("[horses/names] all horses renamed to 'my horse'");
+    std::println("[horses/names] all horses renamed to '{}'", updated_names[0]);
     /* -- */
 }
