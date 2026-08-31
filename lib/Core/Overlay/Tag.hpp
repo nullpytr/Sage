@@ -8,6 +8,8 @@ namespace Tag {
     struct Type {};
 
     struct Structure : Type {};
+    struct Map : Type {};
+
     struct Member : Type {};
     struct Enum : Member {};
 }
