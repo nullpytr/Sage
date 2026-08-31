@@ -136,6 +136,19 @@ The changes reflect in game which can be seen in this snapshot: ![images-example
 
 The full code for this cheat can be found [here](./examples/Cheat.cpp) and more examples can be found [here](./examples).
 
+Sage v0.7.x introduces `mapped_range`(s) which expose non-continous collections of type T from the save blob as iterable ranges. Standard range algorithms work directly:
+
+```cpp
+auto shrines { GameData::DungeonState from save };
+
+auto is_cleared_shrine = [](auto& s) { return s == s.Clear; };
+std::println("[cleared shrines] {}", std::ranges::count_if(shrines, is_cleared_shrine));
+
+std::ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // mark all cleared
+std::println(" -> {}", std::ranges::count_if(shrines, is_cleared_shrine)); // 53 -> 152
+
+```
+
 ## How it works
 
 ![images-sage](../../releases/download/images/diagram.png)
@@ -150,19 +163,21 @@ Writes through `ref<T>()` go straight to the mapped file and are flushed using `
 
 The type system splits into two namespaces:
 
-- `Tag::Structure`, `Tag::Member`, `Tag::Enum` are compile-time constraints. Template specializations are gated behind `std::derived_from` concept checks so only valid types are accepted.
+- `Tag::Structure`, `Tag::Member`, `Tag::Enum`, `Tag::Map` are compile-time constraints. Template specializations are gated behind `std::derived_from` concept checks so only valid types are accepted.
 - `Data::Structure<S>` is the constructible copy of the tag structure, it can be constructed with Sav&, and "overlays" its members over the data of the Sav object. Automatically constructed on `Sav::get<S>()`.
+- `Data::Map<N>` is identical to `Data::Structure<S>`, just a different name to avoid confusion (since maps use a different dispatch path, see below).
 - `Data::Hashtable<M>` stores compile-time hash values for each member, computed via `consteval murmurhash3::hash()`.  
 
 Each subsystem header defines its own specializations; See [below](./README.md#Codegen).
 
-### 3. `Sav::get<T = S|M|E>()` dispatch
+### 3. `Sav::get<T = S|N|M|E>()` dispatch
 
-`get<T = S|M|E>()` dispatches at compile time based on the tag `T` carries:
+`get<T>()` dispatches at compile time based on the tag `T` carries:
 
 - `Tag::Structure (S)`: builds `Data::Structure<T>`, initializing every member reference from the blob.
 - `Tag::Member (M)`: resolves the hash from `Data::Hashtable<M>` and applies layout adaptation. If the member type is a pointer (e.g. `X*`), `get<M>()` resolves the indirection automatically and returns `X`. Non-pointer members (e.g. `float&`) read directly from the runtime hashtable offset.
 - `Tag::Enum (E)`: `Tag::Enum` inherits from `Tag::Member`, so enum members go through the same `get<M>()` path.
+- `Tag::Map (N)`: builds `Data::Map<N>` (identical to `Data::Structure<N>`), reinterprets its contiguous reference (pointer) storage as a `map<T, N>` array and returns `mapped_range<T, N>`, a stack-allocated owning `std::transform_view`, which is equivalent to the struct, except it supports `std::ranges` algorithms. This does mean the pointers from the struct need to be copied by the `mapped_range`. Still no data is copied out of the blob region though.
 
 ### 4. Overlay layout adaptors
 
@@ -177,6 +192,7 @@ The blob layout doesn't always map 1:1 to modern C++ types. `Core/Layout.hpp` ad
 | `enum`  | `hash_t enum_value` | `enum_t<E>&` | not needed |
 | `enum array` | `hash_t enum_buf[]` | `span<enum_t<E>>` | needs only pointer indirection |
 | `array<adaptive_t>` | array of adaptive types | `adaptive_range<T>` (`std::views::transform`) | lazy per-element layout adapt; view types constructed on *element access* |
+| `map<T, N>` | `{ T* pointers[N] }` | `mapped_range<T, N>` | lazy per-element pointer deref; but `mapped_range` copies the pointer array as it is not a real blob type and created in-memory by Sage. (the blob has scattered `T`s) |
 
 ## Codegen
 
