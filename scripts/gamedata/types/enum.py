@@ -2,7 +2,7 @@ from .member import GameDataType, Member
 from .array import Array
 
 class Enum[EnumName: str](Member, Member.Trait.Reference):
-    basename = "Tag::Enum"
+    basename = "Enum"
     typename = "enum_t<{enum_name}>"
 
     values: tuple[str, ...]

@@ -1,7 +1,7 @@
 from .base import GameDataType
 
 class Structure(GameDataType):
-    basename = "Tag::Structure"
+    basename = "Structure"
     
     children: dict[str, GameDataType]
 

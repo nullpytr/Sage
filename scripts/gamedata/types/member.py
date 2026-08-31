@@ -1,8 +1,7 @@
 from .base import GameDataType
-from .structure import Structure
 
 class Member(GameDataType):
-    basename = "Tag::Member"
+    basename = "Member"
     
     hash_text_string: str
     hash_hexadecimal: str
