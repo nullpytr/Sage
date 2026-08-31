@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::MapData::LargeDungeon::Wind::IsOpen : Tag::Structure {
+struct GameData::MapData::LargeDungeon::Wind::IsOpen : Tag::Map {
 	struct Group002 : Tag::Member { using type = bool&; };
 	struct Group003 : Tag::Member { using type = bool&; };
 	struct Group004 : Tag::Member { using type = bool&; };
@@ -10,9 +10,10 @@ struct GameData::MapData::LargeDungeon::Wind::IsOpen : Tag::Structure {
 	struct Group007 : Tag::Member { using type = bool&; };
 	struct Group008 : Tag::Member { using type = bool&; };
 	struct Group009 : Tag::Member { using type = bool&; };
+	using type = std::decay_t<Group002::type>;
 };/* Tag::Structure GameData::MapData::LargeDungeon::Wind::IsOpen close */
 
-template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind::IsOpen> : GameData::MapData::LargeDungeon::Wind::IsOpen {
+template <> struct Data::Map<GameData::MapData::LargeDungeon::Wind::IsOpen> : GameData::MapData::LargeDungeon::Wind::IsOpen {
 	Member<Group002> Group002;
 	Member<Group003> Group003;
 	Member<Group004> Group004;
@@ -22,7 +23,7 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind::IsOpen
 	Member<Group008> Group008;
 	Member<Group009> Group009;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		Group002 { s.get<struct Group002>() },
 		Group003 { s.get<struct Group003>() },
 		Group004 { s.get<struct Group004>() },
@@ -32,7 +33,7 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind::IsOpen
 		Group008 { s.get<struct Group008>() },
 		Group009 { s.get<struct Group009>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon::Wind::IsOpen close */
+};/* Data::Map GameData::MapData::LargeDungeon::Wind::IsOpen close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group002> { "MapData.LargeDungeon.Wind.IsOpen.Group002" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group003> { "MapData.LargeDungeon.Wind.IsOpen.Group003" };

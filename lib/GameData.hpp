@@ -1204,11 +1204,9 @@ struct GameData : Tag::Structure {
 	struct ActionGuide_IsNew;
 	struct AlbumData;
 	struct AmiiboData;
-	struct ArrivalPointState;
 	struct AutoBuilder;
 	struct BowStand;
 	struct ChallengeLogState_Challenge;
-	struct CheckPoint_IsDisplayFoliage;
 	struct CustomHouse;
 	struct CustomHouseTakeOutNum;
 	struct DeadHorseList;
@@ -1216,21 +1214,12 @@ struct GameData : Tag::Structure {
 	struct DongoList;
 	struct DongoLocatorList;
 	struct DragonMemoryDataForUI;
-	struct DungeonState;
 	struct FigureCreateInfo;
 	struct FigureInfo;
-	struct IsActivateCannon;
-	struct IsAppearKorok;
-	struct IsDefeatBossEnemy;
 	struct IsFindTreasureMap;
 	struct IsGetAdventureMemory;
 	struct IsGetCaveMasterMedal;
-	struct IsOpenCannon;
 	struct IsVisitLocation;
-	struct IsVisitLocationArea_CaveEntrance;
-	struct KeyCrystalDungeonState;
-	struct KeyCrystalDungeonUnlocked;
-	struct KorokCarryProgress;
 	struct LastWildHorse;
 	struct LightBallBud;
 	struct MapData;
@@ -1238,7 +1227,6 @@ struct GameData : Tag::Structure {
 	struct NpcGardenInfo;
 	struct NpcGardenInfo_HatenoVillage023;
 	struct NpcServeFood;
-	struct OwnedCustomizableHorseTack_Reins;
 	struct OwnedCustomizableHorseTack_Saddle;
 	struct OwnedHorseList;
 	struct OwnedParasailPattern;
@@ -1252,16 +1240,26 @@ struct GameData : Tag::Structure {
 	struct ShieldStand;
 	struct SortPattern;
 	struct WeaponStand;
+	struct ArrivalPointState;
+	struct CheckPoint_IsDisplayFoliage;
+	struct DungeonState;
+	struct IsActivateCannon;
+	struct IsAppearKorok;
+	struct IsDefeatBossEnemy;
+	struct IsOpenCannon;
+	struct IsVisitLocationArea_CaveEntrance;
+	struct KeyCrystalDungeonState;
+	struct KeyCrystalDungeonUnlocked;
+	struct KorokCarryProgress;
+	struct OwnedCustomizableHorseTack_Reins;
 };/* Tag::Structure GameData close */
 
 #include "GameData/ActionGuide_IsNew.hpp"
 #include "GameData/AlbumData.hpp"
 #include "GameData/AmiiboData.hpp"
-#include "GameData/ArrivalPointState.hpp"
 #include "GameData/AutoBuilder.hpp"
 #include "GameData/BowStand.hpp"
 #include "GameData/ChallengeLogState_Challenge.hpp"
-#include "GameData/CheckPoint_IsDisplayFoliage.hpp"
 #include "GameData/CustomHouse.hpp"
 #include "GameData/CustomHouseTakeOutNum.hpp"
 #include "GameData/DeadHorseList.hpp"
@@ -1269,21 +1267,12 @@ struct GameData : Tag::Structure {
 #include "GameData/DongoList.hpp"
 #include "GameData/DongoLocatorList.hpp"
 #include "GameData/DragonMemoryDataForUI.hpp"
-#include "GameData/DungeonState.hpp"
 #include "GameData/FigureCreateInfo.hpp"
 #include "GameData/FigureInfo.hpp"
-#include "GameData/IsActivateCannon.hpp"
-#include "GameData/IsAppearKorok.hpp"
-#include "GameData/IsDefeatBossEnemy.hpp"
 #include "GameData/IsFindTreasureMap.hpp"
 #include "GameData/IsGetAdventureMemory.hpp"
 #include "GameData/IsGetCaveMasterMedal.hpp"
-#include "GameData/IsOpenCannon.hpp"
 #include "GameData/IsVisitLocation.hpp"
-#include "GameData/IsVisitLocationArea_CaveEntrance.hpp"
-#include "GameData/KeyCrystalDungeonState.hpp"
-#include "GameData/KeyCrystalDungeonUnlocked.hpp"
-#include "GameData/KorokCarryProgress.hpp"
 #include "GameData/LastWildHorse.hpp"
 #include "GameData/LightBallBud.hpp"
 #include "GameData/MapData.hpp"
@@ -1291,7 +1280,6 @@ struct GameData : Tag::Structure {
 #include "GameData/NpcGardenInfo.hpp"
 #include "GameData/NpcGardenInfo_HatenoVillage023.hpp"
 #include "GameData/NpcServeFood.hpp"
-#include "GameData/OwnedCustomizableHorseTack_Reins.hpp"
 #include "GameData/OwnedCustomizableHorseTack_Saddle.hpp"
 #include "GameData/OwnedHorseList.hpp"
 #include "GameData/OwnedParasailPattern.hpp"
@@ -1305,6 +1293,18 @@ struct GameData : Tag::Structure {
 #include "GameData/ShieldStand.hpp"
 #include "GameData/SortPattern.hpp"
 #include "GameData/WeaponStand.hpp"
+#include "GameData/ArrivalPointState.hpp"
+#include "GameData/CheckPoint_IsDisplayFoliage.hpp"
+#include "GameData/DungeonState.hpp"
+#include "GameData/IsActivateCannon.hpp"
+#include "GameData/IsAppearKorok.hpp"
+#include "GameData/IsDefeatBossEnemy.hpp"
+#include "GameData/IsOpenCannon.hpp"
+#include "GameData/IsVisitLocationArea_CaveEntrance.hpp"
+#include "GameData/KeyCrystalDungeonState.hpp"
+#include "GameData/KeyCrystalDungeonUnlocked.hpp"
+#include "GameData/KorokCarryProgress.hpp"
+#include "GameData/OwnedCustomizableHorseTack_Reins.hpp"
 
 template <> struct Data::Structure<GameData> : GameData {
 	Member<HorseInnMemberPoint> HorseInnMemberPoint;
@@ -1627,11 +1627,9 @@ template <> struct Data::Structure<GameData> : GameData {
 	Structure<ActionGuide_IsNew> ActionGuide_IsNew;
 	Structure<AlbumData> AlbumData;
 	Structure<AmiiboData> AmiiboData;
-	Structure<ArrivalPointState> ArrivalPointState;
 	Structure<AutoBuilder> AutoBuilder;
 	Structure<BowStand> BowStand;
 	Structure<ChallengeLogState_Challenge> ChallengeLogState_Challenge;
-	Structure<CheckPoint_IsDisplayFoliage> CheckPoint_IsDisplayFoliage;
 	Structure<CustomHouse> CustomHouse;
 	Structure<CustomHouseTakeOutNum> CustomHouseTakeOutNum;
 	Structure<DeadHorseList> DeadHorseList;
@@ -1639,21 +1637,12 @@ template <> struct Data::Structure<GameData> : GameData {
 	Structure<DongoList> DongoList;
 	Structure<DongoLocatorList> DongoLocatorList;
 	Structure<DragonMemoryDataForUI> DragonMemoryDataForUI;
-	Structure<DungeonState> DungeonState;
 	Structure<FigureCreateInfo> FigureCreateInfo;
 	Structure<FigureInfo> FigureInfo;
-	Structure<IsActivateCannon> IsActivateCannon;
-	Structure<IsAppearKorok> IsAppearKorok;
-	Structure<IsDefeatBossEnemy> IsDefeatBossEnemy;
 	Structure<IsFindTreasureMap> IsFindTreasureMap;
 	Structure<IsGetAdventureMemory> IsGetAdventureMemory;
 	Structure<IsGetCaveMasterMedal> IsGetCaveMasterMedal;
-	Structure<IsOpenCannon> IsOpenCannon;
 	Structure<IsVisitLocation> IsVisitLocation;
-	Structure<IsVisitLocationArea_CaveEntrance> IsVisitLocationArea_CaveEntrance;
-	Structure<KeyCrystalDungeonState> KeyCrystalDungeonState;
-	Structure<KeyCrystalDungeonUnlocked> KeyCrystalDungeonUnlocked;
-	Structure<KorokCarryProgress> KorokCarryProgress;
 	Structure<LastWildHorse> LastWildHorse;
 	Structure<LightBallBud> LightBallBud;
 	Structure<MapData> MapData;
@@ -1661,7 +1650,6 @@ template <> struct Data::Structure<GameData> : GameData {
 	Structure<NpcGardenInfo> NpcGardenInfo;
 	Structure<NpcGardenInfo_HatenoVillage023> NpcGardenInfo_HatenoVillage023;
 	Structure<NpcServeFood> NpcServeFood;
-	Structure<OwnedCustomizableHorseTack_Reins> OwnedCustomizableHorseTack_Reins;
 	Structure<OwnedCustomizableHorseTack_Saddle> OwnedCustomizableHorseTack_Saddle;
 	Structure<OwnedHorseList> OwnedHorseList;
 	Structure<OwnedParasailPattern> OwnedParasailPattern;
@@ -1675,6 +1663,18 @@ template <> struct Data::Structure<GameData> : GameData {
 	Structure<ShieldStand> ShieldStand;
 	Structure<SortPattern> SortPattern;
 	Structure<WeaponStand> WeaponStand;
+	Map<ArrivalPointState> ArrivalPointState;
+	Map<CheckPoint_IsDisplayFoliage> CheckPoint_IsDisplayFoliage;
+	Map<DungeonState> DungeonState;
+	Map<IsActivateCannon> IsActivateCannon;
+	Map<IsAppearKorok> IsAppearKorok;
+	Map<IsDefeatBossEnemy> IsDefeatBossEnemy;
+	Map<IsOpenCannon> IsOpenCannon;
+	Map<IsVisitLocationArea_CaveEntrance> IsVisitLocationArea_CaveEntrance;
+	Map<KeyCrystalDungeonState> KeyCrystalDungeonState;
+	Map<KeyCrystalDungeonUnlocked> KeyCrystalDungeonUnlocked;
+	Map<KorokCarryProgress> KorokCarryProgress;
+	Map<OwnedCustomizableHorseTack_Reins> OwnedCustomizableHorseTack_Reins;
 	
 	explicit Structure(Sav& s) : 
 		HorseInnMemberPoint { s.get<struct HorseInnMemberPoint>() },
@@ -1997,11 +1997,9 @@ template <> struct Data::Structure<GameData> : GameData {
 		ActionGuide_IsNew { s },
 		AlbumData { s },
 		AmiiboData { s },
-		ArrivalPointState { s },
 		AutoBuilder { s },
 		BowStand { s },
 		ChallengeLogState_Challenge { s },
-		CheckPoint_IsDisplayFoliage { s },
 		CustomHouse { s },
 		CustomHouseTakeOutNum { s },
 		DeadHorseList { s },
@@ -2009,21 +2007,12 @@ template <> struct Data::Structure<GameData> : GameData {
 		DongoList { s },
 		DongoLocatorList { s },
 		DragonMemoryDataForUI { s },
-		DungeonState { s },
 		FigureCreateInfo { s },
 		FigureInfo { s },
-		IsActivateCannon { s },
-		IsAppearKorok { s },
-		IsDefeatBossEnemy { s },
 		IsFindTreasureMap { s },
 		IsGetAdventureMemory { s },
 		IsGetCaveMasterMedal { s },
-		IsOpenCannon { s },
 		IsVisitLocation { s },
-		IsVisitLocationArea_CaveEntrance { s },
-		KeyCrystalDungeonState { s },
-		KeyCrystalDungeonUnlocked { s },
-		KorokCarryProgress { s },
 		LastWildHorse { s },
 		LightBallBud { s },
 		MapData { s },
@@ -2031,7 +2020,6 @@ template <> struct Data::Structure<GameData> : GameData {
 		NpcGardenInfo { s },
 		NpcGardenInfo_HatenoVillage023 { s },
 		NpcServeFood { s },
-		OwnedCustomizableHorseTack_Reins { s },
 		OwnedCustomizableHorseTack_Saddle { s },
 		OwnedHorseList { s },
 		OwnedParasailPattern { s },
@@ -2044,7 +2032,19 @@ template <> struct Data::Structure<GameData> : GameData {
 		ReplaceblePicture { s },
 		ShieldStand { s },
 		SortPattern { s },
-		WeaponStand { s }
+		WeaponStand { s },
+		ArrivalPointState { s },
+		CheckPoint_IsDisplayFoliage { s },
+		DungeonState { s },
+		IsActivateCannon { s },
+		IsAppearKorok { s },
+		IsDefeatBossEnemy { s },
+		IsOpenCannon { s },
+		IsVisitLocationArea_CaveEntrance { s },
+		KeyCrystalDungeonState { s },
+		KeyCrystalDungeonUnlocked { s },
+		KorokCarryProgress { s },
+		OwnedCustomizableHorseTack_Reins { s }
 	{ }
 };/* Data::Structure GameData close */
 

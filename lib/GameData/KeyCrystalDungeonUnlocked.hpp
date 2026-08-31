@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::KeyCrystalDungeonUnlocked : Tag::Structure {
+struct GameData::KeyCrystalDungeonUnlocked : Tag::Map {
 	struct Dungeon000 : Tag::Member { using type = bool&; };
 	struct Dungeon006 : Tag::Member { using type = bool&; };
 	struct Dungeon054 : Tag::Member { using type = bool&; };
@@ -35,9 +35,10 @@ struct GameData::KeyCrystalDungeonUnlocked : Tag::Structure {
 	struct Dungeon149 : Tag::Member { using type = bool&; };
 	struct Dungeon150 : Tag::Member { using type = bool&; };
 	struct Dungeon151 : Tag::Member { using type = bool&; };
+	using type = std::decay_t<Dungeon000::type>;
 };/* Tag::Structure GameData::KeyCrystalDungeonUnlocked close */
 
-template <> struct Data::Structure<GameData::KeyCrystalDungeonUnlocked> : GameData::KeyCrystalDungeonUnlocked {
+template <> struct Data::Map<GameData::KeyCrystalDungeonUnlocked> : GameData::KeyCrystalDungeonUnlocked {
 	Member<Dungeon000> Dungeon000;
 	Member<Dungeon006> Dungeon006;
 	Member<Dungeon054> Dungeon054;
@@ -72,7 +73,7 @@ template <> struct Data::Structure<GameData::KeyCrystalDungeonUnlocked> : GameDa
 	Member<Dungeon150> Dungeon150;
 	Member<Dungeon151> Dungeon151;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		Dungeon000 { s.get<struct Dungeon000>() },
 		Dungeon006 { s.get<struct Dungeon006>() },
 		Dungeon054 { s.get<struct Dungeon054>() },
@@ -107,7 +108,7 @@ template <> struct Data::Structure<GameData::KeyCrystalDungeonUnlocked> : GameDa
 		Dungeon150 { s.get<struct Dungeon150>() },
 		Dungeon151 { s.get<struct Dungeon151>() }
 	{ }
-};/* Data::Structure GameData::KeyCrystalDungeonUnlocked close */
+};/* Data::Map GameData::KeyCrystalDungeonUnlocked close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonUnlocked::Dungeon000> { "KeyCrystalDungeonUnlocked.Dungeon000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonUnlocked::Dungeon006> { "KeyCrystalDungeonUnlocked.Dungeon006" };

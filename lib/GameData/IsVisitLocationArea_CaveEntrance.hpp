@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::IsVisitLocationArea_CaveEntrance : Tag::Structure {
+struct GameData::IsVisitLocationArea_CaveEntrance : Tag::Map {
 	struct _1001017030533157593 : Tag::Member { using type = bool&; };
 	struct _10040443261155710972 : Tag::Member { using type = bool&; };
 	struct _10136447089337963341 : Tag::Member { using type = bool&; };
@@ -293,9 +293,10 @@ struct GameData::IsVisitLocationArea_CaveEntrance : Tag::Structure {
 	struct _9940203994076185236 : Tag::Member { using type = bool&; };
 	struct _9956353720691210968 : Tag::Member { using type = bool&; };
 	struct _9984383196680075552 : Tag::Member { using type = bool&; };
+	using type = std::decay_t<_1001017030533157593::type>;
 };/* Tag::Structure GameData::IsVisitLocationArea_CaveEntrance close */
 
-template <> struct Data::Structure<GameData::IsVisitLocationArea_CaveEntrance> : GameData::IsVisitLocationArea_CaveEntrance {
+template <> struct Data::Map<GameData::IsVisitLocationArea_CaveEntrance> : GameData::IsVisitLocationArea_CaveEntrance {
 	Member<_1001017030533157593> _1001017030533157593;
 	Member<_10040443261155710972> _10040443261155710972;
 	Member<_10136447089337963341> _10136447089337963341;
@@ -588,7 +589,7 @@ template <> struct Data::Structure<GameData::IsVisitLocationArea_CaveEntrance> :
 	Member<_9956353720691210968> _9956353720691210968;
 	Member<_9984383196680075552> _9984383196680075552;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		_1001017030533157593 { s.get<struct _1001017030533157593>() },
 		_10040443261155710972 { s.get<struct _10040443261155710972>() },
 		_10136447089337963341 { s.get<struct _10136447089337963341>() },
@@ -881,7 +882,7 @@ template <> struct Data::Structure<GameData::IsVisitLocationArea_CaveEntrance> :
 		_9956353720691210968 { s.get<struct _9956353720691210968>() },
 		_9984383196680075552 { s.get<struct _9984383196680075552>() }
 	{ }
-};/* Data::Structure GameData::IsVisitLocationArea_CaveEntrance close */
+};/* Data::Map GameData::IsVisitLocationArea_CaveEntrance close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsVisitLocationArea_CaveEntrance::_1001017030533157593> { "IsVisitLocationArea_CaveEntrance.1001017030533157593" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsVisitLocationArea_CaveEntrance::_10040443261155710972> { "IsVisitLocationArea_CaveEntrance.10040443261155710972" };
