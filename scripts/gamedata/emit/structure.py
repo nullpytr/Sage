@@ -3,6 +3,7 @@ from pathlib import Path
 from . import member, enum
 from .. import types
 
+Map = types.Map
 Structure = types.Structure
 
 class StructureEmitter():
@@ -27,6 +28,10 @@ class StructureEmitter():
             elif isinstance(child, enum.Enum): write(enum.EnumEmitter.emit(child))
             elif isinstance(child, member.Member): write(member.MemberEmitter.emit(child))
             else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type {child.typename} {child.path}"
+
+        if isinstance(struct, Map):
+            write(f"using type = std::decay_t<{next(iter(struct.children))}::type>;")
+
         depth -= 1
 
         write("};" f"/* Tag::Structure {struct.path} close */{delim}") # tag close
