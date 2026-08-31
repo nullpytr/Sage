@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 from typing import TextIO
 import re as regexp
 
@@ -19,6 +18,8 @@ def make_tree(fh_data_in: TextIO, tree_out: Tree):
 
         if data[0] == "EnumValues": parse_enum_value_record(tree_out, data[1], data[2])
         else: parse_data_record(tree_out, *data)
+
+    promote_all_structs_to_maps_in_scope(tree_out) # gd v7.x
 
 def parse_enum_value_record(
         tree_root: Tree,
@@ -128,3 +129,38 @@ def sanitize_identifier(id: str) -> str:
     id = id.replace("-", "_") # - not allowed anywhere
     assert id.isidentifier(), f"invalid id found: {id}" # sanity check
     return id
+
+def promote_all_structs_to_maps_in_scope(scope: Tree) -> None:
+    for name, child in list(scope.children.items()):
+        if not isinstance(child, Structure): continue
+        promote_all_structs_to_maps_in_scope(child)  # recurse before promoting, so nested maps are handled
+        if is_struct_a_valid_map(child): scope.children[name] = promote_struct_to_map(child)
+
+def is_struct_a_valid_map(s: Structure) -> bool:
+    children = [*s.children.values()] 
+
+    # sanity checks
+    if not children or not isinstance(children[0], Member): return False # must be member
+    children_have_valid_types = all(
+        not isinstance(c, Array) # no arrays
+        and c.values == getattr(children[0], "values", None) if isinstance(c, Enum) # all enums have same values 
+            else type(c) is type(children[0]) # all others have same types
+        for c in children
+    )
+
+    children_have_common_suffix = regexp_list_has_common_numeric_suffix([c.name for c in children])
+    
+    return (children_have_valid_types and children_have_common_suffix)
+
+def regexp_list_has_common_numeric_suffix(names: list[str]) -> bool:
+    matched = regexp.match(r'^(.*\D)(\d+)$', names[0])
+    if not matched: return False
+    prefix = regexp.escape(matched.group(1))
+    return all(regexp.match(rf'^{prefix}\d+$', name) for name in names)
+
+def promote_struct_to_map(s: Structure) -> Map:
+    m = Map(name=s.name, children=s.children, parent=s.parent)
+    for child in m.children.values():
+        child.parent = m
+
+    return m
