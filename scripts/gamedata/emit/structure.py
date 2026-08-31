@@ -68,7 +68,14 @@ class StructureEmitter():
 
         for child in struct.children.values(): # member hashtable defs
             if not isinstance(child, member.Member): continue
-            child_hash = f'"{child.hash_text_string}"'
+            child_hash = child.hash_text_string
+
+            # -- SPECIAL CASES START --
+            if child_hash.startswith("Well."): child_hash = "Well" + child_hash.removeprefix("Well.")
+            if child_hash.startswith(("Step.", "World.")): child_hash = child_hash.replace(".", "_", 1)
+            # -- SPECIAL CASES END --
+
+            child_hash = f'"{child_hash}"'
             if child.hash_text_string == "Playtime":
                 child_hash = f"0x{child.hash_hexadecimal}" # unknown hash text for playtime field
 

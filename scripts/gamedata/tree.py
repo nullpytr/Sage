@@ -16,10 +16,15 @@ def make_tree(fh_data_in: TextIO, tree_out: Tree):
         if len(data) != 3:
             raise AssertionError(f"[gd/tree/make_tree] invalid data record found: {raw_data}")
 
-        if data[0] == "EnumValues": parse_enum_value_record(tree_out, data[1], data[2])
-        else: parse_data_record(tree_out, *data)
+        parse_record(tree_out, *data)
 
     promote_all_structs_to_maps_in_scope(tree_out) # gd v7.x
+
+def parse_record(tree_out: Tree, *data: str) -> None:
+        if data[0] == "EnumValues": 
+            return parse_enum_value_record(tree_out, data[1], data[2])
+        
+        parse_data_record(tree_out, *data)
 
 def parse_enum_value_record(
         tree_root: Tree,
@@ -41,8 +46,13 @@ def parse_data_record(
         raw_typename: str,
         hash_text_string: str
     ) -> None:
-    curr_node: Structure = tree_root
+    # -- SPECIAL CASES START --
+    if hash_text_string.startswith("Well"): hash_text_string = "Well." + hash_text_string.removeprefix("Well")
+    if hash_text_string.startswith(("Step_", "World_")): hash_text_string = hash_text_string.replace("_", ".", 1)
+    # -- SPECIAL CASES END --
 
+    curr_node: Structure = tree_root
+    
     identifier_list = get_sanitized_identifier_list(hash_text_string)
 
     for curr_id in identifier_list[:-1]: # ensure all parent structs exist
