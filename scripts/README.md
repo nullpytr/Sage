@@ -52,7 +52,7 @@ EnumValues ; target ; Value1,Value2,...
 - A comma-separated list of exact paths: `LastWildHorse.Mane,OwnedHorseList.Mane`
 - A regexp  pattern with wildcard: `DungeonState.Dungeon*`, `PlayerStatus.Companion.*.JoiningCondition`
 
-These add the underlying enum values to previously declared `Enum` or `EnumArray` members. Pattern matching uses `re.match`. Enum values are encoded as `murmurhash3::hash("Value")`.
+These add the underlying enum values to previously generated `Enum` or `EnumArray` members. Pattern matching uses `re.match`. Enum values are encoded as `murmurhash3::hash("<value>")`.
 
 ## Pipeline
 
@@ -80,28 +80,23 @@ After parsing, the tree is sorted twice to guarantee deterministic output regard
 
 `resolve_member_type(raw_typename)` maps the logical typename string to a Python class. The lookup table is built at import time by reflecting all `Member` subclasses in scope, so adding a new concrete type is enough to register it.
 
-```
-GameDataType
-    Structure          intermediate scope;  structure tag emitted
-    Member             leaf node; member tag emitted
-        Primitive  (Trait.Reference -> Trait.Transparent)
-            Bool, Int, UInt, UInt64, Float, Byte
-        String  (Trait.Pointer)
-            String32, String64, WString16
-        Vector  (Trait.Transparent, Trait.Pointer)
-            Vector2, Vector3
-        Array[T]  (Trait.Pointer)
-            BoolArray, IntArray, UIntArray, UInt64Array, FloatArray,
-            String64Array, WString16Array, Vector2Array, Vector3Array, ByteArray
-        Enum[EnumName]
-            EnumArray[EnumName]    inherits from both Enum and Array
-```
+| type | parent | traits | concrete types |
+|------|--------|--------|----------------|
+| `GameDataType` | | | |
+| `Structure` | `GameDataType` | | |
+| `Member` | `GameDataType` | | |
+| `Primitive` | `Member` | `Trait.Reference` → `Trait.Transparent` | `Bool`, `Int`, `UInt`, `UInt64`, `Float`, `Byte` |
+| `String` | `Member` | `Trait.Pointer` | `String32`, `String64`, `WString16` |
+| `Vector` | `Member` | `Trait.Transparent`, `Trait.Pointer` | `Vector2`, `Vector3` |
+| `Array[T]` | `Member` | `Trait.Pointer` | `BoolArray`, `IntArray`, `UIntArray`, `UInt64Array`, `FloatArray`, `String64Array`, `WString16Array`, `Vector2Array`, `Vector3Array`, `ByteArray` |
+| `Enum[EnumName: str]` | `Member` | | |
+| `EnumArray[EnumName: str]` | `Enum`, `Array` | | |
 
-Three traits on `Member` control what the emitter appends to the C++ return type:
+Three traits on `Member` control what the emitter appends to the C++ member type:
 
-- `Trait.Transparent`: type can appear be directly overlayed into blob without layout adaptation.
-- `Trait.Reference` (extends `Transparent`): Transparent type, accessor returns a reference (`&` suffix).
-- `Trait.Pointer`: accessor automatically resolves indirection.
+- `Trait.Transparent`: type can be directly overlayed into blob without layout adaptation.
+- `Trait.Reference` (extends `Transparent`): transparent type, accessor returns a reference (`&` suffix).
+- `Trait.Pointer`: accessor automatically resolves indirection (`*` suffix).
 - Note: types that do not have `Trait.Transparent` are termed Opaque, and need a layout adaptor to wrap the emitted type. (e.g. `String64Array`, `WString16Array`)
 
 ### 3. Code generation (`emit/`)
@@ -123,7 +118,7 @@ The suffix is determined by the traits:
 | `Array<Transparent T>` | `span<T>*` | `span<bool>*`, `span<vec2f>*` |
 | `Array<Opaque T>` elements | `adaptive_range<T>*` | `adaptive_range<string64>*` |
 
-Arrays with Opaque T use `adaptive_range<T>` instead of `span<T>`. This tells the C++ side to apply a lazy per-element layout adaptor via `std::views::transform` rather than treating the blob slice as a plain span. `Primitive` and `Vector` types carry `Trait.Transparent`, so their arrays stay as `span<T>*`.
+Arrays with Opaque T use `adaptive_range<T>` instead of `span<T>`. This tells the C++ side to apply a lazy per-element layout adaptor via `std::views::transform` rather than treating the blob slice as a plain span. `Primitive` and `Vector` types carry `Trait.Transparent`, so their arrays stay as `span<T>`.
 
 **`EnumEmitter`** wraps `MemberEmitter` output and injects an `underlying_enum_t` definition between the struct opening and the `using type` line:
 
@@ -141,7 +136,7 @@ struct CurrentSpecialPower : Tag::Enum {
 1. Tag struct: opens `struct Subsystem : Tag::Structure`, forward-declares nested structures, emits inline members and enums, closes.
 2. Nested struct bodies: recurses into each child `Structure` and emits it to its own file when `include_dir` is set, and `#include`s after forward declaration. inline otherwise.
 3. Data struct: emits `template <> struct Data::Structure<Subsystem> : Subsystem` with one typed field per member and an explicit constructor which overlays the subsytem on a Sav& blob. 
-4. Hashtable specializations: `template <> hash_t constexpr Data::Hashtable<Subsystem::Member> = murmurhash3::hash("hashtext");` for every `Tag::Member`. The only exception is `Playtime`, it's original hash text is unknown; we're using a raw hex literal instead.
+4. Hashtable specializations: `template <> hash_value_t constexpr Data::Hashtable<Subsystem::Member> { "<hashtext>" };` for every `Tag::Member`. The only exception is `Playtime`, its original hash text is unknown; we're using a raw hex literal instead.
 ```cpp
 struct GameData::PlayerStatus : Tag::Structure {
     struct MaxLife    : Tag::Member { using type = s32&; };
@@ -152,6 +147,7 @@ struct GameData::PlayerStatus : Tag::Structure {
     };
     struct Companion;
 };
+... (see full example below)
 ```
 
 
@@ -159,7 +155,7 @@ All three emitters accept `header_fp` for direct-to-file output. `StructureEmitt
 
 ## Output layout
 
-By default, each struct writes to its own file. The `::` hierarchy becomes a `/` path under `lib/`:
+By default (non-standalone mode), each struct writes to its own file. The `::` hierarchy becomes a `/` path under `lib/`:
 
 ```
 lib/
@@ -181,7 +177,7 @@ lib/
     ...
 ```
 
-With `--standalone`, everything is concatenated into a single `GameData.hpp` at the output root instead. In non-standalone mode, every header is self contained and can be included independently (the foward decl includes are obviously needed).
+Each header is independent of it's parent and can be included directly with a forward reference. With `--standalone`, everything is concatenated into a single `GameData.hpp` at the output root instead.  
 
 Putting it all together here is an example header `GameData::PlayerStatus` in non-standalone mode:
 ```cpp
@@ -357,7 +353,7 @@ template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Paras
    
 # scripts/bundle
 
-Bundle Sage headers into a single self-contained file. After quom runs, a post-processing pass hoists unconditional `#include` directives out of the bundled output and sorts them at the top of the file.
+Bundle Sage headers into a single self-contained file. A post-processing pass hoists unconditional `#include` directives out of the bundled output and sorts them at the top of the file.
 
 Requires the [quom](https://github.com/Viatorus/quom) tool made by [Viatorus](https://github.com/Viatorus):
 ```sh
