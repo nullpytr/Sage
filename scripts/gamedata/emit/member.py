@@ -23,7 +23,7 @@ class MemberEmitter():
         if member.has_trait(Member.Trait.Pointer): return_type += "*"
         elif member.has_trait(Member.Trait.Reference): return_type += "&"
 
-        write(f"struct {member.name} : {member.basename}" " {") # def open
+        write(f"struct {member.name} : Tag::{member.basename}" " {") # def open
         write(f"using type = {return_type};")
         write("};") # def close
 

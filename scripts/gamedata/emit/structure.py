@@ -18,7 +18,7 @@ class StructureEmitter():
             write("#include <sage>")
             write("")
 
-        write(f"struct {struct.path} : {struct.basename}" " {") # tag open
+        write(f"struct {struct.path} : Tag::{struct.basename}" " {") # tag open
 
         depth += 1
         for child in struct.children.values(): # child tags
@@ -39,17 +39,14 @@ class StructureEmitter():
             else: write(substruct)
         if _old_len != len(buffer): write("")
 
-        write(f"template <> struct Data::Structure<{struct.path}> : {struct.path}" " {") # data open
+        write(f"template <> struct Data::{struct.basename}<{struct.path}> : {struct.path}" " {") # data open
 
         depth += 1
         for child in struct.children.values(): # member decls
-            if isinstance(child, Structure): write(f"Structure<{child.name}> {child.name};")
-            elif isinstance(child, enum.Enum): write(f"Enum<{child.name}> {child.name};")
-            elif isinstance(child, member.Member): write(f"Member<{child.name}> {child.name};")
-            else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
+            write(f"{child.basename}<{child.name}> {child.name};")
 
         write("")
-        write("explicit Structure(Sav& s) : ") # ctor open
+        write(f"explicit {struct.basename}(Sav& s) : ") # ctor open
 
         depth += 1
         for child in struct.children.values(): # member inits
@@ -62,7 +59,7 @@ class StructureEmitter():
         write("{ }") # ctor close
 
         depth -= 1
-        write("};" f"/* Data::Structure {struct.path} close */{delim}") # data close
+        write("};" f"/* Data::{struct.basename} {struct.path} close */{delim}") # data close
 
         for child in struct.children.values(): # member hashtable defs
             if not isinstance(child, member.Member): continue
