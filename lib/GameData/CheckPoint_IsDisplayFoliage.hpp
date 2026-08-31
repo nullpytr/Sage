@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::CheckPoint_IsDisplayFoliage : Tag::Structure {
+struct GameData::CheckPoint_IsDisplayFoliage : Tag::Map {
 	struct CheckPoint000 : Tag::Member { using type = bool&; };
 	struct CheckPoint001 : Tag::Member { using type = bool&; };
 	struct CheckPoint002 : Tag::Member { using type = bool&; };
@@ -122,9 +122,10 @@ struct GameData::CheckPoint_IsDisplayFoliage : Tag::Structure {
 	struct CheckPoint143 : Tag::Member { using type = bool&; };
 	struct CheckPoint144 : Tag::Member { using type = bool&; };
 	struct CheckPoint147 : Tag::Member { using type = bool&; };
+	using type = std::decay_t<CheckPoint000::type>;
 };/* Tag::Structure GameData::CheckPoint_IsDisplayFoliage close */
 
-template <> struct Data::Structure<GameData::CheckPoint_IsDisplayFoliage> : GameData::CheckPoint_IsDisplayFoliage {
+template <> struct Data::Map<GameData::CheckPoint_IsDisplayFoliage> : GameData::CheckPoint_IsDisplayFoliage {
 	Member<CheckPoint000> CheckPoint000;
 	Member<CheckPoint001> CheckPoint001;
 	Member<CheckPoint002> CheckPoint002;
@@ -246,7 +247,7 @@ template <> struct Data::Structure<GameData::CheckPoint_IsDisplayFoliage> : Game
 	Member<CheckPoint144> CheckPoint144;
 	Member<CheckPoint147> CheckPoint147;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		CheckPoint000 { s.get<struct CheckPoint000>() },
 		CheckPoint001 { s.get<struct CheckPoint001>() },
 		CheckPoint002 { s.get<struct CheckPoint002>() },
@@ -368,7 +369,7 @@ template <> struct Data::Structure<GameData::CheckPoint_IsDisplayFoliage> : Game
 		CheckPoint144 { s.get<struct CheckPoint144>() },
 		CheckPoint147 { s.get<struct CheckPoint147>() }
 	{ }
-};/* Data::Structure GameData::CheckPoint_IsDisplayFoliage close */
+};/* Data::Map GameData::CheckPoint_IsDisplayFoliage close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::CheckPoint_IsDisplayFoliage::CheckPoint000> { "CheckPoint_IsDisplayFoliage.CheckPoint000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::CheckPoint_IsDisplayFoliage::CheckPoint001> { "CheckPoint_IsDisplayFoliage.CheckPoint001" };

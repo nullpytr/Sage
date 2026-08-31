@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::DungeonState : Tag::Structure {
+struct GameData::DungeonState : Tag::Map {
 	struct Dungeon000 : Tag::Enum {
 		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
 		using type = enum_t<Dungeon000>&;
@@ -610,9 +610,10 @@ struct GameData::DungeonState : Tag::Structure {
 		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
 		using type = enum_t<Dungeon151>&;
 	};
+	using type = std::decay_t<Dungeon000::type>;
 };/* Tag::Structure GameData::DungeonState close */
 
-template <> struct Data::Structure<GameData::DungeonState> : GameData::DungeonState {
+template <> struct Data::Map<GameData::DungeonState> : GameData::DungeonState {
 	Enum<Dungeon000> Dungeon000;
 	Enum<Dungeon001> Dungeon001;
 	Enum<Dungeon002> Dungeon002;
@@ -766,7 +767,7 @@ template <> struct Data::Structure<GameData::DungeonState> : GameData::DungeonSt
 	Enum<Dungeon150> Dungeon150;
 	Enum<Dungeon151> Dungeon151;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		Dungeon000 { s.get<struct Dungeon000>() },
 		Dungeon001 { s.get<struct Dungeon001>() },
 		Dungeon002 { s.get<struct Dungeon002>() },
@@ -920,7 +921,7 @@ template <> struct Data::Structure<GameData::DungeonState> : GameData::DungeonSt
 		Dungeon150 { s.get<struct Dungeon150>() },
 		Dungeon151 { s.get<struct Dungeon151>() }
 	{ }
-};/* Data::Structure GameData::DungeonState close */
+};/* Data::Map GameData::DungeonState close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::DungeonState::Dungeon000> { "DungeonState.Dungeon000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::DungeonState::Dungeon001> { "DungeonState.Dungeon001" };

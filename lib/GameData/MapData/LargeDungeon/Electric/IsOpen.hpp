@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::MapData::LargeDungeon::Electric::IsOpen : Tag::Structure {
+struct GameData::MapData::LargeDungeon::Electric::IsOpen : Tag::Map {
 	struct Group000 : Tag::Member { using type = bool&; };
 	struct Group001 : Tag::Member { using type = bool&; };
 	struct Group002 : Tag::Member { using type = bool&; };
@@ -10,9 +10,10 @@ struct GameData::MapData::LargeDungeon::Electric::IsOpen : Tag::Structure {
 	struct Group005 : Tag::Member { using type = bool&; };
 	struct Group006 : Tag::Member { using type = bool&; };
 	struct Group007 : Tag::Member { using type = bool&; };
+	using type = std::decay_t<Group000::type>;
 };/* Tag::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
 
-template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric::IsOpen> : GameData::MapData::LargeDungeon::Electric::IsOpen {
+template <> struct Data::Map<GameData::MapData::LargeDungeon::Electric::IsOpen> : GameData::MapData::LargeDungeon::Electric::IsOpen {
 	Member<Group000> Group000;
 	Member<Group001> Group001;
 	Member<Group002> Group002;
@@ -22,7 +23,7 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric::Is
 	Member<Group006> Group006;
 	Member<Group007> Group007;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		Group000 { s.get<struct Group000>() },
 		Group001 { s.get<struct Group001>() },
 		Group002 { s.get<struct Group002>() },
@@ -32,7 +33,7 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric::Is
 		Group006 { s.get<struct Group006>() },
 		Group007 { s.get<struct Group007>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
+};/* Data::Map GameData::MapData::LargeDungeon::Electric::IsOpen close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group000> { "MapData.LargeDungeon.Electric.IsOpen.Group000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group001> { "MapData.LargeDungeon.Electric.IsOpen.Group001" };

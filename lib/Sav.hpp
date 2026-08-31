@@ -45,6 +45,18 @@ public:
     /* High-level access: using GameData types (recommended)
      * Powered by the lower level access methods and the
      * auto generated header include/GameData.hpp */
+    template<typename N, typename I = Data::Map<N>, typename U = I::type, typename A = map<U, sizeof(I) / sizeof(void*)>, typename L = Layout<A>, typename O = L::to_type>
+    requires std::derived_from<N, Tag::Map>
+    O get()
+    {
+        // Gives std::ranges semantics from a Data::Map struct
+        // Layout of a Data::Map struct of N pure `value_t&`s is equivalent map<value_t, N>
+        // and layout<map<value_t, N>> converts it into a `mapped_range`.
+        auto* buf = &get<Tag::Structure, I>();
+        auto& adapter = *std::bit_cast<L*>(buf);
+        return adapter; // `mapped_range` copies the pointer buffer with it.
+    }
+
     template<typename S, typename I = Data::Structure<S>, typename O = I>
     requires std::derived_from<S, Tag::Structure>
     O get()

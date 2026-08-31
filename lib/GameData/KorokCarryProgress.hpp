@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::KorokCarryProgress : Tag::Structure {
+struct GameData::KorokCarryProgress : Tag::Map {
 	struct _10035618609325695840 : Tag::Enum {
 		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
 		using type = enum_t<_10035618609325695840>&;
@@ -402,9 +402,10 @@ struct GameData::KorokCarryProgress : Tag::Structure {
 		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
 		using type = enum_t<_9734881248452388660>&;
 	};
+	using type = std::decay_t<_10035618609325695840::type>;
 };/* Tag::Structure GameData::KorokCarryProgress close */
 
-template <> struct Data::Structure<GameData::KorokCarryProgress> : GameData::KorokCarryProgress {
+template <> struct Data::Map<GameData::KorokCarryProgress> : GameData::KorokCarryProgress {
 	Enum<_10035618609325695840> _10035618609325695840;
 	Enum<_10147912760170894537> _10147912760170894537;
 	Enum<_1027829103425503827> _1027829103425503827;
@@ -506,7 +507,7 @@ template <> struct Data::Structure<GameData::KorokCarryProgress> : GameData::Kor
 	Enum<_9707096629495885452> _9707096629495885452;
 	Enum<_9734881248452388660> _9734881248452388660;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		_10035618609325695840 { s.get<struct _10035618609325695840>() },
 		_10147912760170894537 { s.get<struct _10147912760170894537>() },
 		_1027829103425503827 { s.get<struct _1027829103425503827>() },
@@ -608,7 +609,7 @@ template <> struct Data::Structure<GameData::KorokCarryProgress> : GameData::Kor
 		_9707096629495885452 { s.get<struct _9707096629495885452>() },
 		_9734881248452388660 { s.get<struct _9734881248452388660>() }
 	{ }
-};/* Data::Structure GameData::KorokCarryProgress close */
+};/* Data::Map GameData::KorokCarryProgress close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10035618609325695840> { "KorokCarryProgress.10035618609325695840" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10147912760170894537> { "KorokCarryProgress.10147912760170894537" };

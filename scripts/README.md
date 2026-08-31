@@ -59,6 +59,7 @@ These add the underlying enum values to previously generated `Enum` or `EnumArra
 ```
 gamedata.py
   tree.make_tree()        build in-memory tree from the metadata file
+                          (calls promote_all_structs_to_maps_in_scope internally)
   Tree.sort()        sort children for deterministic output order
   TreeEmitter.emit() walk the tree, write header(s)
 ```
@@ -71,10 +72,12 @@ gamedata.py
 
 `parse_enum_value_record` finds already-inserted `Enum` nodes by exact name or regex pattern match, then replaces each match with a complete copy that carries the `values` tuple. Before replacement, enum members exist in the tree as "incomplete" nodes with an empty `values` tuple.
 
-After parsing, the tree is sorted twice to guarantee deterministic output regardless of metadata order. `Structure.sort(by, key, reverse, recv) (aka Tree.sort)` sorts `children` in-place by any attribute, with an optional key transform and optional recursion into child structures (`recv=True` by default). The two passes are:
+After parsing, `promote_all_structs_to_maps_in_scope` post-processes the tree bottom-up, promoting eligible `Structure` nodes to `Map`. A structure qualifies if: all its children are non-array `Member` leaves, every child shares the same concrete type (or for `Enum` children, identical `values` tuples), and all child names follow a common prefix + numeric suffix pattern (e.g. `Dungeon000`…`Dungeon151`, `CheckPoint000`…). Promotion is bottom-up so nested maps are handled before their parents.
+
+The tree is then sorted twice to guarantee deterministic output regardless of metadata order. `Structure.sort(by, key, reverse, recv) (aka Tree.sort)` sorts `children` in-place by any attribute, with an optional key transform and optional recursion into child structures (`recv=True` by default). The two passes are:
 
 1. `sort(by="name")` - alphabetical A→Z across all children, recursively.
-2. `sort(by="basename", key=("Tag::Member", "Tag::Enum", "Tag::Structure").index)` - groups by kind: members first, enums second, nested structures last.
+2. `sort(by="basename", key=("Member", "Enum", "Structure", "Map").index)` - groups by kind: members first, enums second, nested structures, maps last.
 
 ### 2. Type system (`types/`)
 
@@ -84,6 +87,7 @@ After parsing, the tree is sorted twice to guarantee deterministic output regard
 |------|--------|--------|----------------|
 | `GameDataType` | | | |
 | `Structure` | `GameDataType` | | |
+| `Map` | `Structure` | | |
 | `Member` | `GameDataType` | | |
 | `Primitive` | `Member` | `Trait.Reference` → `Trait.Transparent` | `Bool`, `Int`, `UInt`, `UInt64`, `Float`, `Byte` |
 | `String` | `Member` | `Trait.Pointer` | `String32`, `String64`, `WString16` |
@@ -133,9 +137,9 @@ struct CurrentSpecialPower : Tag::Enum {
 
 **`StructureEmitter`** writes a full subsystem header in four passes:
 
-1. Tag struct: opens `struct Subsystem : Tag::Structure`, forward-declares nested structures, emits inline members and enums, closes.
+1. Tag struct: opens `struct Subsystem : Tag::Structure` (or `Tag::Map` for map structures), forward-declares nested structures, emits inline members and enums. For map structures, appends `using type = std::decay_t<<first_member>::type>` at the end of the tag body. Closes.
 2. Nested struct bodies: recurses into each child `Structure` and emits it to its own file when `include_dir` is set, and `#include`s after forward declaration. inline otherwise.
-3. Data struct: emits `template <> struct Data::Structure<Subsystem> : Subsystem` with one typed field per member and an explicit constructor which overlays the subsytem on a Sav& blob. 
+3. Data struct: for regular structures, emits `template <> struct Data::[Structure | Map]<Subsystem> : Subsystem` with one typed field per member and an explicit `(Sav&)` constructor which overlays the subsystem on a `Sav&` blob.
 4. Hashtable specializations: `template <> hash_value_t constexpr Data::Hashtable<Subsystem::Member> { "<hashtext>" };` for every `Tag::Member`. The only exception is `Playtime`, its original hash text is unknown; we're using a raw hex literal instead.
 ```cpp
 struct GameData::PlayerStatus : Tag::Structure {

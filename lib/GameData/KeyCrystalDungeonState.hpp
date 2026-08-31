@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::KeyCrystalDungeonState : Tag::Structure {
+struct GameData::KeyCrystalDungeonState : Tag::Map {
 	struct Dungeon000 : Tag::Enum {
 		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Point = murmurhash3::hash("Point"), Unlock = murmurhash3::hash("Unlock"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), UnlockToOpen = murmurhash3::hash("UnlockToOpen"), PointAndActiveWarp = murmurhash3::hash("PointAndActiveWarp"), ChangeToKeyStone = murmurhash3::hash("ChangeToKeyStone"), PresentedKeyCrystal = murmurhash3::hash("PresentedKeyCrystal"), };
 		using type = enum_t<Dungeon000>&;
@@ -610,9 +610,10 @@ struct GameData::KeyCrystalDungeonState : Tag::Structure {
 		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Point = murmurhash3::hash("Point"), Unlock = murmurhash3::hash("Unlock"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), UnlockToOpen = murmurhash3::hash("UnlockToOpen"), PointAndActiveWarp = murmurhash3::hash("PointAndActiveWarp"), ChangeToKeyStone = murmurhash3::hash("ChangeToKeyStone"), PresentedKeyCrystal = murmurhash3::hash("PresentedKeyCrystal"), };
 		using type = enum_t<Dungeon151>&;
 	};
+	using type = std::decay_t<Dungeon000::type>;
 };/* Tag::Structure GameData::KeyCrystalDungeonState close */
 
-template <> struct Data::Structure<GameData::KeyCrystalDungeonState> : GameData::KeyCrystalDungeonState {
+template <> struct Data::Map<GameData::KeyCrystalDungeonState> : GameData::KeyCrystalDungeonState {
 	Enum<Dungeon000> Dungeon000;
 	Enum<Dungeon001> Dungeon001;
 	Enum<Dungeon002> Dungeon002;
@@ -766,7 +767,7 @@ template <> struct Data::Structure<GameData::KeyCrystalDungeonState> : GameData:
 	Enum<Dungeon150> Dungeon150;
 	Enum<Dungeon151> Dungeon151;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		Dungeon000 { s.get<struct Dungeon000>() },
 		Dungeon001 { s.get<struct Dungeon001>() },
 		Dungeon002 { s.get<struct Dungeon002>() },
@@ -920,7 +921,7 @@ template <> struct Data::Structure<GameData::KeyCrystalDungeonState> : GameData:
 		Dungeon150 { s.get<struct Dungeon150>() },
 		Dungeon151 { s.get<struct Dungeon151>() }
 	{ }
-};/* Data::Structure GameData::KeyCrystalDungeonState close */
+};/* Data::Map GameData::KeyCrystalDungeonState close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonState::Dungeon000> { "KeyCrystalDungeonState.Dungeon000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonState::Dungeon001> { "KeyCrystalDungeonState.Dungeon001" };

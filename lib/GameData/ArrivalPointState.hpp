@@ -1,7 +1,7 @@
 #pragma once
 #include <sage>
 
-struct GameData::ArrivalPointState : Tag::Structure {
+struct GameData::ArrivalPointState : Tag::Map {
 	struct CheckPoint000 : Tag::Enum {
 		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
 		using type = enum_t<CheckPoint000>&;
@@ -482,9 +482,10 @@ struct GameData::ArrivalPointState : Tag::Structure {
 		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
 		using type = enum_t<CheckPoint147>&;
 	};
+	using type = std::decay_t<CheckPoint000::type>;
 };/* Tag::Structure GameData::ArrivalPointState close */
 
-template <> struct Data::Structure<GameData::ArrivalPointState> : GameData::ArrivalPointState {
+template <> struct Data::Map<GameData::ArrivalPointState> : GameData::ArrivalPointState {
 	Enum<CheckPoint000> CheckPoint000;
 	Enum<CheckPoint001> CheckPoint001;
 	Enum<CheckPoint002> CheckPoint002;
@@ -606,7 +607,7 @@ template <> struct Data::Structure<GameData::ArrivalPointState> : GameData::Arri
 	Enum<CheckPoint144> CheckPoint144;
 	Enum<CheckPoint147> CheckPoint147;
 	
-	explicit Structure(Sav& s) : 
+	explicit Map(Sav& s) : 
 		CheckPoint000 { s.get<struct CheckPoint000>() },
 		CheckPoint001 { s.get<struct CheckPoint001>() },
 		CheckPoint002 { s.get<struct CheckPoint002>() },
@@ -728,7 +729,7 @@ template <> struct Data::Structure<GameData::ArrivalPointState> : GameData::Arri
 		CheckPoint144 { s.get<struct CheckPoint144>() },
 		CheckPoint147 { s.get<struct CheckPoint147>() }
 	{ }
-};/* Data::Structure GameData::ArrivalPointState close */
+};/* Data::Map GameData::ArrivalPointState close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::ArrivalPointState::CheckPoint000> { "ArrivalPointState.CheckPoint000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::ArrivalPointState::CheckPoint001> { "ArrivalPointState.CheckPoint001" };

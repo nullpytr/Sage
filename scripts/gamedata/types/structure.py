@@ -26,3 +26,6 @@ class Structure(GameDataType):
             sorted_children[k] = v
 
         self.children = sorted_children
+
+class Map(Structure):
+    basename = "Map"

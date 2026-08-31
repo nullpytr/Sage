@@ -9,6 +9,7 @@
 #include "Core/Types/String.hpp"
 #include "Core/Types/Enum.hpp"
 #include "Core/Types/Range.hpp"
+#include "Core/Types/Map.hpp"
 
 /* STL types */
 
