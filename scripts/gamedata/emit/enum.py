@@ -13,13 +13,18 @@ class EnumEmitter():
 
         indent_depth = EnumEmitter._calc_enum_def_indent_depth(buffer)
         def_pos = EnumEmitter._calc_enum_def_insert_pos(buffer)
-        buffer.insert(def_pos, EnumEmitter._enum_def(enum, delim, indent_depth + 1))
 
         # patch member buffer to add indentation
-        buffer[def_pos + 1] = "\t" * (indent_depth + 1) + buffer[def_pos + 1] # member typedef
+        for idx, s in enumerate(buffer[1:-1], start=1): 
+            buffer[idx] = "\t" * (indent_depth + 1) + s
+
         buffer[-1] = "\t" * indent_depth + buffer[-1] # closing brace
 
+        # insert indented enum def
+        buffer.insert(def_pos, EnumEmitter._enum_def(enum, delim, indent_depth + 1))
+        
         string = delim.join(buffer)
+
         if header_fp: Path(header_fp).write_text(string)
         return string
 
@@ -32,13 +37,13 @@ class EnumEmitter():
         inline_buffer: list[str] = []
         write_inline = inline_buffer.append
 
-        write_inline(f"enum underlying_enum_t : {types.Hash}" " {")
+        write_inline("using values_t = struct { " f"enum underlying_enum_t : {types.Hash}" " {")
 
         for value in enum.values:
             key = f"_{value}" if value[0].isdigit() else value
             write_inline(f"{key} = murmurhash3::hash(\"{value}\"),")
             
-        write_inline("};")
+        write_inline("}; };")
 
         write(" ".join(inline_buffer))
 
