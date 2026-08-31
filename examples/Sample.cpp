@@ -115,6 +115,14 @@ int main(int const argc, char const* argv[]) {
     if (pos < saddle_array.size()) std::println("[horses/saddle] GameRomHorseSaddle_00 found at position {} of array", pos);
     else std::println("[horses/saddle] GameRomHorseSaddle_00 not found in array");
 
+    /* Maps -- non continous arrays, API remains same */
+    auto shrines { GameData::DungeonState from save };
+
+    auto is_cleared_shrine = [](auto& s){ return s == s.Clear; };
+    std::println("[cleared shrines] {}", std::ranges::count_if(shrines, is_cleared_shrine));
+    std::ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // clear all
+    std::println("{}", std::ranges::count_if(shrines, is_cleared_shrine));
+
     /* String arrays */
     for (auto idx = 0; auto name : data.OwnedHorseList.Name){
         std::print("[horses/names] Horse[{}]: {}", idx++, name);
@@ -128,5 +136,6 @@ int main(int const argc, char const* argv[]) {
         require(name == u"my horse");
 
     std::println("[horses/names] all horses renamed to '{}'", updated_names[0]);
+
     /* -- */
 }
