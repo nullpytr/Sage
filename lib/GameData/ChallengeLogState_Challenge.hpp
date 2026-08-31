@@ -3,1143 +3,1143 @@
 
 struct GameData::ChallengeLogState_Challenge : Tag::Structure {
 	struct AisyaRescue : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<AisyaRescue>&;
 	};
 	struct AmberCollector : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<AmberCollector>&;
 	};
 	struct ArrowMeister_Momo : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ArrowMeister_Momo>&;
 	};
 	struct AssassinGerudoBase : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<AssassinGerudoBase>&;
 	};
 	struct BallBring_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BallBring_MiniGame>&;
 	};
 	struct Basketball_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Basketball_MiniGame>&;
 	};
 	struct Big_Rotate : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Big_Rotate>&;
 	};
 	struct BirdManContest : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BirdManContest>&;
 	};
 	struct BlindRuinsTreasure : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BlindRuinsTreasure>&;
 	};
 	struct BlindRuinsTreasure_Gerudo : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BlindRuinsTreasure_Gerudo>&;
 	};
 	struct BlindRuinsTreasure_Goron : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BlindRuinsTreasure_Goron>&;
 	};
 	struct BlindRuinsTreasure_Rito : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BlindRuinsTreasure_Rito>&;
 	};
 	struct BlindRuinsTreasure_Zora : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BlindRuinsTreasure_Zora>&;
 	};
 	struct BuildHouse : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BuildHouse>&;
 	};
 	struct BuildingMaterialsTutorial : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<BuildingMaterialsTutorial>&;
 	};
 	struct CDungeon_AllDone : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CDungeon_AllDone>&;
 	};
 	struct CarryGoronKid1 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryGoronKid1>&;
 	};
 	struct CarryGoronKid2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryGoronKid2>&;
 	};
 	struct CarryStone : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryStone>&;
 	};
 	struct CarryToShrine01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine01>&;
 	};
 	struct CarryToShrine02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine02>&;
 	};
 	struct CarryToShrine03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine03>&;
 	};
 	struct CarryToShrine05 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine05>&;
 	};
 	struct CarryToShrine06 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine06>&;
 	};
 	struct CarryToShrine07 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine07>&;
 	};
 	struct CarryToShrine08_Zora : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine08_Zora>&;
 	};
 	struct CarryToShrine09 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine09>&;
 	};
 	struct CarryToShrine10 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine10>&;
 	};
 	struct CarryToShrine11 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine11>&;
 	};
 	struct CarryToShrine12 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine12>&;
 	};
 	struct CarryToShrine13 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine13>&;
 	};
 	struct CarryToShrine14 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine14>&;
 	};
 	struct CarryToShrine15 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine15>&;
 	};
 	struct CarryToShrine16 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine16>&;
 	};
 	struct CarryToShrine17 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine17>&;
 	};
 	struct CarryToShrine19 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine19>&;
 	};
 	struct CarryToShrine20 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine20>&;
 	};
 	struct CarryToShrine21 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine21>&;
 	};
 	struct CarryToShrine22 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine22>&;
 	};
 	struct CarryToShrine23 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CarryToShrine23>&;
 	};
 	struct Circuit_Desert : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Circuit_Desert>&;
 	};
 	struct Circuit_FaronWoods_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Circuit_FaronWoods_MiniGame>&;
 	};
 	struct Circuit_Ichikara : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Circuit_Ichikara>&;
 	};
 	struct Circuit_Ichikara_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Circuit_Ichikara_MiniGame>&;
 	};
 	struct Circuit_Uotori_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Circuit_Uotori_MiniGame>&;
 	};
 	struct CleanStatue : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CleanStatue>&;
 	};
 	struct ClueTotheSixthSage : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ClueTotheSixthSage>&;
 	};
 	struct CollectObject_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CollectObject_MiniGame>&;
 	};
 	struct CollectObject_MiniGame_Cliff : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CollectObject_MiniGame_Cliff>&;
 	};
 	struct CollectObject_MiniGame_LakeSide : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CollectObject_MiniGame_LakeSide>&;
 	};
 	struct Connect_AkkareMaze : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Connect_AkkareMaze>&;
 	};
 	struct Connect_FirstIsland : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Connect_FirstIsland>&;
 	};
 	struct Connect_GerudoMaze : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Connect_GerudoMaze>&;
 	};
 	struct Connect_TabantaMaze : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Connect_TabantaMaze>&;
 	};
 	struct CookAtBaseCamp : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CookAtBaseCamp>&;
 	};
 	struct CraftShadowPicture : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CraftShadowPicture>&;
 	};
 	struct CreateArmor : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<CreateArmor>&;
 	};
 	struct Createshinguard : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Createshinguard>&;
 	};
 	struct DeepHoleSurvey2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DeepHoleSurvey2>&;
 	};
 	struct DefeatGanondorf : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DefeatGanondorf>&;
 	};
 	struct DefeatHugeEnemy_1 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DefeatHugeEnemy_1>&;
 	};
 	struct DefeatHugeEnemy_2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DefeatHugeEnemy_2>&;
 	};
 	struct DefeatHugeEnemy_3 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DefeatHugeEnemy_3>&;
 	};
 	struct DefeatHugeEnemy_4 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DefeatHugeEnemy_4>&;
 	};
 	struct DefeatHugeEnemy_5 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DefeatHugeEnemy_5>&;
 	};
 	struct DefeatHugeEnemy_6 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DefeatHugeEnemy_6>&;
 	};
 	struct DevoteSpring : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DevoteSpring>&;
 	};
 	struct DividedSlate : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<DividedSlate>&;
 	};
 	struct EightHeroStatues : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<EightHeroStatues>&;
 	};
 	struct EightHeroStatues_After : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<EightHeroStatues_After>&;
 	};
 	struct ExcavateFossil1 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ExcavateFossil1>&;
 	};
 	struct ExcavateFossil2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ExcavateFossil2>&;
 	};
 	struct ExcavateFossil3 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ExcavateFossil3>&;
 	};
 	struct Fairy2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Fairy2>&;
 	};
 	struct Fairy3 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Fairy3>&;
 	};
 	struct Fairy4 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Fairy4>&;
 	};
 	struct FindSunaNui : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<FindSunaNui>&;
 	};
 	struct FindSunaNui2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<FindSunaNui2>&;
 	};
 	struct FindWhiteHorse : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<FindWhiteHorse>&;
 	};
 	struct FindWithSensors : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<FindWithSensors>&;
 	};
 	struct FirstskyislandReturns : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<FirstskyislandReturns>&;
 	};
 	struct FullyRipenedFlintstones : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<FullyRipenedFlintstones>&;
 	};
 	struct GOToTheCastleOfHyrule : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GOToTheCastleOfHyrule>&;
 	};
 	struct GeniusWeapon_Zora : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GeniusWeapon_Zora>&;
 	};
 	struct Genkos_Kitchen : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Genkos_Kitchen>&;
 	};
 	struct GerudoCanyon_24hEnduranceComparison : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GerudoCanyon_24hEnduranceComparison>&;
 	};
 	struct GerudoCanyon_Adventure : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GerudoCanyon_Adventure>&;
 	};
 	struct GerudoCanyon_ColdEnduranceComparison : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GerudoCanyon_ColdEnduranceComparison>&;
 	};
 	struct GerudoCanyon_GleeokLiver : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GerudoCanyon_GleeokLiver>&;
 	};
 	struct GerudoCanyon_TumbleweedSweep : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GerudoCanyon_TumbleweedSweep>&;
 	};
 	struct GerudoDesertTreasure : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GerudoDesertTreasure>&;
 	};
 	struct Gerudo_UrbosaWeapon : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Gerudo_UrbosaWeapon>&;
 	};
 	struct GetCamera : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GetCamera>&;
 	};
 	struct GetMasterSword : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GetMasterSword>&;
 	};
 	struct GetSensorPlus : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GetSensorPlus>&;
 	};
 	struct GetWalker : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GetWalker>&;
 	};
 	struct GetWarpMarker : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GetWarpMarker>&;
 	};
 	struct GiantHorse : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GiantHorse>&;
 	};
 	struct GoneSnowQueen : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GoneSnowQueen>&;
 	};
 	struct GoronPond : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GoronPond>&;
 	};
 	struct GoronReturntoNature : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GoronReturntoNature>&;
 	};
 	struct Goron_MiniGame_01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Goron_MiniGame_01>&;
 	};
 	struct Goron_MiniGame_02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Goron_MiniGame_02>&;
 	};
 	struct Goron_MiniGame_03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Goron_MiniGame_03>&;
 	};
 	struct Goron_MiniGame_Tutorial_01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Goron_MiniGame_Tutorial_01>&;
 	};
 	struct Goron_MiniGame_Tutorial_02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Goron_MiniGame_Tutorial_02>&;
 	};
 	struct Goron_MiniGame_Tutorial_03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Goron_MiniGame_Tutorial_03>&;
 	};
 	struct GotoFironeZonauRemains : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GotoFironeZonauRemains>&;
 	};
 	struct GroundPaintingAir01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<GroundPaintingAir01>&;
 	};
 	struct Hack_GuardGoods : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hack_GuardGoods>&;
 	};
 	struct HammerGong_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HammerGong_MiniGame>&;
 	};
 	struct HatenoPurchasePicture : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HatenoPurchasePicture>&;
 	};
 	struct Hateno_Cheese : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_Cheese>&;
 	};
 	struct Hateno_CoolGuy : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_CoolGuy>&;
 	};
 	struct Hateno_FreshMilk : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_FreshMilk>&;
 	};
 	struct Hateno_LetUsElection : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_LetUsElection>&;
 	};
 	struct Hateno_NewCostume : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_NewCostume>&;
 	};
 	struct Hateno_NewSpecialty : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_NewSpecialty>&;
 	};
 	struct Hateno_RevitalizeByNewSpeciality : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_RevitalizeByNewSpeciality>&;
 	};
 	struct Hateno_SecretLifeOfKusayoshi : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_SecretLifeOfKusayoshi>&;
 	};
 	struct Hateno_SecretLifeOfSagono : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_SecretLifeOfSagono>&;
 	};
 	struct Hateno_TellMeTeacher01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_TellMeTeacher01>&;
 	};
 	struct Hateno_TellMeTeacher02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_TellMeTeacher02>&;
 	};
 	struct Hateno_VillageMayorElection : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_VillageMayorElection>&;
 	};
 	struct Hateno_WhatToPlant : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hateno_WhatToPlant>&;
 	};
 	struct Hebra_SkyRingChallenge : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hebra_SkyRingChallenge>&;
 	};
 	struct Hebra_SkyRingChallenge_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Hebra_SkyRingChallenge_MiniGame>&;
 	};
 	struct HorseInnChallenge001 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HorseInnChallenge001>&;
 	};
 	struct HorseInnChallenge002 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HorseInnChallenge002>&;
 	};
 	struct HorseInnChallenge003 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HorseInnChallenge003>&;
 	};
 	struct HorseInnChallenge005 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HorseInnChallenge005>&;
 	};
 	struct HorseInnChallenge007 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HorseInnChallenge007>&;
 	};
 	struct HotSpringEgg : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HotSpringEgg>&;
 	};
 	struct HourseInnChallenge004 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HourseInnChallenge004>&;
 	};
 	struct HuntSalmon : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HuntSalmon>&;
 	};
 	struct HyruleCastleIncident : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<HyruleCastleIncident>&;
 	};
 	struct IceMaking : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<IceMaking>&;
 	};
 	struct IchikaraChallenge01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<IchikaraChallenge01>&;
 	};
 	struct IchikaraChallenge03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<IchikaraChallenge03>&;
 	};
 	struct IchikaraCircuit_Tutorial : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<IchikaraCircuit_Tutorial>&;
 	};
 	struct IchikaraDaughterPhoto : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<IchikaraDaughterPhoto>&;
 	};
 	struct IllnessStartsWithFeelings : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<IllnessStartsWithFeelings>&;
 	};
 	struct InfiltrationFromTheSky : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<InfiltrationFromTheSky>&;
 	};
 	struct InnNeverReturns : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<InnNeverReturns>&;
 	};
 	struct JobSunazarashi : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<JobSunazarashi>&;
 	};
 	struct Know_FourStonePlates : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Know_FourStonePlates>&;
 	};
 	struct KokkoGuidePost : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<KokkoGuidePost>&;
 	};
 	struct Korok_CarryToShrine : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Korok_CarryToShrine>&;
 	};
 	struct Lodge_Chemical001 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Lodge_Chemical001>&;
 	};
 	struct LookingForLightSpot : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<LookingForLightSpot>&;
 	};
 	struct LookingForTheVoiceLord : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<LookingForTheVoiceLord>&;
 	};
 	struct Mack_SecretBase : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Mack_SecretBase>&;
 	};
 	struct MainChallenge : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MainChallenge>&;
 	};
 	struct MakeAChampionsWeapon_Goron : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MakeAChampionsWeapon_Goron>&;
 	};
 	struct MakeChemicalWeapon : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MakeChemicalWeapon>&;
 	};
 	struct MasterSwordClues : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MasterSwordClues>&;
 	};
 	struct MeatRock : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MeatRock>&;
 	};
 	struct MemoryOfTheDragon : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MemoryOfTheDragon>&;
 	};
 	struct MercenaryChallenge_Akkare : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MercenaryChallenge_Akkare>&;
 	};
 	struct MercenaryChallenge_Eldin : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MercenaryChallenge_Eldin>&;
 	};
 	struct MercenaryChallenge_Firone : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MercenaryChallenge_Firone>&;
 	};
 	struct MercenaryChallenge_Hateru : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MercenaryChallenge_Hateru>&;
 	};
 	struct MercenaryChallenge_Hebra : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MercenaryChallenge_Hebra>&;
 	};
 	struct MercenaryChallenge_HyrulePlain : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MercenaryChallenge_HyrulePlain>&;
 	};
 	struct Mercenary_Akkare_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Mercenary_Akkare_Bloody>&;
 	};
 	struct Mercenary_Eldin_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Mercenary_Eldin_Bloody>&;
 	};
 	struct Mercenary_Firone_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Mercenary_Firone_Bloody>&;
 	};
 	struct Mercenary_Hateru_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Mercenary_Hateru_Bloody>&;
 	};
 	struct Mercenary_Hebra_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Mercenary_Hebra_Bloody>&;
 	};
 	struct Mercenary_HyrulePlain_Bloody : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Mercenary_HyrulePlain_Bloody>&;
 	};
 	struct MessageBottle_SOS : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MessageBottle_SOS>&;
 	};
 	struct MinusYiga : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MinusYiga>&;
 	};
 	struct MonsterFigures01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MonsterFigures01>&;
 	};
 	struct MonsterFigures02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MonsterFigures02>&;
 	};
 	struct MonsterFigures03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MonsterFigures03>&;
 	};
 	struct MonsterFigures04 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MonsterFigures04>&;
 	};
 	struct MonsterFigures05 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MonsterFigures05>&;
 	};
 	struct MushroomSisters_1 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MushroomSisters_1>&;
 	};
 	struct MushroomSisters_2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MushroomSisters_2>&;
 	};
 	struct MushroomSisters_3 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<MushroomSisters_3>&;
 	};
 	struct Nazley_DigCave : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Nazley_DigCave>&;
 	};
 	struct Neck_IceWaterCave : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Neck_IceWaterCave>&;
 	};
 	struct NewCanyonMissingPersonsCase : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<NewCanyonMissingPersonsCase>&;
 	};
 	struct NewsPaper_Mitsuba : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<NewsPaper_Mitsuba>&;
 	};
 	struct NoTrespassing : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<NoTrespassing>&;
 	};
 	struct NowInTheVillageOfLurelin : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<NowInTheVillageOfLurelin>&;
 	};
 	struct Npc_BaseCamp_Assistant_ReactingStatue : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Npc_BaseCamp_Assistant_ReactingStatue>&;
 	};
 	struct Npc_BaseCamp_Assistant_ReactingStatue2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Npc_BaseCamp_Assistant_ReactingStatue2>&;
 	};
 	struct Npc_BaseCamp_Assistant_ReactingStatue3 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Npc_BaseCamp_Assistant_ReactingStatue3>&;
 	};
 	struct Npc_BaseCamp_Assistant_ReactingStatue4 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Npc_BaseCamp_Assistant_ReactingStatue4>&;
 	};
 	struct NushiShop_Challenge00 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<NushiShop_Challenge00>&;
 	};
 	struct NushiShop_Tutorial : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<NushiShop_Tutorial>&;
 	};
 	struct OldKorokHelp : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<OldKorokHelp>&;
 	};
 	struct Orchestra02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Orchestra02>&;
 	};
 	struct Orchestra03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Orchestra03>&;
 	};
 	struct Orchestra04 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Orchestra04>&;
 	};
 	struct Our_Treasure : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Our_Treasure>&;
 	};
 	struct Parasail_ChuchuDesign : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Parasail_ChuchuDesign>&;
 	};
 	struct PhotoSpot_Challenge_01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_01>&;
 	};
 	struct PhotoSpot_Challenge_02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_02>&;
 	};
 	struct PhotoSpot_Challenge_03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_03>&;
 	};
 	struct PhotoSpot_Challenge_04 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_04>&;
 	};
 	struct PhotoSpot_Challenge_05 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_05>&;
 	};
 	struct PhotoSpot_Challenge_06 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_06>&;
 	};
 	struct PhotoSpot_Challenge_07 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_07>&;
 	};
 	struct PhotoSpot_Challenge_08 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_08>&;
 	};
 	struct PhotoSpot_Challenge_09 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_09>&;
 	};
 	struct PhotoSpot_Challenge_09_2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_09_2>&;
 	};
 	struct PhotoSpot_Challenge_10 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_10>&;
 	};
 	struct PhotoSpot_Challenge_11 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_11>&;
 	};
 	struct PhotoSpot_Challenge_12 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_12>&;
 	};
 	struct PhotoSpot_Challenge_13 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_13>&;
 	};
 	struct PhotoSpot_Challenge_14 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<PhotoSpot_Challenge_14>&;
 	};
 	struct Raise_GoddesStatue : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Raise_GoddesStatue>&;
 	};
 	struct Raise_GoddesStatue_Courage : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Raise_GoddesStatue_Courage>&;
 	};
 	struct Raise_GoddesStatue_Power : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Raise_GoddesStatue_Power>&;
 	};
 	struct Raise_GoddesStatue_Wisdom : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Raise_GoddesStatue_Wisdom>&;
 	};
 	struct RepairArmor : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<RepairArmor>&;
 	};
 	struct RescueHost : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<RescueHost>&;
 	};
 	struct RescueVehicle01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<RescueVehicle01>&;
 	};
 	struct RescueWell : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<RescueWell>&;
 	};
 	struct ResearchEldin : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ResearchEldin>&;
 	};
 	struct ResearchLanayru : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ResearchLanayru>&;
 	};
 	struct RestaurantInTheWell : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<RestaurantInTheWell>&;
 	};
 	struct RitoBridgeRepair : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<RitoBridgeRepair>&;
 	};
 	struct Rito_ItemExchange : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Rito_ItemExchange>&;
 	};
 	struct Rito_MedoArmor : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Rito_MedoArmor>&;
 	};
 	struct Rito_RevaliWeapon : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Rito_RevaliWeapon>&;
 	};
 	struct Rito_ShadowCave : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Rito_ShadowCave>&;
 	};
 	struct SageOfFire : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SageOfFire>&;
 	};
 	struct SageOfGerudo : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SageOfGerudo>&;
 	};
 	struct SageOfSoul : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SageOfSoul>&;
 	};
 	struct SageOfWind : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SageOfWind>&;
 	};
 	struct SageOfZora : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SageOfZora>&;
 	};
 	struct SaihateSubjugation : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SaihateSubjugation>&;
 	};
 	struct SearchCaravan : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SearchCaravan>&;
 	};
 	struct SecretBase_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SecretBase_MiniGame>&;
 	};
 	struct ShieldSurfing_MiniGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ShieldSurfing_MiniGame>&;
 	};
 	struct SkyIsland_MiniGame_01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SkyIsland_MiniGame_01>&;
 	};
 	struct SkyIsland_MiniGame_02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SkyIsland_MiniGame_02>&;
 	};
 	struct SkyIsland_MiniGame_03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SkyIsland_MiniGame_03>&;
 	};
 	struct SnowyMountain_Surfing : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SnowyMountain_Surfing>&;
 	};
 	struct StatueDevilTutorial : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<StatueDevilTutorial>&;
 	};
 	struct SurveyOfFourVillages : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<SurveyOfFourVillages>&;
 	};
 	struct TakeAnimals : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TakeAnimals>&;
 	};
 	struct TakeOfIce : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TakeOfIce>&;
 	};
 	struct TauraChallenge001 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TauraChallenge001>&;
 	};
 	struct TheStrongestWeapon : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TheStrongestWeapon>&;
 	};
 	struct TreasureHunt_kokiri : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureHunt_kokiri>&;
 	};
 	struct TreasureOfLambda : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureOfLambda>&;
 	};
 	struct TreasureOfLamda_Dream : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureOfLamda_Dream>&;
 	};
 	struct TreasureOfLamda_Dream2 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureOfLamda_Dream2>&;
 	};
 	struct TreasureOfLamda_Dream3 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureOfLamda_Dream3>&;
 	};
 	struct TreasureOfLamda_DuelPeak : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureOfLamda_DuelPeak>&;
 	};
 	struct TreasureOfLamda_FierceDeity : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureOfLamda_FierceDeity>&;
 	};
 	struct TreasureOfLamda_Gerudo : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureOfLamda_Gerudo>&;
 	};
 	struct TreasureOfLamda_Pirate : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<TreasureOfLamda_Pirate>&;
 	};
 	struct Tribune01 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune01>&;
 	};
 	struct Tribune02 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune02>&;
 	};
 	struct Tribune03 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune03>&;
 	};
 	struct Tribune04 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune04>&;
 	};
 	struct Tribune05 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune05>&;
 	};
 	struct Tribune06 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune06>&;
 	};
 	struct Tribune07 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune07>&;
 	};
 	struct Tribune09 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune09>&;
 	};
 	struct Tribune10 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune10>&;
 	};
 	struct Tribune11 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune11>&;
 	};
 	struct Tribune13 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune13>&;
 	};
 	struct Tribune14 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune14>&;
 	};
 	struct Tribune16 : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Tribune16>&;
 	};
 	struct Uotori_Designer : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Uotori_Designer>&;
 	};
 	struct Uotori_ResortPlan : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Uotori_ResortPlan>&;
 	};
 	struct Uotori_RevivePlan : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Uotori_RevivePlan>&;
 	};
 	struct Uotori_WhiteLineGame : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Uotori_WhiteLineGame>&;
 	};
 	struct WashedAwayBusinessTools : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<WashedAwayBusinessTools>&;
 	};
 	struct WaterBridgePlace : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<WaterBridgePlace>&;
 	};
 	struct WellCollection : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<WellCollection>&;
 	};
 	struct WhichIsStronger : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<WhichIsStronger>&;
 	};
 	struct ZonauReliefSearch : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ZonauReliefSearch>&;
 	};
 	struct Zonau_GeniusWeapon : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Zonau_GeniusWeapon>&;
 	};
 	struct ZoraStatue_Picture : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<ZoraStatue_Picture>&;
 	};
 	struct Zora_Enemy_hunt : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Zora_Enemy_hunt>&;
 	};
 	struct Zora_MessageBottle : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Zora_MessageBottle>&;
 	};
 	struct Zora_RuttaTreasure : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<Zora_RuttaTreasure>&;
 	};
 	struct gather_Insect_Z : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), New = murmurhash3::hash("New"), Update = murmurhash3::hash("Update"), }; };
 		using type = enum_t<gather_Insect_Z>&;
 	};
 };/* Tag::Structure GameData::ChallengeLogState_Challenge close */

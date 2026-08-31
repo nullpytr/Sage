@@ -7,7 +7,7 @@ struct GameData::MapData : Tag::Structure {
 	struct IsOpenGround : Tag::Member { using type = bool&; };
 	struct IsOpenUnderGround : Tag::Member { using type = bool&; };
 	struct CurrentLayer : Tag::Enum {
-		enum underlying_enum_t : hash_t { Ground = murmurhash3::hash("Ground"), Sky = murmurhash3::hash("Sky"), UnderGround = murmurhash3::hash("UnderGround"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Ground = murmurhash3::hash("Ground"), Sky = murmurhash3::hash("Sky"), UnderGround = murmurhash3::hash("UnderGround"), }; };
 		using type = enum_t<CurrentLayer>&;
 	};
 	struct IconData;

@@ -3,611 +3,611 @@
 
 struct GameData::DungeonState : Tag::Map {
 	struct Dungeon000 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon000>&;
 	};
 	struct Dungeon001 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon001>&;
 	};
 	struct Dungeon002 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon002>&;
 	};
 	struct Dungeon003 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon003>&;
 	};
 	struct Dungeon004 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon004>&;
 	};
 	struct Dungeon005 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon005>&;
 	};
 	struct Dungeon006 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon006>&;
 	};
 	struct Dungeon007 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon007>&;
 	};
 	struct Dungeon008 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon008>&;
 	};
 	struct Dungeon009 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon009>&;
 	};
 	struct Dungeon010 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon010>&;
 	};
 	struct Dungeon011 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon011>&;
 	};
 	struct Dungeon012 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon012>&;
 	};
 	struct Dungeon013 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon013>&;
 	};
 	struct Dungeon014 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon014>&;
 	};
 	struct Dungeon015 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon015>&;
 	};
 	struct Dungeon016 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon016>&;
 	};
 	struct Dungeon017 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon017>&;
 	};
 	struct Dungeon018 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon018>&;
 	};
 	struct Dungeon019 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon019>&;
 	};
 	struct Dungeon020 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon020>&;
 	};
 	struct Dungeon021 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon021>&;
 	};
 	struct Dungeon022 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon022>&;
 	};
 	struct Dungeon023 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon023>&;
 	};
 	struct Dungeon024 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon024>&;
 	};
 	struct Dungeon025 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon025>&;
 	};
 	struct Dungeon026 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon026>&;
 	};
 	struct Dungeon027 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon027>&;
 	};
 	struct Dungeon028 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon028>&;
 	};
 	struct Dungeon029 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon029>&;
 	};
 	struct Dungeon030 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon030>&;
 	};
 	struct Dungeon031 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon031>&;
 	};
 	struct Dungeon032 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon032>&;
 	};
 	struct Dungeon033 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon033>&;
 	};
 	struct Dungeon034 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon034>&;
 	};
 	struct Dungeon035 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon035>&;
 	};
 	struct Dungeon036 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon036>&;
 	};
 	struct Dungeon037 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon037>&;
 	};
 	struct Dungeon038 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon038>&;
 	};
 	struct Dungeon039 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon039>&;
 	};
 	struct Dungeon040 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon040>&;
 	};
 	struct Dungeon041 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon041>&;
 	};
 	struct Dungeon042 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon042>&;
 	};
 	struct Dungeon043 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon043>&;
 	};
 	struct Dungeon044 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon044>&;
 	};
 	struct Dungeon045 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon045>&;
 	};
 	struct Dungeon046 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon046>&;
 	};
 	struct Dungeon047 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon047>&;
 	};
 	struct Dungeon048 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon048>&;
 	};
 	struct Dungeon049 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon049>&;
 	};
 	struct Dungeon050 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon050>&;
 	};
 	struct Dungeon051 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon051>&;
 	};
 	struct Dungeon052 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon052>&;
 	};
 	struct Dungeon053 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon053>&;
 	};
 	struct Dungeon054 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon054>&;
 	};
 	struct Dungeon055 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon055>&;
 	};
 	struct Dungeon056 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon056>&;
 	};
 	struct Dungeon057 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon057>&;
 	};
 	struct Dungeon058 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon058>&;
 	};
 	struct Dungeon059 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon059>&;
 	};
 	struct Dungeon060 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon060>&;
 	};
 	struct Dungeon061 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon061>&;
 	};
 	struct Dungeon062 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon062>&;
 	};
 	struct Dungeon063 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon063>&;
 	};
 	struct Dungeon064 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon064>&;
 	};
 	struct Dungeon065 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon065>&;
 	};
 	struct Dungeon066 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon066>&;
 	};
 	struct Dungeon067 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon067>&;
 	};
 	struct Dungeon068 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon068>&;
 	};
 	struct Dungeon069 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon069>&;
 	};
 	struct Dungeon070 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon070>&;
 	};
 	struct Dungeon071 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon071>&;
 	};
 	struct Dungeon072 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon072>&;
 	};
 	struct Dungeon073 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon073>&;
 	};
 	struct Dungeon074 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon074>&;
 	};
 	struct Dungeon075 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon075>&;
 	};
 	struct Dungeon076 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon076>&;
 	};
 	struct Dungeon077 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon077>&;
 	};
 	struct Dungeon078 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon078>&;
 	};
 	struct Dungeon079 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon079>&;
 	};
 	struct Dungeon080 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon080>&;
 	};
 	struct Dungeon081 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon081>&;
 	};
 	struct Dungeon082 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon082>&;
 	};
 	struct Dungeon083 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon083>&;
 	};
 	struct Dungeon084 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon084>&;
 	};
 	struct Dungeon085 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon085>&;
 	};
 	struct Dungeon086 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon086>&;
 	};
 	struct Dungeon087 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon087>&;
 	};
 	struct Dungeon088 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon088>&;
 	};
 	struct Dungeon089 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon089>&;
 	};
 	struct Dungeon090 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon090>&;
 	};
 	struct Dungeon091 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon091>&;
 	};
 	struct Dungeon092 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon092>&;
 	};
 	struct Dungeon093 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon093>&;
 	};
 	struct Dungeon094 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon094>&;
 	};
 	struct Dungeon095 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon095>&;
 	};
 	struct Dungeon096 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon096>&;
 	};
 	struct Dungeon097 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon097>&;
 	};
 	struct Dungeon098 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon098>&;
 	};
 	struct Dungeon099 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon099>&;
 	};
 	struct Dungeon100 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon100>&;
 	};
 	struct Dungeon101 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon101>&;
 	};
 	struct Dungeon102 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon102>&;
 	};
 	struct Dungeon103 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon103>&;
 	};
 	struct Dungeon104 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon104>&;
 	};
 	struct Dungeon105 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon105>&;
 	};
 	struct Dungeon106 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon106>&;
 	};
 	struct Dungeon107 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon107>&;
 	};
 	struct Dungeon108 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon108>&;
 	};
 	struct Dungeon109 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon109>&;
 	};
 	struct Dungeon110 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon110>&;
 	};
 	struct Dungeon111 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon111>&;
 	};
 	struct Dungeon112 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon112>&;
 	};
 	struct Dungeon113 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon113>&;
 	};
 	struct Dungeon114 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon114>&;
 	};
 	struct Dungeon115 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon115>&;
 	};
 	struct Dungeon116 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon116>&;
 	};
 	struct Dungeon117 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon117>&;
 	};
 	struct Dungeon118 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon118>&;
 	};
 	struct Dungeon119 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon119>&;
 	};
 	struct Dungeon120 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon120>&;
 	};
 	struct Dungeon121 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon121>&;
 	};
 	struct Dungeon122 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon122>&;
 	};
 	struct Dungeon123 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon123>&;
 	};
 	struct Dungeon124 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon124>&;
 	};
 	struct Dungeon125 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon125>&;
 	};
 	struct Dungeon126 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon126>&;
 	};
 	struct Dungeon127 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon127>&;
 	};
 	struct Dungeon128 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon128>&;
 	};
 	struct Dungeon129 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon129>&;
 	};
 	struct Dungeon130 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon130>&;
 	};
 	struct Dungeon131 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon131>&;
 	};
 	struct Dungeon132 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon132>&;
 	};
 	struct Dungeon133 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon133>&;
 	};
 	struct Dungeon134 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon134>&;
 	};
 	struct Dungeon135 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon135>&;
 	};
 	struct Dungeon136 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon136>&;
 	};
 	struct Dungeon137 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon137>&;
 	};
 	struct Dungeon138 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon138>&;
 	};
 	struct Dungeon139 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon139>&;
 	};
 	struct Dungeon140 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon140>&;
 	};
 	struct Dungeon141 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon141>&;
 	};
 	struct Dungeon142 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon142>&;
 	};
 	struct Dungeon143 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon143>&;
 	};
 	struct Dungeon144 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon144>&;
 	};
 	struct Dungeon145 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon145>&;
 	};
 	struct Dungeon146 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon146>&;
 	};
 	struct Dungeon147 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon147>&;
 	};
 	struct Dungeon148 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon148>&;
 	};
 	struct Dungeon149 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon149>&;
 	};
 	struct Dungeon150 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon150>&;
 	};
 	struct Dungeon151 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Hidden = murmurhash3::hash("Hidden"), Appear = murmurhash3::hash("Appear"), Open = murmurhash3::hash("Open"), Enter = murmurhash3::hash("Enter"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<Dungeon151>&;
 	};
 	using type = std::decay_t<Dungeon000::type>;

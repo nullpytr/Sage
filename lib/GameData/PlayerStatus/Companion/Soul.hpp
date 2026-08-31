@@ -13,7 +13,7 @@ struct GameData::PlayerStatus::Companion::Soul : Tag::Structure {
 	struct IsSummon : Tag::Member { using type = bool&; };
 	struct RemainingEnergy : Tag::Member { using type = float&; };
 	struct JoiningCondition : Tag::Enum {
-		enum underlying_enum_t : hash_t { Joining = murmurhash3::hash("Joining"), BreakawayNotice = murmurhash3::hash("BreakawayNotice"), Breakaway = murmurhash3::hash("Breakaway"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Joining = murmurhash3::hash("Joining"), BreakawayNotice = murmurhash3::hash("BreakawayNotice"), Breakaway = murmurhash3::hash("Breakaway"), }; };
 		using type = enum_t<JoiningCondition>&;
 	};
 	struct ForUI;

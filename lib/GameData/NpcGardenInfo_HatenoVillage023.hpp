@@ -7,7 +7,7 @@ struct GameData::NpcGardenInfo_HatenoVillage023 : Tag::Structure {
 	struct IsHarvested : Tag::Member { using type = bool&; };
 	struct LastGrowActorName : Tag::Member { using type = string64*; };
 	struct CurrentState : Tag::Enum {
-		enum underlying_enum_t : hash_t { Idle = murmurhash3::hash("Idle"), WaitForGrowth = murmurhash3::hash("WaitForGrowth"), Harvestable = murmurhash3::hash("Harvestable"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Idle = murmurhash3::hash("Idle"), WaitForGrowth = murmurhash3::hash("WaitForGrowth"), Harvestable = murmurhash3::hash("Harvestable"), }; };
 		using type = enum_t<CurrentState>&;
 	};
 };/* Tag::Structure GameData::NpcGardenInfo_HatenoVillage023 close */

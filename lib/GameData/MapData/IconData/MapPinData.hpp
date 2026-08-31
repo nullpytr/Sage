@@ -5,7 +5,7 @@ struct GameData::MapData::IconData::MapPinData : Tag::Structure {
 	struct IsFit : Tag::Member { using type = span<bool>*; };
 	struct Pos : Tag::Member { using type = span<vec3f>*; };
 	struct Type : Tag::Enum {
-		enum underlying_enum_t : hash_t { Invalid = murmurhash3::hash("Invalid"), Red = murmurhash3::hash("Red"), Blue = murmurhash3::hash("Blue"), Yellow = murmurhash3::hash("Yellow"), Green = murmurhash3::hash("Green"), Purple = murmurhash3::hash("Purple"), LightBlue = murmurhash3::hash("LightBlue"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Invalid = murmurhash3::hash("Invalid"), Red = murmurhash3::hash("Red"), Blue = murmurhash3::hash("Blue"), Yellow = murmurhash3::hash("Yellow"), Green = murmurhash3::hash("Green"), Purple = murmurhash3::hash("Purple"), LightBlue = murmurhash3::hash("LightBlue"), }; };
 		using type = span<enum_t<Type>>*;
 	};
 };/* Tag::Structure GameData::MapData::IconData::MapPinData close */

@@ -3,483 +3,483 @@
 
 struct GameData::ArrivalPointState : Tag::Map {
 	struct CheckPoint000 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint000>&;
 	};
 	struct CheckPoint001 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint001>&;
 	};
 	struct CheckPoint002 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint002>&;
 	};
 	struct CheckPoint003 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint003>&;
 	};
 	struct CheckPoint004 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint004>&;
 	};
 	struct CheckPoint005 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint005>&;
 	};
 	struct CheckPoint006 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint006>&;
 	};
 	struct CheckPoint007 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint007>&;
 	};
 	struct CheckPoint008 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint008>&;
 	};
 	struct CheckPoint009 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint009>&;
 	};
 	struct CheckPoint010 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint010>&;
 	};
 	struct CheckPoint011 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint011>&;
 	};
 	struct CheckPoint012 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint012>&;
 	};
 	struct CheckPoint013 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint013>&;
 	};
 	struct CheckPoint014 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint014>&;
 	};
 	struct CheckPoint016 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint016>&;
 	};
 	struct CheckPoint017 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint017>&;
 	};
 	struct CheckPoint018 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint018>&;
 	};
 	struct CheckPoint019 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint019>&;
 	};
 	struct CheckPoint020 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint020>&;
 	};
 	struct CheckPoint021 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint021>&;
 	};
 	struct CheckPoint022 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint022>&;
 	};
 	struct CheckPoint023 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint023>&;
 	};
 	struct CheckPoint024 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint024>&;
 	};
 	struct CheckPoint025 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint025>&;
 	};
 	struct CheckPoint026 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint026>&;
 	};
 	struct CheckPoint027 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint027>&;
 	};
 	struct CheckPoint028 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint028>&;
 	};
 	struct CheckPoint029 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint029>&;
 	};
 	struct CheckPoint030 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint030>&;
 	};
 	struct CheckPoint031 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint031>&;
 	};
 	struct CheckPoint032 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint032>&;
 	};
 	struct CheckPoint033 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint033>&;
 	};
 	struct CheckPoint035 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint035>&;
 	};
 	struct CheckPoint036 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint036>&;
 	};
 	struct CheckPoint037 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint037>&;
 	};
 	struct CheckPoint039 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint039>&;
 	};
 	struct CheckPoint040 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint040>&;
 	};
 	struct CheckPoint041 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint041>&;
 	};
 	struct CheckPoint042 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint042>&;
 	};
 	struct CheckPoint044 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint044>&;
 	};
 	struct CheckPoint046 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint046>&;
 	};
 	struct CheckPoint047 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint047>&;
 	};
 	struct CheckPoint048 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint048>&;
 	};
 	struct CheckPoint049 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint049>&;
 	};
 	struct CheckPoint051 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint051>&;
 	};
 	struct CheckPoint053 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint053>&;
 	};
 	struct CheckPoint054 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint054>&;
 	};
 	struct CheckPoint056 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint056>&;
 	};
 	struct CheckPoint057 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint057>&;
 	};
 	struct CheckPoint058 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint058>&;
 	};
 	struct CheckPoint059 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint059>&;
 	};
 	struct CheckPoint064 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint064>&;
 	};
 	struct CheckPoint065 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint065>&;
 	};
 	struct CheckPoint067 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint067>&;
 	};
 	struct CheckPoint068 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint068>&;
 	};
 	struct CheckPoint070 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint070>&;
 	};
 	struct CheckPoint072 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint072>&;
 	};
 	struct CheckPoint073 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint073>&;
 	};
 	struct CheckPoint074 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint074>&;
 	};
 	struct CheckPoint075 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint075>&;
 	};
 	struct CheckPoint076 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint076>&;
 	};
 	struct CheckPoint077 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint077>&;
 	};
 	struct CheckPoint078 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint078>&;
 	};
 	struct CheckPoint079 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint079>&;
 	};
 	struct CheckPoint080 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint080>&;
 	};
 	struct CheckPoint081 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint081>&;
 	};
 	struct CheckPoint084 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint084>&;
 	};
 	struct CheckPoint085 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint085>&;
 	};
 	struct CheckPoint086 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint086>&;
 	};
 	struct CheckPoint087 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint087>&;
 	};
 	struct CheckPoint088 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint088>&;
 	};
 	struct CheckPoint089 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint089>&;
 	};
 	struct CheckPoint090 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint090>&;
 	};
 	struct CheckPoint091 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint091>&;
 	};
 	struct CheckPoint092 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint092>&;
 	};
 	struct CheckPoint094 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint094>&;
 	};
 	struct CheckPoint095 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint095>&;
 	};
 	struct CheckPoint096 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint096>&;
 	};
 	struct CheckPoint097 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint097>&;
 	};
 	struct CheckPoint098 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint098>&;
 	};
 	struct CheckPoint100 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint100>&;
 	};
 	struct CheckPoint101 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint101>&;
 	};
 	struct CheckPoint102 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint102>&;
 	};
 	struct CheckPoint103 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint103>&;
 	};
 	struct CheckPoint104 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint104>&;
 	};
 	struct CheckPoint106 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint106>&;
 	};
 	struct CheckPoint107 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint107>&;
 	};
 	struct CheckPoint108 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint108>&;
 	};
 	struct CheckPoint111 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint111>&;
 	};
 	struct CheckPoint112 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint112>&;
 	};
 	struct CheckPoint113 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint113>&;
 	};
 	struct CheckPoint114 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint114>&;
 	};
 	struct CheckPoint115 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint115>&;
 	};
 	struct CheckPoint116 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint116>&;
 	};
 	struct CheckPoint118 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint118>&;
 	};
 	struct CheckPoint119 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint119>&;
 	};
 	struct CheckPoint120 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint120>&;
 	};
 	struct CheckPoint122 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint122>&;
 	};
 	struct CheckPoint123 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint123>&;
 	};
 	struct CheckPoint124 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint124>&;
 	};
 	struct CheckPoint125 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint125>&;
 	};
 	struct CheckPoint126 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint126>&;
 	};
 	struct CheckPoint129 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint129>&;
 	};
 	struct CheckPoint130 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint130>&;
 	};
 	struct CheckPoint131 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint131>&;
 	};
 	struct CheckPoint132 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint132>&;
 	};
 	struct CheckPoint133 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint133>&;
 	};
 	struct CheckPoint134 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint134>&;
 	};
 	struct CheckPoint135 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint135>&;
 	};
 	struct CheckPoint136 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint136>&;
 	};
 	struct CheckPoint137 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint137>&;
 	};
 	struct CheckPoint138 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint138>&;
 	};
 	struct CheckPoint139 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint139>&;
 	};
 	struct CheckPoint140 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint140>&;
 	};
 	struct CheckPoint141 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint141>&;
 	};
 	struct CheckPoint142 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint142>&;
 	};
 	struct CheckPoint143 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint143>&;
 	};
 	struct CheckPoint144 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint144>&;
 	};
 	struct CheckPoint147 : Tag::Enum {
-		enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Close = murmurhash3::hash("Close"), Open = murmurhash3::hash("Open"), }; };
 		using type = enum_t<CheckPoint147>&;
 	};
 	using type = std::decay_t<CheckPoint000::type>;

@@ -3,11 +3,11 @@
 
 struct GameData::OwnedHorseList::Body : Tag::Structure {
 	struct EyeColor : Tag::Enum {
-		enum underlying_enum_t : hash_t { Black = murmurhash3::hash("Black"), Blue = murmurhash3::hash("Blue"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Black = murmurhash3::hash("Black"), Blue = murmurhash3::hash("Blue"), }; };
 		using type = span<enum_t<EyeColor>>*;
 	};
 	struct Pattern : Tag::Enum {
-		enum underlying_enum_t : hash_t { _00 = murmurhash3::hash("00"), _01 = murmurhash3::hash("01"), _02 = murmurhash3::hash("02"), _03 = murmurhash3::hash("03"), _04 = murmurhash3::hash("04"), _05 = murmurhash3::hash("05"), _06 = murmurhash3::hash("06"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { _00 = murmurhash3::hash("00"), _01 = murmurhash3::hash("01"), _02 = murmurhash3::hash("02"), _03 = murmurhash3::hash("03"), _04 = murmurhash3::hash("04"), _05 = murmurhash3::hash("05"), _06 = murmurhash3::hash("06"), }; };
 		using type = span<enum_t<Pattern>>*;
 	};
 	struct NoseColor;

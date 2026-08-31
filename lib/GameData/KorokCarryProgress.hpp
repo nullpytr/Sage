@@ -3,403 +3,403 @@
 
 struct GameData::KorokCarryProgress : Tag::Map {
 	struct _10035618609325695840 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_10035618609325695840>&;
 	};
 	struct _10147912760170894537 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_10147912760170894537>&;
 	};
 	struct _1027829103425503827 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_1027829103425503827>&;
 	};
 	struct _10530533416107128098 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_10530533416107128098>&;
 	};
 	struct _10648733530437086844 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_10648733530437086844>&;
 	};
 	struct _10765936993113452918 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_10765936993113452918>&;
 	};
 	struct _10884485578138139295 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_10884485578138139295>&;
 	};
 	struct _11058875431153592516 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_11058875431153592516>&;
 	};
 	struct _11202514477440889488 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_11202514477440889488>&;
 	};
 	struct _11271636085079936375 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_11271636085079936375>&;
 	};
 	struct _11811958806114551925 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_11811958806114551925>&;
 	};
 	struct _11875758624767344318 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_11875758624767344318>&;
 	};
 	struct _11896787561078353905 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_11896787561078353905>&;
 	};
 	struct _11937967932341810839 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_11937967932341810839>&;
 	};
 	struct _1197214492947962803 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_1197214492947962803>&;
 	};
 	struct _12130885694327852729 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_12130885694327852729>&;
 	};
 	struct _12847198751504072774 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_12847198751504072774>&;
 	};
 	struct _12867974234227336785 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_12867974234227336785>&;
 	};
 	struct _12925413538446962496 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_12925413538446962496>&;
 	};
 	struct _13096531038553645768 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_13096531038553645768>&;
 	};
 	struct _13222893714975519401 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_13222893714975519401>&;
 	};
 	struct _13247469126542819452 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_13247469126542819452>&;
 	};
 	struct _13276398725536494111 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_13276398725536494111>&;
 	};
 	struct _13397407553973487668 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_13397407553973487668>&;
 	};
 	struct _13406578000478771737 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_13406578000478771737>&;
 	};
 	struct _13574721167545880769 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_13574721167545880769>&;
 	};
 	struct _13715318254682426167 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_13715318254682426167>&;
 	};
 	struct _14086010442264569915 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14086010442264569915>&;
 	};
 	struct _14386365983047131468 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14386365983047131468>&;
 	};
 	struct _14474122671074317609 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14474122671074317609>&;
 	};
 	struct _14620345371264461858 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14620345371264461858>&;
 	};
 	struct _14675420841305621627 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14675420841305621627>&;
 	};
 	struct _1467646013161089597 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_1467646013161089597>&;
 	};
 	struct _14743492415969903566 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14743492415969903566>&;
 	};
 	struct _14755292463343432412 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14755292463343432412>&;
 	};
 	struct _14835004004034249742 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14835004004034249742>&;
 	};
 	struct _14913775068882522158 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_14913775068882522158>&;
 	};
 	struct _15014578422836026966 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_15014578422836026966>&;
 	};
 	struct _15217693042586832359 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_15217693042586832359>&;
 	};
 	struct _15261531300099259671 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_15261531300099259671>&;
 	};
 	struct _15270416955868479146 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_15270416955868479146>&;
 	};
 	struct _1559566833430240376 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_1559566833430240376>&;
 	};
 	struct _15764967962530007701 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_15764967962530007701>&;
 	};
 	struct _15812195146511308260 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_15812195146511308260>&;
 	};
 	struct _15896625821746789069 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_15896625821746789069>&;
 	};
 	struct _15951088143512413279 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_15951088143512413279>&;
 	};
 	struct _16672092331503822504 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_16672092331503822504>&;
 	};
 	struct _1701261354463979089 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_1701261354463979089>&;
 	};
 	struct _17015045044967365539 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_17015045044967365539>&;
 	};
 	struct _17210919258426000638 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_17210919258426000638>&;
 	};
 	struct _17594093809162698318 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_17594093809162698318>&;
 	};
 	struct _17670912282596839597 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_17670912282596839597>&;
 	};
 	struct _17802606411144917162 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_17802606411144917162>&;
 	};
 	struct _18153127729825633248 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_18153127729825633248>&;
 	};
 	struct _18235969829881518418 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_18235969829881518418>&;
 	};
 	struct _1845078604478085116 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_1845078604478085116>&;
 	};
 	struct _1977590426358230894 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_1977590426358230894>&;
 	};
 	struct _2065394700677686397 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_2065394700677686397>&;
 	};
 	struct _2425953548859621426 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_2425953548859621426>&;
 	};
 	struct _2753782435549223662 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_2753782435549223662>&;
 	};
 	struct _3033022659337824191 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_3033022659337824191>&;
 	};
 	struct _3039055495308853332 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_3039055495308853332>&;
 	};
 	struct _3140500857535214931 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_3140500857535214931>&;
 	};
 	struct _3643785449856294086 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_3643785449856294086>&;
 	};
 	struct _4192588996974612514 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_4192588996974612514>&;
 	};
 	struct _4278308988828624825 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_4278308988828624825>&;
 	};
 	struct _4386102791994685188 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_4386102791994685188>&;
 	};
 	struct _4494468278546116134 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_4494468278546116134>&;
 	};
 	struct _5036066410770918472 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_5036066410770918472>&;
 	};
 	struct _5145081417529458167 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_5145081417529458167>&;
 	};
 	struct _5230411027965047570 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_5230411027965047570>&;
 	};
 	struct _5298571532246140711 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_5298571532246140711>&;
 	};
 	struct _55136037473008208 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_55136037473008208>&;
 	};
 	struct _5634362082519974124 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_5634362082519974124>&;
 	};
 	struct _5869665143813001026 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_5869665143813001026>&;
 	};
 	struct _5937135356624406219 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_5937135356624406219>&;
 	};
 	struct _661645095586149546 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_661645095586149546>&;
 	};
 	struct _6773575892270236835 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_6773575892270236835>&;
 	};
 	struct _702982911163221302 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_702982911163221302>&;
 	};
 	struct _711316197736138568 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_711316197736138568>&;
 	};
 	struct _7200846769452032765 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_7200846769452032765>&;
 	};
 	struct _7205909546088832266 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_7205909546088832266>&;
 	};
 	struct _7252382242329520081 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_7252382242329520081>&;
 	};
 	struct _7705700044124304347 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_7705700044124304347>&;
 	};
 	struct _7786864151230414866 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_7786864151230414866>&;
 	};
 	struct _8004497664373186229 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_8004497664373186229>&;
 	};
 	struct _8497568152468259638 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_8497568152468259638>&;
 	};
 	struct _857511348685999225 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_857511348685999225>&;
 	};
 	struct _879993071457401920 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_879993071457401920>&;
 	};
 	struct _882636985276030155 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_882636985276030155>&;
 	};
 	struct _8971903895020413263 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_8971903895020413263>&;
 	};
 	struct _8993451623919032985 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_8993451623919032985>&;
 	};
 	struct _9073478381193169871 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_9073478381193169871>&;
 	};
 	struct _9329678298925105483 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_9329678298925105483>&;
 	};
 	struct _9380338098995773009 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_9380338098995773009>&;
 	};
 	struct _9539946314806298996 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_9539946314806298996>&;
 	};
 	struct _9545094517092549436 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_9545094517092549436>&;
 	};
 	struct _9705479798924140351 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_9705479798924140351>&;
 	};
 	struct _9707096629495885452 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_9707096629495885452>&;
 	};
 	struct _9734881248452388660 : Tag::Enum {
-		enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { NotClear = murmurhash3::hash("NotClear"), Clear = murmurhash3::hash("Clear"), }; };
 		using type = enum_t<_9734881248452388660>&;
 	};
 	using type = std::decay_t<_10035618609325695840::type>;
