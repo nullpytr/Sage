@@ -61,3 +61,14 @@ struct Layout<adaptive_range<T>>
     u32 size;
     layout<T> data[];
 };
+
+template <typename T, size_t N>
+struct Layout<map<T, N>>
+{
+    using to_type = mapped_range<T, N>;
+
+    operator to_type() { return std::move(ptr_arr) | std::views::transform(deref); }
+
+    /*--*/
+    map<T, N> ptr_arr;
+};
