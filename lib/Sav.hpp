@@ -157,11 +157,11 @@ decltype(auto) operator>>(Sav& s, T const&) { return s.get<T>(); }
 /* Keyword access (optional, v0.5.2+) */
 #ifndef SAGE_DISABLE_KEYWORD_ACCESS
 
-// auto data { overlay from sav }
-#define from ()<<
+// auto data { overlay FROM sav }
+#define FROM ()<<
 
-// auto data { sav as overlay }
+// auto data { sav AS overlay }
 inline Tag::Type RESERVED_SAGE_TAG_PLACEMENT_BUFFER;
-#define as >> *new(&RESERVED_SAGE_TAG_PLACEMENT_BUFFER)
+#define AS >> *new(&RESERVED_SAGE_TAG_PLACEMENT_BUFFER)
 
 #endif

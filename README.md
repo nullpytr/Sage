@@ -63,8 +63,8 @@ Opt-out using `#define SAGE_DISABLE_KEYWORD_ACCESS` before `#include <sage>`.
 
 ```cpp
 { // Pathway A: Parse entire save in one go and use overlay instances
-  auto const& data { GameData from save };
-  auto const& data_ { save as GameData }; // equivalent
+  auto const& data { GameData FROM save };
+  auto const& data_ { save AS GameData }; // equivalent
 
   auto const& playtime = data.Playtime;
   auto const& status = data.PlayerStatus.MaxLife;
@@ -72,16 +72,16 @@ Opt-out using `#define SAGE_DISABLE_KEYWORD_ACCESS` before `#include <sage>`.
 }
 
 { // Pathway B: Parse and use only what you want using overlay types
-  auto const& playtime { GameData::Playtime from save }; // OR: { save as GameData::Playtime }
-  auto const& status { GameData::PlayerStatus from save }; // OR: { save as GameData::PlayerStatus }
+  auto const& playtime { GameData::Playtime FROM save }; // OR: { save AS GameData::Playtime }
+  auto const& status { GameData::PlayerStatus FROM save }; // OR: { save AS GameData::PlayerStatus }
 
   // subsystem overlay fully loaded in, access anything
   auto const& life = status.MaxLife;
   auto const& stamina = status.MaxStamina;
 
   // or skip the subsystem entirely
-  auto const& life_ { GameData::PlayerStatus::MaxLife from save }; // OR: { save as GameData::PlayerStatus::MaxLife }
-  auto const& stamina_ { GameData::PlayerStatus::MaxStamina from save }; // OR: { save as GameData::PlayerStatus::MaxStamina }
+  auto const& life_ { GameData::PlayerStatus::MaxLife FROM save }; // OR: { save AS GameData::PlayerStatus::MaxLife }
+  auto const& stamina_ { GameData::PlayerStatus::MaxStamina FROM save }; // OR: { save AS GameData::PlayerStatus::MaxStamina }
 }
 ```
 
@@ -116,7 +116,7 @@ std::println("{}", hashtable[0] == save.ref<hash_t>(METADATA_HASHTABLE_START)); 
 The example below patches the hearts, stamina, rupee and bubbul gem values to their max limits, essentially like a cheat. 
 
 ```cpp
-auto status { GameData::PlayerStatus from save }; // get subsystem overlay
+auto status { GameData::PlayerStatus FROM save }; // get subsystem overlay
 
 constexpr auto limit_rupee = std::numeric_limits<std::decay_t<decltype(status.CurrentRupee)>>::max(); // limits
 constexpr auto limit_mamo = std::numeric_limits<std::decay_t<decltype(status.CurrentMamo)>>::max();
@@ -128,11 +128,11 @@ status.CurrentRupee = limit_rupee;
 status.CurrentMamo = limit_mamo;
 
 
-require(save as GameData::PlayerStatus::MaxLife == LIMIT_MAX_LIFE); // verify
-require(save as GameData::PlayerStatus::MaxStamina == LIMIT_MAX_STAMINA);
-require(save as GameData::PlayerStatus::MaxEnergy == LIMIT_MAX_ENERGY);
-require(save as GameData::PlayerStatus::CurrentRupee == limit_rupee);
-require(save as GameData::PlayerStatus::CurrentMamo == limit_mamo);
+require(save AS GameData::PlayerStatus::MaxLife == LIMIT_MAX_LIFE); // verify
+require(save AS GameData::PlayerStatus::MaxStamina == LIMIT_MAX_STAMINA);
+require(save AS GameData::PlayerStatus::MaxEnergy == LIMIT_MAX_ENERGY);
+require(save AS GameData::PlayerStatus::CurrentRupee == limit_rupee);
+require(save AS GameData::PlayerStatus::CurrentMamo == limit_mamo);
 ```
 
 The changes reflect in game which can be seen in this snapshot: ![images-example](../../releases/download/images/example.png)
@@ -142,7 +142,7 @@ The full code for this cheat can be found [here](./examples/Cheat.cpp) and more 
 Sage v0.7.x introduces `mapped_range`(s) which expose non-continuous collections of type T from the save blob as iterable ranges. Standard range algorithms work directly:
 
 ```cpp
-auto shrines { GameData::DungeonState from save };
+auto shrines { GameData::DungeonState FROM save };
 
 auto is_cleared_shrine = [](auto& s) { return s == s.Clear; };
 std::print("[cleared shrines] {}", ranges::count_if(shrines, is_cleared_shrine));

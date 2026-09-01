@@ -10,7 +10,7 @@ static void require(bool const condition) { if (!condition) std::exit(1); }
 int main(int const argc, char const* argv[]) {
     Sav save { "other/progress.sav" }; /* progress.sav */
 
-    auto status { GameData::PlayerStatus from save }; // get subsystem overlay
+    auto status { GameData::PlayerStatus FROM save }; // get subsystem overlay
 
     constexpr auto limit_rupee = std::numeric_limits<std::decay_t<decltype(status.CurrentRupee)>>::max(); // limits
     constexpr auto limit_mamo = std::numeric_limits<std::decay_t<decltype(status.CurrentMamo)>>::max();
@@ -22,10 +22,10 @@ int main(int const argc, char const* argv[]) {
     status.CurrentMamo = limit_mamo;
 
 
-    require(save as GameData::PlayerStatus::MaxLife == LIMIT_MAX_LIFE); // verify
-    require(save as GameData::PlayerStatus::MaxStamina == LIMIT_MAX_STAMINA);
-    require(save as GameData::PlayerStatus::MaxEnergy == LIMIT_MAX_ENERGY);
-    require(save as GameData::PlayerStatus::CurrentRupee == limit_rupee);
-    require(save as GameData::PlayerStatus::CurrentMamo == limit_mamo);
+    require(save AS GameData::PlayerStatus::MaxLife == LIMIT_MAX_LIFE); // verify
+    require(save AS GameData::PlayerStatus::MaxStamina == LIMIT_MAX_STAMINA);
+    require(save AS GameData::PlayerStatus::MaxEnergy == LIMIT_MAX_ENERGY);
+    require(save AS GameData::PlayerStatus::CurrentRupee == limit_rupee);
+    require(save AS GameData::PlayerStatus::CurrentMamo == limit_mamo);
     /* -- */
 }

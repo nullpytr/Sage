@@ -69,8 +69,8 @@ int main(int const argc, char const* argv[]) {
     require(save.get<GameData::Sequence_CurrentBanc>() == current_banc_sv);
 
     /* Query location */
-    auto& player_pos = data.PlayerStatus.SavePos; // get copies
-    auto [x, y, z] = player_pos;
+    auto& player_pos { GameData::PlayerStatus::SavePos FROM save };
+    auto [x, y, z] = player_pos; // get copies
     std::println("[location] {}, {}, {}", x, y, z);
 
     /* Set heart container count */
@@ -126,7 +126,7 @@ int main(int const argc, char const* argv[]) {
     if (saddle_pos < saddle_array.size()) std::println("[horses/saddle] GameRomHorseSaddle_00 found at position {} of array", saddle_pos);
     else std::println("[horses/saddle] GameRomHorseSaddle_00 not found in array");
 
-    clear_all_shrines(GameData::DungeonState from save);
+    clear_all_shrines(GameData::DungeonState FROM save);
 
     /* String arrays */
     for (auto idx = 0; auto name : data.OwnedHorseList.Name){
