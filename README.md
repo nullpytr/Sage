@@ -27,6 +27,9 @@ Sav save { "other/progress.sav" };
 
 The file is memory-mapped for the lifetime of the `Sav` object. Any writes through the API are reflected in the file directly, which are synced to disk when `save` goes out of scope. You can call `save.flush()` to force them to disk immediately.
 
+Sage v0.7.4 introduces a fallback mechanism to disable memory-mapping files using `#define SAGE_DISABLE_MMAP`, and directly use a byte buffer, see [examples/buffer](./examples/Buffer.cpp). If you are using sage as a PCH with CMake, you need to add `
+target_compile_definitions(your_app PRIVATE SAGE_DISABLE_MMAP)`.
+
 Sage provides three different ways to access save data from a save file - 3 tiers of abstraction:
 
 ### High-level (recommended)

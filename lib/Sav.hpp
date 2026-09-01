@@ -4,7 +4,9 @@
 #include <stdexcept>
 #include <unordered_map>
 
+#ifndef SAGE_DISABLE_MMAP
 #include "External/Mio.hpp"
+#endif
 
 #include "Core.hpp"
 
@@ -15,7 +17,11 @@
 class Sav
 {
 public:
+    #ifndef SAGE_DISABLE_MMAP
     explicit Sav(std::string const& path) : m_data { path }
+    #else
+    explicit Sav(span<byte> const& buf) : m_data { buf }
+    #endif
     {
         // Load entire hash table once
         m_offsets.reserve(METADATA_HASHTABLE_SIZE_ESTIMATE);
@@ -31,12 +37,14 @@ public:
         }
     }
 
+    #ifndef SAGE_DISABLE_MMAP
     void flush()
     {
         std::error_code error;
         m_data.sync(error);
         if (error) throw std::system_error { error };
     }
+    #endif
 
     /* -- */
 
@@ -50,7 +58,7 @@ public:
         // Gives std::ranges semantics from a Data::Map struct
         // Layout of a Data::Map struct of N pure `value_t&`s is equivalent map<value_t, N>
         // and layout<map<value_t, N>> converts it into a `mapped_range`.
-        auto& buf = get<Tag::Structure, I>();
+        auto buf = get<Tag::Structure, I>();
         auto& adapter = *std::bit_cast<L*>(&buf);
         return adapter; // `mapped_range` copies the pointer buffer with it.
     }
@@ -114,7 +122,12 @@ public:
     /* -- */
 
 private: /* Members */
+    #ifndef SAGE_DISABLE_MMAP
     mio::ummap_sink m_data;
+    #else
+    span<byte> m_data;
+    #endif
+
     std::unordered_map<hash_t, offset_t> m_offsets;
 };
 
