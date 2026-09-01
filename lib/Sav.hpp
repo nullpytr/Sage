@@ -50,8 +50,8 @@ public:
         // Gives std::ranges semantics from a Data::Map struct
         // Layout of a Data::Map struct of N pure `value_t&`s is equivalent map<value_t, N>
         // and layout<map<value_t, N>> converts it into a `mapped_range`.
-        auto* buf = &get<Tag::Structure, I>();
-        auto& adapter = *std::bit_cast<L*>(buf);
+        auto& buf = get<Tag::Structure, I>();
+        auto& adapter = *std::bit_cast<L*>(&buf);
         return adapter; // `mapped_range` copies the pointer buffer with it.
     }
 
