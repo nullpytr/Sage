@@ -36,3 +36,10 @@ namespace Data
     template <typename N, typename I = Structure<N>, typename U = I::type, typename A = map<U, sizeof(I) / sizeof(void*)>, typename L = Layout<A>, typename O = L::to_type>
     using Map = O;
 }
+
+/*
+ * User-facing instance types, can be used to strongly type
+ * values returned by the tag types (like in function parameters)
+ * See Examples/Sample.cpp
+ */
+using Data::Structure, Data::Member, Data::Enum, Data::Map;
