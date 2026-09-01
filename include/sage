@@ -6747,7 +6747,7 @@ auto format(const ::basic_string<N, char16_t, Traits>& s, std::format_context& c
 char u16_buf[N * 3]; // UTF16 string is at most 3x size when encoded as UTF8
 auto const* end = utf8::utf16to8(s.data(), s.data() + s.size(), u16_buf);
 return std::formatter<std::string_view>::format(
-std::string_view { u16_buf, end - u16_buf },
+std::string_view { u16_buf, static_cast<size_t>(end - u16_buf) },
 ctx
 );
 }
@@ -6890,6 +6890,7 @@ using Map = O;
 using Data::Structure, Data::Member, Data::Enum, Data::Map;
 #include <string>
 #include <stdexcept>
+#ifndef SAGE_DISABLE_MMAP
 /* Copyright 2017 https://github.com/mandreyel
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy of this
@@ -8454,13 +8455,18 @@ using shared_mmap_sink = basic_shared_mmap_sink<char>;
 using shared_ummap_sink = basic_shared_mmap_sink<unsigned char>;
 } // namespace mio
 #endif // MIO_SHARED_MMAP_HEADER
+#endif
 #define METADATA_HASHTABLE_START 0x000028
 #define METADATA_HASHTABLE_SIZE_ESTIMATE 31000
 #define METADATA_HASHTABLE_END_VALUE murmurhash3::hash("Metadata.SaveTypeHash")
 class Sav
 {
 public:
+#ifndef SAGE_DISABLE_MMAP
 explicit Sav(std::string const& path) : m_data { path }
+#else
+explicit Sav(span<byte> const& buf) : m_data { buf }
+#endif
 {
 // Load entire hash table once
 m_offsets.reserve(METADATA_HASHTABLE_SIZE_ESTIMATE);
@@ -8474,12 +8480,14 @@ m_offsets[hash] = offset + sizeof(hash_t);
 if (hash == METADATA_HASHTABLE_END_VALUE) break;
 }
 }
+#ifndef SAGE_DISABLE_MMAP
 void flush()
 {
 std::error_code error;
 m_data.sync(error);
 if (error) throw std::system_error { error };
 }
+#endif
 /* -- */
 /* High-level access: using GameData types (recommended)
 * Powered by the lower level access methods and the
@@ -8491,8 +8499,8 @@ O get()
 // Gives std::ranges semantics from a Data::Map struct
 // Layout of a Data::Map struct of N pure `value_t&`s is equivalent map<value_t, N>
 // and layout<map<value_t, N>> converts it into a `mapped_range`.
-auto* buf = &get<Tag::Structure, I>();
-auto& adapter = *std::bit_cast<L*>(buf);
+auto buf = get<Tag::Structure, I>();
+auto& adapter = *std::bit_cast<L*>(&buf);
 return adapter; // `mapped_range` copies the pointer buffer with it.
 }
 template<typename S, typename I = Data::Structure<S>, typename O = I>
@@ -8545,7 +8553,11 @@ return *ptr<T>(offset);
 }
 /* -- */
 private: /* Members */
+#ifndef SAGE_DISABLE_MMAP
 mio::ummap_sink m_data;
+#else
+span<byte> m_data;
+#endif
 std::unordered_map<hash_t, offset_t> m_offsets;
 };
 /* Shift operators (v0.5.2+) */
