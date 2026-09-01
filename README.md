@@ -136,17 +136,16 @@ The changes reflect in game which can be seen in this snapshot: ![images-example
 
 The full code for this cheat can be found [here](./examples/Cheat.cpp) and more examples can be found [here](./examples).
 
-Sage v0.7.x introduces `mapped_range`(s) which expose non-continous collections of type T from the save blob as iterable ranges. Standard range algorithms work directly:
+Sage v0.7.x introduces `mapped_range`(s) which expose non-continuous collections of type T from the save blob as iterable ranges. Standard range algorithms work directly:
 
 ```cpp
 auto shrines { GameData::DungeonState from save };
 
 auto is_cleared_shrine = [](auto& s) { return s == s.Clear; };
-std::println("[cleared shrines] {}", std::ranges::count_if(shrines, is_cleared_shrine));
+std::print("[cleared shrines] {}", std::ranges::count_if(shrines, is_cleared_shrine));
 
 std::ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // mark all cleared
 std::println(" -> {}", std::ranges::count_if(shrines, is_cleared_shrine)); // 53 -> 152
-
 ```
 
 ## How it works

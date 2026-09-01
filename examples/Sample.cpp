@@ -18,15 +18,16 @@ static bool is_ability_amiibo(Enum<GameData::PlayerStatus::CurrentSpecialPower> 
     return ability == ability.Amiibo;
 }
 
-static auto is_player_in_mainfield = [](Data::Member<GameData::Sequence_CurrentBanc> const& banc) { return banc == "MainField"; };
+static auto is_player_in_mainfield = [](Member<GameData::Sequence_CurrentBanc> const& banc) { return banc == "MainField"; };
 
 static void clear_all_shrines(Map<GameData::DungeonState> const& shrines)
 {
-    /* Maps -- non continous arrays, API remains same */
-    auto is_cleared_shrine = [](auto& s){ return s == s.Clear; };
-    std::println("[cleared shrines] {}", std::ranges::count_if(shrines, is_cleared_shrine));
-    std::ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // clear all
-    std::println("{}", std::ranges::count_if(shrines, is_cleared_shrine));
+    /* Maps -- non continuous arrays, API remains same */
+    auto is_cleared_shrine = [](auto& s) { return s == s.Clear; };
+    std::print("[cleared shrines] {}", std::ranges::count_if(shrines, is_cleared_shrine));
+
+    std::ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // mark all cleared
+    std::println(" -> {}", std::ranges::count_if(shrines, is_cleared_shrine)); // 53 -> 152
 }
 
 int main(int const argc, char const* argv[]) {
