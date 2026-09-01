@@ -38,8 +38,6 @@ public:
         if (error) throw std::system_error { error };
     }
 
-    [[nodiscard]] byte const* data_ptr() const { return m_data.data(); }
-
     /* -- */
 
     /* High-level access: using GameData types (recommended)
