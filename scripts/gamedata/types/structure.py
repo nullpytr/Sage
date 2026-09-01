@@ -28,4 +28,4 @@ class Structure(GameDataType):
         self.children = sorted_children
 
 class Map(Structure):
-    pass # uses the same Structure basename
+    basename = "Map"

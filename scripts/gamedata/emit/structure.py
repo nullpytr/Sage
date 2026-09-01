@@ -19,8 +19,7 @@ class StructureEmitter():
             write("#include <sage>")
             write("")
 
-        tag_type = "Map" if isinstance(struct, Map) else struct.basename 
-        write(f"struct {struct.path} : Tag::{tag_type}" " {") # tag open
+        write(f"struct {struct.path} : Tag::{struct.basename}" " {") # tag open
 
         depth += 1
         for child in struct.children.values(): # child tags
@@ -35,7 +34,7 @@ class StructureEmitter():
 
         depth -= 1
 
-        write("};" f"/* Tag::Structure {struct.path} close */{delim}") # tag close
+        write("};" f"/* Tag::{struct.basename} {struct.path} close */{delim}") # tag close
 
         _old_len = len(buffer)
         for child in struct.children.values(): # out of line child struct tags (gd v5.x)
@@ -45,27 +44,26 @@ class StructureEmitter():
             else: write(substruct)
         if _old_len != len(buffer): write("")
 
-        write(f"template <> struct Data::{struct.basename}<{struct.path}> : {struct.path}" " {") # data open
+        write(f"template <> struct Data::{Structure.basename}<{struct.path}> : {struct.path}" " {") # data open
 
         depth += 1
         for child in struct.children.values(): # member decls
             write(f"{child.basename}<{child.name}> {child.name};")
 
         write("")
-        write(f"explicit {struct.basename}(Sav& s) : ") # ctor open
+        write(f"explicit {Structure.basename}(Sav& s) : ") # ctor open
 
         depth += 1
         for child in struct.children.values(): # member inits
-            if isinstance(child, Structure):  write(f"{child.name}" " { s },")
-            elif isinstance(child, member.Member): write(f"{child.name}" " { " f"s.get<struct {child.name}>()" " },")
-            else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
+            write(f"{child.name}" " { " f"s.get<struct {child.name}>()" " },")
+            # else: assert False, f"[gd/struct/emit]: node {struct.name} has unexpected child of type ({type(child)}, {child.typename}) {child.path}"
         depth -= 1
 
         buffer[-1] = buffer[-1].removesuffix(",") # strip last comma
         write("{ }") # ctor close
 
         depth -= 1
-        write("};" f"/* Data::{struct.basename} {struct.path} close */{delim}") # data close
+        write("};" f"/* {struct.basename} Data::{Structure.basename} {struct.path} close */{delim}") # data close
 
         for child in struct.children.values(): # member hashtable defs
             if not isinstance(child, member.Member): continue
