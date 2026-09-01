@@ -45,7 +45,7 @@ public:
     /* High-level access: using GameData types (recommended)
      * Powered by the lower level access methods and the
      * auto generated header include/GameData.hpp */
-    template<typename N, typename I = Data::Map<N>, typename U = I::type, typename A = map<U, sizeof(I) / sizeof(void*)>, typename L = Layout<A>, typename O = L::to_type>
+    template<typename N, typename I = Data::Structure<N>, typename U = I::type, typename A = map<U, sizeof(I) / sizeof(void*)>, typename L = Layout<A>, typename O = Data::Map<N>>
     requires std::derived_from<N, Tag::Map>
     O get()
     {
