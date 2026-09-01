@@ -142,11 +142,11 @@ private: /* Members */
 
 // lshift: auto data { overlay() << sav }
 template<typename T> requires std::derived_from<T, Tag::Type>
-auto operator<<(T const&, Sav& s) { return s.get<T>(); }
+decltype(auto) operator<<(T const&, Sav& s) { return s.get<T>(); }
 
 // rshift: auto data { sav >> overlay() }
 template<typename T> requires std::derived_from<T, Tag::Type>
-auto operator>>(Sav& s, T const&) { return s.get<T>(); }
+decltype(auto) operator>>(Sav& s, T const&) { return s.get<T>(); }
 
 /* Keyword access (optional, v0.5.2+) */
 #ifndef SAGE_DISABLE_KEYWORD_ACCESS
