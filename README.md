@@ -164,9 +164,10 @@ Writes through `ref<T>()` go straight to the mapped file and are flushed using `
 The type system splits into two namespaces:
 
 - `Tag::Structure`, `Tag::Member`, `Tag::Enum`, `Tag::Map` are compile-time constraints. Template specializations are gated behind `std::derived_from` concept checks so only valid types are accepted.
-- `Data::Structure<S>` is the constructible copy of the tag structure, it can be constructed with Sav&, and "overlays" its members over the data of the Sav object. Automatically constructed on `Sav::get<S>()`.
-- `Data::Map<N>` is identical to `Data::Structure<S>`, just a different name to avoid confusion (since maps use a different dispatch path, see below).
-- `Data::Hashtable<M>` stores compile-time hash values for each member, computed via `consteval murmurhash3::hash()`.  
+- `Data::Hashtable<M>` stores compile-time hash values for each member, computed via `consteval murmurhash3::hash()`. 
+- `Data::Structure<S>` is the constructible copy of the tag structure, it can be constructed with Sav&, and "overlays" its members over the data of the Sav object. Return type of `Sav::get<S>()`. 
+- `Data::Enum<E>`, `Data::Member<M>`, `Data::Map<N>` are all aliases for return types of `Sav::get<E|M|N>()` respectively. All of them are view types that "overlay" the blob memory.
+- These are also available top-level at `::Structure`, `::Enum`, `::Member`, `::Map`, can be used to strongly type return values of `Sav::get()`.
 
 Each subsystem header defines its own specializations; See [below](./README.md#Codegen).
 
@@ -177,7 +178,7 @@ Each subsystem header defines its own specializations; See [below](./README.md#C
 - `Tag::Structure (S)`: builds `Data::Structure<T>`, initializing every member reference from the blob.
 - `Tag::Member (M)`: resolves the hash from `Data::Hashtable<M>` and applies layout adaptation. If the member type is a pointer (e.g. `X*`), `get<M>()` resolves the indirection automatically and returns `X`. Non-pointer members (e.g. `float&`) read directly from the runtime hashtable offset.
 - `Tag::Enum (E)`: `Tag::Enum` inherits from `Tag::Member`, so enum members go through the same `get<M>()` path.
-- `Tag::Map (N)`: builds `Data::Map<N>` (identical to `Data::Structure<N>`), reinterprets its contiguous reference (pointer) storage as a `map<T, N>` array and returns `mapped_range<T, N>`, a stack-allocated owning `std::transform_view`, which is equivalent to the struct, except it supports `std::ranges` algorithms. This does mean the pointers from the struct need to be copied by the `mapped_range`. Still no data is copied out of the blob region though.
+- `Tag::Map (N)`: builds `Data::Structure<N>`, reinterprets its contiguous reference (pointer) storage as a `map<T, N>` array and returns `mapped_range<T, N>`, a stack-allocated owning `std::transform_view`, which is equivalent to the struct, except it supports `std::ranges` algorithms. This does mean the pointers from the struct need to be copied by the `mapped_range`. Still no data is copied out of the blob region though.
 
 ### 4. Overlay layout adaptors
 
