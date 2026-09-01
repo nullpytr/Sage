@@ -142,10 +142,10 @@ Sage v0.7.x introduces `mapped_range`(s) which expose non-continuous collections
 auto shrines { GameData::DungeonState from save };
 
 auto is_cleared_shrine = [](auto& s) { return s == s.Clear; };
-std::print("[cleared shrines] {}", std::ranges::count_if(shrines, is_cleared_shrine));
+std::print("[cleared shrines] {}", ranges::count_if(shrines, is_cleared_shrine));
 
-std::ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // mark all cleared
-std::println(" -> {}", std::ranges::count_if(shrines, is_cleared_shrine)); // 53 -> 152
+ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // mark all cleared
+std::println(" -> {}", ranges::count_if(shrines, is_cleared_shrine)); // 53 -> 152
 ```
 
 ## How it works

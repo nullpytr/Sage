@@ -24,10 +24,10 @@ static void clear_all_shrines(Map<GameData::DungeonState> const& shrines)
 {
     /* Maps -- non continuous arrays, API remains same */
     auto is_cleared_shrine = [](auto& s) { return s == s.Clear; };
-    std::print("[cleared shrines] {}", std::ranges::count_if(shrines, is_cleared_shrine));
+    std::print("[cleared shrines] {}", ranges::count_if(shrines, is_cleared_shrine));
 
-    std::ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // mark all cleared
-    std::println(" -> {}", std::ranges::count_if(shrines, is_cleared_shrine)); // 53 -> 152
+    ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // mark all cleared
+    std::println(" -> {}", ranges::count_if(shrines, is_cleared_shrine)); // 53 -> 152
 }
 
 int main(int const argc, char const* argv[]) {
@@ -116,7 +116,7 @@ int main(int const argc, char const* argv[]) {
    );
 
     // Find which horse is wearing a specific saddle
-    auto const itr = std::ranges::find_if(
+    auto const itr = ranges::find_if(
         saddle_array,
         [](auto s) { return s == s.GameRomHorseSaddle_00; }
     );
