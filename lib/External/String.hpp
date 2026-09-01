@@ -35,7 +35,7 @@ struct std::formatter<::basic_string<N, char16_t, Traits>> : std::formatter<std:
         char u16_buf[N * 3]; // UTF16 string is at most 3x size when encoded as UTF8
         auto const* end = utf8::utf16to8(s.data(), s.data() + s.size(), u16_buf);
         return std::formatter<std::string_view>::format(
-            std::string_view { u16_buf, end - u16_buf },
+            std::string_view { u16_buf, static_cast<size_t>(end - u16_buf) },
             ctx
         );
     }
