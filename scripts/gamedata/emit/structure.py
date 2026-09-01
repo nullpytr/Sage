@@ -19,7 +19,8 @@ class StructureEmitter():
             write("#include <sage>")
             write("")
 
-        write(f"struct {struct.path} : Tag::{struct.basename}" " {") # tag open
+        tag_type = "Map" if isinstance(struct, Map) else struct.basename 
+        write(f"struct {struct.path} : Tag::{tag_type}" " {") # tag open
 
         depth += 1
         for child in struct.children.values(): # child tags
