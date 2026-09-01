@@ -20,9 +20,9 @@ template <> struct Data::Structure<GameData::RaumiGolemAttachment> : GameData::R
 	Structure<Weapon> Weapon;
 	
 	explicit Structure(Sav& s) : 
-		SubTool { s },
-		SubWeapon { s },
-		Tool { s },
-		Weapon { s }
+		SubTool { s.get<struct SubTool>() },
+		SubWeapon { s.get<struct SubWeapon>() },
+		Tool { s.get<struct Tool>() },
+		Weapon { s.get<struct Weapon>() }
 	{ }
-};/* Data::Structure GameData::RaumiGolemAttachment close */
+};/* Structure Data::Structure GameData::RaumiGolemAttachment close */

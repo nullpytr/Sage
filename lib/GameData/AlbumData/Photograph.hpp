@@ -20,7 +20,7 @@ template <> struct Data::Structure<GameData::AlbumData::Photograph> : GameData::
 		Index { s.get<struct Index>() },
 		Location { s.get<struct Location>() }
 	{ }
-};/* Data::Structure GameData::AlbumData::Photograph close */
+};/* Structure Data::Structure GameData::AlbumData::Photograph close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::ActorName> { "AlbumData.Photograph.ActorName" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::AlbumData::Photograph::FigureHash> { "AlbumData.Photograph.FigureHash" };

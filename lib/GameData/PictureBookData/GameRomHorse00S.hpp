@@ -14,6 +14,6 @@ template <> struct Data::Structure<GameData::PictureBookData::GameRomHorse00S> :
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }
 	{ }
-};/* Data::Structure GameData::PictureBookData::GameRomHorse00S close */
+};/* Structure Data::Structure GameData::PictureBookData::GameRomHorse00S close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::GameRomHorse00S::State> { "PictureBookData.GameRomHorse00S.State" };

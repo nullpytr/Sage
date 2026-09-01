@@ -123,7 +123,7 @@ struct GameData::CheckPoint_IsDisplayFoliage : Tag::Map {
 	struct CheckPoint144 : Tag::Member { using type = bool&; };
 	struct CheckPoint147 : Tag::Member { using type = bool&; };
 	using type = std::decay_t<CheckPoint000::type>;
-};/* Tag::Structure GameData::CheckPoint_IsDisplayFoliage close */
+};/* Tag::Map GameData::CheckPoint_IsDisplayFoliage close */
 
 template <> struct Data::Structure<GameData::CheckPoint_IsDisplayFoliage> : GameData::CheckPoint_IsDisplayFoliage {
 	Member<CheckPoint000> CheckPoint000;
@@ -369,7 +369,7 @@ template <> struct Data::Structure<GameData::CheckPoint_IsDisplayFoliage> : Game
 		CheckPoint144 { s.get<struct CheckPoint144>() },
 		CheckPoint147 { s.get<struct CheckPoint147>() }
 	{ }
-};/* Data::Structure GameData::CheckPoint_IsDisplayFoliage close */
+};/* Map Data::Structure GameData::CheckPoint_IsDisplayFoliage close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::CheckPoint_IsDisplayFoliage::CheckPoint000> { "CheckPoint_IsDisplayFoliage.CheckPoint000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::CheckPoint_IsDisplayFoliage::CheckPoint001> { "CheckPoint_IsDisplayFoliage.CheckPoint001" };

@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::MapData::IconData::FrontierPoint> :
 		IsValid { s.get<struct IsValid>() },
 		Pos { s.get<struct Pos>() }
 	{ }
-};/* Data::Structure GameData::MapData::IconData::FrontierPoint close */
+};/* Structure Data::Structure GameData::MapData::IconData::FrontierPoint close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::FrontierPoint::IsValid> { "MapData.IconData.FrontierPoint.IsValid" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::FrontierPoint::Pos> { "MapData.IconData.FrontierPoint.Pos" };

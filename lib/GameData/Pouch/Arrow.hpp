@@ -20,10 +20,10 @@ template <> struct Data::Structure<GameData::Pouch::Arrow> : GameData::Pouch::Ar
 	explicit Structure(Sav& s) : 
 		EquipIndex { s.get<struct EquipIndex>() },
 		IsValid { s.get<struct IsValid>() },
-		Combined { s },
-		Content { s }
+		Combined { s.get<struct Combined>() },
+		Content { s.get<struct Content>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Arrow close */
+};/* Structure Data::Structure GameData::Pouch::Arrow close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Arrow::EquipIndex> { "Pouch.Arrow.EquipIndex" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Arrow::IsValid> { "Pouch.Arrow.IsValid" };

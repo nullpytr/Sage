@@ -11,6 +11,6 @@ template <> struct Data::Structure<GameData::Pouch::SpecialPower::Content> : Gam
 	explicit Structure(Sav& s) : 
 		Name { s.get<struct Name>() }
 	{ }
-};/* Data::Structure GameData::Pouch::SpecialPower::Content close */
+};/* Structure Data::Structure GameData::Pouch::SpecialPower::Content close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::Content::Name> { "Pouch.SpecialPower.Content.Name" };

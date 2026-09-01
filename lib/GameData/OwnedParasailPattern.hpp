@@ -167,7 +167,7 @@ template <> struct Data::Structure<GameData::OwnedParasailPattern> : GameData::O
 		Pattern55 { s.get<struct Pattern55>() },
 		Pattern56 { s.get<struct Pattern56>() }
 	{ }
-};/* Data::Structure GameData::OwnedParasailPattern close */
+};/* Structure Data::Structure GameData::OwnedParasailPattern close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedParasailPattern::Default> { "OwnedParasailPattern.Default" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedParasailPattern::Pattern00> { "OwnedParasailPattern.Pattern00" };

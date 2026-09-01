@@ -47,9 +47,9 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion::Water> : G
 		IsSummon { s.get<struct IsSummon>() },
 		RemainingEnergy { s.get<struct RemainingEnergy>() },
 		JoiningCondition { s.get<struct JoiningCondition>() },
-		ForUI { s }
+		ForUI { s.get<struct ForUI>() }
 	{ }
-};/* Data::Structure GameData::PlayerStatus::Companion::Water close */
+};/* Structure Data::Structure GameData::PlayerStatus::Companion::Water close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Water::CurrentPos> { "PlayerStatus.Companion.Water.CurrentPos" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Water::IsFollowMode> { "PlayerStatus.Companion.Water.IsFollowMode" };

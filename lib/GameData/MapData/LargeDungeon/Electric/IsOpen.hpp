@@ -11,7 +11,7 @@ struct GameData::MapData::LargeDungeon::Electric::IsOpen : Tag::Map {
 	struct Group006 : Tag::Member { using type = bool&; };
 	struct Group007 : Tag::Member { using type = bool&; };
 	using type = std::decay_t<Group000::type>;
-};/* Tag::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
+};/* Tag::Map GameData::MapData::LargeDungeon::Electric::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric::IsOpen> : GameData::MapData::LargeDungeon::Electric::IsOpen {
 	Member<Group000> Group000;
@@ -33,7 +33,7 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric::Is
 		Group006 { s.get<struct Group006>() },
 		Group007 { s.get<struct Group007>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
+};/* Map Data::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group000> { "MapData.LargeDungeon.Electric.IsOpen.Group000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group001> { "MapData.LargeDungeon.Electric.IsOpen.Group001" };

@@ -14,6 +14,6 @@ template <> struct Data::Structure<GameData::PictureBookData::Enemy_Giant_Senior
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }
 	{ }
-};/* Data::Structure GameData::PictureBookData::Enemy_Giant_Senior close */
+};/* Structure Data::Structure GameData::PictureBookData::Enemy_Giant_Senior close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::Enemy_Giant_Senior::State> { "PictureBookData.Enemy_Giant_Senior.State" };

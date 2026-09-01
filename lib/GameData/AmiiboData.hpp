@@ -11,6 +11,6 @@ template <> struct Data::Structure<GameData::AmiiboData> : GameData::AmiiboData 
 	Structure<TouchLog> TouchLog;
 	
 	explicit Structure(Sav& s) : 
-		TouchLog { s }
+		TouchLog { s.get<struct TouchLog>() }
 	{ }
-};/* Data::Structure GameData::AmiiboData close */
+};/* Structure Data::Structure GameData::AmiiboData close */

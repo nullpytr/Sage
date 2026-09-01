@@ -41,7 +41,7 @@ template <> struct Data::Structure<GameData::World> : GameData::World {
 		WeatherForecast { s.get<struct WeatherForecast>() },
 		ZonauRespawnTimer { s.get<struct ZonauRespawnTimer>() }
 	{ }
-};/* Data::Structure GameData::World close */
+};/* Structure Data::Structure GameData::World close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::World::BloodyMoonTimer> { "World_BloodyMoonTimer" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::World::CurrentDateTime> { "World_CurrentDateTime" };

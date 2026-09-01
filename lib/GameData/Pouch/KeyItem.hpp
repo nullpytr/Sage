@@ -14,8 +14,8 @@ template <> struct Data::Structure<GameData::Pouch::KeyItem> : GameData::Pouch::
 	
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },
-		Content { s }
+		Content { s.get<struct Content>() }
 	{ }
-};/* Data::Structure GameData::Pouch::KeyItem close */
+};/* Structure Data::Structure GameData::Pouch::KeyItem close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::KeyItem::IsValid> { "Pouch.KeyItem.IsValid" };

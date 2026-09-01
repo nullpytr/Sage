@@ -62,10 +62,10 @@ template <> struct Data::Structure<GameData::LastWildHorse> : GameData::LastWild
 		Mane { s.get<struct Mane>() },
 		Rein { s.get<struct Rein>() },
 		Saddle { s.get<struct Saddle>() },
-		Body { s },
-		Hair { s }
+		Body { s.get<struct Body>() },
+		Hair { s.get<struct Hair>() }
 	{ }
-};/* Data::Structure GameData::LastWildHorse close */
+};/* Structure Data::Structure GameData::LastWildHorse close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::ActorName> { "LastWildHorse.ActorName" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::ChargeNum> { "LastWildHorse.ChargeNum" };

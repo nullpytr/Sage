@@ -26,11 +26,11 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon> : GameData::
 	Structure<Wind> Wind;
 	
 	explicit Structure(Sav& s) : 
-		Electric { s },
-		Fire { s },
-		Soul { s },
-		Test { s },
-		Water { s },
-		Wind { s }
+		Electric { s.get<struct Electric>() },
+		Fire { s.get<struct Fire>() },
+		Soul { s.get<struct Soul>() },
+		Test { s.get<struct Test>() },
+		Water { s.get<struct Water>() },
+		Wind { s.get<struct Wind>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon close */
+};/* Structure Data::Structure GameData::MapData::LargeDungeon close */

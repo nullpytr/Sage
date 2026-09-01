@@ -35,7 +35,7 @@ template <> struct Data::Structure<GameData::ActionGuide_IsNew> : GameData::Acti
 		UseAmiibo { s.get<struct UseAmiibo>() },
 		UseCameraPointer { s.get<struct UseCameraPointer>() }
 	{ }
-};/* Data::Structure GameData::ActionGuide_IsNew close */
+};/* Structure Data::Structure GameData::ActionGuide_IsNew close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::Backflip> { "ActionGuide_IsNew.Backflip" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::ActionGuide_IsNew::ChargrAttack> { "ActionGuide_IsNew.ChargrAttack" };

@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::DeadHorseList::Hair> : GameData::De
 	Structure<SecondaryColor> SecondaryColor;
 	
 	explicit Structure(Sav& s) : 
-		PrimaryColor { s },
-		SecondaryColor { s }
+		PrimaryColor { s.get<struct PrimaryColor>() },
+		SecondaryColor { s.get<struct SecondaryColor>() }
 	{ }
-};/* Data::Structure GameData::DeadHorseList::Hair close */
+};/* Structure Data::Structure GameData::DeadHorseList::Hair close */

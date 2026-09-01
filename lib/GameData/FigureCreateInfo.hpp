@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::FigureCreateInfo> : GameData::Figur
 		Position { s.get<struct Position>() },
 		Rot { s.get<struct Rot>() }
 	{ }
-};/* Data::Structure GameData::FigureCreateInfo close */
+};/* Structure Data::Structure GameData::FigureCreateInfo close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::FigureCreateInfo::Position> { "FigureCreateInfo.Position" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::FigureCreateInfo::Rot> { "FigureCreateInfo.Rot" };

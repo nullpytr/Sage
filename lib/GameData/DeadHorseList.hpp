@@ -68,10 +68,10 @@ template <> struct Data::Structure<GameData::DeadHorseList> : GameData::DeadHors
 		Mane { s.get<struct Mane>() },
 		Rein { s.get<struct Rein>() },
 		Saddle { s.get<struct Saddle>() },
-		Body { s },
-		Hair { s }
+		Body { s.get<struct Body>() },
+		Hair { s.get<struct Hair>() }
 	{ }
-};/* Data::Structure GameData::DeadHorseList close */
+};/* Structure Data::Structure GameData::DeadHorseList close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::ActorName> { "DeadHorseList.ActorName" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::DeadHorseList::ChargeNum> { "DeadHorseList.ChargeNum" };

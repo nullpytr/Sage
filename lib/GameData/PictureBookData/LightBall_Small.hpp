@@ -14,6 +14,6 @@ template <> struct Data::Structure<GameData::PictureBookData::LightBall_Small> :
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }
 	{ }
-};/* Data::Structure GameData::PictureBookData::LightBall_Small close */
+};/* Structure Data::Structure GameData::PictureBookData::LightBall_Small close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::LightBall_Small::State> { "PictureBookData.LightBall_Small.State" };

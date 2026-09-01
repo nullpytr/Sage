@@ -11,6 +11,6 @@ template <> struct Data::Structure<GameData::AlbumData> : GameData::AlbumData {
 	Structure<Photograph> Photograph;
 	
 	explicit Structure(Sav& s) : 
-		Photograph { s }
+		Photograph { s.get<struct Photograph>() }
 	{ }
-};/* Data::Structure GameData::AlbumData close */
+};/* Structure Data::Structure GameData::AlbumData close */

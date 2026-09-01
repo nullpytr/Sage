@@ -26,10 +26,10 @@ template <> struct Data::Structure<GameData::Pouch::Weapon::Content> : GameData:
 		Life { s.get<struct Life>() },
 		Name { s.get<struct Name>() },
 		RecordExtraLife { s.get<struct RecordExtraLife>() },
-		Combined { s },
-		Effect { s }
+		Combined { s.get<struct Combined>() },
+		Effect { s.get<struct Effect>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Weapon::Content close */
+};/* Structure Data::Structure GameData::Pouch::Weapon::Content close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::ExtraLife> { "Pouch.Weapon.Content.ExtraLife" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Weapon::Content::Life> { "Pouch.Weapon.Content.Life" };

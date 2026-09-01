@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::Pouch::SpecialParts::Content> : Gam
 		StockNum { s.get<struct StockNum>() },
 		UseOrder { s.get<struct UseOrder>() }
 	{ }
-};/* Data::Structure GameData::Pouch::SpecialParts::Content close */
+};/* Structure Data::Structure GameData::Pouch::SpecialParts::Content close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::Content::Name> { "Pouch.SpecialParts.Content.Name" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::Content::StockNum> { "Pouch.SpecialParts.Content.StockNum" };

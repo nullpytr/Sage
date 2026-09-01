@@ -1718,7 +1718,7 @@ template <> struct Data::Structure<GameData::ChallengeLogState_Challenge> : Game
 		Zora_RuttaTreasure { s.get<struct Zora_RuttaTreasure>() },
 		gather_Insect_Z { s.get<struct gather_Insect_Z>() }
 	{ }
-};/* Data::Structure GameData::ChallengeLogState_Challenge close */
+};/* Structure Data::Structure GameData::ChallengeLogState_Challenge close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::AisyaRescue> { "ChallengeLogState_Challenge.AisyaRescue" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::ChallengeLogState_Challenge::AmberCollector> { "ChallengeLogState_Challenge.AmberCollector" };

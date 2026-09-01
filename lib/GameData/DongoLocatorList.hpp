@@ -20,7 +20,7 @@ template <> struct Data::Structure<GameData::DongoLocatorList> : GameData::Dongo
 		PutItemId { s.get<struct PutItemId>() },
 		UseFirstItemList { s.get<struct UseFirstItemList>() }
 	{ }
-};/* Data::Structure GameData::DongoLocatorList close */
+};/* Structure Data::Structure GameData::DongoLocatorList close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::DongoLocatorList::DongoID> { "DongoLocatorList.DongoID" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::DongoLocatorList::LocatorID> { "DongoLocatorList.LocatorID" };

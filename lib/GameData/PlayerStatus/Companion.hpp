@@ -23,10 +23,10 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion> : GameData
 	Structure<Wind> Wind;
 	
 	explicit Structure(Sav& s) : 
-		Electric { s },
-		Fire { s },
-		Soul { s },
-		Water { s },
-		Wind { s }
+		Electric { s.get<struct Electric>() },
+		Fire { s.get<struct Fire>() },
+		Soul { s.get<struct Soul>() },
+		Water { s.get<struct Water>() },
+		Wind { s.get<struct Wind>() }
 	{ }
-};/* Data::Structure GameData::PlayerStatus::Companion close */
+};/* Structure Data::Structure GameData::PlayerStatus::Companion close */

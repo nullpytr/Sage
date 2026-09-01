@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::Pouch::Armor::EquipIndexes> : GameD
 		Head { s.get<struct Head>() },
 		Upper { s.get<struct Upper>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Armor::EquipIndexes close */
+};/* Structure Data::Structure GameData::Pouch::Armor::EquipIndexes close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::EquipIndexes::Bottom> { "Pouch.Armor.EquipIndexes.Bottom" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::EquipIndexes::Head> { "Pouch.Armor.EquipIndexes.Head" };

@@ -101,7 +101,7 @@ template <> struct Data::Structure<GameData::IsFindTreasureMap> : GameData::IsFi
 		Weapon_Sword_058 { s.get<struct Weapon_Sword_058>() },
 		Weapon_Sword_059 { s.get<struct Weapon_Sword_059>() }
 	{ }
-};/* Data::Structure GameData::IsFindTreasureMap close */
+};/* Structure Data::Structure GameData::IsFindTreasureMap close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsFindTreasureMap::Armor_005_Head> { "IsFindTreasureMap.Armor_005_Head" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsFindTreasureMap::Armor_005_Lower> { "IsFindTreasureMap.Armor_005_Lower" };

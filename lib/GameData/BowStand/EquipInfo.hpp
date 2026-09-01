@@ -11,6 +11,6 @@ template <> struct Data::Structure<GameData::BowStand::EquipInfo> : GameData::Bo
 	Structure<Content> Content;
 	
 	explicit Structure(Sav& s) : 
-		Content { s }
+		Content { s.get<struct Content>() }
 	{ }
-};/* Data::Structure GameData::BowStand::EquipInfo close */
+};/* Structure Data::Structure GameData::BowStand::EquipInfo close */

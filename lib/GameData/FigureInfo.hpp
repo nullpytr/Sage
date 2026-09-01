@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::FigureInfo> : GameData::FigureInfo 
 		Body { s.get<struct Body>() },
 		Header { s.get<struct Header>() }
 	{ }
-};/* Data::Structure GameData::FigureInfo close */
+};/* Structure Data::Structure GameData::FigureInfo close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::FigureInfo::Body> { "FigureInfo.Body" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::FigureInfo::Header> { "FigureInfo.Header" };

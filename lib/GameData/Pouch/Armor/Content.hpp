@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::Pouch::Armor::Content> : GameData::
 		Name { s.get<struct Name>() },
 		ColorVariation { s.get<struct ColorVariation>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Armor::Content close */
+};/* Structure Data::Structure GameData::Pouch::Armor::Content close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::Content::Name> { "Pouch.Armor.Content.Name" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Armor::Content::ColorVariation> { "Pouch.Armor.Content.ColorVariation" };

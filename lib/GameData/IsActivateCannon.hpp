@@ -18,7 +18,7 @@ struct GameData::IsActivateCannon : Tag::Map {
 	struct Tower14 : Tag::Member { using type = bool&; };
 	struct Tower15 : Tag::Member { using type = bool&; };
 	using type = std::decay_t<Tower01::type>;
-};/* Tag::Structure GameData::IsActivateCannon close */
+};/* Tag::Map GameData::IsActivateCannon close */
 
 template <> struct Data::Structure<GameData::IsActivateCannon> : GameData::IsActivateCannon {
 	Member<Tower01> Tower01;
@@ -54,7 +54,7 @@ template <> struct Data::Structure<GameData::IsActivateCannon> : GameData::IsAct
 		Tower14 { s.get<struct Tower14>() },
 		Tower15 { s.get<struct Tower15>() }
 	{ }
-};/* Data::Structure GameData::IsActivateCannon close */
+};/* Map Data::Structure GameData::IsActivateCannon close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower01> { "IsActivateCannon.Tower01" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsActivateCannon::Tower02> { "IsActivateCannon.Tower02" };

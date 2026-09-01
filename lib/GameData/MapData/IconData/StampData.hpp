@@ -23,7 +23,7 @@ template <> struct Data::Structure<GameData::MapData::IconData::StampData> : Gam
 		Layer { s.get<struct Layer>() },
 		Type { s.get<struct Type>() }
 	{ }
-};/* Data::Structure GameData::MapData::IconData::StampData close */
+};/* Structure Data::Structure GameData::MapData::IconData::StampData close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::StampData::Pos> { "MapData.IconData.StampData.Pos" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::StampData::Layer> { "MapData.IconData.StampData.Layer" };

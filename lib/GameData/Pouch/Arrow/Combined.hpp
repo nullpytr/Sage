@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::Pouch::Arrow::Combined> : GameData:
 		Life { s.get<struct Life>() },
 		Name { s.get<struct Name>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Arrow::Combined close */
+};/* Structure Data::Structure GameData::Pouch::Arrow::Combined close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Arrow::Combined::Life> { "Pouch.Arrow.Combined.Life" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Arrow::Combined::Name> { "Pouch.Arrow.Combined.Name" };

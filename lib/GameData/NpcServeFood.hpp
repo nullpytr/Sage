@@ -32,7 +32,7 @@ template <> struct Data::Structure<GameData::NpcServeFood> : GameData::NpcServeF
 		NextIndex { s.get<struct NextIndex>() },
 		Price { s.get<struct Price>() }
 	{ }
-};/* Data::Structure GameData::NpcServeFood close */
+};/* Structure Data::Structure GameData::NpcServeFood close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::CurIndex> { "NpcServeFood.CurIndex" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::NpcServeFood::FoodMaterialNames> { "NpcServeFood.FoodMaterialNames" };

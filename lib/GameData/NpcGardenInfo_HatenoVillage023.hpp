@@ -26,7 +26,7 @@ template <> struct Data::Structure<GameData::NpcGardenInfo_HatenoVillage023> : G
 		LastGrowActorName { s.get<struct LastGrowActorName>() },
 		CurrentState { s.get<struct CurrentState>() }
 	{ }
-};/* Data::Structure GameData::NpcGardenInfo_HatenoVillage023 close */
+};/* Structure Data::Structure GameData::NpcGardenInfo_HatenoVillage023 close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::GrowActorName> { "NpcGardenInfo_HatenoVillage023.GrowActorName" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo_HatenoVillage023::GrowthElapsedTime> { "NpcGardenInfo_HatenoVillage023.GrowthElapsedTime" };

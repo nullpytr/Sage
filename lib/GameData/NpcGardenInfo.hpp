@@ -26,7 +26,7 @@ template <> struct Data::Structure<GameData::NpcGardenInfo> : GameData::NpcGarde
 		LastGrowActorName { s.get<struct LastGrowActorName>() },
 		CurrentState { s.get<struct CurrentState>() }
 	{ }
-};/* Data::Structure GameData::NpcGardenInfo close */
+};/* Structure Data::Structure GameData::NpcGardenInfo close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo::GrowActorName> { "NpcGardenInfo.GrowActorName" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::NpcGardenInfo::GrowthElapsedTime> { "NpcGardenInfo.GrowthElapsedTime" };

@@ -65,7 +65,7 @@ template <> struct Data::Structure<GameData::ReplaceblePicture> : GameData::Repl
 		SouthHatago { s.get<struct SouthHatago>() },
 		TabantaBridgeHatago { s.get<struct TabantaBridgeHatago>() }
 	{ }
-};/* Data::Structure GameData::ReplaceblePicture close */
+};/* Structure Data::Structure GameData::ReplaceblePicture close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::DeathMountainHatago> { "ReplaceblePicture.DeathMountainHatago" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::ReplaceblePicture::EastHatago> { "ReplaceblePicture.EastHatago" };

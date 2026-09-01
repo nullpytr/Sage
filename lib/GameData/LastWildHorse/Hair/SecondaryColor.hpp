@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::LastWildHorse::Hair::SecondaryColor
 		Green { s.get<struct Green>() },
 		Red { s.get<struct Red>() }
 	{ }
-};/* Data::Structure GameData::LastWildHorse::Hair::SecondaryColor close */
+};/* Structure Data::Structure GameData::LastWildHorse::Hair::SecondaryColor close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Hair::SecondaryColor::Blue> { "LastWildHorse.Hair.SecondaryColor.Blue" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::LastWildHorse::Hair::SecondaryColor::Green> { "LastWildHorse.Hair.SecondaryColor.Green" };

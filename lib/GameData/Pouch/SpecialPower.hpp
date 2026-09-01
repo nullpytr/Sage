@@ -17,9 +17,9 @@ template <> struct Data::Structure<GameData::Pouch::SpecialPower> : GameData::Po
 	explicit Structure(Sav& s) : 
 		IsValid { s.get<struct IsValid>() },
 		ValidNum { s.get<struct ValidNum>() },
-		Content { s }
+		Content { s.get<struct Content>() }
 	{ }
-};/* Data::Structure GameData::Pouch::SpecialPower close */
+};/* Structure Data::Structure GameData::Pouch::SpecialPower close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::IsValid> { "Pouch.SpecialPower.IsValid" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialPower::ValidNum> { "Pouch.SpecialPower.ValidNum" };

@@ -611,7 +611,7 @@ struct GameData::KeyCrystalDungeonState : Tag::Map {
 		using type = enum_t<Dungeon151>&;
 	};
 	using type = std::decay_t<Dungeon000::type>;
-};/* Tag::Structure GameData::KeyCrystalDungeonState close */
+};/* Tag::Map GameData::KeyCrystalDungeonState close */
 
 template <> struct Data::Structure<GameData::KeyCrystalDungeonState> : GameData::KeyCrystalDungeonState {
 	Enum<Dungeon000> Dungeon000;
@@ -921,7 +921,7 @@ template <> struct Data::Structure<GameData::KeyCrystalDungeonState> : GameData:
 		Dungeon150 { s.get<struct Dungeon150>() },
 		Dungeon151 { s.get<struct Dungeon151>() }
 	{ }
-};/* Data::Structure GameData::KeyCrystalDungeonState close */
+};/* Map Data::Structure GameData::KeyCrystalDungeonState close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonState::Dungeon000> { "KeyCrystalDungeonState.Dungeon000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonState::Dungeon001> { "KeyCrystalDungeonState.Dungeon001" };

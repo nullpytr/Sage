@@ -23,10 +23,10 @@ template <> struct Data::Structure<GameData::CustomHouse> : GameData::CustomHous
 		IsBuildMode { s.get<struct IsBuildMode>() },
 		OwnHouseUnitCount { s.get<struct OwnHouseUnitCount>() },
 		UsedHouseUnitNumAll { s.get<struct UsedHouseUnitNumAll>() },
-		BondInfo { s },
-		HouseUnitInfo { s }
+		BondInfo { s.get<struct BondInfo>() },
+		HouseUnitInfo { s.get<struct HouseUnitInfo>() }
 	{ }
-};/* Data::Structure GameData::CustomHouse close */
+};/* Structure Data::Structure GameData::CustomHouse close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::IsBuildMode> { "CustomHouse.IsBuildMode" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::OwnHouseUnitCount> { "CustomHouse.OwnHouseUnitCount" };

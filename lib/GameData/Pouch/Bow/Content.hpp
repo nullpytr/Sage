@@ -17,9 +17,9 @@ template <> struct Data::Structure<GameData::Pouch::Bow::Content> : GameData::Po
 	explicit Structure(Sav& s) : 
 		Life { s.get<struct Life>() },
 		Name { s.get<struct Name>() },
-		Effect { s }
+		Effect { s.get<struct Effect>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Bow::Content close */
+};/* Structure Data::Structure GameData::Pouch::Bow::Content close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Life> { "Pouch.Bow.Content.Life" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Bow::Content::Name> { "Pouch.Bow.Content.Name" };

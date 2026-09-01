@@ -23,9 +23,9 @@ template <> struct Data::Structure<GameData::Pouch::Shield> : GameData::Pouch::S
 		IsEnableShortcut { s.get<struct IsEnableShortcut>() },
 		IsValid { s.get<struct IsValid>() },
 		ValidNum { s.get<struct ValidNum>() },
-		Content { s }
+		Content { s.get<struct Content>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Shield close */
+};/* Structure Data::Structure GameData::Pouch::Shield close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Shield::EquipIndex> { "Pouch.Shield.EquipIndex" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Shield::IsEnableShortcut> { "Pouch.Shield.IsEnableShortcut" };

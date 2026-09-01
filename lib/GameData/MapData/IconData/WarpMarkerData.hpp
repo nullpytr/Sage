@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::MapData::IconData::WarpMarkerData> 
 		Pos { s.get<struct Pos>() },
 		Rot { s.get<struct Rot>() }
 	{ }
-};/* Data::Structure GameData::MapData::IconData::WarpMarkerData close */
+};/* Structure Data::Structure GameData::MapData::IconData::WarpMarkerData close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Index> { "MapData.IconData.WarpMarkerData.Index" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IconData::WarpMarkerData::Pos> { "MapData.IconData.WarpMarkerData.Pos" };

@@ -20,7 +20,7 @@ template <> struct Data::Structure<GameData::Pouch::Food::Content::Effect> : Gam
 		Time { s.get<struct Time>() },
 		Type { s.get<struct Type>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Food::Content::Effect close */
+};/* Structure Data::Structure GameData::Pouch::Food::Content::Effect close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Effect::Level> { "Pouch.Food.Content.Effect.Level" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::Effect::Time> { "Pouch.Food.Content.Effect.Time" };

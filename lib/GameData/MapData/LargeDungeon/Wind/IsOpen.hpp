@@ -11,7 +11,7 @@ struct GameData::MapData::LargeDungeon::Wind::IsOpen : Tag::Map {
 	struct Group008 : Tag::Member { using type = bool&; };
 	struct Group009 : Tag::Member { using type = bool&; };
 	using type = std::decay_t<Group002::type>;
-};/* Tag::Structure GameData::MapData::LargeDungeon::Wind::IsOpen close */
+};/* Tag::Map GameData::MapData::LargeDungeon::Wind::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind::IsOpen> : GameData::MapData::LargeDungeon::Wind::IsOpen {
 	Member<Group002> Group002;
@@ -33,7 +33,7 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind::IsOpen
 		Group008 { s.get<struct Group008>() },
 		Group009 { s.get<struct Group009>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon::Wind::IsOpen close */
+};/* Map Data::Structure GameData::MapData::LargeDungeon::Wind::IsOpen close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group002> { "MapData.LargeDungeon.Wind.IsOpen.Group002" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Wind::IsOpen::Group003> { "MapData.LargeDungeon.Wind.IsOpen.Group003" };

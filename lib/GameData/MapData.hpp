@@ -32,10 +32,10 @@ template <> struct Data::Structure<GameData::MapData> : GameData::MapData {
 		IsOpenGround { s.get<struct IsOpenGround>() },
 		IsOpenUnderGround { s.get<struct IsOpenUnderGround>() },
 		CurrentLayer { s.get<struct CurrentLayer>() },
-		IconData { s },
-		LargeDungeon { s }
+		IconData { s.get<struct IconData>() },
+		LargeDungeon { s.get<struct LargeDungeon>() }
 	{ }
-};/* Data::Structure GameData::MapData close */
+};/* Structure Data::Structure GameData::MapData close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IsGerudoIconEnable> { "MapData.IsGerudoIconEnable" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::IsOpenFootprintMode> { "MapData.IsOpenFootprintMode" };

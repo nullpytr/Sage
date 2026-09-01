@@ -20,7 +20,7 @@ template <> struct Data::Structure<GameData::Pouch::Material::Content> : GameDat
 		StockNum { s.get<struct StockNum>() },
 		UseOrder { s.get<struct UseOrder>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Material::Content close */
+};/* Structure Data::Structure GameData::Pouch::Material::Content close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::GetOrder> { "Pouch.Material.Content.GetOrder" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Material::Content::Name> { "Pouch.Material.Content.Name" };

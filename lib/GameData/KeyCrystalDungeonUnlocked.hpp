@@ -36,7 +36,7 @@ struct GameData::KeyCrystalDungeonUnlocked : Tag::Map {
 	struct Dungeon150 : Tag::Member { using type = bool&; };
 	struct Dungeon151 : Tag::Member { using type = bool&; };
 	using type = std::decay_t<Dungeon000::type>;
-};/* Tag::Structure GameData::KeyCrystalDungeonUnlocked close */
+};/* Tag::Map GameData::KeyCrystalDungeonUnlocked close */
 
 template <> struct Data::Structure<GameData::KeyCrystalDungeonUnlocked> : GameData::KeyCrystalDungeonUnlocked {
 	Member<Dungeon000> Dungeon000;
@@ -108,7 +108,7 @@ template <> struct Data::Structure<GameData::KeyCrystalDungeonUnlocked> : GameDa
 		Dungeon150 { s.get<struct Dungeon150>() },
 		Dungeon151 { s.get<struct Dungeon151>() }
 	{ }
-};/* Data::Structure GameData::KeyCrystalDungeonUnlocked close */
+};/* Map Data::Structure GameData::KeyCrystalDungeonUnlocked close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonUnlocked::Dungeon000> { "KeyCrystalDungeonUnlocked.Dungeon000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonUnlocked::Dungeon006> { "KeyCrystalDungeonUnlocked.Dungeon006" };

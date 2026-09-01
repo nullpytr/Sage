@@ -35,7 +35,7 @@ template <> struct Data::Structure<GameData::OwnedCustomizableHorseTack_Saddle> 
 		GameRomHorseSaddle_07_ExternalCoupler { s.get<struct GameRomHorseSaddle_07_ExternalCoupler>() },
 		GameRomHorseSaddle_07_WithWagon { s.get<struct GameRomHorseSaddle_07_WithWagon>() }
 	{ }
-};/* Data::Structure GameData::OwnedCustomizableHorseTack_Saddle close */
+};/* Structure Data::Structure GameData::OwnedCustomizableHorseTack_Saddle close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_00> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_00" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedCustomizableHorseTack_Saddle::GameRomHorseSaddle_01> { "OwnedCustomizableHorseTack_Saddle.GameRomHorseSaddle_01" };

@@ -1760,7 +1760,7 @@ template <> struct Data::Structure<GameData::Step> : GameData::Step {
 		Zora_RuttaTreasure { s.get<struct Zora_RuttaTreasure>() },
 		gather_Insect_Z { s.get<struct gather_Insect_Z>() }
 	{ }
-};/* Data::Structure GameData::Step close */
+};/* Structure Data::Structure GameData::Step close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Step::AisyaRescue> { "Step_AisyaRescue" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Step::AmberCollector> { "Step_AmberCollector" };

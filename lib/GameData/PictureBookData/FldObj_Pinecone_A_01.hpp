@@ -14,6 +14,6 @@ template <> struct Data::Structure<GameData::PictureBookData::FldObj_Pinecone_A_
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }
 	{ }
-};/* Data::Structure GameData::PictureBookData::FldObj_Pinecone_A_01 close */
+};/* Structure Data::Structure GameData::PictureBookData::FldObj_Pinecone_A_01 close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::FldObj_Pinecone_A_01::State> { "PictureBookData.FldObj_Pinecone_A_01.State" };

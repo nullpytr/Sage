@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::LastWildHorse::Hair> : GameData::La
 	Structure<SecondaryColor> SecondaryColor;
 	
 	explicit Structure(Sav& s) : 
-		PrimaryColor { s },
-		SecondaryColor { s }
+		PrimaryColor { s.get<struct PrimaryColor>() },
+		SecondaryColor { s.get<struct SecondaryColor>() }
 	{ }
-};/* Data::Structure GameData::LastWildHorse::Hair close */
+};/* Structure Data::Structure GameData::LastWildHorse::Hair close */

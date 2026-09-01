@@ -47,7 +47,7 @@ template <> struct Data::Structure<GameData::AmiiboData::TouchLog> : GameData::A
 		CharacterID { s.get<struct CharacterID>() },
 		NumberingID { s.get<struct NumberingID>() }
 	{ }
-};/* Data::Structure GameData::AmiiboData::TouchLog close */
+};/* Structure Data::Structure GameData::AmiiboData::TouchLog close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Count> { "AmiiboData.TouchLog.Count" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::AmiiboData::TouchLog::Day> { "AmiiboData.TouchLog.Day" };

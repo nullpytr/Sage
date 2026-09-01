@@ -14,8 +14,8 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_657436035661352574
 	
 	explicit Structure(Sav& s) : 
 		IsVisit { s.get<struct IsVisit>() },
-		EjectNum { s }
+		EjectNum { s.get<struct EjectNum>() }
 	{ }
-};/* Data::Structure GameData::RecycleBoxData::_6574360356613525746 close */
+};/* Structure Data::Structure GameData::RecycleBoxData::_6574360356613525746 close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_6574360356613525746::IsVisit> { "RecycleBoxData.6574360356613525746.IsVisit" };

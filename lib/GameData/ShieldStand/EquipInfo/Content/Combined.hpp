@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::ShieldStand::EquipInfo::Content::Co
 		Life { s.get<struct Life>() },
 		Name { s.get<struct Name>() }
 	{ }
-};/* Data::Structure GameData::ShieldStand::EquipInfo::Content::Combined close */
+};/* Structure Data::Structure GameData::ShieldStand::EquipInfo::Content::Combined close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Combined::Life> { "ShieldStand.EquipInfo.Content.Combined.Life" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::ShieldStand::EquipInfo::Content::Combined::Name> { "ShieldStand.EquipInfo.Content.Combined.Name" };

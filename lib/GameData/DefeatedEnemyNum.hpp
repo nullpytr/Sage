@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::DefeatedEnemyNum> : GameData::Defea
 		Enemy_CaveMaster_Middle { s.get<struct Enemy_CaveMaster_Middle>() },
 		Enemy_CaveMaster_Senior { s.get<struct Enemy_CaveMaster_Senior>() }
 	{ }
-};/* Data::Structure GameData::DefeatedEnemyNum close */
+};/* Structure Data::Structure GameData::DefeatedEnemyNum close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::DefeatedEnemyNum::Enemy_CaveMaster_000> { "DefeatedEnemyNum.Enemy_CaveMaster_000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::DefeatedEnemyNum::Enemy_CaveMaster_Middle> { "DefeatedEnemyNum.Enemy_CaveMaster_Middle" };

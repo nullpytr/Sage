@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::BowStand::EquipInfo::Content::Effec
 		Value { s.get<struct Value>() },
 		Type { s.get<struct Type>() }
 	{ }
-};/* Data::Structure GameData::BowStand::EquipInfo::Content::Effect close */
+};/* Structure Data::Structure GameData::BowStand::EquipInfo::Content::Effect close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::BowStand::EquipInfo::Content::Effect::Value> { "BowStand.EquipInfo.Content.Effect.Value" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::BowStand::EquipInfo::Content::Effect::Type> { "BowStand.EquipInfo.Content.Effect.Type" };

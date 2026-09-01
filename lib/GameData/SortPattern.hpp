@@ -80,7 +80,7 @@ template <> struct Data::Structure<GameData::SortPattern> : GameData::SortPatter
 		ShortCut_Shield { s.get<struct ShortCut_Shield>() },
 		ShortCut_Weapon { s.get<struct ShortCut_Weapon>() }
 	{ }
-};/* Data::Structure GameData::SortPattern close */
+};/* Structure Data::Structure GameData::SortPattern close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Armor> { "SortPattern.Pouch_Armor" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::SortPattern::Pouch_Bow> { "SortPattern.Pouch_Bow" };

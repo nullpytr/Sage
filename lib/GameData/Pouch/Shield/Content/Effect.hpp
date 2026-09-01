@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::Pouch::Shield::Content::Effect> : G
 		Value { s.get<struct Value>() },
 		Type { s.get<struct Type>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Shield::Content::Effect close */
+};/* Structure Data::Structure GameData::Pouch::Shield::Content::Effect close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Shield::Content::Effect::Value> { "Pouch.Shield.Content.Effect.Value" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Shield::Content::Effect::Type> { "Pouch.Shield.Content.Effect.Type" };

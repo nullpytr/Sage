@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::CustomHouse::BondInfo> : GameData::
 		UnitAIndex { s.get<struct UnitAIndex>() },
 		UnitBIndex { s.get<struct UnitBIndex>() }
 	{ }
-};/* Data::Structure GameData::CustomHouse::BondInfo close */
+};/* Structure Data::Structure GameData::CustomHouse::BondInfo close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::BondInfo::UnitAIndex> { "CustomHouse.BondInfo.UnitAIndex" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::BondInfo::UnitBIndex> { "CustomHouse.BondInfo.UnitBIndex" };

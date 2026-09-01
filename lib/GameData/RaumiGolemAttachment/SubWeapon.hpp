@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::RaumiGolemAttachment::SubWeapon> : 
 		Name { s.get<struct Name>() },
 		RaumiControlLife { s.get<struct RaumiControlLife>() }
 	{ }
-};/* Data::Structure GameData::RaumiGolemAttachment::SubWeapon close */
+};/* Structure Data::Structure GameData::RaumiGolemAttachment::SubWeapon close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubWeapon::Life> { "RaumiGolemAttachment.SubWeapon.Life" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::RaumiGolemAttachment::SubWeapon::Name> { "RaumiGolemAttachment.SubWeapon.Name" };

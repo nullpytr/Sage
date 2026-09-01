@@ -125,9 +125,9 @@ template <> struct Data::Structure<GameData::PlayerStatus> : GameData::PlayerSta
 		ZonauEventFailureOnce { s.get<struct ZonauEventFailureOnce>() },
 		CurrentSpecialPower { s.get<struct CurrentSpecialPower>() },
 		ParasailPattern { s.get<struct ParasailPattern>() },
-		Companion { s }
+		Companion { s.get<struct Companion>() }
 	{ }
-};/* Data::Structure GameData::PlayerStatus close */
+};/* Structure Data::Structure GameData::PlayerStatus close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::BreakLife> { "PlayerStatus.BreakLife" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::CookBuff> { "PlayerStatus.CookBuff" };

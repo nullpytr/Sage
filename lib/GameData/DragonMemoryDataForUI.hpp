@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::DragonMemoryDataForUI> : GameData::
 		IsNeedIcon { s.get<struct IsNeedIcon>() },
 		IsOpenList { s.get<struct IsOpenList>() }
 	{ }
-};/* Data::Structure GameData::DragonMemoryDataForUI close */
+};/* Structure Data::Structure GameData::DragonMemoryDataForUI close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::DragonMemoryDataForUI::IsNeedIcon> { "DragonMemoryDataForUI.IsNeedIcon" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::DragonMemoryDataForUI::IsOpenList> { "DragonMemoryDataForUI.IsOpenList" };

@@ -11,6 +11,6 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Soul::IsOpen
 	explicit Structure(Sav& s) : 
 		dummy { s.get<struct dummy>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon::Soul::IsOpen close */
+};/* Structure Data::Structure GameData::MapData::LargeDungeon::Soul::IsOpen close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Soul::IsOpen::dummy> { "MapData.LargeDungeon.Soul.IsOpen.dummy" };

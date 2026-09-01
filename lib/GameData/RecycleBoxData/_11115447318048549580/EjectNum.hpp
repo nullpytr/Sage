@@ -23,7 +23,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_111154473180485495
 		SpObj_SnowMachine_Capsule_A_01 { s.get<struct SpObj_SnowMachine_Capsule_A_01>() },
 		SpObj_TimerBomb_Capsule_A_01 { s.get<struct SpObj_TimerBomb_Capsule_A_01>() }
 	{ }
-};/* Data::Structure GameData::RecycleBoxData::_11115447318048549580::EjectNum close */
+};/* Structure Data::Structure GameData::RecycleBoxData::_11115447318048549580::EjectNum close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11115447318048549580::EjectNum::SpObj_Beamos_Capsule_A_01> { "RecycleBoxData.11115447318048549580.EjectNum.SpObj_Beamos_Capsule_A_01" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_11115447318048549580::EjectNum::SpObj_Chaser_Capsule_A_01> { "RecycleBoxData.11115447318048549580.EjectNum.SpObj_Chaser_Capsule_A_01" };

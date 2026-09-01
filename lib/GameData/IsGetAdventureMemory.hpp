@@ -68,7 +68,7 @@ template <> struct Data::Structure<GameData::IsGetAdventureMemory> : GameData::I
 		IsNeedIcon { s.get<struct IsNeedIcon>() },
 		IsOpenList { s.get<struct IsOpenList>() }
 	{ }
-};/* Data::Structure GameData::IsGetAdventureMemory close */
+};/* Structure Data::Structure GameData::IsGetAdventureMemory close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_OP_GanonWakeUp_PreRender_Memory> { "IsGetAdventureMemory.DmT_OP_GanonWakeUp_PreRender_Memory" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetAdventureMemory::DmT_ZE_Birth_PreRender> { "IsGetAdventureMemory.DmT_ZE_Birth_PreRender" };

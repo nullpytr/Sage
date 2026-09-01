@@ -29,11 +29,11 @@ template <> struct Data::Structure<GameData::OwnedHorseList::Body> : GameData::O
 	explicit Structure(Sav& s) : 
 		EyeColor { s.get<struct EyeColor>() },
 		Pattern { s.get<struct Pattern>() },
-		NoseColor { s },
-		PrimaryColor { s },
-		SecondaryColor { s }
+		NoseColor { s.get<struct NoseColor>() },
+		PrimaryColor { s.get<struct PrimaryColor>() },
+		SecondaryColor { s.get<struct SecondaryColor>() }
 	{ }
-};/* Data::Structure GameData::OwnedHorseList::Body close */
+};/* Structure Data::Structure GameData::OwnedHorseList::Body close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::EyeColor> { "OwnedHorseList.Body.EyeColor" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::Pattern> { "OwnedHorseList.Body.Pattern" };

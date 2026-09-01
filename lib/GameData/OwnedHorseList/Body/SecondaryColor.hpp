@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::OwnedHorseList::Body::SecondaryColo
 		Green { s.get<struct Green>() },
 		Red { s.get<struct Red>() }
 	{ }
-};/* Data::Structure GameData::OwnedHorseList::Body::SecondaryColor close */
+};/* Structure Data::Structure GameData::OwnedHorseList::Body::SecondaryColor close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Blue> { "OwnedHorseList.Body.SecondaryColor.Blue" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::Body::SecondaryColor::Green> { "OwnedHorseList.Body.SecondaryColor.Green" };

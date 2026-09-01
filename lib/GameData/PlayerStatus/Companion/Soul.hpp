@@ -47,9 +47,9 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion::Soul> : Ga
 		IsSummon { s.get<struct IsSummon>() },
 		RemainingEnergy { s.get<struct RemainingEnergy>() },
 		JoiningCondition { s.get<struct JoiningCondition>() },
-		ForUI { s }
+		ForUI { s.get<struct ForUI>() }
 	{ }
-};/* Data::Structure GameData::PlayerStatus::Companion::Soul close */
+};/* Structure Data::Structure GameData::PlayerStatus::Companion::Soul close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::CurrentPos> { "PlayerStatus.Companion.Soul.CurrentPos" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Soul::IsFollowMode> { "PlayerStatus.Companion.Soul.IsFollowMode" };

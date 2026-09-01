@@ -26,9 +26,9 @@ template <> struct Data::Structure<GameData::Pouch::Food::Content> : GameData::P
 		Name { s.get<struct Name>() },
 		Price { s.get<struct Price>() },
 		StockNum { s.get<struct StockNum>() },
-		Effect { s }
+		Effect { s.get<struct Effect>() }
 	{ }
-};/* Data::Structure GameData::Pouch::Food::Content close */
+};/* Structure Data::Structure GameData::Pouch::Food::Content close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::LifeRecover> { "Pouch.Food.Content.LifeRecover" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::Food::Content::MaterialName> { "Pouch.Food.Content.MaterialName" };

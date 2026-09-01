@@ -23,7 +23,7 @@ template <> struct Data::Structure<GameData::LightBallBud> : GameData::LightBall
 		Pos { s.get<struct Pos>() },
 		Size { s.get<struct Size>() }
 	{ }
-};/* Data::Structure GameData::LightBallBud close */
+};/* Structure Data::Structure GameData::LightBallBud close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::LightBallBud::CreatedTime> { "LightBallBud.CreatedTime" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::LightBallBud::IsValid> { "LightBallBud.IsValid" };

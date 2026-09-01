@@ -11,6 +11,6 @@ template <> struct Data::Structure<GameData::AutoBuilder> : GameData::AutoBuilde
 	Structure<Draft> Draft;
 	
 	explicit Structure(Sav& s) : 
-		Draft { s }
+		Draft { s.get<struct Draft>() }
 	{ }
-};/* Data::Structure GameData::AutoBuilder close */
+};/* Structure Data::Structure GameData::AutoBuilder close */

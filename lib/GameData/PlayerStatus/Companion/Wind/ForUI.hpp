@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::PlayerStatus::Companion::Wind::ForU
 		RemainingMinute { s.get<struct RemainingMinute>() },
 		RemainingSecond { s.get<struct RemainingSecond>() }
 	{ }
-};/* Data::Structure GameData::PlayerStatus::Companion::Wind::ForUI close */
+};/* Structure Data::Structure GameData::PlayerStatus::Companion::Wind::ForUI close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::ForUI::RemainingMinute> { "PlayerStatus.Companion.Wind.ForUI.RemainingMinute" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::PlayerStatus::Companion::Wind::ForUI::RemainingSecond> { "PlayerStatus.Companion.Wind.ForUI.RemainingSecond" };

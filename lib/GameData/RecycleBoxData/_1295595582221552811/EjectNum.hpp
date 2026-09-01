@@ -23,7 +23,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_129559558222155281
 		SpObj_SlipBoard_Capsule_A_01 { s.get<struct SpObj_SlipBoard_Capsule_A_01>() },
 		SpObj_WindGenerator_Capsule_A_01 { s.get<struct SpObj_WindGenerator_Capsule_A_01>() }
 	{ }
-};/* Data::Structure GameData::RecycleBoxData::_1295595582221552811::EjectNum close */
+};/* Structure Data::Structure GameData::RecycleBoxData::_1295595582221552811::EjectNum close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1295595582221552811::EjectNum::SpObj_Cart_Capsule_A_01> { "RecycleBoxData.1295595582221552811.EjectNum.SpObj_Cart_Capsule_A_01" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_1295595582221552811::EjectNum::SpObj_FlashLight_Capsule_A_01> { "RecycleBoxData.1295595582221552811.EjectNum.SpObj_FlashLight_Capsule_A_01" };

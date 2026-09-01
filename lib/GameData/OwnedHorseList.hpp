@@ -71,10 +71,10 @@ template <> struct Data::Structure<GameData::OwnedHorseList> : GameData::OwnedHo
 		Mane { s.get<struct Mane>() },
 		Rein { s.get<struct Rein>() },
 		Saddle { s.get<struct Saddle>() },
-		Body { s },
-		Hair { s }
+		Body { s.get<struct Body>() },
+		Hair { s.get<struct Hair>() }
 	{ }
-};/* Data::Structure GameData::OwnedHorseList close */
+};/* Structure Data::Structure GameData::OwnedHorseList close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::ActorName> { "OwnedHorseList.ActorName" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::OwnedHorseList::ChargeNum> { "OwnedHorseList.ChargeNum" };

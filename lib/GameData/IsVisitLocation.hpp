@@ -4277,7 +4277,7 @@ template <> struct Data::Structure<GameData::IsVisitLocation> : GameData::IsVisi
 		Zora_FishIsland { s.get<struct Zora_FishIsland>() },
 		Zora_Imperial_Palace { s.get<struct Zora_Imperial_Palace>() }
 	{ }
-};/* Data::Structure GameData::IsVisitLocation close */
+};/* Structure Data::Structure GameData::IsVisitLocation close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsVisitLocation::AagetoMt> { "IsVisitLocation.AagetoMt" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsVisitLocation::AdeyaLake> { "IsVisitLocation.AdeyaLake" };

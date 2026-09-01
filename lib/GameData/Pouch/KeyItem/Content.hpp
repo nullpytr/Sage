@@ -14,7 +14,7 @@ template <> struct Data::Structure<GameData::Pouch::KeyItem::Content> : GameData
 		Name { s.get<struct Name>() },
 		StockNum { s.get<struct StockNum>() }
 	{ }
-};/* Data::Structure GameData::Pouch::KeyItem::Content close */
+};/* Structure Data::Structure GameData::Pouch::KeyItem::Content close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::KeyItem::Content::Name> { "Pouch.KeyItem.Content.Name" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::KeyItem::Content::StockNum> { "Pouch.KeyItem.Content.StockNum" };

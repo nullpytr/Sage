@@ -20,9 +20,9 @@ template <> struct Data::Structure<GameData::MapData::IconData> : GameData::MapD
 	Structure<WarpMarkerData> WarpMarkerData;
 	
 	explicit Structure(Sav& s) : 
-		FrontierPoint { s },
-		MapPinData { s },
-		StampData { s },
-		WarpMarkerData { s }
+		FrontierPoint { s.get<struct FrontierPoint>() },
+		MapPinData { s.get<struct MapPinData>() },
+		StampData { s.get<struct StampData>() },
+		WarpMarkerData { s.get<struct WarpMarkerData>() }
 	{ }
-};/* Data::Structure GameData::MapData::IconData close */
+};/* Structure Data::Structure GameData::MapData::IconData close */

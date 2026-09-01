@@ -731,7 +731,7 @@ template <> struct Data::Structure<GameData::IsGetCaveMasterMedal> : GameData::I
 		ZoraZonauTerminal { s.get<struct ZoraZonauTerminal>() },
 		Zora_Imperial_Palace { s.get<struct Zora_Imperial_Palace>() }
 	{ }
-};/* Data::Structure GameData::IsGetCaveMasterMedal close */
+};/* Structure Data::Structure GameData::IsGetCaveMasterMedal close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Akkala_0000> { "IsGetCaveMasterMedal.Cave_Akkala_0000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsGetCaveMasterMedal::Cave_Akkala_0003> { "IsGetCaveMasterMedal.Cave_Akkala_0003" };

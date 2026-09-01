@@ -29,7 +29,7 @@ template <> struct Data::Structure<GameData::Well> : GameData::Well {
 		ReportNumMinusOne { s.get<struct ReportNumMinusOne>() },
 		ReportNumThisTime { s.get<struct ReportNumThisTime>() }
 	{ }
-};/* Data::Structure GameData::Well close */
+};/* Structure Data::Structure GameData::Well close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Well::CollectionRewardUnit> { "WellCollectionRewardUnit" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Well::DiscoverNumCurrent> { "WellDiscoverNumCurrent" };

@@ -17,7 +17,7 @@ template <> struct Data::Structure<GameData::MaterialShortCut> : GameData::Mater
 		PouchIndex { s.get<struct PouchIndex>() },
 		Category { s.get<struct Category>() }
 	{ }
-};/* Data::Structure GameData::MaterialShortCut close */
+};/* Structure Data::Structure GameData::MaterialShortCut close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MaterialShortCut::PouchIndex> { "MaterialShortCut.PouchIndex" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MaterialShortCut::Category> { "MaterialShortCut.Category" };

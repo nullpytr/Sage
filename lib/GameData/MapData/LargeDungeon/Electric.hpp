@@ -10,12 +10,12 @@ struct GameData::MapData::LargeDungeon::Electric : Tag::Structure {
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric> : GameData::MapData::LargeDungeon::Electric {
 	Member<IsGetMap> IsGetMap;
-	Structure<IsOpen> IsOpen;
+	Map<IsOpen> IsOpen;
 	
 	explicit Structure(Sav& s) : 
 		IsGetMap { s.get<struct IsGetMap>() },
-		IsOpen { s }
+		IsOpen { s.get<struct IsOpen>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon::Electric close */
+};/* Structure Data::Structure GameData::MapData::LargeDungeon::Electric close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsGetMap> { "MapData.LargeDungeon.Electric.IsGetMap" };

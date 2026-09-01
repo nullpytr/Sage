@@ -32,7 +32,7 @@ template <> struct Data::Structure<GameData::CustomHouse::HouseUnitInfo> : GameD
 		UnitRotZ { s.get<struct UnitRotZ>() },
 		HouseUnitType { s.get<struct HouseUnitType>() }
 	{ }
-};/* Data::Structure GameData::CustomHouse::HouseUnitInfo close */
+};/* Structure Data::Structure GameData::CustomHouse::HouseUnitInfo close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::HouseUnitSpecificID> { "CustomHouse.HouseUnitInfo.HouseUnitSpecificID" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouse::HouseUnitInfo::IsUsed> { "CustomHouse.HouseUnitInfo.IsUsed" };

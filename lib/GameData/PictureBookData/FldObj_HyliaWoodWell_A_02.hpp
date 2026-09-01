@@ -14,6 +14,6 @@ template <> struct Data::Structure<GameData::PictureBookData::FldObj_HyliaWoodWe
 	explicit Structure(Sav& s) : 
 		State { s.get<struct State>() }
 	{ }
-};/* Data::Structure GameData::PictureBookData::FldObj_HyliaWoodWell_A_02 close */
+};/* Structure Data::Structure GameData::PictureBookData::FldObj_HyliaWoodWell_A_02 close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::PictureBookData::FldObj_HyliaWoodWell_A_02::State> { "PictureBookData.FldObj_HyliaWoodWell_A_02.State" };

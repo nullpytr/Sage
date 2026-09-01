@@ -17,9 +17,9 @@ template <> struct Data::Structure<GameData::Pouch::SpecialParts> : GameData::Po
 	explicit Structure(Sav& s) : 
 		EquipIndex { s.get<struct EquipIndex>() },
 		IsValid { s.get<struct IsValid>() },
-		Content { s }
+		Content { s.get<struct Content>() }
 	{ }
-};/* Data::Structure GameData::Pouch::SpecialParts close */
+};/* Structure Data::Structure GameData::Pouch::SpecialParts close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::EquipIndex> { "Pouch.SpecialParts.EquipIndex" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::Pouch::SpecialParts::IsValid> { "Pouch.SpecialParts.IsValid" };

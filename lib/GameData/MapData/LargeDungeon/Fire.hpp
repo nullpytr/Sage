@@ -10,12 +10,12 @@ struct GameData::MapData::LargeDungeon::Fire : Tag::Structure {
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Fire> : GameData::MapData::LargeDungeon::Fire {
 	Member<IsGetMap> IsGetMap;
-	Structure<IsOpen> IsOpen;
+	Map<IsOpen> IsOpen;
 	
 	explicit Structure(Sav& s) : 
 		IsGetMap { s.get<struct IsGetMap>() },
-		IsOpen { s }
+		IsOpen { s.get<struct IsOpen>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon::Fire close */
+};/* Structure Data::Structure GameData::MapData::LargeDungeon::Fire close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Fire::IsGetMap> { "MapData.LargeDungeon.Fire.IsGetMap" };

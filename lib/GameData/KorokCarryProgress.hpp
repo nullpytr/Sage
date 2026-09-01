@@ -403,7 +403,7 @@ struct GameData::KorokCarryProgress : Tag::Map {
 		using type = enum_t<_9734881248452388660>&;
 	};
 	using type = std::decay_t<_10035618609325695840::type>;
-};/* Tag::Structure GameData::KorokCarryProgress close */
+};/* Tag::Map GameData::KorokCarryProgress close */
 
 template <> struct Data::Structure<GameData::KorokCarryProgress> : GameData::KorokCarryProgress {
 	Enum<_10035618609325695840> _10035618609325695840;
@@ -609,7 +609,7 @@ template <> struct Data::Structure<GameData::KorokCarryProgress> : GameData::Kor
 		_9707096629495885452 { s.get<struct _9707096629495885452>() },
 		_9734881248452388660 { s.get<struct _9734881248452388660>() }
 	{ }
-};/* Data::Structure GameData::KorokCarryProgress close */
+};/* Map Data::Structure GameData::KorokCarryProgress close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10035618609325695840> { "KorokCarryProgress.10035618609325695840" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::KorokCarryProgress::_10147912760170894537> { "KorokCarryProgress.10147912760170894537" };

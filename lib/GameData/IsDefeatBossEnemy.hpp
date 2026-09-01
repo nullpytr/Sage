@@ -264,7 +264,7 @@ struct GameData::IsDefeatBossEnemy : Tag::Map {
 	struct _9893429190146755208 : Tag::Member { using type = bool&; };
 	struct _9927835261964580308 : Tag::Member { using type = bool&; };
 	using type = std::decay_t<_10068938260813754755::type>;
-};/* Tag::Structure GameData::IsDefeatBossEnemy close */
+};/* Tag::Map GameData::IsDefeatBossEnemy close */
 
 template <> struct Data::Structure<GameData::IsDefeatBossEnemy> : GameData::IsDefeatBossEnemy {
 	Member<_10068938260813754755> _10068938260813754755;
@@ -792,7 +792,7 @@ template <> struct Data::Structure<GameData::IsDefeatBossEnemy> : GameData::IsDe
 		_9893429190146755208 { s.get<struct _9893429190146755208>() },
 		_9927835261964580308 { s.get<struct _9927835261964580308>() }
 	{ }
-};/* Data::Structure GameData::IsDefeatBossEnemy close */
+};/* Map Data::Structure GameData::IsDefeatBossEnemy close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsDefeatBossEnemy::_10068938260813754755> { "IsDefeatBossEnemy.10068938260813754755" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsDefeatBossEnemy::_10222155126030895252> { "IsDefeatBossEnemy.10222155126030895252" };

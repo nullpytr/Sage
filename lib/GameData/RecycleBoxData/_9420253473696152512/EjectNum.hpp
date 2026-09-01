@@ -20,7 +20,7 @@ template <> struct Data::Structure<GameData::RecycleBoxData::_942025347369615251
 		SpObj_LiftableWaterPump_Capsule_A_01 { s.get<struct SpObj_LiftableWaterPump_Capsule_A_01>() },
 		SpObj_SpringPiston_Capsule_A_01 { s.get<struct SpObj_SpringPiston_Capsule_A_01>() }
 	{ }
-};/* Data::Structure GameData::RecycleBoxData::_9420253473696152512::EjectNum close */
+};/* Structure Data::Structure GameData::RecycleBoxData::_9420253473696152512::EjectNum close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_9420253473696152512::EjectNum::SpObj_Beamos_Capsule_A_01> { "RecycleBoxData.9420253473696152512.EjectNum.SpObj_Beamos_Capsule_A_01" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::RecycleBoxData::_9420253473696152512::EjectNum::SpObj_ControlStick_Capsule_A_01> { "RecycleBoxData.9420253473696152512.EjectNum.SpObj_ControlStick_Capsule_A_01" };

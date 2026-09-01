@@ -62,7 +62,7 @@ template <> struct Data::Structure<GameData::CustomHouseTakeOutNum> : GameData::
 		TypeQ { s.get<struct TypeQ>() },
 		TypeR { s.get<struct TypeR>() }
 	{ }
-};/* Data::Structure GameData::CustomHouseTakeOutNum close */
+};/* Structure Data::Structure GameData::CustomHouseTakeOutNum close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeA> { "CustomHouseTakeOutNum.TypeA" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::CustomHouseTakeOutNum::TypeB> { "CustomHouseTakeOutNum.TypeB" };

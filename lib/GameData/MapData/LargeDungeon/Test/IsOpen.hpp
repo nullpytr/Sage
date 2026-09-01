@@ -8,7 +8,7 @@ struct GameData::MapData::LargeDungeon::Test::IsOpen : Tag::Map {
 	struct Group009 : Tag::Member { using type = bool&; };
 	struct Group010 : Tag::Member { using type = bool&; };
 	using type = std::decay_t<Group000::type>;
-};/* Tag::Structure GameData::MapData::LargeDungeon::Test::IsOpen close */
+};/* Tag::Map GameData::MapData::LargeDungeon::Test::IsOpen close */
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Test::IsOpen> : GameData::MapData::LargeDungeon::Test::IsOpen {
 	Member<Group000> Group000;
@@ -24,7 +24,7 @@ template <> struct Data::Structure<GameData::MapData::LargeDungeon::Test::IsOpen
 		Group009 { s.get<struct Group009>() },
 		Group010 { s.get<struct Group010>() }
 	{ }
-};/* Data::Structure GameData::MapData::LargeDungeon::Test::IsOpen close */
+};/* Map Data::Structure GameData::MapData::LargeDungeon::Test::IsOpen close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group000> { "MapData.LargeDungeon.Test.IsOpen.Group000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Test::IsOpen::Group001> { "MapData.LargeDungeon.Test.IsOpen.Group001" };
