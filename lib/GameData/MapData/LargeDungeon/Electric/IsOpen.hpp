@@ -13,7 +13,7 @@ struct GameData::MapData::LargeDungeon::Electric::IsOpen : Tag::Map {
 	using type = std::decay_t<Group000::type>;
 };/* Tag::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
 
-template <> struct Data::Map<GameData::MapData::LargeDungeon::Electric::IsOpen> : GameData::MapData::LargeDungeon::Electric::IsOpen {
+template <> struct Data::Structure<GameData::MapData::LargeDungeon::Electric::IsOpen> : GameData::MapData::LargeDungeon::Electric::IsOpen {
 	Member<Group000> Group000;
 	Member<Group001> Group001;
 	Member<Group002> Group002;
@@ -23,7 +23,7 @@ template <> struct Data::Map<GameData::MapData::LargeDungeon::Electric::IsOpen> 
 	Member<Group006> Group006;
 	Member<Group007> Group007;
 	
-	explicit Map(Sav& s) : 
+	explicit Structure(Sav& s) : 
 		Group000 { s.get<struct Group000>() },
 		Group001 { s.get<struct Group001>() },
 		Group002 { s.get<struct Group002>() },
@@ -33,7 +33,7 @@ template <> struct Data::Map<GameData::MapData::LargeDungeon::Electric::IsOpen> 
 		Group006 { s.get<struct Group006>() },
 		Group007 { s.get<struct Group007>() }
 	{ }
-};/* Data::Map GameData::MapData::LargeDungeon::Electric::IsOpen close */
+};/* Data::Structure GameData::MapData::LargeDungeon::Electric::IsOpen close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group000> { "MapData.LargeDungeon.Electric.IsOpen.Group000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::MapData::LargeDungeon::Electric::IsOpen::Group001> { "MapData.LargeDungeon.Electric.IsOpen.Group001" };

@@ -20,7 +20,7 @@ struct GameData::IsOpenCannon : Tag::Map {
 	using type = std::decay_t<Tower01::type>;
 };/* Tag::Structure GameData::IsOpenCannon close */
 
-template <> struct Data::Map<GameData::IsOpenCannon> : GameData::IsOpenCannon {
+template <> struct Data::Structure<GameData::IsOpenCannon> : GameData::IsOpenCannon {
 	Member<Tower01> Tower01;
 	Member<Tower02> Tower02;
 	Member<Tower03> Tower03;
@@ -37,7 +37,7 @@ template <> struct Data::Map<GameData::IsOpenCannon> : GameData::IsOpenCannon {
 	Member<Tower14> Tower14;
 	Member<Tower15> Tower15;
 	
-	explicit Map(Sav& s) : 
+	explicit Structure(Sav& s) : 
 		Tower01 { s.get<struct Tower01>() },
 		Tower02 { s.get<struct Tower02>() },
 		Tower03 { s.get<struct Tower03>() },
@@ -54,7 +54,7 @@ template <> struct Data::Map<GameData::IsOpenCannon> : GameData::IsOpenCannon {
 		Tower14 { s.get<struct Tower14>() },
 		Tower15 { s.get<struct Tower15>() }
 	{ }
-};/* Data::Map GameData::IsOpenCannon close */
+};/* Data::Structure GameData::IsOpenCannon close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower01> { "IsOpenCannon.Tower01" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsOpenCannon::Tower02> { "IsOpenCannon.Tower02" };

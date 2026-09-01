@@ -266,7 +266,7 @@ struct GameData::IsDefeatBossEnemy : Tag::Map {
 	using type = std::decay_t<_10068938260813754755::type>;
 };/* Tag::Structure GameData::IsDefeatBossEnemy close */
 
-template <> struct Data::Map<GameData::IsDefeatBossEnemy> : GameData::IsDefeatBossEnemy {
+template <> struct Data::Structure<GameData::IsDefeatBossEnemy> : GameData::IsDefeatBossEnemy {
 	Member<_10068938260813754755> _10068938260813754755;
 	Member<_10222155126030895252> _10222155126030895252;
 	Member<_10245753642321424701> _10245753642321424701;
@@ -529,7 +529,7 @@ template <> struct Data::Map<GameData::IsDefeatBossEnemy> : GameData::IsDefeatBo
 	Member<_9893429190146755208> _9893429190146755208;
 	Member<_9927835261964580308> _9927835261964580308;
 	
-	explicit Map(Sav& s) : 
+	explicit Structure(Sav& s) : 
 		_10068938260813754755 { s.get<struct _10068938260813754755>() },
 		_10222155126030895252 { s.get<struct _10222155126030895252>() },
 		_10245753642321424701 { s.get<struct _10245753642321424701>() },
@@ -792,7 +792,7 @@ template <> struct Data::Map<GameData::IsDefeatBossEnemy> : GameData::IsDefeatBo
 		_9893429190146755208 { s.get<struct _9893429190146755208>() },
 		_9927835261964580308 { s.get<struct _9927835261964580308>() }
 	{ }
-};/* Data::Map GameData::IsDefeatBossEnemy close */
+};/* Data::Structure GameData::IsDefeatBossEnemy close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsDefeatBossEnemy::_10068938260813754755> { "IsDefeatBossEnemy.10068938260813754755" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsDefeatBossEnemy::_10222155126030895252> { "IsDefeatBossEnemy.10222155126030895252" };

@@ -296,7 +296,7 @@ struct GameData::IsVisitLocationArea_CaveEntrance : Tag::Map {
 	using type = std::decay_t<_1001017030533157593::type>;
 };/* Tag::Structure GameData::IsVisitLocationArea_CaveEntrance close */
 
-template <> struct Data::Map<GameData::IsVisitLocationArea_CaveEntrance> : GameData::IsVisitLocationArea_CaveEntrance {
+template <> struct Data::Structure<GameData::IsVisitLocationArea_CaveEntrance> : GameData::IsVisitLocationArea_CaveEntrance {
 	Member<_1001017030533157593> _1001017030533157593;
 	Member<_10040443261155710972> _10040443261155710972;
 	Member<_10136447089337963341> _10136447089337963341;
@@ -589,7 +589,7 @@ template <> struct Data::Map<GameData::IsVisitLocationArea_CaveEntrance> : GameD
 	Member<_9956353720691210968> _9956353720691210968;
 	Member<_9984383196680075552> _9984383196680075552;
 	
-	explicit Map(Sav& s) : 
+	explicit Structure(Sav& s) : 
 		_1001017030533157593 { s.get<struct _1001017030533157593>() },
 		_10040443261155710972 { s.get<struct _10040443261155710972>() },
 		_10136447089337963341 { s.get<struct _10136447089337963341>() },
@@ -882,7 +882,7 @@ template <> struct Data::Map<GameData::IsVisitLocationArea_CaveEntrance> : GameD
 		_9956353720691210968 { s.get<struct _9956353720691210968>() },
 		_9984383196680075552 { s.get<struct _9984383196680075552>() }
 	{ }
-};/* Data::Map GameData::IsVisitLocationArea_CaveEntrance close */
+};/* Data::Structure GameData::IsVisitLocationArea_CaveEntrance close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsVisitLocationArea_CaveEntrance::_1001017030533157593> { "IsVisitLocationArea_CaveEntrance.1001017030533157593" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsVisitLocationArea_CaveEntrance::_10040443261155710972> { "IsVisitLocationArea_CaveEntrance.10040443261155710972" };

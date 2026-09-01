@@ -125,7 +125,7 @@ struct GameData::CheckPoint_IsDisplayFoliage : Tag::Map {
 	using type = std::decay_t<CheckPoint000::type>;
 };/* Tag::Structure GameData::CheckPoint_IsDisplayFoliage close */
 
-template <> struct Data::Map<GameData::CheckPoint_IsDisplayFoliage> : GameData::CheckPoint_IsDisplayFoliage {
+template <> struct Data::Structure<GameData::CheckPoint_IsDisplayFoliage> : GameData::CheckPoint_IsDisplayFoliage {
 	Member<CheckPoint000> CheckPoint000;
 	Member<CheckPoint001> CheckPoint001;
 	Member<CheckPoint002> CheckPoint002;
@@ -247,7 +247,7 @@ template <> struct Data::Map<GameData::CheckPoint_IsDisplayFoliage> : GameData::
 	Member<CheckPoint144> CheckPoint144;
 	Member<CheckPoint147> CheckPoint147;
 	
-	explicit Map(Sav& s) : 
+	explicit Structure(Sav& s) : 
 		CheckPoint000 { s.get<struct CheckPoint000>() },
 		CheckPoint001 { s.get<struct CheckPoint001>() },
 		CheckPoint002 { s.get<struct CheckPoint002>() },
@@ -369,7 +369,7 @@ template <> struct Data::Map<GameData::CheckPoint_IsDisplayFoliage> : GameData::
 		CheckPoint144 { s.get<struct CheckPoint144>() },
 		CheckPoint147 { s.get<struct CheckPoint147>() }
 	{ }
-};/* Data::Map GameData::CheckPoint_IsDisplayFoliage close */
+};/* Data::Structure GameData::CheckPoint_IsDisplayFoliage close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::CheckPoint_IsDisplayFoliage::CheckPoint000> { "CheckPoint_IsDisplayFoliage.CheckPoint000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::CheckPoint_IsDisplayFoliage::CheckPoint001> { "CheckPoint_IsDisplayFoliage.CheckPoint001" };

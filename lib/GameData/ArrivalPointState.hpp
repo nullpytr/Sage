@@ -485,7 +485,7 @@ struct GameData::ArrivalPointState : Tag::Map {
 	using type = std::decay_t<CheckPoint000::type>;
 };/* Tag::Structure GameData::ArrivalPointState close */
 
-template <> struct Data::Map<GameData::ArrivalPointState> : GameData::ArrivalPointState {
+template <> struct Data::Structure<GameData::ArrivalPointState> : GameData::ArrivalPointState {
 	Enum<CheckPoint000> CheckPoint000;
 	Enum<CheckPoint001> CheckPoint001;
 	Enum<CheckPoint002> CheckPoint002;
@@ -607,7 +607,7 @@ template <> struct Data::Map<GameData::ArrivalPointState> : GameData::ArrivalPoi
 	Enum<CheckPoint144> CheckPoint144;
 	Enum<CheckPoint147> CheckPoint147;
 	
-	explicit Map(Sav& s) : 
+	explicit Structure(Sav& s) : 
 		CheckPoint000 { s.get<struct CheckPoint000>() },
 		CheckPoint001 { s.get<struct CheckPoint001>() },
 		CheckPoint002 { s.get<struct CheckPoint002>() },
@@ -729,7 +729,7 @@ template <> struct Data::Map<GameData::ArrivalPointState> : GameData::ArrivalPoi
 		CheckPoint144 { s.get<struct CheckPoint144>() },
 		CheckPoint147 { s.get<struct CheckPoint147>() }
 	{ }
-};/* Data::Map GameData::ArrivalPointState close */
+};/* Data::Structure GameData::ArrivalPointState close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::ArrivalPointState::CheckPoint000> { "ArrivalPointState.CheckPoint000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::ArrivalPointState::CheckPoint001> { "ArrivalPointState.CheckPoint001" };

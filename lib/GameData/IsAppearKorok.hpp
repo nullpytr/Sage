@@ -813,7 +813,7 @@ struct GameData::IsAppearKorok : Tag::Map {
 	using type = std::decay_t<_10016820673332675709::type>;
 };/* Tag::Structure GameData::IsAppearKorok close */
 
-template <> struct Data::Map<GameData::IsAppearKorok> : GameData::IsAppearKorok {
+template <> struct Data::Structure<GameData::IsAppearKorok> : GameData::IsAppearKorok {
 	Member<_10016820673332675709> _10016820673332675709;
 	Member<_10044045926791206854> _10044045926791206854;
 	Member<_10141964897024417568> _10141964897024417568;
@@ -1623,7 +1623,7 @@ template <> struct Data::Map<GameData::IsAppearKorok> : GameData::IsAppearKorok 
 	Member<_9951778894726973727> _9951778894726973727;
 	Member<_9958277342872368886> _9958277342872368886;
 	
-	explicit Map(Sav& s) : 
+	explicit Structure(Sav& s) : 
 		_10016820673332675709 { s.get<struct _10016820673332675709>() },
 		_10044045926791206854 { s.get<struct _10044045926791206854>() },
 		_10141964897024417568 { s.get<struct _10141964897024417568>() },
@@ -2433,7 +2433,7 @@ template <> struct Data::Map<GameData::IsAppearKorok> : GameData::IsAppearKorok 
 		_9951778894726973727 { s.get<struct _9951778894726973727>() },
 		_9958277342872368886 { s.get<struct _9958277342872368886>() }
 	{ }
-};/* Data::Map GameData::IsAppearKorok close */
+};/* Data::Structure GameData::IsAppearKorok close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsAppearKorok::_10016820673332675709> { "IsAppearKorok.10016820673332675709" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::IsAppearKorok::_10044045926791206854> { "IsAppearKorok.10044045926791206854" };

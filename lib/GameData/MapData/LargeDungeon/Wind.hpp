@@ -10,7 +10,7 @@ struct GameData::MapData::LargeDungeon::Wind : Tag::Structure {
 
 template <> struct Data::Structure<GameData::MapData::LargeDungeon::Wind> : GameData::MapData::LargeDungeon::Wind {
 	Member<IsGetMap> IsGetMap;
-	Map<IsOpen> IsOpen;
+	Structure<IsOpen> IsOpen;
 	
 	explicit Structure(Sav& s) : 
 		IsGetMap { s.get<struct IsGetMap>() },

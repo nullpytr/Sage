@@ -38,7 +38,7 @@ struct GameData::KeyCrystalDungeonUnlocked : Tag::Map {
 	using type = std::decay_t<Dungeon000::type>;
 };/* Tag::Structure GameData::KeyCrystalDungeonUnlocked close */
 
-template <> struct Data::Map<GameData::KeyCrystalDungeonUnlocked> : GameData::KeyCrystalDungeonUnlocked {
+template <> struct Data::Structure<GameData::KeyCrystalDungeonUnlocked> : GameData::KeyCrystalDungeonUnlocked {
 	Member<Dungeon000> Dungeon000;
 	Member<Dungeon006> Dungeon006;
 	Member<Dungeon054> Dungeon054;
@@ -73,7 +73,7 @@ template <> struct Data::Map<GameData::KeyCrystalDungeonUnlocked> : GameData::Ke
 	Member<Dungeon150> Dungeon150;
 	Member<Dungeon151> Dungeon151;
 	
-	explicit Map(Sav& s) : 
+	explicit Structure(Sav& s) : 
 		Dungeon000 { s.get<struct Dungeon000>() },
 		Dungeon006 { s.get<struct Dungeon006>() },
 		Dungeon054 { s.get<struct Dungeon054>() },
@@ -108,7 +108,7 @@ template <> struct Data::Map<GameData::KeyCrystalDungeonUnlocked> : GameData::Ke
 		Dungeon150 { s.get<struct Dungeon150>() },
 		Dungeon151 { s.get<struct Dungeon151>() }
 	{ }
-};/* Data::Map GameData::KeyCrystalDungeonUnlocked close */
+};/* Data::Structure GameData::KeyCrystalDungeonUnlocked close */
 
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonUnlocked::Dungeon000> { "KeyCrystalDungeonUnlocked.Dungeon000" };
 template <> hash_value_t constexpr Data::Hashtable<GameData::KeyCrystalDungeonUnlocked::Dungeon006> { "KeyCrystalDungeonUnlocked.Dungeon006" };
