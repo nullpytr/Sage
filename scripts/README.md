@@ -124,12 +124,12 @@ The suffix is determined by the traits:
 
 Arrays with Opaque T use `adaptive_range<T>` instead of `span<T>`. This tells the C++ side to apply a lazy per-element layout adaptor via `std::views::transform` rather than treating the blob slice as a plain span. `Primitive` and `Vector` types carry `Trait.Transparent`, so their arrays stay as `span<T>`.
 
-**`EnumEmitter`** wraps `MemberEmitter` output and injects an `underlying_enum_t` definition between the struct opening and the `using type` line:
+**`EnumEmitter`** wraps `MemberEmitter` output and injects an `underlying_enum_t` definition between the struct opening and the `using type` line (it is wrapped in a anonymous struct, to prevent name conflicts between the enum tag struct and the enum values):
 
 ```cpp
 struct CurrentSpecialPower : Tag::Enum {
-    enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), UltraHand = murmurhash3::hash("UltraHand"), ... };
-    using type = enum_t<CurrentSpecialPower>&;
+	using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), UltraHand = murmurhash3::hash("UltraHand"), ... , Amiibo = murmurhash3::hash("Amiibo"), }; };
+	using type = enum_t<CurrentSpecialPower>&;
 };
 ```
 
@@ -145,10 +145,10 @@ struct CurrentSpecialPower : Tag::Enum {
 struct GameData::PlayerStatus : Tag::Structure {
     struct MaxLife    : Tag::Member { using type = s32&; };
     struct SavePos    : Tag::Member { using type = vec3f*; };
-    struct CurrentSpecialPower : Tag::Enum {
-        enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), UltraHand = murmurhash3::hash("UltraHand"), ... };
-        using type = enum_t<CurrentSpecialPower>&;
-    };
+	struct CurrentSpecialPower : Tag::Enum {
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), UltraHand = murmurhash3::hash("UltraHand"), ... , Amiibo = murmurhash3::hash("Amiibo"), }; };
+		using type = enum_t<CurrentSpecialPower>&;
+	};
     struct Companion;
 };
 ... (see full example below)
@@ -224,11 +224,11 @@ struct GameData::PlayerStatus : Tag::Structure {
 	struct WeaponAttachCount : Tag::Member { using type = s32&; };
 	struct ZonauEventFailureOnce : Tag::Member { using type = bool&; };
 	struct CurrentSpecialPower : Tag::Enum {
-		enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), UltraHand = murmurhash3::hash("UltraHand"), OneTouchBond = murmurhash3::hash("OneTouchBond"), CeilingClipper = murmurhash3::hash("CeilingClipper"), ReverseRecorder = murmurhash3::hash("ReverseRecorder"), AutoBuilder = murmurhash3::hash("AutoBuilder"), SheikahCamera = murmurhash3::hash("SheikahCamera"), Map = murmurhash3::hash("Map"), Amiibo = murmurhash3::hash("Amiibo"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { None = murmurhash3::hash("None"), UltraHand = murmurhash3::hash("UltraHand"), OneTouchBond = murmurhash3::hash("OneTouchBond"), CeilingClipper = murmurhash3::hash("CeilingClipper"), ReverseRecorder = murmurhash3::hash("ReverseRecorder"), AutoBuilder = murmurhash3::hash("AutoBuilder"), SheikahCamera = murmurhash3::hash("SheikahCamera"), Map = murmurhash3::hash("Map"), Amiibo = murmurhash3::hash("Amiibo"), }; };
 		using type = enum_t<CurrentSpecialPower>&;
 	};
 	struct ParasailPattern : Tag::Enum {
-		enum underlying_enum_t : hash_t { Default = murmurhash3::hash("Default"), Pattern00 = murmurhash3::hash("Pattern00"), Pattern01 = murmurhash3::hash("Pattern01"), Pattern02 = murmurhash3::hash("Pattern02"), Pattern03 = murmurhash3::hash("Pattern03"), Pattern04 = murmurhash3::hash("Pattern04"), Pattern05 = murmurhash3::hash("Pattern05"), Pattern06 = murmurhash3::hash("Pattern06"), Pattern07 = murmurhash3::hash("Pattern07"), Pattern08 = murmurhash3::hash("Pattern08"), Pattern09 = murmurhash3::hash("Pattern09"), Pattern10 = murmurhash3::hash("Pattern10"), Pattern11 = murmurhash3::hash("Pattern11"), Pattern12 = murmurhash3::hash("Pattern12"), Pattern13 = murmurhash3::hash("Pattern13"), Pattern14 = murmurhash3::hash("Pattern14"), Pattern15 = murmurhash3::hash("Pattern15"), Pattern16 = murmurhash3::hash("Pattern16"), Pattern17 = murmurhash3::hash("Pattern17"), Pattern18 = murmurhash3::hash("Pattern18"), Pattern19 = murmurhash3::hash("Pattern19"), Pattern20 = murmurhash3::hash("Pattern20"), Pattern21 = murmurhash3::hash("Pattern21"), Pattern22 = murmurhash3::hash("Pattern22"), Pattern23 = murmurhash3::hash("Pattern23"), Pattern24 = murmurhash3::hash("Pattern24"), Pattern25 = murmurhash3::hash("Pattern25"), Pattern26 = murmurhash3::hash("Pattern26"), Pattern27 = murmurhash3::hash("Pattern27"), Pattern28 = murmurhash3::hash("Pattern28"), Pattern29 = murmurhash3::hash("Pattern29"), Pattern30 = murmurhash3::hash("Pattern30"), Pattern31 = murmurhash3::hash("Pattern31"), Pattern32 = murmurhash3::hash("Pattern32"), Pattern33 = murmurhash3::hash("Pattern33"), Pattern34 = murmurhash3::hash("Pattern34"), Pattern35 = murmurhash3::hash("Pattern35"), Pattern36 = murmurhash3::hash("Pattern36"), Pattern37 = murmurhash3::hash("Pattern37"), Pattern38 = murmurhash3::hash("Pattern38"), Pattern39 = murmurhash3::hash("Pattern39"), Pattern40 = murmurhash3::hash("Pattern40"), Pattern41 = murmurhash3::hash("Pattern41"), Pattern43 = murmurhash3::hash("Pattern43"), Pattern45 = murmurhash3::hash("Pattern45"), Pattern46 = murmurhash3::hash("Pattern46"), Pattern48 = murmurhash3::hash("Pattern48"), Pattern49 = murmurhash3::hash("Pattern49"), Pattern51 = murmurhash3::hash("Pattern51"), Pattern52 = murmurhash3::hash("Pattern52"), Pattern53 = murmurhash3::hash("Pattern53"), Pattern55 = murmurhash3::hash("Pattern55"), Pattern56 = murmurhash3::hash("Pattern56"), };
+		using values_t = struct { enum underlying_enum_t : hash_t { Default = murmurhash3::hash("Default"), Pattern00 = murmurhash3::hash("Pattern00"), Pattern01 = murmurhash3::hash("Pattern01"), Pattern02 = murmurhash3::hash("Pattern02"), Pattern03 = murmurhash3::hash("Pattern03"), Pattern04 = murmurhash3::hash("Pattern04"), Pattern05 = murmurhash3::hash("Pattern05"), Pattern06 = murmurhash3::hash("Pattern06"), Pattern07 = murmurhash3::hash("Pattern07"), Pattern08 = murmurhash3::hash("Pattern08"), Pattern09 = murmurhash3::hash("Pattern09"), Pattern10 = murmurhash3::hash("Pattern10"), Pattern11 = murmurhash3::hash("Pattern11"), Pattern12 = murmurhash3::hash("Pattern12"), Pattern13 = murmurhash3::hash("Pattern13"), Pattern14 = murmurhash3::hash("Pattern14"), Pattern15 = murmurhash3::hash("Pattern15"), Pattern16 = murmurhash3::hash("Pattern16"), Pattern17 = murmurhash3::hash("Pattern17"), Pattern18 = murmurhash3::hash("Pattern18"), Pattern19 = murmurhash3::hash("Pattern19"), Pattern20 = murmurhash3::hash("Pattern20"), Pattern21 = murmurhash3::hash("Pattern21"), Pattern22 = murmurhash3::hash("Pattern22"), Pattern23 = murmurhash3::hash("Pattern23"), Pattern24 = murmurhash3::hash("Pattern24"), Pattern25 = murmurhash3::hash("Pattern25"), Pattern26 = murmurhash3::hash("Pattern26"), Pattern27 = murmurhash3::hash("Pattern27"), Pattern28 = murmurhash3::hash("Pattern28"), Pattern29 = murmurhash3::hash("Pattern29"), Pattern30 = murmurhash3::hash("Pattern30"), Pattern31 = murmurhash3::hash("Pattern31"), Pattern32 = murmurhash3::hash("Pattern32"), Pattern33 = murmurhash3::hash("Pattern33"), Pattern34 = murmurhash3::hash("Pattern34"), Pattern35 = murmurhash3::hash("Pattern35"), Pattern36 = murmurhash3::hash("Pattern36"), Pattern37 = murmurhash3::hash("Pattern37"), Pattern38 = murmurhash3::hash("Pattern38"), Pattern39 = murmurhash3::hash("Pattern39"), Pattern40 = murmurhash3::hash("Pattern40"), Pattern41 = murmurhash3::hash("Pattern41"), Pattern43 = murmurhash3::hash("Pattern43"), Pattern45 = murmurhash3::hash("Pattern45"), Pattern46 = murmurhash3::hash("Pattern46"), Pattern48 = murmurhash3::hash("Pattern48"), Pattern49 = murmurhash3::hash("Pattern49"), Pattern51 = murmurhash3::hash("Pattern51"), Pattern52 = murmurhash3::hash("Pattern52"), Pattern53 = murmurhash3::hash("Pattern53"), Pattern55 = murmurhash3::hash("Pattern55"), Pattern56 = murmurhash3::hash("Pattern56"), }; };
 		using type = enum_t<ParasailPattern>&;
 	};
 	struct Companion;
