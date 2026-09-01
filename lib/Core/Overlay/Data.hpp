@@ -27,7 +27,14 @@ namespace Data
         return 0;
     }();
 
-    template <typename M, typename P = M::type, typename I = std::remove_pointer_t<P>, typename L = Layout<I>, typename O = L::to_type>
+    template
+        <typename M,
+        typename Q = M::type,
+        typename P = std::remove_reference_t<Q>,
+        typename V = std::remove_pointer_t<P>,
+        typename I = std::conditional_t<std::is_reference_v<Q>, V&, V>,
+        typename L = Layout<I>,
+        typename O = L::to_type>
     using Member = O;
 
     template <typename E, typename O = Member<E>>
