@@ -21,7 +21,7 @@ class MemberEmitter():
             return_type = return_type.replace("span<", "adaptive_range<") # lazy layout adapter
 
         if member.has_trait(Member.Trait.Pointer): return_type += "*"
-        elif not member.has_trait(Member.Trait.Opaque): return_type += "&"
+        if not member.has_trait(Member.Trait.Opaque): return_type += "&"
 
         write(f"struct {member.name} : Tag::{member.basename}" " {") # def open
         write(f"using type = {return_type};")

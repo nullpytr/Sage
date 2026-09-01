@@ -2,7 +2,7 @@
 #include <sage>
 
 struct GameData::PlayerStatus::Companion::Water : Tag::Structure {
-	struct CurrentPos : Tag::Member { using type = vec3f*; };
+	struct CurrentPos : Tag::Member { using type = vec3f*&; };
 	struct IsFollowMode : Tag::Member { using type = bool&; };
 	struct IsGet : Tag::Member { using type = bool&; };
 	struct IsGoThroughAirWall : Tag::Member { using type = bool&; };

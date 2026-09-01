@@ -3,7 +3,7 @@
 
 struct GameData::MapData::IconData::FrontierPoint : Tag::Structure {
 	struct IsValid : Tag::Member { using type = bool&; };
-	struct Pos : Tag::Member { using type = vec3f*; };
+	struct Pos : Tag::Member { using type = vec3f*&; };
 };/* Tag::Structure GameData::MapData::IconData::FrontierPoint close */
 
 template <> struct Data::Structure<GameData::MapData::IconData::FrontierPoint> : GameData::MapData::IconData::FrontierPoint {

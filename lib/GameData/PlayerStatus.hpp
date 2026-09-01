@@ -26,7 +26,7 @@ struct GameData::PlayerStatus : Tag::Structure {
 	struct MaxLife : Tag::Member { using type = s32&; };
 	struct MaxLifeForBeforeVSGanon : Tag::Member { using type = s32&; };
 	struct MaxStamina : Tag::Member { using type = float&; };
-	struct SavePos : Tag::Member { using type = vec3f*; };
+	struct SavePos : Tag::Member { using type = vec3f*&; };
 	struct SavePosRadY : Tag::Member { using type = float&; };
 	struct TemporaryBreakLife : Tag::Member { using type = s32&; };
 	struct TemporaryExtraEnergy : Tag::Member { using type = float&; };

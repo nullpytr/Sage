@@ -9,8 +9,8 @@ struct GameData::World : Tag::Structure {
 	struct CurrentMinute : Tag::Member { using type = s32&; };
 	struct IsBloodyMoonDay : Tag::Member { using type = bool&; };
 	struct IsZonauRespawnDay : Tag::Member { using type = bool&; };
-	struct PlayerPos : Tag::Member { using type = vec3f*; };
-	struct ShootingStarPosition : Tag::Member { using type = vec3f*; };
+	struct PlayerPos : Tag::Member { using type = vec3f*&; };
+	struct ShootingStarPosition : Tag::Member { using type = vec3f*&; };
 	struct WeatherForecast : Tag::Member { using type = span<s32>*; };
 	struct ZonauRespawnTimer : Tag::Member { using type = u64&; };
 };/* Tag::Structure GameData::World close */
