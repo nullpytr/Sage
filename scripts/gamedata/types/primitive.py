@@ -1,6 +1,6 @@
 from .member import *
 
-class Primitive(Member, Member.Trait.Reference): 
+class Primitive(Member): 
     pass
 
 class Bool(Primitive):
@@ -21,7 +21,7 @@ class Float(Primitive):
 class Byte(Primitive):
     typename = "byte"
 
-class String(Member, Member.Trait.Pointer):
+class String(Member, Member.Trait.Pointer, Member.Trait.Opaque):
     pass
 
 class String32(String):
@@ -33,7 +33,7 @@ class String64(String):
 class WString16(String):
     typename = "wstring16"
 
-class Vector(Member, Member.Trait.Transparent, Member.Trait.Pointer):
+class Vector(Member, Member.Trait.Pointer):
     pass
 
 class Vector2(Vector):

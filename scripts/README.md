@@ -89,19 +89,18 @@ The tree is then sorted twice to guarantee deterministic output regardless of me
 | `Structure` | `GameDataType` | | |
 | `Map` | `Structure` | | |
 | `Member` | `GameDataType` | | |
-| `Primitive` | `Member` | `Trait.Reference` → `Trait.Transparent` | `Bool`, `Int`, `UInt`, `UInt64`, `Float`, `Byte` |
-| `String` | `Member` | `Trait.Pointer` | `String32`, `String64`, `WString16` |
-| `Vector` | `Member` | `Trait.Transparent`, `Trait.Pointer` | `Vector2`, `Vector3` |
-| `Array[T]` | `Member` | `Trait.Pointer` | `BoolArray`, `IntArray`, `UIntArray`, `UInt64Array`, `FloatArray`, `String64Array`, `WString16Array`, `Vector2Array`, `Vector3Array`, `ByteArray` |
-| `Enum[EnumName: str]` | `Member` | | |
-| `EnumArray[EnumName: str]` | `Enum`, `Array` | | |
+| `Primitive` | `Member` | `(transparent)` | `Bool`, `Int`, `UInt`, `UInt64`, `Float`, `Byte` |
+| `String` | `Member` | `Trait.Pointer`, `Trait.Opaque` | `String32`, `String64`, `WString16` |
+| `Vector` | `Member` | `Trait.Pointer` | `Vector2`, `Vector3` |
+| `Array[T]` | `Member` | `Trait.Pointer`, `Trait.Opaque` | `BoolArray`, `IntArray`, `UIntArray`, `UInt64Array`, `FloatArray`, `String64Array`, `WString16Array`, `Vector2Array`, `Vector3Array`, `ByteArray` |
+| `Enum[EnumName: str]` | `Member` | `(transparent)` | |
+| `EnumArray[EnumName: str]` | `Enum`, `Array` | `Trait.Pointer`, `Trait.Opaque` (inherited from `Array[T]`)  | |
 
 Three traits on `Member` control what the emitter appends to the C++ member type:
 
-- `Trait.Transparent`: type can be directly overlayed into blob without layout adaptation.
-- `Trait.Reference` (extends `Transparent`): transparent type, accessor returns a reference (`&` suffix).
+- `(transparent, default)`: type can be directly overlayed into blob without layout adaptation, returned as reference (`&` suffix).
 - `Trait.Pointer`: accessor automatically resolves indirection (`*` suffix).
-- Note: types that do not have `Trait.Transparent` are termed Opaque, and need a layout adaptor to wrap the emitted type. (e.g. `String64Array`, `WString16Array`)
+- `Trait.Opaque`: type does not actually exist in the blob and needs a layout adaptor (e.g. `String64Array`, `WString16Array`).
 
 ### 3. Code generation (`emit/`)
 
@@ -117,12 +116,13 @@ The suffix is determined by the traits:
 
 | traits | suffix | example |
 |--------|--------|---------|
-| `Reference` | `&` | `float&`, `s32&`, `bool&` |
+| `(transparent, default)` | `&` | `float&`, `s32&`, `bool&` |
+| `Opaque` | none | `string64`, `span<T>` |
 | `Pointer` | `*` | `string64*`, `vec3f*` |
 | `Array<Transparent T>` | `span<T>*` | `span<bool>*`, `span<vec2f>*` |
 | `Array<Opaque T>` elements | `adaptive_range<T>*` | `adaptive_range<string64>*` |
 
-Arrays with Opaque T use `adaptive_range<T>` instead of `span<T>`. This tells the C++ side to apply a lazy per-element layout adaptor via `std::views::transform` rather than treating the blob slice as a plain span. `Primitive` and `Vector` types carry `Trait.Transparent`, so their arrays stay as `span<T>`.
+Arrays with Opaque T use `adaptive_range<T>` instead of `span<T>`. This tells the C++ side to apply a lazy per-element layout adaptor via `std::views::transform` rather than treating the blob slice as a plain span. `Primitive` and `Vector` types carry the (transaprent, default) trait, so their arrays stay as `span<T>`.
 
 **`EnumEmitter`** wraps `MemberEmitter` output and injects an `underlying_enum_t` definition between the struct opening and the `using type` line (it is wrapped in a anonymous struct, to prevent name conflicts between the enum tag struct and the enum values):
 

@@ -1,7 +1,7 @@
 from .member import Member
 from .primitive import *
 
-class Array[T: Member](Member, Member.Trait.Pointer):
+class Array[T: Member](Member, Member.Trait.Pointer, Member.Trait.Opaque):
     typename: str = "span<{t}>"
     element_t: type[Member]
 

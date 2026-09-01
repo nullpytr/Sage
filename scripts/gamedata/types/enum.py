@@ -1,7 +1,7 @@
 from .member import GameDataType, Member
 from .array import Array
 
-class Enum[EnumName: str](Member, Member.Trait.Reference):
+class Enum[EnumName: str](Member):
     basename = "Enum"
     typename = "enum_t<{enum_name}>"
 

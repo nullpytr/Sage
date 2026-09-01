@@ -17,11 +17,11 @@ class MemberEmitter():
 
         return_type = member.typename
 
-        if isinstance(member, types.Array) and not member.element_t.has_trait(Member.Trait.Transparent):
+        if isinstance(member, types.Array) and member.element_t.has_trait(Member.Trait.Opaque):
             return_type = return_type.replace("span<", "adaptive_range<") # lazy layout adapter
 
         if member.has_trait(Member.Trait.Pointer): return_type += "*"
-        elif member.has_trait(Member.Trait.Reference): return_type += "&"
+        elif not member.has_trait(Member.Trait.Opaque): return_type += "&"
 
         write(f"struct {member.name} : Tag::{member.basename}" " {") # def open
         write(f"using type = {return_type};")

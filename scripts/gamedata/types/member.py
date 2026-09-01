@@ -17,9 +17,8 @@ class Member(GameDataType):
 
     class Trait():
         class Base: pass
-        class Transparent(Base): pass # Transparent members can be returned directly
-        class Reference(Transparent): pass # Reference members are also transparent
         class Pointer(Base): pass # Pointer members need indirection resolution
+        class Opaque(Base): pass
 
     @classmethod
     def has_trait(cls, t: type[Trait.Base]) -> bool:
