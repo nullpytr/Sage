@@ -6774,11 +6774,12 @@ bool operator==(underlying_enum_t const& v) const { return value == v; } // comp
 /*--*/
 underlying_enum_t value;
 };
+namespace ranges = std::ranges;
 /* Range */
 template <typename T, typename Fn>
-using range = std::ranges::transform_view<std::span<T>, Fn>;
+using range = ranges::transform_view<std::span<T>, Fn>;
 template <typename T, size_t N, typename Fn>
-using owning_range = std::ranges::transform_view<std::ranges::owning_view<std::array<T, N>>, Fn>;
+using owning_range = ranges::transform_view<ranges::owning_view<std::array<T, N>>, Fn>;
 /* mapped_range dereferences pointer in a pointer array (map<T, N>) lazily on access */
 inline auto deref = [](auto* p) -> auto& { return *p; };
 template <typename T, size_t N> using mapped_range = owning_range<T*, N, decltype(deref)>;
@@ -8479,7 +8480,6 @@ std::error_code error;
 m_data.sync(error);
 if (error) throw std::system_error { error };
 }
-[[nodiscard]] byte const* data_ptr() const { return m_data.data(); }
 /* -- */
 /* High-level access: using GameData types (recommended)
 * Powered by the lower level access methods and the
