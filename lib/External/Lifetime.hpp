@@ -1,3 +1,5 @@
+#pragma once
+
 #include <memory>
 #include <cstring>
 #include <new>
@@ -17,7 +19,7 @@ requires std::is_trivially_copyable_v<T>
 [[nodiscard]] T* start_lifetime_as(void* p) noexcept {
     #ifdef __cpp_lib_start_lifetime_as
     return std::start_lifetime_as<T>(p);
-    #else;
+    #else
     return std::launder(static_cast<T*>(std::memmove(p, p, sizeof(T))));
     #endif
 }
