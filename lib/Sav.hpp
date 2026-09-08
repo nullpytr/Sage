@@ -135,7 +135,7 @@ public:
 
 private: /* Members */
     #ifndef SAGE_DISABLE_MMAP
-    mio::ummap_sink m_data;
+    mio::basic_mmap_sink<byte> m_data;
     #else
     span<byte> m_data;
     #endif
