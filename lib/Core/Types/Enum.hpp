@@ -5,11 +5,8 @@ struct enum_t /* enum is a reserved keyword */ : V // V brings all the enum valu
 {
     using typename V::underlying_enum_t;
 
-    underlying_enum_t const& get() const { return value; } // getters
-    underlying_enum_t& get() { return value; }
-
-    underlying_enum_t const& operator*() const { return get(); }
-    underlying_enum_t& operator*()             { return get(); }
+    auto& get(this auto& self) { return self.value; } // getters
+    auto& operator*(this auto& self) { return self.get(); }
 
     operator underlying_enum_t() const { return get(); } // implicit conversion
 
