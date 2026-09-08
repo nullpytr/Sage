@@ -54,11 +54,11 @@ public:
      * auto generated header include/GameData.hpp */
     template
         <typename N,
-        typename I = Structure<N>,
+        typename I = Data::Structure<N>,
         typename U = I::type,
         typename A = map<U, sizeof(I) / sizeof(void*)>,
         typename L = Layout<A>,
-        typename O = Map<N>>
+        typename O = Data::Map<N>>
     requires std::derived_from<N, Tag::Map>
     O get()
     {
@@ -70,7 +70,7 @@ public:
         return *start_lifetime_as<L>(&buf); // `mapped_range` copies the pointer buffer with it.
     }
 
-    template<typename S, typename I = Structure<S>, typename O = I>
+    template<typename S, typename I = Data::Structure<S>, typename O = I>
     requires std::derived_from<S, Tag::Structure>
     O get()
     {
@@ -84,7 +84,7 @@ public:
         typename V = std::remove_pointer_t<P>,
         typename I = std::conditional_t<std::is_reference_v<Q>, V&, V>,
         typename L = Layout<I>,
-        typename O = Member<M>>
+        typename O = Data::Member<M>>
     requires std::derived_from<M, Tag::Member>
     O get()
     {

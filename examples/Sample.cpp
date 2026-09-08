@@ -6,21 +6,21 @@
 
 static void require(bool const condition) { if (!condition) std::exit(1); }
 
-static bool is_player_stats_max(Structure<GameData::PlayerStatus> status)
+static bool is_player_stats_max(Structure<GameData::PlayerStatus> const& status)
 {
     return status.MaxLife == 160
         && status.MaxStamina == 3000
         && status.MaxEnergy == 48000;
 }
 
-static bool is_ability_amiibo(Enum<GameData::PlayerStatus::CurrentSpecialPower> ability)
+static bool is_ability_amiibo(Enum<GameData::PlayerStatus::CurrentSpecialPower> const& ability) // v0.9+: cv qualifiers on members work properly
 {
     return ability == ability.Amiibo;
 }
 
-static auto is_player_in_mainfield = [](Member<GameData::Sequence_CurrentBanc> banc) { return banc == "MainField"; };
+static auto is_player_in_mainfield = [](Member<GameData::Sequence_CurrentBanc> const& banc) { return banc == "MainField"; };
 
-static void clear_all_shrines(Map<GameData::DungeonState> shrines)
+static void clear_all_shrines(Map<GameData::DungeonState>& shrines)
 {
     /* Maps -- non continuous arrays, API remains same */
     auto is_cleared_shrine = [](auto& s) { return s == s.Clear; };
@@ -29,6 +29,8 @@ static void clear_all_shrines(Map<GameData::DungeonState> shrines)
     ranges::for_each(shrines, [](auto& d) { d = d.Clear; }); // mark all cleared
     std::println(" -> {}", ranges::count_if(shrines, is_cleared_shrine)); // 53 -> 152
 }
+
+static void clear_all_shrines(Map<GameData::DungeonState>&& shrines) { clear_all_shrines(shrines); }
 
 int main(int const argc, char const* argv[]) {
     Sav save { "other/progress.sav" }; /* progress.sav */
@@ -141,6 +143,5 @@ int main(int const argc, char const* argv[]) {
         require(name == u"my horse");
 
     std::println("[horses/names] all horses renamed to '{}'", updated_names[0]);
-
     /* -- */
 }
