@@ -53,8 +53,7 @@ struct Layout<adaptive_range<T>>
     using to_type = adaptive_range<T>;
 
     operator to_type() {
-        return span<layout<T>> { data, size }
-        | std::views::transform(adapt);
+        return to_type { span { data, size }, adapt };
     }
 
     /*--*/
@@ -67,7 +66,9 @@ struct Layout<map<T, N>>
 {
     using to_type = mapped_range<T, N>;
 
-    operator to_type() { return std::move(ptr_arr) | std::views::transform(deref); }
+    operator to_type() {
+        return to_type { std::move(ptr_arr), deref };
+    }
 
     /*--*/
     map<T, N> ptr_arr;
