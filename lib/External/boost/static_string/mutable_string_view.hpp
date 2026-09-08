@@ -52,7 +52,7 @@ namespace static_strings {
 
 #ifndef BOOST_STATIC_STRING_DOCS
 template<std::size_t N, typename CharT, typename Traits>
-class basic_static_string;
+class basic_mutable_string_view;
 
 //------------------------------------------------------------------------------
 //
@@ -61,27 +61,27 @@ class basic_static_string;
 //------------------------------------------------------------------------------
 
 template<std::size_t N>
-using static_string =
-  basic_static_string<N, char, std::char_traits<char>>;
+using mutable_string_view =
+  basic_mutable_string_view<N, char, std::char_traits<char>>;
 
 #ifdef BOOST_STATIC_STRING_HAS_WCHAR
 template<std::size_t N>
-using static_wstring =
-  basic_static_string<N, wchar_t, std::char_traits<wchar_t>>;
+using mutable_wstring_view =
+  basic_mutable_string_view<N, wchar_t, std::char_traits<wchar_t>>;
 #endif
 
 template<std::size_t N>
-using static_u16string =
-  basic_static_string<N, char16_t, std::char_traits<char16_t>>;
+using mutable_u16string_view =
+  basic_mutable_string_view<N, char16_t, std::char_traits<char16_t>>;
 
 template<std::size_t N>
-using static_u32string =
-  basic_static_string<N, char32_t, std::char_traits<char32_t>>;
+using mutable_u32string_view =
+  basic_mutable_string_view<N, char32_t, std::char_traits<char32_t>>;
 
 #ifdef __cpp_char8_t
 template<std::size_t N>
-using static_u8string =
-  basic_static_string<N, char8_t, std::char_traits<char8_t>>;
+using mutable_u8string_view =
+  basic_mutable_string_view<N, char8_t, std::char_traits<char8_t>>;
 #endif
 
 //--------------------------------------------------------------------------
@@ -153,7 +153,7 @@ struct is_string_like<
 // directly and other convertible types such as std::string.
 // When no string_view type is available, then we check for the
 // data and size member functions, and use them directly for assignments.
-// Types convertible to basic_static_string are not considered viewable
+// Types convertible to basic_mutable_string_view are not considered viewable
 // to prevent any ambiguity during overload resolution.
 template<std::size_t N, typename T, typename CharT, typename Traits, typename = void>
 struct enable_if_viewable { };
@@ -163,18 +163,18 @@ struct enable_if_viewable<N, T, CharT, Traits,
     typename std::enable_if<
 #if !defined(BOOST_STATIC_STRING_HAS_ANY_STRING_VIEW)
         is_string_like<T, CharT>::value &&
-        !std::is_convertible<const T&, const basic_static_string<N, CharT, Traits>&>::value
+        !std::is_convertible<const T&, const basic_mutable_string_view<N, CharT, Traits>&>::value
 #elif defined(BOOST_STATIC_STRING_STANDALONE)
         std::is_convertible<const T&, std::basic_string_view<CharT, Traits>>::value &&
         !std::is_convertible<const T&, const CharT*>::value &&
-        !std::is_convertible<const T&, const basic_static_string<N, CharT, Traits>&>::value
+        !std::is_convertible<const T&, const basic_mutable_string_view<N, CharT, Traits>&>::value
 #else
         (
             std::is_convertible<const T&, basic_string_view<CharT, Traits>>::value ||
             std::is_convertible<const T&, core::basic_string_view<CharT>>::value
         ) &&
         !std::is_convertible<const T&, const CharT*>::value &&
-        !std::is_convertible<const T&, const basic_static_string<N, CharT, Traits>&>::value
+        !std::is_convertible<const T&, const basic_mutable_string_view<N, CharT, Traits>&>::value
 #endif
     >::type>
 {
@@ -315,9 +315,9 @@ copy_with_traits(
 
 // Optimization for using the smallest possible type
 template<std::size_t N, typename CharT, typename Traits>
-class static_string_base
+class mutable_string_view_base
 {
-  using derived_type = basic_static_string<N, CharT, Traits>;
+  using derived_type = basic_mutable_string_view<N, CharT, Traits>;
   friend derived_type;
 
   using size_type = smallest_width<N>;
@@ -329,7 +329,7 @@ BOOST_STATIC_STRING_GCC_NESTED_CLASS_WORKAROUND
 
   struct size
   {
-    class basic_static_string
+    class basic_mutable_string_view
     {
       friend derived_type;
 
@@ -358,7 +358,7 @@ BOOST_STATIC_STRING_GCC_NESTED_CLASS_WORKAROUND
 
   struct data
   {
-    class basic_static_string
+    class basic_mutable_string_view
     {
       friend derived_type;
 
@@ -561,52 +561,52 @@ throw_exception(const char* msg)
 
     @code
     template<std::size_t N>
-    using static_string =
-      basic_static_string<N, char, std::char_traits<char>>;
+    using mutable_string_view =
+      basic_mutable_string_view<N, char, std::char_traits<char>>;
     @endcode
 
     @code
     template<std::size_t N>
-    using static_wstring =
-      basic_static_string<N, wchar_t, std::char_traits<wchar_t>>;
+    using mutable_wstring_view =
+      basic_mutable_string_view<N, wchar_t, std::char_traits<wchar_t>>;
     @endcode
 
     @code
     template<std::size_t N>
-    using static_u16string =
-      basic_static_string<N, char16_t, std::char_traits<char16_t>>;
+    using mutable_u16string_view =
+      basic_mutable_string_view<N, char16_t, std::char_traits<char16_t>>;
     @endcode
 
     @code
     template<std::size_t N>
-    using static_u32string =
-      basic_static_string<N, char32_t, std::char_traits<char32_t>>;
+    using mutable_u32string_view =
+      basic_mutable_string_view<N, char32_t, std::char_traits<char32_t>>;
     @endcode
 
     Addtionally, the alias template `static_u8string` is provided in C++20
 
     @code
     template<std::size_t N>
-    using static_u8string =
-      basic_static_string<N, char8_t, std::char_traits<char8_t>>;
+    using mutable_u8string_view =
+      basic_mutable_string_view<N, char8_t, std::char_traits<char8_t>>;
     @endcode
 
     @see @ref to_static_string.
 */
 template<std::size_t N, typename CharT,
   typename Traits = std::char_traits<CharT>>
-class basic_static_string
+class basic_mutable_string_view
 #ifndef BOOST_STATIC_STRING_DOCS
-  // : public detail::static_string_base<N, CharT, Traits>
-  : public detail::static_string_base<
-    N, CharT, Traits>::size::basic_static_string
-  , public detail::static_string_base<
-    N, CharT, Traits>::data::basic_static_string
+  // : public detail::mutable_string_view_base<N, CharT, Traits>
+  : public detail::mutable_string_view_base<
+    N, CharT, Traits>::size::basic_mutable_string_view
+  , public detail::mutable_string_view_base<
+    N, CharT, Traits>::data::basic_mutable_string_view
 #endif
 {
 private:
   template<std::size_t, class, class>
-  friend class basic_static_string;
+  friend class basic_mutable_string_view;
 
 public:
   //--------------------------------------------------------------------------
@@ -682,7 +682,7 @@ public:
       Construct with the first `count` characters of `s`, including nulls.
     */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string( // DEF_CTOR_CONST_PTR
+  basic_mutable_string_view( // DEF_CTOR_CONST_PTR
     pointer s,
     size_type count)
   {
@@ -698,7 +698,7 @@ public:
       Construct from a null terminated string.
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string(pointer s)
+  basic_mutable_string_view(pointer s)
   {
     auto count = traits_type::length(s);
     if (count > max_size())
@@ -734,8 +734,8 @@ public:
 
       @throw std::length_error `s.size() > max_size()`.
   */
-  basic_static_string&
-  operator=(const basic_static_string& s) noexcept
+  basic_mutable_string_view&
+  operator=(const basic_mutable_string_view& s) noexcept
   {
     return assign(s);
   }
@@ -764,8 +764,8 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
-  operator=(const basic_static_string<M, CharT, Traits>& s)
+  basic_mutable_string_view&
+  operator=(const basic_mutable_string_view<M, CharT, Traits>& s)
   {
     return assign(s);
   }
@@ -790,7 +790,7 @@ public:
       @throw std::length_error `traits_type::length(s) > max_size()`.
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator=(const_pointer s)
   {
     return assign(s, s + traits_type::length(s));
@@ -816,7 +816,7 @@ public:
       @throw std::length_error `count > max_size()`.
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator=(value_type ch)
   {
     return assign_char(ch,
@@ -843,7 +843,7 @@ public:
       @throw std::length_error `ilist.size() > max_size()`.
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator=(std::initializer_list<value_type> ilist)
   {
     return assign(ilist);
@@ -873,7 +873,7 @@ public:
       @code
       std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value
       @endcode
 
       @return `*this`
@@ -888,7 +888,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator=(const T& t)
   {
     return assign(t);
@@ -917,7 +917,7 @@ public:
       @throw std::length_error `count > max_size()`.
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   assign(
     size_type count,
     value_type ch);
@@ -950,16 +950,16 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
-  assign(const basic_static_string<M, CharT, Traits>& s)
+  basic_mutable_string_view&
+  assign(const basic_mutable_string_view<M, CharT, Traits>& s)
   {
     return assign_unchecked(s.data(), s.size());
   }
 
 #ifndef BOOST_STATIC_STRING_DOCS
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
-  assign(const basic_static_string& s) noexcept
+  basic_mutable_string_view&
+  assign(const basic_mutable_string_view& s) noexcept
   {
     if (this == &s)
       return *this;
@@ -969,8 +969,8 @@ public:
   template<std::size_t M,
     typename std::enable_if<(M > N)>::type* = nullptr>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
-  assign(const basic_static_string<M, CharT, Traits>& s)
+  basic_mutable_string_view&
+  assign(const basic_mutable_string_view<M, CharT, Traits>& s)
   {
     return assign(s.data(), s.size());
   }
@@ -1005,9 +1005,9 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   assign(
-    const basic_static_string<M, CharT, Traits>& s,
+    const basic_mutable_string_view<M, CharT, Traits>& s,
     size_type pos,
     size_type count = npos)
   {
@@ -1039,7 +1039,7 @@ public:
       @throw std::length_error `count > max_size()`.
     */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   assign(
     const_pointer s,
     size_type count);
@@ -1064,7 +1064,7 @@ public:
       @throw std::length_error `traits_type::length(s) > max_size()`.
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   assign(const_pointer s)
   {
     return assign(s, traits_type::length(s));
@@ -1102,11 +1102,11 @@ public:
   template<typename InputIterator>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
 #ifdef BOOST_STATIC_STRING_DOCS
-  basic_static_string&
+  basic_mutable_string_view&
 #else
   typename std::enable_if<
     detail::is_input_iterator<InputIterator>::value,
-      basic_static_string&>::type
+      basic_mutable_string_view&>::type
 #endif
   assign(
     InputIterator first,
@@ -1132,7 +1132,7 @@ public:
       @throw std::length_error `ilist.size() > max_size()`.
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   assign(
     std::initializer_list<value_type> ilist)
   {
@@ -1163,7 +1163,7 @@ public:
       @code
       std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value
       @endcode
 
       @return `*this`
@@ -1178,7 +1178,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   assign(const T& t)
   {
     detail::common_string_view_type<T, CharT, Traits> sv = t;
@@ -1209,7 +1209,7 @@ public:
       @code
       std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value
       @endcode
 
       @return `*this`
@@ -1228,7 +1228,7 @@ public:
     , typename = detail::enable_if_viewable_t<N, T, CharT, Traits>
 #endif
   >
-  basic_static_string&
+  basic_mutable_string_view&
   assign(
     const T& t,
     size_type pos,
@@ -1802,7 +1802,7 @@ public:
       @throw std::out_of_range `index > size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
     size_type count,
@@ -1838,7 +1838,7 @@ public:
       @throw std::out_of_range `index > size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
     const_pointer s)
@@ -1869,7 +1869,7 @@ public:
       @throw std::out_of_range `index > size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
     const_pointer s,
@@ -1911,20 +1911,20 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
-    const basic_static_string<M, CharT, Traits>& str)
+    const basic_mutable_string_view<M, CharT, Traits>& str)
   {
     return insert_unchecked(index, str.data(), str.size());
   }
 
 #ifndef BOOST_STATIC_STRING_DOCS
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
-    const basic_static_string& str)
+    const basic_mutable_string_view& str)
   {
     return insert(index, str.data(), str.size());
   }
@@ -1963,10 +1963,10 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
-    const basic_static_string<M, CharT, Traits>& str,
+    const basic_mutable_string_view<M, CharT, Traits>& str,
     size_type index_str,
     size_type count = npos)
   {
@@ -1975,10 +1975,10 @@ public:
 
 #ifndef BOOST_STATIC_STRING_DOCS
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
-    const basic_static_string& str,
+    const basic_mutable_string_view& str,
     size_type index_str,
     size_type count = npos)
   {
@@ -2173,7 +2173,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @param index The index to insert at.
       @param t The string to insert from.
@@ -2187,7 +2187,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
     const T& t)
@@ -2215,7 +2215,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const_pointer>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return `*this`
 
@@ -2235,7 +2235,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert(
     size_type index,
     const T& t,
@@ -2272,7 +2272,7 @@ public:
       @throw std::out_of_range `index > size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   erase(
     size_type index = 0,
     size_type count = npos)
@@ -2389,7 +2389,7 @@ public:
       @throw std::length_error `size() + count > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   append(
     size_type count,
     value_type ch);
@@ -2412,9 +2412,9 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   append(
-    const basic_static_string<M, CharT, Traits>& s)
+    const basic_mutable_string_view<M, CharT, Traits>& s)
   {
     return append(s.data(), s.size());
   }
@@ -2444,9 +2444,9 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   append(
-    const basic_static_string<M, CharT, Traits>& s,
+    const basic_mutable_string_view<M, CharT, Traits>& s,
     size_type pos,
     size_type count = npos)
   {
@@ -2473,7 +2473,7 @@ public:
       @throw std::length_error `size() + count > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   append(
     const_pointer s,
     size_type count);
@@ -2495,7 +2495,7 @@ public:
       @throw std::length_error `size() + count > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   append(const_pointer s)
   {
     return append(s, traits_type::length(s));
@@ -2534,11 +2534,11 @@ public:
   template<typename InputIterator>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
 #ifdef BOOST_STATIC_STRING_DOCS
-  basic_static_string&
+  basic_mutable_string_view&
 #else
   typename std::enable_if<
     detail::is_input_iterator<InputIterator>::value,
-      basic_static_string&>::type
+      basic_mutable_string_view&>::type
 #endif
   append(
     InputIterator first,
@@ -2564,7 +2564,7 @@ public:
       @throw std::length_error `size() + ilist.size() > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   append(
     std::initializer_list<value_type> ilist)
   {
@@ -2587,7 +2587,7 @@ public:
       @code
       std::is_convertible<T const&, string_view>::value &&
       !std::is_convertible<T const&, char const*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value
       @endcode
 
       @return `*this`
@@ -2602,7 +2602,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   append(const T& t)
   {
     detail::common_string_view_type<T, CharT, Traits> sv = t;
@@ -2625,7 +2625,7 @@ public:
       @code
       std::is_convertible<T const&, string_view>::value &&
       !std::is_convertible<T const&, char const*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value
       @endcode
 
       @return `*this`
@@ -2645,7 +2645,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   append(
     const T& t,
     size_type pos,
@@ -2675,9 +2675,9 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator+=(
-    const basic_static_string<M, CharT, Traits>& s)
+    const basic_mutable_string_view<M, CharT, Traits>& s)
   {
     return append(s);
   }
@@ -2695,7 +2695,7 @@ public:
       @throw std::length_error `size() >= max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator+=(value_type ch)
   {
     push_back(ch);
@@ -2719,7 +2719,7 @@ public:
       @throw std::length_error `size() + count > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator+=(const_pointer s)
   {
     return append(s);
@@ -2741,7 +2741,7 @@ public:
       @throw std::length_error `size() + ilist.size() > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator+=(
     std::initializer_list<value_type> ilist)
   {
@@ -2764,7 +2764,7 @@ public:
       @code
       std::is_convertible<T const&, string_view>::value &&
       !std::is_convertible<T const&, char const*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value
       @endcode
 
       @return `*this`
@@ -2779,7 +2779,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   operator+=(const T& t)
   {
     return append(t);
@@ -2805,7 +2805,7 @@ public:
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   int
   compare(
-    const basic_static_string<M, CharT, Traits>& s) const noexcept
+    const basic_mutable_string_view<M, CharT, Traits>& s) const noexcept
   {
     return detail::lexicographical_compare<CharT, Traits>(
       data(), size(), s.data(), s.size());
@@ -2845,7 +2845,7 @@ public:
   compare(
     size_type pos1,
     size_type count1,
-    const basic_static_string<M, CharT, Traits>& s) const
+    const basic_mutable_string_view<M, CharT, Traits>& s) const
   {
     return detail::lexicographical_compare<CharT, Traits>(
       data() + pos1, capped_length(pos1, count1), s.data(), s.size());
@@ -2890,7 +2890,7 @@ public:
   compare(
     size_type pos1,
     size_type count1,
-    const basic_static_string<M, CharT, Traits>& s,
+    const basic_mutable_string_view<M, CharT, Traits>& s,
     size_type pos2,
     size_type count2 = npos) const
   {
@@ -3024,7 +3024,7 @@ public:
       @code
       std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const_pointer>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value.
       @endcode
 
       @return The result of lexicographically comparing `s` and the string.
@@ -3069,7 +3069,7 @@ public:
       @code
       std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const_pointer>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value.
       @endcode
 
       @return The result of lexicographically comparing `s` and `sub`.
@@ -3121,7 +3121,7 @@ public:
       @code
       std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const_pointer>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value.
       @endcode
 
       @return The result of lexicographically comparing `sub1` and `sub2`.
@@ -3179,12 +3179,12 @@ public:
 #ifndef BOOST_STATIC_STRING_GCC5_BAD_CONSTEXPR
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
 #endif
-  basic_static_string
+  basic_mutable_string_view
   substr( // DEF_SUBSTR()
     size_type pos = 0,
     size_type count = npos) const
   {
-    return basic_static_string(
+    return basic_mutable_string_view(
       (pointer)data() + pos, capped_length(pos, count));
   }
 
@@ -3324,7 +3324,7 @@ public:
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   void
-  swap(basic_static_string& s) noexcept;
+  swap(basic_mutable_string_view& s) noexcept;
 
   /** Swap two strings.
 
@@ -3349,7 +3349,7 @@ public:
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   void
-  swap(basic_static_string<M, CharT, Traits>& s);
+  swap(basic_mutable_string_view<M, CharT, Traits>& s);
 
   /** Replace a part of the string.
 
@@ -3381,22 +3381,22 @@ public:
   */
   template<size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos1,
     size_type n1,
-    const basic_static_string<M, CharT, Traits>& str)
+    const basic_mutable_string_view<M, CharT, Traits>& str)
   {
     return replace_unchecked(pos1, n1, str.data(), str.size());
   }
 
 #ifndef BOOST_STATIC_STRING_DOCS
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos1,
     size_type n1,
-    const basic_static_string& str)
+    const basic_mutable_string_view& str)
   {
     return replace(pos1, n1, str.data(), str.size());
   }
@@ -3434,11 +3434,11 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos1,
     size_type n1,
-    const basic_static_string<M, CharT, Traits>& str,
+    const basic_mutable_string_view<M, CharT, Traits>& str,
     size_type pos2,
     size_type n2 = npos)
   {
@@ -3447,11 +3447,11 @@ public:
 
 #ifndef BOOST_STATIC_STRING_DOCS
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos1,
     size_type n1,
-    const basic_static_string& str,
+    const basic_mutable_string_view& str,
     size_type pos2,
     size_type n2 = npos)
   {
@@ -3479,7 +3479,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return `*this`
 
@@ -3496,7 +3496,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos1,
     size_type n1,
@@ -3526,7 +3526,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return `*this`
 
@@ -3547,7 +3547,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos1,
     size_type n1,
@@ -3587,7 +3587,7 @@ public:
       @throw std::out_of_range `pos > size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos,
     size_type n1,
@@ -3621,7 +3621,7 @@ public:
       @throw std::out_of_range `pos > size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos,
     size_type n1,
@@ -3654,7 +3654,7 @@ public:
       @throw std::out_of_range `pos > size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     size_type pos,
     size_type n1,
@@ -3698,22 +3698,22 @@ public:
   */
   template<std::size_t M>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     const_iterator i1,
     const_iterator i2,
-    const basic_static_string<M, CharT, Traits>& str)
+    const basic_mutable_string_view<M, CharT, Traits>& str)
   {
     return replace_unchecked(i1, i2, str.data(), str.size());
   }
 
 #ifndef BOOST_STATIC_STRING_DOCS
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     const_iterator i1,
     const_iterator i2,
-    const basic_static_string& str)
+    const basic_mutable_string_view& str)
   {
     return replace(i1, i2, str.data(), str.size());
   }
@@ -3743,7 +3743,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return `*this`
 
@@ -3760,7 +3760,7 @@ public:
 #endif
   >
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     const_iterator i1,
     const_iterator i2,
@@ -3798,7 +3798,7 @@ public:
       @throw std::length_error `size() + (n - std::distance(i1, i2)) > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     const_iterator i1,
     const_iterator i2,
@@ -3835,7 +3835,7 @@ public:
       @throw std::length_error `size() + (len - std::distance(i1, i2)) > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     const_iterator i1,
     const_iterator i2,
@@ -3872,7 +3872,7 @@ public:
       @throw std::length_error `size() + (n - std::distance(i1, i2)) > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     const_iterator i1,
     const_iterator i2,
@@ -3919,14 +3919,14 @@ public:
   template<typename InputIterator>
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
 #ifdef BOOST_STATIC_STRING_DOCS
-  basic_static_string&
+  basic_mutable_string_view&
 #else
   typename std::enable_if<
     detail::is_input_iterator<
       InputIterator>::value &&
         !detail::is_forward_iterator<
           InputIterator>::value,
-            basic_static_string<N, CharT, Traits>&>::type
+            basic_mutable_string_view<N, CharT, Traits>&>::type
 #endif
   replace(
     const_iterator i1,
@@ -3940,7 +3940,7 @@ public:
   typename std::enable_if<
     detail::is_forward_iterator<
       ForwardIterator>::value,
-        basic_static_string<N, CharT, Traits>&>::type
+        basic_mutable_string_view<N, CharT, Traits>&>::type
   replace(
     const_iterator i1,
     const_iterator i2,
@@ -3975,7 +3975,7 @@ public:
       @throw std::length_error `size() + (il.size() - std::distance(i1, i2)) > max_size()`
   */
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace(
     const_iterator i1,
     const_iterator i2,
@@ -4007,7 +4007,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return The lowest index `idx` greater than or equal to `pos`
       where each element of `{sv.begin(), sv.end())` is equal to
@@ -4060,7 +4060,7 @@ public:
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   size_type
   find(
-    const basic_static_string<M, CharT, Traits>& str,
+    const basic_mutable_string_view<M, CharT, Traits>& str,
     size_type pos = 0) const noexcept
   {
     return find(str.data(), pos, str.size());
@@ -4165,7 +4165,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return The highest index `idx` less than or equal to `pos`
       where each element of `{sv.begin(), sv.end())` is equal to
@@ -4218,7 +4218,7 @@ public:
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   size_type
   rfind(
-    const basic_static_string<M, CharT, Traits>& str,
+    const basic_mutable_string_view<M, CharT, Traits>& str,
     size_type pos = npos) const noexcept
   {
     return rfind(str.data(), pos, str.size());
@@ -4319,7 +4319,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return The index corrosponding to the first occurrence of
       any of the characters in `{sv.begin(), sv.end())` within
@@ -4369,7 +4369,7 @@ public:
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   size_type
   find_first_of(
-    const basic_static_string<M, CharT, Traits>& str,
+    const basic_mutable_string_view<M, CharT, Traits>& str,
     size_type pos = 0) const noexcept
   {
     return find_first_of(str.data(), pos, str.size());
@@ -4467,7 +4467,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return The index corrosponding to the last occurrence of
       any of the characters in `{sv.begin(), sv.end())` within
@@ -4517,7 +4517,7 @@ public:
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   size_type
   find_last_of(
-    const basic_static_string<M, CharT, Traits>& str,
+    const basic_mutable_string_view<M, CharT, Traits>& str,
     size_type pos = npos) const noexcept
   {
     return find_last_of(str.data(), pos, str.size());
@@ -4614,7 +4614,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return The index corrosponding to the first occurrence of
       a character that is not in `{sv.begin(), sv.end())` within
@@ -4664,7 +4664,7 @@ public:
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   size_type
   find_first_not_of(
-    const basic_static_string<M, CharT, Traits>& str,
+    const basic_mutable_string_view<M, CharT, Traits>& str,
     size_type pos = 0) const noexcept
   {
     return find_first_not_of(str.data(), pos, str.size());
@@ -4760,7 +4760,7 @@ public:
 
       `std::is_convertible<const T&, string_view>::value &&
       !std::is_convertible<const T&, const CharT*>::value &&
-      !std::is_convertible<const T&, const basic_static_string&>::value`.
+      !std::is_convertible<const T&, const basic_mutable_string_view&>::value`.
 
       @return The index corrosponding to the last occurrence of
       a character that is not in `{sv.begin(), sv.end())` within
@@ -4810,7 +4810,7 @@ public:
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
   size_type
   find_last_not_of(
-    const basic_static_string<M, CharT, Traits>& str,
+    const basic_mutable_string_view<M, CharT, Traits>& str,
     size_type pos = npos) const noexcept
   {
     return find_last_not_of(str.data(), pos, str.size());
@@ -5033,7 +5033,7 @@ private:
   }
 
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   term() noexcept
   {
     term_impl(std::integral_constant<bool, N != 0>()); // DEF_TERM
@@ -5041,7 +5041,7 @@ private:
   }
 
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   assign_char(value_type ch, std::true_type) noexcept
   {
     this->size_impl(1);
@@ -5050,7 +5050,7 @@ private:
   }
 
   BOOST_STATIC_STRING_NORETURN
-  basic_static_string&
+  basic_mutable_string_view&
   assign_char(value_type, std::false_type)
   {
     detail::throw_exception<std::length_error>("max_size() == 0");
@@ -5070,7 +5070,7 @@ private:
     InputIterator last);
 
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace_unchecked(
     size_type pos,
     size_type n1,
@@ -5084,7 +5084,7 @@ private:
   }
 
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   replace_unchecked(
     const_iterator i1,
     const_iterator i2,
@@ -5092,7 +5092,7 @@ private:
     size_type n2);
 
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   insert_unchecked(
     size_type index,
     const_pointer s,
@@ -5113,7 +5113,7 @@ private:
     size_type count);
 
   BOOST_STATIC_STRING_CPP14_CONSTEXPR
-  basic_static_string&
+  basic_mutable_string_view&
   assign_unchecked(
     const_pointer s,
     size_type count) noexcept
@@ -5149,8 +5149,8 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator==(
-  const basic_static_string<N, CharT, Traits>& lhs,
-  const basic_static_string<M, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<M, CharT, Traits>& rhs)
 {
   return lhs.compare(rhs) == 0;
 }
@@ -5162,8 +5162,8 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator!=(
-  const basic_static_string<N, CharT, Traits>& lhs,
-  const basic_static_string<M, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<M, CharT, Traits>& rhs)
 {
   return lhs.compare(rhs) != 0;
 }
@@ -5175,8 +5175,8 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator<(
-  const basic_static_string<N, CharT, Traits>& lhs,
-  const basic_static_string<M, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<M, CharT, Traits>& rhs)
 {
   return lhs.compare(rhs) < 0;
 }
@@ -5188,8 +5188,8 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator<=(
-  const basic_static_string<N, CharT, Traits>& lhs,
-  const basic_static_string<M, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<M, CharT, Traits>& rhs)
 {
   return lhs.compare(rhs) <= 0;
 }
@@ -5201,8 +5201,8 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator>(
-  const basic_static_string<N, CharT, Traits>& lhs,
-  const basic_static_string<M, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<M, CharT, Traits>& rhs)
 {
   return lhs.compare(rhs) > 0;
 }
@@ -5214,8 +5214,8 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator>=(
-  const basic_static_string<N, CharT, Traits>& lhs,
-  const basic_static_string<M, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<M, CharT, Traits>& rhs)
 {
   return lhs.compare(rhs) >= 0;
 }
@@ -5226,7 +5226,7 @@ inline
 bool
 operator==(
   const CharT* lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
     lhs, Traits::length(lhs),
@@ -5238,7 +5238,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator==(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const CharT* rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5256,7 +5256,7 @@ inline
 bool
 operator==(
   const T& lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> lhsv = lhs;
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5273,7 +5273,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator==(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const T& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> rhsv = rhs;
@@ -5288,7 +5288,7 @@ inline
 bool
 operator!=(
   const CharT* lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
     lhs, Traits::length(lhs),
@@ -5300,7 +5300,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator!=(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const CharT* rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5318,7 +5318,7 @@ inline
 bool
 operator!=(
   const T& lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> lhsv = lhs;
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5335,7 +5335,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator!=(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const T& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> rhsv = rhs;
@@ -5350,7 +5350,7 @@ inline
 bool
 operator<(
   const CharT* lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
     lhs, Traits::length(lhs),
@@ -5362,7 +5362,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator<(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const CharT* rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5380,7 +5380,7 @@ inline
 bool
 operator<(
   const T& lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> lhsv = lhs;
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5397,7 +5397,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator<(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const T& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> rhsv = rhs;
@@ -5412,7 +5412,7 @@ inline
 bool
 operator<=(
   const CharT* lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
     lhs, Traits::length(lhs),
@@ -5424,7 +5424,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator<=(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const CharT* rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5442,7 +5442,7 @@ inline
 bool
 operator<=(
   const T& lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> lhsv = lhs;
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5459,7 +5459,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator<=(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const T& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> rhsv = rhs;
@@ -5474,7 +5474,7 @@ inline
 bool
 operator>(
   const CharT* lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
     lhs, Traits::length(lhs),
@@ -5486,7 +5486,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator>(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const CharT* rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5504,7 +5504,7 @@ inline
 bool
 operator>(
   const T& lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> lhsv = lhs;
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5521,7 +5521,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator>(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const T& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> rhsv = rhs;
@@ -5537,7 +5537,7 @@ inline
 bool
 operator>=(
   const CharT* lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
     lhs, Traits::length(lhs),
@@ -5549,7 +5549,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator>=(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const CharT* rhs)
 {
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5567,7 +5567,7 @@ inline
 bool
 operator>=(
   const T& lhs,
-  const basic_static_string<N, CharT, Traits>& rhs)
+  const basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> lhsv = lhs;
   return detail::lexicographical_compare<CharT, Traits>(
@@ -5584,7 +5584,7 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 bool
 operator>=(
-  const basic_static_string<N, CharT, Traits>& lhs,
+  const basic_mutable_string_view<N, CharT, Traits>& lhs,
   const T& rhs)
 {
   detail::common_string_view_type<T, CharT, Traits> rhsv = rhs;
@@ -5604,9 +5604,9 @@ template<
     typename Traits, typename UnaryPredicate>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 typename
-basic_static_string<N, CharT, Traits>::size_type
+basic_mutable_string_view<N, CharT, Traits>::size_type
 erase_if(
-    basic_static_string<N, CharT, Traits>& str,
+    basic_mutable_string_view<N, CharT, Traits>& str,
     UnaryPredicate pred)
 {
   auto first = str.begin();
@@ -5629,8 +5629,8 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 void
 swap(
-  basic_static_string<N, CharT, Traits>& lhs,
-  basic_static_string<N, CharT, Traits>& rhs)
+  basic_mutable_string_view<N, CharT, Traits>& lhs,
+  basic_mutable_string_view<N, CharT, Traits>& rhs)
 {
   lhs.swap(rhs);
 }
@@ -5642,8 +5642,8 @@ BOOST_STATIC_STRING_CPP14_CONSTEXPR
 inline
 void
 swap(
-  basic_static_string<N, CharT, Traits>& lhs,
-  basic_static_string<M, CharT, Traits>& rhs)
+  basic_mutable_string_view<N, CharT, Traits>& lhs,
+  basic_mutable_string_view<M, CharT, Traits>& rhs)
 {
   lhs.swap(rhs);
 }
@@ -5659,7 +5659,7 @@ inline
 std::basic_ostream<CharT, Traits>&
 operator<<(
   std::basic_ostream<CharT, Traits>& os,
-  const basic_static_string<N, CharT, Traits>& s)
+  const basic_mutable_string_view<N, CharT, Traits>& s)
 {
 #ifdef BOOST_STATIC_STRING_HAS_ANY_STRING_VIEW
   return os << basic_string_view<CharT, Traits>(s.data(), s.size());
@@ -5683,7 +5683,7 @@ template <std::size_t N,
   typename Traits>
 std::size_t
 hash_value(
-  const basic_static_string<N, CharT, Traits>& str)
+  const basic_mutable_string_view<N, CharT, Traits>& str)
 {
   return boost::hash_range(str.begin(), str.end());
 }
@@ -5696,29 +5696,29 @@ hash_value(
 //
 //------------------------------------------------------------------------------
 
-using static_strings::static_string;
+using static_strings::mutable_string_view;
 #ifdef BOOST_STATIC_STRING_HAS_WCHAR
-using static_strings::static_wstring;
+using static_strings::mutable_wstring_view;
 #endif
-using static_strings::static_u16string;
-using static_strings::static_u32string;
+using static_strings::mutable_u16string_view;
+using static_strings::mutable_u32string_view;
 } // boost
 
-/// std::hash partial specialization for basic_static_string
+/// std::hash partial specialization for basic_mutable_string_view
 namespace std {
 
 template<std::size_t N, typename CharT, typename Traits>
 struct hash<
 #ifdef BOOST_STATIC_STRING_DOCS
-  basic_static_string
+  basic_mutable_string_view
 #else
-  boost::static_strings::basic_static_string<N, CharT, Traits>
+  boost::static_strings::basic_mutable_string_view<N, CharT, Traits>
 #endif
   >
 {
   std::size_t
   operator()(
-    const boost::static_strings::basic_static_string<N, CharT, Traits>& str) const noexcept
+    const boost::static_strings::basic_mutable_string_view<N, CharT, Traits>& str) const noexcept
   {
 #if !defined(BOOST_STATIC_STRING_STANDALONE)
     return boost::hash_range(str.begin(), str.end());
@@ -5768,11 +5768,11 @@ namespace static_strings {
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 assign(
   size_type count,
   value_type ch) ->
-    basic_static_string&
+    basic_mutable_string_view&
 {
   if (count > max_size())
     detail::throw_exception<std::length_error>(
@@ -5785,11 +5785,11 @@ assign(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 assign( // DEF_ASSIGN_CONST_PTR
   const_pointer s,
   size_type count) ->
-    basic_static_string&
+    basic_mutable_string_view&
 {
   if (count > max_size())
     detail::throw_exception<std::length_error>(
@@ -5803,13 +5803,13 @@ template<std::size_t N, typename CharT, typename Traits>
 template<typename InputIterator>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 assign(
   InputIterator first,
   InputIterator last) ->
     typename std::enable_if<
       detail::is_input_iterator<InputIterator>::value,
-        basic_static_string&>::type
+        basic_mutable_string_view&>::type
 {
   auto ptr = data();
   for (std::size_t i = 0; first != last; ++first, ++ptr, ++i)
@@ -5829,7 +5829,7 @@ assign(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 insert(
   const_iterator pos,
   size_type count,
@@ -5855,7 +5855,7 @@ template<std::size_t N, typename CharT, typename Traits>
 template<typename ForwardIterator>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 insert(
   const_iterator pos,
   ForwardIterator first,
@@ -5908,7 +5908,7 @@ template<std::size_t N, typename CharT, typename Traits>
 template<typename InputIterator>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 insert(
   const_iterator pos,
   InputIterator first,
@@ -5931,7 +5931,7 @@ insert(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 erase(
   const_iterator first,
   const_iterator last) ->
@@ -5947,7 +5947,7 @@ erase(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 void
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 push_back(
   value_type ch)
 {
@@ -5963,11 +5963,11 @@ push_back(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 append(
   size_type count,
   value_type ch) ->
-    basic_static_string&
+    basic_mutable_string_view&
 {
   const auto curr_size = size();
   if (count > max_size() - curr_size)
@@ -5981,11 +5981,11 @@ append(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 append(
   const_pointer s,
   size_type count) ->
-    basic_static_string&
+    basic_mutable_string_view&
 {
   const auto curr_size = size();
   if (count > max_size() - curr_size)
@@ -5999,7 +5999,7 @@ append(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 void
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 resize(size_type n, value_type c)
 {
   if (n > max_size())
@@ -6016,7 +6016,7 @@ template<std::size_t N, typename CharT, typename Traits>
 template<typename Operation>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 void
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 resize_and_overwrite(
   size_type n,
   Operation op)
@@ -6035,8 +6035,8 @@ resize_and_overwrite(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 void
-basic_static_string<N, CharT, Traits>::
-swap(basic_static_string& s) noexcept
+basic_mutable_string_view<N, CharT, Traits>::
+swap(basic_mutable_string_view& s) noexcept
 {
   auto curr_data = data();
   auto curr_size = size();
@@ -6052,8 +6052,8 @@ template<std::size_t N, typename CharT, typename Traits>
 template<std::size_t M>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 void
-basic_static_string<N, CharT, Traits>::
-swap(basic_static_string<M, CharT, Traits>& s)
+basic_mutable_string_view<N, CharT, Traits>::
+swap(basic_mutable_string_view<M, CharT, Traits>& s)
 {
   if (size() > s.max_size())
     detail::throw_exception<std::length_error>(
@@ -6075,13 +6075,13 @@ swap(basic_static_string<M, CharT, Traits>& s)
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 replace(
   const_iterator i1,
   const_iterator i2,
   size_type n,
   value_type c) ->
-    basic_static_string<N, CharT, Traits>&
+    basic_mutable_string_view<N, CharT, Traits>&
 {
   const auto curr_size = size();
   const auto curr_data = data();
@@ -6100,7 +6100,7 @@ template<std::size_t N, typename CharT, typename Traits>
 template<typename ForwardIterator>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 replace(
   const_iterator i1,
   const_iterator i2,
@@ -6108,7 +6108,7 @@ replace(
   ForwardIterator j2) ->
     typename std::enable_if<
       detail::is_forward_iterator<ForwardIterator>::value,
-        basic_static_string<N, CharT, Traits>&>::type
+        basic_mutable_string_view<N, CharT, Traits>&>::type
 {
   const auto curr_size = size();
   const auto curr_data = data();
@@ -6161,7 +6161,7 @@ template<std::size_t N, typename CharT, typename Traits>
 template<typename InputIterator>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 replace(
   const_iterator i1,
   const_iterator i2,
@@ -6172,7 +6172,7 @@ replace(
         InputIterator>::value &&
           !detail::is_forward_iterator<
             InputIterator>::value,
-              basic_static_string<N, CharT, Traits>&>::type
+              basic_mutable_string_view<N, CharT, Traits>&>::type
 {
   const auto curr_size = size();
   const auto curr_data = data();
@@ -6192,7 +6192,7 @@ replace(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 find(
   const_pointer s,
   size_type pos,
@@ -6211,7 +6211,7 @@ find(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 rfind(
   const_pointer s,
   size_type pos,
@@ -6235,7 +6235,7 @@ rfind(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 find_first_of(
   const_pointer s,
   size_type pos,
@@ -6252,7 +6252,7 @@ find_first_of(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 find_last_of(
   const_pointer s,
   size_type pos,
@@ -6273,7 +6273,7 @@ find_last_of(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 find_first_not_of(
   const_pointer s,
   size_type pos,
@@ -6291,7 +6291,7 @@ find_first_not_of(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 find_last_not_of(
   const_pointer s,
   size_type pos,
@@ -6312,7 +6312,7 @@ template<std::size_t N, typename CharT, typename Traits>
 template<typename InputIterator>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 read_back(
   bool overwrite_null,
   InputIterator first,
@@ -6340,13 +6340,13 @@ read_back(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 replace_unchecked(
   const_iterator i1,
   const_iterator i2,
   const_pointer s,
   size_type n2) ->
-    basic_static_string&
+    basic_mutable_string_view&
 {
   const auto curr_data = data();
   const auto curr_size = size();
@@ -6364,7 +6364,7 @@ replace_unchecked(
 template<std::size_t N, typename CharT, typename Traits>
 BOOST_STATIC_STRING_CPP14_CONSTEXPR
 auto
-basic_static_string<N, CharT, Traits>::
+basic_mutable_string_view<N, CharT, Traits>::
 insert_unchecked(
   const_iterator pos,
   const_pointer s,

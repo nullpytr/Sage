@@ -10,7 +10,7 @@
 #endif
 
 template<std::size_t N, typename CharT = char, typename Traits = std::char_traits<CharT>> // basic_string<N, ...> does NOT include null term, instead it is guaranteed by the implementation
-using basic_string = boost::static_strings::basic_static_string<N, CharT, Traits>;
+using basic_string = boost::static_strings::basic_mutable_string_view<N, CharT, Traits>;
 
 template <size_t N> // string<N> DOES include null term
 using string = basic_string<N - 1, char>;
