@@ -7,6 +7,8 @@
 #include "External/Mio.hpp"
 #endif
 
+#include "External/Lifetime.hpp"
+
 #include "Core.hpp"
 
 #define METADATA_HASHTABLE_START 0x000028
@@ -60,12 +62,12 @@ public:
     requires std::derived_from<N, Tag::Map>
     O get()
     {
-        // Gives std::ranges semantics from a Data::Map struct
-        // Layout of a Data::Map struct of N pure `value_t&`s is equivalent map<value_t, N>
-        // and layout<map<value_t, N>> converts it into a `mapped_range`.
+        // Converts a Data::Structure<> into a std::ranges compatible view
+        // This works because the layout of a pure Data::Structure<>
+        // of N `value_t&`s is equivalent to std::array<value_t*, N> (i.e, map<value_t, N>)
+        // and L (layout<map<value_t, N>>) implicitly converts to a `mapped_range`.
         auto buf = get<Tag::Structure, I>();
-        auto& adapter = *std::bit_cast<L*>(&buf);
-        return adapter; // `mapped_range` copies the pointer buffer with it.
+        return *start_lifetime_as<L>(&buf); // `mapped_range` copies the pointer buffer with it.
     }
 
     template<typename S, typename I = Structure<S>, typename O = I>
@@ -122,7 +124,7 @@ public:
         if (m_data.size() < offset + sizeof(T))
             throw std::out_of_range("Sav: out of range");
 
-        return std::bit_cast<T*>(m_data.data() + offset);
+        return start_lifetime_as<T>(m_data.data() + offset);
     }
 
     /* Get reference to value of type T at given offset */
@@ -135,7 +137,7 @@ public:
 
 private: /* Members */
     #ifndef SAGE_DISABLE_MMAP
-    mio::basic_mmap_sink<byte> m_data;
+    mio::ummap_sink m_data;
     #else
     span<byte> m_data;
     #endif
