@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include <stdexcept>
 #include <unordered_map>
 
@@ -18,7 +17,7 @@ class Sav
 {
 public:
     #ifndef SAGE_DISABLE_MMAP
-    explicit Sav(std::string const& path) : m_data { path }
+    explicit Sav(string_view const& path) : m_data { path }
     #else
     explicit Sav(span<byte> const& buf) : m_data { buf }
     #endif
