@@ -12,22 +12,22 @@ DEFAULT_TARGET_HEADER = PROJECT_ROOT / "include/sage"
 
 def hoist_includes(header_fp: Path, write: bool = False, out_fd = None, unsafe: bool = False) -> str:
     code: list[str] = [
-        s.strip() for s in 
-        header_fp.read_text().splitlines()
+        s for s in header_fp.read_text().splitlines()
     ]
 
     includes: set[str] = set()
 
     conditional_depth = 0
-    for include in code.copy(): 
-        if not include: code.remove(include) # empty 
-        elif include == f"#include <{header_fp.name}>": code.remove(include) # self
-        elif include.startswith("#if"): conditional_depth += 1 # conditional open
-        elif include.startswith("#endif"): conditional_depth -= 1 # conditional close
+    for include in code.copy():
+        include_stripped = include.strip()
+        if not include_stripped: code.remove(include) # empty
+        elif include_stripped == f"#include <{header_fp.name}>": code.remove(include) # self
+        elif include_stripped.startswith("#if"): conditional_depth += 1 # conditional open
+        elif include_stripped.startswith("#endif"): conditional_depth -= 1 # conditional close
         elif (conditional_depth > 0) and (not unsafe): continue # inside conditional
-        elif include.startswith("#include"): 
+        elif include_stripped.startswith("#include"):
             includes.add(popitem(code, include))
-            if out_fd: print(include, file=out_fd)
+            if out_fd: print(include_stripped, file=out_fd)
 
     string = "\n".join([*sorted(includes), *code])
     if write: header_fp.write_text(string)
