@@ -20,9 +20,9 @@ def hoist_includes(header_fp: Path, write: bool = False, out_fd = None, unsafe: 
 
     conditional_depth = 0
     for include in code.copy():
-        include_stripped = include.strip()
+        include_stripped = string_remove_whitespace(include)
         if not include_stripped: code.remove(include) # empty
-        elif include_stripped == f"#include <{header_fp.name}>": code.remove(include) # self
+        elif include_stripped == f"#include<{header_fp.name}>": code.remove(include) # self
         elif include_stripped.startswith("#if"): conditional_depth += 1 # conditional open
         elif include_stripped.startswith("#endif"): conditional_depth -= 1 # conditional close
         elif (conditional_depth > 0) and (not unsafe): continue # inside conditional
@@ -39,10 +39,13 @@ def popitem[T](l: list[T], item: T) -> T:
     return l.pop(l.index(item))
 
 def pop_header_guard(code: list[str]) -> tuple[str, ...]:
-    is_pragma_once = code[0].strip() == "#pragma once"
+    if len(code) < 2: return tuple()
+    l0, l1 = map(string_remove_whitespace, code[:2])
+
+    is_pragma_once = (l0 == "#pragmaonce")
     is_classic_include_guard = (
-        code[0].strip().startswith(("#ifndef", "#if !defined"))
-        and code[1].strip().startswith("#define")
+        l0.startswith(("#ifndef", "#if!defined"))
+        and l1.startswith("#define")
     )
 
     if not (is_classic_include_guard or is_pragma_once):
@@ -53,6 +56,9 @@ def pop_header_guard(code: list[str]) -> tuple[str, ...]:
         if is_classic_include_guard
         else (code.pop(0),) # PRAGMA ONCE
     )
+
+def string_remove_whitespace(s: str) -> str:
+    return s.strip().replace(" ", "")
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
