@@ -15,6 +15,7 @@ def hoist_includes(header_fp: Path, write: bool = False, out_fd = None, unsafe: 
         s for s in header_fp.read_text().splitlines()
     ]
 
+    header_guard = pop_header_guard(code)
     includes: set[str] = set()
 
     conditional_depth = 0
@@ -29,13 +30,29 @@ def hoist_includes(header_fp: Path, write: bool = False, out_fd = None, unsafe: 
             includes.add(popitem(code, include))
             if out_fd: print(include_stripped, file=out_fd)
 
-    string = "\n".join([*sorted(includes), *code])
+    string = "\n".join([*header_guard, *sorted(includes), *code])
     if write: header_fp.write_text(string)
 
     return string
 
 def popitem[T](l: list[T], item: T) -> T:
     return l.pop(l.index(item))
+
+def pop_header_guard(code: list[str]) -> tuple[str, ...]:
+    is_pragma_once = code[0].strip() == "#pragma once"
+    is_classic_include_guard = (
+        code[0].strip().startswith(("#ifndef", "#if !defined"))
+        and code[1].strip().startswith("#define")
+    )
+
+    if not (is_classic_include_guard or is_pragma_once):
+        return tuple()
+
+    return (
+        (code.pop(0), code.pop(0)) # IFNDEF, DEFINE
+        if is_classic_include_guard
+        else (code.pop(0),) # PRAGMA ONCE
+    )
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
@@ -65,15 +82,15 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     p.add_argument(
-    "--unsafe", "-u",
-    action="store_true",
-    help="Also hoist includes inside conditional blocks, WILL break the conditional logic",
+        "--unsafe", "-u",
+        action="store_true",
+        help="Also hoist includes inside conditional blocks, WILL break the conditional logic",
     )
 
     p.add_argument(
-    "--quiet", "-q",
-    action="store_true",
-    help="Do not output list of hoisted includes",
+        "--quiet", "-q",
+        action="store_true",
+        help="Do not output list of hoisted includes",
     )
 
     return p
@@ -88,9 +105,9 @@ def main():
     ) # blocking, wait
 
     hoist_includes(
-        args.out, 
-        write=True, 
-        out_fd=None if args.quiet else sys.stdout, 
+        args.out,
+        write=True,
+        out_fd=None if args.quiet else sys.stdout,
         unsafe=args.unsafe
     )
 
